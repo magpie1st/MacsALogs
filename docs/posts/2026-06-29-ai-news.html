@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오늘의 AI 뉴스 — 2026-06-29 — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    @media (max-width: 799px) { .view-desktop { display: none; } }
+    @media (min-width: 800px) { .view-mobile { display: none; } }
+    .view-desktop { max-width: 100%; overflow-x: auto; }
+    
+  @page { size: A4 portrait; margin: 0; }.view-mobile {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-mobile .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-mobile {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-mobile .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-mobile .header { padding: 14px 20px; margin-bottom: 12px; }.view-mobile .header-title { font-size: 22px; }.view-mobile .header-sub { font-size: 12px; }.view-mobile .header-date { font-size: 15px; }.view-mobile .header-edition { font-size: 11px; }.view-mobile .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-mobile .grid-3 { gap: 12px; margin-bottom: 12px; }.view-mobile .grid-2 { gap: 12px; margin-bottom: 12px; }.view-mobile .card { padding: 16px 18px; border-radius: 12px; }.view-mobile .card-title { font-size: 15px; line-height: 1.5; }.view-mobile .card-title-sm { font-size: 13px; }.view-mobile .card-num { width: 24px; height: 24px; font-size: 13px; }.view-mobile .badge { font-size: 10px; padding: 2px 9px; }.view-mobile .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-mobile .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-mobile .detail-lbl { font-size: 10px; }.view-mobile .detail-txt { font-size: 13px; line-height: 1.65; }.view-mobile .key-chip { font-size: 11px; padding: 3px 9px; }.view-mobile .takeaway { font-size: 13px; padding: 7px 12px; }.view-mobile .impact-pill { font-size: 11px; padding: 3px 11px; }.view-mobile .eng-phrase { font-size: 17px; }.view-mobile .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-mobile .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-mobile .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-mobile .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-mobile .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-mobile .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-mobile .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-mobile .header-left { display: flex; align-items: center; gap: 10px; }.view-mobile .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-mobile .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-mobile .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-mobile .header-right { text-align: right; }.view-mobile .header-date { font-size: 12px; font-weight: 700; }.view-mobile .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-mobile .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-mobile .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-mobile .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-mobile .grid-1 { margin-bottom: 5px; }.view-mobile .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-mobile .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-mobile .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-mobile .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-mobile .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-mobile .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-mobile .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 800;
+    margin-right: 5px;
+    flex-shrink: 0;
+  }.view-mobile .num-ai { background: #e0e7ff; color: #3730a3; }.view-mobile .num-detail { background: #ede9fe; color: #5b21b6; }.view-mobile .num-economy { background: #d1fae5; color: #065f46; }.view-mobile .num-english { background: #fef3c7; color: #92400e; }.view-mobile .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-mobile .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-mobile .badge-ai { background: #e0e7ff; color: #4338ca; }.view-mobile .badge-detail { background: #ede9fe; color: #6d28d9; }.view-mobile .badge-economy { background: #d1fae5; color: #065f46; }.view-mobile .badge-english { background: #fef3c7; color: #92400e; }.view-mobile .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-mobile .card-title-sm { font-size: 10px; }.view-mobile .bullets { list-style: none; margin: 3px 0; }.view-mobile .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-mobile .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-mobile .card-ai .bullets li::before { color: #6366f1; }.view-mobile .card-detail .bullets li::before { color: #7c3aed; }.view-mobile .card-economy .bullets li::before { color: #059669; }.view-mobile .card-english .bullets li::before { color: #d97706; }.view-mobile .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-mobile .card-source:hover { color: #64748b; text-decoration: underline; }.view-mobile .detail-block { margin-bottom: 4px; }.view-mobile .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-mobile .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-mobile .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-mobile .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-mobile .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-mobile .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-mobile .impact-positive { background: #dcfce7; color: #166534; }.view-mobile .impact-negative { background: #fee2e2; color: #991b1b; }.view-mobile .impact-neutral { background: #f1f5f9; color: #475569; }.view-mobile .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-mobile .eng-pron { font-size: 8px; color: #b45309; font-family: monospace; margin-bottom: 3px; }.view-mobile .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-mobile .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-mobile .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-mobile .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-mobile .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-mobile { background: white; }.view-mobile .page { box-shadow: none; }
+  }
+
+    
+  @page { size: A4 portrait; margin: 0; }.view-desktop {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-desktop .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-desktop {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-desktop .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-desktop .header { padding: 14px 20px; margin-bottom: 12px; }.view-desktop .header-title { font-size: 22px; }.view-desktop .header-sub { font-size: 12px; }.view-desktop .header-date { font-size: 15px; }.view-desktop .header-edition { font-size: 11px; }.view-desktop .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-desktop .grid-3 { gap: 12px; margin-bottom: 12px; }.view-desktop .grid-2 { gap: 12px; margin-bottom: 12px; }.view-desktop .card { padding: 16px 18px; border-radius: 12px; }.view-desktop .card-title { font-size: 15px; line-height: 1.5; }.view-desktop .card-title-sm { font-size: 13px; }.view-desktop .card-num { width: 24px; height: 24px; font-size: 13px; }.view-desktop .badge { font-size: 10px; padding: 2px 9px; }.view-desktop .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-desktop .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-desktop .detail-lbl { font-size: 10px; }.view-desktop .detail-txt { font-size: 13px; line-height: 1.65; }.view-desktop .key-chip { font-size: 11px; padding: 3px 9px; }.view-desktop .takeaway { font-size: 13px; padding: 7px 12px; }.view-desktop .impact-pill { font-size: 11px; padding: 3px 11px; }.view-desktop .eng-phrase { font-size: 17px; }.view-desktop .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-desktop .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-desktop .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-desktop .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-desktop .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-desktop .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-desktop .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-desktop .header-left { display: flex; align-items: center; gap: 10px; }.view-desktop .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-desktop .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-desktop .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-desktop .header-right { text-align: right; }.view-desktop .header-date { font-size: 12px; font-weight: 700; }.view-desktop .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-desktop .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-desktop .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-1 { margin-bottom: 5px; }.view-desktop .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-desktop .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-desktop .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-desktop .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-desktop .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-desktop .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-desktop .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 800;
+    margin-right: 5px;
+    flex-shrink: 0;
+  }.view-desktop .num-ai { background: #e0e7ff; color: #3730a3; }.view-desktop .num-detail { background: #ede9fe; color: #5b21b6; }.view-desktop .num-economy { background: #d1fae5; color: #065f46; }.view-desktop .num-english { background: #fef3c7; color: #92400e; }.view-desktop .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-desktop .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-desktop .badge-ai { background: #e0e7ff; color: #4338ca; }.view-desktop .badge-detail { background: #ede9fe; color: #6d28d9; }.view-desktop .badge-economy { background: #d1fae5; color: #065f46; }.view-desktop .badge-english { background: #fef3c7; color: #92400e; }.view-desktop .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-desktop .card-title-sm { font-size: 10px; }.view-desktop .bullets { list-style: none; margin: 3px 0; }.view-desktop .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-desktop .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-desktop .card-ai .bullets li::before { color: #6366f1; }.view-desktop .card-detail .bullets li::before { color: #7c3aed; }.view-desktop .card-economy .bullets li::before { color: #059669; }.view-desktop .card-english .bullets li::before { color: #d97706; }.view-desktop .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-desktop .card-source:hover { color: #64748b; text-decoration: underline; }.view-desktop .detail-block { margin-bottom: 4px; }.view-desktop .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-desktop .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-desktop .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-desktop .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-desktop .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-desktop .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-desktop .impact-positive { background: #dcfce7; color: #166534; }.view-desktop .impact-negative { background: #fee2e2; color: #991b1b; }.view-desktop .impact-neutral { background: #f1f5f9; color: #475569; }.view-desktop .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-desktop .eng-pron { font-size: 8px; color: #b45309; font-family: monospace; margin-bottom: 3px; }.view-desktop .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-desktop .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-desktop .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-desktop .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-desktop .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
+  }
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">홈</a>
+        <a href="../about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../index.html">← 목록으로</a>
+
+    <header class="post-header">
+      <h1>오늘의 AI 뉴스 — 2026-06-29</h1>
+      <div class="post-meta">
+        <span>2026-06-29</span>
+        <span>5분</span>
+      </div>
+      <div class="tags" style="margin-top: 0.75rem;">
+        <span class="tag">AI</span>
+        <span class="tag">뉴스</span>
+        <span class="tag">경제</span>
+        <span class="tag">영어</span>
+      </div>
+    </header>
+
+    <article class="post-body">
+      <div class="view-mobile">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-06-29</div>
+      <div class="header-edition">No. 004</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-num num-ai">1</span>
+        <span class="card-title">OpenAI, GPT-5.6 Sol 차세대 모델 공개</span>
+        <span class="badge badge-ai">LLM</span>
+      </div>
+      <ul class="bullets">
+        <li>GPT-5.6 Sol·Terra·Luna 3종 패밀리 동시 발표, 코딩·사이버보안·과학 연구 분야 성능 대폭 강화</li><li>Terminal-Bench 2.1 기준 Sol Ultra 91.9% 달성, 전작 GPT-5.5 대비 리드 확보</li><li>출시는 정부 심사 요청으로 제한적 파트너·조직에만 선공개, 수 주 내 일반 출시 예정</li>
+      </ul>
+      <a href="https://openai.com/index/previewing-gpt-5-6-sol" class="card-source" target="_blank" rel="noopener">📰 openai.com</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-num num-ai">2</span>
+        <span class="card-title">Anthropic Fable 5, 트럼프 행정부 규제 해제 임박</span>
+        <span class="badge badge-ai">규제</span>
+      </div>
+      <ul class="bullets">
+        <li>2026년 6월 12일 국가안보 우려로 전면 차단된 Fable 5, 수일 내 재개 예정</li><li>상무장관 Lutnick, Anthropic이 '정부와 협력해 위험 해소' 완료 확인</li><li>국방부·NSA 최종 승인 절차만 남겨둔 상태, OpenAI GPT-5.6도 유사 심사 모델 적용</li>
+      </ul>
+      <a href="https://the-decoder.com/anthropics-fable-5-could-return-within-days-as-trump-administration-prepares-to-lift-restrictions/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-num num-ai">3</span>
+        <span class="card-title">코인베이스, 중국 AI로 전환 후 비용 50% 절감</span>
+        <span class="badge badge-ai">LLM</span>
+      </div>
+      <ul class="bullets">
+        <li>CEO 브라이언 암스트롱, GLM 5.2·Kimi 2.7 등 중국 AI 모델로 전환 후 AI 지출 절반으로 축소</li><li>캐싱 최적화로 적중률 5% → 60%로 향상, 토큰 사용량은 오히려 증가</li><li>Lindy·Snowflake 등 여러 기업도 유사 전환 — 서방 AI 랩의 가격 경쟁력 위기</li>
+      </ul>
+      <a href="https://the-decoder.com/coinbase-joins-the-rush-to-chinese-ai-models-as-western-labs-face-a-pricing-stress-test/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-num num-detail">1</span>
+        <span class="card-title card-title-sm">OpenAI, GPT-5.6 Sol 차세대 모델 공개</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">OpenAI는 2026년 6월 26일 GPT-5.6 시리즈를 공개했다. Sol(최고 성능), Terra(균형형), Luna(고속·저비용) 세 가지 티어로 구성된 새로운 모델 패밀리로, 버전 번호는 세대를 나타내고 Sol/Terra/Luna는 영구적인 역량 등급을 표시하는 네이밍 체계를 도입했다. 미국 정부의 요청으로 현재는 신뢰할 수 있는 파트너·조직에만 제한 공개 중이다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">GPT-5.6 Sol은 사이버보안 취약점 연구·익스플로잇 등 장기 보안 작업에서 기존 최고 성능 모델 대비 성능-효율 경계를 진전시켜 엔터프라이즈 보안 시장에 직접 영향을 미친다. 또한 정부가 최신 AI 모델 출시 전 최대 30일간 심사를 요구하는 관행이 이번 제한 공개로 공식화되면서, 향후 미국 AI 정책과 기업들의 출시 전략에 중요한 선례가 됐다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">Terminal-Bench 2.1 기준 Sol Ultra 91.9%</span><span class="key-chip">출시 전 정부 심사 최대 30일 요구</span>
+      </div>
+      
+
+      <div class="takeaway">▶ GPT-5.6 Sol은 코딩·사이버보안에서 새 성능 기준을 세웠으나, 미국 정부의 심사 관행이 공식화되면서 AI 출시 속도에 새로운 변수가 생겼다.</div>
+      <a href="https://openai.com/index/previewing-gpt-5-6-sol" class="card-source" target="_blank" rel="noopener">📰 openai.com</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-num num-detail">2</span>
+        <span class="card-title card-title-sm">Anthropic Fable 5, 트럼프 행정부 규제 해제 임박</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">트럼프 행정부는 2026년 6월 12일 Anthropic의 최신 모델 Fable 5에 대해 안전 우려를 이유로 접근을 전면 차단했다. 이는 미국 정부가 AI 모델 출시를 직접 통제한 사실상 첫 사례다. Axios 보도에 따르면 Anthropic이 정부 측과 협력해 위험 요소를 해소했고, 행정부는 곧 규제를 해제할 준비를 마쳤다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">이번 사건은 AI 모델이 무기·사이버무기에 준하는 국가안보 자산으로 규제받을 수 있음을 시사하며, 미국 내 AI 기업의 출시 자율성에 근본적 변화를 예고한다. OpenAI GPT-5.6 역시 유사한 제한 출시 방식이 적용됐고, 전직 백악관 AI 자문은 명확한 기준 없는 심사가 미국 경쟁력을 약화시킬 수 있다고 경고했다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">Fable 5 차단 기간: 2026년 6월 12일~6월 말(약 17일)</span><span class="key-chip">Mythos 사용 승인 기업·기관: 100곳 이상</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 미국 정부의 AI 모델 직접 차단·심사 관행이 Fable 5 사례로 현실화됐고, 규제 해제 절차가 군·정보기관의 최종 승인을 필요로 한다는 점에서 AI 규제의 새 패러다임이 시작됐다.</div>
+      <a href="https://the-decoder.com/anthropics-fable-5-could-return-within-days-as-trump-administration-prepares-to-lift-restrictions/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-num num-detail">3</span>
+        <span class="card-title card-title-sm">코인베이스, 중국 AI로 전환 후 비용 50% 절감</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">Coinbase CEO 브라이언 암스트롱은 2026년 6월 28일 회사가 중국 AI 모델(GLM 5.2, Kimi 2.7)로 전환하고 태스크·가격·캐싱을 고려해 최적 모델을 자동 선택하는 라우팅 시스템을 구축했다고 밝혔다. 토큰 사용량은 늘었지만 AI 지출은 절반으로 줄었다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">OpenAI와 Anthropic 등 서방 주요 AI 랩들의 가격 경쟁력이 실제 기업 도입 단계에서 중국 모델에 밀리고 있음을 공개적으로 입증한 사례다. 여러 기업이 동시에 유사 전환을 단행하면서 서방 AI 랩의 성장 전망과 IPO 밸류에이션에 직접적 하방 압력이 생겼다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">AI 지출 50% 절감(토큰 사용량 증가에도 불구)</span><span class="key-chip">캐시 적중률 5% → 60%로 12배 향상</span>
+      </div>
+      
+
+      <div class="takeaway">▶ Coinbase의 중국 AI 전환은 서방 AI 랩의 가격 경쟁력 위기를 산업 전반에 공개적으로 드러낸 사건으로, AI 시장 지형 변화의 신호탄이다.</div>
+      <a href="https://the-decoder.com/coinbase-joins-the-rush-to-chinese-ai-models-as-western-labs-face-a-pricing-stress-test/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-num num-economy">1</span>
+        <span class="card-title">Micron, 엔비디아-구글 제외 美 최고 수익성</span>
+        <span class="badge badge-economy">반도체</span>
+      </div>
+      <ul class="bullets">
+        <li>Micron Q3 매출 414억달러, 매출총이익률 84.9%로 엔비디아(74%) 초과 — AI HBM 칩 2026년 전량 선판매</li><li>AI 데이터센터 수요 급증으로 Nvidia·AMD·하이퍼스케일러에 메모리 공급 독점, Q4 가이던스 500억달러</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ 긍정적</span>
+      <a href="https://www.marketwatch.com/story/micron-is-about-to-be-more-profitable-than-any-u-s-company-except-nvidia-and-google-3a83e343?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">📰 marketwatch.com</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-num num-economy">2</span>
+        <span class="card-title">AI가 금리 낮출까 — Fed 내부 논쟁</span>
+        <span class="badge badge-economy">금리</span>
+      </div>
+      <ul class="bullets">
+        <li>Fed 의장 Warsh: AI 생산성 혁명이 인플레 억제 -> 금리 인하 가능, 1990년대 Greenspan 정책 모델 참조</li><li>Fed 이사 Barr 반론: AI 투자 수요 증가가 오히려 중립금리 상승 유발, 시장은 연말까지 금리 상승 56% 확률 반영</li>
+      </ul>
+      <span class="impact-pill impact-neutral">→ 중립</span>
+      <a href="https://www.economist.com/finance-and-economics/2026/06/25/will-ai-lower-interest-rates" class="card-source" target="_blank" rel="noopener">📰 economist.com</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-num num-economy">3</span>
+        <span class="card-title">OpenAI, Cannes서 ChatGPT 광고 사업 첫 공개</span>
+        <span class="badge badge-economy">시장</span>
+      </div>
+      <ul class="bullets">
+        <li>OpenAI Cannes Lions 첫 데뷔 — ChatGPT 질문의 20%는 상업적 의도, 광고 차단(X버튼) 비율 출시 이래 50% 감소</li><li>광고주들이 AI 챗봇 노출 최적화 전략 수립 경쟁, Google 검색 광고 시장 점유율 잠식 가능성 부각</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ 긍정적</span>
+      <a href="https://www.nytimes.com/2026/06/27/business/dealbook/ai-visibility.html" class="card-source" target="_blank" rel="noopener">📰 nytimes.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="card-num num-english">1</span>
+        <span class="eng-phrase">"agentic capabilities"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/eIdZentIk keIpebIlItiz/ [에이전틱 케이퍼빌리티즈]</div>
+      <div class="eng-meaning">→ AI가 자율적으로 계획하고 작업을 실행하는 에이전트 능력</div>
+      <div class="eng-ex">To give a preview of model performance, we share a set of evaluations highlighting improved agentic capabilities in coding, biology, and cybersecurity.</div>
+      <div class="eng-ex-kr">모델 성능을 미리 보여드리기 위해 코딩, 생물학, 사이버보안 분야의 향상된 에이전트 역량을 강조한 평가 결과를 공유합니다.</div>
+      <div class="eng-ctx">📌 tech</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="card-num num-english">2</span>
+        <span class="eng-phrase">"pricing stress test"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/praIsIN stres test/ [프라이싱 스트레스 테스트]</div>
+      <div class="eng-meaning">→ 기업들이 낮은 가격 압력을 버텨낼 수 있는지 검증하는 시장 상황</div>
+      <div class="eng-ex">Coinbase joins the rush to Chinese AI models as Western labs face a pricing stress test.</div>
+      <div class="eng-ex-kr">코인베이스가 중국 AI 모델로 전환하면서 서방 AI 연구소들이 가격 압박이라는 실질적 시험대에 오르고 있다.</div>
+      <div class="eng-ctx">📌 business</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="card-num num-english">3</span>
+        <span class="eng-phrase">"IT-driven productivity boom"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">[아이티 드리븐 프로덕티비티 붐]</div>
+      <div class="eng-meaning">→ 정보기술 발전이 이끄는 생산성 급증 현상을 묘사하는 담론 표현</div>
+      <div class="eng-ex">From anecdotes about retailers tracking inventories by satellite or airlines using computers to adjust fares to match demand, he inferred that an IT-driven productivity boom was taking hold before it appeared in official statistics.</div>
+      <div class="eng-ex-kr">소매업체들이 위성으로 재고를 추적하거나 항공사들이 컴퓨터로 수요에 맞춰 요금을 조정한다는 일화들을 통해, 그는 공식 통계에 나타나기 전에 IT 주도 생산성 붐이 자리 잡고 있다고 추론했다.</div>
+      <div class="eng-ctx">📌 expression</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-06-29 | AI News Card
+  </div>
+
+</div>
+</div>
+      <div class="view-desktop">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-06-29</div>
+      <div class="header-edition">No. 004</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-num num-ai">1</span>
+        <span class="card-title">OpenAI, GPT-5.6 Sol 차세대 모델 공개</span>
+        <span class="badge badge-ai">LLM</span>
+      </div>
+      <ul class="bullets">
+        <li>GPT-5.6 Sol·Terra·Luna 3종 패밀리 동시 발표, 코딩·사이버보안·과학 연구 분야 성능 대폭 강화</li><li>Terminal-Bench 2.1 기준 Sol Ultra 91.9% 달성, 전작 GPT-5.5 대비 리드 확보</li><li>출시는 정부 심사 요청으로 제한적 파트너·조직에만 선공개, 수 주 내 일반 출시 예정</li>
+      </ul>
+      <a href="https://openai.com/index/previewing-gpt-5-6-sol" class="card-source" target="_blank" rel="noopener">📰 openai.com</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-num num-ai">2</span>
+        <span class="card-title">Anthropic Fable 5, 트럼프 행정부 규제 해제 임박</span>
+        <span class="badge badge-ai">규제</span>
+      </div>
+      <ul class="bullets">
+        <li>2026년 6월 12일 국가안보 우려로 전면 차단된 Fable 5, 수일 내 재개 예정</li><li>상무장관 Lutnick, Anthropic이 '정부와 협력해 위험 해소' 완료 확인</li><li>국방부·NSA 최종 승인 절차만 남겨둔 상태, OpenAI GPT-5.6도 유사 심사 모델 적용</li>
+      </ul>
+      <a href="https://the-decoder.com/anthropics-fable-5-could-return-within-days-as-trump-administration-prepares-to-lift-restrictions/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-num num-ai">3</span>
+        <span class="card-title">코인베이스, 중국 AI로 전환 후 비용 50% 절감</span>
+        <span class="badge badge-ai">LLM</span>
+      </div>
+      <ul class="bullets">
+        <li>CEO 브라이언 암스트롱, GLM 5.2·Kimi 2.7 등 중국 AI 모델로 전환 후 AI 지출 절반으로 축소</li><li>캐싱 최적화로 적중률 5% → 60%로 향상, 토큰 사용량은 오히려 증가</li><li>Lindy·Snowflake 등 여러 기업도 유사 전환 — 서방 AI 랩의 가격 경쟁력 위기</li>
+      </ul>
+      <a href="https://the-decoder.com/coinbase-joins-the-rush-to-chinese-ai-models-as-western-labs-face-a-pricing-stress-test/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-num num-detail">1</span>
+        <span class="card-title card-title-sm">OpenAI, GPT-5.6 Sol 차세대 모델 공개</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">OpenAI는 2026년 6월 26일 GPT-5.6 시리즈를 공개했다. Sol(최고 성능), Terra(균형형), Luna(고속·저비용) 세 가지 티어로 구성된 새로운 모델 패밀리로, 버전 번호는 세대를 나타내고 Sol/Terra/Luna는 영구적인 역량 등급을 표시하는 네이밍 체계를 도입했다. 미국 정부의 요청으로 현재는 신뢰할 수 있는 파트너·조직에만 제한 공개 중이다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">GPT-5.6 Sol은 사이버보안 취약점 연구·익스플로잇 등 장기 보안 작업에서 기존 최고 성능 모델 대비 성능-효율 경계를 진전시켜 엔터프라이즈 보안 시장에 직접 영향을 미친다. 또한 정부가 최신 AI 모델 출시 전 최대 30일간 심사를 요구하는 관행이 이번 제한 공개로 공식화되면서, 향후 미국 AI 정책과 기업들의 출시 전략에 중요한 선례가 됐다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">Terminal-Bench 2.1 기준 Sol Ultra 91.9%</span><span class="key-chip">출시 전 정부 심사 최대 30일 요구</span>
+      </div>
+      
+
+      <div class="takeaway">▶ GPT-5.6 Sol은 코딩·사이버보안에서 새 성능 기준을 세웠으나, 미국 정부의 심사 관행이 공식화되면서 AI 출시 속도에 새로운 변수가 생겼다.</div>
+      <a href="https://openai.com/index/previewing-gpt-5-6-sol" class="card-source" target="_blank" rel="noopener">📰 openai.com</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-num num-detail">2</span>
+        <span class="card-title card-title-sm">Anthropic Fable 5, 트럼프 행정부 규제 해제 임박</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">트럼프 행정부는 2026년 6월 12일 Anthropic의 최신 모델 Fable 5에 대해 안전 우려를 이유로 접근을 전면 차단했다. 이는 미국 정부가 AI 모델 출시를 직접 통제한 사실상 첫 사례다. Axios 보도에 따르면 Anthropic이 정부 측과 협력해 위험 요소를 해소했고, 행정부는 곧 규제를 해제할 준비를 마쳤다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">이번 사건은 AI 모델이 무기·사이버무기에 준하는 국가안보 자산으로 규제받을 수 있음을 시사하며, 미국 내 AI 기업의 출시 자율성에 근본적 변화를 예고한다. OpenAI GPT-5.6 역시 유사한 제한 출시 방식이 적용됐고, 전직 백악관 AI 자문은 명확한 기준 없는 심사가 미국 경쟁력을 약화시킬 수 있다고 경고했다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">Fable 5 차단 기간: 2026년 6월 12일~6월 말(약 17일)</span><span class="key-chip">Mythos 사용 승인 기업·기관: 100곳 이상</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 미국 정부의 AI 모델 직접 차단·심사 관행이 Fable 5 사례로 현실화됐고, 규제 해제 절차가 군·정보기관의 최종 승인을 필요로 한다는 점에서 AI 규제의 새 패러다임이 시작됐다.</div>
+      <a href="https://the-decoder.com/anthropics-fable-5-could-return-within-days-as-trump-administration-prepares-to-lift-restrictions/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-num num-detail">3</span>
+        <span class="card-title card-title-sm">코인베이스, 중국 AI로 전환 후 비용 50% 절감</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">Coinbase CEO 브라이언 암스트롱은 2026년 6월 28일 회사가 중국 AI 모델(GLM 5.2, Kimi 2.7)로 전환하고 태스크·가격·캐싱을 고려해 최적 모델을 자동 선택하는 라우팅 시스템을 구축했다고 밝혔다. 토큰 사용량은 늘었지만 AI 지출은 절반으로 줄었다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">OpenAI와 Anthropic 등 서방 주요 AI 랩들의 가격 경쟁력이 실제 기업 도입 단계에서 중국 모델에 밀리고 있음을 공개적으로 입증한 사례다. 여러 기업이 동시에 유사 전환을 단행하면서 서방 AI 랩의 성장 전망과 IPO 밸류에이션에 직접적 하방 압력이 생겼다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">AI 지출 50% 절감(토큰 사용량 증가에도 불구)</span><span class="key-chip">캐시 적중률 5% → 60%로 12배 향상</span>
+      </div>
+      
+
+      <div class="takeaway">▶ Coinbase의 중국 AI 전환은 서방 AI 랩의 가격 경쟁력 위기를 산업 전반에 공개적으로 드러낸 사건으로, AI 시장 지형 변화의 신호탄이다.</div>
+      <a href="https://the-decoder.com/coinbase-joins-the-rush-to-chinese-ai-models-as-western-labs-face-a-pricing-stress-test/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-num num-economy">1</span>
+        <span class="card-title">Micron, 엔비디아-구글 제외 美 최고 수익성</span>
+        <span class="badge badge-economy">반도체</span>
+      </div>
+      <ul class="bullets">
+        <li>Micron Q3 매출 414억달러, 매출총이익률 84.9%로 엔비디아(74%) 초과 — AI HBM 칩 2026년 전량 선판매</li><li>AI 데이터센터 수요 급증으로 Nvidia·AMD·하이퍼스케일러에 메모리 공급 독점, Q4 가이던스 500억달러</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ 긍정적</span>
+      <a href="https://www.marketwatch.com/story/micron-is-about-to-be-more-profitable-than-any-u-s-company-except-nvidia-and-google-3a83e343?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">📰 marketwatch.com</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-num num-economy">2</span>
+        <span class="card-title">AI가 금리 낮출까 — Fed 내부 논쟁</span>
+        <span class="badge badge-economy">금리</span>
+      </div>
+      <ul class="bullets">
+        <li>Fed 의장 Warsh: AI 생산성 혁명이 인플레 억제 -> 금리 인하 가능, 1990년대 Greenspan 정책 모델 참조</li><li>Fed 이사 Barr 반론: AI 투자 수요 증가가 오히려 중립금리 상승 유발, 시장은 연말까지 금리 상승 56% 확률 반영</li>
+      </ul>
+      <span class="impact-pill impact-neutral">→ 중립</span>
+      <a href="https://www.economist.com/finance-and-economics/2026/06/25/will-ai-lower-interest-rates" class="card-source" target="_blank" rel="noopener">📰 economist.com</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-num num-economy">3</span>
+        <span class="card-title">OpenAI, Cannes서 ChatGPT 광고 사업 첫 공개</span>
+        <span class="badge badge-economy">시장</span>
+      </div>
+      <ul class="bullets">
+        <li>OpenAI Cannes Lions 첫 데뷔 — ChatGPT 질문의 20%는 상업적 의도, 광고 차단(X버튼) 비율 출시 이래 50% 감소</li><li>광고주들이 AI 챗봇 노출 최적화 전략 수립 경쟁, Google 검색 광고 시장 점유율 잠식 가능성 부각</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ 긍정적</span>
+      <a href="https://www.nytimes.com/2026/06/27/business/dealbook/ai-visibility.html" class="card-source" target="_blank" rel="noopener">📰 nytimes.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="card-num num-english">1</span>
+        <span class="eng-phrase">"agentic capabilities"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/eIdZentIk keIpebIlItiz/ [에이전틱 케이퍼빌리티즈]</div>
+      <div class="eng-meaning">→ AI가 자율적으로 계획하고 작업을 실행하는 에이전트 능력</div>
+      <div class="eng-ex">To give a preview of model performance, we share a set of evaluations highlighting improved agentic capabilities in coding, biology, and cybersecurity.</div>
+      <div class="eng-ex-kr">모델 성능을 미리 보여드리기 위해 코딩, 생물학, 사이버보안 분야의 향상된 에이전트 역량을 강조한 평가 결과를 공유합니다.</div>
+      <div class="eng-ctx">📌 tech</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="card-num num-english">2</span>
+        <span class="eng-phrase">"pricing stress test"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/praIsIN stres test/ [프라이싱 스트레스 테스트]</div>
+      <div class="eng-meaning">→ 기업들이 낮은 가격 압력을 버텨낼 수 있는지 검증하는 시장 상황</div>
+      <div class="eng-ex">Coinbase joins the rush to Chinese AI models as Western labs face a pricing stress test.</div>
+      <div class="eng-ex-kr">코인베이스가 중국 AI 모델로 전환하면서 서방 AI 연구소들이 가격 압박이라는 실질적 시험대에 오르고 있다.</div>
+      <div class="eng-ctx">📌 business</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="card-num num-english">3</span>
+        <span class="eng-phrase">"IT-driven productivity boom"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">[아이티 드리븐 프로덕티비티 붐]</div>
+      <div class="eng-meaning">→ 정보기술 발전이 이끄는 생산성 급증 현상을 묘사하는 담론 표현</div>
+      <div class="eng-ex">From anecdotes about retailers tracking inventories by satellite or airlines using computers to adjust fares to match demand, he inferred that an IT-driven productivity boom was taking hold before it appeared in official statistics.</div>
+      <div class="eng-ex-kr">소매업체들이 위성으로 재고를 추적하거나 항공사들이 컴퓨터로 수요에 맞춰 요금을 조정한다는 일화들을 통해, 그는 공식 통계에 나타나기 전에 IT 주도 생산성 붐이 자리 잡고 있다고 추론했다.</div>
+      <div class="eng-ctx">📌 expression</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-06-29 | AI News Card
+  </div>
+
+</div>
+</div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
