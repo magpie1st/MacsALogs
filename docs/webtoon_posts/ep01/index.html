@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>하네스 엔지니어링 개념 깨닫기까지의 10일 — ep01</title>
+<!--
+  세로 스크롤 웹툰 뷰어 (단일 HTML, 외부 의존성 없음 / CDN 없음)
+  EP01 · 60패널 완성본 (panel_001 → panel_060)
+  말풍선·한글 대사는 이미지에 in-image 베이크 → 텍스트 오버레이 없음.
+  데이터(PANELS)는 {src, alt, gap} 구조. gap = 다음 패널과의 간격(px).
+  gap 설계:
+    P002 뒤 40px(암전 후 장면 전환) · P015 뒤 24px(Scene A→B)
+    P040 뒤 40px(white-out, Act2→Act3) · P048/P049 앞뒤 8px(폭발 코어)
+    P053 뒤 24px(마인드스케이프→현실) · P056 뒤 16px(수미상관→시드)
+    P057 뒤 8px(알림 인서트 분리) · 그 외 0px(무봉제 연속 컷)
+-->
+<style>
+  :root {
+    --max-w: 720px;          /* 모바일 우선 기준 폭, 중앙 정렬 */
+    --page-bg: #1a1a1a;      /* 어두운 극장 배경 */
+    --strip-bg: #1a1a1a;     /* 패널 스트립 배경(이미지 로드 전/이음새) */
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--page-bg);
+    font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+    color: #f5f5f7;
+    -webkit-text-size-adjust: 100%;
+    word-break: keep-all;
+  }
+  header.viewer-head {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(20,20,20,.92);
+    color: #f5f5f7; text-align: center;
+    padding: 10px 12px; font-size: 14px; letter-spacing: .02em;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  header.viewer-head b { font-weight: 700; }
+  header.viewer-head .counter { color:#b9b9c2; font-size:13px; }
+  .strip {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    background: var(--strip-bg);
+    display: flex; flex-direction: column;
+  }
+  .panel { position: relative; line-height: 0; }
+  .panel img {
+    width: 100%; height: auto; display: block;   /* 원본 비율 보존(베이크 말풍선 안 잘림) */
+    background: #2a2a2e;                          /* 이미지 결손 시에도 칸 형태 유지 */
+  }
+  .panel .missing {
+    line-height: 1.5; color: #ff6b6b; background: #2a1414;
+    border: 2px dashed #ff6b6b; text-align: center;
+    padding: 48px 12px; font-size: 14px; word-break: keep-all;
+  }
+  footer.viewer-foot {
+    color:#8a8a92; text-align:center; padding:40px 12px 80px;
+    font-size:15px; max-width: var(--max-w); margin:0 auto;
+    letter-spacing:.08em;
+  }
+  footer.viewer-foot b { color:#f5f5f7; font-weight:700; letter-spacing:.12em; }
+</style>
+</head>
+<body>
+<header class="viewer-head">
+  <b id="m-title">웹툰 제목</b> · <span id="m-ep">ep01</span>
+  <span class="counter" id="m-count"></span>
+</header>
+<main class="strip" id="strip" aria-label="webtoon vertical viewer"></main>
+<footer class="viewer-foot" id="foot"></footer>
+
+<script>
+/* ===== META ===== */
+const META = { title: "하네스 엔지니어링 개념 깨닫기까지의 10일", episode: "ep01" };
+
+/* ===== PANELS 데이터 =====
+   src 는 이 파일(06_assembly/ep01/index.html) 기준 상대경로.
+   gap 은 다음 패널과의 간격(px): 0=무봉제 연속 컷, 양수=장면 전환/침묵/인서트.
+   텍스트는 이미지에 베이크되어 있으므로 오버레이 데이터 없음. */
+const PANELS = [
+  { src: "./panels/panel_001.png", alt: "panel 001 (수미상관 오프닝)", gap: 0 },
+  { src: "./panels/panel_002.png", alt: "panel 002 (암전)", gap: 40 },
+  { src: "./panels/panel_003.png", alt: "panel 003", gap: 0 },
+  { src: "./panels/panel_004.png", alt: "panel 004", gap: 0 },
+  { src: "./panels/panel_005.png", alt: "panel 005", gap: 0 },
+  { src: "./panels/panel_006.png", alt: "panel 006", gap: 0 },
+  { src: "./panels/panel_007.png", alt: "panel 007", gap: 0 },
+  { src: "./panels/panel_008.png", alt: "panel 008", gap: 0 },
+  { src: "./panels/panel_009.png", alt: "panel 009", gap: 0 },
+  { src: "./panels/panel_010.png", alt: "panel 010", gap: 0 },
+  { src: "./panels/panel_011.png", alt: "panel 011", gap: 0 },
+  { src: "./panels/panel_012.png", alt: "panel 012", gap: 0 },
+  { src: "./panels/panel_013.png", alt: "panel 013", gap: 0 },
+  { src: "./panels/panel_014.png", alt: "panel 014", gap: 0 },
+  { src: "./panels/panel_015.png", alt: "panel 015 (Scene A 종료 S_PRJ1)", gap: 24 },
+  { src: "./panels/panel_016.png", alt: "panel 016 (Scene B 시작)", gap: 0 },
+  { src: "./panels/panel_017.png", alt: "panel 017", gap: 0 },
+  { src: "./panels/panel_018.png", alt: "panel 018", gap: 0 },
+  { src: "./panels/panel_019.png", alt: "panel 019", gap: 0 },
+  { src: "./panels/panel_020.png", alt: "panel 020", gap: 0 },
+  { src: "./panels/panel_021.png", alt: "panel 021", gap: 0 },
+  { src: "./panels/panel_022.png", alt: "panel 022", gap: 0 },
+  { src: "./panels/panel_023.png", alt: "panel 023", gap: 0 },
+  { src: "./panels/panel_024.png", alt: "panel 024", gap: 0 },
+  { src: "./panels/panel_025.png", alt: "panel 025", gap: 0 },
+  { src: "./panels/panel_026.png", alt: "panel 026", gap: 0 },
+  { src: "./panels/panel_027.png", alt: "panel 027", gap: 0 },
+  { src: "./panels/panel_028.png", alt: "panel 028", gap: 0 },
+  { src: "./panels/panel_029.png", alt: "panel 029", gap: 0 },
+  { src: "./panels/panel_030.png", alt: "panel 030", gap: 0 },
+  { src: "./panels/panel_031.png", alt: "panel 031", gap: 0 },
+  { src: "./panels/panel_032.png", alt: "panel 032", gap: 0 },
+  { src: "./panels/panel_033.png", alt: "panel 033", gap: 0 },
+  { src: "./panels/panel_034.png", alt: "panel 034", gap: 0 },
+  { src: "./panels/panel_035.png", alt: "panel 035", gap: 0 },
+  { src: "./panels/panel_036.png", alt: "panel 036", gap: 0 },
+  { src: "./panels/panel_037.png", alt: "panel 037", gap: 0 },
+  { src: "./panels/panel_038.png", alt: "panel 038", gap: 0 },
+  { src: "./panels/panel_039.png", alt: "panel 039", gap: 0 },
+  { src: "./panels/panel_040.png", alt: "panel 040 (white-out, Act2 종료)", gap: 40 },
+  { src: "./panels/panel_041.png", alt: "panel 041 (마인드스케이프 돌입)", gap: 0 },
+  { src: "./panels/panel_042.png", alt: "panel 042", gap: 0 },
+  { src: "./panels/panel_043.png", alt: "panel 043", gap: 0 },
+  { src: "./panels/panel_044.png", alt: "panel 044", gap: 0 },
+  { src: "./panels/panel_045.png", alt: "panel 045", gap: 0 },
+  { src: "./panels/panel_046.png", alt: "panel 046", gap: 0 },
+  { src: "./panels/panel_047.png", alt: "panel 047", gap: 0 },
+  { src: "./panels/panel_048.png", alt: "panel 048", gap: 8 },
+  { src: "./panels/panel_049.png", alt: "panel 049 (폭발 코어 full-bleed)", gap: 8 },
+  { src: "./panels/panel_050.png", alt: "panel 050", gap: 0 },
+  { src: "./panels/panel_051.png", alt: "panel 051", gap: 0 },
+  { src: "./panels/panel_052.png", alt: "panel 052", gap: 0 },
+  { src: "./panels/panel_053.png", alt: "panel 053 (현실 복귀)", gap: 24 },
+  { src: "./panels/panel_054.png", alt: "panel 054", gap: 0 },
+  { src: "./panels/panel_055.png", alt: "panel 055", gap: 0 },
+  { src: "./panels/panel_056.png", alt: "panel 056 (수미상관 회수)", gap: 16 },
+  { src: "./panels/panel_057.png", alt: "panel 057 (알림 인서트 가로 스트립)", gap: 8 },
+  { src: "./panels/panel_058.png", alt: "panel 058", gap: 0 },
+  { src: "./panels/panel_059.png", alt: "panel 059", gap: 0 },
+  { src: "./panels/panel_060.png", alt: "panel 060 (마지막 패널)", gap: 0 }
+];
+
+/* ===== 렌더러 ===== */
+function el(tag, cls, txt){ const e=document.createElement(tag); if(cls)e.className=cls; if(txt!=null)e.textContent=txt; return e; }
+
+function renderPanel(p, i){
+  const panel = el("div", "panel");
+  // 패널 간 간격은 다음 패널 사이 여백(margin-bottom)으로 적용 — 마지막 패널 제외
+  if (i < PANELS.length - 1 && p.gap) panel.style.marginBottom = p.gap + "px";
+  const img = new Image();
+  img.loading = "lazy";              // 긴 회차(60패널) 성능을 위한 지연 로드
+  img.decoding = "async";
+  img.alt = p.alt || ("panel " + String(i+1).padStart(3,"0"));
+  img.src = p.src;
+  img.onerror = () => {              // 결손/0바이트/손상 PNG는 칸을 비우지 않고 경고 표시
+    const ph = el("div", "missing", "⚠ 패널 이미지 누락/손상: " + p.src);
+    img.replaceWith(ph);
+  };
+  panel.appendChild(img);
+  return panel;
+}
+
+(function init(){
+  document.title = META.title + " — " + META.episode;
+  document.getElementById("m-title").textContent = META.title;
+  document.getElementById("m-ep").textContent = META.episode;
+  document.getElementById("m-count").textContent = " · 전 " + PANELS.length + "컷";
+  const strip = document.getElementById("strip");
+  PANELS.forEach((p,i) => strip.appendChild(renderPanel(p,i)));
+  document.getElementById("foot").innerHTML =
+    "총 " + PANELS.length + " 패널 · 끝까지 스크롤하세요<br><br><b>END EP.01</b>";
+})();
+</script>
+</body>
+</html>
