@@ -15,14 +15,17 @@ async function loadPosts() {
     }
 
     listEl.innerHTML = posts.map(post => `
-      <article class="post-card">
-        <div class="post-card-meta">
-          <span>${post.date}</span>
-          ${post.readTime ? `<span>· ${post.readTime}</span>` : ''}
+      <article class="post-card${post.thumbnail ? ' post-card--has-thumb' : ''}">
+        ${post.thumbnail ? `<a href="posts/${post.slug}.html" class="post-card-thumb-link"><img class="post-card-thumb" src="${post.thumbnail}" alt="${post.title}" loading="lazy" /></a>` : ''}
+        <div class="post-card-body">
+          <div class="post-card-meta">
+            <span>${post.date}</span>
+            ${post.readTime ? `<span>· ${post.readTime}</span>` : ''}
+          </div>
+          <h2 class="post-card-title"><a href="posts/${post.slug}.html">${post.title}</a></h2>
+          <p class="post-card-excerpt">${post.excerpt}</p>
+          ${post.tags?.length ? `<div class="tags">${post.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
         </div>
-        <h2 class="post-card-title"><a href="posts/${post.slug}.html">${post.title}</a></h2>
-        <p class="post-card-excerpt">${post.excerpt}</p>
-        ${post.tags?.length ? `<div class="tags">${post.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
       </article>
     `).join('');
   } catch (e) {
