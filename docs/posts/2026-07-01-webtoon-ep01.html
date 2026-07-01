@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>하네스 엔지니어링 개념 깨닫기까지의 10일 — ep01 — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    :root {
+      --webtoon-max-w: 720px;
+      --webtoon-bg: #1a1a1a;
+    }
+    .webtoon-wrap {
+      background: var(--webtoon-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+    @media (max-width: 600px) {
+      .webtoon-wrap {
+        margin-left: -1.25rem;
+        margin-right: -1.25rem;
+        border-radius: 0;
+      }
+    }
+    .webtoon-strip {
+      max-width: var(--webtoon-max-w);
+      margin: 0 auto;
+      background: var(--webtoon-bg);
+      display: flex;
+      flex-direction: column;
+    }
+    .webtoon-panel { position: relative; line-height: 0; }
+    .webtoon-panel img {
+      width: 100%; height: auto; display: block;
+      background: #2a2a2e;
+    }
+    .webtoon-panel .missing {
+      line-height: 1.5; color: #ff6b6b; background: #2a1414;
+      border: 2px dashed #ff6b6b; text-align: center;
+      padding: 48px 12px; font-size: 14px; word-break: keep-all;
+    }
+    .webtoon-foot {
+      color: #8a8a92; text-align: center;
+      padding: 40px 12px 60px;
+      font-size: 15px;
+      max-width: var(--webtoon-max-w); margin: 0 auto;
+      letter-spacing: .08em;
+    }
+    .webtoon-foot b { color: #f5f5f7; font-weight: 700; letter-spacing: .12em; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">홈</a>
+        <a href="../about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../index.html">← 목록으로</a>
+
+    <header class="post-header">
+      <h1>하네스 엔지니어링 개념 깨닫기까지의 10일</h1>
+      <div class="post-meta">
+        <span>2026-07-01</span>
+        <span>ep01 · 60컷</span>
+      </div>
+      <div class="tags" style="margin-top: 0.75rem;">
+        <span class="tag">웹툰</span>
+        <span class="tag">AI</span>
+        <span class="tag">하네스 엔지니어링</span>
+        <span class="tag">에이전트</span>
+      </div>
+    </header>
+
+    <article class="post-body">
+      <div class="webtoon-wrap">
+        <div class="webtoon-strip" id="strip" aria-label="webtoon vertical viewer"></div>
+        <div class="webtoon-foot" id="foot"></div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+
+<script>
+const PANELS = [
+  { src: "../webtoon_posts/ep01/panels/panel_001.png", alt: "panel 001 (수미상관 오프닝)", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_002.png", alt: "panel 002 (암전)", gap: 40 },
+  { src: "../webtoon_posts/ep01/panels/panel_003.png", alt: "panel 003", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_004.png", alt: "panel 004", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_005.png", alt: "panel 005", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_006.png", alt: "panel 006", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_007.png", alt: "panel 007", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_008.png", alt: "panel 008", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_009.png", alt: "panel 009", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_010.png", alt: "panel 010", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_011.png", alt: "panel 011", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_012.png", alt: "panel 012", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_013.png", alt: "panel 013", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_014.png", alt: "panel 014", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_015.png", alt: "panel 015 (Scene A 종료)", gap: 24 },
+  { src: "../webtoon_posts/ep01/panels/panel_016.png", alt: "panel 016 (Scene B 시작)", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_017.png", alt: "panel 017", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_018.png", alt: "panel 018", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_019.png", alt: "panel 019", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_020.png", alt: "panel 020", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_021.png", alt: "panel 021", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_022.png", alt: "panel 022", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_023.png", alt: "panel 023", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_024.png", alt: "panel 024", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_025.png", alt: "panel 025", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_026.png", alt: "panel 026", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_027.png", alt: "panel 027", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_028.png", alt: "panel 028", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_029.png", alt: "panel 029", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_030.png", alt: "panel 030", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_031.png", alt: "panel 031", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_032.png", alt: "panel 032", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_033.png", alt: "panel 033", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_034.png", alt: "panel 034", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_035.png", alt: "panel 035", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_036.png", alt: "panel 036", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_037.png", alt: "panel 037", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_038.png", alt: "panel 038", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_039.png", alt: "panel 039", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_040.png", alt: "panel 040 (white-out, Act2 종료)", gap: 40 },
+  { src: "../webtoon_posts/ep01/panels/panel_041.png", alt: "panel 041 (마인드스케이프 돌입)", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_042.png", alt: "panel 042", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_043.png", alt: "panel 043", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_044.png", alt: "panel 044", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_045.png", alt: "panel 045", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_046.png", alt: "panel 046", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_047.png", alt: "panel 047", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_048.png", alt: "panel 048", gap: 8 },
+  { src: "../webtoon_posts/ep01/panels/panel_049.png", alt: "panel 049 (폭발 코어)", gap: 8 },
+  { src: "../webtoon_posts/ep01/panels/panel_050.png", alt: "panel 050", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_051.png", alt: "panel 051", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_052.png", alt: "panel 052", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_053.png", alt: "panel 053 (현실 복귀)", gap: 24 },
+  { src: "../webtoon_posts/ep01/panels/panel_054.png", alt: "panel 054", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_055.png", alt: "panel 055", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_056.png", alt: "panel 056 (수미상관 회수)", gap: 16 },
+  { src: "../webtoon_posts/ep01/panels/panel_057.png", alt: "panel 057 (알림 인서트)", gap: 8 },
+  { src: "../webtoon_posts/ep01/panels/panel_058.png", alt: "panel 058", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_059.png", alt: "panel 059", gap: 0 },
+  { src: "../webtoon_posts/ep01/panels/panel_060.png", alt: "panel 060 (마지막 패널)", gap: 0 }
+];
+
+function renderPanel(p, i) {
+  const panel = document.createElement("div");
+  panel.className = "webtoon-panel";
+  if (i < PANELS.length - 1 && p.gap) panel.style.marginBottom = p.gap + "px";
+  const img = new Image();
+  img.loading = "lazy";
+  img.decoding = "async";
+  img.alt = p.alt;
+  img.src = p.src;
+  img.onerror = () => {
+    const ph = document.createElement("div");
+    ph.className = "missing";
+    ph.textContent = "⚠ 패널 이미지 누락: " + p.src;
+    img.replaceWith(ph);
+  };
+  panel.appendChild(img);
+  return panel;
+}
+
+(function init() {
+  const strip = document.getElementById("strip");
+  PANELS.forEach((p, i) => strip.appendChild(renderPanel(p, i)));
+  document.getElementById("foot").innerHTML =
+    "총 " + PANELS.length + " 패널 · 끝까지 스크롤하세요<br><br><b>END EP.01</b>";
+})();
+</script>
+</body>
+</html>

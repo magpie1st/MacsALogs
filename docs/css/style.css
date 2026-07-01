@@ -74,11 +74,24 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
 .post-card {
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.5rem;
   background: var(--surface);
   transition: border-color 0.15s;
+  overflow: hidden;
 }
 .post-card:hover { border-color: var(--accent); }
+.post-card-body { padding: 1.25rem 1.5rem 1.5rem; }
+.post-card:not(.post-card--has-thumb) .post-card-body { padding: 1.5rem; }
+
+/* 썸네일이 있는 카드 */
+.post-card--has-thumb { display: flex; flex-direction: row; align-items: stretch; }
+.post-card-thumb-link { display: block; flex-shrink: 0; width: 180px; overflow: hidden; }
+.post-card-thumb {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.2s;
+}
+.post-card--has-thumb:hover .post-card-thumb { transform: scale(1.03); }
 
 .post-card-meta {
   display: flex;
@@ -92,6 +105,13 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
 .post-card-title a { color: var(--text); }
 .post-card-title a:hover { color: var(--accent); text-decoration: none; }
 .post-card-excerpt { font-size: 0.9rem; color: var(--text-muted); }
+
+/* 모바일: 썸네일 카드를 세로 방향으로 전환 */
+@media (max-width: 600px) {
+  .post-card--has-thumb { flex-direction: column; }
+  .post-card-thumb-link { width: 100%; height: 200px; }
+  .post-card-thumb { height: 100%; }
+}
 
 .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
 .tag {

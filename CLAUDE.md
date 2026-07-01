@@ -19,7 +19,11 @@ MacsALogs는 AI 개발·생산성·취미를 기록하는 개인 블로그입니
 
 1. `docs/posts/YYYY-MM-DD-slug.html` 생성 — 기존 포스트 HTML 구조 복사 후 내용 교체
 2. `docs/posts/posts.json` 배열 **최상단**에 메타데이터 항목 삽입
-3. 두 파일의 `slug` 값이 일치해야 함
+3. `docs/index.html`의 `<script id="posts-data" type="application/json">` 배열 **최상단**에도 동일 항목 삽입
+4. 세 파일의 `slug` 값이 일치해야 함
+
+> `index.html`에 인라인 데이터가 있는 이유: GitHub Pages(Samsung GHE)에서 `fetch()`가 차단될 수 있어
+> `fetch()` 없이 DOM에서 직접 JSON을 읽도록 설계되었음.
 
 ## 스타일 규칙
 
