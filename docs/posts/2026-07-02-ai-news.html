@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오늘의 AI 뉴스 — 2026-07-02 — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    @media (max-width: 799px) { .view-desktop { display: none; } }
+    @media (min-width: 800px) { .view-mobile { display: none; } }
+    .view-desktop { max-width: 100%; overflow-x: auto; }
+    .view-mobile {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: #eef0f5;
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.5;
+  }.view-mobile .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px 12px 24px;
+  }.view-mobile .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }.view-mobile .header-logo { font-size: 28px; margin-right: 10px; }.view-mobile .header-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }.view-mobile .header-sub { font-size: 11px; opacity: 0.75; margin-top: 2px; }.view-mobile .header-date { font-size: 13px; font-weight: 700; text-align: right; }.view-mobile .header-edition { font-size: 10px; opacity: 0.65; margin-top: 2px; text-align: right; }.view-mobile .sec-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }.view-mobile .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+  }.view-mobile .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }.view-mobile .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-mobile .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-mobile .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-mobile .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-mobile .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }.view-mobile .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }.view-mobile .num-ai { background: #e0e7ff; color: #3730a3; }.view-mobile .num-detail { background: #ede9fe; color: #5b21b6; }.view-mobile .num-economy { background: #d1fae5; color: #065f46; }.view-mobile .num-english { background: #fef3c7; color: #92400e; }.view-mobile .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    flex: 1;
+  }.view-mobile .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }.view-mobile .badge-ai { background: #e0e7ff; color: #4338ca; }.view-mobile .badge-detail { background: #ede9fe; color: #6d28d9; }.view-mobile .badge-economy { background: #d1fae5; color: #065f46; }.view-mobile .badge-english { background: #fef3c7; color: #92400e; }.view-mobile .bullets { list-style: none; margin: 4px 0 6px; }.view-mobile .bullets li {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.55;
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }.view-mobile .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    top: 5px;
+  }.view-mobile .card-ai     .bullets li::before { color: #6366f1; }.view-mobile .card-detail .bullets li::before { color: #7c3aed; }.view-mobile .card-economy .bullets li::before { color: #059669; }.view-mobile .card-source {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-mobile .card-source:hover { color: #64748b; text-decoration: underline; }.view-mobile .detail-block { margin-bottom: 8px; }.view-mobile .detail-lbl {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 3px;
+  }.view-mobile .detail-txt {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.55;
+  }.view-mobile .key-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }.view-mobile .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }.view-mobile .takeaway {
+    background: #f8f7ff;
+    border-left: 3px solid #8b5cf6;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 6px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+  }.view-mobile .impact-pill {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 6px;
+  }.view-mobile .impact-positive { background: #dcfce7; color: #166534; }.view-mobile .impact-negative { background: #fee2e2; color: #991b1b; }.view-mobile .impact-neutral { background: #f1f5f9; color: #475569; }.view-mobile .eng-phrase {
+    font-size: 22px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-mobile .eng-pron {
+    font-size: 14px;
+    color: #b45309;
+    font-family: monospace;
+    margin-bottom: 6px;
+  }.view-mobile .eng-meaning {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }.view-mobile .eng-ex {
+    font-size: 15px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.6;
+    background: #fffbeb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #fbbf24;
+    margin-bottom: 6px;
+  }.view-mobile .eng-ex-kr {
+    font-size: 14px;
+    color: #78716c;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }.view-mobile .eng-ctx {
+    font-size: 14px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 6px 10px;
+    border-radius: 6px;
+    line-height: 1.5;
+  }.view-mobile .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+    
+  @page { size: A4 portrait; margin: 0; }.view-desktop {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-desktop .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-desktop {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-desktop .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-desktop .header { padding: 14px 20px; margin-bottom: 12px; }.view-desktop .header-title { font-size: 22px; }.view-desktop .header-sub { font-size: 12px; }.view-desktop .header-date { font-size: 15px; }.view-desktop .header-edition { font-size: 11px; }.view-desktop .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-desktop .grid-3 { gap: 12px; margin-bottom: 12px; }.view-desktop .grid-2 { gap: 12px; margin-bottom: 12px; }.view-desktop .card { padding: 16px 18px; border-radius: 12px; }.view-desktop .card-title { font-size: 15px; line-height: 1.5; }.view-desktop .card-title-sm { font-size: 13px; }.view-desktop .card-num { width: 24px; height: 24px; font-size: 13px; }.view-desktop .badge { font-size: 10px; padding: 2px 9px; }.view-desktop .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-desktop .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-desktop .detail-lbl { font-size: 10px; }.view-desktop .detail-txt { font-size: 13px; line-height: 1.65; }.view-desktop .key-chip { font-size: 11px; padding: 3px 9px; }.view-desktop .takeaway { font-size: 13px; padding: 7px 12px; }.view-desktop .impact-pill { font-size: 11px; padding: 3px 11px; }.view-desktop .eng-phrase { font-size: 17px; }.view-desktop .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-desktop .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-desktop .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-desktop .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-desktop .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-desktop .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-desktop .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-desktop .header-left { display: flex; align-items: center; gap: 10px; }.view-desktop .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-desktop .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-desktop .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-desktop .header-right { text-align: right; }.view-desktop .header-date { font-size: 12px; font-weight: 700; }.view-desktop .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-desktop .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-desktop .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-1 { margin-bottom: 5px; }.view-desktop .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-desktop .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-desktop .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-desktop .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-desktop .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-desktop .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-desktop .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 800;
+    margin-right: 5px;
+    flex-shrink: 0;
+  }.view-desktop .num-ai { background: #e0e7ff; color: #3730a3; }.view-desktop .num-detail { background: #ede9fe; color: #5b21b6; }.view-desktop .num-economy { background: #d1fae5; color: #065f46; }.view-desktop .num-english { background: #fef3c7; color: #92400e; }.view-desktop .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-desktop .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-desktop .badge-ai { background: #e0e7ff; color: #4338ca; }.view-desktop .badge-detail { background: #ede9fe; color: #6d28d9; }.view-desktop .badge-economy { background: #d1fae5; color: #065f46; }.view-desktop .badge-english { background: #fef3c7; color: #92400e; }.view-desktop .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-desktop .card-title-sm { font-size: 10px; }.view-desktop .bullets { list-style: none; margin: 3px 0; }.view-desktop .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-desktop .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-desktop .card-ai .bullets li::before { color: #6366f1; }.view-desktop .card-detail .bullets li::before { color: #7c3aed; }.view-desktop .card-economy .bullets li::before { color: #059669; }.view-desktop .card-english .bullets li::before { color: #d97706; }.view-desktop .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-desktop .card-source:hover { color: #64748b; text-decoration: underline; }.view-desktop .detail-block { margin-bottom: 4px; }.view-desktop .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-desktop .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-desktop .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-desktop .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-desktop .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-desktop .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-desktop .impact-positive { background: #dcfce7; color: #166534; }.view-desktop .impact-negative { background: #fee2e2; color: #991b1b; }.view-desktop .impact-neutral { background: #f1f5f9; color: #475569; }.view-desktop .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-desktop .eng-pron { font-size: 8px; color: #b45309; font-family: monospace; margin-bottom: 3px; }.view-desktop .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-desktop .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-desktop .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-desktop .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-desktop .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
+  }
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">홈</a>
+        <a href="../about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../index.html">← 목록으로</a>
+
+    <header class="post-header">
+      <h1>오늘의 AI 뉴스 — 2026-07-02</h1>
+      <div class="post-meta">
+        <span>2026-07-02</span>
+        <span>5분</span>
+      </div>
+      <div class="tags" style="margin-top: 0.75rem;">
+        <span class="tag">AI</span>
+        <span class="tag">뉴스</span>
+        <span class="tag">경제</span>
+        <span class="tag">영어</span>
+      </div>
+    </header>
+
+    <article class="post-body">
+      <figure style="text-align: center; margin-bottom: 2rem;">
+        <img src="../images/2026-07-02/page.png" alt="AI 뉴스 카드" style="max-width: 100%; height: auto; border-radius: 8px;" />
+      </figure>
+      <div class="view-mobile">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div>
+      <div class="header-date">2026-07-02</div>
+      <div class="header-edition">No. 013</div>
+    </div>
+  </div>
+
+  <!-- Webtoon image -->
+  <div style="border-radius:14px; overflow:hidden; margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <img src="../images/2026-07-02/page.png" alt="AI 뉴스 웹툰 2026-07-02" style="width:100%; display:block;">
+  </div>
+
+  <!-- ── Row 1: AI 요약 ── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">AI TOPICS — 오늘의 핵심 3가지</div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">1</span>
+      <span class="card-title">Anthropic, Claude Sonnet 5 공개</span>
+      <span class="badge badge-ai">LLM</span>
+    </div>
+    <ul class="bullets">
+      <li>GDPval-AA v2 지식노동 벤치마크 1,618점으로 상위 모델 Opus 4.8(1,615점)을 근소하게 앞섬</li><li>SWE-bench Pro 63.2%, Terminal-Bench 2.1 80.4%로 전작 Sonnet 4.6 전 항목에서 상회</li><li>도입가 100만 토큰당 입력 $2·출력 $10 (8월31일까지), 이후 $3·$15로 인상 예정</li>
+    </ul>
+    <a href="https://the-decoder.com/anthropics-new-claude-sonnet-5-closes-the-gap-to-the-pricier-opus-model-series/" class="card-source" target="_blank" rel="noopener">Source: the-decoder.com</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">2</span>
+      <span class="card-title">Fable 5, 美 정부 금지 2주만에 해제</span>
+      <span class="badge badge-ai">규제</span>
+    </div>
+    <ul class="bullets">
+      <li>아마존 연구진이 탈옥(안전장치 우회) 기법을 발견한 뒤 미국 정부가 Fable 5에 수출통제를 부과, 전세계 서비스 2주간 중단</li><li>해당 기법으로 사이버보안 악용 코드 생성이 가능함이 확인됐으나 Anthropic은 방어적 보안 작업 범주라 설명</li><li>신규 안전 분류기가 해당 탈옥 기법을 99% 이상 차단하지만 정상 요청 오탐도 함께 증가</li>
+    </ul>
+    <a href="https://the-decoder.com/anthropics-fable-5-is-back-worldwide-after-a-two-week-government-ban-over-a-jailbreak/" class="card-source" target="_blank" rel="noopener">Source: the-decoder.com</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">3</span>
+      <span class="card-title">OpenAI, 유전체 AI 벤치마크 공개</span>
+      <span class="badge badge-ai">연구</span>
+    </div>
+    <ul class="bullets">
+      <li>129개 유전체·정량생물학 문제로 구성된 GeneBench-Pro 벤치마크를 6월30일 출시</li><li>GPT-5.6 Sol Pro가 최고 성능 31.5%를 기록, Claude Opus 4.8은 16.0%에 그쳐 격차 확인</li><li>완전히 알려진 인과구조 기반 합성 데이터로 결정론적 채점이 가능해 기존 벤치마크의 한계 보완</li>
+    </ul>
+    <a href="https://openai.com/index/introducing-genebench-pro" class="card-source" target="_blank" rel="noopener">Source: openai.com</a>
+  </div>
+  
+
+  <!-- ── Row 2: AI 상세 ── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">AI DEEP DIVE — 왜 중요한가</div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">1</span>
+      <span class="card-title">Anthropic, Claude Sonnet 5 공개</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">Anthropic이 2026년 6월30일 Claude Sonnet 5를 출시했다. 에이전트 작업 수행 능력 강화가 핵심 개선점으로, 브라우저와 터미널 같은 도구를 독립적으로 활용할 수 있다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">저가형 모델이 상위 모델 Opus의 실전 지식노동 성능을 근소하게 앞서면서, 기업들의 AI 비용 대비 성능 판단 기준이 바뀌고 있다. 사이버보안 안전장치가 기본 활성화돼 성능과 안전성의 균형도 함께 주목받는다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">GDPval-AA v2 1,618점 (Opus 4.8: 1,615점)</span><span class="key-chip">SWE-bench Pro 63.2% (Sonnet 4.6 대비 +5.1%p)</span>
+    </div>
+    
+
+    <div class="takeaway">>>> Claude Sonnet 5는 가격 대비 성능에서 상위 모델 Opus 4.8을 위협하는 수준에 도달했다.</div>
+    <a href="https://the-decoder.com/anthropics-new-claude-sonnet-5-closes-the-gap-to-the-pricier-opus-model-series/" class="card-source" target="_blank" rel="noopener">Source: the-decoder.com</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">2</span>
+      <span class="card-title">Fable 5, 美 정부 금지 2주만에 해제</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">2026년 6월 중순 아마존 연구진이 Anthropic의 최신 모델 Fable 5에서 안전장치 우회 기법을 발견했고, 이에 미국 정부가 수출통제 조치를 내려 전세계 서비스가 중단됐다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">AI 모델의 보안 취약점에 대한 정부 개입이 실제 글로벌 서비스 중단으로 이어진 사례로, AI 안전 규제가 기업 매출과 서비스 연속성에 직접 영향을 미치는 흐름을 보여준다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">2026년 7월1일 전세계 서비스 재개 (2주만)</span><span class="key-chip">신규 분류기 차단율 99% 이상</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 정부의 AI 안전 개입이 이제 글로벌 서비스 중단이라는 실질적 사업 리스크로 이어지고 있다.</div>
+    <a href="https://the-decoder.com/anthropics-fable-5-is-back-worldwide-after-a-two-week-government-ban-over-a-jailbreak/" class="card-source" target="_blank" rel="noopener">Source: the-decoder.com</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">3</span>
+      <span class="card-title">OpenAI, 유전체 AI 벤치마크 공개</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">OpenAI가 2026년 6월30일 유전체학·정량생물학·중개의학 분야의 AI 추론 능력을 평가하는 GeneBench-Pro를 공개했다. 문제당 인간 전문가 기준 20~40시간이 소요되는 고난도 실전형 문제로 구성된다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">과학 연구용 AI 에이전트의 실질적 추론 능력을 검증할 수단이 부족했던 상황에서 정답 검증이 가능한 벤치마크가 등장해, 제약·바이오 기업의 AI 도입 판단 기준을 제공한다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">GPT-5.6 Sol Pro 31.5% (129문제 중 최고 성능)</span><span class="key-chip">Claude Opus 4.8 16.0%</span>
+    </div>
+    
+
+    <div class="takeaway">>>> OpenAI는 과학 추론 벤치마크에서도 경쟁 모델 대비 두 배 가까운 격차를 입증했다.</div>
+    <a href="https://openai.com/index/introducing-genebench-pro" class="card-source" target="_blank" rel="noopener">Source: openai.com</a>
+  </div>
+  
+
+  <!-- ── Row 3: 경제 ── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">ECONOMY — 경제·금융 핵심 3가지</div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">1</span>
+      <span class="card-title">메타 AI 클라우드 위협에 네오클라우드주 급락</span>
+      <span class="badge badge-economy">기업</span>
+    </div>
+    <ul class="bullets">
+      <li>메타가 AI 컴퓨팅 파워 판매 사업 진출을 검토한다는 보도에 CoreWeave와 Nebius 주가 동반 급락</li><li>네오클라우드 사업모델의 지속가능성에 투자자 우려 확산, 빅테크發 AI 인프라 경쟁 구도 재편 조짐</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ 부정적</span>
+    <a href="https://www.marketwatch.com/story/coreweave-nebius-shares-tumble-as-meta-stands-to-become-a-fresh-threat-in-the-cloud-a47c3616?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">Source: marketwatch.com</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">2</span>
+      <span class="card-title">AI 버블 우려에 한국 반도체주 8% 폭락</span>
+      <span class="badge badge-economy">반도체</span>
+    </div>
+    <ul class="bullets">
+      <li>한국 증시, AI 붐 지속 가능성에 대한 의구심으로 반도체 관련주 중심 8% 폭락</li><li>세계 최고 수준 상승률을 견인해온 한국 반도체주, 글로벌 테크 매도세에 동반 흔들림</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ 부정적</span>
+    <a href="https://www.bloomberg.com/news/articles/2026-07-02/south-korean-stocks-tumble-6-as-ai-jitters-hurt-chipmakers" class="card-source" target="_blank" rel="noopener">Source: bloomberg.com</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">3</span>
+      <span class="card-title">엔비디아, 로봇공학 '수조달러' 시장 베팅</span>
+      <span class="badge badge-economy">투자</span>
+    </div>
+    <ul class="bullets">
+      <li>젠슨 황 CEO, 휴머노이드 로봇 시장을 '수조 달러 규모의 경제적 기회'로 지목하며 투자 기대 확산</li><li>엔비디아 로봇공학 베팅에 따라 관련 밸류체인 전반의 AI 투자 기회에 시장 관심 집중</li>
+    </ul>
+    <span class="impact-pill impact-positive">↑ 긍정적</span>
+    <a href="https://www.marketwatch.com/story/nvidia-is-betting-on-a-trillion-dollar-robotics-boom-here-is-the-hidden-way-to-trade-it-c5b10c4e?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">Source: marketwatch.com</a>
+  </div>
+  
+
+  <!-- ── Row 4: 영어 표현 ── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">1</span>
+      <span class="eng-phrase">"safety classifier"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ˈseɪfti ˈklæsɪfaɪər/ (세이프티 클래시파이어)</div>
+    <div class="eng-meaning">→ AI 모델의 위험한 요청을 탐지·차단하도록 훈련된 안전 분류 시스템</div>
+    <div class="eng-ex">In response, the company trained an improved safety classifier that blocks the technique from the Amazon report in more than 99 percent of cases.</div>
+    <div class="eng-ex-kr">이에 대응해 회사는 아마존 보고서에 나온 탈옥 기법을 99퍼센트 이상 차단하는 개선된 안전 분류기를 훈련시켰다.</div>
+    <div class="eng-ctx">더디코더(the-decoder.com)의 Anthropic Fable 5 정부 금지 해제 기사에서, 탈옥 기법을 막기 위해 새로 도입한 AI 안전장치를 설명하며 등장한 표현이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">2</span>
+      <span class="eng-phrase">"fresh threat"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/freʃ θret/ (프레시 쓰렛)</div>
+    <div class="eng-meaning">→ 새롭게 부상하는 경쟁 위협이나 위기 요인</div>
+    <div class="eng-ex">CoreWeave, Nebius shares tumble as Meta stands to become a fresh threat in the cloud</div>
+    <div class="eng-ex-kr">메타가 클라우드 시장에서 새로운 위협으로 부상하면서 코어위브와 네비우스 주가가 급락했다.</div>
+    <div class="eng-ctx">마켓워치(marketwatch.com)의 메타 AI 클라우드 사업 진출 관련 기사 제목에서, 네오클라우드 기업들이 직면한 경쟁 위협을 표현한 대목이다. 원문 본문 접속은 차단되어 검색으로 확인된 기사 제목을 예문으로 사용했다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">3</span>
+      <span class="eng-phrase">"gaining ground on"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ˈɡeɪnɪŋ ɡraʊnd ɒn/ (게이닝 그라운드 온)</div>
+    <div class="eng-meaning">→ 경쟁 상대와의 격차를 좁히며 따라잡다</div>
+    <div class="eng-ex">Anthropic's published benchmarks show Sonnet 5 beating its predecessor Sonnet 4.6 in every tested category while gaining ground on the pricier Opus 4.8.</div>
+    <div class="eng-ex-kr">앤트로픽이 공개한 벤치마크에 따르면 소네트 5는 전작 소네트 4.6을 전 항목에서 앞섰고, 더 비싼 상위 모델 오퍼스 4.8과의 격차도 좁히고 있다.</div>
+    <div class="eng-ctx">더디코더(the-decoder.com)의 Claude Sonnet 5 출시 기사에서, 신모델이 상위 모델과의 성능 격차를 좁혀가는 상황을 설명하며 등장한 표현이다.</div>
+  </div>
+  
+
+  <!-- Footer -->
+  <div class="footer">
+    Auto-generated | 2026-07-02 | AI News Card
+  </div>
+
+</div>
+</div>
+      <div class="view-desktop">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-07-02</div>
+      <div class="header-edition">No. 013</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-num num-ai">1</span>
+        <span class="card-title">Anthropic, Claude Sonnet 5 공개</span>
+        <span class="badge badge-ai">LLM</span>
+      </div>
+      <ul class="bullets">
+        <li>GDPval-AA v2 지식노동 벤치마크 1,618점으로 상위 모델 Opus 4.8(1,615점)을 근소하게 앞섬</li><li>SWE-bench Pro 63.2%, Terminal-Bench 2.1 80.4%로 전작 Sonnet 4.6 전 항목에서 상회</li><li>도입가 100만 토큰당 입력 $2·출력 $10 (8월31일까지), 이후 $3·$15로 인상 예정</li>
+      </ul>
+      <a href="https://the-decoder.com/anthropics-new-claude-sonnet-5-closes-the-gap-to-the-pricier-opus-model-series/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-num num-ai">2</span>
+        <span class="card-title">Fable 5, 美 정부 금지 2주만에 해제</span>
+        <span class="badge badge-ai">규제</span>
+      </div>
+      <ul class="bullets">
+        <li>아마존 연구진이 탈옥(안전장치 우회) 기법을 발견한 뒤 미국 정부가 Fable 5에 수출통제를 부과, 전세계 서비스 2주간 중단</li><li>해당 기법으로 사이버보안 악용 코드 생성이 가능함이 확인됐으나 Anthropic은 방어적 보안 작업 범주라 설명</li><li>신규 안전 분류기가 해당 탈옥 기법을 99% 이상 차단하지만 정상 요청 오탐도 함께 증가</li>
+      </ul>
+      <a href="https://the-decoder.com/anthropics-fable-5-is-back-worldwide-after-a-two-week-government-ban-over-a-jailbreak/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-num num-ai">3</span>
+        <span class="card-title">OpenAI, 유전체 AI 벤치마크 공개</span>
+        <span class="badge badge-ai">연구</span>
+      </div>
+      <ul class="bullets">
+        <li>129개 유전체·정량생물학 문제로 구성된 GeneBench-Pro 벤치마크를 6월30일 출시</li><li>GPT-5.6 Sol Pro가 최고 성능 31.5%를 기록, Claude Opus 4.8은 16.0%에 그쳐 격차 확인</li><li>완전히 알려진 인과구조 기반 합성 데이터로 결정론적 채점이 가능해 기존 벤치마크의 한계 보완</li>
+      </ul>
+      <a href="https://openai.com/index/introducing-genebench-pro" class="card-source" target="_blank" rel="noopener">📰 openai.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-num num-detail">1</span>
+        <span class="card-title card-title-sm">Anthropic, Claude Sonnet 5 공개</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">Anthropic이 2026년 6월30일 Claude Sonnet 5를 출시했다. 에이전트 작업 수행 능력 강화가 핵심 개선점으로, 브라우저와 터미널 같은 도구를 독립적으로 활용할 수 있다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">저가형 모델이 상위 모델 Opus의 실전 지식노동 성능을 근소하게 앞서면서, 기업들의 AI 비용 대비 성능 판단 기준이 바뀌고 있다. 사이버보안 안전장치가 기본 활성화돼 성능과 안전성의 균형도 함께 주목받는다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">GDPval-AA v2 1,618점 (Opus 4.8: 1,615점)</span><span class="key-chip">SWE-bench Pro 63.2% (Sonnet 4.6 대비 +5.1%p)</span>
+      </div>
+      
+
+      <div class="takeaway">▶ Claude Sonnet 5는 가격 대비 성능에서 상위 모델 Opus 4.8을 위협하는 수준에 도달했다.</div>
+      <a href="https://the-decoder.com/anthropics-new-claude-sonnet-5-closes-the-gap-to-the-pricier-opus-model-series/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-num num-detail">2</span>
+        <span class="card-title card-title-sm">Fable 5, 美 정부 금지 2주만에 해제</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">2026년 6월 중순 아마존 연구진이 Anthropic의 최신 모델 Fable 5에서 안전장치 우회 기법을 발견했고, 이에 미국 정부가 수출통제 조치를 내려 전세계 서비스가 중단됐다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">AI 모델의 보안 취약점에 대한 정부 개입이 실제 글로벌 서비스 중단으로 이어진 사례로, AI 안전 규제가 기업 매출과 서비스 연속성에 직접 영향을 미치는 흐름을 보여준다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">2026년 7월1일 전세계 서비스 재개 (2주만)</span><span class="key-chip">신규 분류기 차단율 99% 이상</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 정부의 AI 안전 개입이 이제 글로벌 서비스 중단이라는 실질적 사업 리스크로 이어지고 있다.</div>
+      <a href="https://the-decoder.com/anthropics-fable-5-is-back-worldwide-after-a-two-week-government-ban-over-a-jailbreak/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-num num-detail">3</span>
+        <span class="card-title card-title-sm">OpenAI, 유전체 AI 벤치마크 공개</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">OpenAI가 2026년 6월30일 유전체학·정량생물학·중개의학 분야의 AI 추론 능력을 평가하는 GeneBench-Pro를 공개했다. 문제당 인간 전문가 기준 20~40시간이 소요되는 고난도 실전형 문제로 구성된다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">과학 연구용 AI 에이전트의 실질적 추론 능력을 검증할 수단이 부족했던 상황에서 정답 검증이 가능한 벤치마크가 등장해, 제약·바이오 기업의 AI 도입 판단 기준을 제공한다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">GPT-5.6 Sol Pro 31.5% (129문제 중 최고 성능)</span><span class="key-chip">Claude Opus 4.8 16.0%</span>
+      </div>
+      
+
+      <div class="takeaway">▶ OpenAI는 과학 추론 벤치마크에서도 경쟁 모델 대비 두 배 가까운 격차를 입증했다.</div>
+      <a href="https://openai.com/index/introducing-genebench-pro" class="card-source" target="_blank" rel="noopener">📰 openai.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-num num-economy">1</span>
+        <span class="card-title">메타 AI 클라우드 위협에 네오클라우드주 급락</span>
+        <span class="badge badge-economy">기업</span>
+      </div>
+      <ul class="bullets">
+        <li>메타가 AI 컴퓨팅 파워 판매 사업 진출을 검토한다는 보도에 CoreWeave와 Nebius 주가 동반 급락</li><li>네오클라우드 사업모델의 지속가능성에 투자자 우려 확산, 빅테크發 AI 인프라 경쟁 구도 재편 조짐</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ 부정적</span>
+      <a href="https://www.marketwatch.com/story/coreweave-nebius-shares-tumble-as-meta-stands-to-become-a-fresh-threat-in-the-cloud-a47c3616?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">📰 marketwatch.com</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-num num-economy">2</span>
+        <span class="card-title">AI 버블 우려에 한국 반도체주 8% 폭락</span>
+        <span class="badge badge-economy">반도체</span>
+      </div>
+      <ul class="bullets">
+        <li>한국 증시, AI 붐 지속 가능성에 대한 의구심으로 반도체 관련주 중심 8% 폭락</li><li>세계 최고 수준 상승률을 견인해온 한국 반도체주, 글로벌 테크 매도세에 동반 흔들림</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ 부정적</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-02/south-korean-stocks-tumble-6-as-ai-jitters-hurt-chipmakers" class="card-source" target="_blank" rel="noopener">📰 bloomberg.com</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-num num-economy">3</span>
+        <span class="card-title">엔비디아, 로봇공학 '수조달러' 시장 베팅</span>
+        <span class="badge badge-economy">투자</span>
+      </div>
+      <ul class="bullets">
+        <li>젠슨 황 CEO, 휴머노이드 로봇 시장을 '수조 달러 규모의 경제적 기회'로 지목하며 투자 기대 확산</li><li>엔비디아 로봇공학 베팅에 따라 관련 밸류체인 전반의 AI 투자 기회에 시장 관심 집중</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ 긍정적</span>
+      <a href="https://www.marketwatch.com/story/nvidia-is-betting-on-a-trillion-dollar-robotics-boom-here-is-the-hidden-way-to-trade-it-c5b10c4e?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">📰 marketwatch.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="card-num num-english">1</span>
+        <span class="eng-phrase">"safety classifier"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ˈseɪfti ˈklæsɪfaɪər/ (세이프티 클래시파이어)</div>
+      <div class="eng-meaning">→ AI 모델의 위험한 요청을 탐지·차단하도록 훈련된 안전 분류 시스템</div>
+      <div class="eng-ex">In response, the company trained an improved safety classifier that blocks the technique from the Amazon report in more than 99 percent of cases.</div>
+      <div class="eng-ex-kr">이에 대응해 회사는 아마존 보고서에 나온 탈옥 기법을 99퍼센트 이상 차단하는 개선된 안전 분류기를 훈련시켰다.</div>
+      <div class="eng-ctx">📌 더디코더(the-decoder.com)의 Anthropic Fable 5 정부 금지 해제 기사에서, 탈옥 기법을 막기 위해 새로 도입한 AI 안전장치를 설명하며 등장한 표현이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="card-num num-english">2</span>
+        <span class="eng-phrase">"fresh threat"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/freʃ θret/ (프레시 쓰렛)</div>
+      <div class="eng-meaning">→ 새롭게 부상하는 경쟁 위협이나 위기 요인</div>
+      <div class="eng-ex">CoreWeave, Nebius shares tumble as Meta stands to become a fresh threat in the cloud</div>
+      <div class="eng-ex-kr">메타가 클라우드 시장에서 새로운 위협으로 부상하면서 코어위브와 네비우스 주가가 급락했다.</div>
+      <div class="eng-ctx">📌 마켓워치(marketwatch.com)의 메타 AI 클라우드 사업 진출 관련 기사 제목에서, 네오클라우드 기업들이 직면한 경쟁 위협을 표현한 대목이다. 원문 본문 접속은 차단되어 검색으로 확인된 기사 제목을 예문으로 사용했다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="card-num num-english">3</span>
+        <span class="eng-phrase">"gaining ground on"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ˈɡeɪnɪŋ ɡraʊnd ɒn/ (게이닝 그라운드 온)</div>
+      <div class="eng-meaning">→ 경쟁 상대와의 격차를 좁히며 따라잡다</div>
+      <div class="eng-ex">Anthropic's published benchmarks show Sonnet 5 beating its predecessor Sonnet 4.6 in every tested category while gaining ground on the pricier Opus 4.8.</div>
+      <div class="eng-ex-kr">앤트로픽이 공개한 벤치마크에 따르면 소네트 5는 전작 소네트 4.6을 전 항목에서 앞섰고, 더 비싼 상위 모델 오퍼스 4.8과의 격차도 좁히고 있다.</div>
+      <div class="eng-ctx">📌 더디코더(the-decoder.com)의 Claude Sonnet 5 출시 기사에서, 신모델이 상위 모델과의 성능 격차를 좁혀가는 상황을 설명하며 등장한 표현이다.</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-07-02 | AI News Card
+  </div>
+
+</div>
+</div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
