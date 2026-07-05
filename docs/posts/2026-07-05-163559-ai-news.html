@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오늘의 AI 뉴스 — 2026-07-05 — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    @media (max-width: 799px) { .view-desktop { display: none; } }
+    @media (min-width: 800px) { .view-mobile { display: none; } }
+    .view-desktop { max-width: 100%; overflow-x: auto; }
+    .view-mobile {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: #eef0f5;
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.5;
+  }.view-mobile .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px 12px 24px;
+  }.view-mobile .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }.view-mobile .header-logo { font-size: 28px; margin-right: 10px; }.view-mobile .header-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }.view-mobile .header-sub { font-size: 11px; opacity: 0.75; margin-top: 2px; }.view-mobile .header-date { font-size: 13px; font-weight: 700; text-align: right; }.view-mobile .header-edition { font-size: 10px; opacity: 0.65; margin-top: 2px; text-align: right; }.view-mobile .sec-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }.view-mobile .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+  }.view-mobile .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }.view-mobile .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-mobile .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-mobile .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-mobile .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-mobile .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }.view-mobile .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }.view-mobile .num-ai { background: #e0e7ff; color: #3730a3; }.view-mobile .num-detail { background: #ede9fe; color: #5b21b6; }.view-mobile .num-economy { background: #d1fae5; color: #065f46; }.view-mobile .num-english { background: #fef3c7; color: #92400e; }.view-mobile .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    flex: 1;
+  }.view-mobile .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }.view-mobile .badge-ai { background: #e0e7ff; color: #4338ca; }.view-mobile .badge-detail { background: #ede9fe; color: #6d28d9; }.view-mobile .badge-economy { background: #d1fae5; color: #065f46; }.view-mobile .badge-english { background: #fef3c7; color: #92400e; }.view-mobile .bullets { list-style: none; margin: 4px 0 6px; }.view-mobile .bullets li {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.55;
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }.view-mobile .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    top: 5px;
+  }.view-mobile .card-ai     .bullets li::before { color: #6366f1; }.view-mobile .card-detail .bullets li::before { color: #7c3aed; }.view-mobile .card-economy .bullets li::before { color: #059669; }.view-mobile .card-source {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-mobile .card-source:hover { color: #64748b; text-decoration: underline; }.view-mobile .detail-block { margin-bottom: 8px; }.view-mobile .detail-lbl {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 3px;
+  }.view-mobile .detail-txt {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.55;
+  }.view-mobile .key-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }.view-mobile .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }.view-mobile .takeaway {
+    background: #f8f7ff;
+    border-left: 3px solid #8b5cf6;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 6px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+  }.view-mobile .impact-pill {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 6px;
+  }.view-mobile .impact-positive { background: #dcfce7; color: #166534; }.view-mobile .impact-negative { background: #fee2e2; color: #991b1b; }.view-mobile .impact-neutral { background: #f1f5f9; color: #475569; }.view-mobile .eng-phrase {
+    font-size: 22px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-mobile .eng-pron {
+    font-size: 14px;
+    color: #b45309;
+    font-family: monospace;
+    margin-bottom: 6px;
+  }.view-mobile .eng-meaning {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }.view-mobile .eng-ex {
+    font-size: 15px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.6;
+    background: #fffbeb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #fbbf24;
+    margin-bottom: 6px;
+  }.view-mobile .eng-ex-kr {
+    font-size: 14px;
+    color: #78716c;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }.view-mobile .eng-ctx {
+    font-size: 14px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 6px 10px;
+    border-radius: 6px;
+    line-height: 1.5;
+  }.view-mobile .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+    
+  @page { size: A4 portrait; margin: 0; }.view-desktop {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-desktop .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-desktop {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-desktop .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-desktop .header { padding: 14px 20px; margin-bottom: 12px; }.view-desktop .header-title { font-size: 22px; }.view-desktop .header-sub { font-size: 12px; }.view-desktop .header-date { font-size: 15px; }.view-desktop .header-edition { font-size: 11px; }.view-desktop .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-desktop .grid-3 { gap: 12px; margin-bottom: 12px; }.view-desktop .grid-2 { gap: 12px; margin-bottom: 12px; }.view-desktop .card { padding: 16px 18px; border-radius: 12px; }.view-desktop .card-title { font-size: 15px; line-height: 1.5; }.view-desktop .card-title-sm { font-size: 13px; }.view-desktop .card-num { width: 24px; height: 24px; font-size: 13px; }.view-desktop .badge { font-size: 10px; padding: 2px 9px; }.view-desktop .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-desktop .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-desktop .detail-lbl { font-size: 10px; }.view-desktop .detail-txt { font-size: 13px; line-height: 1.65; }.view-desktop .key-chip { font-size: 11px; padding: 3px 9px; }.view-desktop .takeaway { font-size: 13px; padding: 7px 12px; }.view-desktop .impact-pill { font-size: 11px; padding: 3px 11px; }.view-desktop .eng-phrase { font-size: 17px; }.view-desktop .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-desktop .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-desktop .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-desktop .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-desktop .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-desktop .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-desktop .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-desktop .header-left { display: flex; align-items: center; gap: 10px; }.view-desktop .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-desktop .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-desktop .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-desktop .header-right { text-align: right; }.view-desktop .header-date { font-size: 12px; font-weight: 700; }.view-desktop .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-desktop .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-desktop .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-1 { margin-bottom: 5px; }.view-desktop .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-desktop .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-desktop .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-desktop .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-desktop .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-desktop .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-desktop .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 800;
+    margin-right: 5px;
+    flex-shrink: 0;
+  }.view-desktop .num-ai { background: #e0e7ff; color: #3730a3; }.view-desktop .num-detail { background: #ede9fe; color: #5b21b6; }.view-desktop .num-economy { background: #d1fae5; color: #065f46; }.view-desktop .num-english { background: #fef3c7; color: #92400e; }.view-desktop .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-desktop .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-desktop .badge-ai { background: #e0e7ff; color: #4338ca; }.view-desktop .badge-detail { background: #ede9fe; color: #6d28d9; }.view-desktop .badge-economy { background: #d1fae5; color: #065f46; }.view-desktop .badge-english { background: #fef3c7; color: #92400e; }.view-desktop .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-desktop .card-title-sm { font-size: 10px; }.view-desktop .bullets { list-style: none; margin: 3px 0; }.view-desktop .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-desktop .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-desktop .card-ai .bullets li::before { color: #6366f1; }.view-desktop .card-detail .bullets li::before { color: #7c3aed; }.view-desktop .card-economy .bullets li::before { color: #059669; }.view-desktop .card-english .bullets li::before { color: #d97706; }.view-desktop .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-desktop .card-source:hover { color: #64748b; text-decoration: underline; }.view-desktop .detail-block { margin-bottom: 4px; }.view-desktop .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-desktop .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-desktop .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-desktop .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-desktop .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-desktop .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-desktop .impact-positive { background: #dcfce7; color: #166534; }.view-desktop .impact-negative { background: #fee2e2; color: #991b1b; }.view-desktop .impact-neutral { background: #f1f5f9; color: #475569; }.view-desktop .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-desktop .eng-pron { font-size: 8px; color: #b45309; font-family: monospace; margin-bottom: 3px; }.view-desktop .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-desktop .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-desktop .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-desktop .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-desktop .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
+  }
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">홈</a>
+        <a href="../about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../index.html">← 목록으로</a>
+
+    <header class="post-header">
+      <h1>오늘의 AI 뉴스 — 2026-07-05</h1>
+      <div class="post-meta">
+        <span>2026-07-05</span>
+        <span>5분</span>
+      </div>
+      <div class="tags" style="margin-top: 0.75rem;">
+        <span class="tag">AI</span>
+        <span class="tag">뉴스</span>
+        <span class="tag">경제</span>
+        <span class="tag">영어</span>
+      </div>
+    </header>
+
+    <article class="post-body">
+      <figure style="text-align: center; margin-bottom: 2rem;">
+        <img src="../images/2026-07-05-163559/page.png" alt="AI 뉴스 카드" style="max-width: 100%; height: auto; border-radius: 8px;" />
+      </figure>
+      <div class="view-mobile">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div>
+      <div class="header-date">2026-07-05-163559</div>
+      <div class="header-edition">No. 016</div>
+    </div>
+  </div>
+
+  <!-- Webtoon image -->
+  <div style="border-radius:14px; overflow:hidden; margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <img src="../images/2026-07-05-163559/page.png" alt="AI 뉴스 웹툰 2026-07-05-163559" style="width:100%; display:block;">
+  </div>
+
+  <!-- ── Row 1: AI 요약 ── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">AI TOPICS — 오늘의 핵심 3가지</div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">1</span>
+      <span class="card-title">Anthropic, 희귀질환 신약개발 독자 출시</span>
+      <span class="badge badge-ai">에이전트</span>
+    </div>
+    <ul class="bullets">
+      <li>Anthropic이 빅파마가 수익성 문제로 외면한 희귀질환을 타겟으로 자체 신약 개발 프로그램 착수</li><li>Novartis CEO는 AI가 신약 개발 기간을 10년에서 수년으로 단축할 잠재력이 있다고 평가</li><li>Claude 모델을 약물 후보 탐색·최적화에 직접 활용하는 수직 통합 전략</li>
+    </ul>
+    <a href="https://the-decoder.com/anthropic-launches-its-own-drug-discovery-programs-to-tackle-diseases-big-pharma-considers-unprofitable/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">2</span>
+      <span class="card-title">알리바바, 직원 Claude Code 사용 전면 금지</span>
+      <span class="badge badge-ai">규제</span>
+    </div>
+    <ul class="bullets">
+      <li>알리바바가 Claude Code를 '고위험 소프트웨어'로 분류하고 내부 사용 금지 조치 시행</li><li>Anthropic은 ByteDance·앤트파이낸셜 등 중국 기업의 Claude Code 접근을 차단하려 했으나 VPN과 해외 법인을 통한 우회 접속이 지속</li><li>미국의 수출 통제와 중국의 자국 기술 보호 기조가 맞물리며 AI 코딩 툴이 지정학적 충돌 최전선으로 부상</li>
+    </ul>
+    <a href="https://techcrunch.com/2026/07/04/alibaba-reportedly-bans-employees-from-using-claude-code/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">3</span>
+      <span class="card-title">26,000명 연구: AI 의존 학습 효과 2년 후 소멸</span>
+      <span class="badge badge-ai">연구</span>
+    </div>
+    <ul class="bullets">
+      <li>중국 2만6000명 학생 대상 연구에서 AI 활용 학생이 숙제는 빠르게 끝냈으나 시험 성적은 최대 24% 하락</li><li>단기 성과 향상과 장기 실력 저하 사이 격차가 나타나기까지 약 2년이 소요되어 즉각적 탐지가 어려움</li><li>AI 도움에 의존한 인지 과정 생략이 실제 역량 형성을 저해하는 '숨겨진 학습 비용' 문제로 정책 대응 촉구</li>
+    </ul>
+    <a href="https://the-decoder.com/a-26000-student-study-shows-ais-hidden-learning-cost-takes-two-full-years-to-surface/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+
+  <!-- ── Row 2: AI 상세 ── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">AI DEEP DIVE — 왜 중요한가</div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">1</span>
+      <span class="card-title">Anthropic, 희귀질환 신약개발 독자 출시</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">Anthropic은 기존 AI 모델 판매에서 나아가 직접 신약 개발 파이프라인을 구축하기 시작했다. 대형 제약사들이 시장 규모 부족을 이유로 외면하는 희귀질환 영역이 주요 타겟이다. Claude 모델의 단백질 구조 예측·화합물 분석 역량을 내부에서 직접 활용하는 방식이다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">AI 기업이 단순 인프라 제공자에서 신약 개발 플레이어로 직접 전환하는 첫 사례로, 기존 제약·바이오테크 산업 구도를 흔들 수 있다. 희귀질환 특성상 규제 패스트트랙(희귀의약품 지정) 혜택이 크고, 성공 시 AI 신약개발의 상업적 모델로 자리잡을 가능성이 높다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">신약 개발 기간 목표: 10년 -> 수년으로 단축</span><span class="key-chip">타겟 질환군: 빅파마 투자 기피 희귀질환 분야</span>
+    </div>
+    
+
+    <div class="takeaway">>>> Anthropic은 AI 모델 판매를 넘어 신약 개발 직접 참여로 헬스케어 산업의 게임 체인저가 되려 한다.</div>
+    <a href="https://the-decoder.com/anthropic-launches-its-own-drug-discovery-programs-to-tackle-diseases-big-pharma-considers-unprofitable/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">2</span>
+      <span class="card-title">알리바바, 직원 Claude Code 사용 전면 금지</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">Anthropic은 중국 기업들이 Claude Code를 경쟁 AI 개발에 활용할 수 있다는 우려로 접근을 차단해왔다. 그러나 ByteDance, 알리바바 직원들이 VPN과 해외 자회사 계정을 통해 서비스를 이용하는 것이 확인됐다. 알리바바는 이에 맞서 자사 직원들의 Claude Code 사용 자체를 금지하는 역조치를 취했다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">AI 코딩 도구가 기술 패권 경쟁의 새로운 통제 지점이 됐음을 보여준다. 미국이 반도체·클라우드에 이어 AI 소프트웨어 도구 접근도 제한하는 방향으로 나아가고 있으며, 중국 기업들의 대응도 점차 조직적으로 진화하고 있다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">금지 소프트웨어 등급: 알리바바 내부 고위험(High-Risk) 분류</span><span class="key-chip">우회 접속 확인 기업: ByteDance, 앤트파이낸셜 등 2곳 이상</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 미-중 AI 기술 전쟁이 반도체에서 AI 코딩 툴로 전선을 확장하면서 양측 모두 차단과 우회를 반복하는 소모전이 시작됐다.</div>
+    <a href="https://techcrunch.com/2026/07/04/alibaba-reportedly-bans-employees-from-using-claude-code/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">3</span>
+      <span class="card-title">26,000명 연구: AI 의존 학습 효과 2년 후 소멸</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">중국 대학 연구팀이 2만6000명 이상의 학생을 대상으로 AI 학습 도구 사용이 장기 학업 성취에 미치는 영향을 추적 연구했다. AI를 사용한 학생들은 과제 완료 속도와 단기 점수에서 이점을 보였지만, 대학 입시 등 고부담 시험에서 최대 24% 낮은 성적을 기록했다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">AI 교육 도입 효과를 단기 지표로만 평가하면 잘못된 정책 결론에 이를 수 있음을 대규모 데이터로 증명했다. 학교·기업 모두 AI 보조 학습·업무 도구 도입 시 장기 역량 관리 전략을 함께 설계해야 한다는 경고를 보낸다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">시험 성적 하락폭: 최대 24%</span><span class="key-chip">효과 지연 기간: AI 사용 후 2년 뒤에 성과 손실 확인</span>
+    </div>
+    
+
+    <div class="takeaway">>>> AI가 단기 효율을 높이는 동안 숨겨진 학습 비용이 쌓여 2년 후 24% 성적 하락으로 나타난다는 첫 대규모 증거가 나왔다.</div>
+    <a href="https://the-decoder.com/a-26000-student-study-shows-ais-hidden-learning-cost-takes-two-full-years-to-surface/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+
+  <!-- ── Row 3: 경제 ── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">ECONOMY — 경제·금융 핵심 3가지</div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">1</span>
+      <span class="card-title">MANGOS AI 주식, 상승세 꺾이나</span>
+      <span class="badge badge-economy">시장</span>
+    </div>
+    <ul class="bullets">
+      <li>Meta, Anthropic, Nvidia 등 6개 AI 핵심 종목으로 구성된 MANGOS 지수가 AI 붐 정점 논란 속에 변동성 확대</li><li>월스트리트 애널리스트들이 AI 인프라 투자 수익화 시점에 의문 제기하며 밸류에이션 부담 경고</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ 부정적</span>
+    <a href="https://www.nytimes.com/2026/07/04/business/mangos-ai-stocks.html" class="card-source" target="_blank" rel="noopener">Source: NYT > Business</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">2</span>
+      <span class="card-title">중국, 미국 AI 투자 우회 경로 차단</span>
+      <span class="badge badge-economy">규제</span>
+    </div>
+    <ul class="bullets">
+      <li>중국 당국이 본토 투자자들의 규정 위반 해외 투자 단속 강화, 미국 AI 테크 기업 대신 자국 기술에 투자 유도</li><li>중국판 AI 드림에 자국 자본 집중시키려는 정책으로, 미국 AI 기업 대상 외국인 자본 유입 감소 우려</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ 부정적</span>
+    <a href="https://www.economist.com/finance-and-economics/2026/06/28/china-cracks-down-on-rule-bending-offshore-investments" class="card-source" target="_blank" rel="noopener">Source: Finance & economics</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">3</span>
+      <span class="card-title">AI 랠리 불안에 인도 시장으로 자금 이동</span>
+      <span class="badge badge-economy">투자</span>
+    </div>
+    <ul class="bullets">
+      <li>글로벌 AI 랠리에서 소외됐던 인도 주식 시장이 최근 AI발 시장 변동성 속에 피난처로 재부상</li><li>인도 증시는 AI 종목 익스포저가 낮아 리스크 분산 수요 증가, 외국인 자금 유입 재개 신호</li>
+    </ul>
+    <span class="impact-pill impact-neutral">→ 중립</span>
+    <a href="https://www.bloomberg.com/news/articles/2026-07-05/investors-looking-for-shelter-from-ai-storm-are-turning-to-india" class="card-source" target="_blank" rel="noopener">Source: Bloomberg Markets</a>
+  </div>
+  
+
+  <!-- ── Row 4: 영어 표현 ── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">1</span>
+      <span class="eng-phrase">"distillation"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ˌdɪstɪˈleɪʃən/ [디스털레이션]</div>
+    <div class="eng-meaning">→ 다른 AI 모델의 출력 데이터를 학습에 활용해 모델을 훈련시키는 기술</div>
+    <div class="eng-ex">Anthropic's Thariq Shihipar said in a post on X that this was "an experiment we launched in March that was meant to prevent account abuse" and protect against distillation, which is a practice where AI models are trained on the outputs of other models.</div>
+    <div class="eng-ex-kr">Anthropic의 Thariq Shihipar는 X 게시글에서 이것이 계정 남용 방지를 위해 3월에 시작한 실험이었으며, 다른 모델의 출력값으로 AI를 훈련시키는 관행인 디스털레이션을 막기 위한 조치였다고 밝혔다.</div>
+    <div class="eng-ctx">TechCrunch의 알리바바 Claude Code 사용 금지 기사에서 Anthropic이 중국 기업들의 모델 복제 시도를 차단하려는 맥락으로 등장한 AI 기술 용어다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">2</span>
+      <span class="eng-phrase">"commercially unviable"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/kəˈmɜːrʃəli ʌnˈvaɪəbl/ [커머셜리 언바이어블]</div>
+    <div class="eng-meaning">→ 수익성이 없어 기업 입장에서 사업화가 불가능한 상태</div>
+    <div class="eng-ex">Anthropic is establishing its own drug development initiatives focused on diseases that traditional pharmaceutical companies view as commercially unviable.</div>
+    <div class="eng-ex-kr">Anthropic은 전통적인 제약사들이 상업적으로 수익성이 없다고 보는 질환들을 타겟으로 자체 신약 개발 프로그램을 구축하고 있다.</div>
+    <div class="eng-ctx">더디코더의 Anthropic 신약 개발 착수 기사에서 대형 제약사들이 외면하는 희귀질환 시장을 설명하는 맥락으로 쓰인 비즈니스 표현이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">3</span>
+      <span class="eng-phrase">"outsourcing their work to AI"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">[아웃소싱 데어 워크 투 에이아이]</div>
+    <div class="eng-meaning">→ 학습이나 업무 과정을 AI에 맡겨 스스로 수행하지 않는 행위</div>
+    <div class="eng-ex">This combination suggests "these students were outsourcing their work to AI" rather than engaging in genuine learning.</div>
+    <div class="eng-ex-kr">이러한 조합은 이 학생들이 진정한 학습에 참여하는 대신 과제를 AI에 외주화하고 있었음을 시사한다.</div>
+    <div class="eng-ctx">더디코더의 26,000명 학생 AI 학습 효과 연구 기사에서 AI 의존 학습의 본질적 문제를 분석하는 맥락으로 등장한 담화 표현이다.</div>
+  </div>
+  
+
+  <!-- Footer -->
+  <div class="footer">
+    Auto-generated | 2026-07-05-163559 | AI News Card
+  </div>
+
+</div>
+</div>
+      <div class="view-desktop">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-07-05-163559</div>
+      <div class="header-edition">No. 016</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-num num-ai">1</span>
+        <span class="card-title">Anthropic, 희귀질환 신약개발 독자 출시</span>
+        <span class="badge badge-ai">에이전트</span>
+      </div>
+      <ul class="bullets">
+        <li>Anthropic이 빅파마가 수익성 문제로 외면한 희귀질환을 타겟으로 자체 신약 개발 프로그램 착수</li><li>Novartis CEO는 AI가 신약 개발 기간을 10년에서 수년으로 단축할 잠재력이 있다고 평가</li><li>Claude 모델을 약물 후보 탐색·최적화에 직접 활용하는 수직 통합 전략</li>
+      </ul>
+      <a href="https://the-decoder.com/anthropic-launches-its-own-drug-discovery-programs-to-tackle-diseases-big-pharma-considers-unprofitable/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-num num-ai">2</span>
+        <span class="card-title">알리바바, 직원 Claude Code 사용 전면 금지</span>
+        <span class="badge badge-ai">규제</span>
+      </div>
+      <ul class="bullets">
+        <li>알리바바가 Claude Code를 '고위험 소프트웨어'로 분류하고 내부 사용 금지 조치 시행</li><li>Anthropic은 ByteDance·앤트파이낸셜 등 중국 기업의 Claude Code 접근을 차단하려 했으나 VPN과 해외 법인을 통한 우회 접속이 지속</li><li>미국의 수출 통제와 중국의 자국 기술 보호 기조가 맞물리며 AI 코딩 툴이 지정학적 충돌 최전선으로 부상</li>
+      </ul>
+      <a href="https://techcrunch.com/2026/07/04/alibaba-reportedly-bans-employees-from-using-claude-code/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-num num-ai">3</span>
+        <span class="card-title">26,000명 연구: AI 의존 학습 효과 2년 후 소멸</span>
+        <span class="badge badge-ai">연구</span>
+      </div>
+      <ul class="bullets">
+        <li>중국 2만6000명 학생 대상 연구에서 AI 활용 학생이 숙제는 빠르게 끝냈으나 시험 성적은 최대 24% 하락</li><li>단기 성과 향상과 장기 실력 저하 사이 격차가 나타나기까지 약 2년이 소요되어 즉각적 탐지가 어려움</li><li>AI 도움에 의존한 인지 과정 생략이 실제 역량 형성을 저해하는 '숨겨진 학습 비용' 문제로 정책 대응 촉구</li>
+      </ul>
+      <a href="https://the-decoder.com/a-26000-student-study-shows-ais-hidden-learning-cost-takes-two-full-years-to-surface/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-num num-detail">1</span>
+        <span class="card-title card-title-sm">Anthropic, 희귀질환 신약개발 독자 출시</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">Anthropic은 기존 AI 모델 판매에서 나아가 직접 신약 개발 파이프라인을 구축하기 시작했다. 대형 제약사들이 시장 규모 부족을 이유로 외면하는 희귀질환 영역이 주요 타겟이다. Claude 모델의 단백질 구조 예측·화합물 분석 역량을 내부에서 직접 활용하는 방식이다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">AI 기업이 단순 인프라 제공자에서 신약 개발 플레이어로 직접 전환하는 첫 사례로, 기존 제약·바이오테크 산업 구도를 흔들 수 있다. 희귀질환 특성상 규제 패스트트랙(희귀의약품 지정) 혜택이 크고, 성공 시 AI 신약개발의 상업적 모델로 자리잡을 가능성이 높다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">신약 개발 기간 목표: 10년 -> 수년으로 단축</span><span class="key-chip">타겟 질환군: 빅파마 투자 기피 희귀질환 분야</span>
+      </div>
+      
+
+      <div class="takeaway">▶ Anthropic은 AI 모델 판매를 넘어 신약 개발 직접 참여로 헬스케어 산업의 게임 체인저가 되려 한다.</div>
+      <a href="https://the-decoder.com/anthropic-launches-its-own-drug-discovery-programs-to-tackle-diseases-big-pharma-considers-unprofitable/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-num num-detail">2</span>
+        <span class="card-title card-title-sm">알리바바, 직원 Claude Code 사용 전면 금지</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">Anthropic은 중국 기업들이 Claude Code를 경쟁 AI 개발에 활용할 수 있다는 우려로 접근을 차단해왔다. 그러나 ByteDance, 알리바바 직원들이 VPN과 해외 자회사 계정을 통해 서비스를 이용하는 것이 확인됐다. 알리바바는 이에 맞서 자사 직원들의 Claude Code 사용 자체를 금지하는 역조치를 취했다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">AI 코딩 도구가 기술 패권 경쟁의 새로운 통제 지점이 됐음을 보여준다. 미국이 반도체·클라우드에 이어 AI 소프트웨어 도구 접근도 제한하는 방향으로 나아가고 있으며, 중국 기업들의 대응도 점차 조직적으로 진화하고 있다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">금지 소프트웨어 등급: 알리바바 내부 고위험(High-Risk) 분류</span><span class="key-chip">우회 접속 확인 기업: ByteDance, 앤트파이낸셜 등 2곳 이상</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 미-중 AI 기술 전쟁이 반도체에서 AI 코딩 툴로 전선을 확장하면서 양측 모두 차단과 우회를 반복하는 소모전이 시작됐다.</div>
+      <a href="https://techcrunch.com/2026/07/04/alibaba-reportedly-bans-employees-from-using-claude-code/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-num num-detail">3</span>
+        <span class="card-title card-title-sm">26,000명 연구: AI 의존 학습 효과 2년 후 소멸</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">중국 대학 연구팀이 2만6000명 이상의 학생을 대상으로 AI 학습 도구 사용이 장기 학업 성취에 미치는 영향을 추적 연구했다. AI를 사용한 학생들은 과제 완료 속도와 단기 점수에서 이점을 보였지만, 대학 입시 등 고부담 시험에서 최대 24% 낮은 성적을 기록했다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">AI 교육 도입 효과를 단기 지표로만 평가하면 잘못된 정책 결론에 이를 수 있음을 대규모 데이터로 증명했다. 학교·기업 모두 AI 보조 학습·업무 도구 도입 시 장기 역량 관리 전략을 함께 설계해야 한다는 경고를 보낸다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">시험 성적 하락폭: 최대 24%</span><span class="key-chip">효과 지연 기간: AI 사용 후 2년 뒤에 성과 손실 확인</span>
+      </div>
+      
+
+      <div class="takeaway">▶ AI가 단기 효율을 높이는 동안 숨겨진 학습 비용이 쌓여 2년 후 24% 성적 하락으로 나타난다는 첫 대규모 증거가 나왔다.</div>
+      <a href="https://the-decoder.com/a-26000-student-study-shows-ais-hidden-learning-cost-takes-two-full-years-to-surface/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-num num-economy">1</span>
+        <span class="card-title">MANGOS AI 주식, 상승세 꺾이나</span>
+        <span class="badge badge-economy">시장</span>
+      </div>
+      <ul class="bullets">
+        <li>Meta, Anthropic, Nvidia 등 6개 AI 핵심 종목으로 구성된 MANGOS 지수가 AI 붐 정점 논란 속에 변동성 확대</li><li>월스트리트 애널리스트들이 AI 인프라 투자 수익화 시점에 의문 제기하며 밸류에이션 부담 경고</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ 부정적</span>
+      <a href="https://www.nytimes.com/2026/07/04/business/mangos-ai-stocks.html" class="card-source" target="_blank" rel="noopener">📰 NYT > Business</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-num num-economy">2</span>
+        <span class="card-title">중국, 미국 AI 투자 우회 경로 차단</span>
+        <span class="badge badge-economy">규제</span>
+      </div>
+      <ul class="bullets">
+        <li>중국 당국이 본토 투자자들의 규정 위반 해외 투자 단속 강화, 미국 AI 테크 기업 대신 자국 기술에 투자 유도</li><li>중국판 AI 드림에 자국 자본 집중시키려는 정책으로, 미국 AI 기업 대상 외국인 자본 유입 감소 우려</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ 부정적</span>
+      <a href="https://www.economist.com/finance-and-economics/2026/06/28/china-cracks-down-on-rule-bending-offshore-investments" class="card-source" target="_blank" rel="noopener">📰 Finance & economics</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-num num-economy">3</span>
+        <span class="card-title">AI 랠리 불안에 인도 시장으로 자금 이동</span>
+        <span class="badge badge-economy">투자</span>
+      </div>
+      <ul class="bullets">
+        <li>글로벌 AI 랠리에서 소외됐던 인도 주식 시장이 최근 AI발 시장 변동성 속에 피난처로 재부상</li><li>인도 증시는 AI 종목 익스포저가 낮아 리스크 분산 수요 증가, 외국인 자금 유입 재개 신호</li>
+      </ul>
+      <span class="impact-pill impact-neutral">→ 중립</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-05/investors-looking-for-shelter-from-ai-storm-are-turning-to-india" class="card-source" target="_blank" rel="noopener">📰 Bloomberg Markets</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="card-num num-english">1</span>
+        <span class="eng-phrase">"distillation"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ˌdɪstɪˈleɪʃən/ [디스털레이션]</div>
+      <div class="eng-meaning">→ 다른 AI 모델의 출력 데이터를 학습에 활용해 모델을 훈련시키는 기술</div>
+      <div class="eng-ex">Anthropic's Thariq Shihipar said in a post on X that this was "an experiment we launched in March that was meant to prevent account abuse" and protect against distillation, which is a practice where AI models are trained on the outputs of other models.</div>
+      <div class="eng-ex-kr">Anthropic의 Thariq Shihipar는 X 게시글에서 이것이 계정 남용 방지를 위해 3월에 시작한 실험이었으며, 다른 모델의 출력값으로 AI를 훈련시키는 관행인 디스털레이션을 막기 위한 조치였다고 밝혔다.</div>
+      <div class="eng-ctx">📌 TechCrunch의 알리바바 Claude Code 사용 금지 기사에서 Anthropic이 중국 기업들의 모델 복제 시도를 차단하려는 맥락으로 등장한 AI 기술 용어다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="card-num num-english">2</span>
+        <span class="eng-phrase">"commercially unviable"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/kəˈmɜːrʃəli ʌnˈvaɪəbl/ [커머셜리 언바이어블]</div>
+      <div class="eng-meaning">→ 수익성이 없어 기업 입장에서 사업화가 불가능한 상태</div>
+      <div class="eng-ex">Anthropic is establishing its own drug development initiatives focused on diseases that traditional pharmaceutical companies view as commercially unviable.</div>
+      <div class="eng-ex-kr">Anthropic은 전통적인 제약사들이 상업적으로 수익성이 없다고 보는 질환들을 타겟으로 자체 신약 개발 프로그램을 구축하고 있다.</div>
+      <div class="eng-ctx">📌 더디코더의 Anthropic 신약 개발 착수 기사에서 대형 제약사들이 외면하는 희귀질환 시장을 설명하는 맥락으로 쓰인 비즈니스 표현이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="card-num num-english">3</span>
+        <span class="eng-phrase">"outsourcing their work to AI"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">[아웃소싱 데어 워크 투 에이아이]</div>
+      <div class="eng-meaning">→ 학습이나 업무 과정을 AI에 맡겨 스스로 수행하지 않는 행위</div>
+      <div class="eng-ex">This combination suggests "these students were outsourcing their work to AI" rather than engaging in genuine learning.</div>
+      <div class="eng-ex-kr">이러한 조합은 이 학생들이 진정한 학습에 참여하는 대신 과제를 AI에 외주화하고 있었음을 시사한다.</div>
+      <div class="eng-ctx">📌 더디코더의 26,000명 학생 AI 학습 효과 연구 기사에서 AI 의존 학습의 본질적 문제를 분석하는 맥락으로 등장한 담화 표현이다.</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-07-05-163559 | AI News Card
+  </div>
+
+</div>
+</div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
