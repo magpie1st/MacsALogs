@@ -185,7 +185,13 @@
     border-top: 1px solid #e2e8f0;
   }
 
-    
+    .view-desktop .section-bar {
+    width: 210mm; margin: 0 auto; padding: 7px 6mm;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 8px;
+  }.view-desktop .webtoon-wrap { width: 210mm; margin: 0 auto; background: #0f172a; }.view-desktop .webtoon-wrap img { width: 100%; display: block; }
+
   @page { size: A4 portrait; margin: 0; }.view-desktop {
     font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
     background: #eef0f5;
@@ -350,6 +356,7 @@
     border-top: 1px solid #e2e8f0;
   }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
   }
+
 
   </style>
 </head>
@@ -627,6 +634,12 @@
 </div>
 </div>
       <div class="view-desktop">
+  <div class="section-bar">&#127912; WEBTOON &mdash; AI 뉴스 웹툰 2026-07-05</div>
+  <div class="webtoon-wrap">
+    <img src="../images/2026-07-05-163559/page.png" alt="AI 뉴스 웹툰 2026-07-05">
+  </div>
+  <div class="section-bar" style="margin-top:0;">&#128240; NEWS CARD &mdash; 상세 뉴스 카드 2026-07-05</div>
+
 <div class="page">
 
   <!-- Header -->
@@ -857,6 +870,7 @@
   </div>
 
 </div>
+
 </div>
     </article>
   </main>
