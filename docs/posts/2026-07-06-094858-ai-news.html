@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오늘의 AI 뉴스 — 2026-07-06 — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    @media (max-width: 799px) { .view-desktop { display: none; } }
+    @media (min-width: 800px) { .view-mobile { display: none; } }
+    .view-desktop { max-width: 100%; overflow-x: auto; }
+    .view-mobile {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: #eef0f5;
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.5;
+  }.view-mobile .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px 12px 24px;
+  }.view-mobile .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }.view-mobile .header-logo { font-size: 28px; margin-right: 10px; }.view-mobile .header-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }.view-mobile .header-sub { font-size: 11px; opacity: 0.75; margin-top: 2px; }.view-mobile .header-date { font-size: 13px; font-weight: 700; text-align: right; }.view-mobile .header-edition { font-size: 10px; opacity: 0.65; margin-top: 2px; text-align: right; }.view-mobile .sec-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }.view-mobile .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+  }.view-mobile .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }.view-mobile .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-mobile .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-mobile .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-mobile .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-mobile .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }.view-mobile .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }.view-mobile .num-ai { background: #e0e7ff; color: #3730a3; }.view-mobile .num-detail { background: #ede9fe; color: #5b21b6; }.view-mobile .num-economy { background: #d1fae5; color: #065f46; }.view-mobile .num-english { background: #fef3c7; color: #92400e; }.view-mobile .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    flex: 1;
+  }.view-mobile .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }.view-mobile .badge-ai { background: #e0e7ff; color: #4338ca; }.view-mobile .badge-detail { background: #ede9fe; color: #6d28d9; }.view-mobile .badge-economy { background: #d1fae5; color: #065f46; }.view-mobile .badge-english { background: #fef3c7; color: #92400e; }.view-mobile .bullets { list-style: none; margin: 4px 0 6px; }.view-mobile .bullets li {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.55;
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }.view-mobile .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    top: 5px;
+  }.view-mobile .card-ai     .bullets li::before { color: #6366f1; }.view-mobile .card-detail .bullets li::before { color: #7c3aed; }.view-mobile .card-economy .bullets li::before { color: #059669; }.view-mobile .card-source {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-mobile .card-source:hover { color: #64748b; text-decoration: underline; }.view-mobile .detail-block { margin-bottom: 8px; }.view-mobile .detail-lbl {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 3px;
+  }.view-mobile .detail-txt {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.55;
+  }.view-mobile .key-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }.view-mobile .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }.view-mobile .takeaway {
+    background: #f8f7ff;
+    border-left: 3px solid #8b5cf6;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 6px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+  }.view-mobile .impact-pill {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 6px;
+  }.view-mobile .impact-positive { background: #dcfce7; color: #166534; }.view-mobile .impact-negative { background: #fee2e2; color: #991b1b; }.view-mobile .impact-neutral { background: #f1f5f9; color: #475569; }.view-mobile .eng-phrase {
+    font-size: 22px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-mobile .eng-pron {
+    font-size: 14px;
+    color: #b45309;
+    font-family: monospace;
+    margin-bottom: 6px;
+  }.view-mobile .eng-meaning {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }.view-mobile .eng-ex {
+    font-size: 15px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.6;
+    background: #fffbeb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #fbbf24;
+    margin-bottom: 6px;
+  }.view-mobile .eng-ex-kr {
+    font-size: 14px;
+    color: #78716c;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }.view-mobile .eng-ctx {
+    font-size: 14px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 6px 10px;
+    border-radius: 6px;
+    line-height: 1.5;
+  }.view-mobile .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+    .view-desktop .section-bar {
+    width: 210mm; margin: 0 auto; padding: 7px 6mm;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 8px;
+  }.view-desktop .webtoon-wrap { width: 210mm; margin: 0 auto; background: #0f172a; }.view-desktop .webtoon-wrap img { width: 100%; display: block; }
+
+  @page { size: A4 portrait; margin: 0; }.view-desktop {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-desktop .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-desktop {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-desktop .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-desktop .header { padding: 14px 20px; margin-bottom: 12px; }.view-desktop .header-title { font-size: 22px; }.view-desktop .header-sub { font-size: 12px; }.view-desktop .header-date { font-size: 15px; }.view-desktop .header-edition { font-size: 11px; }.view-desktop .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-desktop .grid-3 { gap: 12px; margin-bottom: 12px; }.view-desktop .grid-2 { gap: 12px; margin-bottom: 12px; }.view-desktop .card { padding: 16px 18px; border-radius: 12px; }.view-desktop .card-title { font-size: 15px; line-height: 1.5; }.view-desktop .card-title-sm { font-size: 13px; }.view-desktop .badge { font-size: 10px; padding: 2px 9px; }.view-desktop .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-desktop .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-desktop .detail-lbl { font-size: 10px; }.view-desktop .detail-txt { font-size: 13px; line-height: 1.65; }.view-desktop .key-chip { font-size: 11px; padding: 3px 9px; }.view-desktop .takeaway { font-size: 13px; padding: 7px 12px; }.view-desktop .impact-pill { font-size: 11px; padding: 3px 11px; }.view-desktop .eng-phrase { font-size: 17px; }.view-desktop .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-desktop .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-desktop .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-desktop .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-desktop .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-desktop .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-desktop .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-desktop .header-left { display: flex; align-items: center; gap: 10px; }.view-desktop .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-desktop .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-desktop .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-desktop .header-right { text-align: right; }.view-desktop .header-date { font-size: 12px; font-weight: 700; }.view-desktop .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-desktop .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-desktop .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-1 { margin-bottom: 5px; }.view-desktop .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-desktop .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-desktop .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-desktop .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-desktop .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-desktop .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-desktop .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-desktop .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-desktop .badge-ai { background: #e0e7ff; color: #4338ca; }.view-desktop .badge-detail { background: #ede9fe; color: #6d28d9; }.view-desktop .badge-economy { background: #d1fae5; color: #065f46; }.view-desktop .badge-english { background: #fef3c7; color: #92400e; }.view-desktop .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-desktop .card-title-sm { font-size: 10px; }.view-desktop .bullets { list-style: none; margin: 3px 0; }.view-desktop .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-desktop .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-desktop .card-ai .bullets li::before { color: #6366f1; }.view-desktop .card-detail .bullets li::before { color: #7c3aed; }.view-desktop .card-economy .bullets li::before { color: #059669; }.view-desktop .card-english .bullets li::before { color: #d97706; }.view-desktop .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-desktop .card-source:hover { color: #64748b; text-decoration: underline; }.view-desktop .detail-block { margin-bottom: 4px; }.view-desktop .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-desktop .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-desktop .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-desktop .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-desktop .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-desktop .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-desktop .impact-positive { background: #dcfce7; color: #166534; }.view-desktop .impact-negative { background: #fee2e2; color: #991b1b; }.view-desktop .impact-neutral { background: #f1f5f9; color: #475569; }.view-desktop .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-desktop .eng-pron { font-size: 8px; color: #b45309; margin-bottom: 3px; }.view-desktop .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-desktop .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-desktop .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-desktop .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-desktop .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
+  }
+
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">홈</a>
+        <a href="../about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../index.html">← 목록으로</a>
+
+    <header class="post-header">
+      <h1>오늘의 AI 뉴스 — 2026-07-06</h1>
+      <div class="post-meta">
+        <span>2026-07-06</span>
+        <span>5분</span>
+      </div>
+      <div class="tags" style="margin-top: 0.75rem;">
+        <span class="tag">AI</span>
+        <span class="tag">뉴스</span>
+        <span class="tag">경제</span>
+        <span class="tag">영어</span>
+      </div>
+    </header>
+
+    <article class="post-body">
+      <div class="view-mobile">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div>
+      <div class="header-date">2026-07-06-094858</div>
+      <div class="header-edition">No. 021</div>
+    </div>
+  </div>
+
+  <!-- Webtoon image -->
+  <div style="border-radius:14px; overflow:hidden; margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <img src="../images/2026-07-06-094858/page.png" alt="AI 뉴스 웹툰 2026-07-06-094858" style="width:100%; display:block;">
+  </div>
+
+  <!-- ── Row 1: AI 요약 ── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">AI TOPICS — 오늘의 핵심 3가지</div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">1</span>
+      <span class="card-title">아마존 Turk, 21년 만에 신규 고객 종료</span>
+      <span class="badge badge-ai">에이전트</span>
+    </div>
+    <ul class="bullets">
+      <li>2005년 출시 이후 21년 만에 신규 고객 수락 중단, 2026년 7월 30일 기준</li><li>2023년 분석에서 Turk 작업자 33~46%가 LLM으로 작업 완료 - AI가 크라우드소싱 플랫폼 내부에서 잠식</li><li>AWS SageMaker 데이터 레이블링 사업으로 기존 고객 전환 유도</li>
+    </ul>
+    <a href="https://techcrunch.com/2026/07/05/amazon-will-stop-accepting-new-customers-for-mechanical-turk/" class="card-source" target="_blank" rel="noopener">Source: techcrunch.com</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">2</span>
+      <span class="card-title">Baidu OCR, 40페이지 단일 패스 처리</span>
+      <span class="badge badge-ai">연구</span>
+    </div>
+    <ul class="bullets">
+      <li>OmniDocBench v1.5에서 93% 달성, DeepSeek OCR 대비 6%p 향상 및 업계 1위</li><li>Reference Sliding Window Attention으로 KV 캐시 고정 유지 - 페이지 수 증가해도 메모리 선형 증가 없음</li><li>처리 속도 5,580 tokens/s vs DeepSeek OCR 4,951 tokens/s (12.7% 빠름), GitHub/HuggingFace 오픈소스 공개</li>
+    </ul>
+    <a href="https://the-decoder.com/baidus-unlimited-ocr-processes-dozens-of-document-pages-in-one-pass-by-treating-memory-like-human-forgetting/" class="card-source" target="_blank" rel="noopener">Source: the-decoder.com</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">3</span>
+      <span class="card-title">AI 검색 에이전트, 탐색 아닌 질문이 관건</span>
+      <span class="badge badge-ai">에이전트</span>
+    </div>
+    <ul class="bullets">
+      <li>DiscoBench 벤치마크에서 11개 모델 평균 성능 최고 43.1% - 단일 모호성 하나가 전체 다단계 추론 체인 붕괴</li><li>SearchThenAsk 전략(검색 후 질문) 93.4% vs SearchHeavyGuess(반복 검색) 51.9% - 전략 차이가 성능 두 배 이상 갈라</li><li>Tencent Hunyuan + Tsinghua 연구팀 공동 개발, 4가지 모호성 유형(다중 엔티티, 시점, 평가기준, 사실오류) 분류</li>
+    </ul>
+    <a href="https://the-decoder.com/ai-search-agents-dont-fail-at-searching-they-fail-at-asking-the-right-questions-when-queries-get-ambiguous/" class="card-source" target="_blank" rel="noopener">Source: the-decoder.com</a>
+  </div>
+  
+
+  <!-- ── Row 2: AI 상세 ── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">AI DEEP DIVE — 왜 중요한가</div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">1</span>
+      <span class="card-title">아마존 Turk, 21년 만에 신규 고객 종료</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">아마존 Mechanical Turk(MTurk)는 2005년 출시 후 CAPTCHA 처리, 감성 분석 등 소규모 단순 작업을 외주화하는 플랫폼으로 성장했다. AI 모델 학습용 데이터 레이블링 도구로 재포지셔닝 후에도 플랫폼 내 LLM 작업 대체 비율이 급격히 상승했다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">AI가 크라우드소싱 노동 플랫폼 자체를 내부에서 잠식한 아이러니한 사례로, 인간 데이터 주석 시장 전반의 AI 자동화 전환을 상징한다. MTurk 종료는 AI가 기존 데이터 수집 인프라를 대체하는 구조적 전환점을 시사한다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">2026년 7월 30일 신규 고객 수락 마감</span><span class="key-chip">작업자 33~46%가 LLM으로 업무 처리(2023년 분석)</span>
+    </div>
+    
+
+    <div class="takeaway">>>> AI가 AI 학습 데이터를 만들던 인간 노동 플랫폼을 직접 대체하며 크라우드소싱 시대의 종언을 고했다.</div>
+    <a href="https://techcrunch.com/2026/07/05/amazon-will-stop-accepting-new-customers-for-mechanical-turk/" class="card-source" target="_blank" rel="noopener">Source: techcrunch.com</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">2</span>
+      <span class="card-title">Baidu OCR, 40페이지 단일 패스 처리</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">기존 OCR 시스템은 한 번에 처리 가능한 문서 페이지 수가 약 10페이지로 제한되었다. Baidu가 공개한 Unlimited OCR은 Reference Sliding Window Attention(R-SWA) 기법으로 KV 캐시를 고정 크기로 유지해 수십 페이지를 단일 패스로 처리한다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">문서 이해 AI의 핵심 병목이던 페이지 수 제한을 구조적으로 해결한 오픈소스 모델로, 기업 문서 처리 자동화 시장에서 즉각 활용 가능한 수준의 성능을 보인다. 3B 파라미터(500M 활성) 경량 구조로 배포 비용도 낮다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">OmniDocBench v1.5 정확도 93% (업계 1위)</span><span class="key-chip">처리 속도 5,580 tokens/s (경쟁 대비 12.7% 우세)</span>
+    </div>
+    
+
+    <div class="takeaway">>>> Baidu가 인간의 망각 메커니즘을 모방한 메모리 구조로 문서 OCR 한계를 돌파하고 오픈소스로 공개했다.</div>
+    <a href="https://the-decoder.com/baidus-unlimited-ocr-processes-dozens-of-document-pages-in-one-pass-by-treating-memory-like-human-forgetting/" class="card-source" target="_blank" rel="noopener">Source: the-decoder.com</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">3</span>
+      <span class="card-title">AI 검색 에이전트, 탐색 아닌 질문이 관건</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">다단계 AI 검색 에이전트는 개별 검색 단계 성공률이 높음에도 최종 작업 완료율이 낮다는 문제가 있었다. Tencent Hunyuan과 Tsinghua 대학 공동 연구팀이 이 원인을 규명하기 위해 DiscoBench 벤치마크를 개발했다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">에이전트가 모호한 쿼리에서 사용자에게 확인 질문 없이 반복 검색만 하면 오히려 성능이 더 나쁘다는 사실은, AI 에이전트 설계의 핵심 원칙을 바꿔야 한다는 것을 시사한다. 기업용 AI 에이전트 제품 개발에 직접적인 설계 지침을 제공한다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">최고 성능 모델 Doubao Seed 2.0 Pro 43.1% 종단 정확도</span><span class="key-chip">모호성 제거 시 정확도 최대 40%p 향상</span>
+    </div>
+    
+
+    <div class="takeaway">>>> AI 검색 에이전트의 실패는 검색 능력 부족이 아니라 모호할 때 사용자에게 질문하지 않는 설계 결함에서 비롯된다.</div>
+    <a href="https://the-decoder.com/ai-search-agents-dont-fail-at-searching-they-fail-at-asking-the-right-questions-when-queries-get-ambiguous/" class="card-source" target="_blank" rel="noopener">Source: the-decoder.com</a>
+  </div>
+  
+
+  <!-- ── Row 3: 경제 ── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">ECONOMY — 경제·금융 핵심 3가지</div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">1</span>
+      <span class="card-title">삼성 실적 발표, AI 반도체株 진정 기대</span>
+      <span class="badge badge-economy">반도체</span>
+    </div>
+    <ul class="bullets">
+      <li>삼성전자 7월 8일 2분기 실적 발표 예정, HBM 수요·AI 칩 수주 회복 여부 주목</li><li>최근 수주 급등락으로 흔들린 글로벌 칩 투자자들이 삼성 실적을 AI 투자 신뢰 회복 신호로 기대</li>
+    </ul>
+    <span class="impact-pill impact-positive">↑ 긍정적</span>
+    <a href="https://www.bloomberg.com/news/articles/2026-07-05/chip-stock-bulls-count-on-samsung-to-soothe-ai-trade-jitters" class="card-source" target="_blank" rel="noopener">Source: Bloomberg Markets</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">2</span>
+      <span class="card-title">MANGOS AI 주식 바스켓 상승세 둔화 우려</span>
+      <span class="badge badge-economy">시장</span>
+    </div>
+    <ul class="bullets">
+      <li>MANGOS(Meta·Anthropic·Nvidia·Google·OpenAI·Samsung) 6개 종목 묶음, AI 붐 상징주로 부상</li><li>AI 투자 기대감 과열 평가 속 밸류에이션 부담 및 차익실현 압박으로 단기 조정 가능성 제기</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ 부정적</span>
+    <a href="https://www.nytimes.com/2026/07/04/business/mangos-ai-stocks.html" class="card-source" target="_blank" rel="noopener">Source: NYT > Business</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">3</span>
+      <span class="card-title">중국, 역외 투자 단속으로 국내 AI 기술 육성</span>
+      <span class="badge badge-economy">정책</span>
+    </div>
+    <ul class="bullets">
+      <li>중국 당국이 미국 기술주 편법 투자 경로를 차단, 자국 AI·반도체 기업으로 자본 유도</li><li>AI 패권 경쟁 속 중국 내 AI 인프라 투자 확대 압력 증가, 미·중 기술 투자 분리 가속화</li>
+    </ul>
+    <span class="impact-pill impact-neutral">→ 중립</span>
+    <a href="https://www.economist.com/finance-and-economics/2026/06/28/china-cracks-down-on-rule-bending-offshore-investments" class="card-source" target="_blank" rel="noopener">Source: Finance & economics</a>
+  </div>
+  
+
+  <!-- ── Row 4: 영어 표현 ── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">1</span>
+      <span class="eng-phrase">"KV cache"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ˌkeɪ ˈviː kæʃ/ [케이-비 캐시]</div>
+    <div class="eng-meaning">→ AI 모델이 추론 중 키-값 쌍을 임시 저장하는 메모리 버퍼</div>
+    <div class="eng-ex">The system addresses the KV cache bottleneck that typically forces page-by-page processing.</div>
+    <div class="eng-ex-kr">이 시스템은 일반적으로 페이지 단위 처리를 강제하던 KV 캐시 병목 현상을 해결한다.</div>
+    <div class="eng-ctx">기술 용어 — 더디코더의 Baidu Unlimited OCR 기사에서 등장한 AI 추론 메모리 구조 용어로, 대형 언어 모델 및 멀티모달 모델의 핵심 병목 요소를 설명하는 맥락에서 사용됐다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">2</span>
+      <span class="eng-phrase">"billing it as"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ˈbɪlɪŋ ɪt æz/ [빌링 잇 애즈]</div>
+    <div class="eng-meaning">→ 제품이나 서비스를 특정 방식으로 홍보하거나 포지셔닝하다</div>
+    <div class="eng-ex">Beginning in 2018, Amazon began billing it as a way for companies to annotate data to train neural networks as part of its SageMaker AI service.</div>
+    <div class="eng-ex-kr">2018년부터 아마존은 이를 SageMaker AI 서비스의 일환으로 기업들이 신경망 학습용 데이터에 주석을 달 수 있는 방법으로 홍보하기 시작했다.</div>
+    <div class="eng-ctx">비즈니스 표현 — 테크크런치의 아마존 Mechanical Turk 종료 기사에서, 아마존이 플랫폼을 AI 데이터 레이블링 도구로 재포지셔닝한 전략을 설명하는 맥락에 등장한 표현이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">3</span>
+      <span class="eng-phrase">"error cascades through the entire reasoning chain"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ˈerər kæˈskeɪdz θruː ðə ɪnˈtaɪər ˈriːzənɪŋ tʃeɪn/ [에러 캐스케이즈 스루 더 인타이어 리즈닝 체인]</div>
+    <div class="eng-meaning">→ 초기 오류가 전체 추론 과정에 연쇄적으로 파급되다</div>
+    <div class="eng-ex">When a search agent guesses instead of clarifying ambiguities, the error cascades through the entire reasoning chain.</div>
+    <div class="eng-ex-kr">검색 에이전트가 모호한 부분을 명확히 하는 대신 추측할 때, 오류는 전체 추론 체인을 따라 연쇄적으로 확산된다.</div>
+    <div class="eng-ctx">뉴스/담화 표현 — 더디코더의 DiscoBench AI 검색 에이전트 벤치마크 기사에서, AI 에이전트가 불명확한 질의에 대해 확인 질문 없이 검색만 반복할 때 발생하는 구조적 실패를 설명하는 분석적 표현으로 사용됐다.</div>
+  </div>
+  
+
+  <!-- Footer -->
+  <div class="footer">
+    Auto-generated | 2026-07-06-094858 | AI News Card
+  </div>
+
+</div>
+</div>
+      <div class="view-desktop">
+  <div class="section-bar">&#127912; WEBTOON &mdash; AI 뉴스 웹툰 2026-07-06</div>
+  <div class="webtoon-wrap">
+    <img src="../images/2026-07-06-094858/page.png" alt="AI 뉴스 웹툰 2026-07-06">
+  </div>
+  <div class="section-bar" style="margin-top:0;">&#128240; NEWS CARD &mdash; 상세 뉴스 카드 2026-07-06</div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-07-06-094858</div>
+      <div class="header-edition">No. 021</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">아마존 Turk, 21년 만에 신규 고객 종료</span>
+        <span class="badge badge-ai">에이전트</span>
+      </div>
+      <ul class="bullets">
+        <li>2005년 출시 이후 21년 만에 신규 고객 수락 중단, 2026년 7월 30일 기준</li><li>2023년 분석에서 Turk 작업자 33~46%가 LLM으로 작업 완료 - AI가 크라우드소싱 플랫폼 내부에서 잠식</li><li>AWS SageMaker 데이터 레이블링 사업으로 기존 고객 전환 유도</li>
+      </ul>
+      <a href="https://techcrunch.com/2026/07/05/amazon-will-stop-accepting-new-customers-for-mechanical-turk/" class="card-source" target="_blank" rel="noopener">📰 techcrunch.com</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">Baidu OCR, 40페이지 단일 패스 처리</span>
+        <span class="badge badge-ai">연구</span>
+      </div>
+      <ul class="bullets">
+        <li>OmniDocBench v1.5에서 93% 달성, DeepSeek OCR 대비 6%p 향상 및 업계 1위</li><li>Reference Sliding Window Attention으로 KV 캐시 고정 유지 - 페이지 수 증가해도 메모리 선형 증가 없음</li><li>처리 속도 5,580 tokens/s vs DeepSeek OCR 4,951 tokens/s (12.7% 빠름), GitHub/HuggingFace 오픈소스 공개</li>
+      </ul>
+      <a href="https://the-decoder.com/baidus-unlimited-ocr-processes-dozens-of-document-pages-in-one-pass-by-treating-memory-like-human-forgetting/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">AI 검색 에이전트, 탐색 아닌 질문이 관건</span>
+        <span class="badge badge-ai">에이전트</span>
+      </div>
+      <ul class="bullets">
+        <li>DiscoBench 벤치마크에서 11개 모델 평균 성능 최고 43.1% - 단일 모호성 하나가 전체 다단계 추론 체인 붕괴</li><li>SearchThenAsk 전략(검색 후 질문) 93.4% vs SearchHeavyGuess(반복 검색) 51.9% - 전략 차이가 성능 두 배 이상 갈라</li><li>Tencent Hunyuan + Tsinghua 연구팀 공동 개발, 4가지 모호성 유형(다중 엔티티, 시점, 평가기준, 사실오류) 분류</li>
+      </ul>
+      <a href="https://the-decoder.com/ai-search-agents-dont-fail-at-searching-they-fail-at-asking-the-right-questions-when-queries-get-ambiguous/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">아마존 Turk, 21년 만에 신규 고객 종료</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">아마존 Mechanical Turk(MTurk)는 2005년 출시 후 CAPTCHA 처리, 감성 분석 등 소규모 단순 작업을 외주화하는 플랫폼으로 성장했다. AI 모델 학습용 데이터 레이블링 도구로 재포지셔닝 후에도 플랫폼 내 LLM 작업 대체 비율이 급격히 상승했다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">AI가 크라우드소싱 노동 플랫폼 자체를 내부에서 잠식한 아이러니한 사례로, 인간 데이터 주석 시장 전반의 AI 자동화 전환을 상징한다. MTurk 종료는 AI가 기존 데이터 수집 인프라를 대체하는 구조적 전환점을 시사한다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">2026년 7월 30일 신규 고객 수락 마감</span><span class="key-chip">작업자 33~46%가 LLM으로 업무 처리(2023년 분석)</span>
+      </div>
+      
+
+      <div class="takeaway">▶ AI가 AI 학습 데이터를 만들던 인간 노동 플랫폼을 직접 대체하며 크라우드소싱 시대의 종언을 고했다.</div>
+      <a href="https://techcrunch.com/2026/07/05/amazon-will-stop-accepting-new-customers-for-mechanical-turk/" class="card-source" target="_blank" rel="noopener">📰 techcrunch.com</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">Baidu OCR, 40페이지 단일 패스 처리</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">기존 OCR 시스템은 한 번에 처리 가능한 문서 페이지 수가 약 10페이지로 제한되었다. Baidu가 공개한 Unlimited OCR은 Reference Sliding Window Attention(R-SWA) 기법으로 KV 캐시를 고정 크기로 유지해 수십 페이지를 단일 패스로 처리한다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">문서 이해 AI의 핵심 병목이던 페이지 수 제한을 구조적으로 해결한 오픈소스 모델로, 기업 문서 처리 자동화 시장에서 즉각 활용 가능한 수준의 성능을 보인다. 3B 파라미터(500M 활성) 경량 구조로 배포 비용도 낮다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">OmniDocBench v1.5 정확도 93% (업계 1위)</span><span class="key-chip">처리 속도 5,580 tokens/s (경쟁 대비 12.7% 우세)</span>
+      </div>
+      
+
+      <div class="takeaway">▶ Baidu가 인간의 망각 메커니즘을 모방한 메모리 구조로 문서 OCR 한계를 돌파하고 오픈소스로 공개했다.</div>
+      <a href="https://the-decoder.com/baidus-unlimited-ocr-processes-dozens-of-document-pages-in-one-pass-by-treating-memory-like-human-forgetting/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">AI 검색 에이전트, 탐색 아닌 질문이 관건</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">다단계 AI 검색 에이전트는 개별 검색 단계 성공률이 높음에도 최종 작업 완료율이 낮다는 문제가 있었다. Tencent Hunyuan과 Tsinghua 대학 공동 연구팀이 이 원인을 규명하기 위해 DiscoBench 벤치마크를 개발했다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">에이전트가 모호한 쿼리에서 사용자에게 확인 질문 없이 반복 검색만 하면 오히려 성능이 더 나쁘다는 사실은, AI 에이전트 설계의 핵심 원칙을 바꿔야 한다는 것을 시사한다. 기업용 AI 에이전트 제품 개발에 직접적인 설계 지침을 제공한다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">최고 성능 모델 Doubao Seed 2.0 Pro 43.1% 종단 정확도</span><span class="key-chip">모호성 제거 시 정확도 최대 40%p 향상</span>
+      </div>
+      
+
+      <div class="takeaway">▶ AI 검색 에이전트의 실패는 검색 능력 부족이 아니라 모호할 때 사용자에게 질문하지 않는 설계 결함에서 비롯된다.</div>
+      <a href="https://the-decoder.com/ai-search-agents-dont-fail-at-searching-they-fail-at-asking-the-right-questions-when-queries-get-ambiguous/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">삼성 실적 발표, AI 반도체株 진정 기대</span>
+        <span class="badge badge-economy">반도체</span>
+      </div>
+      <ul class="bullets">
+        <li>삼성전자 7월 8일 2분기 실적 발표 예정, HBM 수요·AI 칩 수주 회복 여부 주목</li><li>최근 수주 급등락으로 흔들린 글로벌 칩 투자자들이 삼성 실적을 AI 투자 신뢰 회복 신호로 기대</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ 긍정적</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-05/chip-stock-bulls-count-on-samsung-to-soothe-ai-trade-jitters" class="card-source" target="_blank" rel="noopener">📰 Bloomberg Markets</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">MANGOS AI 주식 바스켓 상승세 둔화 우려</span>
+        <span class="badge badge-economy">시장</span>
+      </div>
+      <ul class="bullets">
+        <li>MANGOS(Meta·Anthropic·Nvidia·Google·OpenAI·Samsung) 6개 종목 묶음, AI 붐 상징주로 부상</li><li>AI 투자 기대감 과열 평가 속 밸류에이션 부담 및 차익실현 압박으로 단기 조정 가능성 제기</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ 부정적</span>
+      <a href="https://www.nytimes.com/2026/07/04/business/mangos-ai-stocks.html" class="card-source" target="_blank" rel="noopener">📰 NYT > Business</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">중국, 역외 투자 단속으로 국내 AI 기술 육성</span>
+        <span class="badge badge-economy">정책</span>
+      </div>
+      <ul class="bullets">
+        <li>중국 당국이 미국 기술주 편법 투자 경로를 차단, 자국 AI·반도체 기업으로 자본 유도</li><li>AI 패권 경쟁 속 중국 내 AI 인프라 투자 확대 압력 증가, 미·중 기술 투자 분리 가속화</li>
+      </ul>
+      <span class="impact-pill impact-neutral">→ 중립</span>
+      <a href="https://www.economist.com/finance-and-economics/2026/06/28/china-cracks-down-on-rule-bending-offshore-investments" class="card-source" target="_blank" rel="noopener">📰 Finance & economics</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"KV cache"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ˌkeɪ ˈviː kæʃ/ [케이-비 캐시]</div>
+      <div class="eng-meaning">→ AI 모델이 추론 중 키-값 쌍을 임시 저장하는 메모리 버퍼</div>
+      <div class="eng-ex">The system addresses the KV cache bottleneck that typically forces page-by-page processing.</div>
+      <div class="eng-ex-kr">이 시스템은 일반적으로 페이지 단위 처리를 강제하던 KV 캐시 병목 현상을 해결한다.</div>
+      <div class="eng-ctx">📌 기술 용어 — 더디코더의 Baidu Unlimited OCR 기사에서 등장한 AI 추론 메모리 구조 용어로, 대형 언어 모델 및 멀티모달 모델의 핵심 병목 요소를 설명하는 맥락에서 사용됐다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"billing it as"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ˈbɪlɪŋ ɪt æz/ [빌링 잇 애즈]</div>
+      <div class="eng-meaning">→ 제품이나 서비스를 특정 방식으로 홍보하거나 포지셔닝하다</div>
+      <div class="eng-ex">Beginning in 2018, Amazon began billing it as a way for companies to annotate data to train neural networks as part of its SageMaker AI service.</div>
+      <div class="eng-ex-kr">2018년부터 아마존은 이를 SageMaker AI 서비스의 일환으로 기업들이 신경망 학습용 데이터에 주석을 달 수 있는 방법으로 홍보하기 시작했다.</div>
+      <div class="eng-ctx">📌 비즈니스 표현 — 테크크런치의 아마존 Mechanical Turk 종료 기사에서, 아마존이 플랫폼을 AI 데이터 레이블링 도구로 재포지셔닝한 전략을 설명하는 맥락에 등장한 표현이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"error cascades through the entire reasoning chain"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ˈerər kæˈskeɪdz θruː ðə ɪnˈtaɪər ˈriːzənɪŋ tʃeɪn/ [에러 캐스케이즈 스루 더 인타이어 리즈닝 체인]</div>
+      <div class="eng-meaning">→ 초기 오류가 전체 추론 과정에 연쇄적으로 파급되다</div>
+      <div class="eng-ex">When a search agent guesses instead of clarifying ambiguities, the error cascades through the entire reasoning chain.</div>
+      <div class="eng-ex-kr">검색 에이전트가 모호한 부분을 명확히 하는 대신 추측할 때, 오류는 전체 추론 체인을 따라 연쇄적으로 확산된다.</div>
+      <div class="eng-ctx">📌 뉴스/담화 표현 — 더디코더의 DiscoBench AI 검색 에이전트 벤치마크 기사에서, AI 에이전트가 불명확한 질의에 대해 확인 질문 없이 검색만 반복할 때 발생하는 구조적 실패를 설명하는 분석적 표현으로 사용됐다.</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-07-06-094858 | AI News Card
+  </div>
+
+</div>
+
+</div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
