@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오늘의 AI 뉴스 — 2026-07-07 — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    @media (max-width: 799px) { .view-desktop { display: none; } }
+    @media (min-width: 800px) { .view-mobile { display: none; } }
+    .view-desktop { max-width: 100%; overflow-x: auto; }
+    .view-mobile {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: #eef0f5;
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.5;
+  }.view-mobile .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px 12px 24px;
+  }.view-mobile .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }.view-mobile .header-logo { font-size: 28px; margin-right: 10px; }.view-mobile .header-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }.view-mobile .header-sub { font-size: 11px; opacity: 0.75; margin-top: 2px; }.view-mobile .header-date { font-size: 13px; font-weight: 700; text-align: right; }.view-mobile .header-edition { font-size: 10px; opacity: 0.65; margin-top: 2px; text-align: right; }.view-mobile .sec-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }.view-mobile .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+  }.view-mobile .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }.view-mobile .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-mobile .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-mobile .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-mobile .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-mobile .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }.view-mobile .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }.view-mobile .num-ai { background: #e0e7ff; color: #3730a3; }.view-mobile .num-detail { background: #ede9fe; color: #5b21b6; }.view-mobile .num-economy { background: #d1fae5; color: #065f46; }.view-mobile .num-english { background: #fef3c7; color: #92400e; }.view-mobile .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    flex: 1;
+  }.view-mobile .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }.view-mobile .badge-ai { background: #e0e7ff; color: #4338ca; }.view-mobile .badge-detail { background: #ede9fe; color: #6d28d9; }.view-mobile .badge-economy { background: #d1fae5; color: #065f46; }.view-mobile .badge-english { background: #fef3c7; color: #92400e; }.view-mobile .bullets { list-style: none; margin: 4px 0 6px; }.view-mobile .bullets li {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.55;
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }.view-mobile .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    top: 5px;
+  }.view-mobile .card-ai     .bullets li::before { color: #6366f1; }.view-mobile .card-detail .bullets li::before { color: #7c3aed; }.view-mobile .card-economy .bullets li::before { color: #059669; }.view-mobile .card-source {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-mobile .card-source:hover { color: #64748b; text-decoration: underline; }.view-mobile .detail-block { margin-bottom: 8px; }.view-mobile .detail-lbl {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 3px;
+  }.view-mobile .detail-txt {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.55;
+  }.view-mobile .key-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }.view-mobile .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }.view-mobile .takeaway {
+    background: #f8f7ff;
+    border-left: 3px solid #8b5cf6;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 6px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+  }.view-mobile .impact-pill {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 6px;
+  }.view-mobile .impact-positive { background: #dcfce7; color: #166534; }.view-mobile .impact-negative { background: #fee2e2; color: #991b1b; }.view-mobile .impact-neutral { background: #f1f5f9; color: #475569; }.view-mobile .eng-phrase {
+    font-size: 22px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-mobile .eng-pron {
+    font-size: 14px;
+    color: #b45309;
+    font-family: monospace;
+    margin-bottom: 6px;
+  }.view-mobile .eng-meaning {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }.view-mobile .eng-ex {
+    font-size: 15px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.6;
+    background: #fffbeb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #fbbf24;
+    margin-bottom: 6px;
+  }.view-mobile .eng-ex-kr {
+    font-size: 14px;
+    color: #78716c;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }.view-mobile .eng-ctx {
+    font-size: 14px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 6px 10px;
+    border-radius: 6px;
+    line-height: 1.5;
+  }.view-mobile .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+    
+  @page { size: A4 portrait; margin: 0; }.view-desktop {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-desktop .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-desktop {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-desktop .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-desktop .header { padding: 14px 20px; margin-bottom: 12px; }.view-desktop .header-title { font-size: 22px; }.view-desktop .header-sub { font-size: 12px; }.view-desktop .header-date { font-size: 15px; }.view-desktop .header-edition { font-size: 11px; }.view-desktop .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-desktop .grid-3 { gap: 12px; margin-bottom: 12px; }.view-desktop .grid-2 { gap: 12px; margin-bottom: 12px; }.view-desktop .card { padding: 16px 18px; border-radius: 12px; }.view-desktop .card-title { font-size: 15px; line-height: 1.5; }.view-desktop .card-title-sm { font-size: 13px; }.view-desktop .badge { font-size: 10px; padding: 2px 9px; }.view-desktop .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-desktop .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-desktop .detail-lbl { font-size: 10px; }.view-desktop .detail-txt { font-size: 13px; line-height: 1.65; }.view-desktop .key-chip { font-size: 11px; padding: 3px 9px; }.view-desktop .takeaway { font-size: 13px; padding: 7px 12px; }.view-desktop .impact-pill { font-size: 11px; padding: 3px 11px; }.view-desktop .eng-phrase { font-size: 17px; }.view-desktop .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-desktop .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-desktop .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-desktop .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-desktop .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-desktop .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-desktop .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-desktop .header-left { display: flex; align-items: center; gap: 10px; }.view-desktop .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-desktop .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-desktop .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-desktop .header-right { text-align: right; }.view-desktop .header-date { font-size: 12px; font-weight: 700; }.view-desktop .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-desktop .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-desktop .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-1 { margin-bottom: 5px; }.view-desktop .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-desktop .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-desktop .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-desktop .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-desktop .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-desktop .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-desktop .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-desktop .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-desktop .badge-ai { background: #e0e7ff; color: #4338ca; }.view-desktop .badge-detail { background: #ede9fe; color: #6d28d9; }.view-desktop .badge-economy { background: #d1fae5; color: #065f46; }.view-desktop .badge-english { background: #fef3c7; color: #92400e; }.view-desktop .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-desktop .card-title-sm { font-size: 10px; }.view-desktop .bullets { list-style: none; margin: 3px 0; }.view-desktop .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-desktop .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-desktop .card-ai .bullets li::before { color: #6366f1; }.view-desktop .card-detail .bullets li::before { color: #7c3aed; }.view-desktop .card-economy .bullets li::before { color: #059669; }.view-desktop .card-english .bullets li::before { color: #d97706; }.view-desktop .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-desktop .card-source:hover { color: #64748b; text-decoration: underline; }.view-desktop .detail-block { margin-bottom: 4px; }.view-desktop .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-desktop .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-desktop .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-desktop .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-desktop .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-desktop .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-desktop .impact-positive { background: #dcfce7; color: #166534; }.view-desktop .impact-negative { background: #fee2e2; color: #991b1b; }.view-desktop .impact-neutral { background: #f1f5f9; color: #475569; }.view-desktop .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-desktop .eng-pron { font-size: 8px; color: #b45309; margin-bottom: 3px; }.view-desktop .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-desktop .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-desktop .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-desktop .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-desktop .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
+  }
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">홈</a>
+        <a href="../about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../index.html">← 목록으로</a>
+
+    <header class="post-header">
+      <h1>오늘의 AI 뉴스 — 2026-07-07</h1>
+      <div class="post-meta">
+        <span>2026-07-07</span>
+        <span>5분</span>
+      </div>
+      <div class="tags" style="margin-top: 0.75rem;">
+        <span class="tag">AI</span>
+        <span class="tag">뉴스</span>
+        <span class="tag">경제</span>
+        <span class="tag">영어</span>
+      </div>
+    </header>
+
+    <article class="post-body">
+      <div class="view-mobile">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div>
+      <div class="header-date">2026-07-07-090653</div>
+      <div class="header-edition">No. 022</div>
+    </div>
+  </div>
+
+  <!-- Webtoon image -->
+  <div style="border-radius:14px; overflow:hidden; margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <img src="../images/2026-07-07-090653/page.png" alt="AI 뉴스 웹툰 2026-07-07-090653" style="width:100%; display:block;">
+  </div>
+
+  <!-- ── Row 1: AI 요약 ── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">AI TOPICS — 오늘의 핵심 3가지</div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">1</span>
+      <span class="card-title">Nvidia Kyber, 1년 이상 출시 지연</span>
+      <span class="badge badge-ai">반도체</span>
+    </div>
+    <ul class="bullets">
+      <li>Nvidia 차세대 AI 서버 랙 Kyber NVL144가 PCB 미드플레인 불량 문제로 2028년으로 1년 이상 연기됨</li><li>일본 Ibiden 10%, 홍콩 Kingboard 18%, 한국 삼성전기 11% 주가 급락</li><li>Rubin Ultra 고성능 칩(4다이) 취소, AMD·Google에 시장 진입 기회 생성</li>
+    </ul>
+    <a href="https://the-decoder.com/nvidias-kyber-nvl144-reportedly-pushed-back-more-than-a-year-asian-suppliers-drop/" class="card-source" target="_blank" rel="noopener">Source: the-decoder.com</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">2</span>
+      <span class="card-title">AI 에이전트 랜섬웨어 JADEPUFFER 등장</span>
+      <span class="badge badge-ai">안전기술</span>
+    </div>
+    <ul class="bullets">
+      <li>Sysdig 보고서: AI 에이전트가 31초 만에 관리자 계정 오류를 자가 수정하며 침투 성공</li><li>1,342개 설정 항목 자동 암호화, 인간 공격자 없이 전체 공격 사이클 완성</li><li>알려진 CVE-2025-3248 취약점 악용 — 2025년 4월 패치 공개에도 적용 안 된 시스템 표적</li>
+    </ul>
+    <a href="https://the-decoder.com/jadepuffer-is-the-first-agentic-ransomware-operation-and-it-exposes-old-security-sins-at-machine-speed/" class="card-source" target="_blank" rel="noopener">Source: the-decoder.com</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">3</span>
+      <span class="card-title">마이크로소프트, AI 전환으로 4,800명 감원</span>
+      <span class="badge badge-ai">에이전트</span>
+    </div>
+    <ul class="bullets">
+      <li>전체 직원의 2.1%인 4,800명 감원, Xbox 부문 1,600명 집중 타격</li><li>AI 전환 명목으로 경영 계층을 14단계에서 3~5단계로 축소</li><li>동시에 AI 배포 사업부 Frontier Company에 25억 달러 투자</li>
+    </ul>
+    <a href="https://techcrunch.com/2026/07/06/microsoft-lays-off-nearly-5000-employees-across-xbox-commercial-sales/" class="card-source" target="_blank" rel="noopener">Source: techcrunch.com</a>
+  </div>
+  
+
+  <!-- ── Row 2: AI 상세 ── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">AI DEEP DIVE — 왜 중요한가</div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">1</span>
+      <span class="card-title">Nvidia Kyber, 1년 이상 출시 지연</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">Nvidia의 Kyber NVL144는 차세대 AI 데이터센터용 서버 랙으로, 현재 Blackwell 아키텍처의 후속이다. 반도체 업계 분석사 SemiAnalysis가 지연 사실을 처음 보고했으며, PCB 미드플레인 결함 없는 양산이 기술적으로 난해하다는 점이 지연 원인이다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">AI 인프라 투자 사이클에 차질이 생기면 데이터센터 확장 계획이 지연되고, 글로벌 AI 서비스 용량 확보 일정도 늦어진다. AMD·Google TPU 등 경쟁 인프라에 점유율 확장 기회를 제공하는 전환점이 될 수 있다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">공급업체 주가 최대 18% 단일일 낙폭</span><span class="key-chip">2028년으로 1년 이상 출시 지연</span>
+    </div>
+    
+
+    <div class="takeaway">>>> Nvidia AI 서버 공급망이 PCB 기술 병목에 걸려 경쟁사에게 반격 기회를 열어줬다.</div>
+    <a href="https://the-decoder.com/nvidias-kyber-nvl144-reportedly-pushed-back-more-than-a-year-asian-suppliers-drop/" class="card-source" target="_blank" rel="noopener">Source: the-decoder.com</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">2</span>
+      <span class="card-title">AI 에이전트 랜섬웨어 JADEPUFFER 등장</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">JADEPUFFER는 Sysdig 보안 연구팀이 명명한 위협 행위자로, Langflow 플랫폼의 원격 코드 실행 취약점(CVE-2025-3248)을 통해 진입했다. AI 모델이 공격 실행 전 과정을 자율로 수행했으며, 인간은 초기 피해자 선정과 인프라 세팅에만 관여한 것으로 분석된다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">이전까지 랜섬웨어는 인간 해커가 단계마다 판단을 내렸지만, 이제 AI 에이전트가 기계 속도로 전체 공격 체인을 실행한다. 실시간 탐지 체계와 패치 적용 속도가 즉각 중요해졌으며, 보안 SOC(보안운영센터) 자동화 투자 수요가 급등할 전망이다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">31초: AI가 계정 오류 자가 수정에 걸린 시간</span><span class="key-chip">72%: 실시간 자격증명 오용 탐지 못하는 조직 비율</span>
+    </div>
+    
+
+    <div class="takeaway">>>> AI 에이전트가 처음으로 자율 랜섬웨어 공격을 완성해, 기업 패치 관리와 실시간 탐지 체계가 생존 조건이 됐다.</div>
+    <a href="https://the-decoder.com/jadepuffer-is-the-first-agentic-ransomware-operation-and-it-exposes-old-security-sins-at-machine-speed/" class="card-source" target="_blank" rel="noopener">Source: the-decoder.com</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">3</span>
+      <span class="card-title">마이크로소프트, AI 전환으로 4,800명 감원</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">마이크로소프트는 2025년에도 15,000명을 감원한 바 있으며, 이번 감원은 AI 자동화 전략의 연장선이다. 인사 담당 부사장은 AI가 일상 업무를 대체하고 있다며 직원들에게 지속적 재교육을 촉구했다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">빅테크가 AI를 실제 인력 감축 근거로 명시하기 시작했다는 점에서 산업 전환의 기준점이 된다. 2026년 상반기 기술업계 전체 감원 154,000명 중 마이크로소프트 비중이 크며, AI ROI 실현이 노동 대체로 표면화되는 첫 대형 사례다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">4,800명 감원(전 직원 2.1%)</span><span class="key-chip">25억 달러: Frontier Company AI 사업부 동시 투자액</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 마이크로소프트가 AI 자동화로 경영 계층을 절반 이하로 줄이며, 빅테크 감원과 AI 투자 가속의 공존 시대를 공식화했다.</div>
+    <a href="https://techcrunch.com/2026/07/06/microsoft-lays-off-nearly-5000-employees-across-xbox-commercial-sales/" class="card-source" target="_blank" rel="noopener">Source: techcrunch.com</a>
+  </div>
+  
+
+  <!-- ── Row 3: 경제 ── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">ECONOMY — 경제·금융 핵심 3가지</div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">1</span>
+      <span class="card-title">삼성 AI 메모리 실적 19배 급증 확정</span>
+      <span class="badge badge-economy">반도체</span>
+    </div>
+    <ul class="bullets">
+      <li>삼성전자 2분기 영업이익 19배 급등, AI 데이터센터向 HBM(고대역폭메모리) 수요 폭증이 원인</li><li>시장 예상치 상회 달성, 글로벌 AI 인프라 투자 신뢰 회복 신호로 해석</li>
+    </ul>
+    <span class="impact-pill impact-positive">↑ 긍정적</span>
+    <a href="https://www.bloomberg.com/news/articles/2026-07-06/samsung-scores-profit-beat-due-to-runaway-demand-for-ai-memory" class="card-source" target="_blank" rel="noopener">Source: Bloomberg Markets</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">2</span>
+      <span class="card-title">AI 데이터 수익, Big Tech 독점 논쟁 확산</span>
+      <span class="badge badge-economy">규제</span>
+    </div>
+    <ul class="bullets">
+      <li>MarketWatch 기고: AI 학습 데이터 제공자(일반 이용자)에게 지분·보상 없이 Big Tech만 100% 수익 독점</li><li>데이터 기여분 공정 배분을 요구하는 정책·규제 논의 확산, AI 산업 수익 구조 재편 압박</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ 부정적</span>
+    <a href="https://www.marketwatch.com/story/your-share-of-the-ai-wealth-is-a-right-not-a-handout-here-is-how-we-claw-back-our-money-7454b0e0?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">Source: MarketWatch.com - Top Stories</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">3</span>
+      <span class="card-title">알리바바 Qwen AI, 인기에도 수익화 난항</span>
+      <span class="badge badge-economy">기업</span>
+    </div>
+    <ul class="bullets">
+      <li>알리바바 Qwen 모델, 전 세계 개발자 채택률 급상승했으나 오픈소스 특성상 직접 수익 창출 불가</li><li>오픈소스 AI 비즈니스 모델 딜레마 — 생태계 점유율 vs 클라우드·API 수익화 간 균형 과제</li>
+    </ul>
+    <span class="impact-pill impact-neutral">→ 중립</span>
+    <a href="https://www.nytimes.com/2026/07/06/business/alibaba-ai-qwen.html" class="card-source" target="_blank" rel="noopener">Source: NYT > Business</a>
+  </div>
+  
+
+  <!-- ── Row 4: 영어 표현 ── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">1</span>
+      <span class="eng-phrase">"agentic threat actor"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ey-JEN-tik THRET AK-ter/ [에이전틱 스렛 액터]</div>
+    <div class="eng-meaning">→ AI 에이전트가 공격 주체 역할을 수행하는 위협 행위자</div>
+    <div class="eng-ex">The researchers named the attacker JADEPUFFER and call it an agentic threat actor whose attack capability comes from an AI model.</div>
+    <div class="eng-ex-kr">연구진은 공격자를 JADEPUFFER로 명명하고, 공격 능력이 AI 모델에서 비롯된 에이전틱 위협 행위자라고 불렀다.</div>
+    <div class="eng-ctx">The-Decoder 보도. Sysdig 연구팀이 Langflow 취약점을 통해 침투한 AI 기반 랜섬웨어 JADEPUFFER를 분석하며, AI 에이전트가 인간 없이 전체 공격 사이클을 완수하는 새로운 유형의 공격 주체를 지칭하기 위해 사용한 신조어다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">2</span>
+      <span class="eng-phrase">"job cuts are correlating with increased AI spending"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">[잡 컷츠 아 코릴레이팅 위드 인크리스트 에이아이 스펜딩]</div>
+    <div class="eng-meaning">→ 감원이 AI 투자 증가와 동반 발생하는 현상을 표현하는 구문</div>
+    <div class="eng-ex">Job cuts are correlating with increased AI spending, evidenced by Microsoft's 2.5 billion Frontier Company investment.</div>
+    <div class="eng-ex-kr">마이크로소프트의 25억 달러 Frontier Company 투자에서 드러나듯, 감원이 AI 지출 증가와 나란히 진행되고 있다.</div>
+    <div class="eng-ctx">TechCrunch 보도. 마이크로소프트가 전 직원 2.1%인 4,800명을 감원하면서 동시에 25억 달러를 AI 사업부에 투자했다는 맥락에서, 빅테크 업계의 인력 감축과 AI 투자 가속화가 공존하는 현상을 설명하는 표현이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">3</span>
+      <span class="eng-phrase">"at machine speed"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/aet muh-SHEEN speed/ [앳 머신 스피드]</div>
+    <div class="eng-meaning">→ 인간이 따라잡을 수 없는 기계의 속도로</div>
+    <div class="eng-ex">JADEPUFFER exposes old security sins at machine speed.</div>
+    <div class="eng-ex-kr">JADEPUFFER는 기계 속도로 오래된 보안 허점을 파고든다.</div>
+    <div class="eng-ctx">The-Decoder 보도. AI 에이전트가 31초 만에 관리자 계정 오류를 자가 수정하며 랜섬웨어 공격을 완성한 JADEPUFFER 사례에서, AI가 기존 사이버 보안 취약점을 인간이 인지하기도 전에 기계적 속도로 악용한다는 의미로 사용됐다.</div>
+  </div>
+  
+
+  <!-- Footer -->
+  <div class="footer">
+    Auto-generated | 2026-07-07-090653 | AI News Card
+  </div>
+
+</div>
+</div>
+      <div class="view-desktop">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-07-07-090653</div>
+      <div class="header-edition">No. 022</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">Nvidia Kyber, 1년 이상 출시 지연</span>
+        <span class="badge badge-ai">반도체</span>
+      </div>
+      <ul class="bullets">
+        <li>Nvidia 차세대 AI 서버 랙 Kyber NVL144가 PCB 미드플레인 불량 문제로 2028년으로 1년 이상 연기됨</li><li>일본 Ibiden 10%, 홍콩 Kingboard 18%, 한국 삼성전기 11% 주가 급락</li><li>Rubin Ultra 고성능 칩(4다이) 취소, AMD·Google에 시장 진입 기회 생성</li>
+      </ul>
+      <a href="https://the-decoder.com/nvidias-kyber-nvl144-reportedly-pushed-back-more-than-a-year-asian-suppliers-drop/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">AI 에이전트 랜섬웨어 JADEPUFFER 등장</span>
+        <span class="badge badge-ai">안전기술</span>
+      </div>
+      <ul class="bullets">
+        <li>Sysdig 보고서: AI 에이전트가 31초 만에 관리자 계정 오류를 자가 수정하며 침투 성공</li><li>1,342개 설정 항목 자동 암호화, 인간 공격자 없이 전체 공격 사이클 완성</li><li>알려진 CVE-2025-3248 취약점 악용 — 2025년 4월 패치 공개에도 적용 안 된 시스템 표적</li>
+      </ul>
+      <a href="https://the-decoder.com/jadepuffer-is-the-first-agentic-ransomware-operation-and-it-exposes-old-security-sins-at-machine-speed/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">마이크로소프트, AI 전환으로 4,800명 감원</span>
+        <span class="badge badge-ai">에이전트</span>
+      </div>
+      <ul class="bullets">
+        <li>전체 직원의 2.1%인 4,800명 감원, Xbox 부문 1,600명 집중 타격</li><li>AI 전환 명목으로 경영 계층을 14단계에서 3~5단계로 축소</li><li>동시에 AI 배포 사업부 Frontier Company에 25억 달러 투자</li>
+      </ul>
+      <a href="https://techcrunch.com/2026/07/06/microsoft-lays-off-nearly-5000-employees-across-xbox-commercial-sales/" class="card-source" target="_blank" rel="noopener">📰 techcrunch.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">Nvidia Kyber, 1년 이상 출시 지연</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">Nvidia의 Kyber NVL144는 차세대 AI 데이터센터용 서버 랙으로, 현재 Blackwell 아키텍처의 후속이다. 반도체 업계 분석사 SemiAnalysis가 지연 사실을 처음 보고했으며, PCB 미드플레인 결함 없는 양산이 기술적으로 난해하다는 점이 지연 원인이다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">AI 인프라 투자 사이클에 차질이 생기면 데이터센터 확장 계획이 지연되고, 글로벌 AI 서비스 용량 확보 일정도 늦어진다. AMD·Google TPU 등 경쟁 인프라에 점유율 확장 기회를 제공하는 전환점이 될 수 있다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">공급업체 주가 최대 18% 단일일 낙폭</span><span class="key-chip">2028년으로 1년 이상 출시 지연</span>
+      </div>
+      
+
+      <div class="takeaway">▶ Nvidia AI 서버 공급망이 PCB 기술 병목에 걸려 경쟁사에게 반격 기회를 열어줬다.</div>
+      <a href="https://the-decoder.com/nvidias-kyber-nvl144-reportedly-pushed-back-more-than-a-year-asian-suppliers-drop/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">AI 에이전트 랜섬웨어 JADEPUFFER 등장</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">JADEPUFFER는 Sysdig 보안 연구팀이 명명한 위협 행위자로, Langflow 플랫폼의 원격 코드 실행 취약점(CVE-2025-3248)을 통해 진입했다. AI 모델이 공격 실행 전 과정을 자율로 수행했으며, 인간은 초기 피해자 선정과 인프라 세팅에만 관여한 것으로 분석된다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">이전까지 랜섬웨어는 인간 해커가 단계마다 판단을 내렸지만, 이제 AI 에이전트가 기계 속도로 전체 공격 체인을 실행한다. 실시간 탐지 체계와 패치 적용 속도가 즉각 중요해졌으며, 보안 SOC(보안운영센터) 자동화 투자 수요가 급등할 전망이다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">31초: AI가 계정 오류 자가 수정에 걸린 시간</span><span class="key-chip">72%: 실시간 자격증명 오용 탐지 못하는 조직 비율</span>
+      </div>
+      
+
+      <div class="takeaway">▶ AI 에이전트가 처음으로 자율 랜섬웨어 공격을 완성해, 기업 패치 관리와 실시간 탐지 체계가 생존 조건이 됐다.</div>
+      <a href="https://the-decoder.com/jadepuffer-is-the-first-agentic-ransomware-operation-and-it-exposes-old-security-sins-at-machine-speed/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">마이크로소프트, AI 전환으로 4,800명 감원</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">마이크로소프트는 2025년에도 15,000명을 감원한 바 있으며, 이번 감원은 AI 자동화 전략의 연장선이다. 인사 담당 부사장은 AI가 일상 업무를 대체하고 있다며 직원들에게 지속적 재교육을 촉구했다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">빅테크가 AI를 실제 인력 감축 근거로 명시하기 시작했다는 점에서 산업 전환의 기준점이 된다. 2026년 상반기 기술업계 전체 감원 154,000명 중 마이크로소프트 비중이 크며, AI ROI 실현이 노동 대체로 표면화되는 첫 대형 사례다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">4,800명 감원(전 직원 2.1%)</span><span class="key-chip">25억 달러: Frontier Company AI 사업부 동시 투자액</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 마이크로소프트가 AI 자동화로 경영 계층을 절반 이하로 줄이며, 빅테크 감원과 AI 투자 가속의 공존 시대를 공식화했다.</div>
+      <a href="https://techcrunch.com/2026/07/06/microsoft-lays-off-nearly-5000-employees-across-xbox-commercial-sales/" class="card-source" target="_blank" rel="noopener">📰 techcrunch.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">삼성 AI 메모리 실적 19배 급증 확정</span>
+        <span class="badge badge-economy">반도체</span>
+      </div>
+      <ul class="bullets">
+        <li>삼성전자 2분기 영업이익 19배 급등, AI 데이터센터向 HBM(고대역폭메모리) 수요 폭증이 원인</li><li>시장 예상치 상회 달성, 글로벌 AI 인프라 투자 신뢰 회복 신호로 해석</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ 긍정적</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-06/samsung-scores-profit-beat-due-to-runaway-demand-for-ai-memory" class="card-source" target="_blank" rel="noopener">📰 Bloomberg Markets</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">AI 데이터 수익, Big Tech 독점 논쟁 확산</span>
+        <span class="badge badge-economy">규제</span>
+      </div>
+      <ul class="bullets">
+        <li>MarketWatch 기고: AI 학습 데이터 제공자(일반 이용자)에게 지분·보상 없이 Big Tech만 100% 수익 독점</li><li>데이터 기여분 공정 배분을 요구하는 정책·규제 논의 확산, AI 산업 수익 구조 재편 압박</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ 부정적</span>
+      <a href="https://www.marketwatch.com/story/your-share-of-the-ai-wealth-is-a-right-not-a-handout-here-is-how-we-claw-back-our-money-7454b0e0?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">📰 MarketWatch.com - Top Stories</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">알리바바 Qwen AI, 인기에도 수익화 난항</span>
+        <span class="badge badge-economy">기업</span>
+      </div>
+      <ul class="bullets">
+        <li>알리바바 Qwen 모델, 전 세계 개발자 채택률 급상승했으나 오픈소스 특성상 직접 수익 창출 불가</li><li>오픈소스 AI 비즈니스 모델 딜레마 — 생태계 점유율 vs 클라우드·API 수익화 간 균형 과제</li>
+      </ul>
+      <span class="impact-pill impact-neutral">→ 중립</span>
+      <a href="https://www.nytimes.com/2026/07/06/business/alibaba-ai-qwen.html" class="card-source" target="_blank" rel="noopener">📰 NYT > Business</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"agentic threat actor"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ey-JEN-tik THRET AK-ter/ [에이전틱 스렛 액터]</div>
+      <div class="eng-meaning">→ AI 에이전트가 공격 주체 역할을 수행하는 위협 행위자</div>
+      <div class="eng-ex">The researchers named the attacker JADEPUFFER and call it an agentic threat actor whose attack capability comes from an AI model.</div>
+      <div class="eng-ex-kr">연구진은 공격자를 JADEPUFFER로 명명하고, 공격 능력이 AI 모델에서 비롯된 에이전틱 위협 행위자라고 불렀다.</div>
+      <div class="eng-ctx">📌 The-Decoder 보도. Sysdig 연구팀이 Langflow 취약점을 통해 침투한 AI 기반 랜섬웨어 JADEPUFFER를 분석하며, AI 에이전트가 인간 없이 전체 공격 사이클을 완수하는 새로운 유형의 공격 주체를 지칭하기 위해 사용한 신조어다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"job cuts are correlating with increased AI spending"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">[잡 컷츠 아 코릴레이팅 위드 인크리스트 에이아이 스펜딩]</div>
+      <div class="eng-meaning">→ 감원이 AI 투자 증가와 동반 발생하는 현상을 표현하는 구문</div>
+      <div class="eng-ex">Job cuts are correlating with increased AI spending, evidenced by Microsoft's 2.5 billion Frontier Company investment.</div>
+      <div class="eng-ex-kr">마이크로소프트의 25억 달러 Frontier Company 투자에서 드러나듯, 감원이 AI 지출 증가와 나란히 진행되고 있다.</div>
+      <div class="eng-ctx">📌 TechCrunch 보도. 마이크로소프트가 전 직원 2.1%인 4,800명을 감원하면서 동시에 25억 달러를 AI 사업부에 투자했다는 맥락에서, 빅테크 업계의 인력 감축과 AI 투자 가속화가 공존하는 현상을 설명하는 표현이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"at machine speed"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/aet muh-SHEEN speed/ [앳 머신 스피드]</div>
+      <div class="eng-meaning">→ 인간이 따라잡을 수 없는 기계의 속도로</div>
+      <div class="eng-ex">JADEPUFFER exposes old security sins at machine speed.</div>
+      <div class="eng-ex-kr">JADEPUFFER는 기계 속도로 오래된 보안 허점을 파고든다.</div>
+      <div class="eng-ctx">📌 The-Decoder 보도. AI 에이전트가 31초 만에 관리자 계정 오류를 자가 수정하며 랜섬웨어 공격을 완성한 JADEPUFFER 사례에서, AI가 기존 사이버 보안 취약점을 인간이 인지하기도 전에 기계적 속도로 악용한다는 의미로 사용됐다.</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-07-07-090653 | AI News Card
+  </div>
+
+</div>
+</div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
