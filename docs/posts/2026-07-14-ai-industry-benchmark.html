@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 경쟁의 새 병목 — 온디바이스·전력·토큰 경제성·표준화 기사 벤치마크 — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .post-body table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .post-body th, .post-body td { border: 1px solid var(--border); padding: 0.5rem 0.75rem; text-align: left; vertical-align: top; }
+    .post-body th { background: var(--surface); font-weight: 700; }
+    .post-body tbody tr:nth-child(even) td { background: var(--surface); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">홈</a>
+        <a href="../about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../index.html">← 목록으로</a>
+
+    <header class="post-header">
+      <h1>AI 경쟁의 새 병목 — 온디바이스·전력·토큰 경제성·표준화 기사 벤치마크</h1>
+      <div class="post-meta">
+        <span>2026-07-14</span>
+        <span>12분</span>
+      </div>
+      <div class="tags" style="margin-top: 0.75rem;">
+        <span class="tag">AI</span> <span class="tag">벤치마크</span> <span class="tag">인프라</span> <span class="tag">거버넌스</span>
+      </div>
+    </header>
+
+    <article class="post-body">
+<h2>상황 요약</h2>
+<p>네 이슈는 따로 떨어진 뉴스가 아니라, AI 경쟁의 기준이 <strong>모델의 절대 성능</strong>에서 <strong>배포 가능한 효율·인프라의 사회적 허가·업무당 원가·출시 전 신뢰성</strong>으로 이동하고 있음을 보여준다.</p>
+<blockquote>
+<p>AI를 더 크게 만드는 경쟁은 계속되지만, 실제 승부는 “어디에서, 얼마에, 어떤 규칙 아래 반복 실행할 수 있는가”로 옮겨가고 있다.</p>
+</blockquote>
+<h2>출처 확인</h2>
+<p>사용자가 제시한 네 항목을 교차 확인한 결과, 모두 Bloomberg 원문은 아니다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>확인된 1차·주요 출처</th>
+<th>판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apple–PrismML 협상</td>
+<td>CNBC, 2026-07-14; 최초 보도 The Information</td>
+<td>Bloomberg 원문 아님</td>
+</tr>
+<tr>
+<td>뉴욕주 데이터센터 1년 중단</td>
+<td>Bloomberg·Bloomberg Government, 2026-07-14; Reuters 교차 확인</td>
+<td>Bloomberg 기사 확인</td>
+</tr>
+<tr>
+<td>토큰 비용과 AI 가격 경쟁</td>
+<td>Bloomberg, 2026-07-12; Moneycontrol 재게재</td>
+<td>Bloomberg 기사 확인</td>
+</tr>
+<tr>
+<td>하사비스 AI 표준기구 제안</td>
+<td>Demis Hassabis의 X 제안; TechCrunch, 2026-07-14</td>
+<td>Bloomberg 원문 아님</td>
+</tr>
+</tbody>
+</table>
+<p>즉 “블룸버그 묶음”으로 보기보다, <strong>같은 날 형성된 AI 산업의 네 가지 구조 신호</strong>로 벤치마킹하는 편이 정확하다.</p>
+<h2>1. Apple–PrismML — 클라우드 AI를 단말로 끌어내리는 압축 경쟁</h2>
+<h3>기사 핵심</h3>
+<ul>
+<li>Apple은 PrismML 기술을 초기 평가 중이다. PrismML CEO는 협상이 아직 매우 초기이며 결과는 정해지지 않았다고 밝혔다.</li>
+<li>PrismML은 Caltech 연구실에서 분사했고 Khosla Ventures의 지원을 받았다.</li>
+<li>회사 주장으로는 Alibaba Qwen 27B 모델을 약 54GB에서 4GB 미만으로 줄여 iPhone 15 이상에서 전체 270억 파라미터를 실행할 수 있다.</li>
+<li>주장 성능:</li>
+<li>메모리 10~15배 감소</li>
+<li>응답 속도 6~8배 향상</li>
+<li>에너지 사용 3~6배 감소</li>
+<li>대가도 있다. 전체 성능이 몇 퍼센트포인트 떨어질 수 있고, 특히 factual recall이 먼저 약화된다고 회사가 인정했다.</li>
+<li>Apple이 얻을 수 있는 이점은 낮은 지연, 클라우드 비용 절감, 오프라인 동작, 개인정보 보호다.</li>
+<li>아직 검증이 필요한 부분은 긴 프롬프트, 멀티태스킹 중 배터리·발열, 수백만 건 요청에서의 신뢰성이다.</li>
+</ul>
+<h3>벤치마크 해석</h3>
+<p>이 기사는 “큰 모델을 단말에 넣었다”보다 <strong>모델 압축·런타임·칩·OS의 공동설계가 제품 경쟁력</strong>이 된다는 점이 중요하다. Apple Silicon의 수직통합과 맞물리면 Siri·사진·영상·헬스 같은 민감한 기능을 로컬로 옮길 수 있다.</p>
+<p>다만 PrismML 수치는 현재 회사 주장이다. 실제 제품 벤치마크에서는 다음을 함께 봐야 한다.</p>
+<ul>
+<li>작업별 정확도와 factual recall</li>
+<li>TTFT와 tokens/sec</li>
+<li>메모리 상주량</li>
+<li>energy/token과 배터리 소모</li>
+<li>지속 부하 시 열 스로틀링</li>
+<li>긴 컨텍스트와 멀티앱 환경</li>
+<li>서버 모델 대비 총소유비용(TCO)</li>
+</ul>
+<h3>산업적 의미</h3>
+<p>온디바이스 AI가 데이터센터 수요를 단순히 없애는 것은 아니다. 작업당 컴퓨팅이 줄면 사용량이 늘어나는 반동효과가 생길 수 있고, 칩 수요가 서버에서 스마트폰·PC·자동차·로봇으로 이동할 가능성도 있다.</p>
+<h2>2. 뉴욕주 대형 데이터센터 1년 중단 — AI 인프라의 ‘사회적 허가’</h2>
+<h3>기사 핵심</h3>
+<ul>
+<li>뉴욕주는 미국 최초로 대형 신규 데이터센터 건설을 1년간 중단했다.</li>
+<li>Reuters 교차 보도 기준 적용 대상은 전력 사용량 50MW 이상 시설이다.</li>
+<li>Kathy Hochul 주지사는 주 정부에 GEIS(Generic Environmental Impact Statement)를 만들도록 지시했다.</li>
+<li>중단 기간에 전력요금·환경·물·전력망 부담을 검토하고 일관된 개발 기준을 마련한다.</li>
+<li>뉴욕은 데이터센터의 판매세 감면 폐지 가능성도 검토한다.</li>
+<li>이미 주 정부는 데이터센터가 전력망 증설 비용의 ‘공정한 몫’을 내도록 하는 방안을 추진했다. 원칙은 주민이 전력집약 산업을 보조하지 않도록 하는 것이다.</li>
+<li>뉴욕은 버지니아·텍사스보다 데이터센터 수가 적지만, 전력망 연결 대기 프로젝트가 길게 쌓여 있었다.</li>
+</ul>
+<h3>벤치마크 해석</h3>
+<p>기사의 핵심은 단순한 건설 금지가 아니다. 데이터센터의 비용이 기업 장부 밖에서 <strong>주민 전기요금·용수·환경·송배전 투자</strong>로 전가되는 구조를 다시 계산하겠다는 것이다.</p>
+<p>앞으로 데이터센터 경쟁력은 다음을 포함하게 된다.</p>
+<ul>
+<li>전력 확보와 자가발전</li>
+<li>grid upgrade 비용 부담</li>
+<li>물 사용과 환경 영향</li>
+<li>지역사회 수용성</li>
+<li>프로젝트 취소·지연 리스크</li>
+<li>세제혜택보다 실질 고용·지역 편익</li>
+</ul>
+<h3>산업적 의미</h3>
+<p>AI 인프라는 더 이상 토지·GPU·자본만 있으면 지을 수 있는 시설이 아니다. <strong>허가 가능성(permittability)</strong>과 전력 비용의 귀속이 입지 경쟁력의 일부가 된다. 뉴욕 방식이 다른 주로 확산되면 전력 효율이 낮은 프로젝트와 주민 비용 전가형 개발은 불리해진다.</p>
+<h2>3. 토큰 비용 급등 우려 — 모델 성능 경쟁에서 업무당 원가 경쟁으로</h2>
+<h3>Bloomberg 기사 핵심</h3>
+<ul>
+<li>OpenAI, Meta, SpaceXAI가 새 모델의 핵심 판매 포인트로 성능뿐 아니라 비용 효율을 내세웠다.</li>
+<li>GPT-5.6은 더 적은 토큰으로 더 많은 작업을 처리한다고 주장한다.</li>
+<li>Grok 4.5는 비교 모델 대비 토큰 효율이 2배라고 주장한다.</li>
+<li>Meta는 Muse Spark 1.1 가격을 공격적으로 책정하겠다고 밝혔다.</li>
+<li>기업들은 tokenmaxxing을 장려하던 단계에서 사용량 제한과 비용 통제로 이동하고 있다.</li>
+<li>기사에는 일부 기업의 월간 AI 모델 사용료가 수백만 달러에 이르렀다는 사례가 나온다.</li>
+<li>OpenAI는 credit usage analytics와 spending controls를 추가했다.</li>
+<li>DeepSeek 같은 저가 오픈 모델과 OpenRouter 같은 모델 라우팅 서비스가 대안으로 부상한다.</li>
+<li>문제는 가격을 너무 낮추면 AI 기업이 칩·데이터센터에 투자한 수천억 달러를 회수하기 어려워진다는 점이다.</li>
+</ul>
+<h3>벤치마크 해석</h3>
+<p>‘토큰 단가’만 보면 가격은 내려갈 수 있다. 하지만 에이전트가 계획·검색·도구 호출·검증·재시도를 반복하면 <strong>작업당 총토큰과 호출 횟수</strong>는 크게 늘 수 있다. 따라서 진짜 지표는 토큰 가격이 아니라 다음이다.</p>
+<pre><code class="language-text">업무 1건의 총비용
+= 모델 호출비
++ 검색·도구 비용
++ 재시도 비용
++ 검수 인건비
++ 실패·복구 비용
+</code></pre>
+<p>기업의 다음 경쟁력은 AI FinOps다.</p>
+<ul>
+<li>작업별 모델 라우팅</li>
+<li>작은 모델 우선, 어려운 작업만 frontier model로 승격</li>
+<li>prompt·context caching</li>
+<li>예산·호출량·재시도 상한</li>
+<li>품질 대비 cost-per-task 측정</li>
+<li>부서·업무별 비용 귀속</li>
+</ul>
+<h3>산업적 의미</h3>
+<p>최고 성능 모델을 전 직원에게 무제한 제공하는 방식은 지속되기 어렵다. <strong>모델 포트폴리오와 하네스가 비용 통제 장치</strong>가 된다. 같은 모델도 루프 설계가 나쁘면 비용이 폭증하고, 좋은 라우팅·검증 구조는 재시도와 사람 검수를 줄인다.</p>
+<h2>4. Demis Hassabis의 AI 표준기구 — 출시 속도와 사회적 신뢰 사이</h2>
+<h3>제안 핵심</h3>
+<ul>
+<li>Hassabis는 frontier model 출시를 감독할 독립 표준기구를 제안했다.</li>
+<li>FINRA와 유사한 자율규제기구 모델이다.</li>
+<li>초기에는 AI 연구소가 출시 최대 30일 전에 모델을 자발적으로 제출해 평가받는다.</li>
+<li>평가 프로토콜이 효과적이면 미국 시장에 배포하기 위한 의무 통과 절차로 공식화한다.</li>
+<li>출시 후 중대한 취약점도 연구소와 표준기구가 공동 대응한다.</li>
+<li>미국 정부가 뒷받침하되 업계가 재원을 대고 독립적으로 운영하는 구조다.</li>
+<li>오픈소스 대표와 업계 기술 전문가를 포함하고, 전문 안전기관에 일부 평가를 위탁할 수 있다.</li>
+</ul>
+<h3>벤치마크 해석</h3>
+<p>핵심은 “AI를 하나의 기술표준으로 통일하자”가 아니다. <strong>frontier model의 출시 전 평가 절차와 책임 구조를 표준화하자</strong>는 주장이다.</p>
+<p>벤치마킹해야 할 운영 요소는 다음이다.</p>
+<ul>
+<li>출시 전 독립 평가</li>
+<li>공통 위험 분류와 acceptance criteria</li>
+<li>모델 카드·평가 결과·제약의 문서화</li>
+<li>post-release 취약점 신고와 대응</li>
+<li>레드팀·안전기관의 전문화</li>
+<li>voluntary review에서 mandatory gate로의 전환 조건</li>
+</ul>
+<h3>산업적 의미</h3>
+<p>규제는 출시 속도를 늦출 수 있지만, 반대로 사회적 허가와 기업 도입 신뢰를 높일 수 있다. 내부 AI 시스템에서도 동일한 원리를 축소 적용할 수 있다.</p>
+<pre><code class="language-text">모델 등록 → 위험 등급 → 평가 하네스 → 사람 승인 → 제한 배포 → 모니터링 → 사고 대응
+</code></pre>
+<h2>네 기사 통합 벤치마크</h2>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>지금까지의 경쟁</th>
+<th>새 경쟁 기준</th>
+<th>확인할 지표</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>단말</td>
+<td>더 큰 클라우드 모델</td>
+<td>압축·온디바이스·하이브리드</td>
+<td>정확도, 메모리, energy/token, 발열</td>
+</tr>
+<tr>
+<td>인프라</td>
+<td>더 많은 GPU·데이터센터</td>
+<td>전력·용수·지역사회 비용까지 포함한 허가 가능성</td>
+<td>MW, 전력망 비용, PUE/WUE, 허가 기간</td>
+</tr>
+<tr>
+<td>경제성</td>
+<td>토큰 사용량과 최고 성능</td>
+<td>업무당 품질·원가·ROI</td>
+<td>cost-per-task, 재시도율, 검수시간</td>
+</tr>
+<tr>
+<td>거버넌스</td>
+<td>출시 후 문제 대응</td>
+<td>출시 전 평가와 독립된 gate</td>
+<td>평가 통과율, 취약점, 사고 대응시간</td>
+</tr>
+</tbody>
+</table>
+<h2>공통 결론</h2>
+<p>네 이슈는 서로 충돌하면서도 연결된다.</p>
+<ol>
+<li>모델 압축은 작업당 컴퓨팅을 줄인다.</li>
+<li>비용이 낮아지면 AI 사용량은 오히려 늘 수 있다.</li>
+<li>사용량 증가는 전력·데이터센터 부담을 다시 키운다.</li>
+<li>인프라와 모델의 사회적 영향이 커질수록 표준화와 사전 심사 요구가 강해진다.</li>
+</ol>
+<p>따라서 AI 산업의 다음 승자는 단순히 가장 똑똑한 모델을 가진 회사가 아니라 다음 네 가지를 함께 관리하는 회사일 가능성이 크다.</p>
+<ul>
+<li><strong>Edge efficiency</strong> — 단말에서 실행 가능한가</li>
+<li><strong>Infrastructure legitimacy</strong> — 전력·물·지역 비용을 정당하게 부담하는가</li>
+<li><strong>Unit economics</strong> — 실제 업무 한 건을 얼마에 끝내는가</li>
+<li><strong>Release governance</strong> — 출시 전후 위험을 검증·통제할 수 있는가</li>
+</ul>
+<h2>조직 AX 관점의 체크포인트</h2>
+<h3>제품·기술</h3>
+<ul>
+<li>스마트폰·PC·차량용 AI는 NPU TOPS만이 아니라 모델 압축·runtime·memory hierarchy를 함께 벤치마크해야 한다.</li>
+<li>온디바이스와 클라우드의 이분법보다 민감도·지연·난도에 따른 hybrid routing이 중요하다.</li>
+<li>반도체 수요는 단순 감소보다 서버에서 단말·자동차·로봇으로 이동할 가능성을 봐야 한다.</li>
+</ul>
+<h3>조직 운영</h3>
+<ul>
+<li>사용자 수나 토큰 사용량을 AX KPI로 삼지 않는다.</li>
+<li>업무별 cost-per-task, 성공률, 재시도율, 사람 검수시간을 함께 본다.</li>
+<li>고위험 모델·에이전트는 출시 전 evaluation harness와 승인 gate를 거친다.</li>
+<li>외부 모델 교체와 비용 급등에 대비해 model routing과 fallback을 설계한다.</li>
+</ul>
+<h2>향후 확인할 신호</h2>
+<ul>
+<li>PrismML의 독립 벤치마크와 실제 Apple 계약 여부</li>
+<li>긴 컨텍스트·배터리·열·factual recall에서 압축 모델의 성능</li>
+<li>뉴욕 50MW 기준의 예외 범위와 GEIS 최종 기준</li>
+<li>다른 주의 모라토리엄·세제혜택 폐지 확산 여부</li>
+<li>AI 모델의 token price가 아니라 cost-per-task 추이</li>
+<li>OpenRouter 등 라우팅 서비스와 기업 AI FinOps 도입률</li>
+<li>Hassabis 표준기구의 참여 연구소와 평가 프로토콜</li>
+<li>자발적 30일 사전검토가 미국 시장의 의무 gate로 전환되는지</li>
+</ul>
+<h2>출처</h2>
+<h3>Apple–PrismML</h3>
+<ul>
+<li>CNBC, “Apple in talks with startup that shrinks AI models to run on an iPhone,” 2026-07-14<br>
+  https://www.cnbc.com/2026/07/14/apple-prismml-ai-compression-iphone.html</li>
+<li>The Information, “Khosla-Backed Startup Claims Breakthrough With Largest-Ever AI Model on an iPhone,” 2026-07-09<br>
+  https://www.theinformation.com/articles/khosla-backed-startup-claims-breakthrough-largest-ever-ai-model-iphone</li>
+</ul>
+<h3>뉴욕 데이터센터</h3>
+<ul>
+<li>Bloomberg, “New York Leads Nation in Moratorium on New Large Data Centers,” 2026-07-14<br>
+  https://www.bloomberg.com/news/articles/2026-07-14/new-york-leads-nation-in-moratorium-on-new-large-data-centers</li>
+<li>Bloomberg Government, “Hochul Halts New York Data Centers for a Year,” 2026-07-14<br>
+  https://news.bgov.com/states-of-play/hochul-halts-new-york-data-centers-for-a-year-states-of-play</li>
+<li>Reuters, “New York becomes first state to impose data center moratorium,” 2026-07-14<br>
+  https://www.reuters.com/world/new-york-becomes-first-state-impose-data-center-moratorium-2026-07-14/</li>
+</ul>
+<h3>토큰 경제성</h3>
+<ul>
+<li>Bloomberg, “OpenAI, Meta, SpaceXAI Compete for More Cost-Efficient AI Models,” 2026-07-12<br>
+  https://www.bloomberg.com/news/articles/2026-07-12/openai-meta-spacexai-compete-for-more-cost-efficient-ai-models</li>
+<li>Moneycontrol의 Bloomberg 재게재본<br>
+  https://www.moneycontrol.com/news/business/companies/openai-meta-spacexai-compete-for-more-cost-efficient-ai-models-13972080.html</li>
+</ul>
+<h3>AI 표준화</h3>
+<ul>
+<li>TechCrunch, “DeepMind CEO calls for an independent standards body to regulate frontier AI,” 2026-07-14<br>
+  https://techcrunch.com/2026/07/14/deepmind-ceo-calls-for-an-independent-standards-body-to-regulate-frontier-ai/</li>
+<li>Demis Hassabis, “A Framework for Frontier AI and the Dawning of a New Age,” X post, 2026-07-14<br>
+  https://x.com/demishassabis/status/2076957440109625718</li>
+</ul>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
