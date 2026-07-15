@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오늘의 AI 뉴스 — 2026-07-15 — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    @media (max-width: 799px) { .view-desktop { display: none; } }
+    @media (min-width: 800px) { .view-mobile { display: none; } }
+    .view-desktop { max-width: 100%; overflow-x: auto; }
+    .view-mobile {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: #eef0f5;
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.5;
+  }.view-mobile .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px 12px 24px;
+  }.view-mobile .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }.view-mobile .header-logo { font-size: 28px; margin-right: 10px; }.view-mobile .header-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }.view-mobile .header-sub { font-size: 11px; opacity: 0.75; margin-top: 2px; }.view-mobile .header-date { font-size: 13px; font-weight: 700; text-align: right; }.view-mobile .header-edition { font-size: 10px; opacity: 0.65; margin-top: 2px; text-align: right; }.view-mobile .sec-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }.view-mobile .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+  }.view-mobile .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }.view-mobile .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-mobile .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-mobile .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-mobile .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-mobile .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }.view-mobile .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }.view-mobile .num-ai { background: #e0e7ff; color: #3730a3; }.view-mobile .num-detail { background: #ede9fe; color: #5b21b6; }.view-mobile .num-economy { background: #d1fae5; color: #065f46; }.view-mobile .num-english { background: #fef3c7; color: #92400e; }.view-mobile .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    flex: 1;
+  }.view-mobile .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }.view-mobile .badge-ai { background: #e0e7ff; color: #4338ca; }.view-mobile .badge-detail { background: #ede9fe; color: #6d28d9; }.view-mobile .badge-economy { background: #d1fae5; color: #065f46; }.view-mobile .badge-english { background: #fef3c7; color: #92400e; }.view-mobile .bullets { list-style: none; margin: 4px 0 6px; }.view-mobile .bullets li {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.55;
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }.view-mobile .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    top: 5px;
+  }.view-mobile .card-ai     .bullets li::before { color: #6366f1; }.view-mobile .card-detail .bullets li::before { color: #7c3aed; }.view-mobile .card-economy .bullets li::before { color: #059669; }.view-mobile .card-source {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-mobile .card-source:hover { color: #64748b; text-decoration: underline; }.view-mobile .detail-block { margin-bottom: 8px; }.view-mobile .detail-lbl {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 3px;
+  }.view-mobile .detail-txt {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.55;
+  }.view-mobile .key-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }.view-mobile .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }.view-mobile .takeaway {
+    background: #f8f7ff;
+    border-left: 3px solid #8b5cf6;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 6px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+  }.view-mobile .impact-pill {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 6px;
+  }.view-mobile .impact-positive { background: #dcfce7; color: #166534; }.view-mobile .impact-negative { background: #fee2e2; color: #991b1b; }.view-mobile .impact-neutral { background: #f1f5f9; color: #475569; }.view-mobile .eng-phrase {
+    font-size: 22px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-mobile .eng-pron {
+    font-size: 14px;
+    color: #b45309;
+    font-family: monospace;
+    margin-bottom: 6px;
+  }.view-mobile .eng-meaning {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }.view-mobile .eng-ex {
+    font-size: 15px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.6;
+    background: #fffbeb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #fbbf24;
+    margin-bottom: 6px;
+  }.view-mobile .eng-ex-kr {
+    font-size: 14px;
+    color: #78716c;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }.view-mobile .eng-ctx {
+    font-size: 14px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 6px 10px;
+    border-radius: 6px;
+    line-height: 1.5;
+  }.view-mobile .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+    .view-desktop .section-bar {
+    width: 210mm; margin: 0 auto; padding: 7px 6mm;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 8px;
+  }.view-desktop .webtoon-wrap { width: 210mm; margin: 0 auto; background: #0f172a; }.view-desktop .webtoon-wrap img { width: 100%; display: block; }
+
+  @page { size: A4 portrait; margin: 0; }.view-desktop {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-desktop .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-desktop {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-desktop .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-desktop .header { padding: 14px 20px; margin-bottom: 12px; }.view-desktop .header-title { font-size: 22px; }.view-desktop .header-sub { font-size: 12px; }.view-desktop .header-date { font-size: 15px; }.view-desktop .header-edition { font-size: 11px; }.view-desktop .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-desktop .grid-3 { gap: 12px; margin-bottom: 12px; }.view-desktop .grid-2 { gap: 12px; margin-bottom: 12px; }.view-desktop .card { padding: 16px 18px; border-radius: 12px; }.view-desktop .card-title { font-size: 15px; line-height: 1.5; }.view-desktop .card-title-sm { font-size: 13px; }.view-desktop .badge { font-size: 10px; padding: 2px 9px; }.view-desktop .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-desktop .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-desktop .detail-lbl { font-size: 10px; }.view-desktop .detail-txt { font-size: 13px; line-height: 1.65; }.view-desktop .key-chip { font-size: 11px; padding: 3px 9px; }.view-desktop .takeaway { font-size: 13px; padding: 7px 12px; }.view-desktop .impact-pill { font-size: 11px; padding: 3px 11px; }.view-desktop .eng-phrase { font-size: 17px; }.view-desktop .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-desktop .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-desktop .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-desktop .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-desktop .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-desktop .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-desktop .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-desktop .header-left { display: flex; align-items: center; gap: 10px; }.view-desktop .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-desktop .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-desktop .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-desktop .header-right { text-align: right; }.view-desktop .header-date { font-size: 12px; font-weight: 700; }.view-desktop .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-desktop .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-desktop .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-1 { margin-bottom: 5px; }.view-desktop .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-desktop .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-desktop .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-desktop .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-desktop .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-desktop .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-desktop .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-desktop .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-desktop .badge-ai { background: #e0e7ff; color: #4338ca; }.view-desktop .badge-detail { background: #ede9fe; color: #6d28d9; }.view-desktop .badge-economy { background: #d1fae5; color: #065f46; }.view-desktop .badge-english { background: #fef3c7; color: #92400e; }.view-desktop .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-desktop .card-title-sm { font-size: 10px; }.view-desktop .bullets { list-style: none; margin: 3px 0; }.view-desktop .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-desktop .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-desktop .card-ai .bullets li::before { color: #6366f1; }.view-desktop .card-detail .bullets li::before { color: #7c3aed; }.view-desktop .card-economy .bullets li::before { color: #059669; }.view-desktop .card-english .bullets li::before { color: #d97706; }.view-desktop .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-desktop .card-source:hover { color: #64748b; text-decoration: underline; }.view-desktop .detail-block { margin-bottom: 4px; }.view-desktop .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-desktop .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-desktop .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-desktop .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-desktop .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-desktop .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-desktop .impact-positive { background: #dcfce7; color: #166534; }.view-desktop .impact-negative { background: #fee2e2; color: #991b1b; }.view-desktop .impact-neutral { background: #f1f5f9; color: #475569; }.view-desktop .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-desktop .eng-pron { font-size: 8px; color: #b45309; margin-bottom: 3px; }.view-desktop .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-desktop .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-desktop .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-desktop .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-desktop .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
+  }
+
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">홈</a>
+        <a href="../about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../index.html">← 목록으로</a>
+
+    <header class="post-header">
+      <h1>오늘의 AI 뉴스 — 2026-07-15</h1>
+      <div class="post-meta">
+        <span>2026-07-15</span>
+        <span>5분</span>
+      </div>
+      <div class="tags" style="margin-top: 0.75rem;">
+        <span class="tag">AI</span>
+        <span class="tag">뉴스</span>
+        <span class="tag">경제</span>
+        <span class="tag">영어</span>
+      </div>
+    </header>
+
+    <article class="post-body">
+      <div class="view-mobile">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div>
+      <div class="header-date">2026-07-15-093112</div>
+      <div class="header-edition">No. 027</div>
+    </div>
+  </div>
+
+  <!-- Webtoon image -->
+  <div style="border-radius:14px; overflow:hidden; margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <img src="../images/2026-07-15-093112/page.png" alt="AI 뉴스 웹툰 2026-07-15-093112" style="width:100%; display:block;">
+  </div>
+
+  <!-- ── Row 1: AI 요약 ── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">AI TOPICS — 오늘의 핵심 3가지</div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">1</span>
+      <span class="card-title">애플, 프리즘ML과 온디바이스 AI 협상</span>
+      <span class="badge badge-ai">LLM</span>
+    </div>
+    <ul class="bullets">
+      <li>PrismML, 알리바바 Qwen 3.6(270억 파라미터)를 54GB에서 4GB 미만으로 압축</li><li>아이폰17 Pro에서 서버 연결 없이 대형 모델 온디바이스 구동 목표</li><li>Khosla Ventures 투자 스타트업, 7월 14일 압축 모델 오픈소스 공개</li>
+    </ul>
+    <a href="https://parameter.io/apple-aapl-in-talks-with-startup-behind-revolutionary-on-device-ai-breakthrough/" class="card-source" target="_blank" rel="noopener">Source: Parameter</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">2</span>
+      <span class="card-title">뉴욕주, 美 최초 대형 데이터센터 1년 금지</span>
+      <span class="badge badge-ai">규제</span>
+    </div>
+    <ul class="bullets">
+      <li>호컬 주지사, 50MW 이상 하이퍼스케일 데이터센터 신규 허가 최대 1년 중단</li><li>美 주 단위 최초 모라토리엄 — 전력 수요·전기요금 급등 우려 반영</li><li>6월 시에나 여론조사, 찬성 46% vs 반대 21%로 주민 지지 우세</li>
+    </ul>
+    <a href="https://www.cnbc.com/2026/07/14/new-york-ai-data-center-ban.html" class="card-source" target="_blank" rel="noopener">Source: CNBC</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">3</span>
+      <span class="card-title">하사비스, 美 주도 AI 표준기구 설립 촉구</span>
+      <span class="badge badge-ai">안전기술</span>
+    </div>
+    <ul class="bullets">
+      <li>구글 딥마인드 CEO, FINRA 모델의 美 주도 '프런티어 AI 표준기구' 제안</li><li>출시 30일 전 모델 자율 제출→검증, 이후 美 배포 의무화 단계로 전환</li><li>2026년 말 이전 기구 가동 목표, 재원은 업계 부담 방식 구상</li>
+    </ul>
+    <a href="https://techcrunch.com/2026/07/14/deepmind-ceo-calls-for-an-independent-standards-body-to-regulate-frontier-ai/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+
+  <!-- ── Row 2: AI 상세 ── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">AI DEEP DIVE — 왜 중요한가</div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">1</span>
+      <span class="card-title">애플, 프리즘ML과 온디바이스 AI 협상</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">애플은 2026년 7월 9~10일 온디바이스 AI 스타트업 PrismML과 인수 협상에 나선 것으로 알려졌다. PrismML은 초저비트 가중치 압축(ultra-low-bit weight compression) 기술로 대형 언어모델을 스마트폰에서 구동 가능한 크기로 줄인다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">온디바이스 AI는 클라우드 비용과 프라이버시 문제를 동시에 해결한다. 애플이 이 기술을 확보하면 iOS 27의 Siri와 Apple Intelligence를 서버 의존 없이 대폭 강화할 수 있다. 앞서 애플은 DarwinAI를 인수한 이력이 있다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">모델 크기 54GB → 4GB 미만 (13배 이상 압축)</span><span class="key-chip">PrismML 시드 투자 1,625만 달러</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 애플은 PrismML 인수로 아이폰에서 완결되는 온디바이스 AI 시대를 노린다.</div>
+    <a href="https://parameter.io/apple-aapl-in-talks-with-startup-behind-revolutionary-on-device-ai-breakthrough/" class="card-source" target="_blank" rel="noopener">Source: Parameter</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">2</span>
+      <span class="card-title">뉴욕주, 美 최초 대형 데이터센터 1년 금지</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">뉴욕주 캐시 호컬 주지사는 2026년 7월 14일 50MW 이상 대형(하이퍼스케일) 데이터센터의 신규 건설 허가를 최대 1년간 중단하는 행정명령에 서명했다. 미국 주 정부 차원의 첫 데이터센터 모라토리엄이다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">AI 붐으로 데이터센터 전력 수요가 폭증하며 전기요금 인상과 지역사회 부담이 정치 쟁점화됐다. 뉴욕의 조치는 다른 주로 확산될 수 있어 AI 인프라 확장의 새 변수로 떠올랐다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">규제 대상 기준 전력 50MW 이상</span><span class="key-chip">허가 중단 기간 최대 1년</span>
+    </div>
+    
+
+    <div class="takeaway">>>> AI 데이터센터 확장이 전력과 민심의 벽에 부딪히기 시작했다.</div>
+    <a href="https://www.cnbc.com/2026/07/14/new-york-ai-data-center-ban.html" class="card-source" target="_blank" rel="noopener">Source: CNBC</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">3</span>
+      <span class="card-title">하사비스, 美 주도 AI 표준기구 설립 촉구</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">데미스 하사비스 구글 딥마인드 CEO는 2026년 7월 14일 X에 발표한 에세이에서 국가안보·사이버·생물학 위협 관점에서 최강(프런티어) AI 모델을 평가하는 독립 표준기구 설립을 제안했다. 금융권 자율규제기구 FINRA를 모델로 삼았다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">프런티어 AI 규제 논의가 정부 직접 규제 대신 업계 주도 자율규제기구(SRO) 모델로 옮겨가는 신호다. 표준기구가 출범하면 모델 출시 절차와 안전 검증이 산업 표준으로 자리 잡을 수 있다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">출시 전 자율 검증 기간 30일</span><span class="key-chip">기구 가동 목표 2026년 말 이전</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 하사비스는 FINRA식 자율기구로 프런티어 AI 안전 검증을 제도화하려 한다.</div>
+    <a href="https://techcrunch.com/2026/07/14/deepmind-ceo-calls-for-an-independent-standards-body-to-regulate-frontier-ai/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+
+  <!-- ── Row 3: 경제 ── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">ECONOMY — 경제·금융 핵심 3가지</div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">1</span>
+      <span class="card-title">IBM 실적 경고 — 메모리값 급등 직격탄</span>
+      <span class="badge badge-economy">기업</span>
+    </div>
+    <ul class="bullets">
+      <li>SW·인프라 부문 매출 부진, 고객사가 가격 인상 전 메모리 선구매에 지출 집중</li><li>'하드웨어가 모두의 밥그릇을 빼앗는다' — AI發 메모리 수요가 실적 왜곡</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ 부정적</span>
+    <a href="https://www.marketwatch.com/story/what-ibms-profit-warning-means-hardware-is-eating-everyones-lunch-c6878824?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">Source: MarketWatch</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">2</span>
+      <span class="card-title">美 금융 패권에 먹구름, 결제기업 첫 타깃</span>
+      <span class="badge badge-economy">시장</span>
+    </div>
+    <ul class="bullets">
+      <li>이코노미스트, 美 금융 지배력이 흔들리며 결제 기업들이 첫 희생양이 될 수 있다 분석</li><li>달러 결제 인프라 의존도 변화가 글로벌 금융 질서 재편의 신호로 지목</li>
+    </ul>
+    <span class="impact-pill impact-neutral">→ 중립</span>
+    <a href="https://www.economist.com/finance-and-economics/2026/07/12/storm-clouds-gather-over-americas-financial-supremacy" class="card-source" target="_blank" rel="noopener">Source: The Economist</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">3</span>
+      <span class="card-title">6월 물가 둔화에도 이란戰 유가 재급등 위험</span>
+      <span class="badge badge-economy">정책</span>
+    </div>
+    <ul class="bullets">
+      <li>6월 소비자물가는 개선됐지만 美-이란 충돌 격화로 에너지 가격 재상승 우려</li><li>백악관은 물가 성과 자평 vs 호르무즈 해협 긴장이 유가 변수로 부상</li>
+    </ul>
+    <span class="impact-pill impact-neutral">→ 중립</span>
+    <a href="https://www.nytimes.com/2026/07/14/business/economy/inflation-data-iran-war-price-surge.html" class="card-source" target="_blank" rel="noopener">Source: The New York Times</a>
+  </div>
+  
+
+  <!-- ── Row 4: 영어 표현 ── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">1</span>
+      <span class="eng-phrase">"on-device AI"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">[ɑːn-dɪˈvaɪs eɪ-aɪ]</div>
+    <div class="eng-meaning">→ 클라우드 서버가 아닌 스마트폰·기기 자체에서 직접 구동되는 AI (온디바이스 AI)</div>
+    <div class="eng-ex">PrismML's compression makes on-device AI possible without phoning home to external servers.</div>
+    <div class="eng-ex-kr">PrismML의 압축 기술은 외부 서버에 접속하지 않고도 기기 내 AI 구동을 가능하게 한다.</div>
+    <div class="eng-ctx">애플이 아이폰용 온디바이스 AI를 위해 PrismML과 협상 중이라는 뉴스에서</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">2</span>
+      <span class="eng-phrase">"eat someone's lunch"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">[iːt ˈsʌmwʌnz lʌntʃ]</div>
+    <div class="eng-meaning">→ 경쟁자의 사업·수익을 빼앗아 시장에서 압도하다 (남의 밥그릇을 빼앗다)</div>
+    <div class="eng-ex">With memory demand soaring, hardware is eating everyone's lunch.</div>
+    <div class="eng-ex-kr">메모리 수요가 급증하면서 하드웨어가 모두의 밥그릇을 빼앗고 있다.</div>
+    <div class="eng-ctx">IBM 실적 경고에서 하드웨어가 소프트웨어 수익을 잠식한다는 분석 관련</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">3</span>
+      <span class="eng-phrase">"ratchet up"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">[ˈrætʃɪt ʌp]</div>
+    <div class="eng-meaning">→ (강도·수준을) 단계적으로 끌어올리다, 점차 강화하다</div>
+    <div class="eng-ex">Oversight could be ratcheted up if the seriousness of the situation demands.</div>
+    <div class="eng-ex-kr">상황의 심각성이 요구하면 감독 수위를 단계적으로 높일 수 있다.</div>
+    <div class="eng-ctx">하사비스가 제안한 프런티어 AI 표준기구의 규제 강도 조절 방식 관련</div>
+  </div>
+  
+
+  <!-- Footer -->
+  <div class="footer">
+    Auto-generated | 2026-07-15-093112 | AI News Card
+  </div>
+
+</div>
+</div>
+      <div class="view-desktop">
+  <div class="section-bar">&#127912; WEBTOON &mdash; AI 뉴스 웹툰 2026-07-15</div>
+  <div class="webtoon-wrap">
+    <img src="../images/2026-07-15-093112/page.png" alt="AI 뉴스 웹툰 2026-07-15">
+  </div>
+  <div class="section-bar" style="margin-top:0;">&#128240; NEWS CARD &mdash; 상세 뉴스 카드 2026-07-15</div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-07-15-093112</div>
+      <div class="header-edition">No. 027</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">애플, 프리즘ML과 온디바이스 AI 협상</span>
+        <span class="badge badge-ai">LLM</span>
+      </div>
+      <ul class="bullets">
+        <li>PrismML, 알리바바 Qwen 3.6(270억 파라미터)를 54GB에서 4GB 미만으로 압축</li><li>아이폰17 Pro에서 서버 연결 없이 대형 모델 온디바이스 구동 목표</li><li>Khosla Ventures 투자 스타트업, 7월 14일 압축 모델 오픈소스 공개</li>
+      </ul>
+      <a href="https://parameter.io/apple-aapl-in-talks-with-startup-behind-revolutionary-on-device-ai-breakthrough/" class="card-source" target="_blank" rel="noopener">📰 Parameter</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">뉴욕주, 美 최초 대형 데이터센터 1년 금지</span>
+        <span class="badge badge-ai">규제</span>
+      </div>
+      <ul class="bullets">
+        <li>호컬 주지사, 50MW 이상 하이퍼스케일 데이터센터 신규 허가 최대 1년 중단</li><li>美 주 단위 최초 모라토리엄 — 전력 수요·전기요금 급등 우려 반영</li><li>6월 시에나 여론조사, 찬성 46% vs 반대 21%로 주민 지지 우세</li>
+      </ul>
+      <a href="https://www.cnbc.com/2026/07/14/new-york-ai-data-center-ban.html" class="card-source" target="_blank" rel="noopener">📰 CNBC</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">하사비스, 美 주도 AI 표준기구 설립 촉구</span>
+        <span class="badge badge-ai">안전기술</span>
+      </div>
+      <ul class="bullets">
+        <li>구글 딥마인드 CEO, FINRA 모델의 美 주도 '프런티어 AI 표준기구' 제안</li><li>출시 30일 전 모델 자율 제출→검증, 이후 美 배포 의무화 단계로 전환</li><li>2026년 말 이전 기구 가동 목표, 재원은 업계 부담 방식 구상</li>
+      </ul>
+      <a href="https://techcrunch.com/2026/07/14/deepmind-ceo-calls-for-an-independent-standards-body-to-regulate-frontier-ai/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">애플, 프리즘ML과 온디바이스 AI 협상</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">애플은 2026년 7월 9~10일 온디바이스 AI 스타트업 PrismML과 인수 협상에 나선 것으로 알려졌다. PrismML은 초저비트 가중치 압축(ultra-low-bit weight compression) 기술로 대형 언어모델을 스마트폰에서 구동 가능한 크기로 줄인다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">온디바이스 AI는 클라우드 비용과 프라이버시 문제를 동시에 해결한다. 애플이 이 기술을 확보하면 iOS 27의 Siri와 Apple Intelligence를 서버 의존 없이 대폭 강화할 수 있다. 앞서 애플은 DarwinAI를 인수한 이력이 있다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">모델 크기 54GB → 4GB 미만 (13배 이상 압축)</span><span class="key-chip">PrismML 시드 투자 1,625만 달러</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 애플은 PrismML 인수로 아이폰에서 완결되는 온디바이스 AI 시대를 노린다.</div>
+      <a href="https://parameter.io/apple-aapl-in-talks-with-startup-behind-revolutionary-on-device-ai-breakthrough/" class="card-source" target="_blank" rel="noopener">📰 Parameter</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">뉴욕주, 美 최초 대형 데이터센터 1년 금지</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">뉴욕주 캐시 호컬 주지사는 2026년 7월 14일 50MW 이상 대형(하이퍼스케일) 데이터센터의 신규 건설 허가를 최대 1년간 중단하는 행정명령에 서명했다. 미국 주 정부 차원의 첫 데이터센터 모라토리엄이다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">AI 붐으로 데이터센터 전력 수요가 폭증하며 전기요금 인상과 지역사회 부담이 정치 쟁점화됐다. 뉴욕의 조치는 다른 주로 확산될 수 있어 AI 인프라 확장의 새 변수로 떠올랐다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">규제 대상 기준 전력 50MW 이상</span><span class="key-chip">허가 중단 기간 최대 1년</span>
+      </div>
+      
+
+      <div class="takeaway">▶ AI 데이터센터 확장이 전력과 민심의 벽에 부딪히기 시작했다.</div>
+      <a href="https://www.cnbc.com/2026/07/14/new-york-ai-data-center-ban.html" class="card-source" target="_blank" rel="noopener">📰 CNBC</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">하사비스, 美 주도 AI 표준기구 설립 촉구</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">데미스 하사비스 구글 딥마인드 CEO는 2026년 7월 14일 X에 발표한 에세이에서 국가안보·사이버·생물학 위협 관점에서 최강(프런티어) AI 모델을 평가하는 독립 표준기구 설립을 제안했다. 금융권 자율규제기구 FINRA를 모델로 삼았다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">프런티어 AI 규제 논의가 정부 직접 규제 대신 업계 주도 자율규제기구(SRO) 모델로 옮겨가는 신호다. 표준기구가 출범하면 모델 출시 절차와 안전 검증이 산업 표준으로 자리 잡을 수 있다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">출시 전 자율 검증 기간 30일</span><span class="key-chip">기구 가동 목표 2026년 말 이전</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 하사비스는 FINRA식 자율기구로 프런티어 AI 안전 검증을 제도화하려 한다.</div>
+      <a href="https://techcrunch.com/2026/07/14/deepmind-ceo-calls-for-an-independent-standards-body-to-regulate-frontier-ai/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">IBM 실적 경고 — 메모리값 급등 직격탄</span>
+        <span class="badge badge-economy">기업</span>
+      </div>
+      <ul class="bullets">
+        <li>SW·인프라 부문 매출 부진, 고객사가 가격 인상 전 메모리 선구매에 지출 집중</li><li>'하드웨어가 모두의 밥그릇을 빼앗는다' — AI發 메모리 수요가 실적 왜곡</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ 부정적</span>
+      <a href="https://www.marketwatch.com/story/what-ibms-profit-warning-means-hardware-is-eating-everyones-lunch-c6878824?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">📰 MarketWatch</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">美 금융 패권에 먹구름, 결제기업 첫 타깃</span>
+        <span class="badge badge-economy">시장</span>
+      </div>
+      <ul class="bullets">
+        <li>이코노미스트, 美 금융 지배력이 흔들리며 결제 기업들이 첫 희생양이 될 수 있다 분석</li><li>달러 결제 인프라 의존도 변화가 글로벌 금융 질서 재편의 신호로 지목</li>
+      </ul>
+      <span class="impact-pill impact-neutral">→ 중립</span>
+      <a href="https://www.economist.com/finance-and-economics/2026/07/12/storm-clouds-gather-over-americas-financial-supremacy" class="card-source" target="_blank" rel="noopener">📰 The Economist</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">6월 물가 둔화에도 이란戰 유가 재급등 위험</span>
+        <span class="badge badge-economy">정책</span>
+      </div>
+      <ul class="bullets">
+        <li>6월 소비자물가는 개선됐지만 美-이란 충돌 격화로 에너지 가격 재상승 우려</li><li>백악관은 물가 성과 자평 vs 호르무즈 해협 긴장이 유가 변수로 부상</li>
+      </ul>
+      <span class="impact-pill impact-neutral">→ 중립</span>
+      <a href="https://www.nytimes.com/2026/07/14/business/economy/inflation-data-iran-war-price-surge.html" class="card-source" target="_blank" rel="noopener">📰 The New York Times</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"on-device AI"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">[ɑːn-dɪˈvaɪs eɪ-aɪ]</div>
+      <div class="eng-meaning">→ 클라우드 서버가 아닌 스마트폰·기기 자체에서 직접 구동되는 AI (온디바이스 AI)</div>
+      <div class="eng-ex">PrismML's compression makes on-device AI possible without phoning home to external servers.</div>
+      <div class="eng-ex-kr">PrismML의 압축 기술은 외부 서버에 접속하지 않고도 기기 내 AI 구동을 가능하게 한다.</div>
+      <div class="eng-ctx">📌 애플이 아이폰용 온디바이스 AI를 위해 PrismML과 협상 중이라는 뉴스에서</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"eat someone's lunch"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">[iːt ˈsʌmwʌnz lʌntʃ]</div>
+      <div class="eng-meaning">→ 경쟁자의 사업·수익을 빼앗아 시장에서 압도하다 (남의 밥그릇을 빼앗다)</div>
+      <div class="eng-ex">With memory demand soaring, hardware is eating everyone's lunch.</div>
+      <div class="eng-ex-kr">메모리 수요가 급증하면서 하드웨어가 모두의 밥그릇을 빼앗고 있다.</div>
+      <div class="eng-ctx">📌 IBM 실적 경고에서 하드웨어가 소프트웨어 수익을 잠식한다는 분석 관련</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"ratchet up"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">[ˈrætʃɪt ʌp]</div>
+      <div class="eng-meaning">→ (강도·수준을) 단계적으로 끌어올리다, 점차 강화하다</div>
+      <div class="eng-ex">Oversight could be ratcheted up if the seriousness of the situation demands.</div>
+      <div class="eng-ex-kr">상황의 심각성이 요구하면 감독 수위를 단계적으로 높일 수 있다.</div>
+      <div class="eng-ctx">📌 하사비스가 제안한 프런티어 AI 표준기구의 규제 강도 조절 방식 관련</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-07-15-093112 | AI News Card
+  </div>
+
+</div>
+
+</div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
