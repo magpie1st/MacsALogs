@@ -7,6 +7,10 @@ function renderPosts(posts) {
     return;
   }
 
+  // 데이터 순서와 무관하게 항상 최신순으로 표시
+  posts = [...posts].sort((a, b) =>
+    (b.date || '').localeCompare(a.date || '') || (b.slug || '').localeCompare(a.slug || ''));
+
   listEl.innerHTML = posts.map(post => `
     <article class="post-card${post.thumbnail ? ' post-card--has-thumb' : ''}">
       ${post.thumbnail ? `<a href="posts/${post.slug}.html" class="post-card-thumb-link"><img class="post-card-thumb" src="${post.thumbnail}" alt="${post.title}" loading="lazy" /></a>` : ''}
