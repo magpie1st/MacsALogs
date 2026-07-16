@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오늘의 AI 뉴스 — 2026-07-16 — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    @media (max-width: 799px) { .view-desktop { display: none; } }
+    @media (min-width: 800px) { .view-mobile { display: none; } }
+    .view-desktop { max-width: 100%; overflow-x: auto; }
+    .view-mobile {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: #eef0f5;
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.5;
+  }.view-mobile .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px 12px 24px;
+  }.view-mobile .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }.view-mobile .header-logo { font-size: 28px; margin-right: 10px; }.view-mobile .header-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }.view-mobile .header-sub { font-size: 11px; opacity: 0.75; margin-top: 2px; }.view-mobile .header-date { font-size: 13px; font-weight: 700; text-align: right; }.view-mobile .header-edition { font-size: 10px; opacity: 0.65; margin-top: 2px; text-align: right; }.view-mobile .sec-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }.view-mobile .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+  }.view-mobile .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }.view-mobile .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-mobile .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-mobile .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-mobile .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-mobile .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }.view-mobile .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }.view-mobile .num-ai { background: #e0e7ff; color: #3730a3; }.view-mobile .num-detail { background: #ede9fe; color: #5b21b6; }.view-mobile .num-economy { background: #d1fae5; color: #065f46; }.view-mobile .num-english { background: #fef3c7; color: #92400e; }.view-mobile .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    flex: 1;
+  }.view-mobile .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }.view-mobile .badge-ai { background: #e0e7ff; color: #4338ca; }.view-mobile .badge-detail { background: #ede9fe; color: #6d28d9; }.view-mobile .badge-economy { background: #d1fae5; color: #065f46; }.view-mobile .badge-english { background: #fef3c7; color: #92400e; }.view-mobile .bullets { list-style: none; margin: 4px 0 6px; }.view-mobile .bullets li {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.55;
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }.view-mobile .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    top: 5px;
+  }.view-mobile .card-ai     .bullets li::before { color: #6366f1; }.view-mobile .card-detail .bullets li::before { color: #7c3aed; }.view-mobile .card-economy .bullets li::before { color: #059669; }.view-mobile .card-source {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-mobile .card-source:hover { color: #64748b; text-decoration: underline; }.view-mobile .detail-block { margin-bottom: 8px; }.view-mobile .detail-lbl {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 3px;
+  }.view-mobile .detail-txt {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.55;
+  }.view-mobile .key-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }.view-mobile .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }.view-mobile .takeaway {
+    background: #f8f7ff;
+    border-left: 3px solid #8b5cf6;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 6px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+  }.view-mobile .impact-pill {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 6px;
+  }.view-mobile .impact-positive { background: #dcfce7; color: #166534; }.view-mobile .impact-negative { background: #fee2e2; color: #991b1b; }.view-mobile .impact-neutral { background: #f1f5f9; color: #475569; }.view-mobile .eng-phrase {
+    font-size: 22px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-mobile .eng-pron {
+    font-size: 14px;
+    color: #b45309;
+    font-family: monospace;
+    margin-bottom: 6px;
+  }.view-mobile .eng-meaning {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }.view-mobile .eng-ex {
+    font-size: 15px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.6;
+    background: #fffbeb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #fbbf24;
+    margin-bottom: 6px;
+  }.view-mobile .eng-ex-kr {
+    font-size: 14px;
+    color: #78716c;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }.view-mobile .eng-ctx {
+    font-size: 14px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 6px 10px;
+    border-radius: 6px;
+    line-height: 1.5;
+  }.view-mobile .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+    
+  @page { size: A4 portrait; margin: 0; }.view-desktop {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-desktop .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-desktop {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-desktop .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-desktop .header { padding: 14px 20px; margin-bottom: 12px; }.view-desktop .header-title { font-size: 22px; }.view-desktop .header-sub { font-size: 12px; }.view-desktop .header-date { font-size: 15px; }.view-desktop .header-edition { font-size: 11px; }.view-desktop .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-desktop .grid-3 { gap: 12px; margin-bottom: 12px; }.view-desktop .grid-2 { gap: 12px; margin-bottom: 12px; }.view-desktop .card { padding: 16px 18px; border-radius: 12px; }.view-desktop .card-title { font-size: 15px; line-height: 1.5; }.view-desktop .card-title-sm { font-size: 13px; }.view-desktop .badge { font-size: 10px; padding: 2px 9px; }.view-desktop .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-desktop .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-desktop .detail-lbl { font-size: 10px; }.view-desktop .detail-txt { font-size: 13px; line-height: 1.65; }.view-desktop .key-chip { font-size: 11px; padding: 3px 9px; }.view-desktop .takeaway { font-size: 13px; padding: 7px 12px; }.view-desktop .impact-pill { font-size: 11px; padding: 3px 11px; }.view-desktop .eng-phrase { font-size: 17px; }.view-desktop .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-desktop .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-desktop .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-desktop .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-desktop .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-desktop .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-desktop .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-desktop .header-left { display: flex; align-items: center; gap: 10px; }.view-desktop .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-desktop .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-desktop .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-desktop .header-right { text-align: right; }.view-desktop .header-date { font-size: 12px; font-weight: 700; }.view-desktop .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-desktop .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-desktop .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-1 { margin-bottom: 5px; }.view-desktop .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-desktop .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-desktop .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-desktop .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-desktop .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-desktop .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-desktop .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-desktop .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-desktop .badge-ai { background: #e0e7ff; color: #4338ca; }.view-desktop .badge-detail { background: #ede9fe; color: #6d28d9; }.view-desktop .badge-economy { background: #d1fae5; color: #065f46; }.view-desktop .badge-english { background: #fef3c7; color: #92400e; }.view-desktop .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-desktop .card-title-sm { font-size: 10px; }.view-desktop .bullets { list-style: none; margin: 3px 0; }.view-desktop .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-desktop .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-desktop .card-ai .bullets li::before { color: #6366f1; }.view-desktop .card-detail .bullets li::before { color: #7c3aed; }.view-desktop .card-economy .bullets li::before { color: #059669; }.view-desktop .card-english .bullets li::before { color: #d97706; }.view-desktop .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-desktop .card-source:hover { color: #64748b; text-decoration: underline; }.view-desktop .detail-block { margin-bottom: 4px; }.view-desktop .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-desktop .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-desktop .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-desktop .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-desktop .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-desktop .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-desktop .impact-positive { background: #dcfce7; color: #166534; }.view-desktop .impact-negative { background: #fee2e2; color: #991b1b; }.view-desktop .impact-neutral { background: #f1f5f9; color: #475569; }.view-desktop .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-desktop .eng-pron { font-size: 8px; color: #b45309; margin-bottom: 3px; }.view-desktop .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-desktop .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-desktop .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-desktop .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-desktop .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
+  }
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">홈</a>
+        <a href="../about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../index.html">← 목록으로</a>
+
+    <header class="post-header">
+      <h1>오늘의 AI 뉴스 — 2026-07-16</h1>
+      <div class="post-meta">
+        <span>2026-07-16</span>
+        <span>5분</span>
+      </div>
+      <div class="tags" style="margin-top: 0.75rem;">
+        <span class="tag">AI</span>
+        <span class="tag">뉴스</span>
+        <span class="tag">경제</span>
+        <span class="tag">영어</span>
+      </div>
+    </header>
+
+    <article class="post-body">
+      <div class="view-mobile">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div>
+      <div class="header-date">2026-07-16-134814</div>
+      <div class="header-edition">No. 030</div>
+    </div>
+  </div>
+
+  
+  <!-- Audio overview player -->
+  <div style="border-radius:14px; margin-bottom:12px; padding:12px 14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; 오늘의 뉴스 2분 오디오 요약</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-07-16-134814-brief.m4a" type="audio/mp4">
+      브라우저가 오디오 재생을 지원하지 않습니다.
+    </audio>
+  </div>
+  <!-- Webtoon image -->
+  <div style="border-radius:14px; overflow:hidden; margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <img src="../images/2026-07-16-134814/page.png" alt="AI 뉴스 웹툰 2026-07-16-134814" style="width:100%; display:block;">
+  </div>
+
+  <!-- ── Row 1: AI 요약 ── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">AI TOPICS — 오늘의 핵심 3가지</div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">1</span>
+      <span class="card-title">OpenAI, AI 레드팀으로 GPT-5.6 강화</span>
+      <span class="badge badge-ai">안전기술</span>
+    </div>
+    <ul class="bullets">
+      <li>GPT-Red가 사전 지정 환경에서 공격 성공률 84%를 기록, 인간 레드팀은 13%에 그침</li><li>자가대결(self-play) 강화학습으로 공격 모델과 방어 모델이 서로 훈련되며 발전</li><li>발견된 프롬프트 인젝션 취약점을 반영해 최신 모델 GPT-5.6의 방어력을 강화</li>
+    </ul>
+    <a href="https://the-decoder.com/openai-is-now-using-ai-to-attack-its-own-ai-and-its-working-better-than-humans-ever-did/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">2</span>
+      <span class="card-title">씽킹머신즈, 오픈모델 '잉클링' 공개</span>
+      <span class="badge badge-ai">오픈소스</span>
+    </div>
+    <ul class="bullets">
+      <li>총 파라미터 9750억 개, 활성 파라미터 410억 개의 멀티모달 MoE 구조로 설계</li><li>SWE-bench Verified 77.6%, VoiceBench 91.4% 등 오픈모델 최고 수준 벤치마크 기록</li><li>전 OpenAI CTO 미라 무라티가 창업한 씽킹머신즈의 첫 공개 오픈소스 모델</li>
+    </ul>
+    <a href="https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">3</span>
+      <span class="card-title">기업 AI에이전트 71%, 챗봇 수준에 그쳐</span>
+      <span class="badge badge-ai">에이전트</span>
+    </div>
+    <ul class="bullets">
+      <li>직원 100인 이상 기업 101곳 설문 결과, 71%가 배포한 '에이전트' 중 4분의 1 이하만 실제로 오케스트레이션됨</li><li>모델 제공사 플랫폼 중 앤트로픽 클로드가 채택률 약 40%로 선두</li><li>27% 이상이 폭주하는 에이전트를 실시간으로 중단할 수 없다고 응답</li>
+    </ul>
+    <a href="https://venturebeat.com/ai/agentic-orchestration-enterprise-ai-organizations-have-a-deployment-problem-not-a-platform-problem-and-most-are-calling-chatbots-agents" class="card-source" target="_blank" rel="noopener">Source: VentureBeat</a>
+  </div>
+  
+
+  <!-- ── Row 2: AI 상세 ── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">AI DEEP DIVE — 왜 중요한가</div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">1</span>
+      <span class="card-title">OpenAI, AI 레드팀으로 GPT-5.6 강화</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">OpenAI는 2026년 7월 15일 GPT-5.6을 출시하면서 자체 개발한 AI 해커 'GPT-Red'를 프롬프트 인젝션 방어 훈련에 투입했다고 밝혔다. 기존에는 인간 레드팀이 수동으로 취약점을 찾았지만 속도와 범위에 한계가 있었다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">AI 모델 보안 검증을 AI 스스로 자동화하면 공격 탐지 속도와 범위가 크게 확대되어, 프롬프트 인젝션 같은 실전 위협에 대한 안전성 검증 주기가 단축된다. 이는 엔터프라이즈 고객이 AI 에이전트를 신뢰하고 도입하는 데 핵심 조건이 된다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">공격 성공률 84%(GPT-Red) vs 13%(인간 레드팀)</span><span class="key-chip">2026년 7월 15일 GPT-5.6과 동시 공개</span>
+    </div>
+    
+
+    <div class="takeaway">>>> OpenAI는 AI로 AI를 공격시켜 인간보다 6배 높은 성공률로 방어력을 검증한다.</div>
+    <a href="https://the-decoder.com/openai-is-now-using-ai-to-attack-its-own-ai-and-its-working-better-than-humans-ever-did/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">2</span>
+      <span class="card-title">씽킹머신즈, 오픈모델 '잉클링' 공개</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">미라 무라티가 이끄는 씽킹머신즈는 지난 1년 6개월간 비공개로 AI 인프라를 구축해왔으며, 2026년 7월 15일 첫 오픈모델 '잉클링(Inkling)'을 공개했다. 텍스트·이미지·음성·비디오 등 45조 토큰으로 학습됐다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">빅테크 중심의 폐쇄형 프론티어 모델 경쟁 속에서 자원을 갖춘 스타트업이 대규모 오픈모델을 직접 공개한 사례는 오픈소스 생태계의 경쟁력을 재확인시킨다. 기업들이 벤더 종속 없이 커스터마이징 가능한 대안을 확보할 수 있다는 점에서 엔터프라이즈 AI 조달 전략에 영향을 준다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">총 파라미터 975B / 활성 파라미터 41B</span><span class="key-chip">학습 데이터 45조 토큰, 최대 컨텍스트 100만 토큰</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 씽킹머신즈가 처음으로 대형 오픈모델을 공개하며 폐쇄형 프론티어 모델 독점 구도에 균열을 냈다.</div>
+    <a href="https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">3</span>
+      <span class="card-title">기업 AI에이전트 71%, 챗봇 수준에 그쳐</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">VentureBeat Pulse Research가 2026년 6월 직원 100인 이상 기업 101곳을 대상으로 에이전트 오케스트레이션 현황을 조사했다. 대다수 기업이 '에이전트'라 부르지만 실제로는 챗봇 래퍼 수준에 머물러 있다는 결과가 나왔다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">엔터프라이즈 AI 도입이 플랫폼 선택보다 배포·운영 역량 부족에서 막힌다는 사실은, AI 기업들이 모델 성능 경쟁보다 실시간 제어·거버넌스 기능 강화에 투자해야 함을 시사한다. AI 에이전트 시장의 다음 경쟁축이 '모델'에서 '오케스트레이션 제어판'으로 이동하고 있음을 보여준다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">조사 대상 기업 101곳(2026년 6월)</span><span class="key-chip">클로드 채택률 약 40%, 진짜 오케스트레이션 비율 25% 이하 응답 71%</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 기업 AI 에이전트 도입의 최대 걸림돌은 플랫폼이 아니라 배포·운영 격차다.</div>
+    <a href="https://venturebeat.com/ai/agentic-orchestration-enterprise-ai-organizations-have-a-deployment-problem-not-a-platform-problem-and-most-are-calling-chatbots-agents" class="card-source" target="_blank" rel="noopener">Source: VentureBeat</a>
+  </div>
+  
+
+  <!-- ── Row 3: 경제 ── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">ECONOMY — 경제·금융 핵심 3가지</div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">1</span>
+      <span class="card-title">유럽, 美中 AI 기술 종속 탈피 시동</span>
+      <span class="badge badge-economy">규제</span>
+    </div>
+    <ul class="bullets">
+      <li>유럽은 최첨단 AI 모델 학습에 필요한 글로벌 데이터센터 인프라의 약 5%만 보유해 미중 의존도가 구조적 취약점으로 부각</li><li>美 정부가 6월 앤트로픽의 최상급 모델 Mythos 5·Fable 5에 수출통제를 적용해 EU 접근을 차단하자 프랑스·독일이 자체 AI 주권 확보에 착수</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ 부정적</span>
+    <a href="https://www.nytimes.com/2026/07/16/world/europe/digital-autonomy-ai.html" class="card-source" target="_blank" rel="noopener">Source: The New York Times</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">2</span>
+      <span class="card-title">AI, S&P500·회사채·VC까지 장악</span>
+      <span class="badge badge-economy">시장</span>
+    </div>
+    <ul class="bullets">
+      <li>애플·MS·엔비디아·알파벳·아마존·메타·브로드컴 등 AI 관련주가 S&P500 시가총액의 약 35%를 차지해 지수 투자자는 AI 노출을 피할 수 없는 구조</li><li>AI 테마가 주식시장을 넘어 회사채(corporate credit)와 벤처캐피털 자금 배분까지 잠식하며 투자 전반을 재편</li>
+    </ul>
+    <span class="impact-pill impact-neutral">→ 중립</span>
+    <a href="https://www.marketwatch.com/story/ai-is-so-big-its-now-impossible-for-investors-to-avoid-9271e03f?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">Source: MarketWatch</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">3</span>
+      <span class="card-title">AI 밸류에이션 우려, 코스피 급락 촉발</span>
+      <span class="badge badge-economy">반도체</span>
+    </div>
+    <ul class="bullets">
+      <li>7월15일 美 반도체주 급락이 아시아로 확산, 코스피가 장중 7% 이상 급락해 7000선이 붕괴되고 서킷브레이커까지 발동</li><li>SK하이닉스 11%, 삼성전자 7%대 급락 — AI 붐 밸류에이션의 지속가능성에 대한 투자자 회의론 확산</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ 부정적</span>
+    <a href="https://www.bloomberg.com/news/articles/2026-07-15/stock-market-today-dow-s-p-live-updates" class="card-source" target="_blank" rel="noopener">Source: Bloomberg</a>
+  </div>
+  
+
+  <!-- ── Row 4: 영어 표현 ── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">1</span>
+      <span class="eng-phrase">"prompt injection"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/pra:mpt in-JEK-shuhn/</div>
+    <div class="eng-meaning">→ 악성 명령어를 입력값에 몰래 삽입해 AI를 속이는 보안 공격 기법</div>
+    <div class="eng-ex">GPT-Red simulates prompt injections and other attacks where malicious instructions hide in emails, websites, or files.</div>
+    <div class="eng-ex-kr">GPT-Red는 이메일, 웹사이트, 파일 속에 악성 명령어를 숨기는 프롬프트 인젝션 등의 공격을 시뮬레이션한다.</div>
+    <div class="eng-ctx">The Decoder 기사에서 OpenAI가 자체 AI 해커 GPT-Red로 프롬프트 인젝션 공격을 시뮬레이션해 GPT-5.6의 방어력을 강화한 사례를 설명하며 등장한 표현이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">2</span>
+      <span class="eng-phrase">"token burn"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/TOH-kuhn burn/</div>
+    <div class="eng-meaning">→ AI 에이전트가 토큰(비용)을 통제 없이 소모하는 현상</div>
+    <div class="eng-ex">Most deployed 'agents' are still chatbot wrappers, and real-time fiscal control over token burn remains the exception.</div>
+    <div class="eng-ex-kr">배포된 '에이전트' 대부분은 여전히 챗봇 래퍼 수준이며, 토큰 소모(비용)에 대한 실시간 재정 통제는 예외적인 경우에 그친다.</div>
+    <div class="eng-ctx">VentureBeat의 기업 AI 에이전트 배포 실태 조사 기사에서, 대부분의 에이전트가 챗봇 수준에 머물며 토큰 소모 비용 통제가 미흡하다는 문제를 지적하며 사용된 표현이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">3</span>
+      <span class="eng-phrase">"one-size-fits-all"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/wuhn-sayz-fits-AWL/</div>
+    <div class="eng-meaning">→ 모두에게 획일적으로 적용하는 범용적 방식</div>
+    <div class="eng-ex">It's also a test of the central bet behind the startup, which is that AI that organizations can adapt for themselves will outperform the one-size-fits-all models the biggest labs currently sell.</div>
+    <div class="eng-ex-kr">이는 스타트업의 핵심 베팅, 즉 조직이 스스로 맞춤화할 수 있는 AI가 대형 랩들이 현재 판매하는 획일적인 모델을 능가할 것이라는 가설을 시험하는 것이기도 하다.</div>
+    <div class="eng-ctx">TechCrunch의 씽킹머신즈 오픈모델 잉클링 기사에서, 조직 맞춤형 AI가 빅테크의 획일적 모델을 넘어설 수 있다는 창업 논리를 설명하며 사용된 표현이다.</div>
+  </div>
+  
+
+  <!-- Footer -->
+  <div class="footer">
+    Auto-generated | 2026-07-16-134814 | AI News Card
+  </div>
+
+</div>
+</div>
+      <div class="view-desktop">
+  <!-- Audio overview player -->
+  <div style="max-width:860px; margin:0 auto 12px; padding:12px 14px; border-radius:14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; 오늘의 뉴스 2분 오디오 요약</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-07-16-134814-brief.m4a" type="audio/mp4">
+      브라우저가 오디오 재생을 지원하지 않습니다.
+    </audio>
+  </div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-07-16-134814</div>
+      <div class="header-edition">No. 030</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">OpenAI, AI 레드팀으로 GPT-5.6 강화</span>
+        <span class="badge badge-ai">안전기술</span>
+      </div>
+      <ul class="bullets">
+        <li>GPT-Red가 사전 지정 환경에서 공격 성공률 84%를 기록, 인간 레드팀은 13%에 그침</li><li>자가대결(self-play) 강화학습으로 공격 모델과 방어 모델이 서로 훈련되며 발전</li><li>발견된 프롬프트 인젝션 취약점을 반영해 최신 모델 GPT-5.6의 방어력을 강화</li>
+      </ul>
+      <a href="https://the-decoder.com/openai-is-now-using-ai-to-attack-its-own-ai-and-its-working-better-than-humans-ever-did/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">씽킹머신즈, 오픈모델 '잉클링' 공개</span>
+        <span class="badge badge-ai">오픈소스</span>
+      </div>
+      <ul class="bullets">
+        <li>총 파라미터 9750억 개, 활성 파라미터 410억 개의 멀티모달 MoE 구조로 설계</li><li>SWE-bench Verified 77.6%, VoiceBench 91.4% 등 오픈모델 최고 수준 벤치마크 기록</li><li>전 OpenAI CTO 미라 무라티가 창업한 씽킹머신즈의 첫 공개 오픈소스 모델</li>
+      </ul>
+      <a href="https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">기업 AI에이전트 71%, 챗봇 수준에 그쳐</span>
+        <span class="badge badge-ai">에이전트</span>
+      </div>
+      <ul class="bullets">
+        <li>직원 100인 이상 기업 101곳 설문 결과, 71%가 배포한 '에이전트' 중 4분의 1 이하만 실제로 오케스트레이션됨</li><li>모델 제공사 플랫폼 중 앤트로픽 클로드가 채택률 약 40%로 선두</li><li>27% 이상이 폭주하는 에이전트를 실시간으로 중단할 수 없다고 응답</li>
+      </ul>
+      <a href="https://venturebeat.com/ai/agentic-orchestration-enterprise-ai-organizations-have-a-deployment-problem-not-a-platform-problem-and-most-are-calling-chatbots-agents" class="card-source" target="_blank" rel="noopener">📰 VentureBeat</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">OpenAI, AI 레드팀으로 GPT-5.6 강화</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">OpenAI는 2026년 7월 15일 GPT-5.6을 출시하면서 자체 개발한 AI 해커 'GPT-Red'를 프롬프트 인젝션 방어 훈련에 투입했다고 밝혔다. 기존에는 인간 레드팀이 수동으로 취약점을 찾았지만 속도와 범위에 한계가 있었다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">AI 모델 보안 검증을 AI 스스로 자동화하면 공격 탐지 속도와 범위가 크게 확대되어, 프롬프트 인젝션 같은 실전 위협에 대한 안전성 검증 주기가 단축된다. 이는 엔터프라이즈 고객이 AI 에이전트를 신뢰하고 도입하는 데 핵심 조건이 된다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">공격 성공률 84%(GPT-Red) vs 13%(인간 레드팀)</span><span class="key-chip">2026년 7월 15일 GPT-5.6과 동시 공개</span>
+      </div>
+      
+
+      <div class="takeaway">▶ OpenAI는 AI로 AI를 공격시켜 인간보다 6배 높은 성공률로 방어력을 검증한다.</div>
+      <a href="https://the-decoder.com/openai-is-now-using-ai-to-attack-its-own-ai-and-its-working-better-than-humans-ever-did/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">씽킹머신즈, 오픈모델 '잉클링' 공개</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">미라 무라티가 이끄는 씽킹머신즈는 지난 1년 6개월간 비공개로 AI 인프라를 구축해왔으며, 2026년 7월 15일 첫 오픈모델 '잉클링(Inkling)'을 공개했다. 텍스트·이미지·음성·비디오 등 45조 토큰으로 학습됐다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">빅테크 중심의 폐쇄형 프론티어 모델 경쟁 속에서 자원을 갖춘 스타트업이 대규모 오픈모델을 직접 공개한 사례는 오픈소스 생태계의 경쟁력을 재확인시킨다. 기업들이 벤더 종속 없이 커스터마이징 가능한 대안을 확보할 수 있다는 점에서 엔터프라이즈 AI 조달 전략에 영향을 준다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">총 파라미터 975B / 활성 파라미터 41B</span><span class="key-chip">학습 데이터 45조 토큰, 최대 컨텍스트 100만 토큰</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 씽킹머신즈가 처음으로 대형 오픈모델을 공개하며 폐쇄형 프론티어 모델 독점 구도에 균열을 냈다.</div>
+      <a href="https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">기업 AI에이전트 71%, 챗봇 수준에 그쳐</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">VentureBeat Pulse Research가 2026년 6월 직원 100인 이상 기업 101곳을 대상으로 에이전트 오케스트레이션 현황을 조사했다. 대다수 기업이 '에이전트'라 부르지만 실제로는 챗봇 래퍼 수준에 머물러 있다는 결과가 나왔다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">엔터프라이즈 AI 도입이 플랫폼 선택보다 배포·운영 역량 부족에서 막힌다는 사실은, AI 기업들이 모델 성능 경쟁보다 실시간 제어·거버넌스 기능 강화에 투자해야 함을 시사한다. AI 에이전트 시장의 다음 경쟁축이 '모델'에서 '오케스트레이션 제어판'으로 이동하고 있음을 보여준다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">조사 대상 기업 101곳(2026년 6월)</span><span class="key-chip">클로드 채택률 약 40%, 진짜 오케스트레이션 비율 25% 이하 응답 71%</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 기업 AI 에이전트 도입의 최대 걸림돌은 플랫폼이 아니라 배포·운영 격차다.</div>
+      <a href="https://venturebeat.com/ai/agentic-orchestration-enterprise-ai-organizations-have-a-deployment-problem-not-a-platform-problem-and-most-are-calling-chatbots-agents" class="card-source" target="_blank" rel="noopener">📰 VentureBeat</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">유럽, 美中 AI 기술 종속 탈피 시동</span>
+        <span class="badge badge-economy">규제</span>
+      </div>
+      <ul class="bullets">
+        <li>유럽은 최첨단 AI 모델 학습에 필요한 글로벌 데이터센터 인프라의 약 5%만 보유해 미중 의존도가 구조적 취약점으로 부각</li><li>美 정부가 6월 앤트로픽의 최상급 모델 Mythos 5·Fable 5에 수출통제를 적용해 EU 접근을 차단하자 프랑스·독일이 자체 AI 주권 확보에 착수</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ 부정적</span>
+      <a href="https://www.nytimes.com/2026/07/16/world/europe/digital-autonomy-ai.html" class="card-source" target="_blank" rel="noopener">📰 The New York Times</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">AI, S&P500·회사채·VC까지 장악</span>
+        <span class="badge badge-economy">시장</span>
+      </div>
+      <ul class="bullets">
+        <li>애플·MS·엔비디아·알파벳·아마존·메타·브로드컴 등 AI 관련주가 S&P500 시가총액의 약 35%를 차지해 지수 투자자는 AI 노출을 피할 수 없는 구조</li><li>AI 테마가 주식시장을 넘어 회사채(corporate credit)와 벤처캐피털 자금 배분까지 잠식하며 투자 전반을 재편</li>
+      </ul>
+      <span class="impact-pill impact-neutral">→ 중립</span>
+      <a href="https://www.marketwatch.com/story/ai-is-so-big-its-now-impossible-for-investors-to-avoid-9271e03f?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">📰 MarketWatch</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">AI 밸류에이션 우려, 코스피 급락 촉발</span>
+        <span class="badge badge-economy">반도체</span>
+      </div>
+      <ul class="bullets">
+        <li>7월15일 美 반도체주 급락이 아시아로 확산, 코스피가 장중 7% 이상 급락해 7000선이 붕괴되고 서킷브레이커까지 발동</li><li>SK하이닉스 11%, 삼성전자 7%대 급락 — AI 붐 밸류에이션의 지속가능성에 대한 투자자 회의론 확산</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ 부정적</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-15/stock-market-today-dow-s-p-live-updates" class="card-source" target="_blank" rel="noopener">📰 Bloomberg</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"prompt injection"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/pra:mpt in-JEK-shuhn/</div>
+      <div class="eng-meaning">→ 악성 명령어를 입력값에 몰래 삽입해 AI를 속이는 보안 공격 기법</div>
+      <div class="eng-ex">GPT-Red simulates prompt injections and other attacks where malicious instructions hide in emails, websites, or files.</div>
+      <div class="eng-ex-kr">GPT-Red는 이메일, 웹사이트, 파일 속에 악성 명령어를 숨기는 프롬프트 인젝션 등의 공격을 시뮬레이션한다.</div>
+      <div class="eng-ctx">📌 The Decoder 기사에서 OpenAI가 자체 AI 해커 GPT-Red로 프롬프트 인젝션 공격을 시뮬레이션해 GPT-5.6의 방어력을 강화한 사례를 설명하며 등장한 표현이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"token burn"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/TOH-kuhn burn/</div>
+      <div class="eng-meaning">→ AI 에이전트가 토큰(비용)을 통제 없이 소모하는 현상</div>
+      <div class="eng-ex">Most deployed 'agents' are still chatbot wrappers, and real-time fiscal control over token burn remains the exception.</div>
+      <div class="eng-ex-kr">배포된 '에이전트' 대부분은 여전히 챗봇 래퍼 수준이며, 토큰 소모(비용)에 대한 실시간 재정 통제는 예외적인 경우에 그친다.</div>
+      <div class="eng-ctx">📌 VentureBeat의 기업 AI 에이전트 배포 실태 조사 기사에서, 대부분의 에이전트가 챗봇 수준에 머물며 토큰 소모 비용 통제가 미흡하다는 문제를 지적하며 사용된 표현이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"one-size-fits-all"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/wuhn-sayz-fits-AWL/</div>
+      <div class="eng-meaning">→ 모두에게 획일적으로 적용하는 범용적 방식</div>
+      <div class="eng-ex">It's also a test of the central bet behind the startup, which is that AI that organizations can adapt for themselves will outperform the one-size-fits-all models the biggest labs currently sell.</div>
+      <div class="eng-ex-kr">이는 스타트업의 핵심 베팅, 즉 조직이 스스로 맞춤화할 수 있는 AI가 대형 랩들이 현재 판매하는 획일적인 모델을 능가할 것이라는 가설을 시험하는 것이기도 하다.</div>
+      <div class="eng-ctx">📌 TechCrunch의 씽킹머신즈 오픈모델 잉클링 기사에서, 조직 맞춤형 AI가 빅테크의 획일적 모델을 넘어설 수 있다는 창업 논리를 설명하며 사용된 표현이다.</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-07-16-134814 | AI News Card
+  </div>
+
+</div>
+</div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
