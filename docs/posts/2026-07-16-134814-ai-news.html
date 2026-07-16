@@ -185,7 +185,13 @@
     border-top: 1px solid #e2e8f0;
   }
 
-    
+    .view-desktop .section-bar {
+    width: 100%; max-width: 860px; margin: 0 auto; padding: 7px 6mm;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 8px;
+  }.view-desktop .webtoon-wrap { width: 100%; max-width: 860px; margin: 0 auto; background: #0f172a; }.view-desktop .webtoon-wrap img { width: 100%; display: block; }
+
   @page { size: A4 portrait; margin: 0; }.view-desktop {
     font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
     background: #eef0f5;
@@ -351,6 +357,7 @@
   }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
   }
 
+
   </style>
 </head>
 <body>
@@ -414,7 +421,9 @@
   </div>
   <!-- Webtoon image -->
   <div style="border-radius:14px; overflow:hidden; margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
-    <img src="../images/2026-07-16-134814/page.png" alt="AI 뉴스 웹툰 2026-07-16-134814" style="width:100%; display:block;">
+    <img src="../images/2026-07-16-134814/page.png" alt="AI 뉴스 웹툰 2026-07-16-134814" style="width:100%; display:block;"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:28px 14px; text-align:center; background:#eef2ff; color:#3730a3; font-size:13px; font-weight:600;">🎨 웹툰 준비 중 — 곧 업데이트됩니다</div>
   </div>
 
   <!-- ── Row 1: AI 요약 ── -->
@@ -636,6 +645,8 @@
 </div>
 </div>
       <div class="view-desktop">
+  <div class="section-bar">&#127912; WEBTOON &mdash; AI 뉴스 웹툰 2026-07-16</div>
+  
   <!-- Audio overview player -->
   <div style="max-width:860px; margin:0 auto 12px; padding:12px 14px; border-radius:14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
     <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; 귀로 듣는 오늘의 뉴스</div>
@@ -644,6 +655,12 @@
       브라우저가 오디오 재생을 지원하지 않습니다.
     </audio>
   </div>
+  <div class="webtoon-wrap">
+    <img src="../images/2026-07-16-134814/page.png" alt="AI 뉴스 웹툰 2026-07-16"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:32px 14px; text-align:center; color:#93c5fd; font-size:13px; font-weight:600;">&#127912; 웹툰 준비 중 &mdash; 곧 업데이트됩니다</div>
+  </div>
+  <div class="section-bar" style="margin-top:0;">&#128240; NEWS CARD &mdash; 상세 뉴스 카드 2026-07-16</div>
 
 <div class="page">
 
@@ -875,6 +892,7 @@
   </div>
 
 </div>
+
 </div>
     </article>
   </main>
