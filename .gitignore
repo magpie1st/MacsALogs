@@ -1,0 +1,5 @@
+# 로컬 .git 백업 (스왑 전 github용 .git) — 절대 커밋 금지
+.git_linux/
+
+# 임시 파일
+**/tmp.png
