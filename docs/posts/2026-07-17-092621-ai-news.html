@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오늘의 AI 뉴스 — 2026-07-17 — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    @media (max-width: 799px) { .view-desktop { display: none; } }
+    @media (min-width: 800px) { .view-mobile { display: none; } }
+    .view-desktop { max-width: 100%; overflow-x: auto; }
+    .view-mobile {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: #eef0f5;
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.5;
+  }.view-mobile .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px 12px 24px;
+  }.view-mobile .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }.view-mobile .header-logo { font-size: 28px; margin-right: 10px; }.view-mobile .header-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }.view-mobile .header-sub { font-size: 11px; opacity: 0.75; margin-top: 2px; }.view-mobile .header-date { font-size: 13px; font-weight: 700; text-align: right; }.view-mobile .header-edition { font-size: 10px; opacity: 0.65; margin-top: 2px; text-align: right; }.view-mobile .sec-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }.view-mobile .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+  }.view-mobile .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }.view-mobile .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-mobile .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-mobile .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-mobile .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-mobile .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }.view-mobile .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }.view-mobile .num-ai { background: #e0e7ff; color: #3730a3; }.view-mobile .num-detail { background: #ede9fe; color: #5b21b6; }.view-mobile .num-economy { background: #d1fae5; color: #065f46; }.view-mobile .num-english { background: #fef3c7; color: #92400e; }.view-mobile .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    flex: 1;
+  }.view-mobile .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }.view-mobile .badge-ai { background: #e0e7ff; color: #4338ca; }.view-mobile .badge-detail { background: #ede9fe; color: #6d28d9; }.view-mobile .badge-economy { background: #d1fae5; color: #065f46; }.view-mobile .badge-english { background: #fef3c7; color: #92400e; }.view-mobile .bullets { list-style: none; margin: 4px 0 6px; }.view-mobile .bullets li {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.55;
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }.view-mobile .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    top: 5px;
+  }.view-mobile .card-ai     .bullets li::before { color: #6366f1; }.view-mobile .card-detail .bullets li::before { color: #7c3aed; }.view-mobile .card-economy .bullets li::before { color: #059669; }.view-mobile .card-source {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-mobile .card-source:hover { color: #64748b; text-decoration: underline; }.view-mobile .detail-block { margin-bottom: 8px; }.view-mobile .detail-lbl {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 3px;
+  }.view-mobile .detail-txt {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.55;
+  }.view-mobile .key-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }.view-mobile .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }.view-mobile .takeaway {
+    background: #f8f7ff;
+    border-left: 3px solid #8b5cf6;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 6px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+  }.view-mobile .impact-pill {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 6px;
+  }.view-mobile .impact-positive { background: #dcfce7; color: #166534; }.view-mobile .impact-negative { background: #fee2e2; color: #991b1b; }.view-mobile .impact-neutral { background: #f1f5f9; color: #475569; }.view-mobile .eng-phrase {
+    font-size: 22px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-mobile .eng-pron {
+    font-size: 14px;
+    color: #b45309;
+    font-family: monospace;
+    margin-bottom: 6px;
+  }.view-mobile .eng-meaning {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }.view-mobile .eng-ex {
+    font-size: 15px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.6;
+    background: #fffbeb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #fbbf24;
+    margin-bottom: 6px;
+  }.view-mobile .eng-ex-kr {
+    font-size: 14px;
+    color: #78716c;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }.view-mobile .eng-ctx {
+    font-size: 14px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 6px 10px;
+    border-radius: 6px;
+    line-height: 1.5;
+  }.view-mobile .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+    .view-desktop .section-bar {
+    width: 100%; max-width: 860px; margin: 0 auto; padding: 7px 6mm;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 8px;
+  }.view-desktop .webtoon-wrap { width: 100%; max-width: 860px; margin: 0 auto; background: #0f172a; }.view-desktop .webtoon-wrap img { width: 100%; display: block; }
+
+  @page { size: A4 portrait; margin: 0; }.view-desktop {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-desktop .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-desktop {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-desktop .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-desktop .header { padding: 14px 20px; margin-bottom: 12px; }.view-desktop .header-title { font-size: 22px; }.view-desktop .header-sub { font-size: 12px; }.view-desktop .header-date { font-size: 15px; }.view-desktop .header-edition { font-size: 11px; }.view-desktop .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-desktop .grid-3 { gap: 12px; margin-bottom: 12px; }.view-desktop .grid-2 { gap: 12px; margin-bottom: 12px; }.view-desktop .card { padding: 16px 18px; border-radius: 12px; }.view-desktop .card-title { font-size: 15px; line-height: 1.5; }.view-desktop .card-title-sm { font-size: 13px; }.view-desktop .badge { font-size: 10px; padding: 2px 9px; }.view-desktop .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-desktop .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-desktop .detail-lbl { font-size: 10px; }.view-desktop .detail-txt { font-size: 13px; line-height: 1.65; }.view-desktop .key-chip { font-size: 11px; padding: 3px 9px; }.view-desktop .takeaway { font-size: 13px; padding: 7px 12px; }.view-desktop .impact-pill { font-size: 11px; padding: 3px 11px; }.view-desktop .eng-phrase { font-size: 17px; }.view-desktop .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-desktop .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-desktop .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-desktop .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-desktop .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-desktop .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-desktop .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-desktop .header-left { display: flex; align-items: center; gap: 10px; }.view-desktop .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-desktop .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-desktop .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-desktop .header-right { text-align: right; }.view-desktop .header-date { font-size: 12px; font-weight: 700; }.view-desktop .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-desktop .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-desktop .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-1 { margin-bottom: 5px; }.view-desktop .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-desktop .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-desktop .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-desktop .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-desktop .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-desktop .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-desktop .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-desktop .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-desktop .badge-ai { background: #e0e7ff; color: #4338ca; }.view-desktop .badge-detail { background: #ede9fe; color: #6d28d9; }.view-desktop .badge-economy { background: #d1fae5; color: #065f46; }.view-desktop .badge-english { background: #fef3c7; color: #92400e; }.view-desktop .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-desktop .card-title-sm { font-size: 10px; }.view-desktop .bullets { list-style: none; margin: 3px 0; }.view-desktop .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-desktop .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-desktop .card-ai .bullets li::before { color: #6366f1; }.view-desktop .card-detail .bullets li::before { color: #7c3aed; }.view-desktop .card-economy .bullets li::before { color: #059669; }.view-desktop .card-english .bullets li::before { color: #d97706; }.view-desktop .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-desktop .card-source:hover { color: #64748b; text-decoration: underline; }.view-desktop .detail-block { margin-bottom: 4px; }.view-desktop .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-desktop .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-desktop .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-desktop .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-desktop .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-desktop .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-desktop .impact-positive { background: #dcfce7; color: #166534; }.view-desktop .impact-negative { background: #fee2e2; color: #991b1b; }.view-desktop .impact-neutral { background: #f1f5f9; color: #475569; }.view-desktop .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-desktop .eng-pron { font-size: 8px; color: #b45309; margin-bottom: 3px; }.view-desktop .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-desktop .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-desktop .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-desktop .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-desktop .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
+  }
+
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">홈</a>
+        <a href="../about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../index.html">← 목록으로</a>
+
+    <header class="post-header">
+      <h1>오늘의 AI 뉴스 — 2026-07-17</h1>
+      <div class="post-meta">
+        <span>2026-07-17</span>
+        <span>5분</span>
+      </div>
+      <div class="tags" style="margin-top: 0.75rem;">
+        <span class="tag">AI</span>
+        <span class="tag">뉴스</span>
+        <span class="tag">경제</span>
+        <span class="tag">영어</span>
+      </div>
+    </header>
+
+    <article class="post-body">
+      <div class="view-mobile">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div>
+      <div class="header-date">2026-07-17-092621</div>
+      <div class="header-edition">No. 033</div>
+    </div>
+  </div>
+
+  
+  <!-- Audio overview player -->
+  <div style="border-radius:14px; margin-bottom:12px; padding:12px 14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; 귀로 듣는 오늘의 뉴스</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-07-17-092621-brief.m4a" type="audio/mp4">
+      브라우저가 오디오 재생을 지원하지 않습니다.
+    </audio>
+  </div>
+  <!-- Webtoon image -->
+  <div style="border-radius:14px; overflow:hidden; margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <img src="../images/2026-07-17-092621/page.png" alt="AI 뉴스 웹툰 2026-07-17-092621" style="width:100%; display:block;"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:28px 14px; text-align:center; background:#eef2ff; color:#3730a3; font-size:13px; font-weight:600;">🎨 웹툰 준비 중 — 곧 업데이트됩니다</div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">AI TOPICS — 오늘의 핵심 3가지</div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">1</span>
+      <span class="card-title">Kimi K3, 오픈모델 최고 성능 경신</span>
+      <span class="badge badge-ai">LLM</span>
+    </div>
+    <ul class="bullets">
+      <li>2.8조 파라미터·100만 토큰 컨텍스트의 오픈소스 멀티모달 모델 공개</li><li>자체 벤치마크에서 Opus 4.8·GLM 5.2 능가, Fable 5·GPT-5.6 Sol에 근접</li><li>전작 대비 가격 대폭 인상 - 초저가 중국 오픈AI 시대 종료 신호, 전체 가중치는 7월 27일 공개 예정</li>
+    </ul>
+    <a href="https://the-decoder.com/kimis-open-model-k3-nears-gpt-5-6-sol-and-fable-5-while-signaling-the-end-of-super-cheap-chinese-ai/" class="card-source" target="_blank" rel="noopener">Source: the-decoder.com</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">2</span>
+      <span class="card-title">기업 54%, AI 에이전트 보안사고 경험</span>
+      <span class="badge badge-ai">안전기술</span>
+    </div>
+    <ul class="bullets">
+      <li>설문 대상 기업 107곳 중 54%가 AI 에이전트 보안사고 또는 아차사고를 경험</li><li>에이전트별 전용 자격증명을 부여한 기업은 3곳 중 1곳에 불과, 대부분 자격증명 공유</li><li>고위험 에이전트를 별도로 격리 운영하는 기업은 10곳 중 3곳에 그쳐</li>
+    </ul>
+    <a href="https://venturebeat.com/ai/the-agent-security-gap-54-of-enterprises-have-already-had-an-ai-agent-incident-and-most-still-let-agents-share-credentials" class="card-source" target="_blank" rel="noopener">Source: venturebeat.com</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">3</span>
+      <span class="card-title">OpenAI, AI 규제 '역방향 연방주의' 전략</span>
+      <span class="badge badge-ai">규제</span>
+    </div>
+    <ul class="bullets">
+      <li>OpenAI, 9쪽 분량 청사진으로 연방의회에 프론티어 AI 통합 규제 프레임워크 요청</li><li>우호적인 주(州)들이 유사 법안을 만들어 사실상 전국 표준을 형성하는 '역방향 연방주의' 전략 공개</li><li>경쟁사 Anthropic은 주별 안전기준을 단계적으로 강화하는 정반대 노선 추진 중</li>
+    </ul>
+    <a href="https://openai.com/index/advancing-ai-safety-through-state-and-federal-action" class="card-source" target="_blank" rel="noopener">Source: openai.com</a>
+  </div>
+  
+
+  <!-- ── Row 2: AI 상세 ── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">AI DEEP DIVE — 왜 중요한가</div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">1</span>
+      <span class="card-title">Kimi K3, 오픈모델 최고 성능 경신</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">중국 AI 스타트업 Moonshot(문샷)이 오픈소스 대형언어모델 Kimi K3를 공개했다. 그동안 중국 오픈모델들은 초저가 전략으로 서구 프론티어 모델을 압박해왔으나, K3는 이 흐름에 제동을 거는 가격 정책을 택했다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">오픈소스 모델이 폐쇄형 프론티어 모델과의 성능 격차를 빠르게 좁히면서 글로벌 AI 가격·경쟁 구도가 재편되고 있다. 기업들은 이제 비용 대비 성능을 기준으로 모델 공급자를 재평가해야 하는 상황에 놓였다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">2.8조 파라미터·100만 토큰 컨텍스트</span><span class="key-chip">전체 가중치 공개 예정일 7월 27일</span>
+    </div>
+    
+
+    <div class="takeaway">>>> Kimi K3는 초저가 중국 오픈소스 AI 시대의 종료를 알리는 신호탄이다.</div>
+    <a href="https://the-decoder.com/kimis-open-model-k3-nears-gpt-5-6-sol-and-fable-5-while-signaling-the-end-of-super-cheap-chinese-ai/" class="card-source" target="_blank" rel="noopener">Source: the-decoder.com</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">2</span>
+      <span class="card-title">기업 54%, AI 에이전트 보안사고 경험</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">기업들이 AI 에이전트에 시스템·데이터 접근 권한을 실제로 부여하는 속도가 이를 통제할 보안 체계 구축 속도를 앞지르고 있다는 VentureBeat의 엔터프라이즈 설문 결과가 나왔다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">에이전트가 인간을 대신해 실제 업무 시스템에 접근하는 사례가 늘면서 보안 사고는 이미 이론이 아닌 현실의 위험이 되고 있다. 보안 예산과 체계가 이를 따라가지 못하면 엔터프라이즈 AI 도입 자체가 위협받을 수 있다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">설문기업 107곳 중 54% 보안사고 경험</span><span class="key-chip">전용 자격증명 부여 기업 비율 약 33%</span>
+    </div>
+    
+
+    <div class="takeaway">>>> AI 에이전트 도입 속도가 보안 통제 역량을 앞지르며 기업 리스크가 커지고 있다.</div>
+    <a href="https://venturebeat.com/ai/the-agent-security-gap-54-of-enterprises-have-already-had-an-ai-agent-incident-and-most-still-let-agents-share-credentials" class="card-source" target="_blank" rel="noopener">Source: venturebeat.com</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">3</span>
+      <span class="card-title">OpenAI, AI 규제 '역방향 연방주의' 전략</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">OpenAI가 각 주(州)의 AI 규제 법안이 난립하는 것을 막기 위해, 우호적인 주들끼리 비슷한 법을 만들도록 유도한 뒤 연방정부가 이를 흡수해 단일 기준으로 만드는 '역방향 연방주의' 전략을 공개했다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">AI 규제 주도권을 누가 쥐느냐에 따라 프론티어 모델 개발사들의 컴플라이언스 부담과 시장 진입 장벽이 크게 달라진다. OpenAI와 Anthropic이 정반대 로비 전략을 취하면서 향후 미국 AI 정책 방향이 이번 논쟁으로 갈릴 가능성이 크다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">청사진 분량 9쪽</span><span class="key-chip">OpenAI vs Anthropic 로비 전략 정면 대립</span>
+    </div>
+    
+
+    <div class="takeaway">>>> OpenAI는 연방 입법을 통해 주(州) AI 규제 난립을 선제적으로 통제하려 한다.</div>
+    <a href="https://openai.com/index/advancing-ai-safety-through-state-and-federal-action" class="card-source" target="_blank" rel="noopener">Source: openai.com</a>
+  </div>
+  
+
+  <!-- ── Row 3: 경제 ── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">ECONOMY — 경제·금융 핵심 3가지</div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">1</span>
+      <span class="card-title">앤트로픽, 대형 IPO 성큼 다가서</span>
+      <span class="badge badge-economy">기업</span>
+    </div>
+    <ul class="bullets">
+      <li>5월 펀딩라운드 후 기업가치 9650억달러로 오픈AI 제치고 사상 최대 AI 스타트업 등극</li><li>모건스탠리·골드만삭스·JP모건과 투자자 미팅 시작, 이르면 10월 상장 목표(오픈AI는 2027년으로 연기)</li>
+    </ul>
+    <span class="impact-pill impact-positive">↑ 긍정적</span>
+    <a href="https://www.nytimes.com/2026/07/16/business/dealbook/anthropic-ipo-ai.html" class="card-source" target="_blank" rel="noopener">Source: nytimes.com</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">2</span>
+      <span class="card-title">AI 보안 수요에 팔로알토네트웍스 급등</span>
+      <span class="badge badge-economy">시장</span>
+    </div>
+    <ul class="bullets">
+      <li>AI발 사이버공격 급증에 기업 보안투자 확대, 주가 연초 대비 94% 급등</li><li>시가총액 2890억달러로 사상 최고가 경신, AI 보안 수요가 랠리 견인</li>
+    </ul>
+    <span class="impact-pill impact-positive">↑ 긍정적</span>
+    <a href="https://www.marketwatch.com/story/palo-alto-networks-stock-has-been-on-a-tear-and-it-could-go-even-higher-according-to-these-bulls-1ddde6f4?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">Source: marketwatch.com</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">3</span>
+      <span class="card-title">AI 밸류에이션 우려, 아시아 반도체주 급락</span>
+      <span class="badge badge-economy">반도체</span>
+    </div>
+    <ul class="bullets">
+      <li>코스피 장중 7.6% 급락, SK하이닉스 11.5%·삼성전자 8%대 하락</li><li>닛케이 3% 하락 등 대규모 AI 투자가 고평가를 정당화할 수 있는지 투자자 회의론 확산</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ 부정적</span>
+    <a href="https://www.bloomberg.com/news/articles/2026-07-16/stock-market-today-dow-s-p-live-updates" class="card-source" target="_blank" rel="noopener">Source: bloomberg.com</a>
+  </div>
+  
+
+  <!-- ── Row 4: 영어 표현 ── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">1</span>
+      <span class="eng-phrase">"open-weight model"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ˈoʊpən weɪt ˈmɑːdəl/ [오픈-웨이트 모델]</div>
+    <div class="eng-meaning">→ 모델 가중치를 공개해 누구나 내려받아 쓸 수 있게 한 AI 모델</div>
+    <div class="eng-ex">Kimi is launching K3, a multimodal open-weight model with 2.8 trillion parameters and one million tokens of context.</div>
+    <div class="eng-ex-kr">Kimi는 2.8조 개의 매개변수와 100만 토큰 컨텍스트를 갖춘 멀티모달 오픈웨이트 모델인 K3를 출시한다.</div>
+    <div class="eng-ctx">더디코더(The Decoder)의 Kimi K3 오픈모델 출시 기사에서, 가중치를 공개해 자유롭게 활용 가능한 대형언어모델을 설명할 때 쓰인 표현이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">2</span>
+      <span class="eng-phrase">"warm to the idea"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/wɔːrm tuː ðiː aɪˈdɪə/ [웜 투 디 아이디어]</div>
+    <div class="eng-meaning">→ 특정 생각이나 전망에 점차 호의적, 우호적으로 바뀌다</div>
+    <div class="eng-ex">The company's shares have roughly doubled over the past three months, as investors have warmed to the idea that AI is increasing the need for cybersecurity products.</div>
+    <div class="eng-ex-kr">AI가 사이버보안 제품 수요를 늘리고 있다는 인식에 투자자들이 공감하게 되면서, 이 회사 주가는 지난 3개월간 약 두 배로 뛰었다.</div>
+    <div class="eng-ctx">마켓워치의 팔로알토네트웍스 주가 급등 기사에서, AI 보안 수요 확대라는 논리에 투자자들이 점차 동의하게 된 상황을 설명하며 사용된 표현이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">3</span>
+      <span class="eng-phrase">"signal the end of"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ˈsɪɡnəl ðiː ɛnd əv/ [시그널 디 엔드 오브]</div>
+    <div class="eng-meaning">→ 어떤 시대나 흐름이 끝나가고 있음을 알리다, 전환점을 나타내다</div>
+    <div class="eng-ex">Kimi's open model K3 nears GPT-5.6 Sol and Fable 5 while signaling the end of super cheap Chinese AI.</div>
+    <div class="eng-ex-kr">Kimi의 오픈모델 K3는 GPT-5.6 Sol과 Fable 5에 근접하는 동시에, 초저가 중국 AI 시대의 종료를 알리고 있다.</div>
+    <div class="eng-ctx">더디코더의 Kimi K3 기사 제목에 쓰인 표현으로, 초저가 중국 오픈소스 AI 경쟁 시대가 저물고 있음을 알리는 전환적 의미를 담고 있다.</div>
+  </div>
+  
+
+  <!-- Footer -->
+  <div class="footer">
+    Auto-generated | 2026-07-17-092621 | AI News Card
+  </div>
+
+</div>
+</div>
+      <div class="view-desktop">
+  <div class="section-bar">&#127912; WEBTOON &mdash; AI 뉴스 웹툰 2026-07-17</div>
+  
+  <!-- Audio overview player -->
+  <div style="max-width:860px; margin:0 auto 12px; padding:12px 14px; border-radius:14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; 귀로 듣는 오늘의 뉴스</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-07-17-092621-brief.m4a" type="audio/mp4">
+      브라우저가 오디오 재생을 지원하지 않습니다.
+    </audio>
+  </div>
+  <div class="webtoon-wrap">
+    <img src="../images/2026-07-17-092621/page.png" alt="AI 뉴스 웹툰 2026-07-17"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:32px 14px; text-align:center; color:#93c5fd; font-size:13px; font-weight:600;">&#127912; 웹툰 준비 중 &mdash; 곧 업데이트됩니다</div>
+  </div>
+  <div class="section-bar" style="margin-top:0;">&#128240; NEWS CARD &mdash; 상세 뉴스 카드 2026-07-17</div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-07-17-092621</div>
+      <div class="header-edition">No. 033</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">Kimi K3, 오픈모델 최고 성능 경신</span>
+        <span class="badge badge-ai">LLM</span>
+      </div>
+      <ul class="bullets">
+        <li>2.8조 파라미터·100만 토큰 컨텍스트의 오픈소스 멀티모달 모델 공개</li><li>자체 벤치마크에서 Opus 4.8·GLM 5.2 능가, Fable 5·GPT-5.6 Sol에 근접</li><li>전작 대비 가격 대폭 인상 - 초저가 중국 오픈AI 시대 종료 신호, 전체 가중치는 7월 27일 공개 예정</li>
+      </ul>
+      <a href="https://the-decoder.com/kimis-open-model-k3-nears-gpt-5-6-sol-and-fable-5-while-signaling-the-end-of-super-cheap-chinese-ai/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">기업 54%, AI 에이전트 보안사고 경험</span>
+        <span class="badge badge-ai">안전기술</span>
+      </div>
+      <ul class="bullets">
+        <li>설문 대상 기업 107곳 중 54%가 AI 에이전트 보안사고 또는 아차사고를 경험</li><li>에이전트별 전용 자격증명을 부여한 기업은 3곳 중 1곳에 불과, 대부분 자격증명 공유</li><li>고위험 에이전트를 별도로 격리 운영하는 기업은 10곳 중 3곳에 그쳐</li>
+      </ul>
+      <a href="https://venturebeat.com/ai/the-agent-security-gap-54-of-enterprises-have-already-had-an-ai-agent-incident-and-most-still-let-agents-share-credentials" class="card-source" target="_blank" rel="noopener">📰 venturebeat.com</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">OpenAI, AI 규제 '역방향 연방주의' 전략</span>
+        <span class="badge badge-ai">규제</span>
+      </div>
+      <ul class="bullets">
+        <li>OpenAI, 9쪽 분량 청사진으로 연방의회에 프론티어 AI 통합 규제 프레임워크 요청</li><li>우호적인 주(州)들이 유사 법안을 만들어 사실상 전국 표준을 형성하는 '역방향 연방주의' 전략 공개</li><li>경쟁사 Anthropic은 주별 안전기준을 단계적으로 강화하는 정반대 노선 추진 중</li>
+      </ul>
+      <a href="https://openai.com/index/advancing-ai-safety-through-state-and-federal-action" class="card-source" target="_blank" rel="noopener">📰 openai.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">Kimi K3, 오픈모델 최고 성능 경신</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">중국 AI 스타트업 Moonshot(문샷)이 오픈소스 대형언어모델 Kimi K3를 공개했다. 그동안 중국 오픈모델들은 초저가 전략으로 서구 프론티어 모델을 압박해왔으나, K3는 이 흐름에 제동을 거는 가격 정책을 택했다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">오픈소스 모델이 폐쇄형 프론티어 모델과의 성능 격차를 빠르게 좁히면서 글로벌 AI 가격·경쟁 구도가 재편되고 있다. 기업들은 이제 비용 대비 성능을 기준으로 모델 공급자를 재평가해야 하는 상황에 놓였다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">2.8조 파라미터·100만 토큰 컨텍스트</span><span class="key-chip">전체 가중치 공개 예정일 7월 27일</span>
+      </div>
+      
+
+      <div class="takeaway">▶ Kimi K3는 초저가 중국 오픈소스 AI 시대의 종료를 알리는 신호탄이다.</div>
+      <a href="https://the-decoder.com/kimis-open-model-k3-nears-gpt-5-6-sol-and-fable-5-while-signaling-the-end-of-super-cheap-chinese-ai/" class="card-source" target="_blank" rel="noopener">📰 the-decoder.com</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">기업 54%, AI 에이전트 보안사고 경험</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">기업들이 AI 에이전트에 시스템·데이터 접근 권한을 실제로 부여하는 속도가 이를 통제할 보안 체계 구축 속도를 앞지르고 있다는 VentureBeat의 엔터프라이즈 설문 결과가 나왔다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">에이전트가 인간을 대신해 실제 업무 시스템에 접근하는 사례가 늘면서 보안 사고는 이미 이론이 아닌 현실의 위험이 되고 있다. 보안 예산과 체계가 이를 따라가지 못하면 엔터프라이즈 AI 도입 자체가 위협받을 수 있다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">설문기업 107곳 중 54% 보안사고 경험</span><span class="key-chip">전용 자격증명 부여 기업 비율 약 33%</span>
+      </div>
+      
+
+      <div class="takeaway">▶ AI 에이전트 도입 속도가 보안 통제 역량을 앞지르며 기업 리스크가 커지고 있다.</div>
+      <a href="https://venturebeat.com/ai/the-agent-security-gap-54-of-enterprises-have-already-had-an-ai-agent-incident-and-most-still-let-agents-share-credentials" class="card-source" target="_blank" rel="noopener">📰 venturebeat.com</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">OpenAI, AI 규제 '역방향 연방주의' 전략</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">OpenAI가 각 주(州)의 AI 규제 법안이 난립하는 것을 막기 위해, 우호적인 주들끼리 비슷한 법을 만들도록 유도한 뒤 연방정부가 이를 흡수해 단일 기준으로 만드는 '역방향 연방주의' 전략을 공개했다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">AI 규제 주도권을 누가 쥐느냐에 따라 프론티어 모델 개발사들의 컴플라이언스 부담과 시장 진입 장벽이 크게 달라진다. OpenAI와 Anthropic이 정반대 로비 전략을 취하면서 향후 미국 AI 정책 방향이 이번 논쟁으로 갈릴 가능성이 크다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">청사진 분량 9쪽</span><span class="key-chip">OpenAI vs Anthropic 로비 전략 정면 대립</span>
+      </div>
+      
+
+      <div class="takeaway">▶ OpenAI는 연방 입법을 통해 주(州) AI 규제 난립을 선제적으로 통제하려 한다.</div>
+      <a href="https://openai.com/index/advancing-ai-safety-through-state-and-federal-action" class="card-source" target="_blank" rel="noopener">📰 openai.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">앤트로픽, 대형 IPO 성큼 다가서</span>
+        <span class="badge badge-economy">기업</span>
+      </div>
+      <ul class="bullets">
+        <li>5월 펀딩라운드 후 기업가치 9650억달러로 오픈AI 제치고 사상 최대 AI 스타트업 등극</li><li>모건스탠리·골드만삭스·JP모건과 투자자 미팅 시작, 이르면 10월 상장 목표(오픈AI는 2027년으로 연기)</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ 긍정적</span>
+      <a href="https://www.nytimes.com/2026/07/16/business/dealbook/anthropic-ipo-ai.html" class="card-source" target="_blank" rel="noopener">📰 nytimes.com</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">AI 보안 수요에 팔로알토네트웍스 급등</span>
+        <span class="badge badge-economy">시장</span>
+      </div>
+      <ul class="bullets">
+        <li>AI발 사이버공격 급증에 기업 보안투자 확대, 주가 연초 대비 94% 급등</li><li>시가총액 2890억달러로 사상 최고가 경신, AI 보안 수요가 랠리 견인</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ 긍정적</span>
+      <a href="https://www.marketwatch.com/story/palo-alto-networks-stock-has-been-on-a-tear-and-it-could-go-even-higher-according-to-these-bulls-1ddde6f4?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">📰 marketwatch.com</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">AI 밸류에이션 우려, 아시아 반도체주 급락</span>
+        <span class="badge badge-economy">반도체</span>
+      </div>
+      <ul class="bullets">
+        <li>코스피 장중 7.6% 급락, SK하이닉스 11.5%·삼성전자 8%대 하락</li><li>닛케이 3% 하락 등 대규모 AI 투자가 고평가를 정당화할 수 있는지 투자자 회의론 확산</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ 부정적</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-16/stock-market-today-dow-s-p-live-updates" class="card-source" target="_blank" rel="noopener">📰 bloomberg.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"open-weight model"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ˈoʊpən weɪt ˈmɑːdəl/ [오픈-웨이트 모델]</div>
+      <div class="eng-meaning">→ 모델 가중치를 공개해 누구나 내려받아 쓸 수 있게 한 AI 모델</div>
+      <div class="eng-ex">Kimi is launching K3, a multimodal open-weight model with 2.8 trillion parameters and one million tokens of context.</div>
+      <div class="eng-ex-kr">Kimi는 2.8조 개의 매개변수와 100만 토큰 컨텍스트를 갖춘 멀티모달 오픈웨이트 모델인 K3를 출시한다.</div>
+      <div class="eng-ctx">📌 더디코더(The Decoder)의 Kimi K3 오픈모델 출시 기사에서, 가중치를 공개해 자유롭게 활용 가능한 대형언어모델을 설명할 때 쓰인 표현이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"warm to the idea"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/wɔːrm tuː ðiː aɪˈdɪə/ [웜 투 디 아이디어]</div>
+      <div class="eng-meaning">→ 특정 생각이나 전망에 점차 호의적, 우호적으로 바뀌다</div>
+      <div class="eng-ex">The company's shares have roughly doubled over the past three months, as investors have warmed to the idea that AI is increasing the need for cybersecurity products.</div>
+      <div class="eng-ex-kr">AI가 사이버보안 제품 수요를 늘리고 있다는 인식에 투자자들이 공감하게 되면서, 이 회사 주가는 지난 3개월간 약 두 배로 뛰었다.</div>
+      <div class="eng-ctx">📌 마켓워치의 팔로알토네트웍스 주가 급등 기사에서, AI 보안 수요 확대라는 논리에 투자자들이 점차 동의하게 된 상황을 설명하며 사용된 표현이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"signal the end of"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ˈsɪɡnəl ðiː ɛnd əv/ [시그널 디 엔드 오브]</div>
+      <div class="eng-meaning">→ 어떤 시대나 흐름이 끝나가고 있음을 알리다, 전환점을 나타내다</div>
+      <div class="eng-ex">Kimi's open model K3 nears GPT-5.6 Sol and Fable 5 while signaling the end of super cheap Chinese AI.</div>
+      <div class="eng-ex-kr">Kimi의 오픈모델 K3는 GPT-5.6 Sol과 Fable 5에 근접하는 동시에, 초저가 중국 AI 시대의 종료를 알리고 있다.</div>
+      <div class="eng-ctx">📌 더디코더의 Kimi K3 기사 제목에 쓰인 표현으로, 초저가 중국 오픈소스 AI 경쟁 시대가 저물고 있음을 알리는 전환적 의미를 담고 있다.</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-07-17-092621 | AI News Card
+  </div>
+
+</div>
+
+</div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
