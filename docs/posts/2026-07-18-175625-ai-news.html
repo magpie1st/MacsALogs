@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오늘의 AI 뉴스 — 2026-07-18 — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    @media (max-width: 799px) { .view-desktop { display: none; } }
+    @media (min-width: 800px) { .view-mobile { display: none; } }
+    .view-desktop { max-width: 100%; overflow-x: auto; }
+    .view-mobile {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: #eef0f5;
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.5;
+  }.view-mobile .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px 12px 24px;
+  }.view-mobile .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }.view-mobile .header-logo { font-size: 28px; margin-right: 10px; }.view-mobile .header-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }.view-mobile .header-sub { font-size: 11px; opacity: 0.75; margin-top: 2px; }.view-mobile .header-date { font-size: 13px; font-weight: 700; text-align: right; }.view-mobile .header-edition { font-size: 10px; opacity: 0.65; margin-top: 2px; text-align: right; }.view-mobile .sec-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }.view-mobile .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+  }.view-mobile .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }.view-mobile .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-mobile .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-mobile .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-mobile .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-mobile .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }.view-mobile .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }.view-mobile .num-ai { background: #e0e7ff; color: #3730a3; }.view-mobile .num-detail { background: #ede9fe; color: #5b21b6; }.view-mobile .num-economy { background: #d1fae5; color: #065f46; }.view-mobile .num-english { background: #fef3c7; color: #92400e; }.view-mobile .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    flex: 1;
+  }.view-mobile .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }.view-mobile .badge-ai { background: #e0e7ff; color: #4338ca; }.view-mobile .badge-detail { background: #ede9fe; color: #6d28d9; }.view-mobile .badge-economy { background: #d1fae5; color: #065f46; }.view-mobile .badge-english { background: #fef3c7; color: #92400e; }.view-mobile .bullets { list-style: none; margin: 4px 0 6px; }.view-mobile .bullets li {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.55;
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }.view-mobile .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    top: 5px;
+  }.view-mobile .card-ai     .bullets li::before { color: #6366f1; }.view-mobile .card-detail .bullets li::before { color: #7c3aed; }.view-mobile .card-economy .bullets li::before { color: #059669; }.view-mobile .card-source {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-mobile .card-source:hover { color: #64748b; text-decoration: underline; }.view-mobile .detail-block { margin-bottom: 8px; }.view-mobile .detail-lbl {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 3px;
+  }.view-mobile .detail-txt {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.55;
+  }.view-mobile .key-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }.view-mobile .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }.view-mobile .takeaway {
+    background: #f8f7ff;
+    border-left: 3px solid #8b5cf6;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 6px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+  }.view-mobile .impact-pill {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 6px;
+  }.view-mobile .impact-positive { background: #dcfce7; color: #166534; }.view-mobile .impact-negative { background: #fee2e2; color: #991b1b; }.view-mobile .impact-neutral { background: #f1f5f9; color: #475569; }.view-mobile .eng-phrase {
+    font-size: 22px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-mobile .eng-pron {
+    font-size: 14px;
+    color: #b45309;
+    font-family: monospace;
+    margin-bottom: 6px;
+  }.view-mobile .eng-meaning {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }.view-mobile .eng-ex {
+    font-size: 15px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.6;
+    background: #fffbeb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #fbbf24;
+    margin-bottom: 6px;
+  }.view-mobile .eng-ex-kr {
+    font-size: 14px;
+    color: #78716c;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }.view-mobile .eng-ctx {
+    font-size: 14px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 6px 10px;
+    border-radius: 6px;
+    line-height: 1.5;
+  }.view-mobile .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+    .view-desktop .section-bar {
+    width: 100%; max-width: 860px; margin: 0 auto; padding: 7px 6mm;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 8px;
+  }.view-desktop .webtoon-wrap { width: 100%; max-width: 860px; margin: 0 auto; background: #0f172a; }.view-desktop .webtoon-wrap img { width: 100%; display: block; }
+
+  @page { size: A4 portrait; margin: 0; }.view-desktop {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-desktop .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-desktop {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-desktop .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-desktop .header { padding: 14px 20px; margin-bottom: 12px; }.view-desktop .header-title { font-size: 22px; }.view-desktop .header-sub { font-size: 12px; }.view-desktop .header-date { font-size: 15px; }.view-desktop .header-edition { font-size: 11px; }.view-desktop .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-desktop .grid-3 { gap: 12px; margin-bottom: 12px; }.view-desktop .grid-2 { gap: 12px; margin-bottom: 12px; }.view-desktop .card { padding: 16px 18px; border-radius: 12px; }.view-desktop .card-title { font-size: 15px; line-height: 1.5; }.view-desktop .card-title-sm { font-size: 13px; }.view-desktop .badge { font-size: 10px; padding: 2px 9px; }.view-desktop .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-desktop .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-desktop .detail-lbl { font-size: 10px; }.view-desktop .detail-txt { font-size: 13px; line-height: 1.65; }.view-desktop .key-chip { font-size: 11px; padding: 3px 9px; }.view-desktop .takeaway { font-size: 13px; padding: 7px 12px; }.view-desktop .impact-pill { font-size: 11px; padding: 3px 11px; }.view-desktop .eng-phrase { font-size: 17px; }.view-desktop .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-desktop .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-desktop .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-desktop .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-desktop .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-desktop .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-desktop .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-desktop .header-left { display: flex; align-items: center; gap: 10px; }.view-desktop .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-desktop .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-desktop .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-desktop .header-right { text-align: right; }.view-desktop .header-date { font-size: 12px; font-weight: 700; }.view-desktop .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-desktop .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-desktop .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-1 { margin-bottom: 5px; }.view-desktop .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-desktop .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-desktop .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-desktop .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-desktop .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-desktop .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-desktop .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-desktop .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-desktop .badge-ai { background: #e0e7ff; color: #4338ca; }.view-desktop .badge-detail { background: #ede9fe; color: #6d28d9; }.view-desktop .badge-economy { background: #d1fae5; color: #065f46; }.view-desktop .badge-english { background: #fef3c7; color: #92400e; }.view-desktop .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-desktop .card-title-sm { font-size: 10px; }.view-desktop .bullets { list-style: none; margin: 3px 0; }.view-desktop .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-desktop .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-desktop .card-ai .bullets li::before { color: #6366f1; }.view-desktop .card-detail .bullets li::before { color: #7c3aed; }.view-desktop .card-economy .bullets li::before { color: #059669; }.view-desktop .card-english .bullets li::before { color: #d97706; }.view-desktop .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-desktop .card-source:hover { color: #64748b; text-decoration: underline; }.view-desktop .detail-block { margin-bottom: 4px; }.view-desktop .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-desktop .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-desktop .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-desktop .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-desktop .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-desktop .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-desktop .impact-positive { background: #dcfce7; color: #166534; }.view-desktop .impact-negative { background: #fee2e2; color: #991b1b; }.view-desktop .impact-neutral { background: #f1f5f9; color: #475569; }.view-desktop .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-desktop .eng-pron { font-size: 8px; color: #b45309; margin-bottom: 3px; }.view-desktop .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-desktop .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-desktop .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-desktop .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-desktop .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
+  }
+
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">홈</a>
+        <a href="../about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../index.html">← 목록으로</a>
+
+    <header class="post-header">
+      <h1>오늘의 AI 뉴스 — 2026-07-18</h1>
+      <div class="post-meta">
+        <span>2026-07-18</span>
+        <span>5분</span>
+      </div>
+      <div class="tags" style="margin-top: 0.75rem;">
+        <span class="tag">AI</span>
+        <span class="tag">뉴스</span>
+        <span class="tag">경제</span>
+        <span class="tag">영어</span>
+      </div>
+    </header>
+
+    <article class="post-body">
+      <div class="view-mobile">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div>
+      <div class="header-date">2026-07-18-175625</div>
+      <div class="header-edition">No. 035</div>
+    </div>
+  </div>
+
+  
+  <!-- Audio overview player -->
+  <div style="border-radius:14px; margin-bottom:12px; padding:12px 14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; 귀로 듣는 오늘의 뉴스</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-07-18-175625-brief.m4a" type="audio/mp4">
+      브라우저가 오디오 재생을 지원하지 않습니다.
+    </audio>
+  </div>
+  <!-- Webtoon image -->
+  <div style="border-radius:14px; overflow:hidden; margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <img src="../images/2026-07-18-175625/page.png" alt="AI 뉴스 웹툰 2026-07-18-175625" style="width:100%; display:block;"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:28px 14px; text-align:center; background:#eef2ff; color:#3730a3; font-size:13px; font-weight:600;">🎨 웹툰 준비 중 — 곧 업데이트됩니다</div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">AI TOPICS — 오늘의 핵심 3가지</div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">1</span>
+      <span class="card-title">카이저 간호사, AI 업무감시로 처우 악화 호소</span>
+      <span class="badge badge-ai">에이전트</span>
+    </div>
+    <ul class="bullets">
+      <li>콜센터 간호사, 통화 15분 초과 시 관리자 질책·평가 대상 - AI가 매일 생산성 예측·감시</li><li>2024년 여름 AI 공감도·톤 평가 도구 시범 도입, 11월 중단됐으나 재도입 가능성 남아</li><li>간호사들 지난 3월 AI 반대 하루 파업 단행, 2023년 4개국 콜센터 조사서 응답자 절반이 AI로 스트레스 증가 응답</li>
+    </ul>
+    <a href="https://localnewsmatters.org/2026/07/15/kaiser-nurses-say-ai-workplace-surveillance-are-making-their-jobs-and-patient-care-worse/" class="card-source" target="_blank" rel="noopener">Source: Local News Matters</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">2</span>
+      <span class="card-title">애플, OpenAI 상대 영업비밀 소송 제기</span>
+      <span class="badge badge-ai">규제</span>
+    </div>
+    <ul class="bullets">
+      <li>애플, 7월 10일 OpenAI 상대 연방 영업비밀 소송 제기 - 전직원 400명 이상 이직 지목</li><li>OpenAI 하드웨어 총괄 탕 탄(전 애플 부사장) 피고로 지목 - 입사 지원자에 애플 자료 반입 지시 혐의</li><li>OpenAI 연내 IPO 추진 중, 소송으로 인한 평판·투자자 신뢰 리스크 우려 확산</li>
+    </ul>
+    <a href="https://techcrunch.com/video/how-apples-big-lawsuit-could-disrupt-openais-ipo-plans/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">3</span>
+      <span class="card-title">GPT-5.6, 사용자 파일 삭제 사고 발생</span>
+      <span class="badge badge-ai">안전기술</span>
+    </div>
+    <ul class="bullets">
+      <li>GPT-5.6 Sol, 전체접근모드(Full Access Mode)에서 사용자 홈 디렉터리 통째로 삭제하는 사고 다수 발생</li><li>OthersideAI CEO는 맥 파일 대부분 삭제, 한 개발자는 프로덕션 데이터베이스 전체 삭제 피해 신고</li><li>OpenAI, 6월 26일 시스템 카드에 가상머신 삭제 사례 이미 문서화했다고 인정 - 추가 안전장치 도입 예정</li>
+    </ul>
+    <a href="https://the-decoder.com/gpt-5-6-is-deleting-user-files-when-given-full-access-and-openai-says-it-shouldnt-but-did/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+
+  <!-- ── Row 2: AI 상세 ── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">AI DEEP DIVE — 왜 중요한가</div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">1</span>
+      <span class="card-title">카이저 간호사, AI 업무감시로 처우 악화 호소</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">카이저 permanente 콜센터 간호사 7명이 CalMatters 등에 업무 감시 AI 도구로 인해 환자 돌봄의 질이 떨어지고 있다고 증언했다. 통화 시간과 생산성을 실시간 추적하는 소프트웨어가 매달 성과 평가에 직결되면서 간호사들의 재량이 위축되고 있다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">AI 기반 업무 감시가 의료 등 고위험 산업까지 확산되면서 노동자 웰빙과 서비스 품질 사이의 충돌이 본격화되고 있다. 기업들이 생산성 지표에 AI를 활용할수록 노동 규제·노조 대응 리스크도 함께 커진다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">통화 15분 초과 시 성과평가 대상</span><span class="key-chip">2023년 조사 응답자 약 50% 스트레스 증가 응답</span>
+    </div>
+    
+
+    <div class="takeaway">>>> AI 업무 감시 확산이 의료 현장의 돌봄의 질을 위협하고 있다.</div>
+    <a href="https://localnewsmatters.org/2026/07/15/kaiser-nurses-say-ai-workplace-surveillance-are-making-their-jobs-and-patient-care-worse/" class="card-source" target="_blank" rel="noopener">Source: Local News Matters</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">2</span>
+      <span class="card-title">애플, OpenAI 상대 영업비밀 소송 제기</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">애플이 2026년 7월 10일 OpenAI를 상대로 연방 영업비밀 소송을 제기했다. 애플은 전직 직원들이 하드웨어 기밀을 유출해 OpenAI의 소비자 하드웨어 개발에 활용됐다고 주장한다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">OpenAI가 연내 IPO를 목표로 하는 상황에서 이번 소송은 기업 평판과 투자자 신뢰에 직접적 타격을 줄 수 있다. 빅테크 간 인재 이동과 기밀 보호를 둘러싼 소송이 AI 하드웨어 경쟁 구도에 새로운 리스크 변수로 떠올랐다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">전직 애플 직원 400명 이상 OpenAI 재직</span><span class="key-chip">소송 제기일 7월 10일</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 애플의 영업비밀 소송이 OpenAI의 IPO 일정에 그림자를 드리우고 있다.</div>
+    <a href="https://techcrunch.com/video/how-apples-big-lawsuit-could-disrupt-openais-ipo-plans/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">3</span>
+      <span class="card-title">GPT-5.6, 사용자 파일 삭제 사고 발생</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">OpenAI가 7월 9일 ChatGPT Work와 GPT-5.6 Sol을 출시한 직후, 전체접근모드에서 모델이 임시 디렉터리 변수를 잘못 지정해 사용자 홈 디렉터리 전체를 삭제하는 사고가 여러 건 보고됐다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">AI 에이전트가 시스템 전체 권한을 갖고 자율적으로 파일을 다루는 사례가 늘면서, 확인 절차 없는 파괴적 행동이 실제 사고로 이어질 위험이 커지고 있다. 엔터프라이즈 도입이 확산될수록 안전장치 미비가 신뢰 손실로 직결될 수 있다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">7월 9일 GPT-5.6 Sol 출시 직후 사고 발생</span><span class="key-chip">6월 26일 시스템 카드에 위험 사전 문서화</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 전체 접근 권한을 가진 AI 에이전트의 안전장치 부재가 실제 파일 삭제 사고로 이어졌다.</div>
+    <a href="https://the-decoder.com/gpt-5-6-is-deleting-user-files-when-given-full-access-and-openai-says-it-shouldnt-but-did/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+
+  <!-- ── Row 3: 경제 ── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">ECONOMY — 경제·금융 핵심 3가지</div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">1</span>
+      <span class="card-title">중국 문샷AI, 오픈AI·앤스로픽 추격</span>
+      <span class="badge badge-economy">기업</span>
+    </div>
+    <ul class="bullets">
+      <li>문샷AI '키미 K3'는 2.8조 파라미터 세계 최대 오픈웨이트 모델로 오픈AI 'GPT-5.6 Sol', 앤스로픽 'Claude Opus 4.8'급 성능을 냈다</li><li>미국 프리미엄 모델보다 훨씬 저렴한 가격에 7월 27일 오픈웨이트로 공개될 예정이며 실리콘밸리에 충격을 줬다</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ 부정적</span>
+    <a href="https://www.nytimes.com/2026/07/17/business/china-ai-moonshot-kimi.html" class="card-source" target="_blank" rel="noopener">Source: New York Times</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">2</span>
+      <span class="card-title">AI 반도체주, 베어마켓 진입</span>
+      <span class="badge badge-economy">반도체</span>
+    </div>
+    <ul class="bullets">
+      <li>필라델피아반도체지수(SOX)가 6월 고점 대비 20% 이상 급락해 베어마켓에 진입, 3월 저점 대비 105% 올랐던 상승분이 꺾였다</li><li>BofA는 구조적 AI 수요 둔화가 아니라 '여름철 조정'으로 진단하며 2027년까지 AI·클라우드 인프라 투자가 전년比 40~50% 늘어난 1조5000억달러에 달할 것으로 전망했다</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ 부정적</span>
+    <a href="https://www.marketwatch.com/story/chip-stocks-enter-bear-market-territory-a-bofa-analyst-says-not-to-panic-4d34df17?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">Source: MarketWatch</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">3</span>
+      <span class="card-title">美 연준, 7조달러 대차대조표 축소 검토</span>
+      <span class="badge badge-economy">금리</span>
+    </div>
+    <ul class="bullets">
+      <li>케빈 워시 신임 연준 의장이 대차대조표 정책 등 5개 태스크포스를 출범시켜 6.7조달러 규모 보유자산 축소 방안을 검토 중이다</li><li>정책 변경 시 사전 예고를 약속했지만, 유동성 축소 시점과 속도는 AI 인프라 조달 비용과 기술주 밸류에이션에 영향을 미칠 변수로 꼽힌다</li>
+    </ul>
+    <span class="impact-pill impact-neutral">→ 중립</span>
+    <a href="https://www.economist.com/finance-and-economics/2026/07/16/how-to-shrink-the-feds-7trn-balance-sheet" class="card-source" target="_blank" rel="noopener">Source: The Economist</a>
+  </div>
+  
+
+  <!-- ── Row 4: 영어 표현 ── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">1</span>
+      <span class="eng-phrase">"post-mortem"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/poʊst ˈmɔːrtəm/ [포스트-모텀]</div>
+    <div class="eng-meaning">→ 사고나 장애가 발생한 뒤 원인을 되짚어 분석하는 사후 검토 보고서</div>
+    <div class="eng-ex">OpenAI has announced extra safeguards after publishing a detailed post-mortem of the GPT-5.6 file-deletion incidents.</div>
+    <div class="eng-ex-kr">OpenAI는 GPT-5.6 파일 삭제 사고에 대한 상세한 사후 분석 보고서를 공개한 뒤 추가 안전장치를 발표했다.</div>
+    <div class="eng-ctx">더디코더(The Decoder)의 GPT-5.6 전체접근모드 파일 삭제 사고 기사에서, 기술 업계가 사고 원인을 되짚어보는 사후 분석 관행을 설명할 때 쓰인 표현이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">2</span>
+      <span class="eng-phrase">"trade secret lawsuit"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/treɪd ˈsiːkrət ˈlɔːsuːt/ [트레이드 시크릿 로수트]</div>
+    <div class="eng-meaning">→ 기업의 영업비밀(기밀정보) 침해를 이유로 제기하는 소송</div>
+    <div class="eng-ex">How Apple's big trade secret lawsuit could disrupt OpenAI's IPO plans.</div>
+    <div class="eng-ex-kr">애플의 대형 영업비밀 소송이 OpenAI의 기업공개(IPO) 계획에 차질을 줄 수 있는 이유.</div>
+    <div class="eng-ctx">테크크런치(TechCrunch)의 애플-OpenAI 소송 기사 제목에서, 전직원 대거 이탈로 촉발된 기업 기밀 유출 소송을 가리킬 때 쓰인 표현이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">3</span>
+      <span class="eng-phrase">"says not to panic"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/sɛz nɑːt tuː ˈpænɪk/ [세즈 낫 투 패닉]</div>
+    <div class="eng-meaning">→ 전문가가 동요하지 말라고, 과잉 반응하지 말라고 안심시키다</div>
+    <div class="eng-ex">Chip stocks enter bear market territory — a BofA analyst says not to panic.</div>
+    <div class="eng-ex-kr">반도체주가 베어마켓에 진입했지만, BofA 애널리스트는 패닉에 빠지지 말라고 진정시켰다.</div>
+    <div class="eng-ctx">마켓워치(MarketWatch)의 AI 반도체주 베어마켓 진입 기사 제목에서, 시장 급락에도 투자자들을 안심시키는 애널리스트의 진단을 표현할 때 쓰인 문구이다.</div>
+  </div>
+  
+
+  <!-- Footer -->
+  <div class="footer">
+    Auto-generated | 2026-07-18-175625 | AI News Card
+  </div>
+
+</div>
+</div>
+      <div class="view-desktop">
+  <div class="section-bar">&#127912; WEBTOON &mdash; AI 뉴스 웹툰 2026-07-18</div>
+  
+  <!-- Audio overview player -->
+  <div style="max-width:860px; margin:0 auto 12px; padding:12px 14px; border-radius:14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; 귀로 듣는 오늘의 뉴스</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-07-18-175625-brief.m4a" type="audio/mp4">
+      브라우저가 오디오 재생을 지원하지 않습니다.
+    </audio>
+  </div>
+  <div class="webtoon-wrap">
+    <img src="../images/2026-07-18-175625/page.png" alt="AI 뉴스 웹툰 2026-07-18"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:32px 14px; text-align:center; color:#93c5fd; font-size:13px; font-weight:600;">&#127912; 웹툰 준비 중 &mdash; 곧 업데이트됩니다</div>
+  </div>
+  <div class="section-bar" style="margin-top:0;">&#128240; NEWS CARD &mdash; 상세 뉴스 카드 2026-07-18</div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-07-18-175625</div>
+      <div class="header-edition">No. 035</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">카이저 간호사, AI 업무감시로 처우 악화 호소</span>
+        <span class="badge badge-ai">에이전트</span>
+      </div>
+      <ul class="bullets">
+        <li>콜센터 간호사, 통화 15분 초과 시 관리자 질책·평가 대상 - AI가 매일 생산성 예측·감시</li><li>2024년 여름 AI 공감도·톤 평가 도구 시범 도입, 11월 중단됐으나 재도입 가능성 남아</li><li>간호사들 지난 3월 AI 반대 하루 파업 단행, 2023년 4개국 콜센터 조사서 응답자 절반이 AI로 스트레스 증가 응답</li>
+      </ul>
+      <a href="https://localnewsmatters.org/2026/07/15/kaiser-nurses-say-ai-workplace-surveillance-are-making-their-jobs-and-patient-care-worse/" class="card-source" target="_blank" rel="noopener">📰 Local News Matters</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">애플, OpenAI 상대 영업비밀 소송 제기</span>
+        <span class="badge badge-ai">규제</span>
+      </div>
+      <ul class="bullets">
+        <li>애플, 7월 10일 OpenAI 상대 연방 영업비밀 소송 제기 - 전직원 400명 이상 이직 지목</li><li>OpenAI 하드웨어 총괄 탕 탄(전 애플 부사장) 피고로 지목 - 입사 지원자에 애플 자료 반입 지시 혐의</li><li>OpenAI 연내 IPO 추진 중, 소송으로 인한 평판·투자자 신뢰 리스크 우려 확산</li>
+      </ul>
+      <a href="https://techcrunch.com/video/how-apples-big-lawsuit-could-disrupt-openais-ipo-plans/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">GPT-5.6, 사용자 파일 삭제 사고 발생</span>
+        <span class="badge badge-ai">안전기술</span>
+      </div>
+      <ul class="bullets">
+        <li>GPT-5.6 Sol, 전체접근모드(Full Access Mode)에서 사용자 홈 디렉터리 통째로 삭제하는 사고 다수 발생</li><li>OthersideAI CEO는 맥 파일 대부분 삭제, 한 개발자는 프로덕션 데이터베이스 전체 삭제 피해 신고</li><li>OpenAI, 6월 26일 시스템 카드에 가상머신 삭제 사례 이미 문서화했다고 인정 - 추가 안전장치 도입 예정</li>
+      </ul>
+      <a href="https://the-decoder.com/gpt-5-6-is-deleting-user-files-when-given-full-access-and-openai-says-it-shouldnt-but-did/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">카이저 간호사, AI 업무감시로 처우 악화 호소</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">카이저 permanente 콜센터 간호사 7명이 CalMatters 등에 업무 감시 AI 도구로 인해 환자 돌봄의 질이 떨어지고 있다고 증언했다. 통화 시간과 생산성을 실시간 추적하는 소프트웨어가 매달 성과 평가에 직결되면서 간호사들의 재량이 위축되고 있다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">AI 기반 업무 감시가 의료 등 고위험 산업까지 확산되면서 노동자 웰빙과 서비스 품질 사이의 충돌이 본격화되고 있다. 기업들이 생산성 지표에 AI를 활용할수록 노동 규제·노조 대응 리스크도 함께 커진다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">통화 15분 초과 시 성과평가 대상</span><span class="key-chip">2023년 조사 응답자 약 50% 스트레스 증가 응답</span>
+      </div>
+      
+
+      <div class="takeaway">▶ AI 업무 감시 확산이 의료 현장의 돌봄의 질을 위협하고 있다.</div>
+      <a href="https://localnewsmatters.org/2026/07/15/kaiser-nurses-say-ai-workplace-surveillance-are-making-their-jobs-and-patient-care-worse/" class="card-source" target="_blank" rel="noopener">📰 Local News Matters</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">애플, OpenAI 상대 영업비밀 소송 제기</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">애플이 2026년 7월 10일 OpenAI를 상대로 연방 영업비밀 소송을 제기했다. 애플은 전직 직원들이 하드웨어 기밀을 유출해 OpenAI의 소비자 하드웨어 개발에 활용됐다고 주장한다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">OpenAI가 연내 IPO를 목표로 하는 상황에서 이번 소송은 기업 평판과 투자자 신뢰에 직접적 타격을 줄 수 있다. 빅테크 간 인재 이동과 기밀 보호를 둘러싼 소송이 AI 하드웨어 경쟁 구도에 새로운 리스크 변수로 떠올랐다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">전직 애플 직원 400명 이상 OpenAI 재직</span><span class="key-chip">소송 제기일 7월 10일</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 애플의 영업비밀 소송이 OpenAI의 IPO 일정에 그림자를 드리우고 있다.</div>
+      <a href="https://techcrunch.com/video/how-apples-big-lawsuit-could-disrupt-openais-ipo-plans/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">GPT-5.6, 사용자 파일 삭제 사고 발생</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">OpenAI가 7월 9일 ChatGPT Work와 GPT-5.6 Sol을 출시한 직후, 전체접근모드에서 모델이 임시 디렉터리 변수를 잘못 지정해 사용자 홈 디렉터리 전체를 삭제하는 사고가 여러 건 보고됐다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">AI 에이전트가 시스템 전체 권한을 갖고 자율적으로 파일을 다루는 사례가 늘면서, 확인 절차 없는 파괴적 행동이 실제 사고로 이어질 위험이 커지고 있다. 엔터프라이즈 도입이 확산될수록 안전장치 미비가 신뢰 손실로 직결될 수 있다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">7월 9일 GPT-5.6 Sol 출시 직후 사고 발생</span><span class="key-chip">6월 26일 시스템 카드에 위험 사전 문서화</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 전체 접근 권한을 가진 AI 에이전트의 안전장치 부재가 실제 파일 삭제 사고로 이어졌다.</div>
+      <a href="https://the-decoder.com/gpt-5-6-is-deleting-user-files-when-given-full-access-and-openai-says-it-shouldnt-but-did/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">중국 문샷AI, 오픈AI·앤스로픽 추격</span>
+        <span class="badge badge-economy">기업</span>
+      </div>
+      <ul class="bullets">
+        <li>문샷AI '키미 K3'는 2.8조 파라미터 세계 최대 오픈웨이트 모델로 오픈AI 'GPT-5.6 Sol', 앤스로픽 'Claude Opus 4.8'급 성능을 냈다</li><li>미국 프리미엄 모델보다 훨씬 저렴한 가격에 7월 27일 오픈웨이트로 공개될 예정이며 실리콘밸리에 충격을 줬다</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ 부정적</span>
+      <a href="https://www.nytimes.com/2026/07/17/business/china-ai-moonshot-kimi.html" class="card-source" target="_blank" rel="noopener">📰 New York Times</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">AI 반도체주, 베어마켓 진입</span>
+        <span class="badge badge-economy">반도체</span>
+      </div>
+      <ul class="bullets">
+        <li>필라델피아반도체지수(SOX)가 6월 고점 대비 20% 이상 급락해 베어마켓에 진입, 3월 저점 대비 105% 올랐던 상승분이 꺾였다</li><li>BofA는 구조적 AI 수요 둔화가 아니라 '여름철 조정'으로 진단하며 2027년까지 AI·클라우드 인프라 투자가 전년比 40~50% 늘어난 1조5000억달러에 달할 것으로 전망했다</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ 부정적</span>
+      <a href="https://www.marketwatch.com/story/chip-stocks-enter-bear-market-territory-a-bofa-analyst-says-not-to-panic-4d34df17?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">📰 MarketWatch</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">美 연준, 7조달러 대차대조표 축소 검토</span>
+        <span class="badge badge-economy">금리</span>
+      </div>
+      <ul class="bullets">
+        <li>케빈 워시 신임 연준 의장이 대차대조표 정책 등 5개 태스크포스를 출범시켜 6.7조달러 규모 보유자산 축소 방안을 검토 중이다</li><li>정책 변경 시 사전 예고를 약속했지만, 유동성 축소 시점과 속도는 AI 인프라 조달 비용과 기술주 밸류에이션에 영향을 미칠 변수로 꼽힌다</li>
+      </ul>
+      <span class="impact-pill impact-neutral">→ 중립</span>
+      <a href="https://www.economist.com/finance-and-economics/2026/07/16/how-to-shrink-the-feds-7trn-balance-sheet" class="card-source" target="_blank" rel="noopener">📰 The Economist</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"post-mortem"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/poʊst ˈmɔːrtəm/ [포스트-모텀]</div>
+      <div class="eng-meaning">→ 사고나 장애가 발생한 뒤 원인을 되짚어 분석하는 사후 검토 보고서</div>
+      <div class="eng-ex">OpenAI has announced extra safeguards after publishing a detailed post-mortem of the GPT-5.6 file-deletion incidents.</div>
+      <div class="eng-ex-kr">OpenAI는 GPT-5.6 파일 삭제 사고에 대한 상세한 사후 분석 보고서를 공개한 뒤 추가 안전장치를 발표했다.</div>
+      <div class="eng-ctx">📌 더디코더(The Decoder)의 GPT-5.6 전체접근모드 파일 삭제 사고 기사에서, 기술 업계가 사고 원인을 되짚어보는 사후 분석 관행을 설명할 때 쓰인 표현이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"trade secret lawsuit"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/treɪd ˈsiːkrət ˈlɔːsuːt/ [트레이드 시크릿 로수트]</div>
+      <div class="eng-meaning">→ 기업의 영업비밀(기밀정보) 침해를 이유로 제기하는 소송</div>
+      <div class="eng-ex">How Apple's big trade secret lawsuit could disrupt OpenAI's IPO plans.</div>
+      <div class="eng-ex-kr">애플의 대형 영업비밀 소송이 OpenAI의 기업공개(IPO) 계획에 차질을 줄 수 있는 이유.</div>
+      <div class="eng-ctx">📌 테크크런치(TechCrunch)의 애플-OpenAI 소송 기사 제목에서, 전직원 대거 이탈로 촉발된 기업 기밀 유출 소송을 가리킬 때 쓰인 표현이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"says not to panic"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/sɛz nɑːt tuː ˈpænɪk/ [세즈 낫 투 패닉]</div>
+      <div class="eng-meaning">→ 전문가가 동요하지 말라고, 과잉 반응하지 말라고 안심시키다</div>
+      <div class="eng-ex">Chip stocks enter bear market territory — a BofA analyst says not to panic.</div>
+      <div class="eng-ex-kr">반도체주가 베어마켓에 진입했지만, BofA 애널리스트는 패닉에 빠지지 말라고 진정시켰다.</div>
+      <div class="eng-ctx">📌 마켓워치(MarketWatch)의 AI 반도체주 베어마켓 진입 기사 제목에서, 시장 급락에도 투자자들을 안심시키는 애널리스트의 진단을 표현할 때 쓰인 문구이다.</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-07-18-175625 | AI News Card
+  </div>
+
+</div>
+
+</div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
