@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오늘의 AI 뉴스 — 2026-07-19 — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    @media (max-width: 799px) { .view-desktop { display: none; } }
+    @media (min-width: 800px) { .view-mobile { display: none; } }
+    .view-desktop { max-width: 100%; overflow-x: auto; }
+    .view-mobile {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: #eef0f5;
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.5;
+  }.view-mobile .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px 12px 24px;
+  }.view-mobile .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }.view-mobile .header-logo { font-size: 28px; margin-right: 10px; }.view-mobile .header-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }.view-mobile .header-sub { font-size: 11px; opacity: 0.75; margin-top: 2px; }.view-mobile .header-date { font-size: 13px; font-weight: 700; text-align: right; }.view-mobile .header-edition { font-size: 10px; opacity: 0.65; margin-top: 2px; text-align: right; }.view-mobile .sec-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }.view-mobile .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+  }.view-mobile .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }.view-mobile .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-mobile .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-mobile .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-mobile .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-mobile .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }.view-mobile .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }.view-mobile .num-ai { background: #e0e7ff; color: #3730a3; }.view-mobile .num-detail { background: #ede9fe; color: #5b21b6; }.view-mobile .num-economy { background: #d1fae5; color: #065f46; }.view-mobile .num-english { background: #fef3c7; color: #92400e; }.view-mobile .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    flex: 1;
+  }.view-mobile .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }.view-mobile .badge-ai { background: #e0e7ff; color: #4338ca; }.view-mobile .badge-detail { background: #ede9fe; color: #6d28d9; }.view-mobile .badge-economy { background: #d1fae5; color: #065f46; }.view-mobile .badge-english { background: #fef3c7; color: #92400e; }.view-mobile .bullets { list-style: none; margin: 4px 0 6px; }.view-mobile .bullets li {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.55;
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }.view-mobile .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    top: 5px;
+  }.view-mobile .card-ai     .bullets li::before { color: #6366f1; }.view-mobile .card-detail .bullets li::before { color: #7c3aed; }.view-mobile .card-economy .bullets li::before { color: #059669; }.view-mobile .card-source {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-mobile .card-source:hover { color: #64748b; text-decoration: underline; }.view-mobile .detail-block { margin-bottom: 8px; }.view-mobile .detail-lbl {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 3px;
+  }.view-mobile .detail-txt {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.55;
+  }.view-mobile .key-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }.view-mobile .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }.view-mobile .takeaway {
+    background: #f8f7ff;
+    border-left: 3px solid #8b5cf6;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 6px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+  }.view-mobile .impact-pill {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 6px;
+  }.view-mobile .impact-positive { background: #dcfce7; color: #166534; }.view-mobile .impact-negative { background: #fee2e2; color: #991b1b; }.view-mobile .impact-neutral { background: #f1f5f9; color: #475569; }.view-mobile .eng-phrase {
+    font-size: 22px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-mobile .eng-pron {
+    font-size: 14px;
+    color: #b45309;
+    font-family: monospace;
+    margin-bottom: 6px;
+  }.view-mobile .eng-meaning {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }.view-mobile .eng-ex {
+    font-size: 15px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.6;
+    background: #fffbeb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #fbbf24;
+    margin-bottom: 6px;
+  }.view-mobile .eng-ex-kr {
+    font-size: 14px;
+    color: #78716c;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }.view-mobile .eng-ctx {
+    font-size: 14px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 6px 10px;
+    border-radius: 6px;
+    line-height: 1.5;
+  }.view-mobile .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+    .view-desktop .section-bar {
+    width: 100%; max-width: 860px; margin: 0 auto; padding: 7px 6mm;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 8px;
+  }.view-desktop .webtoon-wrap { width: 100%; max-width: 860px; margin: 0 auto; background: #0f172a; }.view-desktop .webtoon-wrap img { width: 100%; display: block; }
+
+  @page { size: A4 portrait; margin: 0; }.view-desktop {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-desktop .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-desktop {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-desktop .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-desktop .header { padding: 14px 20px; margin-bottom: 12px; }.view-desktop .header-title { font-size: 22px; }.view-desktop .header-sub { font-size: 12px; }.view-desktop .header-date { font-size: 15px; }.view-desktop .header-edition { font-size: 11px; }.view-desktop .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-desktop .grid-3 { gap: 12px; margin-bottom: 12px; }.view-desktop .grid-2 { gap: 12px; margin-bottom: 12px; }.view-desktop .card { padding: 16px 18px; border-radius: 12px; }.view-desktop .card-title { font-size: 15px; line-height: 1.5; }.view-desktop .card-title-sm { font-size: 13px; }.view-desktop .badge { font-size: 10px; padding: 2px 9px; }.view-desktop .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-desktop .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-desktop .detail-lbl { font-size: 10px; }.view-desktop .detail-txt { font-size: 13px; line-height: 1.65; }.view-desktop .key-chip { font-size: 11px; padding: 3px 9px; }.view-desktop .takeaway { font-size: 13px; padding: 7px 12px; }.view-desktop .impact-pill { font-size: 11px; padding: 3px 11px; }.view-desktop .eng-phrase { font-size: 17px; }.view-desktop .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-desktop .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-desktop .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-desktop .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-desktop .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-desktop .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-desktop .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-desktop .header-left { display: flex; align-items: center; gap: 10px; }.view-desktop .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-desktop .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-desktop .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-desktop .header-right { text-align: right; }.view-desktop .header-date { font-size: 12px; font-weight: 700; }.view-desktop .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-desktop .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-desktop .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-1 { margin-bottom: 5px; }.view-desktop .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-desktop .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-desktop .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-desktop .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-desktop .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-desktop .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-desktop .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-desktop .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-desktop .badge-ai { background: #e0e7ff; color: #4338ca; }.view-desktop .badge-detail { background: #ede9fe; color: #6d28d9; }.view-desktop .badge-economy { background: #d1fae5; color: #065f46; }.view-desktop .badge-english { background: #fef3c7; color: #92400e; }.view-desktop .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-desktop .card-title-sm { font-size: 10px; }.view-desktop .bullets { list-style: none; margin: 3px 0; }.view-desktop .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-desktop .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-desktop .card-ai .bullets li::before { color: #6366f1; }.view-desktop .card-detail .bullets li::before { color: #7c3aed; }.view-desktop .card-economy .bullets li::before { color: #059669; }.view-desktop .card-english .bullets li::before { color: #d97706; }.view-desktop .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-desktop .card-source:hover { color: #64748b; text-decoration: underline; }.view-desktop .detail-block { margin-bottom: 4px; }.view-desktop .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-desktop .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-desktop .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-desktop .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-desktop .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-desktop .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-desktop .impact-positive { background: #dcfce7; color: #166534; }.view-desktop .impact-negative { background: #fee2e2; color: #991b1b; }.view-desktop .impact-neutral { background: #f1f5f9; color: #475569; }.view-desktop .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-desktop .eng-pron { font-size: 8px; color: #b45309; margin-bottom: 3px; }.view-desktop .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-desktop .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-desktop .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-desktop .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-desktop .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
+  }
+
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">홈</a>
+        <a href="../about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../index.html">← 목록으로</a>
+
+    <header class="post-header">
+      <h1>오늘의 AI 뉴스 — 2026-07-19</h1>
+      <div class="post-meta">
+        <span>2026-07-19</span>
+        <span>5분</span>
+      </div>
+      <div class="tags" style="margin-top: 0.75rem;">
+        <span class="tag">AI</span>
+        <span class="tag">뉴스</span>
+        <span class="tag">경제</span>
+        <span class="tag">영어</span>
+      </div>
+    </header>
+
+    <article class="post-body">
+      <div class="view-mobile">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div>
+      <div class="header-date">2026-07-19-142648</div>
+      <div class="header-edition">No. 037</div>
+    </div>
+  </div>
+
+  
+  <!-- Audio overview player -->
+  <div style="border-radius:14px; margin-bottom:12px; padding:12px 14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; 귀로 듣는 오늘의 뉴스</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-07-19-142648-brief.m4a" type="audio/mp4">
+      브라우저가 오디오 재생을 지원하지 않습니다.
+    </audio>
+  </div>
+  <!-- Webtoon image -->
+  <div style="border-radius:14px; overflow:hidden; margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <img src="../images/2026-07-19-142648/page.png" alt="AI 뉴스 웹툰 2026-07-19-142648" style="width:100%; display:block;"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:28px 14px; text-align:center; background:#eef2ff; color:#3730a3; font-size:13px; font-weight:600;">🎨 웹툰 준비 중 — 곧 업데이트됩니다</div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">AI TOPICS — 오늘의 핵심 3가지</div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">1</span>
+      <span class="card-title">중국 Kimi K3, 서구 AI 컴퓨팅 우위 흔들어</span>
+      <span class="badge badge-ai">LLM</span>
+    </div>
+    <ul class="bullets">
+      <li>Kimi K3, 2.8조 파라미터 오픈모델로 GDPval-AA v2 1,687점 기록</li><li>Claude Opus 4.8(1,600점) 앞서고 Fable 5 Max·GPT-5.6 Sol Max에 이어 3위</li><li>단 300명 팀이 개발, 미국 수출통제 실효성 논쟁 재점화</li>
+    </ul>
+    <a href="https://the-decoder.com/just-like-deepseek-chinas-kimi-k3-is-forcing-western-ai-labs-to-question-their-compute-advantage/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">2</span>
+      <span class="card-title">Agility Robotics, 테슬라 앞마당 진출</span>
+      <span class="badge badge-ai">자율주행</span>
+    </div>
+    <ul class="bullets">
+      <li>휴머노이드 로봇 Digit 훈련용 6만제곱피트(약 5,574㎡) 프리몬트 시설 개소</li><li>테슬라 옵티머스 생산 공장 인근에 위치, Physical AI 개발 거점 구축</li><li>Digit v5 다년 계약 수주액 3억달러 이상, 고객 파이프라인 30곳 이상</li>
+    </ul>
+    <a href="https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">3</span>
+      <span class="card-title">Cars24, OpenAI 에이전트로 리드 12% 회복</span>
+      <span class="badge badge-ai">에이전트</span>
+    </div>
+    <ul class="bullets">
+      <li>OpenAI 기반 음성·채팅 에이전트로 월 100만분 이상 상담 처리</li><li>이탈 고객 재참여로 손실 리드의 12% 복구, 통화 비용 50% 절감</li><li>영업 지원 성사율 45% 달성, 직원 600명 ChatGPT Enterprise·Codex 일 활성률 85~90%</li>
+    </ul>
+    <a href="https://openai.com/index/cars24" class="card-source" target="_blank" rel="noopener">Source: OpenAI News</a>
+  </div>
+  
+
+  <!-- ── Row 2: AI 상세 ── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">AI DEEP DIVE — 왜 중요한가</div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">1</span>
+      <span class="card-title">중국 Kimi K3, 서구 AI 컴퓨팅 우위 흔들어</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">Moonshot AI가 2026년 7월 공개한 Kimi K3는 2.8조 파라미터 규모의 오픈웨이트 모델로, 100만 토큰 컨텍스트와 네이티브 비전을 지원한다. DeepSeek 이후 다시 한번 중국 AI 랩이 서구 프론티어 모델을 바짝 추격하는 사례로 주목받고 있다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">단 300명 규모의 팀이 GDPval-AA v2에서 Anthropic Opus 4.8을 능가하는 모델을 만들어내며, 대규모 컴퓨팅 자원이 곧 경쟁우위라는 서구 AI 업계의 전제에 의문을 던진다. 미국의 대중 반도체 수출 통제 실효성 논쟁도 다시 불붙었다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">2.8조 파라미터</span><span class="key-chip">GDPval-AA v2 1,687점(3위)</span>
+    </div>
+    
+
+    <div class="takeaway">>>> Kimi K3는 소규모 팀도 컴퓨팅 격차를 뛰어넘을 수 있음을 보여준다.</div>
+    <a href="https://the-decoder.com/just-like-deepseek-chinas-kimi-k3-is-forcing-western-ai-labs-to-question-their-compute-advantage/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">2</span>
+      <span class="card-title">Agility Robotics, 테슬라 앞마당 진출</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">Agility Robotics는 2026년 7월 캘리포니아 프리몬트에 6만제곱피트 규모의 신규 시설을 열었다. 이곳은 휴머노이드 로봇 Digit을 실제 제조·물류 환경에 가깝게 훈련·테스트하는 소프트웨어 허브로, 테슬라 옵티머스 생산 공장과 인접해 있다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">Schaeffler, GXO, Toyota, Mercado Libre 등과 이미 상용 배치를 진행 중인 Agility가 실리콘밸리 한복판에 거점을 마련하면서, 휴머노이드 로봇 상용화 경쟁이 테슬라의 앞마당에서 본격화됐다. 3억달러 이상의 다년 계약은 물리적 AI 시장의 실질적 수요를 보여준다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">6만제곱피트(약5,574㎡) 시설</span><span class="key-chip">다년 계약 3억달러 이상, 고객 30곳+</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 휴머노이드 로봇 상용화 경쟁이 테슬라 코앞에서 본격화됐다.</div>
+    <a href="https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">3</span>
+      <span class="card-title">Cars24, OpenAI 에이전트로 리드 12% 회복</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">인도 최대 중고차 플랫폼 Cars24는 OpenAI API 기반 음성·채팅 에이전트를 구축해 구매자의 예산, 가족 구성, 통근 조건 등을 파악하고 상담 전 과정을 자동화했다. 이 사례는 OpenAI가 2026년 7월 공개한 엔터프라이즈 도입 사례 시리즈의 일환이다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">월 100만분 이상의 대화를 처리하면서도 이탈 리드의 12%를 되살리고 통화 비용을 절반으로 줄인 것은 AI 에이전트가 콜센터·영업 조직의 비용구조를 실질적으로 바꿀 수 있음을 보여주는 구체적 증거다. 600명 직원의 일 활성률 85~90%는 사내 도구 채택 속도도 시사한다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">월 100만분+ 상담 처리</span><span class="key-chip">리드 복구율 12%, 통화비용 50%↓</span>
+    </div>
+    
+
+    <div class="takeaway">>>> AI 에이전트 도입이 콜센터 비용구조를 실질적으로 바꾸고 있다.</div>
+    <a href="https://openai.com/index/cars24" class="card-source" target="_blank" rel="noopener">Source: OpenAI News</a>
+  </div>
+  
+
+  <!-- ── Row 3: 경제 ── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">ECONOMY — 경제·금융 핵심 3가지</div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">1</span>
+      <span class="card-title">TSMC AI 훈풍에 설비투자 640억달러로 상향</span>
+      <span class="badge badge-economy">반도체</span>
+    </div>
+    <ul class="bullets">
+      <li>2026년 설비투자 가이던스를 520~560억달러에서 600~640억달러로 상향, 매출 성장률 전망도 30%대에서 40%대로 상향</li><li>CEO C.C. 웨이 'AI 수요는 2030년까지 견조할 것' 발언과 함께 애리조나 추가 투자 1000억달러 발표</li>
+    </ul>
+    <span class="impact-pill impact-positive">↑ 긍정적</span>
+    <a href="https://www.bloomberg.com/news/articles/2026-07-16/tsmc-beats-lofty-estimates-in-latest-sign-of-sustained-ai-demand" class="card-source" target="_blank" rel="noopener">Source: bloomberg.com</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">2</span>
+      <span class="card-title">메타, 앤스로픽에 컴퓨팅 100억달러 임대 협상</span>
+      <span class="badge badge-economy">투자</span>
+    </div>
+    <ul class="bullets">
+      <li>메타가 앤스로픽에 컴퓨팅 파워를 2년간 최대 100억달러 규모로 임대하는 방안 협상 중, 저커버그의 클라우드 사업 진출 신호</li><li>앤스로픽은 이미 스페이스X 콜로서스 데이터센터에 3년간 450억달러(월 12.5억달러)를 지불 중 — AI 컴퓨팅 수요가 공급을 초과</li>
+    </ul>
+    <span class="impact-pill impact-positive">↑ 긍정적</span>
+    <a href="https://www.cnbc.com/2026/07/17/anthropic-meta-ai-compute.html" class="card-source" target="_blank" rel="noopener">Source: cnbc.com</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">3</span>
+      <span class="card-title">Fed 7조달러 대차대조표 축소, AI투자 변수</span>
+      <span class="badge badge-economy">금리</span>
+    </div>
+    <ul class="bullets">
+      <li>신임 Fed 의장 케빈 워시, 7조달러 규모 대차대조표 축소 착수 — 유동성 축소 시 빅테크 AI 설비투자 조달비용 상승 우려</li><li>대규모 AI 데이터센터 투자(수천억달러 규모)는 저금리·풍부한 유동성에 의존 — 긴축 전환은 AI 캐펙스 사이클의 잠재 리스크로 지목</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ 부정적</span>
+    <a href="https://www.economist.com/finance-and-economics/2026/07/16/how-to-shrink-the-feds-7trn-balance-sheet" class="card-source" target="_blank" rel="noopener">Source: economist.com</a>
+  </div>
+  
+
+  <!-- ── Row 4: 영어 표현 ── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">1</span>
+      <span class="eng-phrase">"frontier model"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ˈfrʌntɪr ˈmɒdl/ [프런티어 모델]</div>
+    <div class="eng-meaning">→ 현존 최고 수준의 성능을 갖춘 최첨단 AI 모델</div>
+    <div class="eng-ex">A small lab with taste can compress the compute needed to make a frontier model, even if it can't afford to serve one.</div>
+    <div class="eng-ex-kr">안목 있는 소규모 연구소는 프런티어 모델을 만드는 데 필요한 연산량을 압축할 수 있다, 비록 그것을 서비스할 여력은 없더라도.</div>
+    <div class="eng-ctx">더디코더(the-decoder.com)의 중국 Kimi K3 기사에서 서구 AI 랩들이 정의해온 최상위 성능 모델을 가리키는 기술 용어로 등장했다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">2</span>
+      <span class="eng-phrase">"outstrip supply"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/aʊtˈstrɪp səˈplaɪ/ [아웃스트립 서플라이]</div>
+    <div class="eng-meaning">→ 수요가 공급을 초과하는 상황을 뜻하는 표현</div>
+    <div class="eng-ex">The talks follow Anthropic's $45 billion, three-year deal with SpaceX (~$1.25 billion/month) for Colossus 1 data center GPU capacity, underscoring AI compute demand outstripping supply.</div>
+    <div class="eng-ex-kr">이번 협상은 앤스로픽이 스페이스X와 맺은 450억 달러 규모 3년 계약(콜로서스 1 데이터센터 GPU 용량, 월 12.5억 달러)에 이어 나온 것으로, AI 컴퓨팅 수요가 공급을 앞지르고 있음을 보여준다.</div>
+    <div class="eng-ctx">CNBC의 메타-앤스로픽 100억달러 컴퓨팅 임대 협상 기사(_sources 요약)에서 AI 컴퓨팅 공급 부족 상황을 설명하며 사용된 비즈니스 표현이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">3</span>
+      <span class="eng-phrase">"rest on a single assumption"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/rɛst ɒn ə ˈsɪŋgəl əˈsʌmpʃən/ [레스트 온 어 싱글 어섬션]</div>
+    <div class="eng-meaning">→ 단 하나의 전제나 가정에 근거해 성립하다</div>
+    <div class="eng-ex">Somaia argues that the entire Western consensus, from export controls to the hyperscalers' hundreds-of-billions investment race to the 'Compute Moat' investment thesis, rests on a single assumption: that computing power determines capability.</div>
+    <div class="eng-ex-kr">소마이아는 수출 통제부터 빅테크의 수천억 달러 투자 경쟁, 「컴퓨트 모트」 투자 논리까지 서구의 전체 합의가 연산력이 곧 역량을 결정한다는 단 하나의 전제에 기대고 있다고 주장한다.</div>
+    <div class="eng-ctx">더디코더의 Kimi K3 기사에서 서구 AI 업계의 컴퓨팅 우위 전제 자체를 반박하는 논거로 등장한 담론적 표현이다.</div>
+  </div>
+  
+
+  <!-- Footer -->
+  <div class="footer">
+    Auto-generated | 2026-07-19-142648 | AI News Card
+  </div>
+
+</div>
+</div>
+      <div class="view-desktop">
+  <div class="section-bar">&#127912; WEBTOON &mdash; AI 뉴스 웹툰 2026-07-19</div>
+  
+  <!-- Audio overview player -->
+  <div style="max-width:860px; margin:0 auto 12px; padding:12px 14px; border-radius:14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; 귀로 듣는 오늘의 뉴스</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-07-19-142648-brief.m4a" type="audio/mp4">
+      브라우저가 오디오 재생을 지원하지 않습니다.
+    </audio>
+  </div>
+  <div class="webtoon-wrap">
+    <img src="../images/2026-07-19-142648/page.png" alt="AI 뉴스 웹툰 2026-07-19"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:32px 14px; text-align:center; color:#93c5fd; font-size:13px; font-weight:600;">&#127912; 웹툰 준비 중 &mdash; 곧 업데이트됩니다</div>
+  </div>
+  <div class="section-bar" style="margin-top:0;">&#128240; NEWS CARD &mdash; 상세 뉴스 카드 2026-07-19</div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-07-19-142648</div>
+      <div class="header-edition">No. 037</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">중국 Kimi K3, 서구 AI 컴퓨팅 우위 흔들어</span>
+        <span class="badge badge-ai">LLM</span>
+      </div>
+      <ul class="bullets">
+        <li>Kimi K3, 2.8조 파라미터 오픈모델로 GDPval-AA v2 1,687점 기록</li><li>Claude Opus 4.8(1,600점) 앞서고 Fable 5 Max·GPT-5.6 Sol Max에 이어 3위</li><li>단 300명 팀이 개발, 미국 수출통제 실효성 논쟁 재점화</li>
+      </ul>
+      <a href="https://the-decoder.com/just-like-deepseek-chinas-kimi-k3-is-forcing-western-ai-labs-to-question-their-compute-advantage/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">Agility Robotics, 테슬라 앞마당 진출</span>
+        <span class="badge badge-ai">자율주행</span>
+      </div>
+      <ul class="bullets">
+        <li>휴머노이드 로봇 Digit 훈련용 6만제곱피트(약 5,574㎡) 프리몬트 시설 개소</li><li>테슬라 옵티머스 생산 공장 인근에 위치, Physical AI 개발 거점 구축</li><li>Digit v5 다년 계약 수주액 3억달러 이상, 고객 파이프라인 30곳 이상</li>
+      </ul>
+      <a href="https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">Cars24, OpenAI 에이전트로 리드 12% 회복</span>
+        <span class="badge badge-ai">에이전트</span>
+      </div>
+      <ul class="bullets">
+        <li>OpenAI 기반 음성·채팅 에이전트로 월 100만분 이상 상담 처리</li><li>이탈 고객 재참여로 손실 리드의 12% 복구, 통화 비용 50% 절감</li><li>영업 지원 성사율 45% 달성, 직원 600명 ChatGPT Enterprise·Codex 일 활성률 85~90%</li>
+      </ul>
+      <a href="https://openai.com/index/cars24" class="card-source" target="_blank" rel="noopener">📰 OpenAI News</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">중국 Kimi K3, 서구 AI 컴퓨팅 우위 흔들어</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">Moonshot AI가 2026년 7월 공개한 Kimi K3는 2.8조 파라미터 규모의 오픈웨이트 모델로, 100만 토큰 컨텍스트와 네이티브 비전을 지원한다. DeepSeek 이후 다시 한번 중국 AI 랩이 서구 프론티어 모델을 바짝 추격하는 사례로 주목받고 있다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">단 300명 규모의 팀이 GDPval-AA v2에서 Anthropic Opus 4.8을 능가하는 모델을 만들어내며, 대규모 컴퓨팅 자원이 곧 경쟁우위라는 서구 AI 업계의 전제에 의문을 던진다. 미국의 대중 반도체 수출 통제 실효성 논쟁도 다시 불붙었다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">2.8조 파라미터</span><span class="key-chip">GDPval-AA v2 1,687점(3위)</span>
+      </div>
+      
+
+      <div class="takeaway">▶ Kimi K3는 소규모 팀도 컴퓨팅 격차를 뛰어넘을 수 있음을 보여준다.</div>
+      <a href="https://the-decoder.com/just-like-deepseek-chinas-kimi-k3-is-forcing-western-ai-labs-to-question-their-compute-advantage/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">Agility Robotics, 테슬라 앞마당 진출</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">Agility Robotics는 2026년 7월 캘리포니아 프리몬트에 6만제곱피트 규모의 신규 시설을 열었다. 이곳은 휴머노이드 로봇 Digit을 실제 제조·물류 환경에 가깝게 훈련·테스트하는 소프트웨어 허브로, 테슬라 옵티머스 생산 공장과 인접해 있다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">Schaeffler, GXO, Toyota, Mercado Libre 등과 이미 상용 배치를 진행 중인 Agility가 실리콘밸리 한복판에 거점을 마련하면서, 휴머노이드 로봇 상용화 경쟁이 테슬라의 앞마당에서 본격화됐다. 3억달러 이상의 다년 계약은 물리적 AI 시장의 실질적 수요를 보여준다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">6만제곱피트(약5,574㎡) 시설</span><span class="key-chip">다년 계약 3억달러 이상, 고객 30곳+</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 휴머노이드 로봇 상용화 경쟁이 테슬라 코앞에서 본격화됐다.</div>
+      <a href="https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">Cars24, OpenAI 에이전트로 리드 12% 회복</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">인도 최대 중고차 플랫폼 Cars24는 OpenAI API 기반 음성·채팅 에이전트를 구축해 구매자의 예산, 가족 구성, 통근 조건 등을 파악하고 상담 전 과정을 자동화했다. 이 사례는 OpenAI가 2026년 7월 공개한 엔터프라이즈 도입 사례 시리즈의 일환이다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">월 100만분 이상의 대화를 처리하면서도 이탈 리드의 12%를 되살리고 통화 비용을 절반으로 줄인 것은 AI 에이전트가 콜센터·영업 조직의 비용구조를 실질적으로 바꿀 수 있음을 보여주는 구체적 증거다. 600명 직원의 일 활성률 85~90%는 사내 도구 채택 속도도 시사한다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">월 100만분+ 상담 처리</span><span class="key-chip">리드 복구율 12%, 통화비용 50%↓</span>
+      </div>
+      
+
+      <div class="takeaway">▶ AI 에이전트 도입이 콜센터 비용구조를 실질적으로 바꾸고 있다.</div>
+      <a href="https://openai.com/index/cars24" class="card-source" target="_blank" rel="noopener">📰 OpenAI News</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">TSMC AI 훈풍에 설비투자 640억달러로 상향</span>
+        <span class="badge badge-economy">반도체</span>
+      </div>
+      <ul class="bullets">
+        <li>2026년 설비투자 가이던스를 520~560억달러에서 600~640억달러로 상향, 매출 성장률 전망도 30%대에서 40%대로 상향</li><li>CEO C.C. 웨이 'AI 수요는 2030년까지 견조할 것' 발언과 함께 애리조나 추가 투자 1000억달러 발표</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ 긍정적</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-16/tsmc-beats-lofty-estimates-in-latest-sign-of-sustained-ai-demand" class="card-source" target="_blank" rel="noopener">📰 bloomberg.com</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">메타, 앤스로픽에 컴퓨팅 100억달러 임대 협상</span>
+        <span class="badge badge-economy">투자</span>
+      </div>
+      <ul class="bullets">
+        <li>메타가 앤스로픽에 컴퓨팅 파워를 2년간 최대 100억달러 규모로 임대하는 방안 협상 중, 저커버그의 클라우드 사업 진출 신호</li><li>앤스로픽은 이미 스페이스X 콜로서스 데이터센터에 3년간 450억달러(월 12.5억달러)를 지불 중 — AI 컴퓨팅 수요가 공급을 초과</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ 긍정적</span>
+      <a href="https://www.cnbc.com/2026/07/17/anthropic-meta-ai-compute.html" class="card-source" target="_blank" rel="noopener">📰 cnbc.com</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">Fed 7조달러 대차대조표 축소, AI투자 변수</span>
+        <span class="badge badge-economy">금리</span>
+      </div>
+      <ul class="bullets">
+        <li>신임 Fed 의장 케빈 워시, 7조달러 규모 대차대조표 축소 착수 — 유동성 축소 시 빅테크 AI 설비투자 조달비용 상승 우려</li><li>대규모 AI 데이터센터 투자(수천억달러 규모)는 저금리·풍부한 유동성에 의존 — 긴축 전환은 AI 캐펙스 사이클의 잠재 리스크로 지목</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ 부정적</span>
+      <a href="https://www.economist.com/finance-and-economics/2026/07/16/how-to-shrink-the-feds-7trn-balance-sheet" class="card-source" target="_blank" rel="noopener">📰 economist.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"frontier model"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ˈfrʌntɪr ˈmɒdl/ [프런티어 모델]</div>
+      <div class="eng-meaning">→ 현존 최고 수준의 성능을 갖춘 최첨단 AI 모델</div>
+      <div class="eng-ex">A small lab with taste can compress the compute needed to make a frontier model, even if it can't afford to serve one.</div>
+      <div class="eng-ex-kr">안목 있는 소규모 연구소는 프런티어 모델을 만드는 데 필요한 연산량을 압축할 수 있다, 비록 그것을 서비스할 여력은 없더라도.</div>
+      <div class="eng-ctx">📌 더디코더(the-decoder.com)의 중국 Kimi K3 기사에서 서구 AI 랩들이 정의해온 최상위 성능 모델을 가리키는 기술 용어로 등장했다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"outstrip supply"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/aʊtˈstrɪp səˈplaɪ/ [아웃스트립 서플라이]</div>
+      <div class="eng-meaning">→ 수요가 공급을 초과하는 상황을 뜻하는 표현</div>
+      <div class="eng-ex">The talks follow Anthropic's $45 billion, three-year deal with SpaceX (~$1.25 billion/month) for Colossus 1 data center GPU capacity, underscoring AI compute demand outstripping supply.</div>
+      <div class="eng-ex-kr">이번 협상은 앤스로픽이 스페이스X와 맺은 450억 달러 규모 3년 계약(콜로서스 1 데이터센터 GPU 용량, 월 12.5억 달러)에 이어 나온 것으로, AI 컴퓨팅 수요가 공급을 앞지르고 있음을 보여준다.</div>
+      <div class="eng-ctx">📌 CNBC의 메타-앤스로픽 100억달러 컴퓨팅 임대 협상 기사(_sources 요약)에서 AI 컴퓨팅 공급 부족 상황을 설명하며 사용된 비즈니스 표현이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"rest on a single assumption"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/rɛst ɒn ə ˈsɪŋgəl əˈsʌmpʃən/ [레스트 온 어 싱글 어섬션]</div>
+      <div class="eng-meaning">→ 단 하나의 전제나 가정에 근거해 성립하다</div>
+      <div class="eng-ex">Somaia argues that the entire Western consensus, from export controls to the hyperscalers' hundreds-of-billions investment race to the 'Compute Moat' investment thesis, rests on a single assumption: that computing power determines capability.</div>
+      <div class="eng-ex-kr">소마이아는 수출 통제부터 빅테크의 수천억 달러 투자 경쟁, 「컴퓨트 모트」 투자 논리까지 서구의 전체 합의가 연산력이 곧 역량을 결정한다는 단 하나의 전제에 기대고 있다고 주장한다.</div>
+      <div class="eng-ctx">📌 더디코더의 Kimi K3 기사에서 서구 AI 업계의 컴퓨팅 우위 전제 자체를 반박하는 논거로 등장한 담론적 표현이다.</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-07-19-142648 | AI News Card
+  </div>
+
+</div>
+
+</div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
