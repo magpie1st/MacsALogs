@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오늘의 AI 뉴스 — 2026-07-20 — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    @media (max-width: 799px) { .view-desktop { display: none; } }
+    @media (min-width: 800px) { .view-mobile { display: none; } }
+    .view-desktop { max-width: 100%; overflow-x: auto; }
+    .view-mobile {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: #eef0f5;
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.5;
+  }.view-mobile .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px 12px 24px;
+  }.view-mobile .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }.view-mobile .header-logo { font-size: 28px; margin-right: 10px; }.view-mobile .header-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }.view-mobile .header-sub { font-size: 11px; opacity: 0.75; margin-top: 2px; }.view-mobile .header-date { font-size: 13px; font-weight: 700; text-align: right; }.view-mobile .header-edition { font-size: 10px; opacity: 0.65; margin-top: 2px; text-align: right; }.view-mobile .sec-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }.view-mobile .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+  }.view-mobile .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }.view-mobile .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-mobile .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-mobile .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-mobile .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-mobile .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }.view-mobile .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }.view-mobile .num-ai { background: #e0e7ff; color: #3730a3; }.view-mobile .num-detail { background: #ede9fe; color: #5b21b6; }.view-mobile .num-economy { background: #d1fae5; color: #065f46; }.view-mobile .num-english { background: #fef3c7; color: #92400e; }.view-mobile .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    flex: 1;
+  }.view-mobile .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }.view-mobile .badge-ai { background: #e0e7ff; color: #4338ca; }.view-mobile .badge-detail { background: #ede9fe; color: #6d28d9; }.view-mobile .badge-economy { background: #d1fae5; color: #065f46; }.view-mobile .badge-english { background: #fef3c7; color: #92400e; }.view-mobile .bullets { list-style: none; margin: 4px 0 6px; }.view-mobile .bullets li {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.55;
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }.view-mobile .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    top: 5px;
+  }.view-mobile .card-ai     .bullets li::before { color: #6366f1; }.view-mobile .card-detail .bullets li::before { color: #7c3aed; }.view-mobile .card-economy .bullets li::before { color: #059669; }.view-mobile .card-source {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-mobile .card-source:hover { color: #64748b; text-decoration: underline; }.view-mobile .detail-block { margin-bottom: 8px; }.view-mobile .detail-lbl {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 3px;
+  }.view-mobile .detail-txt {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.55;
+  }.view-mobile .key-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }.view-mobile .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }.view-mobile .takeaway {
+    background: #f8f7ff;
+    border-left: 3px solid #8b5cf6;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 6px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+  }.view-mobile .impact-pill {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 6px;
+  }.view-mobile .impact-positive { background: #dcfce7; color: #166534; }.view-mobile .impact-negative { background: #fee2e2; color: #991b1b; }.view-mobile .impact-neutral { background: #f1f5f9; color: #475569; }.view-mobile .eng-phrase {
+    font-size: 22px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-mobile .eng-pron {
+    font-size: 14px;
+    color: #b45309;
+    font-family: monospace;
+    margin-bottom: 6px;
+  }.view-mobile .eng-meaning {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }.view-mobile .eng-ex {
+    font-size: 15px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.6;
+    background: #fffbeb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #fbbf24;
+    margin-bottom: 6px;
+  }.view-mobile .eng-ex-kr {
+    font-size: 14px;
+    color: #78716c;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }.view-mobile .eng-ctx {
+    font-size: 14px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 6px 10px;
+    border-radius: 6px;
+    line-height: 1.5;
+  }.view-mobile .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+    .view-desktop .section-bar {
+    width: 100%; max-width: 860px; margin: 0 auto; padding: 7px 6mm;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 8px;
+  }.view-desktop .webtoon-wrap { width: 100%; max-width: 860px; margin: 0 auto; background: #0f172a; }.view-desktop .webtoon-wrap img { width: 100%; display: block; }
+
+  @page { size: A4 portrait; margin: 0; }.view-desktop {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-desktop .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-desktop {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-desktop .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-desktop .header { padding: 14px 20px; margin-bottom: 12px; }.view-desktop .header-title { font-size: 22px; }.view-desktop .header-sub { font-size: 12px; }.view-desktop .header-date { font-size: 15px; }.view-desktop .header-edition { font-size: 11px; }.view-desktop .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-desktop .grid-3 { gap: 12px; margin-bottom: 12px; }.view-desktop .grid-2 { gap: 12px; margin-bottom: 12px; }.view-desktop .card { padding: 16px 18px; border-radius: 12px; }.view-desktop .card-title { font-size: 15px; line-height: 1.5; }.view-desktop .card-title-sm { font-size: 13px; }.view-desktop .badge { font-size: 10px; padding: 2px 9px; }.view-desktop .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-desktop .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-desktop .detail-lbl { font-size: 10px; }.view-desktop .detail-txt { font-size: 13px; line-height: 1.65; }.view-desktop .key-chip { font-size: 11px; padding: 3px 9px; }.view-desktop .takeaway { font-size: 13px; padding: 7px 12px; }.view-desktop .impact-pill { font-size: 11px; padding: 3px 11px; }.view-desktop .eng-phrase { font-size: 17px; }.view-desktop .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-desktop .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-desktop .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-desktop .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-desktop .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-desktop .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-desktop .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-desktop .header-left { display: flex; align-items: center; gap: 10px; }.view-desktop .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-desktop .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-desktop .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-desktop .header-right { text-align: right; }.view-desktop .header-date { font-size: 12px; font-weight: 700; }.view-desktop .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-desktop .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-desktop .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-1 { margin-bottom: 5px; }.view-desktop .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-desktop .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-desktop .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-desktop .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-desktop .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-desktop .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-desktop .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-desktop .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-desktop .badge-ai { background: #e0e7ff; color: #4338ca; }.view-desktop .badge-detail { background: #ede9fe; color: #6d28d9; }.view-desktop .badge-economy { background: #d1fae5; color: #065f46; }.view-desktop .badge-english { background: #fef3c7; color: #92400e; }.view-desktop .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-desktop .card-title-sm { font-size: 10px; }.view-desktop .bullets { list-style: none; margin: 3px 0; }.view-desktop .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-desktop .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-desktop .card-ai .bullets li::before { color: #6366f1; }.view-desktop .card-detail .bullets li::before { color: #7c3aed; }.view-desktop .card-economy .bullets li::before { color: #059669; }.view-desktop .card-english .bullets li::before { color: #d97706; }.view-desktop .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-desktop .card-source:hover { color: #64748b; text-decoration: underline; }.view-desktop .detail-block { margin-bottom: 4px; }.view-desktop .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-desktop .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-desktop .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-desktop .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-desktop .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-desktop .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-desktop .impact-positive { background: #dcfce7; color: #166534; }.view-desktop .impact-negative { background: #fee2e2; color: #991b1b; }.view-desktop .impact-neutral { background: #f1f5f9; color: #475569; }.view-desktop .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-desktop .eng-pron { font-size: 8px; color: #b45309; margin-bottom: 3px; }.view-desktop .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-desktop .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-desktop .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-desktop .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-desktop .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
+  }
+
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">홈</a>
+        <a href="../about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../index.html">← 목록으로</a>
+
+    <header class="post-header">
+      <h1>오늘의 AI 뉴스 — 2026-07-20</h1>
+      <div class="post-meta">
+        <span>2026-07-20</span>
+        <span>5분</span>
+      </div>
+      <div class="tags" style="margin-top: 0.75rem;">
+        <span class="tag">AI</span>
+        <span class="tag">뉴스</span>
+        <span class="tag">경제</span>
+        <span class="tag">영어</span>
+      </div>
+    </header>
+
+    <article class="post-body">
+      <div class="view-mobile">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div>
+      <div class="header-date">2026-07-20-174908</div>
+      <div class="header-edition">No. 041</div>
+    </div>
+  </div>
+
+  
+  <!-- Audio overview player -->
+  <div style="border-radius:14px; margin-bottom:12px; padding:12px 14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; 귀로 듣는 오늘의 뉴스</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-07-20-174908-brief.m4a" type="audio/mp4">
+      브라우저가 오디오 재생을 지원하지 않습니다.
+    </audio>
+  </div>
+  <!-- Webtoon image -->
+  <div style="border-radius:14px; overflow:hidden; margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <img src="../images/2026-07-20-174908/page.png" alt="AI 뉴스 웹툰 2026-07-20-174908" style="width:100%; display:block;"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:28px 14px; text-align:center; background:#eef2ff; color:#3730a3; font-size:13px; font-weight:600;">🎨 웹툰 준비 중 — 곧 업데이트됩니다</div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">AI TOPICS — 오늘의 핵심 3가지</div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">1</span>
+      <span class="card-title">Claude Fable, 야코비안 추측 반증 주장</span>
+      <span class="badge badge-ai">연구</span>
+    </div>
+    <ul class="bullets">
+      <li>수학자 레벤트 알푀게, Claude Fable 5가 제시한 반례로 1939년 제기된 야코비안 추측 반증 주장</li><li>3차원 다항식 사상의 야코비안 행렬식은 -2, 서로 다른 3개 점을 동일한 점으로 매핑해 가역성 붕괴 확인</li><li>HN 363점·댓글 210개로 급속 확산됐으나 동료 심사·논문 게재 전이라 공식적으로는 미해결 상태 유지</li>
+    </ul>
+    <a href="https://explainx.ai/blog/fable-5-jacobian-conjecture-counterexample-alpoge-july-2026" class="card-source" target="_blank" rel="noopener">Source: ExplainX</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">2</span>
+      <span class="card-title">알리바바 Qwen 3.8, 2.4조 파라미터 공개</span>
+      <span class="badge badge-ai">오픈소스</span>
+    </div>
+    <ul class="bullets">
+      <li>2.4조 파라미터 오픈웨이트 모델 공개, 알리바바 최초로 1조 파라미터 넘는 멀티모달 모델</li><li>미리보기는 Token Plan·Qoder·QoderWork에서 표준가 10% 요금으로 제공, 오픈 웨이트는 조만간 공개 예정</li><li>자체 평가에서 '프론티어 모델 중 Fable 5 다음'이라 주장했으나 벤치마크 결과는 아직 미공개</li>
+    </ul>
+    <a href="https://the-decoder.com/alibabas-qwen-takes-on-kimi-k3-with-open-weight-qwen-3-8-says-model-is-second-only-to-fable-5/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">3</span>
+      <span class="card-title">엔비디아, 일본 AI 팩토리에 62억달러 투자</span>
+      <span class="badge badge-ai">반도체</span>
+    </div>
+    <ul class="bullets">
+      <li>젠슨 황, 7월 15~16일 도쿄 방문해 국가 AI 팩토리 '노에트라' 등 대형 계약 체결</li><li>일본 정부 5년간 최대 1조엔(약 62억달러) 투입, 소프트뱅크·소니·NEC·혼다 등 44개 기업 참여</li><li>2028년 가동될 베라 루빈 AI 팩토리에 베라 CPU 1만3750개·루빈 GPU 2만7500개, 140메가와트 규모 구축</li>
+    </ul>
+    <a href="https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+
+  <!-- ── Row 2: AI 상세 ── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">AI DEEP DIVE — 왜 중요한가</div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">1</span>
+      <span class="card-title">Claude Fable, 야코비안 추측 반증 주장</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">1939년 제기된 야코비안 추측은 다항식 사상의 야코비안 행렬식이 0이 아닌 상수이면 그 사상이 역함수를 갖는 다항식 자기동형사상이어야 한다는 대수기하학의 핵심 난제다. 7월 19일 Anthropic 소속 수학자 레벤트 알푀게가 Claude Fable 5와의 대화에서 반례를 얻었다고 X에 공개했다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">AI 모델이 인간 수학자와 협업해 85년 묵은 미해결 문제에 도전했다는 사실 자체가 AI 연구 역량에 대한 인식을 바꿀 수 있다. 다만 동료 심사 전 SNS 발표라는 점에서 검증 리스크가 크고, 향후 논문 게재 여부가 AI 보조 수학 연구의 신뢰도를 좌우할 전망이다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">야코비안 행렬식 -2</span><span class="key-chip">HN 363점·댓글 210개</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 동료 심사 전이지만 Claude Fable이 85년 미해결 수학 난제의 반례 후보를 제시했다.</div>
+    <a href="https://explainx.ai/blog/fable-5-jacobian-conjecture-counterexample-alpoge-july-2026" class="card-source" target="_blank" rel="noopener">Source: ExplainX</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">2</span>
+      <span class="card-title">알리바바 Qwen 3.8, 2.4조 파라미터 공개</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">Moonshot AI가 7월 16일 2.8조 파라미터 오픈웨이트 모델 Kimi K3를 출시해 나흘 만에 GPU 용량 한계로 신규 가입을 중단할 만큼 큰 반향을 일으켰다. 알리바바는 이틀 뒤인 7월 19일 대응 모델 Qwen 3.8을 공개했다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">알리바바는 Moonshot AI 지분 약 36%를 보유해 사실상 계열사 경쟁이라는 특수한 구도다. 벤치마크 없이 '프론티어 2위' 주장을 내세운 점은 중국 오픈웨이트 모델 경쟁이 검증보다 속도와 마케팅을 앞세우는 국면에 들어섰음을 보여준다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">2.4조 파라미터</span><span class="key-chip">미리보기 요금 표준가 10%</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 알리바바가 검증되지 않은 '프론티어 2위' 주장과 함께 2.4조 파라미터 오픈웨이트 모델을 공개했다.</div>
+    <a href="https://the-decoder.com/alibabas-qwen-takes-on-kimi-k3-with-open-weight-qwen-3-8-says-model-is-second-only-to-fable-5/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">3</span>
+      <span class="card-title">엔비디아, 일본 AI 팩토리에 62억달러 투자</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">젠슨 황 엔비디아 CEO는 대만·한국 방문에 이어 7월 15~16일 일본을 찾아 산업계 리더들과 잇따라 회동했다. 일본 정부와 소프트뱅크·소니·NEC·혼다 등 44개 기업이 참여하는 국가 AI 팩토리 '노에트라' 프로젝트가 핵심 의제였다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">일본이 5년간 최대 62억달러를 투입해 자국산 물리 AI 파운데이션 모델을 구축하는 가운데, 엔비디아는 2028년 가동 예정인 베라 루빈 AI 팩토리 건설을 맡아 로보틱스·자율주행 생태계까지 사업을 확장한다. 이는 미국 반도체 기업이 각국 정부의 AI 주권 전략과 결합해 장기 인프라 계약을 확보하는 대표 사례다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">1조엔(약 62억달러) 5년 투자</span><span class="key-chip">베라 CPU 13,750개·루빈 GPU 27,500개, 140MW</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 엔비디아가 일본의 국가 AI 인프라 구축을 주도하며 장기 반도체 계약을 확보했다.</div>
+    <a href="https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+
+  <!-- ── Row 3: 경제 ── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">ECONOMY — 경제·금융 핵심 3가지</div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">1</span>
+      <span class="card-title">반도체주 20% 급락, 약세장 진입</span>
+      <span class="badge badge-economy">반도체</span>
+    </div>
+    <ul class="bullets">
+      <li>필라델피아반도체지수(SOX)가 6월 고점 대비 20% 급락해 기술적 약세장에 진입, 6월22일 이후 반도체 관련 시가총액 3.3조 달러 증발</li><li>마벨테크놀로지·ARM·인텔 등 주요 반도체주가 고점 대비 30% 이상 하락한 가운데 이번 주 알파벳·테슬라·인텔 실적 발표가 AI 지출 지속가능성의 시험대</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ 부정적</span>
+    <a href="https://www.bloomberg.com/news/articles/2026-07-19/oil-climbs-as-middle-east-conflict-escalates-markets-wrap" class="card-source" target="_blank" rel="noopener">Source: bloomberg.com</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">2</span>
+      <span class="card-title">'매그니피센트7' 없인 증시 못버텨?</span>
+      <span class="badge badge-economy">시장</span>
+    </div>
+    <ul class="bullets">
+      <li>매그니피센트7이 S&P500 시가총액의 32.5%를 차지, 그중 엔비디아가 21%로 최대 비중을 기록하며 AI 대형주 의존도 논란</li><li>브로드컴·TSMC·마이크론·삼성전자·SK하이닉스 등 반도체 기업들이 AI 투자 수혜를 나눠가지며 증시의 AI 의존이 소수 빅테크에서 분산되는 추세</li>
+    </ul>
+    <span class="impact-pill impact-neutral">→ 중립</span>
+    <a href="https://www.marketwatch.com/story/can-the-magnificent-seven-save-a-stock-market-that-might-be-doomed-without-them-f88988f3?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">Source: marketwatch.com</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">3</span>
+      <span class="card-title">연준 워시 'AI는 구조적 디스인플레'</span>
+      <span class="badge badge-economy">금리</span>
+    </div>
+    <ul class="bullets">
+      <li>케빈 워시 연준 의장이 AI 붐을 '우리 세대 최대 생산성 향상 물결'이자 '구조적 디스인플레이션 요인'으로 평가, 통화정책 시각에 반영</li><li>연준 대차대조표가 6.7조 달러 규모를 유지하는 가운데 워시 의장은 금리가 여전히 핵심 정책수단이라 언급, AI발 저물가 기조가 향후 금리 인하 여지를 시사해 AI 투자 자금조달에 우호적</li>
+    </ul>
+    <span class="impact-pill impact-positive">↑ 긍정적</span>
+    <a href="https://www.economist.com/finance-and-economics/2026/07/16/how-to-shrink-the-feds-7trn-balance-sheet" class="card-source" target="_blank" rel="noopener">Source: economist.com</a>
+  </div>
+  
+
+  <!-- ── Row 4: 영어 표현 ── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">1</span>
+      <span class="eng-phrase">"open-weight model"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ˈoʊpən weɪt ˈmɑːdl/ [오픈-웨이트 모델]</div>
+    <div class="eng-meaning">→ 모델 가중치를 공개해 누구나 내려받아 쓸 수 있게 한 AI 모델</div>
+    <div class="eng-ex">Alibaba has unveiled Qwen 3.8, its latest open-weight model with 2.4 trillion parameters.</div>
+    <div class="eng-ex-kr">알리바바가 2.4조 파라미터를 갖춘 최신 오픈웨이트 모델 Qwen 3.8을 공개했다.</div>
+    <div class="eng-ctx">더 디코더(The Decoder)의 알리바바 Qwen 3.8 공개 기사에서 등장한 AI 기술 용어이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">2</span>
+      <span class="eng-phrase">"structurally disinflationary"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ˈstrʌktʃərəli ˌdɪsɪnfleɪˈʃəneri/ [스트럭처럴리 디스인플레이셔너리]</div>
+    <div class="eng-meaning">→ 구조적으로 물가 상승 압력을 낮추는 성격의</div>
+    <div class="eng-ex">Separately, Warsh has described the AI boom as 'the most productivity-enhancing wave of our lifetimes' and called AI 'structurally disinflationary' -- a framing that feeds into his openness to lower rates over time, which would ease financing conditions for AI infrastructure investment.</div>
+    <div class="eng-ex-kr">케빈 워시 연준 의장은 AI 붐을 '우리 생애 최대의 생산성 향상 물결'이라 표현하고 AI를 '구조적 디스인플레이션 요인'이라 칭했는데, 이는 그가 시간이 지나며 금리 인하에 열려 있음을 보여주며 AI 인프라 투자의 자금조달 여건을 완화할 수 있다.</div>
+    <div class="eng-ctx">이코노미스트 연준 대차대조표 기사 원문 접근이 차단되어 AGENT_ECONOMY가 남긴 웹서치 기반 폴백 요약에서 가져온 표현으로, 워시 의장이 AI발 물가 완화 효과를 설명한 대목이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">3</span>
+      <span class="eng-phrase">"once-in-a-generation opportunity"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/wʌns ɪn ə ˌdʒɛnəˈreɪʃən ˌɑːpərˈtuːnəti/ [원스-인-어-제너레이션 어퍼튜니티]</div>
+    <div class="eng-meaning">→ 한 세대에 한 번 있을까 말까 한 매우 드문 기회</div>
+    <div class="eng-ex">'The next frontier of AI is in the physical world, and this is a once-in-a-generation opportunity for Japan,' Huang said in the company's statement.</div>
+    <div class="eng-ex-kr">젠슨 황은 '다음 AI의 개척지는 물리적 세계에 있으며, 이는 일본에게 한 세대에 한 번뿐인 기회'라고 회사 성명에서 밝혔다.</div>
+    <div class="eng-ctx">테크크런치의 젠슨 황 일본 방문 기사에서 엔비디아 CEO가 일본의 물리적 AI 투자 기회를 강조하며 사용한 담론적 표현이다.</div>
+  </div>
+  
+
+  <!-- Footer -->
+  <div class="footer">
+    Auto-generated | 2026-07-20-174908 | AI News Card
+  </div>
+
+</div>
+</div>
+      <div class="view-desktop">
+  <div class="section-bar">&#127912; WEBTOON &mdash; AI 뉴스 웹툰 2026-07-20</div>
+  
+  <!-- Audio overview player -->
+  <div style="max-width:860px; margin:0 auto 12px; padding:12px 14px; border-radius:14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; 귀로 듣는 오늘의 뉴스</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-07-20-174908-brief.m4a" type="audio/mp4">
+      브라우저가 오디오 재생을 지원하지 않습니다.
+    </audio>
+  </div>
+  <div class="webtoon-wrap">
+    <img src="../images/2026-07-20-174908/page.png" alt="AI 뉴스 웹툰 2026-07-20"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:32px 14px; text-align:center; color:#93c5fd; font-size:13px; font-weight:600;">&#127912; 웹툰 준비 중 &mdash; 곧 업데이트됩니다</div>
+  </div>
+  <div class="section-bar" style="margin-top:0;">&#128240; NEWS CARD &mdash; 상세 뉴스 카드 2026-07-20</div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-07-20-174908</div>
+      <div class="header-edition">No. 041</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">Claude Fable, 야코비안 추측 반증 주장</span>
+        <span class="badge badge-ai">연구</span>
+      </div>
+      <ul class="bullets">
+        <li>수학자 레벤트 알푀게, Claude Fable 5가 제시한 반례로 1939년 제기된 야코비안 추측 반증 주장</li><li>3차원 다항식 사상의 야코비안 행렬식은 -2, 서로 다른 3개 점을 동일한 점으로 매핑해 가역성 붕괴 확인</li><li>HN 363점·댓글 210개로 급속 확산됐으나 동료 심사·논문 게재 전이라 공식적으로는 미해결 상태 유지</li>
+      </ul>
+      <a href="https://explainx.ai/blog/fable-5-jacobian-conjecture-counterexample-alpoge-july-2026" class="card-source" target="_blank" rel="noopener">📰 ExplainX</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">알리바바 Qwen 3.8, 2.4조 파라미터 공개</span>
+        <span class="badge badge-ai">오픈소스</span>
+      </div>
+      <ul class="bullets">
+        <li>2.4조 파라미터 오픈웨이트 모델 공개, 알리바바 최초로 1조 파라미터 넘는 멀티모달 모델</li><li>미리보기는 Token Plan·Qoder·QoderWork에서 표준가 10% 요금으로 제공, 오픈 웨이트는 조만간 공개 예정</li><li>자체 평가에서 '프론티어 모델 중 Fable 5 다음'이라 주장했으나 벤치마크 결과는 아직 미공개</li>
+      </ul>
+      <a href="https://the-decoder.com/alibabas-qwen-takes-on-kimi-k3-with-open-weight-qwen-3-8-says-model-is-second-only-to-fable-5/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">엔비디아, 일본 AI 팩토리에 62억달러 투자</span>
+        <span class="badge badge-ai">반도체</span>
+      </div>
+      <ul class="bullets">
+        <li>젠슨 황, 7월 15~16일 도쿄 방문해 국가 AI 팩토리 '노에트라' 등 대형 계약 체결</li><li>일본 정부 5년간 최대 1조엔(약 62억달러) 투입, 소프트뱅크·소니·NEC·혼다 등 44개 기업 참여</li><li>2028년 가동될 베라 루빈 AI 팩토리에 베라 CPU 1만3750개·루빈 GPU 2만7500개, 140메가와트 규모 구축</li>
+      </ul>
+      <a href="https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">Claude Fable, 야코비안 추측 반증 주장</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">1939년 제기된 야코비안 추측은 다항식 사상의 야코비안 행렬식이 0이 아닌 상수이면 그 사상이 역함수를 갖는 다항식 자기동형사상이어야 한다는 대수기하학의 핵심 난제다. 7월 19일 Anthropic 소속 수학자 레벤트 알푀게가 Claude Fable 5와의 대화에서 반례를 얻었다고 X에 공개했다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">AI 모델이 인간 수학자와 협업해 85년 묵은 미해결 문제에 도전했다는 사실 자체가 AI 연구 역량에 대한 인식을 바꿀 수 있다. 다만 동료 심사 전 SNS 발표라는 점에서 검증 리스크가 크고, 향후 논문 게재 여부가 AI 보조 수학 연구의 신뢰도를 좌우할 전망이다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">야코비안 행렬식 -2</span><span class="key-chip">HN 363점·댓글 210개</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 동료 심사 전이지만 Claude Fable이 85년 미해결 수학 난제의 반례 후보를 제시했다.</div>
+      <a href="https://explainx.ai/blog/fable-5-jacobian-conjecture-counterexample-alpoge-july-2026" class="card-source" target="_blank" rel="noopener">📰 ExplainX</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">알리바바 Qwen 3.8, 2.4조 파라미터 공개</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">Moonshot AI가 7월 16일 2.8조 파라미터 오픈웨이트 모델 Kimi K3를 출시해 나흘 만에 GPU 용량 한계로 신규 가입을 중단할 만큼 큰 반향을 일으켰다. 알리바바는 이틀 뒤인 7월 19일 대응 모델 Qwen 3.8을 공개했다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">알리바바는 Moonshot AI 지분 약 36%를 보유해 사실상 계열사 경쟁이라는 특수한 구도다. 벤치마크 없이 '프론티어 2위' 주장을 내세운 점은 중국 오픈웨이트 모델 경쟁이 검증보다 속도와 마케팅을 앞세우는 국면에 들어섰음을 보여준다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">2.4조 파라미터</span><span class="key-chip">미리보기 요금 표준가 10%</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 알리바바가 검증되지 않은 '프론티어 2위' 주장과 함께 2.4조 파라미터 오픈웨이트 모델을 공개했다.</div>
+      <a href="https://the-decoder.com/alibabas-qwen-takes-on-kimi-k3-with-open-weight-qwen-3-8-says-model-is-second-only-to-fable-5/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">엔비디아, 일본 AI 팩토리에 62억달러 투자</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">젠슨 황 엔비디아 CEO는 대만·한국 방문에 이어 7월 15~16일 일본을 찾아 산업계 리더들과 잇따라 회동했다. 일본 정부와 소프트뱅크·소니·NEC·혼다 등 44개 기업이 참여하는 국가 AI 팩토리 '노에트라' 프로젝트가 핵심 의제였다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">일본이 5년간 최대 62억달러를 투입해 자국산 물리 AI 파운데이션 모델을 구축하는 가운데, 엔비디아는 2028년 가동 예정인 베라 루빈 AI 팩토리 건설을 맡아 로보틱스·자율주행 생태계까지 사업을 확장한다. 이는 미국 반도체 기업이 각국 정부의 AI 주권 전략과 결합해 장기 인프라 계약을 확보하는 대표 사례다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">1조엔(약 62억달러) 5년 투자</span><span class="key-chip">베라 CPU 13,750개·루빈 GPU 27,500개, 140MW</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 엔비디아가 일본의 국가 AI 인프라 구축을 주도하며 장기 반도체 계약을 확보했다.</div>
+      <a href="https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">반도체주 20% 급락, 약세장 진입</span>
+        <span class="badge badge-economy">반도체</span>
+      </div>
+      <ul class="bullets">
+        <li>필라델피아반도체지수(SOX)가 6월 고점 대비 20% 급락해 기술적 약세장에 진입, 6월22일 이후 반도체 관련 시가총액 3.3조 달러 증발</li><li>마벨테크놀로지·ARM·인텔 등 주요 반도체주가 고점 대비 30% 이상 하락한 가운데 이번 주 알파벳·테슬라·인텔 실적 발표가 AI 지출 지속가능성의 시험대</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ 부정적</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-19/oil-climbs-as-middle-east-conflict-escalates-markets-wrap" class="card-source" target="_blank" rel="noopener">📰 bloomberg.com</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">'매그니피센트7' 없인 증시 못버텨?</span>
+        <span class="badge badge-economy">시장</span>
+      </div>
+      <ul class="bullets">
+        <li>매그니피센트7이 S&P500 시가총액의 32.5%를 차지, 그중 엔비디아가 21%로 최대 비중을 기록하며 AI 대형주 의존도 논란</li><li>브로드컴·TSMC·마이크론·삼성전자·SK하이닉스 등 반도체 기업들이 AI 투자 수혜를 나눠가지며 증시의 AI 의존이 소수 빅테크에서 분산되는 추세</li>
+      </ul>
+      <span class="impact-pill impact-neutral">→ 중립</span>
+      <a href="https://www.marketwatch.com/story/can-the-magnificent-seven-save-a-stock-market-that-might-be-doomed-without-them-f88988f3?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">📰 marketwatch.com</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">연준 워시 'AI는 구조적 디스인플레'</span>
+        <span class="badge badge-economy">금리</span>
+      </div>
+      <ul class="bullets">
+        <li>케빈 워시 연준 의장이 AI 붐을 '우리 세대 최대 생산성 향상 물결'이자 '구조적 디스인플레이션 요인'으로 평가, 통화정책 시각에 반영</li><li>연준 대차대조표가 6.7조 달러 규모를 유지하는 가운데 워시 의장은 금리가 여전히 핵심 정책수단이라 언급, AI발 저물가 기조가 향후 금리 인하 여지를 시사해 AI 투자 자금조달에 우호적</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ 긍정적</span>
+      <a href="https://www.economist.com/finance-and-economics/2026/07/16/how-to-shrink-the-feds-7trn-balance-sheet" class="card-source" target="_blank" rel="noopener">📰 economist.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"open-weight model"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ˈoʊpən weɪt ˈmɑːdl/ [오픈-웨이트 모델]</div>
+      <div class="eng-meaning">→ 모델 가중치를 공개해 누구나 내려받아 쓸 수 있게 한 AI 모델</div>
+      <div class="eng-ex">Alibaba has unveiled Qwen 3.8, its latest open-weight model with 2.4 trillion parameters.</div>
+      <div class="eng-ex-kr">알리바바가 2.4조 파라미터를 갖춘 최신 오픈웨이트 모델 Qwen 3.8을 공개했다.</div>
+      <div class="eng-ctx">📌 더 디코더(The Decoder)의 알리바바 Qwen 3.8 공개 기사에서 등장한 AI 기술 용어이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"structurally disinflationary"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ˈstrʌktʃərəli ˌdɪsɪnfleɪˈʃəneri/ [스트럭처럴리 디스인플레이셔너리]</div>
+      <div class="eng-meaning">→ 구조적으로 물가 상승 압력을 낮추는 성격의</div>
+      <div class="eng-ex">Separately, Warsh has described the AI boom as 'the most productivity-enhancing wave of our lifetimes' and called AI 'structurally disinflationary' -- a framing that feeds into his openness to lower rates over time, which would ease financing conditions for AI infrastructure investment.</div>
+      <div class="eng-ex-kr">케빈 워시 연준 의장은 AI 붐을 '우리 생애 최대의 생산성 향상 물결'이라 표현하고 AI를 '구조적 디스인플레이션 요인'이라 칭했는데, 이는 그가 시간이 지나며 금리 인하에 열려 있음을 보여주며 AI 인프라 투자의 자금조달 여건을 완화할 수 있다.</div>
+      <div class="eng-ctx">📌 이코노미스트 연준 대차대조표 기사 원문 접근이 차단되어 AGENT_ECONOMY가 남긴 웹서치 기반 폴백 요약에서 가져온 표현으로, 워시 의장이 AI발 물가 완화 효과를 설명한 대목이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"once-in-a-generation opportunity"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/wʌns ɪn ə ˌdʒɛnəˈreɪʃən ˌɑːpərˈtuːnəti/ [원스-인-어-제너레이션 어퍼튜니티]</div>
+      <div class="eng-meaning">→ 한 세대에 한 번 있을까 말까 한 매우 드문 기회</div>
+      <div class="eng-ex">'The next frontier of AI is in the physical world, and this is a once-in-a-generation opportunity for Japan,' Huang said in the company's statement.</div>
+      <div class="eng-ex-kr">젠슨 황은 '다음 AI의 개척지는 물리적 세계에 있으며, 이는 일본에게 한 세대에 한 번뿐인 기회'라고 회사 성명에서 밝혔다.</div>
+      <div class="eng-ctx">📌 테크크런치의 젠슨 황 일본 방문 기사에서 엔비디아 CEO가 일본의 물리적 AI 투자 기회를 강조하며 사용한 담론적 표현이다.</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-07-20-174908 | AI News Card
+  </div>
+
+</div>
+
+</div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
