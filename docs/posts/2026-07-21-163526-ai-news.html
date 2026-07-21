@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오늘의 AI 뉴스 — 2026-07-21 — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    @media (max-width: 799px) { .view-desktop { display: none; } }
+    @media (min-width: 800px) { .view-mobile { display: none; } }
+    .view-desktop { max-width: 100%; overflow-x: auto; }
+    .view-mobile {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: #eef0f5;
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.5;
+  }.view-mobile .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px 12px 24px;
+  }.view-mobile .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }.view-mobile .header-logo { font-size: 28px; margin-right: 10px; }.view-mobile .header-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }.view-mobile .header-sub { font-size: 11px; opacity: 0.75; margin-top: 2px; }.view-mobile .header-date { font-size: 13px; font-weight: 700; text-align: right; }.view-mobile .header-edition { font-size: 10px; opacity: 0.65; margin-top: 2px; text-align: right; }.view-mobile .sec-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }.view-mobile .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+  }.view-mobile .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }.view-mobile .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-mobile .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-mobile .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-mobile .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-mobile .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }.view-mobile .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }.view-mobile .num-ai { background: #e0e7ff; color: #3730a3; }.view-mobile .num-detail { background: #ede9fe; color: #5b21b6; }.view-mobile .num-economy { background: #d1fae5; color: #065f46; }.view-mobile .num-english { background: #fef3c7; color: #92400e; }.view-mobile .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    flex: 1;
+  }.view-mobile .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }.view-mobile .badge-ai { background: #e0e7ff; color: #4338ca; }.view-mobile .badge-detail { background: #ede9fe; color: #6d28d9; }.view-mobile .badge-economy { background: #d1fae5; color: #065f46; }.view-mobile .badge-english { background: #fef3c7; color: #92400e; }.view-mobile .bullets { list-style: none; margin: 4px 0 6px; }.view-mobile .bullets li {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.55;
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }.view-mobile .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    top: 5px;
+  }.view-mobile .card-ai     .bullets li::before { color: #6366f1; }.view-mobile .card-detail .bullets li::before { color: #7c3aed; }.view-mobile .card-economy .bullets li::before { color: #059669; }.view-mobile .card-source {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-mobile .card-source:hover { color: #64748b; text-decoration: underline; }.view-mobile .detail-block { margin-bottom: 8px; }.view-mobile .detail-lbl {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 3px;
+  }.view-mobile .detail-txt {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.55;
+  }.view-mobile .key-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }.view-mobile .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }.view-mobile .takeaway {
+    background: #f8f7ff;
+    border-left: 3px solid #8b5cf6;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 6px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+  }.view-mobile .impact-pill {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 6px;
+  }.view-mobile .impact-positive { background: #dcfce7; color: #166534; }.view-mobile .impact-negative { background: #fee2e2; color: #991b1b; }.view-mobile .impact-neutral { background: #f1f5f9; color: #475569; }.view-mobile .eng-phrase {
+    font-size: 22px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-mobile .eng-pron {
+    font-size: 14px;
+    color: #b45309;
+    font-family: monospace;
+    margin-bottom: 6px;
+  }.view-mobile .eng-meaning {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }.view-mobile .eng-ex {
+    font-size: 15px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.6;
+    background: #fffbeb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #fbbf24;
+    margin-bottom: 6px;
+  }.view-mobile .eng-ex-kr {
+    font-size: 14px;
+    color: #78716c;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }.view-mobile .eng-ctx {
+    font-size: 14px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 6px 10px;
+    border-radius: 6px;
+    line-height: 1.5;
+  }.view-mobile .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+    .view-desktop .section-bar {
+    width: 100%; max-width: 860px; margin: 0 auto; padding: 7px 6mm;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 8px;
+  }.view-desktop .webtoon-wrap { width: 100%; max-width: 860px; margin: 0 auto; background: #0f172a; }.view-desktop .webtoon-wrap img { width: 100%; display: block; }
+
+  @page { size: A4 portrait; margin: 0; }.view-desktop {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-desktop .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-desktop {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-desktop .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-desktop .header { padding: 14px 20px; margin-bottom: 12px; }.view-desktop .header-title { font-size: 22px; }.view-desktop .header-sub { font-size: 12px; }.view-desktop .header-date { font-size: 15px; }.view-desktop .header-edition { font-size: 11px; }.view-desktop .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-desktop .grid-3 { gap: 12px; margin-bottom: 12px; }.view-desktop .grid-2 { gap: 12px; margin-bottom: 12px; }.view-desktop .card { padding: 16px 18px; border-radius: 12px; }.view-desktop .card-title { font-size: 15px; line-height: 1.5; }.view-desktop .card-title-sm { font-size: 13px; }.view-desktop .badge { font-size: 10px; padding: 2px 9px; }.view-desktop .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-desktop .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-desktop .detail-lbl { font-size: 10px; }.view-desktop .detail-txt { font-size: 13px; line-height: 1.65; }.view-desktop .key-chip { font-size: 11px; padding: 3px 9px; }.view-desktop .takeaway { font-size: 13px; padding: 7px 12px; }.view-desktop .impact-pill { font-size: 11px; padding: 3px 11px; }.view-desktop .eng-phrase { font-size: 17px; }.view-desktop .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-desktop .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-desktop .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-desktop .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-desktop .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-desktop .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-desktop .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-desktop .header-left { display: flex; align-items: center; gap: 10px; }.view-desktop .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-desktop .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-desktop .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-desktop .header-right { text-align: right; }.view-desktop .header-date { font-size: 12px; font-weight: 700; }.view-desktop .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-desktop .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-desktop .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-1 { margin-bottom: 5px; }.view-desktop .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-desktop .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-desktop .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-desktop .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-desktop .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-desktop .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-desktop .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-desktop .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-desktop .badge-ai { background: #e0e7ff; color: #4338ca; }.view-desktop .badge-detail { background: #ede9fe; color: #6d28d9; }.view-desktop .badge-economy { background: #d1fae5; color: #065f46; }.view-desktop .badge-english { background: #fef3c7; color: #92400e; }.view-desktop .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-desktop .card-title-sm { font-size: 10px; }.view-desktop .bullets { list-style: none; margin: 3px 0; }.view-desktop .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-desktop .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-desktop .card-ai .bullets li::before { color: #6366f1; }.view-desktop .card-detail .bullets li::before { color: #7c3aed; }.view-desktop .card-economy .bullets li::before { color: #059669; }.view-desktop .card-english .bullets li::before { color: #d97706; }.view-desktop .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-desktop .card-source:hover { color: #64748b; text-decoration: underline; }.view-desktop .detail-block { margin-bottom: 4px; }.view-desktop .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-desktop .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-desktop .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-desktop .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-desktop .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-desktop .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-desktop .impact-positive { background: #dcfce7; color: #166534; }.view-desktop .impact-negative { background: #fee2e2; color: #991b1b; }.view-desktop .impact-neutral { background: #f1f5f9; color: #475569; }.view-desktop .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-desktop .eng-pron { font-size: 8px; color: #b45309; margin-bottom: 3px; }.view-desktop .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-desktop .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-desktop .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-desktop .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-desktop .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
+  }
+
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">홈</a>
+        <a href="../about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../index.html">← 목록으로</a>
+
+    <header class="post-header">
+      <h1>오늘의 AI 뉴스 — 2026-07-21</h1>
+      <div class="post-meta">
+        <span>2026-07-21</span>
+        <span>5분</span>
+      </div>
+      <div class="tags" style="margin-top: 0.75rem;">
+        <span class="tag">AI</span>
+        <span class="tag">뉴스</span>
+        <span class="tag">경제</span>
+        <span class="tag">영어</span>
+      </div>
+    </header>
+
+    <article class="post-body">
+      <div class="view-mobile">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div>
+      <div class="header-date">2026-07-21-163526</div>
+      <div class="header-edition">No. 043</div>
+    </div>
+  </div>
+
+  
+  <!-- Audio overview player -->
+  <div style="border-radius:14px; margin-bottom:12px; padding:12px 14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; 귀로 듣는 오늘의 뉴스</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-07-21-163526-brief.m4a" type="audio/mp4">
+      브라우저가 오디오 재생을 지원하지 않습니다.
+    </audio>
+  </div>
+  <!-- Webtoon image -->
+  <div style="border-radius:14px; overflow:hidden; margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <img src="../images/2026-07-21-163526/page.png" alt="AI 뉴스 웹툰 2026-07-21-163526" style="width:100%; display:block;"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:28px 14px; text-align:center; background:#eef2ff; color:#3730a3; font-size:13px; font-weight:600;">🎨 웹툰 준비 중 — 곧 업데이트됩니다</div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">AI TOPICS — 오늘의 핵심 3가지</div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">1</span>
+      <span class="card-title">MS, AMD 헬리오스 칩으로 애저 확장</span>
+      <span class="badge badge-ai">반도체</span>
+    </div>
+    <ul class="bullets">
+      <li>AMD Helios 랙스케일 AI 시스템을 2026년 하반기 애저에 배치하기로 확정, MI455X GPU·6세대 EPYC Venice CPU·Pensando 네트워킹·ROCm 소프트웨어를 통합한 시스템</li><li>리사 수 AMD CEO는 '중대한 이정표'라 평가했고 사티아 나델라 MS CEO는 '고객은 AI 인프라 선택지가 더 필요하다'며 엔비디아 의존도 완화 의지를 밝힘</li><li>AMD 임원 깃허브 프로필을 통해 Anthropic도 AMD 하드웨어를 테스트 중인 것으로 드러났으며, 메타와 동급의 최우선 고객 등급을 받은 것으로 확인됨</li>
+    </ul>
+    <a href="https://the-decoder.com/nvidias-grip-on-ai-chips-weakens-as-microsoft-turns-to-amd-and-anthropic-may-follow/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">2</span>
+      <span class="card-title">블롬캠프, AI 단편영화 '나이트본' 공개</span>
+      <span class="badge badge-ai">UX혁신</span>
+    </div>
+    <ul class="bullets">
+      <li>디스트릭트9 감독 닐 블롬캠프가 Seedance 2.0으로 전 장면을 생성한 13분짜리 SF 호러 단편 '나이트본'을 공개</li><li>실존 인물 32명의 얼굴·목소리를 라이선스 계약으로 사용했고, 콘셉트 아트는 사람 아티스트가 직접 제작</li><li>블롬캠프는 이를 '첫 완전판 AI 영화 테스트'라 규정하며 신규 스튜디오 '발리 스튜디오'를 설립, 장편 AI 영화 제작을 예고</li>
+    </ul>
+    <a href="https://www.worldofreel.com/blog/2026/7/20/neill-blomkamps-next-movie-could-be-fully-ai-generated-director-releases-test-short-nightborne" class="card-source" target="_blank" rel="noopener">Source: World of Reel</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">3</span>
+      <span class="card-title">캐피털원, AI 보안툴 '벌헌터' 오픈소스 공개</span>
+      <span class="badge badge-ai">안전기술</span>
+    </div>
+    <ul class="bullets">
+      <li>캐피털원이 소스코드 취약점을 사전 탐지하는 에이전틱 AI 보안 툴 '벌헌터'를 아파치 2.0 라이선스로 오픈소스 공개</li><li>Claude Opus 4.8 기반 Claude Code 환경에서 구동되며, 취약점 발견 후 실제 공격 성립 가능성을 구조적으로 재검증해 오탐을 걸러낸 뒤에만 사람 검토자에게 전달</li><li>CISO 크리스 님스는 '차세대 AI 공격 능력이 누구나 쓸 수 있게 되기까지 남은 시간이 급격히 줄고 있다'며 오픈소스 공개 배경을 설명</li>
+    </ul>
+    <a href="https://venturebeat.com/technology/capital-one-releases-vulnhunter-an-open-source-ai-tool-that-finds-software-flaws-before-hackers-do" class="card-source" target="_blank" rel="noopener">Source: VentureBeat</a>
+  </div>
+  
+
+  <!-- ── Row 2: AI 상세 ── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">AI DEEP DIVE — 왜 중요한가</div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">1</span>
+      <span class="card-title">MS, AMD 헬리오스 칩으로 애저 확장</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">MS는 그동안 AI 인프라를 대부분 엔비디아 GPU에 의존해왔으나, AMD와의 파트너십을 확대해 애저에 처음으로 하이퍼스케일 규모의 Helios 랙시스템을 도입하기로 했다. Helios는 GPU·CPU·네트워킹·소프트웨어를 한 시스템으로 묶은 AMD의 통합형 랙스케일 플랫폼이 대형 클라우드 사업자에 채택된 첫 사례다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">엔비디아가 독점해온 AI 칩 시장에 균열이 생기고 있음을 보여주는 신호로, 클라우드 사업자들의 공급망 다변화 전략이 가속화될 전망이다. 여기에 Anthropic까지 AMD 하드웨어를 테스트 중인 것으로 알려지며 주요 AI 모델 기업들의 인프라 벤더 다변화 흐름이 본격화되고 있다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">2026년 하반기 헬리오스 애저 배치 예정</span><span class="key-chip">Anthropic, 메타와 동급 최우선 고객 등급 획득</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 엔비디아 독점 구도가 MS-AMD 동맹과 Anthropic의 AMD 테스트로 흔들리기 시작했다.</div>
+    <a href="https://the-decoder.com/nvidias-grip-on-ai-chips-weakens-as-microsoft-turns-to-amd-and-anthropic-may-follow/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">2</span>
+      <span class="card-title">블롬캠프, AI 단편영화 '나이트본' 공개</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">블롬캠프는 수년간 AI 영상 생성 기술을 실험해왔으며, 이번에 처음으로 전 장면을 텍스트 프롬프트로 연출한 단편을 공개했다. 그는 기존 실사 영화 스튜디오 Oats Studios를 잇는 AI 전문 스튜디오 Barley Studios를 새로 설립했다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">할리우드 현역 감독이 프레임 단위로 AI 생성 영상을 연출한 사례는 영화 제작 워크플로우 자체를 바꿀 잠재력을 보여준다. 다만 Gizmodo·Kotaku 등 초기 평단 반응은 엇갈려 완성도와 창작 윤리 논쟁이 동시에 커질 전망이다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">13분 분량, 실존 인물 32명 라이선스</span><span class="key-chip">차기작: 동일 방식의 장편 AI 영화 예고</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 유명 감독이 전 장면을 AI로 만든 단편을 공개하며 AI 장편 영화 시대의 신호탄을 쐈다.</div>
+    <a href="https://www.worldofreel.com/blog/2026/7/20/neill-blomkamps-next-movie-could-be-fully-ai-generated-director-releases-test-short-nightborne" class="card-source" target="_blank" rel="noopener">Source: World of Reel</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">3</span>
+      <span class="card-title">캐피털원, AI 보안툴 '벌헌터' 오픈소스 공개</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">대형 금융사 캐피털원은 내부적으로 개발해온 취약점 탐지 AI를 외부에 공개하기로 결정했다. 코드에서 취약점을 찾아낸 뒤 실제 공격이 가능한지 논리적 결함까지 검증하는 구조적 추론 워크플로우를 적용한 것이 특징이다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">금융권 대기업이 공격형 AI 기술을 방어용 오픈소스 자원으로 전환한 사례로, 생성형 AI를 활용한 사이버 공격이 대중화되는 속도에 대응하려는 업계 움직임을 상징한다. 엔터프라이즈의 AI 보안 도입 사례로서 다른 기업들의 벤치마크가 될 수 있다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">아파치 2.0 라이선스 오픈소스 공개</span><span class="key-chip">Claude Opus 4.8 기반 에이전틱 워크플로우 구동</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 캐피털원이 AI 공격에 대응할 오픈소스 방어 도구를 선제적으로 공개했다.</div>
+    <a href="https://venturebeat.com/technology/capital-one-releases-vulnhunter-an-open-source-ai-tool-that-finds-software-flaws-before-hackers-do" class="card-source" target="_blank" rel="noopener">Source: VentureBeat</a>
+  </div>
+  
+
+  <!-- ── Row 3: 경제 ── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">ECONOMY — 경제·금융 핵심 3가지</div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">1</span>
+      <span class="card-title">알파벳, AI 지출 확대에도 중국발 시험대</span>
+      <span class="badge badge-economy">투자</span>
+    </div>
+    <ul class="bullets">
+      <li>알파벳 2026년 설비투자 1750억~1850억달러 전망, 전년 914억달러의 약 2배 규모로 확대</li><li>구글클라우드 매출 177억달러(+48%)로 예상치 상회했지만 中 모멘트AI 'Kimi K3' 저가 경쟁에 지출 타당성 시험대</li>
+    </ul>
+    <span class="impact-pill impact-neutral">→ 중립</span>
+    <a href="https://www.nytimes.com/2026/07/20/business/dealbook/ai-china-alphabet.html" class="card-source" target="_blank" rel="noopener">Source: New York Times</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">2</span>
+      <span class="card-title">저가 중국 AI모델, 반도체엔 오히려 호재</span>
+      <span class="badge badge-economy">반도체</span>
+    </div>
+    <ul class="bullets">
+      <li>무크샷AI 'Kimi K3'(2.8조 파라미터, 최대 오픈웨이트 모델)가 한때 반도체주 시가총액 3.3조달러 증발시켜</li><li>메모리 집약적 구조 특성상 SK하이닉스·마이크론·엔비디아向 HBM 수요는 장기적으로 오히려 늘어날 수 있다는 분석 제기</li>
+    </ul>
+    <span class="impact-pill impact-positive">↑ 긍정적</span>
+    <a href="https://www.marketwatch.com/story/why-cheap-chinese-ai-models-could-actually-be-a-boon-for-nvidia-micron-and-other-chip-stocks-8dd4baba?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">Source: MarketWatch</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">3</span>
+      <span class="card-title">반도체주 반등에 아시아증시 훈풍</span>
+      <span class="badge badge-economy">시장</span>
+    </div>
+    <ul class="bullets">
+      <li>MSCI 아시아태평양지수 1.7% 상승, 한국·대만 증시 2.5% 이상 급등하며 셀오프 나흘 만에 반등</li><li>삼성전자·TSMC가 반등 주도, 알파벳은 제미나이 통합 서버칩 개발 소식에 2.9% 상승</li>
+    </ul>
+    <span class="impact-pill impact-positive">↑ 긍정적</span>
+    <a href="https://www.bloomberg.com/news/articles/2026-07-20/us-stocks-rebound-from-selloff-as-nvidia-other-chipmakers-rise" class="card-source" target="_blank" rel="noopener">Source: Bloomberg</a>
+  </div>
+  
+
+  <!-- ── Row 4: 영어 표현 ── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">1</span>
+      <span class="eng-phrase">"rack-scale AI system"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ræk skeɪl eɪ.aɪ ˈsɪstəm/ [랙스케일 에이아이 시스템]</div>
+    <div class="eng-meaning">→ GPU·CPU·네트워킹·소프트웨어를 하나의 랙 단위로 통합한 대규모 AI 인프라 시스템</div>
+    <div class="eng-ex">On July 20, 2026, Microsoft confirmed plans to deploy AMD's Helios rack-scale AI system (MI455X GPUs, 6th-gen EPYC Venice CPUs, Pensando networking, ROCm) in Azure starting H2 2026, AMD's first hyperscale win.</div>
+    <div class="eng-ex-kr">2026년 7월 20일, 마이크로소프트는 AMD의 헬리오스 랙스케일 AI 시스템(MI455X GPU, 6세대 EPYC Venice CPU, Pensando 네트워킹, ROCm)을 2026년 하반기부터 애저에 배치하기로 확정했다고 밝혔으며, 이는 AMD의 첫 하이퍼스케일 고객 확보 사례다.</div>
+    <div class="eng-ctx">더 디코더(The Decoder)의 마이크로소프트-AMD 애저 확장 기사에서 등장한 기술 용어로, GPU·CPU·네트워킹을 통합한 AMD의 신규 AI 인프라 플랫폼을 가리킨다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">2</span>
+      <span class="eng-phrase">"a boon for"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ə buːn fɔːr/ [어 붠 포]</div>
+    <div class="eng-meaning">→ ~에 뜻밖의 이득이나 호재가 되다</div>
+    <div class="eng-ex">Why cheap Chinese AI models could actually be a boon for Nvidia, Micron and other chip stocks</div>
+    <div class="eng-ex-kr">저가 중국산 AI 모델이 오히려 엔비디아, 마이크론 등 반도체주에 호재가 될 수 있는 이유</div>
+    <div class="eng-ctx">마켓워치(MarketWatch) 기사 제목에서 쓰인 비즈니스 표현으로, 중국의 저가 AI 모델 Kimi K3가 메모리 반도체 업계에 미치는 역설적인 긍정 효과를 설명한다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">3</span>
+      <span class="eng-phrase">"raise fresh questions about"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/reɪz freʃ ˈkwɛstʃənz əˈbaʊt/ [레이즈 프레쉬 퀘스천즈 어바웃]</div>
+    <div class="eng-meaning">→ ~에 대한 새로운 의문을 제기하다</div>
+    <div class="eng-ex">Rapid advances from China's Moonshot AI Kimi K3 model are raising fresh questions about the ROI of massive US AI infrastructure spending.</div>
+    <div class="eng-ex-kr">중국 문샷AI의 Kimi K3 모델이 급속히 발전하면서 미국의 대규모 AI 인프라 투자 수익성(ROI)에 대한 새로운 의문이 제기되고 있다.</div>
+    <div class="eng-ctx">뉴욕타임스(New York Times)의 알파벳 설비투자 기사에서 쓰인 담화적 표현으로, 중국발 저가 AI 모델 등장이 미국 빅테크의 막대한 투자 타당성에 의문을 던지는 상황을 서술한다.</div>
+  </div>
+  
+
+  <!-- Footer -->
+  <div class="footer">
+    Auto-generated | 2026-07-21-163526 | AI News Card
+  </div>
+
+</div>
+</div>
+      <div class="view-desktop">
+  <div class="section-bar">&#127912; WEBTOON &mdash; AI 뉴스 웹툰 2026-07-21</div>
+  
+  <!-- Audio overview player -->
+  <div style="max-width:860px; margin:0 auto 12px; padding:12px 14px; border-radius:14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; 귀로 듣는 오늘의 뉴스</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-07-21-163526-brief.m4a" type="audio/mp4">
+      브라우저가 오디오 재생을 지원하지 않습니다.
+    </audio>
+  </div>
+  <div class="webtoon-wrap">
+    <img src="../images/2026-07-21-163526/page.png" alt="AI 뉴스 웹툰 2026-07-21"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:32px 14px; text-align:center; color:#93c5fd; font-size:13px; font-weight:600;">&#127912; 웹툰 준비 중 &mdash; 곧 업데이트됩니다</div>
+  </div>
+  <div class="section-bar" style="margin-top:0;">&#128240; NEWS CARD &mdash; 상세 뉴스 카드 2026-07-21</div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-07-21-163526</div>
+      <div class="header-edition">No. 043</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">MS, AMD 헬리오스 칩으로 애저 확장</span>
+        <span class="badge badge-ai">반도체</span>
+      </div>
+      <ul class="bullets">
+        <li>AMD Helios 랙스케일 AI 시스템을 2026년 하반기 애저에 배치하기로 확정, MI455X GPU·6세대 EPYC Venice CPU·Pensando 네트워킹·ROCm 소프트웨어를 통합한 시스템</li><li>리사 수 AMD CEO는 '중대한 이정표'라 평가했고 사티아 나델라 MS CEO는 '고객은 AI 인프라 선택지가 더 필요하다'며 엔비디아 의존도 완화 의지를 밝힘</li><li>AMD 임원 깃허브 프로필을 통해 Anthropic도 AMD 하드웨어를 테스트 중인 것으로 드러났으며, 메타와 동급의 최우선 고객 등급을 받은 것으로 확인됨</li>
+      </ul>
+      <a href="https://the-decoder.com/nvidias-grip-on-ai-chips-weakens-as-microsoft-turns-to-amd-and-anthropic-may-follow/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">블롬캠프, AI 단편영화 '나이트본' 공개</span>
+        <span class="badge badge-ai">UX혁신</span>
+      </div>
+      <ul class="bullets">
+        <li>디스트릭트9 감독 닐 블롬캠프가 Seedance 2.0으로 전 장면을 생성한 13분짜리 SF 호러 단편 '나이트본'을 공개</li><li>실존 인물 32명의 얼굴·목소리를 라이선스 계약으로 사용했고, 콘셉트 아트는 사람 아티스트가 직접 제작</li><li>블롬캠프는 이를 '첫 완전판 AI 영화 테스트'라 규정하며 신규 스튜디오 '발리 스튜디오'를 설립, 장편 AI 영화 제작을 예고</li>
+      </ul>
+      <a href="https://www.worldofreel.com/blog/2026/7/20/neill-blomkamps-next-movie-could-be-fully-ai-generated-director-releases-test-short-nightborne" class="card-source" target="_blank" rel="noopener">📰 World of Reel</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">캐피털원, AI 보안툴 '벌헌터' 오픈소스 공개</span>
+        <span class="badge badge-ai">안전기술</span>
+      </div>
+      <ul class="bullets">
+        <li>캐피털원이 소스코드 취약점을 사전 탐지하는 에이전틱 AI 보안 툴 '벌헌터'를 아파치 2.0 라이선스로 오픈소스 공개</li><li>Claude Opus 4.8 기반 Claude Code 환경에서 구동되며, 취약점 발견 후 실제 공격 성립 가능성을 구조적으로 재검증해 오탐을 걸러낸 뒤에만 사람 검토자에게 전달</li><li>CISO 크리스 님스는 '차세대 AI 공격 능력이 누구나 쓸 수 있게 되기까지 남은 시간이 급격히 줄고 있다'며 오픈소스 공개 배경을 설명</li>
+      </ul>
+      <a href="https://venturebeat.com/technology/capital-one-releases-vulnhunter-an-open-source-ai-tool-that-finds-software-flaws-before-hackers-do" class="card-source" target="_blank" rel="noopener">📰 VentureBeat</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">MS, AMD 헬리오스 칩으로 애저 확장</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">MS는 그동안 AI 인프라를 대부분 엔비디아 GPU에 의존해왔으나, AMD와의 파트너십을 확대해 애저에 처음으로 하이퍼스케일 규모의 Helios 랙시스템을 도입하기로 했다. Helios는 GPU·CPU·네트워킹·소프트웨어를 한 시스템으로 묶은 AMD의 통합형 랙스케일 플랫폼이 대형 클라우드 사업자에 채택된 첫 사례다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">엔비디아가 독점해온 AI 칩 시장에 균열이 생기고 있음을 보여주는 신호로, 클라우드 사업자들의 공급망 다변화 전략이 가속화될 전망이다. 여기에 Anthropic까지 AMD 하드웨어를 테스트 중인 것으로 알려지며 주요 AI 모델 기업들의 인프라 벤더 다변화 흐름이 본격화되고 있다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">2026년 하반기 헬리오스 애저 배치 예정</span><span class="key-chip">Anthropic, 메타와 동급 최우선 고객 등급 획득</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 엔비디아 독점 구도가 MS-AMD 동맹과 Anthropic의 AMD 테스트로 흔들리기 시작했다.</div>
+      <a href="https://the-decoder.com/nvidias-grip-on-ai-chips-weakens-as-microsoft-turns-to-amd-and-anthropic-may-follow/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">블롬캠프, AI 단편영화 '나이트본' 공개</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">블롬캠프는 수년간 AI 영상 생성 기술을 실험해왔으며, 이번에 처음으로 전 장면을 텍스트 프롬프트로 연출한 단편을 공개했다. 그는 기존 실사 영화 스튜디오 Oats Studios를 잇는 AI 전문 스튜디오 Barley Studios를 새로 설립했다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">할리우드 현역 감독이 프레임 단위로 AI 생성 영상을 연출한 사례는 영화 제작 워크플로우 자체를 바꿀 잠재력을 보여준다. 다만 Gizmodo·Kotaku 등 초기 평단 반응은 엇갈려 완성도와 창작 윤리 논쟁이 동시에 커질 전망이다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">13분 분량, 실존 인물 32명 라이선스</span><span class="key-chip">차기작: 동일 방식의 장편 AI 영화 예고</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 유명 감독이 전 장면을 AI로 만든 단편을 공개하며 AI 장편 영화 시대의 신호탄을 쐈다.</div>
+      <a href="https://www.worldofreel.com/blog/2026/7/20/neill-blomkamps-next-movie-could-be-fully-ai-generated-director-releases-test-short-nightborne" class="card-source" target="_blank" rel="noopener">📰 World of Reel</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">캐피털원, AI 보안툴 '벌헌터' 오픈소스 공개</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">대형 금융사 캐피털원은 내부적으로 개발해온 취약점 탐지 AI를 외부에 공개하기로 결정했다. 코드에서 취약점을 찾아낸 뒤 실제 공격이 가능한지 논리적 결함까지 검증하는 구조적 추론 워크플로우를 적용한 것이 특징이다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">금융권 대기업이 공격형 AI 기술을 방어용 오픈소스 자원으로 전환한 사례로, 생성형 AI를 활용한 사이버 공격이 대중화되는 속도에 대응하려는 업계 움직임을 상징한다. 엔터프라이즈의 AI 보안 도입 사례로서 다른 기업들의 벤치마크가 될 수 있다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">아파치 2.0 라이선스 오픈소스 공개</span><span class="key-chip">Claude Opus 4.8 기반 에이전틱 워크플로우 구동</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 캐피털원이 AI 공격에 대응할 오픈소스 방어 도구를 선제적으로 공개했다.</div>
+      <a href="https://venturebeat.com/technology/capital-one-releases-vulnhunter-an-open-source-ai-tool-that-finds-software-flaws-before-hackers-do" class="card-source" target="_blank" rel="noopener">📰 VentureBeat</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">알파벳, AI 지출 확대에도 중국발 시험대</span>
+        <span class="badge badge-economy">투자</span>
+      </div>
+      <ul class="bullets">
+        <li>알파벳 2026년 설비투자 1750억~1850억달러 전망, 전년 914억달러의 약 2배 규모로 확대</li><li>구글클라우드 매출 177억달러(+48%)로 예상치 상회했지만 中 모멘트AI 'Kimi K3' 저가 경쟁에 지출 타당성 시험대</li>
+      </ul>
+      <span class="impact-pill impact-neutral">→ 중립</span>
+      <a href="https://www.nytimes.com/2026/07/20/business/dealbook/ai-china-alphabet.html" class="card-source" target="_blank" rel="noopener">📰 New York Times</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">저가 중국 AI모델, 반도체엔 오히려 호재</span>
+        <span class="badge badge-economy">반도체</span>
+      </div>
+      <ul class="bullets">
+        <li>무크샷AI 'Kimi K3'(2.8조 파라미터, 최대 오픈웨이트 모델)가 한때 반도체주 시가총액 3.3조달러 증발시켜</li><li>메모리 집약적 구조 특성상 SK하이닉스·마이크론·엔비디아向 HBM 수요는 장기적으로 오히려 늘어날 수 있다는 분석 제기</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ 긍정적</span>
+      <a href="https://www.marketwatch.com/story/why-cheap-chinese-ai-models-could-actually-be-a-boon-for-nvidia-micron-and-other-chip-stocks-8dd4baba?mod=mw_rss_topstories" class="card-source" target="_blank" rel="noopener">📰 MarketWatch</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">반도체주 반등에 아시아증시 훈풍</span>
+        <span class="badge badge-economy">시장</span>
+      </div>
+      <ul class="bullets">
+        <li>MSCI 아시아태평양지수 1.7% 상승, 한국·대만 증시 2.5% 이상 급등하며 셀오프 나흘 만에 반등</li><li>삼성전자·TSMC가 반등 주도, 알파벳은 제미나이 통합 서버칩 개발 소식에 2.9% 상승</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ 긍정적</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-07-20/us-stocks-rebound-from-selloff-as-nvidia-other-chipmakers-rise" class="card-source" target="_blank" rel="noopener">📰 Bloomberg</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"rack-scale AI system"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ræk skeɪl eɪ.aɪ ˈsɪstəm/ [랙스케일 에이아이 시스템]</div>
+      <div class="eng-meaning">→ GPU·CPU·네트워킹·소프트웨어를 하나의 랙 단위로 통합한 대규모 AI 인프라 시스템</div>
+      <div class="eng-ex">On July 20, 2026, Microsoft confirmed plans to deploy AMD's Helios rack-scale AI system (MI455X GPUs, 6th-gen EPYC Venice CPUs, Pensando networking, ROCm) in Azure starting H2 2026, AMD's first hyperscale win.</div>
+      <div class="eng-ex-kr">2026년 7월 20일, 마이크로소프트는 AMD의 헬리오스 랙스케일 AI 시스템(MI455X GPU, 6세대 EPYC Venice CPU, Pensando 네트워킹, ROCm)을 2026년 하반기부터 애저에 배치하기로 확정했다고 밝혔으며, 이는 AMD의 첫 하이퍼스케일 고객 확보 사례다.</div>
+      <div class="eng-ctx">📌 더 디코더(The Decoder)의 마이크로소프트-AMD 애저 확장 기사에서 등장한 기술 용어로, GPU·CPU·네트워킹을 통합한 AMD의 신규 AI 인프라 플랫폼을 가리킨다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"a boon for"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ə buːn fɔːr/ [어 붠 포]</div>
+      <div class="eng-meaning">→ ~에 뜻밖의 이득이나 호재가 되다</div>
+      <div class="eng-ex">Why cheap Chinese AI models could actually be a boon for Nvidia, Micron and other chip stocks</div>
+      <div class="eng-ex-kr">저가 중국산 AI 모델이 오히려 엔비디아, 마이크론 등 반도체주에 호재가 될 수 있는 이유</div>
+      <div class="eng-ctx">📌 마켓워치(MarketWatch) 기사 제목에서 쓰인 비즈니스 표현으로, 중국의 저가 AI 모델 Kimi K3가 메모리 반도체 업계에 미치는 역설적인 긍정 효과를 설명한다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"raise fresh questions about"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/reɪz freʃ ˈkwɛstʃənz əˈbaʊt/ [레이즈 프레쉬 퀘스천즈 어바웃]</div>
+      <div class="eng-meaning">→ ~에 대한 새로운 의문을 제기하다</div>
+      <div class="eng-ex">Rapid advances from China's Moonshot AI Kimi K3 model are raising fresh questions about the ROI of massive US AI infrastructure spending.</div>
+      <div class="eng-ex-kr">중국 문샷AI의 Kimi K3 모델이 급속히 발전하면서 미국의 대규모 AI 인프라 투자 수익성(ROI)에 대한 새로운 의문이 제기되고 있다.</div>
+      <div class="eng-ctx">📌 뉴욕타임스(New York Times)의 알파벳 설비투자 기사에서 쓰인 담화적 표현으로, 중국발 저가 AI 모델 등장이 미국 빅테크의 막대한 투자 타당성에 의문을 던지는 상황을 서술한다.</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-07-21-163526 | AI News Card
+  </div>
+
+</div>
+
+</div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
