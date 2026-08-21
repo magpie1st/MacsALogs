@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오늘의 AI 뉴스 — 2026-08-21 / Today's AI News — 2026-08-21 — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    @media (max-width: 799px) { .view-desktop { display: none; } }
+    @media (min-width: 800px) { .view-mobile { display: none; } }
+    .view-desktop { max-width: 100%; overflow-x: auto; }
+    html[lang="ko"] .i18n-en, html[lang="en"] .i18n-ko { display: none !important; }
+    html[lang="ko"] .view-lang-en, html[lang="en"] .view-lang-ko { display: none !important; }
+    html[lang="en"] .view-lang-en, html[lang="ko"] .view-lang-ko { display: block !important; }
+    .post-lang-switch { display:flex; gap:8px; flex-wrap:wrap; margin:1rem 0 0; }
+    .post-lang-switch button { border:1px solid #c7d2fe; background:#eef2ff; color:#3730a3; border-radius:999px; padding:6px 12px; font-weight:700; cursor:pointer; }
+    html[lang="ko"] [data-lang-button="ko"], html[lang="en"] [data-lang-button="en"] { background:#4f46e5; color:#fff; border-color:#4f46e5; }
+    .view-mobile .view-lang-ko {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: #eef0f5;
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.5;
+  }.view-mobile .view-lang-ko .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px 12px 24px;
+  }.view-mobile .view-lang-ko .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }.view-mobile .view-lang-ko .header-logo { font-size: 28px; margin-right: 10px; }.view-mobile .view-lang-ko .header-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }.view-mobile .view-lang-ko .header-sub { font-size: 11px; opacity: 0.75; margin-top: 2px; }.view-mobile .view-lang-ko .header-date { font-size: 13px; font-weight: 700; text-align: right; }.view-mobile .view-lang-ko .header-edition { font-size: 10px; opacity: 0.65; margin-top: 2px; text-align: right; }.view-mobile .view-lang-ko .sec-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }.view-mobile .view-lang-ko .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+  }.view-mobile .view-lang-ko .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }.view-mobile .view-lang-ko .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-mobile .view-lang-ko .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-mobile .view-lang-ko .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-mobile .view-lang-ko .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-mobile .view-lang-ko .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }.view-mobile .view-lang-ko .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }.view-mobile .view-lang-ko .num-ai { background: #e0e7ff; color: #3730a3; }.view-mobile .view-lang-ko .num-detail { background: #ede9fe; color: #5b21b6; }.view-mobile .view-lang-ko .num-economy { background: #d1fae5; color: #065f46; }.view-mobile .view-lang-ko .num-english { background: #fef3c7; color: #92400e; }.view-mobile .view-lang-ko .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    flex: 1;
+  }.view-mobile .view-lang-ko .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }.view-mobile .view-lang-ko .badge-ai { background: #e0e7ff; color: #4338ca; }.view-mobile .view-lang-ko .badge-detail { background: #ede9fe; color: #6d28d9; }.view-mobile .view-lang-ko .badge-economy { background: #d1fae5; color: #065f46; }.view-mobile .view-lang-ko .badge-english { background: #fef3c7; color: #92400e; }.view-mobile .view-lang-ko .bullets { list-style: none; margin: 4px 0 6px; }.view-mobile .view-lang-ko .bullets li {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.55;
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }.view-mobile .view-lang-ko .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    top: 5px;
+  }.view-mobile .view-lang-ko .card-ai     .bullets li::before { color: #6366f1; }.view-mobile .view-lang-ko .card-detail .bullets li::before { color: #7c3aed; }.view-mobile .view-lang-ko .card-economy .bullets li::before { color: #059669; }.view-mobile .view-lang-ko .card-source {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-mobile .view-lang-ko .card-source:hover { color: #64748b; text-decoration: underline; }.view-mobile .view-lang-ko .detail-block { margin-bottom: 8px; }.view-mobile .view-lang-ko .detail-lbl {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 3px;
+  }.view-mobile .view-lang-ko .detail-txt {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.55;
+  }.view-mobile .view-lang-ko .key-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }.view-mobile .view-lang-ko .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }.view-mobile .view-lang-ko .takeaway {
+    background: #f8f7ff;
+    border-left: 3px solid #8b5cf6;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 6px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+  }.view-mobile .view-lang-ko .impact-pill {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 6px;
+  }.view-mobile .view-lang-ko .impact-positive { background: #dcfce7; color: #166534; }.view-mobile .view-lang-ko .impact-negative { background: #fee2e2; color: #991b1b; }.view-mobile .view-lang-ko .impact-neutral { background: #f1f5f9; color: #475569; }.view-mobile .view-lang-ko .eng-phrase {
+    font-size: 22px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-mobile .view-lang-ko .eng-pron {
+    font-size: 14px;
+    color: #b45309;
+    font-family: monospace;
+    margin-bottom: 6px;
+  }.view-mobile .view-lang-ko .eng-meaning {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }.view-mobile .view-lang-ko .eng-ex {
+    font-size: 15px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.6;
+    background: #fffbeb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #fbbf24;
+    margin-bottom: 6px;
+  }.view-mobile .view-lang-ko .eng-ex-kr {
+    font-size: 14px;
+    color: #78716c;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }.view-mobile .view-lang-ko .eng-ctx {
+    font-size: 14px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 6px 10px;
+    border-radius: 6px;
+    line-height: 1.5;
+  }.view-mobile .view-lang-ko .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+.view-mobile .view-lang-en {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: #eef0f5;
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.5;
+  }.view-mobile .view-lang-en .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px 12px 24px;
+  }.view-mobile .view-lang-en .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }.view-mobile .view-lang-en .header-logo { font-size: 28px; margin-right: 10px; }.view-mobile .view-lang-en .header-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }.view-mobile .view-lang-en .header-sub { font-size: 11px; opacity: 0.75; margin-top: 2px; }.view-mobile .view-lang-en .header-date { font-size: 13px; font-weight: 700; text-align: right; }.view-mobile .view-lang-en .header-edition { font-size: 10px; opacity: 0.65; margin-top: 2px; text-align: right; }.view-mobile .view-lang-en .sec-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }.view-mobile .view-lang-en .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+  }.view-mobile .view-lang-en .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }.view-mobile .view-lang-en .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-mobile .view-lang-en .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-mobile .view-lang-en .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-mobile .view-lang-en .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-mobile .view-lang-en .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }.view-mobile .view-lang-en .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }.view-mobile .view-lang-en .num-ai { background: #e0e7ff; color: #3730a3; }.view-mobile .view-lang-en .num-detail { background: #ede9fe; color: #5b21b6; }.view-mobile .view-lang-en .num-economy { background: #d1fae5; color: #065f46; }.view-mobile .view-lang-en .num-english { background: #fef3c7; color: #92400e; }.view-mobile .view-lang-en .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    flex: 1;
+  }.view-mobile .view-lang-en .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }.view-mobile .view-lang-en .badge-ai { background: #e0e7ff; color: #4338ca; }.view-mobile .view-lang-en .badge-detail { background: #ede9fe; color: #6d28d9; }.view-mobile .view-lang-en .badge-economy { background: #d1fae5; color: #065f46; }.view-mobile .view-lang-en .badge-english { background: #fef3c7; color: #92400e; }.view-mobile .view-lang-en .bullets { list-style: none; margin: 4px 0 6px; }.view-mobile .view-lang-en .bullets li {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.55;
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }.view-mobile .view-lang-en .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    top: 5px;
+  }.view-mobile .view-lang-en .card-ai     .bullets li::before { color: #6366f1; }.view-mobile .view-lang-en .card-detail .bullets li::before { color: #7c3aed; }.view-mobile .view-lang-en .card-economy .bullets li::before { color: #059669; }.view-mobile .view-lang-en .card-source {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-mobile .view-lang-en .card-source:hover { color: #64748b; text-decoration: underline; }.view-mobile .view-lang-en .detail-block { margin-bottom: 8px; }.view-mobile .view-lang-en .detail-lbl {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 3px;
+  }.view-mobile .view-lang-en .detail-txt {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.55;
+  }.view-mobile .view-lang-en .key-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }.view-mobile .view-lang-en .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }.view-mobile .view-lang-en .takeaway {
+    background: #f8f7ff;
+    border-left: 3px solid #8b5cf6;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 6px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+  }.view-mobile .view-lang-en .impact-pill {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 6px;
+  }.view-mobile .view-lang-en .impact-positive { background: #dcfce7; color: #166534; }.view-mobile .view-lang-en .impact-negative { background: #fee2e2; color: #991b1b; }.view-mobile .view-lang-en .impact-neutral { background: #f1f5f9; color: #475569; }.view-mobile .view-lang-en .eng-phrase {
+    font-size: 22px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-mobile .view-lang-en .eng-pron {
+    font-size: 14px;
+    color: #b45309;
+    font-family: monospace;
+    margin-bottom: 6px;
+  }.view-mobile .view-lang-en .eng-meaning {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }.view-mobile .view-lang-en .eng-ex {
+    font-size: 15px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.6;
+    background: #fffbeb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #fbbf24;
+    margin-bottom: 6px;
+  }.view-mobile .view-lang-en .eng-ex-kr {
+    font-size: 14px;
+    color: #78716c;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }.view-mobile .view-lang-en .eng-ctx {
+    font-size: 14px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 6px 10px;
+    border-radius: 6px;
+    line-height: 1.5;
+  }.view-mobile .view-lang-en .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+    .view-desktop .lang-switch {
+    width: 100%; max-width: 860px; margin: 0 auto; padding: 10px 12px;
+    display: flex; justify-content: flex-end; gap: 8px; background: #0f172a;
+  }.view-desktop .lang-switch button { border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; padding: 7px 12px; font-weight: 800; cursor: pointer; background: rgba(255,255,255,0.12); color: #dbeafe; }.view-desktop .lang-switch button.active { background: #fff; color: #1e3a8a; }.view-desktop .lang-view { display: none; }.view-desktop .lang-view.active { display: block; }.view-desktop .section-bar {
+    width: 100%; max-width: 860px; margin: 0 auto; padding: 7px 6mm;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 8px;
+  }.view-desktop .webtoon-wrap { width: 100%; max-width: 860px; margin: 0 auto; background: #0f172a; }.view-desktop .webtoon-wrap img { width: 100%; display: block; }.view-desktop .audio-wrap { width: 100%; max-width: 860px; margin: 0 auto; padding:12px 14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15); }.view-desktop .audio-title { font-size:13px; font-weight:700; color:#3730a3; margin-bottom:8px; }.view-desktop .view-lang-ko {  }.view-desktop .view-lang-en { display:none; }
+
+  @page { size: A4 portrait; margin: 0; }.view-desktop {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-desktop .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-desktop {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-desktop .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-desktop .header { padding: 14px 20px; margin-bottom: 12px; }.view-desktop .header-title { font-size: 22px; }.view-desktop .header-sub { font-size: 12px; }.view-desktop .header-date { font-size: 15px; }.view-desktop .header-edition { font-size: 11px; }.view-desktop .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-desktop .grid-3 { gap: 12px; margin-bottom: 12px; }.view-desktop .grid-2 { gap: 12px; margin-bottom: 12px; }.view-desktop .card { padding: 16px 18px; border-radius: 12px; }.view-desktop .card-title { font-size: 15px; line-height: 1.5; }.view-desktop .card-title-sm { font-size: 13px; }.view-desktop .badge { font-size: 10px; padding: 2px 9px; }.view-desktop .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-desktop .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-desktop .detail-lbl { font-size: 10px; }.view-desktop .detail-txt { font-size: 13px; line-height: 1.65; }.view-desktop .key-chip { font-size: 11px; padding: 3px 9px; }.view-desktop .takeaway { font-size: 13px; padding: 7px 12px; }.view-desktop .impact-pill { font-size: 11px; padding: 3px 11px; }.view-desktop .eng-phrase { font-size: 17px; }.view-desktop .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-desktop .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-desktop .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-desktop .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-desktop .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-desktop .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-desktop .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-desktop .header-left { display: flex; align-items: center; gap: 10px; }.view-desktop .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-desktop .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-desktop .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-desktop .header-right { text-align: right; }.view-desktop .header-date { font-size: 12px; font-weight: 700; }.view-desktop .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-desktop .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-desktop .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-1 { margin-bottom: 5px; }.view-desktop .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-desktop .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-desktop .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-desktop .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-desktop .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-desktop .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-desktop .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-desktop .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-desktop .badge-ai { background: #e0e7ff; color: #4338ca; }.view-desktop .badge-detail { background: #ede9fe; color: #6d28d9; }.view-desktop .badge-economy { background: #d1fae5; color: #065f46; }.view-desktop .badge-english { background: #fef3c7; color: #92400e; }.view-desktop .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-desktop .card-title-sm { font-size: 10px; }.view-desktop .bullets { list-style: none; margin: 3px 0; }.view-desktop .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-desktop .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-desktop .card-ai .bullets li::before { color: #6366f1; }.view-desktop .card-detail .bullets li::before { color: #7c3aed; }.view-desktop .card-economy .bullets li::before { color: #059669; }.view-desktop .card-english .bullets li::before { color: #d97706; }.view-desktop .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-desktop .card-source:hover { color: #64748b; text-decoration: underline; }.view-desktop .detail-block { margin-bottom: 4px; }.view-desktop .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-desktop .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-desktop .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-desktop .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-desktop .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-desktop .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-desktop .impact-positive { background: #dcfce7; color: #166534; }.view-desktop .impact-negative { background: #fee2e2; color: #991b1b; }.view-desktop .impact-neutral { background: #f1f5f9; color: #475569; }.view-desktop .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-desktop .eng-pron { font-size: 8px; color: #b45309; margin-bottom: 3px; }.view-desktop .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-desktop .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-desktop .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-desktop .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-desktop .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
+  }
+
+
+  @page { size: A4 portrait; margin: 0; }.view-desktop {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-desktop .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-desktop {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-desktop .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-desktop .header { padding: 14px 20px; margin-bottom: 12px; }.view-desktop .header-title { font-size: 22px; }.view-desktop .header-sub { font-size: 12px; }.view-desktop .header-date { font-size: 15px; }.view-desktop .header-edition { font-size: 11px; }.view-desktop .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-desktop .grid-3 { gap: 12px; margin-bottom: 12px; }.view-desktop .grid-2 { gap: 12px; margin-bottom: 12px; }.view-desktop .card { padding: 16px 18px; border-radius: 12px; }.view-desktop .card-title { font-size: 15px; line-height: 1.5; }.view-desktop .card-title-sm { font-size: 13px; }.view-desktop .badge { font-size: 10px; padding: 2px 9px; }.view-desktop .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-desktop .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-desktop .detail-lbl { font-size: 10px; }.view-desktop .detail-txt { font-size: 13px; line-height: 1.65; }.view-desktop .key-chip { font-size: 11px; padding: 3px 9px; }.view-desktop .takeaway { font-size: 13px; padding: 7px 12px; }.view-desktop .impact-pill { font-size: 11px; padding: 3px 11px; }.view-desktop .eng-phrase { font-size: 17px; }.view-desktop .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-desktop .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-desktop .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-desktop .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-desktop .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-desktop .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-desktop .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-desktop .header-left { display: flex; align-items: center; gap: 10px; }.view-desktop .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-desktop .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-desktop .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-desktop .header-right { text-align: right; }.view-desktop .header-date { font-size: 12px; font-weight: 700; }.view-desktop .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-desktop .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-desktop .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-1 { margin-bottom: 5px; }.view-desktop .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-desktop .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-desktop .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-desktop .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-desktop .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-desktop .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-desktop .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-desktop .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-desktop .badge-ai { background: #e0e7ff; color: #4338ca; }.view-desktop .badge-detail { background: #ede9fe; color: #6d28d9; }.view-desktop .badge-economy { background: #d1fae5; color: #065f46; }.view-desktop .badge-english { background: #fef3c7; color: #92400e; }.view-desktop .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-desktop .card-title-sm { font-size: 10px; }.view-desktop .bullets { list-style: none; margin: 3px 0; }.view-desktop .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-desktop .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-desktop .card-ai .bullets li::before { color: #6366f1; }.view-desktop .card-detail .bullets li::before { color: #7c3aed; }.view-desktop .card-economy .bullets li::before { color: #059669; }.view-desktop .card-english .bullets li::before { color: #d97706; }.view-desktop .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-desktop .card-source:hover { color: #64748b; text-decoration: underline; }.view-desktop .detail-block { margin-bottom: 4px; }.view-desktop .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-desktop .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-desktop .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-desktop .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-desktop .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-desktop .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-desktop .impact-positive { background: #dcfce7; color: #166534; }.view-desktop .impact-negative { background: #fee2e2; color: #991b1b; }.view-desktop .impact-neutral { background: #f1f5f9; color: #475569; }.view-desktop .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-desktop .eng-pron { font-size: 8px; color: #b45309; margin-bottom: 3px; }.view-desktop .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-desktop .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-desktop .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-desktop .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-desktop .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
+  }
+
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../index.html">MacsALogs</a></h1>
+        <p class="site-tagline"><span class="i18n-ko">AI 개발 · 생산성 · 취미 기록</span><span class="i18n-en">AI development · productivity · creative logs</span></p>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html"><span class="i18n-ko">홈</span><span class="i18n-en">Home</span></a>
+        <a href="../about.html"><span class="i18n-ko">소개</span><span class="i18n-en">About</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../index.html"><span class="i18n-ko">← 목록으로</span><span class="i18n-en">← Back to posts</span></a>
+
+    <header class="post-header">
+      <h1><span class="i18n-ko">오늘의 AI 뉴스 — 2026-08-21</span><span class="i18n-en">Today's AI News — 2026-08-21</span></h1>
+      <div class="post-meta">
+        <span>2026-08-21</span>
+        <span><span class="i18n-ko">5분</span><span class="i18n-en">5 min</span></span>
+      </div>
+      <div class="tags" style="margin-top: 0.75rem;">
+        <span class="tag">AI</span>
+        <span class="tag"><span class="i18n-ko">뉴스</span><span class="i18n-en">News</span></span>
+        <span class="tag"><span class="i18n-ko">경제</span><span class="i18n-en">Markets</span></span>
+        <span class="tag"><span class="i18n-ko">영어</span><span class="i18n-en">English</span></span>
+      </div>
+      <div class="post-lang-switch" data-lang-switch>
+        <button type="button" data-lang-button="ko" aria-label="한국어 보기">한국어</button>
+        <button type="button" data-lang-button="en" aria-label="View in English">English</button>
+      </div>
+    </header>
+
+    <article class="post-body">
+      <div class="view-mobile"><div class="view-lang view-lang-ko active" data-lang-view="ko">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div>
+      <div class="header-date">2026-08-21-155247</div>
+      <div class="header-edition">No. 078</div>
+    </div>
+  </div>
+
+  
+  <!-- Audio overview player -->
+  <div style="border-radius:14px; margin-bottom:12px; padding:12px 14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; 귀로 듣는 오늘의 뉴스</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-08-21-155247-brief.m4a" type="audio/mp4">
+      브라우저가 오디오 재생을 지원하지 않습니다.
+    </audio>
+  </div>
+  <!-- Webtoon image -->
+  <div style="border-radius:14px; overflow:hidden; margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <img src="../images/2026-08-21-155247/page.png" alt="AI 뉴스 웹툰 2026-08-21-155247" style="width:100%; display:block;"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:28px 14px; text-align:center; background:#eef2ff; color:#3730a3; font-size:13px; font-weight:600;">🎨 웹툰 준비 중 — 곧 업데이트됩니다</div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">1</span>
+      <span class="card-title">오픈AI, 기업 고객서 앤스로픽 추격</span>
+      <span class="badge badge-ai">LLM</span>
+    </div>
+    <ul class="bullets">
+      <li>Ramp 집계 기준 5월 앤스로픽 41%·오픈AI 39%로 역전 이후 7월엔 44% 대 40%로 격차 유지</li><li>3분기 들어 오픈AI 성장률이 앤스로픽보다 빨라, 7만개 이상 미국 기업 지출 데이터 기준</li><li>GPT-5.6 Sol 개발자 채택 확대, 앤스로픽 Fable 5는 가격·데이터 보관 요건으로 채택 둔화</li>
+    </ul>
+    <a href="https://techcrunch.com/2026/08/20/openai-is-gaining-on-anthropic-with-business-users-new-data-indicates/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">2</span>
+      <span class="card-title">앤스로픽, 미공개 최상위 모델 '모델2' 내부용</span>
+      <span class="badge badge-ai">LLM</span>
+    </div>
+    <ul class="bullets">
+      <li>2026년 8월 리스크 보고서서 공개, 내부 벤치마크 AECI 기준 Mythos 5보다 1.5점 높음</li><li>코딩·데이터 생성·연구공학에 상시 가동 에이전트로 광범위하게 투입 중, 프로덕션 코드 대부분을 클로드가 작성</li><li>정식 외부 공개 계획 없음, 오정렬 위험은 '낮음'으로 평가되었으나 Mythos 5만큼 철저히 테스트되지 않음</li>
+    </ul>
+    <a href="https://the-decoder.com/anthropic-uses-an-unpublished-ai-model-called-model-2-internally/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">3</span>
+      <span class="card-title">오픈AI, 프론티어 모델 데이터 무보관 정책 강화</span>
+      <span class="badge badge-ai">안전기술</span>
+    </div>
+    <ul class="bullets">
+      <li>적격 API 고객 대상 Zero Data Retention 재확인, 처리 후 프롬프트·응답 보관하지 않음</li><li>신규 'Private Safety Processing' 프리뷰 공개, 개별 상호작용이 아닌 연관 상호작용 전반의 위험 패턴 탐지</li><li>고객 콘텐츠는 고객 통제 인프라에 유지, 직원 열람 없이 자동화 시스템만 안전 신호 도출</li>
+    </ul>
+    <a href="https://openai.com/index/offering-zero-data-retention-for-frontier-models" class="card-source" target="_blank" rel="noopener">Source: OpenAI</a>
+  </div>
+  
+
+  <!-- ── Row 2: AI 상세 ── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">1</span>
+      <span class="card-title">오픈AI, 기업 고객서 앤스로픽 추격</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">법인카드·경비관리 업체 Ramp이 자사 기업 고객의 AI 지출 데이터를 분석한 결과, 오픈AI와 앤스로픽의 기업 시장 점유율이 매달 뒤바뀌고 있다. 두 회사 모두 상장 전이라 재무 데이터가 공개되지 않은 상황에서 나온 드문 실측 지표다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">기업 AI 지출이 특정 공급사에 고착되지 않고 모델 성능에 따라 쉽게 옮겨간다는 점이 확인되면서, 두 회사 투자자들은 매출의 '지속성'을 재평가해야 한다. 최신 모델 품질과 가격·데이터 정책이 곧바로 시장 점유율에 반영되는 경쟁 구도가 자리잡았다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">앤스로픽 점유율 7월 기준 44%, 오픈AI 40%</span><span class="key-chip">분석 대상 미국 기업 7만개 이상</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 기업 AI 시장은 아직 승자가 굳어지지 않은 유동적 경쟁 구도다.</div>
+    <a href="https://techcrunch.com/2026/08/20/openai-is-gaining-on-anthropic-with-business-users-new-data-indicates/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">2</span>
+      <span class="card-title">앤스로픽, 미공개 최상위 모델 '모델2' 내부용</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">앤스로픽은 정례 리스크 보고서를 통해 자사가 내부적으로만 사용하는 '모델2'의 존재를 처음 공개했다. Mythos 클래스에 속하며 현재 공개된 어떤 클로드 버전보다 강력하다고 밝혔다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">선두 AI 랩이 최상위 성능 모델을 외부 공개 없이 자체 생산성 향상에만 투입하는 관행이 드러나면서, 공개 모델과 내부 모델 간 격차 및 안전성 검증 수준 차이에 대한 논쟁이 커질 전망이다. 이는 프론티어 모델 경쟁이 이미 '보이지 않는 곳'에서도 진행 중임을 시사한다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">내부 벤치마크(AECI) 기준 Mythos 5 대비 +1.5점</span><span class="key-chip">2026년 8월 리스크 보고서에서 최초 공개</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 앤스로픽의 최강 모델은 대중에게 공개되지 않은 채 내부 생산성에만 쓰이고 있다.</div>
+    <a href="https://the-decoder.com/anthropic-uses-an-unpublished-ai-model-called-model-2-internally/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">3</span>
+      <span class="card-title">오픈AI, 프론티어 모델 데이터 무보관 정책 강화</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">경쟁사 앤스로픽이 Fable 모델 사용자에게 안전 모니터링을 위해 데이터를 30일간 보관하도록 요구해 논란이 인 직후, 오픈AI가 데이터 비보관 원칙을 강화하는 새 안전 처리 방식을 내놓았다. 에이전트형 작업이 길어지면서 단발성 상호작용만 보는 기존 안전 시스템의 한계가 드러난 데 따른 대응이다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">프라이버시 요건이 엄격한 기업 고객을 프론티어 모델 경쟁에 붙잡아두는 핵심 변수로 부상했다. 데이터 보관 정책이 모델 성능 못지않게 기업의 AI 공급사 선택을 좌우하는 요소가 되고 있음을 보여준다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">경쟁사 앤스로픽의 데이터 보관 요구 기간 30일과 대비되는 무보관(0일) 정책</span><span class="key-chip">2026년 8월 19일 발표</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 데이터 보관 정책이 프론티어 모델 경쟁의 새로운 승부처로 떠올랐다.</div>
+    <a href="https://openai.com/index/offering-zero-data-retention-for-frontier-models" class="card-source" target="_blank" rel="noopener">Source: OpenAI</a>
+  </div>
+  
+
+  <!-- ── Row 3: 경제 ── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">1</span>
+      <span class="card-title">빅테크 AI 차입 급증, 국채금리 압박</span>
+      <span class="badge badge-economy">금리</span>
+    </div>
+    <ul class="bullets">
+      <li>알파벳·아마존·메타 3사, 2026년 회사채 발행액 약 2200억 달러로 2025년 전체(1080억 달러)의 두 배 육박</li><li>AI 데이터센터 자금조달 경쟁으로 30년물 미 국채금리 2007년 이후 최고, 10년물은 19개월來 최고치 기록</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ 부정적</span>
+    <a href="https://www.nytimes.com/2026/08/20/business/bond-yields-tech-ai-debt.html" class="card-source" target="_blank" rel="noopener">Source: nytimes.com</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">2</span>
+      <span class="card-title">삼성·SK하이닉스, 사상 최대 주주환원</span>
+      <span class="badge badge-economy">반도체</span>
+    </div>
+    <ul class="bullets">
+      <li>SK하이닉스, 40조원(약 289억 달러) 자사주 전량 소각 발표 — 국내 상장사 사상 최대 규모, AI 메모리 호황이 원동력</li><li>삼성전자도 약 150조원(1084억 달러) 규모 사상 최대 주주환원 준비 중이며, 두 종목 급등에 코스피 6,800 돌파</li>
+    </ul>
+    <span class="impact-pill impact-positive">↑ 긍정적</span>
+    <a href="https://www.bloomberg.com/news/articles/2026-08-21/korean-chipmakers-cash-payout-plans-may-drive-won-rally-further" class="card-source" target="_blank" rel="noopener">Source: bloomberg.com</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">3</span>
+      <span class="card-title">AI 쏠림, 주가지수 왜곡 경고</span>
+      <span class="badge badge-economy">시장</span>
+    </div>
+    <ul class="bullets">
+      <li>미국 상위 10개 종목이 전체 시가총액의 약 35% 차지 — 10년 전 18%에서 급등, AI 대형주 쏠림 심화</li><li>패시브 ETF 자금이 소수 AI 대형주로 몰리며 지수가 기업 펀더멘털보다 자금 흐름을 반영한다는 경고 제기</li>
+    </ul>
+    <span class="impact-pill impact-neutral">→ 중립</span>
+    <a href="https://www.economist.com/finance-and-economics/2026/08/18/stock-indices-no-longer-reflect-equity-reality" class="card-source" target="_blank" rel="noopener">Source: economist.com</a>
+  </div>
+  
+
+  <!-- ── Row 4: 영어 표현 ── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">1</span>
+      <span class="eng-phrase">"Zero Data Retention"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ˈzɪər.oʊ ˈdeɪ.tə rɪˈtɛn.ʃən/ [제로 데이터 리텐션]</div>
+    <div class="eng-meaning">→ 요청 처리 후 프롬프트·응답 등 고객 데이터를 전혀 저장하지 않는 AI API 보안 정책</div>
+    <div class="eng-ex">OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing, a system that detects safety risk patterns across related interactions without exposing raw customer content to staff, responding to rival Anthropic's 30-day retention requirement for Fable users.</div>
+    <div class="eng-ex-kr">오픈AI는 적격 API 고객을 위한 제로 데이터 리텐션 정책을 재확인하고, 관련 상호작용 전반의 안전 위험 패턴을 직원에게 원본 콘텐츠를 노출하지 않고 탐지하는 새로운 시스템인 프라이빗 세이프티 프로세싱을 공개했다. 이는 경쟁사 앤스로픽의 Fable 사용자 대상 30일 데이터 보관 요구 정책에 대응한 것이다.</div>
+    <div class="eng-ctx">오픈AI의 '프론티어 모델 데이터 무보관 정책 강화' 발표 기사(openai.com, 직접 접속이 차단되어 ai.json에 저장된 영문 요약문을 사용)에서 등장한 AI 보안 기술 용어이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">2</span>
+      <span class="eng-phrase">"compete for investor capital"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">[컴핏 포 인베스터 캐피털]</div>
+    <div class="eng-meaning">→ (기업·정부 등이) 투자자의 자금을 확보하기 위해 서로 경쟁하다</div>
+    <div class="eng-ex">The AI borrowing binge helped push the 30-year Treasury yield to its highest level since 2007 and the 10-year yield to a 19-month high, as tech and government compete for investor capital.</div>
+    <div class="eng-ex-kr">AI 관련 차입 급증은 30년물 미 국채금리를 2007년 이후 최고 수준으로, 10년물은 19개월 만에 최고치로 끌어올렸는데, 이는 빅테크와 정부가 투자자 자본을 두고 경쟁하고 있기 때문이다.</div>
+    <div class="eng-ctx">뉴욕타임스의 '빅테크 AI 차입 급증, 국채금리 압박' 기사(nytimes.com, 직접 접속이 차단되어 economy.json에 저장된 영문 문장을 사용)에서 등장한 비즈니스 표현이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">3</span>
+      <span class="eng-phrase">"no longer reflect equity reality"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">[노 롱거 리플렉트 에퀴티 리앨리티]</div>
+    <div class="eng-meaning">→ (지수·지표 등이) 더 이상 실질적인 가치나 현실을 제대로 반영하지 못하다</div>
+    <div class="eng-ex">Stock indices no longer reflect equity reality.</div>
+    <div class="eng-ex-kr">주가지수는 더 이상 주식의 실질 가치를 반영하지 못한다.</div>
+    <div class="eng-ctx">이코노미스트의 'AI 쏠림, 주가지수 왜곡 경고' 기사 원제(economist.com, 직접 접속이 차단되어 economy.json에 저장된 원제를 사용)에서 등장한 담론적 표현으로, 비즈니스 표현에 사용한 뉴욕타임스 기사와는 다른 기사에서 인용했다.</div>
+  </div>
+  
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-08-21-155247 | AI News Card
+  </div>
+
+</div>
+</div><div class="view-lang view-lang-en" data-lang-view="en">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">Today's AI News</div>
+        <div class="header-sub">News · Analysis · Markets · English Expressions</div>
+      </div>
+    </div>
+    <div>
+      <div class="header-date">2026-08-21-155247</div>
+      <div class="header-edition">No. 078</div>
+    </div>
+  </div>
+
+  
+  <!-- Audio overview player -->
+  <div style="border-radius:14px; margin-bottom:12px; padding:12px 14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; Listen to today's news</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-08-21-155247-brief-en.m4a" type="audio/mp4">
+      Your browser does not support audio playback.
+    </audio>
+  </div>
+  <!-- Webtoon image -->
+  <div style="border-radius:14px; overflow:hidden; margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <img src="../images/2026-08-21-155247/page-en.png" alt="AI News Webtoon 2026-08-21-155247" style="width:100%; display:block;"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:28px 14px; text-align:center; background:#eef2ff; color:#3730a3; font-size:13px; font-weight:600;">🎨 Webtoon is being prepared — coming soon</div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — Top 3 Stories</div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">1</span>
+      <span class="card-title">OpenAI Narrows Anthropic's Lead in Business Users</span>
+      <span class="badge badge-ai">LLM</span>
+    </div>
+    <ul class="bullets">
+      <li>Per Ramp data, Anthropic overtook OpenAI in May (41% vs 39%) and led 44% to 40% by July</li><li>OpenAI is growing faster than Anthropic quarter-to-date in Q3, based on 70,000+ US business accounts</li><li>Developers increasingly favor GPT-5.6 Sol, while Anthropic's Fable 5 adoption slowed over pricing and data retention rules</li>
+    </ul>
+    <a href="https://techcrunch.com/2026/08/20/openai-is-gaining-on-anthropic-with-business-users-new-data-indicates/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">2</span>
+      <span class="card-title">Anthropic Keeps Its Strongest Model, "Model 2," Internal Only</span>
+      <span class="badge badge-ai">LLM</span>
+    </div>
+    <ul class="bullets">
+      <li>Disclosed in Anthropic's August 2026 Risk Report; scores 1.5 points above Mythos 5 on its internal AECI benchmark</li><li>Used heavily and continuously via agents for coding, data generation, and research/engineering — Claude now writes most of Anthropic's production code</li><li>No external release planned; misalignment risk rated "low," though testing was less extensive than for Mythos 5</li>
+    </ul>
+    <a href="https://the-decoder.com/anthropic-uses-an-unpublished-ai-model-called-model-2-internally/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">3</span>
+      <span class="card-title">OpenAI Reinforces Zero Data Retention for Frontier Models</span>
+      <span class="badge badge-ai">Safety Tech</span>
+    </div>
+    <ul class="bullets">
+      <li>Reaffirms Zero Data Retention for eligible API customers — no prompt or response storage after processing</li><li>Previews new "Private Safety Processing," which detects risk patterns across related interactions rather than single ones</li><li>Customer content stays on customer-controlled infrastructure; automated systems surface safety signals without staff access to raw content</li>
+    </ul>
+    <a href="https://openai.com/index/offering-zero-data-retention-for-frontier-models" class="card-source" target="_blank" rel="noopener">Source: OpenAI</a>
+  </div>
+  
+
+  <!-- ── Row 2: AI 상세 ── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — Why It Matters</div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">1</span>
+      <span class="card-title">OpenAI Narrows Anthropic's Lead in Business Users</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">Background</div>
+      <div class="detail-txt">Corporate card and expense platform Ramp analyzed its business customers' AI spending, finding that OpenAI and Anthropic's enterprise market share has flipped month to month. It's a rare hard data point given neither company has gone public yet.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">Why it matters</div>
+      <div class="detail-txt">The data shows enterprise AI spend is not sticky and swings with model quality, forcing investors in both companies to reassess revenue durability. Model quality plus pricing and data policy now translate directly into market share shifts.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">Anthropic at 44% share vs OpenAI's 40% as of July</span><span class="key-chip">Data covers 70,000+ US businesses</span>
+    </div>
+    
+
+    <div class="takeaway">>>> The enterprise AI market remains fluid, with no permanent winner yet.</div>
+    <a href="https://techcrunch.com/2026/08/20/openai-is-gaining-on-anthropic-with-business-users-new-data-indicates/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">2</span>
+      <span class="card-title">Anthropic Keeps Its Strongest Model, "Model 2," Internal Only</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">Background</div>
+      <div class="detail-txt">In its regular risk report, Anthropic disclosed for the first time that it runs an internal-only model called "Model 2," placed in the Mythos class and described as more capable than any publicly released Claude version.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">Why it matters</div>
+      <div class="detail-txt">The disclosure that a leading AI lab keeps its most capable model purely for internal productivity gains, without public release, raises questions about the safety-testing gap between public and internal models. It signals frontier model competition is already advancing out of public view.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">+1.5 points above Mythos 5 on internal AECI benchmark</span><span class="key-chip">First disclosed in the August 2026 Risk Report</span>
+    </div>
+    
+
+    <div class="takeaway">>>> Anthropic's most powerful model stays hidden, powering only its own internal productivity.</div>
+    <a href="https://the-decoder.com/anthropic-uses-an-unpublished-ai-model-called-model-2-internally/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">3</span>
+      <span class="card-title">OpenAI Reinforces Zero Data Retention for Frontier Models</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">Background</div>
+      <div class="detail-txt">The announcement follows controversy over rival Anthropic requiring Fable model users to allow 30-day data retention for safety monitoring. It responds to a gap exposed as agentic tasks grow longer: existing safety systems only evaluate single interactions.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">Why it matters</div>
+      <div class="detail-txt">Data-retention policy is emerging as a decisive lever in enterprise AI vendor selection, on par with model performance, especially for privacy-sensitive business customers evaluating frontier-model providers.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">Zero-day retention policy contrasts with rival Anthropic's 30-day requirement</span><span class="key-chip">Announced August 19, 2026</span>
+    </div>
+    
+
+    <div class="takeaway">>>> Data-retention policy has become a new battleground in the frontier-model race.</div>
+    <a href="https://openai.com/index/offering-zero-data-retention-for-frontier-models" class="card-source" target="_blank" rel="noopener">Source: OpenAI</a>
+  </div>
+  
+
+  <!-- ── Row 3: 경제 ── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — Markets & Finance</div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">1</span>
+      <span class="card-title">Big Tech's AI Borrowing Binge Pushes Up Bond Yields</span>
+      <span class="badge badge-economy">Rates</span>
+    </div>
+    <ul class="bullets">
+      <li>Alphabet, Amazon and Meta together sold nearly $220B in bonds in 2026, almost double 2025's full-year $108B, to fund AI infrastructure buildout.</li><li>The AI borrowing binge helped push the 30-year Treasury yield to its highest level since 2007 and the 10-year yield to a 19-month high, as tech and government compete for investor capital.</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ Negative</span>
+    <a href="https://www.nytimes.com/2026/08/20/business/bond-yields-tech-ai-debt.html" class="card-source" target="_blank" rel="noopener">Source: nytimes.com</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">2</span>
+      <span class="card-title">Samsung, SK Hynix Plan Record Shareholder Payouts</span>
+      <span class="badge badge-economy">Semiconductors</span>
+    </div>
+    <ul class="bullets">
+      <li>SK Hynix announced a record 40 trillion won ($28.9B) full share buyback and retirement, the largest ever by a listed Korean company, funded by the AI-memory profit boom.</li><li>Samsung Electronics is preparing a roughly 150 trillion won ($108.4B) shareholder return package, the largest in Korean corporate history, with both stocks' rally pushing the KOSPI past 6,800.</li>
+    </ul>
+    <span class="impact-pill impact-positive">↑ Positive</span>
+    <a href="https://www.bloomberg.com/news/articles/2026-08-21/korean-chipmakers-cash-payout-plans-may-drive-won-rally-further" class="card-source" target="_blank" rel="noopener">Source: bloomberg.com</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">3</span>
+      <span class="card-title">AI Concentration Distorts Stock Indices, Economist Warns</span>
+      <span class="badge badge-economy">Markets</span>
+    </div>
+    <ul class="bullets">
+      <li>The top 10 US stocks now make up about 35% of total market cap, up from 18% a decade ago, as AI megacaps dominate benchmark indices.</li><li>Analysts warn passive ETF flows into a handful of AI giants mean major indices increasingly track capital flows rather than underlying corporate fundamentals.</li>
+    </ul>
+    <span class="impact-pill impact-neutral">→ Neutral</span>
+    <a href="https://www.economist.com/finance-and-economics/2026/08/18/stock-indices-no-longer-reflect-equity-reality" class="card-source" target="_blank" rel="noopener">Source: economist.com</a>
+  </div>
+  
+
+  <!-- ── Row 4: 영어 표현 ── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 3 News Expressions</div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">1</span>
+      <span class="eng-phrase">"Zero Data Retention"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ˈzɪər.oʊ ˈdeɪ.tə rɪˈtɛn.ʃən/ [제로 데이터 리텐션]</div>
+    <div class="eng-meaning">→ 요청 처리 후 프롬프트·응답 등 고객 데이터를 전혀 저장하지 않는 AI API 보안 정책</div>
+    <div class="eng-ex">OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing, a system that detects safety risk patterns across related interactions without exposing raw customer content to staff, responding to rival Anthropic's 30-day retention requirement for Fable users.</div>
+    <div class="eng-ex-kr">OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing, a system that detects safety risk patterns across related interactions without exposing raw customer content to staff, responding to rival Anthropic's 30-day retention requirement for Fable users.</div>
+    <div class="eng-ctx">오픈AI의 '프론티어 모델 데이터 무보관 정책 강화' 발표 기사(openai.com, 직접 접속이 차단되어 ai.json에 저장된 영문 요약문을 사용)에서 등장한 AI 보안 기술 용어이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">2</span>
+      <span class="eng-phrase">"compete for investor capital"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">[컴핏 포 인베스터 캐피털]</div>
+    <div class="eng-meaning">→ (기업·정부 등이) 투자자의 자금을 확보하기 위해 서로 경쟁하다</div>
+    <div class="eng-ex">The AI borrowing binge helped push the 30-year Treasury yield to its highest level since 2007 and the 10-year yield to a 19-month high, as tech and government compete for investor capital.</div>
+    <div class="eng-ex-kr">The AI borrowing binge helped push the 30-year Treasury yield to its highest level since 2007 and the 10-year yield to a 19-month high, as tech and government compete for investor capital.</div>
+    <div class="eng-ctx">뉴욕타임스의 '빅테크 AI 차입 급증, 국채금리 압박' 기사(nytimes.com, 직접 접속이 차단되어 economy.json에 저장된 영문 문장을 사용)에서 등장한 비즈니스 표현이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">3</span>
+      <span class="eng-phrase">"no longer reflect equity reality"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">[노 롱거 리플렉트 에퀴티 리앨리티]</div>
+    <div class="eng-meaning">→ (지수·지표 등이) 더 이상 실질적인 가치나 현실을 제대로 반영하지 못하다</div>
+    <div class="eng-ex">Stock indices no longer reflect equity reality.</div>
+    <div class="eng-ex-kr">Stock indices no longer reflect equity reality.</div>
+    <div class="eng-ctx">이코노미스트의 'AI 쏠림, 주가지수 왜곡 경고' 기사 원제(economist.com, 직접 접속이 차단되어 economy.json에 저장된 원제를 사용)에서 등장한 담론적 표현으로, 비즈니스 표현에 사용한 뉴욕타임스 기사와는 다른 기사에서 인용했다.</div>
+  </div>
+  
+
+  <!-- Footer -->
+  <div class="footer">
+    Auto-generated | Sources: RSS feeds | 2026-08-21-155247 | AI News Card
+  </div>
+
+</div>
+</div></div>
+      <div class="view-desktop">
+  <div class="lang-switch" data-lang-switch>
+    <button type="button" data-lang-button="ko" class="active">한국어</button>
+    <button type="button" data-lang-button="en" class="">English</button>
+  </div>
+  <div class="lang-view view-lang-ko active" data-lang-view="ko">
+  <div class="section-bar">🎨 WEBTOON — AI 뉴스 웹툰 2026-08-21</div>
+  
+  <div class="audio-wrap">
+    <div class="audio-title">🎧 귀로 듣는 오늘의 뉴스</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-08-21-155247-brief.m4a" type="audio/mp4">
+      브라우저가 오디오 재생을 지원하지 않습니다.
+    </audio>
+  </div>
+  <div class="webtoon-wrap">
+    <img src="../images/2026-08-21-155247/page.png" alt="AI 뉴스 웹툰 2026-08-21"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:32px 14px; text-align:center; color:#93c5fd; font-size:13px; font-weight:600;">🎨 웹툰 준비 중 — 곧 업데이트됩니다</div>
+  </div>
+  <div class="section-bar" style="margin-top:0;">📰 NEWS CARD — 상세 뉴스 카드 2026-08-21</div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-08-21-155247</div>
+      <div class="header-edition">No. 078</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">오픈AI, 기업 고객서 앤스로픽 추격</span>
+        <span class="badge badge-ai">LLM</span>
+      </div>
+      <ul class="bullets">
+        <li>Ramp 집계 기준 5월 앤스로픽 41%·오픈AI 39%로 역전 이후 7월엔 44% 대 40%로 격차 유지</li><li>3분기 들어 오픈AI 성장률이 앤스로픽보다 빨라, 7만개 이상 미국 기업 지출 데이터 기준</li><li>GPT-5.6 Sol 개발자 채택 확대, 앤스로픽 Fable 5는 가격·데이터 보관 요건으로 채택 둔화</li>
+      </ul>
+      <a href="https://techcrunch.com/2026/08/20/openai-is-gaining-on-anthropic-with-business-users-new-data-indicates/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">앤스로픽, 미공개 최상위 모델 '모델2' 내부용</span>
+        <span class="badge badge-ai">LLM</span>
+      </div>
+      <ul class="bullets">
+        <li>2026년 8월 리스크 보고서서 공개, 내부 벤치마크 AECI 기준 Mythos 5보다 1.5점 높음</li><li>코딩·데이터 생성·연구공학에 상시 가동 에이전트로 광범위하게 투입 중, 프로덕션 코드 대부분을 클로드가 작성</li><li>정식 외부 공개 계획 없음, 오정렬 위험은 '낮음'으로 평가되었으나 Mythos 5만큼 철저히 테스트되지 않음</li>
+      </ul>
+      <a href="https://the-decoder.com/anthropic-uses-an-unpublished-ai-model-called-model-2-internally/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">오픈AI, 프론티어 모델 데이터 무보관 정책 강화</span>
+        <span class="badge badge-ai">안전기술</span>
+      </div>
+      <ul class="bullets">
+        <li>적격 API 고객 대상 Zero Data Retention 재확인, 처리 후 프롬프트·응답 보관하지 않음</li><li>신규 'Private Safety Processing' 프리뷰 공개, 개별 상호작용이 아닌 연관 상호작용 전반의 위험 패턴 탐지</li><li>고객 콘텐츠는 고객 통제 인프라에 유지, 직원 열람 없이 자동화 시스템만 안전 신호 도출</li>
+      </ul>
+      <a href="https://openai.com/index/offering-zero-data-retention-for-frontier-models" class="card-source" target="_blank" rel="noopener">📰 OpenAI</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">오픈AI, 기업 고객서 앤스로픽 추격</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">법인카드·경비관리 업체 Ramp이 자사 기업 고객의 AI 지출 데이터를 분석한 결과, 오픈AI와 앤스로픽의 기업 시장 점유율이 매달 뒤바뀌고 있다. 두 회사 모두 상장 전이라 재무 데이터가 공개되지 않은 상황에서 나온 드문 실측 지표다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">기업 AI 지출이 특정 공급사에 고착되지 않고 모델 성능에 따라 쉽게 옮겨간다는 점이 확인되면서, 두 회사 투자자들은 매출의 '지속성'을 재평가해야 한다. 최신 모델 품질과 가격·데이터 정책이 곧바로 시장 점유율에 반영되는 경쟁 구도가 자리잡았다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">앤스로픽 점유율 7월 기준 44%, 오픈AI 40%</span><span class="key-chip">분석 대상 미국 기업 7만개 이상</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 기업 AI 시장은 아직 승자가 굳어지지 않은 유동적 경쟁 구도다.</div>
+      <a href="https://techcrunch.com/2026/08/20/openai-is-gaining-on-anthropic-with-business-users-new-data-indicates/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">앤스로픽, 미공개 최상위 모델 '모델2' 내부용</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">앤스로픽은 정례 리스크 보고서를 통해 자사가 내부적으로만 사용하는 '모델2'의 존재를 처음 공개했다. Mythos 클래스에 속하며 현재 공개된 어떤 클로드 버전보다 강력하다고 밝혔다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">선두 AI 랩이 최상위 성능 모델을 외부 공개 없이 자체 생산성 향상에만 투입하는 관행이 드러나면서, 공개 모델과 내부 모델 간 격차 및 안전성 검증 수준 차이에 대한 논쟁이 커질 전망이다. 이는 프론티어 모델 경쟁이 이미 '보이지 않는 곳'에서도 진행 중임을 시사한다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">내부 벤치마크(AECI) 기준 Mythos 5 대비 +1.5점</span><span class="key-chip">2026년 8월 리스크 보고서에서 최초 공개</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 앤스로픽의 최강 모델은 대중에게 공개되지 않은 채 내부 생산성에만 쓰이고 있다.</div>
+      <a href="https://the-decoder.com/anthropic-uses-an-unpublished-ai-model-called-model-2-internally/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">오픈AI, 프론티어 모델 데이터 무보관 정책 강화</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">경쟁사 앤스로픽이 Fable 모델 사용자에게 안전 모니터링을 위해 데이터를 30일간 보관하도록 요구해 논란이 인 직후, 오픈AI가 데이터 비보관 원칙을 강화하는 새 안전 처리 방식을 내놓았다. 에이전트형 작업이 길어지면서 단발성 상호작용만 보는 기존 안전 시스템의 한계가 드러난 데 따른 대응이다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">프라이버시 요건이 엄격한 기업 고객을 프론티어 모델 경쟁에 붙잡아두는 핵심 변수로 부상했다. 데이터 보관 정책이 모델 성능 못지않게 기업의 AI 공급사 선택을 좌우하는 요소가 되고 있음을 보여준다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">경쟁사 앤스로픽의 데이터 보관 요구 기간 30일과 대비되는 무보관(0일) 정책</span><span class="key-chip">2026년 8월 19일 발표</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 데이터 보관 정책이 프론티어 모델 경쟁의 새로운 승부처로 떠올랐다.</div>
+      <a href="https://openai.com/index/offering-zero-data-retention-for-frontier-models" class="card-source" target="_blank" rel="noopener">📰 OpenAI</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">빅테크 AI 차입 급증, 국채금리 압박</span>
+        <span class="badge badge-economy">금리</span>
+      </div>
+      <ul class="bullets">
+        <li>알파벳·아마존·메타 3사, 2026년 회사채 발행액 약 2200억 달러로 2025년 전체(1080억 달러)의 두 배 육박</li><li>AI 데이터센터 자금조달 경쟁으로 30년물 미 국채금리 2007년 이후 최고, 10년물은 19개월來 최고치 기록</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ 부정적</span>
+      <a href="https://www.nytimes.com/2026/08/20/business/bond-yields-tech-ai-debt.html" class="card-source" target="_blank" rel="noopener">📰 nytimes.com</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">삼성·SK하이닉스, 사상 최대 주주환원</span>
+        <span class="badge badge-economy">반도체</span>
+      </div>
+      <ul class="bullets">
+        <li>SK하이닉스, 40조원(약 289억 달러) 자사주 전량 소각 발표 — 국내 상장사 사상 최대 규모, AI 메모리 호황이 원동력</li><li>삼성전자도 약 150조원(1084억 달러) 규모 사상 최대 주주환원 준비 중이며, 두 종목 급등에 코스피 6,800 돌파</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ 긍정적</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-08-21/korean-chipmakers-cash-payout-plans-may-drive-won-rally-further" class="card-source" target="_blank" rel="noopener">📰 bloomberg.com</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">AI 쏠림, 주가지수 왜곡 경고</span>
+        <span class="badge badge-economy">시장</span>
+      </div>
+      <ul class="bullets">
+        <li>미국 상위 10개 종목이 전체 시가총액의 약 35% 차지 — 10년 전 18%에서 급등, AI 대형주 쏠림 심화</li><li>패시브 ETF 자금이 소수 AI 대형주로 몰리며 지수가 기업 펀더멘털보다 자금 흐름을 반영한다는 경고 제기</li>
+      </ul>
+      <span class="impact-pill impact-neutral">→ 중립</span>
+      <a href="https://www.economist.com/finance-and-economics/2026/08/18/stock-indices-no-longer-reflect-equity-reality" class="card-source" target="_blank" rel="noopener">📰 economist.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"Zero Data Retention"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ˈzɪər.oʊ ˈdeɪ.tə rɪˈtɛn.ʃən/ [제로 데이터 리텐션]</div>
+      <div class="eng-meaning">→ 요청 처리 후 프롬프트·응답 등 고객 데이터를 전혀 저장하지 않는 AI API 보안 정책</div>
+      <div class="eng-ex">OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing, a system that detects safety risk patterns across related interactions without exposing raw customer content to staff, responding to rival Anthropic's 30-day retention requirement for Fable users.</div>
+      <div class="eng-ex-kr">오픈AI는 적격 API 고객을 위한 제로 데이터 리텐션 정책을 재확인하고, 관련 상호작용 전반의 안전 위험 패턴을 직원에게 원본 콘텐츠를 노출하지 않고 탐지하는 새로운 시스템인 프라이빗 세이프티 프로세싱을 공개했다. 이는 경쟁사 앤스로픽의 Fable 사용자 대상 30일 데이터 보관 요구 정책에 대응한 것이다.</div>
+      <div class="eng-ctx">📌 오픈AI의 '프론티어 모델 데이터 무보관 정책 강화' 발표 기사(openai.com, 직접 접속이 차단되어 ai.json에 저장된 영문 요약문을 사용)에서 등장한 AI 보안 기술 용어이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"compete for investor capital"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">[컴핏 포 인베스터 캐피털]</div>
+      <div class="eng-meaning">→ (기업·정부 등이) 투자자의 자금을 확보하기 위해 서로 경쟁하다</div>
+      <div class="eng-ex">The AI borrowing binge helped push the 30-year Treasury yield to its highest level since 2007 and the 10-year yield to a 19-month high, as tech and government compete for investor capital.</div>
+      <div class="eng-ex-kr">AI 관련 차입 급증은 30년물 미 국채금리를 2007년 이후 최고 수준으로, 10년물은 19개월 만에 최고치로 끌어올렸는데, 이는 빅테크와 정부가 투자자 자본을 두고 경쟁하고 있기 때문이다.</div>
+      <div class="eng-ctx">📌 뉴욕타임스의 '빅테크 AI 차입 급증, 국채금리 압박' 기사(nytimes.com, 직접 접속이 차단되어 economy.json에 저장된 영문 문장을 사용)에서 등장한 비즈니스 표현이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"no longer reflect equity reality"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">[노 롱거 리플렉트 에퀴티 리앨리티]</div>
+      <div class="eng-meaning">→ (지수·지표 등이) 더 이상 실질적인 가치나 현실을 제대로 반영하지 못하다</div>
+      <div class="eng-ex">Stock indices no longer reflect equity reality.</div>
+      <div class="eng-ex-kr">주가지수는 더 이상 주식의 실질 가치를 반영하지 못한다.</div>
+      <div class="eng-ctx">📌 이코노미스트의 'AI 쏠림, 주가지수 왜곡 경고' 기사 원제(economist.com, 직접 접속이 차단되어 economy.json에 저장된 원제를 사용)에서 등장한 담론적 표현으로, 비즈니스 표현에 사용한 뉴욕타임스 기사와는 다른 기사에서 인용했다.</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-08-21-155247 | AI News Card
+  </div>
+
+</div>
+</div>
+  <div class="lang-view view-lang-en " data-lang-view="en">
+  <div class="section-bar">🎨 WEBTOON — AI News Webtoon 2026-08-21</div>
+  
+  <div class="audio-wrap">
+    <div class="audio-title">🎧 Listen to today's news</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-08-21-155247-brief-en.m4a" type="audio/mp4">
+      Your browser does not support audio playback.
+    </audio>
+  </div>
+  <div class="webtoon-wrap">
+    <img src="../images/2026-08-21-155247/page-en.png" alt="AI News Webtoon 2026-08-21"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:32px 14px; text-align:center; color:#93c5fd; font-size:13px; font-weight:600;">🎨 Webtoon is being prepared — coming soon</div>
+  </div>
+  <div class="section-bar" style="margin-top:0;">📰 NEWS CARD — Detailed News Card 2026-08-21</div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">Today's AI News</div>
+        <div class="header-sub">News · Analysis · Markets · English Expressions</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-08-21-155247</div>
+      <div class="header-edition">No. 078</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — Top 3 Stories</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">OpenAI Narrows Anthropic's Lead in Business Users</span>
+        <span class="badge badge-ai">LLM</span>
+      </div>
+      <ul class="bullets">
+        <li>Per Ramp data, Anthropic overtook OpenAI in May (41% vs 39%) and led 44% to 40% by July</li><li>OpenAI is growing faster than Anthropic quarter-to-date in Q3, based on 70,000+ US business accounts</li><li>Developers increasingly favor GPT-5.6 Sol, while Anthropic's Fable 5 adoption slowed over pricing and data retention rules</li>
+      </ul>
+      <a href="https://techcrunch.com/2026/08/20/openai-is-gaining-on-anthropic-with-business-users-new-data-indicates/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">Anthropic Keeps Its Strongest Model, "Model 2," Internal Only</span>
+        <span class="badge badge-ai">LLM</span>
+      </div>
+      <ul class="bullets">
+        <li>Disclosed in Anthropic's August 2026 Risk Report; scores 1.5 points above Mythos 5 on its internal AECI benchmark</li><li>Used heavily and continuously via agents for coding, data generation, and research/engineering — Claude now writes most of Anthropic's production code</li><li>No external release planned; misalignment risk rated "low," though testing was less extensive than for Mythos 5</li>
+      </ul>
+      <a href="https://the-decoder.com/anthropic-uses-an-unpublished-ai-model-called-model-2-internally/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">OpenAI Reinforces Zero Data Retention for Frontier Models</span>
+        <span class="badge badge-ai">Safety Tech</span>
+      </div>
+      <ul class="bullets">
+        <li>Reaffirms Zero Data Retention for eligible API customers — no prompt or response storage after processing</li><li>Previews new "Private Safety Processing," which detects risk patterns across related interactions rather than single ones</li><li>Customer content stays on customer-controlled infrastructure; automated systems surface safety signals without staff access to raw content</li>
+      </ul>
+      <a href="https://openai.com/index/offering-zero-data-retention-for-frontier-models" class="card-source" target="_blank" rel="noopener">📰 OpenAI</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — Why It Matters</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">OpenAI Narrows Anthropic's Lead in Business Users</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">Background</div>
+        <div class="detail-txt">Corporate card and expense platform Ramp analyzed its business customers' AI spending, finding that OpenAI and Anthropic's enterprise market share has flipped month to month. It's a rare hard data point given neither company has gone public yet.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">Why it matters</div>
+        <div class="detail-txt">The data shows enterprise AI spend is not sticky and swings with model quality, forcing investors in both companies to reassess revenue durability. Model quality plus pricing and data policy now translate directly into market share shifts.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">Anthropic at 44% share vs OpenAI's 40% as of July</span><span class="key-chip">Data covers 70,000+ US businesses</span>
+      </div>
+      
+
+      <div class="takeaway">▶ The enterprise AI market remains fluid, with no permanent winner yet.</div>
+      <a href="https://techcrunch.com/2026/08/20/openai-is-gaining-on-anthropic-with-business-users-new-data-indicates/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">Anthropic Keeps Its Strongest Model, "Model 2," Internal Only</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">Background</div>
+        <div class="detail-txt">In its regular risk report, Anthropic disclosed for the first time that it runs an internal-only model called "Model 2," placed in the Mythos class and described as more capable than any publicly released Claude version.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">Why it matters</div>
+        <div class="detail-txt">The disclosure that a leading AI lab keeps its most capable model purely for internal productivity gains, without public release, raises questions about the safety-testing gap between public and internal models. It signals frontier model competition is already advancing out of public view.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">+1.5 points above Mythos 5 on internal AECI benchmark</span><span class="key-chip">First disclosed in the August 2026 Risk Report</span>
+      </div>
+      
+
+      <div class="takeaway">▶ Anthropic's most powerful model stays hidden, powering only its own internal productivity.</div>
+      <a href="https://the-decoder.com/anthropic-uses-an-unpublished-ai-model-called-model-2-internally/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">OpenAI Reinforces Zero Data Retention for Frontier Models</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">Background</div>
+        <div class="detail-txt">The announcement follows controversy over rival Anthropic requiring Fable model users to allow 30-day data retention for safety monitoring. It responds to a gap exposed as agentic tasks grow longer: existing safety systems only evaluate single interactions.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">Why it matters</div>
+        <div class="detail-txt">Data-retention policy is emerging as a decisive lever in enterprise AI vendor selection, on par with model performance, especially for privacy-sensitive business customers evaluating frontier-model providers.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">Zero-day retention policy contrasts with rival Anthropic's 30-day requirement</span><span class="key-chip">Announced August 19, 2026</span>
+      </div>
+      
+
+      <div class="takeaway">▶ Data-retention policy has become a new battleground in the frontier-model race.</div>
+      <a href="https://openai.com/index/offering-zero-data-retention-for-frontier-models" class="card-source" target="_blank" rel="noopener">📰 OpenAI</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — Markets & Finance</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">Big Tech's AI Borrowing Binge Pushes Up Bond Yields</span>
+        <span class="badge badge-economy">Rates</span>
+      </div>
+      <ul class="bullets">
+        <li>Alphabet, Amazon and Meta together sold nearly $220B in bonds in 2026, almost double 2025's full-year $108B, to fund AI infrastructure buildout.</li><li>The AI borrowing binge helped push the 30-year Treasury yield to its highest level since 2007 and the 10-year yield to a 19-month high, as tech and government compete for investor capital.</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ Negative</span>
+      <a href="https://www.nytimes.com/2026/08/20/business/bond-yields-tech-ai-debt.html" class="card-source" target="_blank" rel="noopener">📰 nytimes.com</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">Samsung, SK Hynix Plan Record Shareholder Payouts</span>
+        <span class="badge badge-economy">Semiconductors</span>
+      </div>
+      <ul class="bullets">
+        <li>SK Hynix announced a record 40 trillion won ($28.9B) full share buyback and retirement, the largest ever by a listed Korean company, funded by the AI-memory profit boom.</li><li>Samsung Electronics is preparing a roughly 150 trillion won ($108.4B) shareholder return package, the largest in Korean corporate history, with both stocks' rally pushing the KOSPI past 6,800.</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ Positive</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-08-21/korean-chipmakers-cash-payout-plans-may-drive-won-rally-further" class="card-source" target="_blank" rel="noopener">📰 bloomberg.com</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">AI Concentration Distorts Stock Indices, Economist Warns</span>
+        <span class="badge badge-economy">Markets</span>
+      </div>
+      <ul class="bullets">
+        <li>The top 10 US stocks now make up about 35% of total market cap, up from 18% a decade ago, as AI megacaps dominate benchmark indices.</li><li>Analysts warn passive ETF flows into a handful of AI giants mean major indices increasingly track capital flows rather than underlying corporate fundamentals.</li>
+      </ul>
+      <span class="impact-pill impact-neutral">→ Neutral</span>
+      <a href="https://www.economist.com/finance-and-economics/2026/08/18/stock-indices-no-longer-reflect-equity-reality" class="card-source" target="_blank" rel="noopener">📰 economist.com</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 3 News Expressions</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"Zero Data Retention"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ˈzɪər.oʊ ˈdeɪ.tə rɪˈtɛn.ʃən/ [제로 데이터 리텐션]</div>
+      <div class="eng-meaning">→ 요청 처리 후 프롬프트·응답 등 고객 데이터를 전혀 저장하지 않는 AI API 보안 정책</div>
+      <div class="eng-ex">OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing, a system that detects safety risk patterns across related interactions without exposing raw customer content to staff, responding to rival Anthropic's 30-day retention requirement for Fable users.</div>
+      <div class="eng-ex-kr">OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing, a system that detects safety risk patterns across related interactions without exposing raw customer content to staff, responding to rival Anthropic's 30-day retention requirement for Fable users.</div>
+      <div class="eng-ctx">📌 오픈AI의 '프론티어 모델 데이터 무보관 정책 강화' 발표 기사(openai.com, 직접 접속이 차단되어 ai.json에 저장된 영문 요약문을 사용)에서 등장한 AI 보안 기술 용어이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"compete for investor capital"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">[컴핏 포 인베스터 캐피털]</div>
+      <div class="eng-meaning">→ (기업·정부 등이) 투자자의 자금을 확보하기 위해 서로 경쟁하다</div>
+      <div class="eng-ex">The AI borrowing binge helped push the 30-year Treasury yield to its highest level since 2007 and the 10-year yield to a 19-month high, as tech and government compete for investor capital.</div>
+      <div class="eng-ex-kr">The AI borrowing binge helped push the 30-year Treasury yield to its highest level since 2007 and the 10-year yield to a 19-month high, as tech and government compete for investor capital.</div>
+      <div class="eng-ctx">📌 뉴욕타임스의 '빅테크 AI 차입 급증, 국채금리 압박' 기사(nytimes.com, 직접 접속이 차단되어 economy.json에 저장된 영문 문장을 사용)에서 등장한 비즈니스 표현이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"no longer reflect equity reality"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">[노 롱거 리플렉트 에퀴티 리앨리티]</div>
+      <div class="eng-meaning">→ (지수·지표 등이) 더 이상 실질적인 가치나 현실을 제대로 반영하지 못하다</div>
+      <div class="eng-ex">Stock indices no longer reflect equity reality.</div>
+      <div class="eng-ex-kr">Stock indices no longer reflect equity reality.</div>
+      <div class="eng-ctx">📌 이코노미스트의 'AI 쏠림, 주가지수 왜곡 경고' 기사 원제(economist.com, 직접 접속이 차단되어 economy.json에 저장된 원제를 사용)에서 등장한 담론적 표현으로, 비즈니스 표현에 사용한 뉴욕타임스 기사와는 다른 기사에서 인용했다.</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Auto-generated | Sources: RSS feeds | 2026-08-21-155247 | AI News Card
+  </div>
+
+</div>
+</div>
+  <script>
+    (function () {
+      const buttons = document.querySelectorAll('[data-lang-button]');
+      const views = document.querySelectorAll('[data-lang-view]');
+      function setLang(lang) {
+        buttons.forEach((button) => button.classList.toggle('active', button.dataset.langButton === lang));
+        views.forEach((view) => view.classList.toggle('active', view.dataset.langView === lang));
+        document.documentElement.lang = lang;
+      }
+      buttons.forEach((button) => button.addEventListener('click', () => setLang(button.dataset.langButton)));
+    })();
+  </script>
+</div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+  <script>
+    (() => {
+      const setLang = (lang) => {
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-lang-button]').forEach((button) => {
+          button.classList.toggle('active', button.dataset.langButton === lang);
+        });
+        document.querySelectorAll('[data-lang-view]').forEach((view) => {
+          view.classList.toggle('active', view.dataset.langView === lang);
+        });
+      };
+      document.addEventListener('click', (event) => {
+        const button = event.target.closest('[data-lang-button]');
+        if (button) setLang(button.dataset.langButton || 'ko');
+      });
+      setLang(document.documentElement.lang || 'ko');
+    })();
+  </script>
+</body>
+</html>
