@@ -24,6 +24,9 @@ MacsALogs의 기술 구조와 기능 명세입니다. 변경 시 해당 섹션�
 | `docs/js/app.js` | `posts.json` fetch → 포스트 카드 DOM 삽입 |
 | `docs/posts/posts.json` | 포스트 메타데이터 목록 (수동 관리, 최신순) |
 | `docs/posts/*.html` | 개별 포스트 HTML |
+| `docs/opic.html` | OPIc 음원 페이지 (포스트가 아닌 독립 페이지) |
+| `docs/js/opic.js` | 오픽 재생목록 렌더링 + 하단 고정 플레이어 |
+| `docs/audio/opic/<주제>/*.mp3` | OPIc 스토리 음원 |
 
 ## posts.json 스키마
 
@@ -38,6 +41,40 @@ MacsALogs의 기술 구조와 기능 명세입니다. 변경 시 해당 섹션�
     "readTime": "3분"                  // 선택
   }
 ]
+```
+
+## OPIc 음원 페이지 (`docs/opic.html`)
+
+포스트가 아닌 **독립 페이지**입니다. 날짜순으로 흘러가면 안 되고 모바일에서 반복
+접속하는 학습용 도구이므로, `posts.json`에 넣지 않고 상단 내비게이션에 고정했습니다.
+
+- 재생목록 데이터는 페이지 안에 **인라인 JSON**으로 들어갑니다
+  (`<!-- OPIC-DATA:START -->` ~ `END` 마커 사이, `id="opic-data"`).
+  사내 GitHub Enterprise에서도 열리도록 `fetch()`에 의존하지 않는 기존 방침과 같습니다.
+- 이 블록은 **손으로 고치지 않습니다.** `tts-maker` 저장소의
+  `scripts/publish_blog.py`가 음원 복사와 함께 자동 생성합니다.
+- 음원 생성 자체는 `tts-maker`(Kokoro TTS)가 담당하며, 이 저장소는 결과물만 서빙합니다.
+
+### 데이터 스키마
+
+```jsonc
+{
+  "generated": "YYYY-MM-DD",
+  "voice": "af_heart",          // Kokoro 음성 이름
+  "engine": "Kokoro-82M",
+  "topics": [{
+    "topic": "Overseas Trips",   // md의 H1
+    "slug": "overseas-trips",
+    "stories": [{
+      "title": "...",            // md의 H2
+      "index": 1,
+      "audio": "audio/opic/overseas-trips/01-....mp3",
+      "duration": 85.4,          // 초
+      "bytes": 1366401,
+      "paragraphs": ["...", "..."]   // 스크립트 본문 (접었다 펼치는 영역)
+    }]
+  }]
+}
 ```
 
 ## 스타일 시스템
@@ -68,4 +105,4 @@ MacsALogs의 기술 구조와 기능 명세입니다. 변경 시 해당 섹션�
 
 ---
 
-_최종 수정: 2026-06-28_
+_최종 수정: 2026-08-31_

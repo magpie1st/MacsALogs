@@ -14,6 +14,7 @@ MacsALogs는 AI 개발·생산성·취미를 기록하는 개인 블로그입니
 - `docs/css/style.css` — 전체 스타일 (CSS 변수로 테마 관리)
 - `docs/js/app.js` — 메인 페이지 포스트 목록 로딩
 - `WORKLOG.md` — 내부 작업 일지 (블로그 노출 없음)
+- `docs/opic.html` — OPIc 음원 페이지 (포스트 아님, 내비게이션 고정)
 
 ## 새 포스트 추가 절차
 
@@ -24,6 +25,19 @@ MacsALogs는 AI 개발·생산성·취미를 기록하는 개인 블로그입니
 
 > `index.html`에 인라인 데이터가 있는 이유: GitHub Pages(Samsung GHE)에서 `fetch()`가 차단될 수 있어
 > `fetch()` 없이 DOM에서 직접 JSON을 읽도록 설계되었음.
+
+## OPIc 음원 페이지
+
+`docs/opic.html`의 `<!-- OPIC-DATA:START -->` ~ `END` 사이 JSON은 **자동 생성 영역이다.
+손으로 고치지 말 것.** 음원 추가·갱신은 `tts-maker` 저장소에서 실행한다.
+
+```bash
+cd /home/magpie/Workspace/dev/macGitHub/tts-maker
+uv run tts-maker <스크립트.md>                    # mp3 생성
+uv run python scripts/publish_blog.py             # 음원 복사 + opic.html 갱신
+```
+
+그 뒤 이 저장소에서 커밋·푸시하면 반영된다.
 
 ## 스타일 규칙
 

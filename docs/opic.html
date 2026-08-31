@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
+  <meta name="description" content="OPIc 답변 스크립트를 Kokoro TTS로 읽은 음원 모음. 모바일에서 바로 듣고 스크립트를 확인할 수 있습니다." />
+  <title>OPIc 내 스토리 음원 — MacsALogs</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="index.html">홈</a>
+        <a href="opic.html">오픽</a>
+        <a href="about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="opic-hero">
+      <h1>OPIc 내 스토리 음원</h1>
+      <p class="opic-hero-sub">
+        직접 쓴 OPIc 답변 스크립트를 Kokoro TTS로 읽은 음원입니다.
+        제목을 누르면 재생되고, 화면 아래 플레이어에서 배속과 구간 반복을 조절할 수 있습니다.
+      </p>
+      <div class="opic-stats" id="opic-stats"></div>
+    </section>
+
+    <div class="opic-topics" id="opic-list">
+      <div class="empty-state"><p>재생목록을 불러오는 중…</p></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank" rel="noopener">GitHub</a></p>
+    </div>
+  </footer>
+
+  <!-- 하단 고정 플레이어 -->
+  <div class="opic-player" id="opic-player" hidden>
+    <div class="container">
+      <div class="opic-player-title" id="opic-now-title"></div>
+      <div class="opic-player-topic" id="opic-now-topic"></div>
+
+      <div class="opic-seek-row">
+        <span class="opic-time" id="opic-elapsed">0:00</span>
+        <input type="range" class="opic-seek" id="opic-seek"
+               min="0" max="1000" value="0" step="1" aria-label="재생 위치" />
+        <span class="opic-time" id="opic-total">0:00</span>
+      </div>
+
+      <div class="opic-controls">
+        <button type="button" class="opic-btn" id="opic-loop" aria-pressed="false" title="한 곡 반복">반복</button>
+        <button type="button" class="opic-btn" id="opic-prev" aria-label="이전 스토리" title="이전 스토리">◀︎◀︎</button>
+        <button type="button" class="opic-btn" id="opic-back" aria-label="10초 뒤로" title="10초 뒤로">-10초</button>
+        <button type="button" class="opic-btn opic-btn--play" id="opic-play" aria-label="재생">▶︎</button>
+        <button type="button" class="opic-btn" id="opic-next" aria-label="다음 스토리" title="다음 스토리">▶︎▶︎</button>
+        <button type="button" class="opic-btn" id="opic-speed" title="재생 속도">1×</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 아래 블록은 tts-maker/scripts/publish_blog.py 가 자동 생성합니다. 직접 수정하지 마세요. -->
+  <!-- OPIC-DATA:START -->
+  <script type="application/json" id="opic-data">
+{
+  "generated": "2026-08-31",
+  "voice": "af_heart",
+  "engine": "Kokoro-82M",
+  "topics": [
+    {
+      "topic": "Narration, Experience",
+      "slug": "narration-experience",
+      "stories": [
+        {
+          "title": "The Back Injury That Sent Me to the ER",
+          "index": 1,
+          "audio": "audio/opic/narration-experience/01-the-back-injury-that-sent-me-to-the-er.mp3",
+          "duration": 66.9,
+          "bytes": 1071501,
+          "paragraphs": [
+            "While I was doing the recycling, I took out both recyclables and regular garbage. They weren't too heavy or anything. But as I was tossing them away, I suddenly felt this sharp pain in my back. It was intense, and I couldn't even stand up on my own. So, I ended up just lying there on the street, feeling frustrated and annoyed by the whole situation.",
+            "Luckily, some neighbors happened to notice me and came over to help. They lent a hand and got me back home. I waited for around 30 minutes, hoping the pain would ease up, but unfortunately, it didn't get any better. That's when I decided to dial 911 and get myself to a doctor.",
+            "Turns out, I was diagnosed with a spinal injury, and I had to stay in the hospital for three days. Once I finally returned home, I bumped into a few concerned neighbors who asked if I was okay. I felt a bit embarrassed, but I mustered up a \"Thank you so much\" to show my appreciation.",
+            "It was definitely an unexpected turn of events in my life, and I never imagined I'd have to make that 911 call."
+          ]
+        },
+        {
+          "title": "The Time My Car Got Flooded",
+          "index": 2,
+          "audio": "audio/opic/narration-experience/02-the-time-my-car-got-flooded.mp3",
+          "duration": 95.5,
+          "bytes": 1528450,
+          "paragraphs": [
+            "Hey, has your car ever been flooded before? Let me tell you about this crazy incident from when I was in my twenties. I was on a vacation from the army and wanted to give my then-girlfriend a ride home (who, by the way, is now my wife). Now, here's the kicker-I took my dad's car without asking for permission because I was pretty confident in my driving skills.",
+            "So, off we went, enjoying the ride until, out of nowhere, a heavy downpour started. And guess what? We ended up in a flooded area. Now, normally I would have stopped, but there were so many cars behind me that I felt pressured to keep going.",
+            "And then it happened-the moment I'll never forget. A bus coming from the opposite lane splashed water all over my car. Can you believe it? The engine died, and my car started floating in the water. Panic set in as water began seeping into the cabin through the dashboard. Without thinking straight, I flung the door open, letting even more water rush in and completely wreck the car.",
+            "Thankfully, I managed to push the car up to a nearby hill and waited there for what seemed like ages for my father to arrive. When he finally showed up, he was beyond furious. I had to apologize profusely, over and over again. The repairs cost a small fortune and took a whole week to get the car back in shape. I felt so guilty and regretful for what I had put my father through.",
+            "Man, that was one crazy adventure I never expected when I took that car out for a spin. Lesson learned the hard way, my friend."
+          ]
+        },
+        {
+          "title": "Walking Out of a Late-Night Movie for My Son",
+          "index": 3,
+          "audio": "audio/opic/narration-experience/03-walking-out-of-a-late-night-movie-for-my-son.mp3",
+          "duration": 76.7,
+          "bytes": 1227027,
+          "paragraphs": [
+            "So this happened forever ago - my first kid, who's actually in college now, was like three years old back then. It was during a holiday, and we were at my parents' place. My wife and I were just so worn out from taking care of him that we decided to sneak out without him even knowing, just the two of us, and catch a late-night movie while he was fast asleep.",
+            "We ended up watching this Korean omnibus film called Good Morning President. And then, right in the middle of the movie, my phone started buzzing. The second I saw it ringing, I just had this gut feeling - yep, he's woken up. I hesitated for a bit before picking up, and sure enough, my parents told me he wouldn't stop crying and kept calling out for his mom.",
+            "So we ended up just walking out of the theater right in the middle of the movie - we didn't even get to see how it ended - and rushed back to my parents' place. When we got there, he was still crying his eyes out, calling for his mom. But the second she picked him up, he just stopped crying, like magic.",
+            "Even now, when I'm hanging out with friends, this story comes up every once in a while, and we just laugh about how our oldest was such a terrible sleeper. But funny enough, to this day, I still haven't gotten around to finishing that movie."
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "Overseas Trips",
+      "slug": "overseas-trips",
+      "stories": [
+        {
+          "title": "1. A Trip I'm Planning — Vienna",
+          "index": 1,
+          "audio": "audio/opic/overseas-trips/01-1-a-trip-i-m-planning-vienna.mp3",
+          "duration": 85.4,
+          "bytes": 1366401,
+          "paragraphs": [
+            "Actually, I have a trip coming up. My wife and I are flying to Vienna, Austria on February 1st, and to be honest, the way we picked the destination is a little funny.",
+            "The whole thing started because I wanted to fly business class. I looked up flights to all kinds of countries, but finding available business-class seats turned out to be really hard. Vienna just happened to be the one place where I could actually book them, so that's where we're going. I booked the flight first and worried about everything else later - I still don't have much of a plan.",
+            "But here's the thing. After I booked it, I started reading stories from people who'd traveled around Austria, and the more I read, the more I realized Vienna might be the perfect place for us. Everyone talks about the cafés, the music, the classical concerts. It sounds like a genuinely beautiful city.",
+            "And there's one more reason this trip matters. February 5th will be the 30th anniversary of the day my wife and I first met. So this isn't just a vacation - it's kind of a milestone for us.",
+            "That's why I'm not trying to pack the schedule. What I really want is something relaxing, but with a little excitement too. I want to feel that sense of romance again, almost like having butterflies in my stomach when I'm with her. If we get one memorable evening together on February 5th, that alone would make the whole trip worth it."
+          ]
+        },
+        {
+          "title": "2. What I Like to Do When I Travel Abroad",
+          "index": 2,
+          "audio": "audio/opic/overseas-trips/02-2-what-i-like-to-do-when-i-travel-abroad.mp3",
+          "duration": 126.4,
+          "bytes": 2023433,
+          "paragraphs": [
+            "When I visit another country, I'm not really the type who runs around checking off famous landmarks. What I enjoy most is just soaking up the atmosphere of the place.",
+            "If I picture a perfect day on this upcoming trip, it goes something like this. We wake up late - no alarm, no rush. I kiss my wife to wake her up, we have breakfast at the hotel restaurant, take a shower, and head outside. And then we just walk through the streets with no particular destination, looking at the cafés and watching people go by.",
+            "Now, I am a little worried about the weather, because February in Vienna has to be freezing. But I've decided to think of that as part of the experience instead of a problem. We walk around until we're cold, duck into a warm Viennese café, take off our coats, order coffee and cake, and sit there together for an hour before heading back out. Maybe there'll even be a bit of snow. That cozy winter feeling is exactly what I'm after.",
+            "There's one thing I'm especially curious about, though. Vienna has this long tradition called ball culture, and February is the heart of the ball season. These aren't just dance parties - they're held in gorgeous historic buildings with live orchestras and formal dress, and at some point someone announces \"Alles Walzer!\", which basically means \"Everybody waltz!\", and the floor opens up to everyone.",
+            "Honestly, if I had the chance, I'd love to dance a waltz. But actually attending one would mean renting formalwear, dealing with the dress code, buying tickets - it starts to feel like too much planning for a trip that's supposed to be relaxing.",
+            "So here's what we'll probably do instead. On a big ball night, we'll have dinner somewhere near the State Opera, walk around the area in the evening, and watch people arriving in tuxedos and evening gowns. I'd like to experience the atmosphere without actually going in - just soak it up from outside. Before we leave, I'm planning to watch some vlogs about it with my wife, and then we can decide together whether that's enough for us. I have a feeling it will be."
+          ]
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <!-- OPIC-DATA:END -->
+
+  <script src="js/opic.js"></script>
+</body>
+</html>
