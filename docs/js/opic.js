@@ -113,8 +113,15 @@
     markPlaying();
   }
 
+  /* 목록 끝에서 반대편으로 넘어간다 (전체 순환) */
+  function wrap(index) {
+    var n = tracks.length;
+    return ((index % n) + n) % n;
+  }
+
   function play(index) {
-    if (index < 0 || index >= tracks.length) return;
+    if (!tracks.length) return;
+    index = wrap(index);
     if (index !== current) {
       current = index;
       audio.src = tracks[index].audio;
@@ -127,8 +134,6 @@
     audio.playbackRate = SPEEDS[speedIndex];
     document.body.classList.add('has-player');
     el.player.hidden = false;
-    el.prev.disabled = current <= 0;
-    el.next.disabled = current >= tracks.length - 1;
     audio.play().catch(function (err) { console.error('재생 실패', err); });
   }
 
@@ -156,11 +161,9 @@
       savePrefs();
     });
 
-    el.loop.addEventListener('click', function () {
-      looping = !looping;
+    el.loop.addEventListener('change', function () {
+      looping = el.loop.checked;
       audio.loop = looping;
-      el.loop.classList.toggle('is-active', looping);
-      el.loop.setAttribute('aria-pressed', String(looping));
       savePrefs();
     });
 
@@ -178,9 +181,10 @@
     });
     audio.addEventListener('play', updatePlayButton);
     audio.addEventListener('pause', updatePlayButton);
+    // 반복이 켜져 있으면 audio.loop가 처리하므로 ended 자체가 발생하지 않는다.
+    // 꺼져 있을 때만 다음 곡으로 넘어가고, 마지막 곡 뒤에는 처음으로 돌아간다.
     audio.addEventListener('ended', function () {
-      if (!looping && current < tracks.length - 1) play(current + 1);
-      else updatePlayButton();
+      play(current + 1);
     });
     audio.addEventListener('error', function () {
       el.topic.textContent = '음원을 불러오지 못했습니다';
@@ -249,8 +253,7 @@
     audio.preload = 'metadata';
     audio.loop = looping;
     el.speed.textContent = SPEEDS[speedIndex] + '×';
-    el.loop.classList.toggle('is-active', looping);
-    el.loop.setAttribute('aria-pressed', String(looping));
+    el.loop.checked = looping;
 
     bindControls();
   }

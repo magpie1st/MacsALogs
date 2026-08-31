@@ -14,7 +14,7 @@ MacsALogs는 AI 개발·생산성·취미를 기록하는 개인 블로그입니
 - `docs/css/style.css` — 전체 스타일 (CSS 변수로 테마 관리)
 - `docs/js/app.js` — 메인 페이지 포스트 목록 로딩
 - `WORKLOG.md` — 내부 작업 일지 (블로그 노출 없음)
-- `docs/opic.html` — OPIc 음원 페이지 (포스트 아님, 내비게이션 고정)
+- `docs/opic.html` — OPIc 음원 페이지 (포스트 아님. 내비게이션에도 없고 URL로만 접근)
 
 ## 새 포스트 추가 절차
 
