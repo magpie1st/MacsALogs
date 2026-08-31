@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오늘의 AI 뉴스 — 2026-08-31 / Today's AI News — 2026-08-31 — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    @media (max-width: 799px) { .view-desktop { display: none; } }
+    @media (min-width: 800px) { .view-mobile { display: none; } }
+    .view-desktop { max-width: 100%; overflow-x: auto; }
+    html[lang="ko"] .i18n-en, html[lang="en"] .i18n-ko { display: none !important; }
+    html[lang="ko"] .view-lang-en, html[lang="en"] .view-lang-ko { display: none !important; }
+    html[lang="en"] .view-lang-en, html[lang="ko"] .view-lang-ko { display: block !important; }
+    .post-lang-switch { display:flex; gap:8px; flex-wrap:wrap; margin:1rem 0 0; }
+    .post-lang-switch button { border:1px solid #c7d2fe; background:#eef2ff; color:#3730a3; border-radius:999px; padding:6px 12px; font-weight:700; cursor:pointer; }
+    html[lang="ko"] [data-lang-button="ko"], html[lang="en"] [data-lang-button="en"] { background:#4f46e5; color:#fff; border-color:#4f46e5; }
+    .view-mobile .view-lang-ko {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: #eef0f5;
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.5;
+  }.view-mobile .view-lang-ko .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px 12px 24px;
+  }.view-mobile .view-lang-ko .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }.view-mobile .view-lang-ko .header-logo { font-size: 28px; margin-right: 10px; }.view-mobile .view-lang-ko .header-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }.view-mobile .view-lang-ko .header-sub { font-size: 11px; opacity: 0.75; margin-top: 2px; }.view-mobile .view-lang-ko .header-date { font-size: 13px; font-weight: 700; text-align: right; }.view-mobile .view-lang-ko .header-edition { font-size: 10px; opacity: 0.65; margin-top: 2px; text-align: right; }.view-mobile .view-lang-ko .sec-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }.view-mobile .view-lang-ko .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+  }.view-mobile .view-lang-ko .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }.view-mobile .view-lang-ko .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-mobile .view-lang-ko .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-mobile .view-lang-ko .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-mobile .view-lang-ko .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-mobile .view-lang-ko .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }.view-mobile .view-lang-ko .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }.view-mobile .view-lang-ko .num-ai { background: #e0e7ff; color: #3730a3; }.view-mobile .view-lang-ko .num-detail { background: #ede9fe; color: #5b21b6; }.view-mobile .view-lang-ko .num-economy { background: #d1fae5; color: #065f46; }.view-mobile .view-lang-ko .num-english { background: #fef3c7; color: #92400e; }.view-mobile .view-lang-ko .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    flex: 1;
+  }.view-mobile .view-lang-ko .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }.view-mobile .view-lang-ko .badge-ai { background: #e0e7ff; color: #4338ca; }.view-mobile .view-lang-ko .badge-detail { background: #ede9fe; color: #6d28d9; }.view-mobile .view-lang-ko .badge-economy { background: #d1fae5; color: #065f46; }.view-mobile .view-lang-ko .badge-english { background: #fef3c7; color: #92400e; }.view-mobile .view-lang-ko .bullets { list-style: none; margin: 4px 0 6px; }.view-mobile .view-lang-ko .bullets li {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.55;
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }.view-mobile .view-lang-ko .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    top: 5px;
+  }.view-mobile .view-lang-ko .card-ai     .bullets li::before { color: #6366f1; }.view-mobile .view-lang-ko .card-detail .bullets li::before { color: #7c3aed; }.view-mobile .view-lang-ko .card-economy .bullets li::before { color: #059669; }.view-mobile .view-lang-ko .card-source {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-mobile .view-lang-ko .card-source:hover { color: #64748b; text-decoration: underline; }.view-mobile .view-lang-ko .detail-block { margin-bottom: 8px; }.view-mobile .view-lang-ko .detail-lbl {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 3px;
+  }.view-mobile .view-lang-ko .detail-txt {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.55;
+  }.view-mobile .view-lang-ko .key-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }.view-mobile .view-lang-ko .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }.view-mobile .view-lang-ko .takeaway {
+    background: #f8f7ff;
+    border-left: 3px solid #8b5cf6;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 6px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+  }.view-mobile .view-lang-ko .impact-pill {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 6px;
+  }.view-mobile .view-lang-ko .impact-positive { background: #dcfce7; color: #166534; }.view-mobile .view-lang-ko .impact-negative { background: #fee2e2; color: #991b1b; }.view-mobile .view-lang-ko .impact-neutral { background: #f1f5f9; color: #475569; }.view-mobile .view-lang-ko .eng-phrase {
+    font-size: 22px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-mobile .view-lang-ko .eng-pron {
+    font-size: 14px;
+    color: #b45309;
+    font-family: monospace;
+    margin-bottom: 6px;
+  }.view-mobile .view-lang-ko .eng-meaning {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }.view-mobile .view-lang-ko .eng-ex {
+    font-size: 15px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.6;
+    background: #fffbeb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #fbbf24;
+    margin-bottom: 6px;
+  }.view-mobile .view-lang-ko .eng-ex-kr {
+    font-size: 14px;
+    color: #78716c;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }.view-mobile .view-lang-ko .eng-ctx {
+    font-size: 14px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 6px 10px;
+    border-radius: 6px;
+    line-height: 1.5;
+  }.view-mobile .view-lang-ko .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+.view-mobile .view-lang-en {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: #eef0f5;
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.5;
+  }.view-mobile .view-lang-en .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px 12px 24px;
+  }.view-mobile .view-lang-en .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }.view-mobile .view-lang-en .header-logo { font-size: 28px; margin-right: 10px; }.view-mobile .view-lang-en .header-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }.view-mobile .view-lang-en .header-sub { font-size: 11px; opacity: 0.75; margin-top: 2px; }.view-mobile .view-lang-en .header-date { font-size: 13px; font-weight: 700; text-align: right; }.view-mobile .view-lang-en .header-edition { font-size: 10px; opacity: 0.65; margin-top: 2px; text-align: right; }.view-mobile .view-lang-en .sec-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }.view-mobile .view-lang-en .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+  }.view-mobile .view-lang-en .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }.view-mobile .view-lang-en .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-mobile .view-lang-en .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-mobile .view-lang-en .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-mobile .view-lang-en .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-mobile .view-lang-en .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }.view-mobile .view-lang-en .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }.view-mobile .view-lang-en .num-ai { background: #e0e7ff; color: #3730a3; }.view-mobile .view-lang-en .num-detail { background: #ede9fe; color: #5b21b6; }.view-mobile .view-lang-en .num-economy { background: #d1fae5; color: #065f46; }.view-mobile .view-lang-en .num-english { background: #fef3c7; color: #92400e; }.view-mobile .view-lang-en .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    flex: 1;
+  }.view-mobile .view-lang-en .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }.view-mobile .view-lang-en .badge-ai { background: #e0e7ff; color: #4338ca; }.view-mobile .view-lang-en .badge-detail { background: #ede9fe; color: #6d28d9; }.view-mobile .view-lang-en .badge-economy { background: #d1fae5; color: #065f46; }.view-mobile .view-lang-en .badge-english { background: #fef3c7; color: #92400e; }.view-mobile .view-lang-en .bullets { list-style: none; margin: 4px 0 6px; }.view-mobile .view-lang-en .bullets li {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.55;
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }.view-mobile .view-lang-en .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    top: 5px;
+  }.view-mobile .view-lang-en .card-ai     .bullets li::before { color: #6366f1; }.view-mobile .view-lang-en .card-detail .bullets li::before { color: #7c3aed; }.view-mobile .view-lang-en .card-economy .bullets li::before { color: #059669; }.view-mobile .view-lang-en .card-source {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-mobile .view-lang-en .card-source:hover { color: #64748b; text-decoration: underline; }.view-mobile .view-lang-en .detail-block { margin-bottom: 8px; }.view-mobile .view-lang-en .detail-lbl {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 3px;
+  }.view-mobile .view-lang-en .detail-txt {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.55;
+  }.view-mobile .view-lang-en .key-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }.view-mobile .view-lang-en .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }.view-mobile .view-lang-en .takeaway {
+    background: #f8f7ff;
+    border-left: 3px solid #8b5cf6;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 6px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+  }.view-mobile .view-lang-en .impact-pill {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 6px;
+  }.view-mobile .view-lang-en .impact-positive { background: #dcfce7; color: #166534; }.view-mobile .view-lang-en .impact-negative { background: #fee2e2; color: #991b1b; }.view-mobile .view-lang-en .impact-neutral { background: #f1f5f9; color: #475569; }.view-mobile .view-lang-en .eng-phrase {
+    font-size: 22px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-mobile .view-lang-en .eng-pron {
+    font-size: 14px;
+    color: #b45309;
+    font-family: monospace;
+    margin-bottom: 6px;
+  }.view-mobile .view-lang-en .eng-meaning {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }.view-mobile .view-lang-en .eng-ex {
+    font-size: 15px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.6;
+    background: #fffbeb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #fbbf24;
+    margin-bottom: 6px;
+  }.view-mobile .view-lang-en .eng-ex-kr {
+    font-size: 14px;
+    color: #78716c;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }.view-mobile .view-lang-en .eng-ctx {
+    font-size: 14px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 6px 10px;
+    border-radius: 6px;
+    line-height: 1.5;
+  }.view-mobile .view-lang-en .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+    .view-desktop .lang-switch {
+    width: 100%; max-width: 860px; margin: 0 auto; padding: 10px 12px;
+    display: flex; justify-content: flex-end; gap: 8px; background: #0f172a;
+  }.view-desktop .lang-switch button { border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; padding: 7px 12px; font-weight: 800; cursor: pointer; background: rgba(255,255,255,0.12); color: #dbeafe; }.view-desktop .lang-switch button.active { background: #fff; color: #1e3a8a; }.view-desktop .lang-view { display: none; }.view-desktop .lang-view.active { display: block; }.view-desktop .section-bar {
+    width: 100%; max-width: 860px; margin: 0 auto; padding: 7px 6mm;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 8px;
+  }.view-desktop .webtoon-wrap { width: 100%; max-width: 860px; margin: 0 auto; background: #0f172a; }.view-desktop .webtoon-wrap img { width: 100%; display: block; }.view-desktop .audio-wrap { width: 100%; max-width: 860px; margin: 0 auto; padding:12px 14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15); }.view-desktop .audio-title { font-size:13px; font-weight:700; color:#3730a3; margin-bottom:8px; }.view-desktop .view-lang-ko {  }.view-desktop .view-lang-en { display:none; }
+
+  @page { size: A4 portrait; margin: 0; }.view-desktop {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-desktop .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-desktop {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-desktop .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-desktop .header { padding: 14px 20px; margin-bottom: 12px; }.view-desktop .header-title { font-size: 22px; }.view-desktop .header-sub { font-size: 12px; }.view-desktop .header-date { font-size: 15px; }.view-desktop .header-edition { font-size: 11px; }.view-desktop .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-desktop .grid-3 { gap: 12px; margin-bottom: 12px; }.view-desktop .grid-2 { gap: 12px; margin-bottom: 12px; }.view-desktop .card { padding: 16px 18px; border-radius: 12px; }.view-desktop .card-title { font-size: 15px; line-height: 1.5; }.view-desktop .card-title-sm { font-size: 13px; }.view-desktop .badge { font-size: 10px; padding: 2px 9px; }.view-desktop .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-desktop .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-desktop .detail-lbl { font-size: 10px; }.view-desktop .detail-txt { font-size: 13px; line-height: 1.65; }.view-desktop .key-chip { font-size: 11px; padding: 3px 9px; }.view-desktop .takeaway { font-size: 13px; padding: 7px 12px; }.view-desktop .impact-pill { font-size: 11px; padding: 3px 11px; }.view-desktop .eng-phrase { font-size: 17px; }.view-desktop .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-desktop .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-desktop .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-desktop .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-desktop .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-desktop .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-desktop .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-desktop .header-left { display: flex; align-items: center; gap: 10px; }.view-desktop .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-desktop .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-desktop .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-desktop .header-right { text-align: right; }.view-desktop .header-date { font-size: 12px; font-weight: 700; }.view-desktop .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-desktop .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-desktop .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-1 { margin-bottom: 5px; }.view-desktop .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-desktop .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-desktop .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-desktop .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-desktop .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-desktop .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-desktop .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-desktop .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-desktop .badge-ai { background: #e0e7ff; color: #4338ca; }.view-desktop .badge-detail { background: #ede9fe; color: #6d28d9; }.view-desktop .badge-economy { background: #d1fae5; color: #065f46; }.view-desktop .badge-english { background: #fef3c7; color: #92400e; }.view-desktop .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-desktop .card-title-sm { font-size: 10px; }.view-desktop .bullets { list-style: none; margin: 3px 0; }.view-desktop .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-desktop .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-desktop .card-ai .bullets li::before { color: #6366f1; }.view-desktop .card-detail .bullets li::before { color: #7c3aed; }.view-desktop .card-economy .bullets li::before { color: #059669; }.view-desktop .card-english .bullets li::before { color: #d97706; }.view-desktop .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-desktop .card-source:hover { color: #64748b; text-decoration: underline; }.view-desktop .detail-block { margin-bottom: 4px; }.view-desktop .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-desktop .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-desktop .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-desktop .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-desktop .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-desktop .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-desktop .impact-positive { background: #dcfce7; color: #166534; }.view-desktop .impact-negative { background: #fee2e2; color: #991b1b; }.view-desktop .impact-neutral { background: #f1f5f9; color: #475569; }.view-desktop .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-desktop .eng-pron { font-size: 8px; color: #b45309; margin-bottom: 3px; }.view-desktop .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-desktop .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-desktop .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-desktop .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-desktop .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
+  }
+
+
+  @page { size: A4 portrait; margin: 0; }.view-desktop {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-desktop .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-desktop {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-desktop .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-desktop .header { padding: 14px 20px; margin-bottom: 12px; }.view-desktop .header-title { font-size: 22px; }.view-desktop .header-sub { font-size: 12px; }.view-desktop .header-date { font-size: 15px; }.view-desktop .header-edition { font-size: 11px; }.view-desktop .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-desktop .grid-3 { gap: 12px; margin-bottom: 12px; }.view-desktop .grid-2 { gap: 12px; margin-bottom: 12px; }.view-desktop .card { padding: 16px 18px; border-radius: 12px; }.view-desktop .card-title { font-size: 15px; line-height: 1.5; }.view-desktop .card-title-sm { font-size: 13px; }.view-desktop .badge { font-size: 10px; padding: 2px 9px; }.view-desktop .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-desktop .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-desktop .detail-lbl { font-size: 10px; }.view-desktop .detail-txt { font-size: 13px; line-height: 1.65; }.view-desktop .key-chip { font-size: 11px; padding: 3px 9px; }.view-desktop .takeaway { font-size: 13px; padding: 7px 12px; }.view-desktop .impact-pill { font-size: 11px; padding: 3px 11px; }.view-desktop .eng-phrase { font-size: 17px; }.view-desktop .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-desktop .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-desktop .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-desktop .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-desktop .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-desktop .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-desktop .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-desktop .header-left { display: flex; align-items: center; gap: 10px; }.view-desktop .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-desktop .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-desktop .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-desktop .header-right { text-align: right; }.view-desktop .header-date { font-size: 12px; font-weight: 700; }.view-desktop .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-desktop .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-desktop .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-1 { margin-bottom: 5px; }.view-desktop .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-desktop .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-desktop .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-desktop .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-desktop .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-desktop .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-desktop .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-desktop .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-desktop .badge-ai { background: #e0e7ff; color: #4338ca; }.view-desktop .badge-detail { background: #ede9fe; color: #6d28d9; }.view-desktop .badge-economy { background: #d1fae5; color: #065f46; }.view-desktop .badge-english { background: #fef3c7; color: #92400e; }.view-desktop .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-desktop .card-title-sm { font-size: 10px; }.view-desktop .bullets { list-style: none; margin: 3px 0; }.view-desktop .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-desktop .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-desktop .card-ai .bullets li::before { color: #6366f1; }.view-desktop .card-detail .bullets li::before { color: #7c3aed; }.view-desktop .card-economy .bullets li::before { color: #059669; }.view-desktop .card-english .bullets li::before { color: #d97706; }.view-desktop .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-desktop .card-source:hover { color: #64748b; text-decoration: underline; }.view-desktop .detail-block { margin-bottom: 4px; }.view-desktop .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-desktop .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-desktop .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-desktop .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-desktop .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-desktop .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-desktop .impact-positive { background: #dcfce7; color: #166534; }.view-desktop .impact-negative { background: #fee2e2; color: #991b1b; }.view-desktop .impact-neutral { background: #f1f5f9; color: #475569; }.view-desktop .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-desktop .eng-pron { font-size: 8px; color: #b45309; margin-bottom: 3px; }.view-desktop .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-desktop .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-desktop .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-desktop .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-desktop .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
+  }
+
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../index.html">MacsALogs</a></h1>
+        <p class="site-tagline"><span class="i18n-ko">AI 개발 · 생산성 · 취미 기록</span><span class="i18n-en">AI development · productivity · creative logs</span></p>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html"><span class="i18n-ko">홈</span><span class="i18n-en">Home</span></a>
+        <a href="../about.html"><span class="i18n-ko">소개</span><span class="i18n-en">About</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../index.html"><span class="i18n-ko">← 목록으로</span><span class="i18n-en">← Back to posts</span></a>
+
+    <header class="post-header">
+      <h1><span class="i18n-ko">오늘의 AI 뉴스 — 2026-08-31</span><span class="i18n-en">Today's AI News — 2026-08-31</span></h1>
+      <div class="post-meta">
+        <span>2026-08-31</span>
+        <span><span class="i18n-ko">5분</span><span class="i18n-en">5 min</span></span>
+      </div>
+      <div class="tags" style="margin-top: 0.75rem;">
+        <span class="tag">AI</span>
+        <span class="tag"><span class="i18n-ko">뉴스</span><span class="i18n-en">News</span></span>
+        <span class="tag"><span class="i18n-ko">경제</span><span class="i18n-en">Markets</span></span>
+        <span class="tag"><span class="i18n-ko">영어</span><span class="i18n-en">English</span></span>
+      </div>
+      <div class="post-lang-switch" data-lang-switch>
+        <button type="button" data-lang-button="ko" aria-label="한국어 보기">한국어</button>
+        <button type="button" data-lang-button="en" aria-label="View in English">English</button>
+      </div>
+    </header>
+
+    <article class="post-body">
+      <div class="view-mobile"><div class="view-lang view-lang-ko active" data-lang-view="ko">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div>
+      <div class="header-date">2026-08-31-231708</div>
+      <div class="header-edition">No. 089</div>
+    </div>
+  </div>
+
+  
+  <!-- Audio overview player -->
+  <div style="border-radius:14px; margin-bottom:12px; padding:12px 14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; 귀로 듣는 오늘의 뉴스</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-08-31-231708-brief.m4a" type="audio/mp4">
+      브라우저가 오디오 재생을 지원하지 않습니다.
+    </audio>
+  </div>
+  <!-- Webtoon image -->
+  <div style="border-radius:14px; overflow:hidden; margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <img src="../images/2026-08-31-231708/page.png" alt="AI 뉴스 웹툰 2026-08-31-231708" style="width:100%; display:block;"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:28px 14px; text-align:center; background:#eef2ff; color:#3730a3; font-size:13px; font-weight:600;">🎨 웹툰 준비 중 — 곧 업데이트됩니다</div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">1</span>
+      <span class="card-title">OpenAI, ChatGPT 광고 연매출 10억달러</span>
+      <span class="badge badge-ai">LLM</span>
+    </div>
+    <ul class="bullets">
+      <li>ChatGPT Ads의 연환산 매출이 10억달러에 도달했다.</li><li>광고 사업을 글로벌 시장으로 확대한다고 발표했다.</li><li>무료·저가 AI 접근성을 광고 수익으로 지원한다.</li>
+    </ul>
+    <a href="https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads" class="card-source" target="_blank" rel="noopener">Source: OpenAI News</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">2</span>
+      <span class="card-title">OpenAI, 맥 미니로 에이전트 학습</span>
+      <span class="badge badge-ai">에이전트</span>
+    </div>
+    <ul class="bullets">
+      <li>OpenAI가 컴퓨터 사용 에이전트 학습용 맥 미니·맥 스튜디오를 수만 대 구매했다.</li><li>Anthropic도 Apple 하드웨어를 활용하며 고성능 모델용 제품은 수개월째 품귀다.</li><li>Apple의 6월 분기 Mac 매출은 104억달러로 전년 대비 약 29% 증가했다.</li>
+    </ul>
+    <a href="https://the-decoder.com/openai-and-rival-ai-labs-are-buying-tens-of-thousands-of-mac-minis-to-train-computer-use-agents/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">3</span>
+      <span class="card-title">미국, 중국산 로봇·드론 장벽 강화</span>
+      <span class="badge badge-ai">자율주행</span>
+    </div>
+    <ul class="bullets">
+      <li>미국은 외국산 드론과 로봇의 시장 접근을 제한하는 장벽을 높이고 있다.</li><li>TechCrunch는 중국의 대규모 생산능력이 경쟁을 다른 글로벌 시장으로 이동시킬 수 있다고 지적했다.</li><li>드론·로봇 공급망 경쟁이 AI의 물리적 배치와 시장 진입 규칙을 좌우한다.</li>
+    </ul>
+    <a href="https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/" class="card-source" target="_blank" rel="noopener">Source: AI News & Artificial Intelligence | TechCrunch</a>
+  </div>
+  
+
+  <!-- ── Row 2: AI 상세 ── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">1</span>
+      <span class="card-title">OpenAI, ChatGPT 광고 연매출 10억달러</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">OpenAI는 2026년 8월 31일 ChatGPT Ads의 연환산 매출이 10억달러에 이르렀다고 발표했다. 광고를 통해 무료 및 저가 요금제의 접근성을 넓히는 사업 모델을 함께 제시했다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">생성형 AI 서비스의 대규모 운영비를 구독 외 수익으로 보완하는 사례다. 이용자 기반 확대와 광고 수익화가 동시에 가능한지에 따라 소비자 AI 시장의 경쟁 방식이 달라진다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">연환산 매출 10억달러</span><span class="key-chip">2026년 8월 31일 발표</span>
+    </div>
+    
+
+    <div class="takeaway">>>> ChatGPT는 광고를 핵심 수익 축으로 추가하며 대중형 AI 서비스의 수익화를 확장했다.</div>
+    <a href="https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads" class="card-source" target="_blank" rel="noopener">Source: OpenAI News</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">2</span>
+      <span class="card-title">OpenAI, 맥 미니로 에이전트 학습</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">The Information 보도를 인용한 The Decoder는 OpenAI가 컴퓨터 사용 에이전트 학습을 위해 맥 미니와 맥 스튜디오를 수만 대 구매했다고 전했다. Anthropic도 Apple 하드웨어에 의존하고 있으며 고성능 모델은 수개월간 매진 상태라고 보도했다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">에이전트 학습이 GPU뿐 아니라 대규모 실제 컴퓨터 환경을 필요로 한다는 신호다. AI 연구소의 하드웨어 조달이 PC 공급망과 플랫폼 사업자 매출에도 직접 영향을 준다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">수만 대 Mac 구매</span><span class="key-chip">Mac 매출 104억달러·약 29% 증가</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 컴퓨터 사용 에이전트 경쟁은 대규모 Mac 조달을 새로운 AI 인프라 수요로 만들었다.</div>
+    <a href="https://the-decoder.com/openai-and-rival-ai-labs-are-buying-tens-of-thousands-of-mac-minis-to-train-computer-use-agents/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">3</span>
+      <span class="card-title">미국, 중국산 로봇·드론 장벽 강화</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">TechCrunch는 2026년 8월 30일 미국이 외국산 드론과 로봇에 대한 장벽을 높이는 흐름을 보도했다. 동시에 중국의 대규모 생산능력 때문에 경쟁의 무대가 미국 밖으로 이동할 수 있다고 분석했다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">물리 AI 제품은 모델 성능만으로 확산되지 않고 제조·조달·규제에 좌우된다. 시장 분절은 드론과 로봇 기업의 판매 경로 및 AI 배치 속도에 직접적인 제약을 만든다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">2026년 8월 30일 보도</span><span class="key-chip">미·중 2개국 경쟁</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 드론과 로봇 AI 경쟁은 규제 장벽과 제조 규모가 함께 결정한다.</div>
+    <a href="https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/" class="card-source" target="_blank" rel="noopener">Source: AI News & Artificial Intelligence | TechCrunch</a>
+  </div>
+  
+
+  <!-- ── Row 3: 경제 ── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">1</span>
+      <span class="card-title">사우디 AI 데이터센터 동맹</span>
+      <span class="badge badge-economy">투자</span>
+    </div>
+    <ul class="bullets">
+      <li>Together AI와 사우디 Humain이 대규모 AI 컴퓨팅·데이터센터 협력에 나섰다.</li><li>사우디의 AI 인프라 투자 확대가 글로벌 GPU·클라우드 수요를 뒷받침한다.</li>
+    </ul>
+    <span class="impact-pill impact-positive">↑ 긍정적</span>
+    <a href="https://www.nytimes.com/2026/08/31/business/dealbook/together-ai-humain-saudi-arabia-data-center.html" class="card-source" target="_blank" rel="noopener">Source: The New York Times</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">2</span>
+      <span class="card-title">앤트로픽 메가 IPO 추진</span>
+      <span class="badge badge-economy">투자</span>
+    </div>
+    <ul class="bullets">
+      <li>Anthropic이 대형 IPO를 검토하며 생성형 AI 투자 회수 기대를 키웠다.</li><li>상장 추진은 AI 모델 기업의 자본 조달과 경쟁 구도에 영향을 줄 수 있다.</li>
+    </ul>
+    <span class="impact-pill impact-positive">↑ 긍정적</span>
+    <a href="https://www.bloomberg.com/news/articles/2026-08-31/anthropic-s-mega-ipo-plan-looms-over-packed-us-listing-calendar" class="card-source" target="_blank" rel="noopener">Source: Bloomberg</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">3</span>
+      <span class="card-title">AI 붐, 스페이스X 목표가 반영</span>
+      <span class="badge badge-economy">투자</span>
+    </div>
+    <ul class="bullets">
+      <li>월가 은행들은 스페이스X 가치 산정에 AI 붐의 성장 기대를 반영하고 있다.</li><li>Citigroup은 스페이스X 시가총액이 12조달러에 이를 수 있다고 제시했다.</li>
+    </ul>
+    <span class="impact-pill impact-neutral">→ 중립</span>
+    <a href="https://www.marketwatch.com/story/wall-street-banks-are-keeping-astronomical-price-targets-on-spacexs-stock-as-it-tries-to-blast-off-again-0e21a0e4" class="card-source" target="_blank" rel="noopener">Source: MarketWatch</a>
+  </div>
+  
+
+  <!-- ── Row 4: 영어 표현 ── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">1</span>
+      <span class="eng-phrase">"technology stack"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/tekˈnɑːlədʒi stæk/</div>
+    <div class="eng-meaning">→ 기술을 구성하는 소프트웨어·하드웨어의 체계</div>
+    <div class="eng-ex">Mandal said Chinese humanoid makers are also pushing costs down by bringing more of the technology stack in-house and drawing on China’s existing manufacturing base.</div>
+    <div class="eng-ex-kr">만달은 중국 휴머노이드 제조사들이 더 많은 기술 스택을 자체화하고 중국의 기존 제조 기반을 활용해 비용도 낮추고 있다고 말했다.</div>
+    <div class="eng-ctx">TechCrunch의 중국 로봇 제조 경쟁력 분석에서 부품과 시스템을 자체화하는 전략을 설명하며 쓰였다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">2</span>
+      <span class="eng-phrase">"annualized revenue run rate"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ˈænjuəlaɪzd ˈrevənuː rʌn reɪt/</div>
+    <div class="eng-meaning">→ 현재 매출 속도를 연간으로 환산한 예상 매출</div>
+    <div class="eng-ex">In less than 200 days after launch, ChatGPT Ads has reached $1 billion in annualized revenue run rate.</div>
+    <div class="eng-ex-kr">출시 후 200일이 채 안 되어 ChatGPT Ads는 연환산 매출 속도 10억 달러에 도달했다.</div>
+    <div class="eng-ctx">OpenAI의 ChatGPT 광고 사업 발표에서 출시 이후의 매출 규모를 연간 기준으로 제시하며 쓰였다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">3</span>
+      <span class="eng-phrase">"less a clean U.S.-China split than a more fragmented global market"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">[레스 어 클린 유에스-차이나 스플릿 댄 어 모어 프래그먼티드 글로벌 마켓]</div>
+    <div class="eng-meaning">→ 명확한 양분보다 더 파편화된 세계 시장</div>
+    <div class="eng-ex">Industry analysts and executives who spoke with TechCrunch said the result may be less a clean U.S.-China split than a more fragmented global market, with Chinese companies expanding elsewhere while U.S. and allied manufacturers compete in markets where security requirements matter more.</div>
+    <div class="eng-ex-kr">테크크런치가 만난 업계 분석가와 임원들은 중국 기업이 다른 지역으로 확장하고 미국 및 동맹국 제조사가 보안 요건이 더 중요한 시장에서 경쟁하면서, 그 결과가 명확한 미중 양분보다는 더 파편화된 세계 시장이 될 수 있다고 말했다.</div>
+    <div class="eng-ctx">TechCrunch의 드론·로봇 규제 분석에서 미중 경쟁의 결과를 단순 양분이 아닌 다극적 시장으로 규정하며 쓰였다.</div>
+  </div>
+  
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-08-31-231708 | AI News Card
+  </div>
+
+</div>
+</div><div class="view-lang view-lang-en" data-lang-view="en">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">Today's AI News</div>
+        <div class="header-sub">News · Analysis · Markets · English Expressions</div>
+      </div>
+    </div>
+    <div>
+      <div class="header-date">2026-08-31-231708</div>
+      <div class="header-edition">No. 089</div>
+    </div>
+  </div>
+
+  
+  <!-- Audio overview player -->
+  <div style="border-radius:14px; margin-bottom:12px; padding:12px 14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; Listen to today's news</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-08-31-231708-brief-en.m4a" type="audio/mp4">
+      Your browser does not support audio playback.
+    </audio>
+  </div>
+  <!-- Webtoon image -->
+  <div style="border-radius:14px; overflow:hidden; margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <img src="../images/2026-08-31-231708/page-en.png" alt="AI News Webtoon 2026-08-31-231708" style="width:100%; display:block;"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:28px 14px; text-align:center; background:#eef2ff; color:#3730a3; font-size:13px; font-weight:600;">🎨 Webtoon is being prepared — coming soon</div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — Top 3 Stories</div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">1</span>
+      <span class="card-title">OpenAI, ChatGPT 광고 연매출 10억달러</span>
+      <span class="badge badge-ai">LLM</span>
+    </div>
+    <ul class="bullets">
+      <li>ChatGPT Ads의 연환산 매출이 10억달러에 도달했다.</li><li>광고 사업을 글로벌 시장으로 확대한다고 발표했다.</li><li>무료·저가 AI 접근성을 광고 수익으로 지원한다.</li>
+    </ul>
+    <a href="https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads" class="card-source" target="_blank" rel="noopener">Source: OpenAI News</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">2</span>
+      <span class="card-title">OpenAI, 맥 미니로 에이전트 학습</span>
+      <span class="badge badge-ai">Agents</span>
+    </div>
+    <ul class="bullets">
+      <li>OpenAI가 컴퓨터 사용 에이전트 학습용 맥 미니·맥 스튜디오를 수만 대 구매했다.</li><li>Anthropic도 Apple 하드웨어를 활용하며 고성능 모델용 제품은 수개월째 품귀다.</li><li>Apple의 6월 분기 Mac 매출은 104억달러로 전년 대비 약 29% 증가했다.</li>
+    </ul>
+    <a href="https://the-decoder.com/openai-and-rival-ai-labs-are-buying-tens-of-thousands-of-mac-minis-to-train-computer-use-agents/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">3</span>
+      <span class="card-title">미국, 중국산 로봇·드론 장벽 강화</span>
+      <span class="badge badge-ai">Autonomous Robotics</span>
+    </div>
+    <ul class="bullets">
+      <li>미국은 외국산 드론과 로봇의 시장 접근을 제한하는 장벽을 높이고 있다.</li><li>TechCrunch는 중국의 대규모 생산능력이 경쟁을 다른 글로벌 시장으로 이동시킬 수 있다고 지적했다.</li><li>드론·로봇 공급망 경쟁이 AI의 물리적 배치와 시장 진입 규칙을 좌우한다.</li>
+    </ul>
+    <a href="https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/" class="card-source" target="_blank" rel="noopener">Source: AI News & Artificial Intelligence | TechCrunch</a>
+  </div>
+  
+
+  <!-- ── Row 2: AI 상세 ── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — Why It Matters</div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">1</span>
+      <span class="card-title">OpenAI, ChatGPT 광고 연매출 10억달러</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">Background</div>
+      <div class="detail-txt">OpenAI는 2026년 8월 31일 ChatGPT Ads의 연환산 매출이 10억달러에 이르렀다고 발표했다. 광고를 통해 무료 및 저가 요금제의 접근성을 넓히는 사업 모델을 함께 제시했다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">Why it matters</div>
+      <div class="detail-txt">생성형 AI 서비스의 대규모 운영비를 구독 외 수익으로 보완하는 사례다. 이용자 기반 확대와 광고 수익화가 동시에 가능한지에 따라 소비자 AI 시장의 경쟁 방식이 달라진다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">연환산 매출 10억달러</span><span class="key-chip">2026년 8월 31일 발표</span>
+    </div>
+    
+
+    <div class="takeaway">>>> ChatGPT는 광고를 핵심 수익 축으로 추가하며 대중형 AI 서비스의 수익화를 확장했다.</div>
+    <a href="https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads" class="card-source" target="_blank" rel="noopener">Source: OpenAI News</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">2</span>
+      <span class="card-title">OpenAI, 맥 미니로 에이전트 학습</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">Background</div>
+      <div class="detail-txt">The Information 보도를 인용한 The Decoder는 OpenAI가 컴퓨터 사용 에이전트 학습을 위해 맥 미니와 맥 스튜디오를 수만 대 구매했다고 전했다. Anthropic도 Apple 하드웨어에 의존하고 있으며 고성능 모델은 수개월간 매진 상태라고 보도했다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">Why it matters</div>
+      <div class="detail-txt">에이전트 학습이 GPU뿐 아니라 대규모 실제 컴퓨터 환경을 필요로 한다는 신호다. AI 연구소의 하드웨어 조달이 PC 공급망과 플랫폼 사업자 매출에도 직접 영향을 준다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">수만 대 Mac 구매</span><span class="key-chip">Mac 매출 104억달러·약 29% 증가</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 컴퓨터 사용 에이전트 경쟁은 대규모 Mac 조달을 새로운 AI 인프라 수요로 만들었다.</div>
+    <a href="https://the-decoder.com/openai-and-rival-ai-labs-are-buying-tens-of-thousands-of-mac-minis-to-train-computer-use-agents/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">3</span>
+      <span class="card-title">미국, 중국산 로봇·드론 장벽 강화</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">Background</div>
+      <div class="detail-txt">TechCrunch는 2026년 8월 30일 미국이 외국산 드론과 로봇에 대한 장벽을 높이는 흐름을 보도했다. 동시에 중국의 대규모 생산능력 때문에 경쟁의 무대가 미국 밖으로 이동할 수 있다고 분석했다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">Why it matters</div>
+      <div class="detail-txt">물리 AI 제품은 모델 성능만으로 확산되지 않고 제조·조달·규제에 좌우된다. 시장 분절은 드론과 로봇 기업의 판매 경로 및 AI 배치 속도에 직접적인 제약을 만든다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">2026년 8월 30일 보도</span><span class="key-chip">미·중 2개국 경쟁</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 드론과 로봇 AI 경쟁은 규제 장벽과 제조 규모가 함께 결정한다.</div>
+    <a href="https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/" class="card-source" target="_blank" rel="noopener">Source: AI News & Artificial Intelligence | TechCrunch</a>
+  </div>
+  
+
+  <!-- ── Row 3: 경제 ── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — Markets & Finance</div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">1</span>
+      <span class="card-title">사우디 AI 데이터센터 동맹</span>
+      <span class="badge badge-economy">투자</span>
+    </div>
+    <ul class="bullets">
+      <li>Together AI와 사우디 Humain이 대규모 AI 컴퓨팅·데이터센터 협력에 나섰다.</li><li>사우디의 AI 인프라 투자 확대가 글로벌 GPU·클라우드 수요를 뒷받침한다.</li>
+    </ul>
+    <span class="impact-pill impact-positive">↑ Positive</span>
+    <a href="https://www.nytimes.com/2026/08/31/business/dealbook/together-ai-humain-saudi-arabia-data-center.html" class="card-source" target="_blank" rel="noopener">Source: The New York Times</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">2</span>
+      <span class="card-title">앤트로픽 메가 IPO 추진</span>
+      <span class="badge badge-economy">투자</span>
+    </div>
+    <ul class="bullets">
+      <li>Anthropic이 대형 IPO를 검토하며 생성형 AI 투자 회수 기대를 키웠다.</li><li>상장 추진은 AI 모델 기업의 자본 조달과 경쟁 구도에 영향을 줄 수 있다.</li>
+    </ul>
+    <span class="impact-pill impact-positive">↑ Positive</span>
+    <a href="https://www.bloomberg.com/news/articles/2026-08-31/anthropic-s-mega-ipo-plan-looms-over-packed-us-listing-calendar" class="card-source" target="_blank" rel="noopener">Source: Bloomberg</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">3</span>
+      <span class="card-title">AI 붐, 스페이스X 목표가 반영</span>
+      <span class="badge badge-economy">투자</span>
+    </div>
+    <ul class="bullets">
+      <li>월가 은행들은 스페이스X 가치 산정에 AI 붐의 성장 기대를 반영하고 있다.</li><li>Citigroup은 스페이스X 시가총액이 12조달러에 이를 수 있다고 제시했다.</li>
+    </ul>
+    <span class="impact-pill impact-neutral">→ Neutral</span>
+    <a href="https://www.marketwatch.com/story/wall-street-banks-are-keeping-astronomical-price-targets-on-spacexs-stock-as-it-tries-to-blast-off-again-0e21a0e4" class="card-source" target="_blank" rel="noopener">Source: MarketWatch</a>
+  </div>
+  
+
+  <!-- ── Row 4: 영어 표현 ── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 3 News Expressions</div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">1</span>
+      <span class="eng-phrase">"technology stack"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/tekˈnɑːlədʒi stæk/</div>
+    <div class="eng-meaning">→ 기술을 구성하는 소프트웨어·하드웨어의 체계</div>
+    <div class="eng-ex">Mandal said Chinese humanoid makers are also pushing costs down by bringing more of the technology stack in-house and drawing on China’s existing manufacturing base.</div>
+    <div class="eng-ex-kr">Mandal said Chinese humanoid makers are also pushing costs down by bringing more of the technology stack in-house and drawing on China’s existing manufacturing base.</div>
+    <div class="eng-ctx">TechCrunch의 중국 로봇 제조 경쟁력 분석에서 부품과 시스템을 자체화하는 전략을 설명하며 쓰였다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">2</span>
+      <span class="eng-phrase">"annualized revenue run rate"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ˈænjuəlaɪzd ˈrevənuː rʌn reɪt/</div>
+    <div class="eng-meaning">→ 현재 매출 속도를 연간으로 환산한 예상 매출</div>
+    <div class="eng-ex">In less than 200 days after launch, ChatGPT Ads has reached $1 billion in annualized revenue run rate.</div>
+    <div class="eng-ex-kr">In less than 200 days after launch, ChatGPT Ads has reached $1 billion in annualized revenue run rate.</div>
+    <div class="eng-ctx">OpenAI의 ChatGPT 광고 사업 발표에서 출시 이후의 매출 규모를 연간 기준으로 제시하며 쓰였다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">3</span>
+      <span class="eng-phrase">"less a clean U.S.-China split than a more fragmented global market"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">[레스 어 클린 유에스-차이나 스플릿 댄 어 모어 프래그먼티드 글로벌 마켓]</div>
+    <div class="eng-meaning">→ 명확한 양분보다 더 파편화된 세계 시장</div>
+    <div class="eng-ex">Industry analysts and executives who spoke with TechCrunch said the result may be less a clean U.S.-China split than a more fragmented global market, with Chinese companies expanding elsewhere while U.S. and allied manufacturers compete in markets where security requirements matter more.</div>
+    <div class="eng-ex-kr">Industry analysts and executives who spoke with TechCrunch said the result may be less a clean U.S.-China split than a more fragmented global market, with Chinese companies expanding elsewhere while U.S. and allied manufacturers compete in markets where security requirements matter more.</div>
+    <div class="eng-ctx">TechCrunch의 드론·로봇 규제 분석에서 미중 경쟁의 결과를 단순 양분이 아닌 다극적 시장으로 규정하며 쓰였다.</div>
+  </div>
+  
+
+  <!-- Footer -->
+  <div class="footer">
+    Auto-generated | Sources: RSS feeds | 2026-08-31-231708 | AI News Card
+  </div>
+
+</div>
+</div></div>
+      <div class="view-desktop">
+  <div class="lang-switch" data-lang-switch>
+    <button type="button" data-lang-button="ko" class="active">한국어</button>
+    <button type="button" data-lang-button="en" class="">English</button>
+  </div>
+  <div class="lang-view view-lang-ko active" data-lang-view="ko">
+  <div class="section-bar">🎨 WEBTOON — AI 뉴스 웹툰 2026-08-31</div>
+  
+  <div class="audio-wrap">
+    <div class="audio-title">🎧 귀로 듣는 오늘의 뉴스</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-08-31-231708-brief.m4a" type="audio/mp4">
+      브라우저가 오디오 재생을 지원하지 않습니다.
+    </audio>
+  </div>
+  <div class="webtoon-wrap">
+    <img src="../images/2026-08-31-231708/page.png" alt="AI 뉴스 웹툰 2026-08-31"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:32px 14px; text-align:center; color:#93c5fd; font-size:13px; font-weight:600;">🎨 웹툰 준비 중 — 곧 업데이트됩니다</div>
+  </div>
+  <div class="section-bar" style="margin-top:0;">📰 NEWS CARD — 상세 뉴스 카드 2026-08-31</div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-08-31-231708</div>
+      <div class="header-edition">No. 089</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">OpenAI, ChatGPT 광고 연매출 10억달러</span>
+        <span class="badge badge-ai">LLM</span>
+      </div>
+      <ul class="bullets">
+        <li>ChatGPT Ads의 연환산 매출이 10억달러에 도달했다.</li><li>광고 사업을 글로벌 시장으로 확대한다고 발표했다.</li><li>무료·저가 AI 접근성을 광고 수익으로 지원한다.</li>
+      </ul>
+      <a href="https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads" class="card-source" target="_blank" rel="noopener">📰 OpenAI News</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">OpenAI, 맥 미니로 에이전트 학습</span>
+        <span class="badge badge-ai">에이전트</span>
+      </div>
+      <ul class="bullets">
+        <li>OpenAI가 컴퓨터 사용 에이전트 학습용 맥 미니·맥 스튜디오를 수만 대 구매했다.</li><li>Anthropic도 Apple 하드웨어를 활용하며 고성능 모델용 제품은 수개월째 품귀다.</li><li>Apple의 6월 분기 Mac 매출은 104억달러로 전년 대비 약 29% 증가했다.</li>
+      </ul>
+      <a href="https://the-decoder.com/openai-and-rival-ai-labs-are-buying-tens-of-thousands-of-mac-minis-to-train-computer-use-agents/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">미국, 중국산 로봇·드론 장벽 강화</span>
+        <span class="badge badge-ai">자율주행</span>
+      </div>
+      <ul class="bullets">
+        <li>미국은 외국산 드론과 로봇의 시장 접근을 제한하는 장벽을 높이고 있다.</li><li>TechCrunch는 중국의 대규모 생산능력이 경쟁을 다른 글로벌 시장으로 이동시킬 수 있다고 지적했다.</li><li>드론·로봇 공급망 경쟁이 AI의 물리적 배치와 시장 진입 규칙을 좌우한다.</li>
+      </ul>
+      <a href="https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/" class="card-source" target="_blank" rel="noopener">📰 AI News & Artificial Intelligence | TechCrunch</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">OpenAI, ChatGPT 광고 연매출 10억달러</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">OpenAI는 2026년 8월 31일 ChatGPT Ads의 연환산 매출이 10억달러에 이르렀다고 발표했다. 광고를 통해 무료 및 저가 요금제의 접근성을 넓히는 사업 모델을 함께 제시했다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">생성형 AI 서비스의 대규모 운영비를 구독 외 수익으로 보완하는 사례다. 이용자 기반 확대와 광고 수익화가 동시에 가능한지에 따라 소비자 AI 시장의 경쟁 방식이 달라진다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">연환산 매출 10억달러</span><span class="key-chip">2026년 8월 31일 발표</span>
+      </div>
+      
+
+      <div class="takeaway">▶ ChatGPT는 광고를 핵심 수익 축으로 추가하며 대중형 AI 서비스의 수익화를 확장했다.</div>
+      <a href="https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads" class="card-source" target="_blank" rel="noopener">📰 OpenAI News</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">OpenAI, 맥 미니로 에이전트 학습</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">The Information 보도를 인용한 The Decoder는 OpenAI가 컴퓨터 사용 에이전트 학습을 위해 맥 미니와 맥 스튜디오를 수만 대 구매했다고 전했다. Anthropic도 Apple 하드웨어에 의존하고 있으며 고성능 모델은 수개월간 매진 상태라고 보도했다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">에이전트 학습이 GPU뿐 아니라 대규모 실제 컴퓨터 환경을 필요로 한다는 신호다. AI 연구소의 하드웨어 조달이 PC 공급망과 플랫폼 사업자 매출에도 직접 영향을 준다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">수만 대 Mac 구매</span><span class="key-chip">Mac 매출 104억달러·약 29% 증가</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 컴퓨터 사용 에이전트 경쟁은 대규모 Mac 조달을 새로운 AI 인프라 수요로 만들었다.</div>
+      <a href="https://the-decoder.com/openai-and-rival-ai-labs-are-buying-tens-of-thousands-of-mac-minis-to-train-computer-use-agents/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">미국, 중국산 로봇·드론 장벽 강화</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">TechCrunch는 2026년 8월 30일 미국이 외국산 드론과 로봇에 대한 장벽을 높이는 흐름을 보도했다. 동시에 중국의 대규모 생산능력 때문에 경쟁의 무대가 미국 밖으로 이동할 수 있다고 분석했다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">물리 AI 제품은 모델 성능만으로 확산되지 않고 제조·조달·규제에 좌우된다. 시장 분절은 드론과 로봇 기업의 판매 경로 및 AI 배치 속도에 직접적인 제약을 만든다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">2026년 8월 30일 보도</span><span class="key-chip">미·중 2개국 경쟁</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 드론과 로봇 AI 경쟁은 규제 장벽과 제조 규모가 함께 결정한다.</div>
+      <a href="https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/" class="card-source" target="_blank" rel="noopener">📰 AI News & Artificial Intelligence | TechCrunch</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">사우디 AI 데이터센터 동맹</span>
+        <span class="badge badge-economy">투자</span>
+      </div>
+      <ul class="bullets">
+        <li>Together AI와 사우디 Humain이 대규모 AI 컴퓨팅·데이터센터 협력에 나섰다.</li><li>사우디의 AI 인프라 투자 확대가 글로벌 GPU·클라우드 수요를 뒷받침한다.</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ 긍정적</span>
+      <a href="https://www.nytimes.com/2026/08/31/business/dealbook/together-ai-humain-saudi-arabia-data-center.html" class="card-source" target="_blank" rel="noopener">📰 The New York Times</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">앤트로픽 메가 IPO 추진</span>
+        <span class="badge badge-economy">투자</span>
+      </div>
+      <ul class="bullets">
+        <li>Anthropic이 대형 IPO를 검토하며 생성형 AI 투자 회수 기대를 키웠다.</li><li>상장 추진은 AI 모델 기업의 자본 조달과 경쟁 구도에 영향을 줄 수 있다.</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ 긍정적</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-08-31/anthropic-s-mega-ipo-plan-looms-over-packed-us-listing-calendar" class="card-source" target="_blank" rel="noopener">📰 Bloomberg</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">AI 붐, 스페이스X 목표가 반영</span>
+        <span class="badge badge-economy">투자</span>
+      </div>
+      <ul class="bullets">
+        <li>월가 은행들은 스페이스X 가치 산정에 AI 붐의 성장 기대를 반영하고 있다.</li><li>Citigroup은 스페이스X 시가총액이 12조달러에 이를 수 있다고 제시했다.</li>
+      </ul>
+      <span class="impact-pill impact-neutral">→ 중립</span>
+      <a href="https://www.marketwatch.com/story/wall-street-banks-are-keeping-astronomical-price-targets-on-spacexs-stock-as-it-tries-to-blast-off-again-0e21a0e4" class="card-source" target="_blank" rel="noopener">📰 MarketWatch</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"technology stack"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/tekˈnɑːlədʒi stæk/</div>
+      <div class="eng-meaning">→ 기술을 구성하는 소프트웨어·하드웨어의 체계</div>
+      <div class="eng-ex">Mandal said Chinese humanoid makers are also pushing costs down by bringing more of the technology stack in-house and drawing on China’s existing manufacturing base.</div>
+      <div class="eng-ex-kr">만달은 중국 휴머노이드 제조사들이 더 많은 기술 스택을 자체화하고 중국의 기존 제조 기반을 활용해 비용도 낮추고 있다고 말했다.</div>
+      <div class="eng-ctx">📌 TechCrunch의 중국 로봇 제조 경쟁력 분석에서 부품과 시스템을 자체화하는 전략을 설명하며 쓰였다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"annualized revenue run rate"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ˈænjuəlaɪzd ˈrevənuː rʌn reɪt/</div>
+      <div class="eng-meaning">→ 현재 매출 속도를 연간으로 환산한 예상 매출</div>
+      <div class="eng-ex">In less than 200 days after launch, ChatGPT Ads has reached $1 billion in annualized revenue run rate.</div>
+      <div class="eng-ex-kr">출시 후 200일이 채 안 되어 ChatGPT Ads는 연환산 매출 속도 10억 달러에 도달했다.</div>
+      <div class="eng-ctx">📌 OpenAI의 ChatGPT 광고 사업 발표에서 출시 이후의 매출 규모를 연간 기준으로 제시하며 쓰였다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"less a clean U.S.-China split than a more fragmented global market"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">[레스 어 클린 유에스-차이나 스플릿 댄 어 모어 프래그먼티드 글로벌 마켓]</div>
+      <div class="eng-meaning">→ 명확한 양분보다 더 파편화된 세계 시장</div>
+      <div class="eng-ex">Industry analysts and executives who spoke with TechCrunch said the result may be less a clean U.S.-China split than a more fragmented global market, with Chinese companies expanding elsewhere while U.S. and allied manufacturers compete in markets where security requirements matter more.</div>
+      <div class="eng-ex-kr">테크크런치가 만난 업계 분석가와 임원들은 중국 기업이 다른 지역으로 확장하고 미국 및 동맹국 제조사가 보안 요건이 더 중요한 시장에서 경쟁하면서, 그 결과가 명확한 미중 양분보다는 더 파편화된 세계 시장이 될 수 있다고 말했다.</div>
+      <div class="eng-ctx">📌 TechCrunch의 드론·로봇 규제 분석에서 미중 경쟁의 결과를 단순 양분이 아닌 다극적 시장으로 규정하며 쓰였다.</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-08-31-231708 | AI News Card
+  </div>
+
+</div>
+</div>
+  <div class="lang-view view-lang-en " data-lang-view="en">
+  <div class="section-bar">🎨 WEBTOON — AI News Webtoon 2026-08-31</div>
+  
+  <div class="audio-wrap">
+    <div class="audio-title">🎧 Listen to today's news</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-08-31-231708-brief-en.m4a" type="audio/mp4">
+      Your browser does not support audio playback.
+    </audio>
+  </div>
+  <div class="webtoon-wrap">
+    <img src="../images/2026-08-31-231708/page-en.png" alt="AI News Webtoon 2026-08-31"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:32px 14px; text-align:center; color:#93c5fd; font-size:13px; font-weight:600;">🎨 Webtoon is being prepared — coming soon</div>
+  </div>
+  <div class="section-bar" style="margin-top:0;">📰 NEWS CARD — Detailed News Card 2026-08-31</div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">Today's AI News</div>
+        <div class="header-sub">News · Analysis · Markets · English Expressions</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-08-31-231708</div>
+      <div class="header-edition">No. 089</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — Top 3 Stories</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">OpenAI, ChatGPT 광고 연매출 10억달러</span>
+        <span class="badge badge-ai">LLM</span>
+      </div>
+      <ul class="bullets">
+        <li>ChatGPT Ads의 연환산 매출이 10억달러에 도달했다.</li><li>광고 사업을 글로벌 시장으로 확대한다고 발표했다.</li><li>무료·저가 AI 접근성을 광고 수익으로 지원한다.</li>
+      </ul>
+      <a href="https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads" class="card-source" target="_blank" rel="noopener">📰 OpenAI News</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">OpenAI, 맥 미니로 에이전트 학습</span>
+        <span class="badge badge-ai">Agents</span>
+      </div>
+      <ul class="bullets">
+        <li>OpenAI가 컴퓨터 사용 에이전트 학습용 맥 미니·맥 스튜디오를 수만 대 구매했다.</li><li>Anthropic도 Apple 하드웨어를 활용하며 고성능 모델용 제품은 수개월째 품귀다.</li><li>Apple의 6월 분기 Mac 매출은 104억달러로 전년 대비 약 29% 증가했다.</li>
+      </ul>
+      <a href="https://the-decoder.com/openai-and-rival-ai-labs-are-buying-tens-of-thousands-of-mac-minis-to-train-computer-use-agents/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">미국, 중국산 로봇·드론 장벽 강화</span>
+        <span class="badge badge-ai">Autonomous Robotics</span>
+      </div>
+      <ul class="bullets">
+        <li>미국은 외국산 드론과 로봇의 시장 접근을 제한하는 장벽을 높이고 있다.</li><li>TechCrunch는 중국의 대규모 생산능력이 경쟁을 다른 글로벌 시장으로 이동시킬 수 있다고 지적했다.</li><li>드론·로봇 공급망 경쟁이 AI의 물리적 배치와 시장 진입 규칙을 좌우한다.</li>
+      </ul>
+      <a href="https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/" class="card-source" target="_blank" rel="noopener">📰 AI News & Artificial Intelligence | TechCrunch</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — Why It Matters</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">OpenAI, ChatGPT 광고 연매출 10억달러</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">Background</div>
+        <div class="detail-txt">OpenAI는 2026년 8월 31일 ChatGPT Ads의 연환산 매출이 10억달러에 이르렀다고 발표했다. 광고를 통해 무료 및 저가 요금제의 접근성을 넓히는 사업 모델을 함께 제시했다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">Why it matters</div>
+        <div class="detail-txt">생성형 AI 서비스의 대규모 운영비를 구독 외 수익으로 보완하는 사례다. 이용자 기반 확대와 광고 수익화가 동시에 가능한지에 따라 소비자 AI 시장의 경쟁 방식이 달라진다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">연환산 매출 10억달러</span><span class="key-chip">2026년 8월 31일 발표</span>
+      </div>
+      
+
+      <div class="takeaway">▶ ChatGPT는 광고를 핵심 수익 축으로 추가하며 대중형 AI 서비스의 수익화를 확장했다.</div>
+      <a href="https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads" class="card-source" target="_blank" rel="noopener">📰 OpenAI News</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">OpenAI, 맥 미니로 에이전트 학습</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">Background</div>
+        <div class="detail-txt">The Information 보도를 인용한 The Decoder는 OpenAI가 컴퓨터 사용 에이전트 학습을 위해 맥 미니와 맥 스튜디오를 수만 대 구매했다고 전했다. Anthropic도 Apple 하드웨어에 의존하고 있으며 고성능 모델은 수개월간 매진 상태라고 보도했다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">Why it matters</div>
+        <div class="detail-txt">에이전트 학습이 GPU뿐 아니라 대규모 실제 컴퓨터 환경을 필요로 한다는 신호다. AI 연구소의 하드웨어 조달이 PC 공급망과 플랫폼 사업자 매출에도 직접 영향을 준다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">수만 대 Mac 구매</span><span class="key-chip">Mac 매출 104억달러·약 29% 증가</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 컴퓨터 사용 에이전트 경쟁은 대규모 Mac 조달을 새로운 AI 인프라 수요로 만들었다.</div>
+      <a href="https://the-decoder.com/openai-and-rival-ai-labs-are-buying-tens-of-thousands-of-mac-minis-to-train-computer-use-agents/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">미국, 중국산 로봇·드론 장벽 강화</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">Background</div>
+        <div class="detail-txt">TechCrunch는 2026년 8월 30일 미국이 외국산 드론과 로봇에 대한 장벽을 높이는 흐름을 보도했다. 동시에 중국의 대규모 생산능력 때문에 경쟁의 무대가 미국 밖으로 이동할 수 있다고 분석했다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">Why it matters</div>
+        <div class="detail-txt">물리 AI 제품은 모델 성능만으로 확산되지 않고 제조·조달·규제에 좌우된다. 시장 분절은 드론과 로봇 기업의 판매 경로 및 AI 배치 속도에 직접적인 제약을 만든다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">2026년 8월 30일 보도</span><span class="key-chip">미·중 2개국 경쟁</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 드론과 로봇 AI 경쟁은 규제 장벽과 제조 규모가 함께 결정한다.</div>
+      <a href="https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/" class="card-source" target="_blank" rel="noopener">📰 AI News & Artificial Intelligence | TechCrunch</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — Markets & Finance</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">사우디 AI 데이터센터 동맹</span>
+        <span class="badge badge-economy">투자</span>
+      </div>
+      <ul class="bullets">
+        <li>Together AI와 사우디 Humain이 대규모 AI 컴퓨팅·데이터센터 협력에 나섰다.</li><li>사우디의 AI 인프라 투자 확대가 글로벌 GPU·클라우드 수요를 뒷받침한다.</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ Positive</span>
+      <a href="https://www.nytimes.com/2026/08/31/business/dealbook/together-ai-humain-saudi-arabia-data-center.html" class="card-source" target="_blank" rel="noopener">📰 The New York Times</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">앤트로픽 메가 IPO 추진</span>
+        <span class="badge badge-economy">투자</span>
+      </div>
+      <ul class="bullets">
+        <li>Anthropic이 대형 IPO를 검토하며 생성형 AI 투자 회수 기대를 키웠다.</li><li>상장 추진은 AI 모델 기업의 자본 조달과 경쟁 구도에 영향을 줄 수 있다.</li>
+      </ul>
+      <span class="impact-pill impact-positive">↑ Positive</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-08-31/anthropic-s-mega-ipo-plan-looms-over-packed-us-listing-calendar" class="card-source" target="_blank" rel="noopener">📰 Bloomberg</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">AI 붐, 스페이스X 목표가 반영</span>
+        <span class="badge badge-economy">투자</span>
+      </div>
+      <ul class="bullets">
+        <li>월가 은행들은 스페이스X 가치 산정에 AI 붐의 성장 기대를 반영하고 있다.</li><li>Citigroup은 스페이스X 시가총액이 12조달러에 이를 수 있다고 제시했다.</li>
+      </ul>
+      <span class="impact-pill impact-neutral">→ Neutral</span>
+      <a href="https://www.marketwatch.com/story/wall-street-banks-are-keeping-astronomical-price-targets-on-spacexs-stock-as-it-tries-to-blast-off-again-0e21a0e4" class="card-source" target="_blank" rel="noopener">📰 MarketWatch</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 3 News Expressions</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"technology stack"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/tekˈnɑːlədʒi stæk/</div>
+      <div class="eng-meaning">→ 기술을 구성하는 소프트웨어·하드웨어의 체계</div>
+      <div class="eng-ex">Mandal said Chinese humanoid makers are also pushing costs down by bringing more of the technology stack in-house and drawing on China’s existing manufacturing base.</div>
+      <div class="eng-ex-kr">Mandal said Chinese humanoid makers are also pushing costs down by bringing more of the technology stack in-house and drawing on China’s existing manufacturing base.</div>
+      <div class="eng-ctx">📌 TechCrunch의 중국 로봇 제조 경쟁력 분석에서 부품과 시스템을 자체화하는 전략을 설명하며 쓰였다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"annualized revenue run rate"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ˈænjuəlaɪzd ˈrevənuː rʌn reɪt/</div>
+      <div class="eng-meaning">→ 현재 매출 속도를 연간으로 환산한 예상 매출</div>
+      <div class="eng-ex">In less than 200 days after launch, ChatGPT Ads has reached $1 billion in annualized revenue run rate.</div>
+      <div class="eng-ex-kr">In less than 200 days after launch, ChatGPT Ads has reached $1 billion in annualized revenue run rate.</div>
+      <div class="eng-ctx">📌 OpenAI의 ChatGPT 광고 사업 발표에서 출시 이후의 매출 규모를 연간 기준으로 제시하며 쓰였다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"less a clean U.S.-China split than a more fragmented global market"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">[레스 어 클린 유에스-차이나 스플릿 댄 어 모어 프래그먼티드 글로벌 마켓]</div>
+      <div class="eng-meaning">→ 명확한 양분보다 더 파편화된 세계 시장</div>
+      <div class="eng-ex">Industry analysts and executives who spoke with TechCrunch said the result may be less a clean U.S.-China split than a more fragmented global market, with Chinese companies expanding elsewhere while U.S. and allied manufacturers compete in markets where security requirements matter more.</div>
+      <div class="eng-ex-kr">Industry analysts and executives who spoke with TechCrunch said the result may be less a clean U.S.-China split than a more fragmented global market, with Chinese companies expanding elsewhere while U.S. and allied manufacturers compete in markets where security requirements matter more.</div>
+      <div class="eng-ctx">📌 TechCrunch의 드론·로봇 규제 분석에서 미중 경쟁의 결과를 단순 양분이 아닌 다극적 시장으로 규정하며 쓰였다.</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Auto-generated | Sources: RSS feeds | 2026-08-31-231708 | AI News Card
+  </div>
+
+</div>
+</div>
+  <script>
+    (function () {
+      const buttons = document.querySelectorAll('[data-lang-button]');
+      const views = document.querySelectorAll('[data-lang-view]');
+      function setLang(lang) {
+        buttons.forEach((button) => button.classList.toggle('active', button.dataset.langButton === lang));
+        views.forEach((view) => view.classList.toggle('active', view.dataset.langView === lang));
+        document.documentElement.lang = lang;
+      }
+      buttons.forEach((button) => button.addEventListener('click', () => setLang(button.dataset.langButton)));
+    })();
+  </script>
+</div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+  <script>
+    (() => {
+      const setLang = (lang) => {
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-lang-button]').forEach((button) => {
+          button.classList.toggle('active', button.dataset.langButton === lang);
+        });
+        document.querySelectorAll('[data-lang-view]').forEach((view) => {
+          view.classList.toggle('active', view.dataset.langView === lang);
+        });
+      };
+      document.addEventListener('click', (event) => {
+        const button = event.target.closest('[data-lang-button]');
+        if (button) setLang(button.dataset.langButton || 'ko');
+      });
+      setLang(document.documentElement.lang || 'ko');
+    })();
+  </script>
+</body>
+</html>
