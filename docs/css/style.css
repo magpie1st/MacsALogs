@@ -235,11 +235,25 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
 .opic-track-meta { display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem; }
 
 .opic-track-foot { padding: 0 1rem 0.5rem 4.05rem; }
+/* 스크립트 토글과 다운로드 링크를 한 줄에 두되, 좁은 화면에서는 자연스럽게 접힌다 */
+.opic-track-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
 .opic-script-toggle {
   background: none; border: none; padding: 0.2rem 0; cursor: pointer;
   font: inherit; font-size: 0.75rem; color: var(--text-muted);
 }
 .opic-script-toggle:hover { color: var(--accent); }
+
+.opic-download {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  padding: 0.2rem 0.6rem; border: 1px solid var(--border); border-radius: 20px;
+  font-size: 0.75rem; line-height: 1.5; color: var(--text-muted);
+  white-space: nowrap;
+}
+.opic-download:hover {
+  background: var(--tag-bg); border-color: var(--accent);
+  color: var(--accent); text-decoration: none;
+}
+.opic-download-icon { font-size: 0.9em; line-height: 1; }
 .opic-script {
   font-size: 0.9rem; line-height: 1.75;
   padding: 0.5rem 0 0.75rem; border-top: 1px solid var(--border); margin-top: 0.4rem;

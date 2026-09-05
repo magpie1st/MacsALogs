@@ -42,6 +42,16 @@
     });
   }
 
+  function formatSize(bytes) {
+    return Math.round(bytes / 1024 / 102.4) / 10 + 'MB';
+  }
+
+  /* 저장 파일명: 음원 경로의 파일명 앞에 주제를 붙여 여러 개를 받아도 섞이지 않게 한다 */
+  function downloadName(topic, story) {
+    var base = String(story.audio).split('/').pop() || 'opic.mp3';
+    return 'opic-' + (topic.slug ? topic.slug + '-' : '') + base;
+  }
+
   /* ── 렌더링 ── */
   function renderList(data) {
     var listEl = document.getElementById('opic-list');
@@ -54,6 +64,7 @@
 
       topic.stories.forEach(function (story) {
         var id = order++;
+        var size = formatSize(story.bytes);
         tracks.push({ title: story.title, topic: topic.topic, audio: story.audio });
 
         html += '<article class="opic-track" id="track-' + id + '">';
@@ -61,12 +72,18 @@
         html += '<span class="opic-track-icon" aria-hidden="true">▶</span>';
         html += '<span class="opic-track-text">';
         html += '<span class="opic-track-title">' + escapeHtml(story.title) + '</span>';
-        html += '<span class="opic-track-meta">' + formatTime(story.duration) +
-                ' · ' + Math.round(story.bytes / 1024 / 102.4) / 10 + 'MB</span>';
+        html += '<span class="opic-track-meta">' + formatTime(story.duration) + ' · ' + size + '</span>';
         html += '</span></button>';
 
         html += '<div class="opic-track-foot">';
+        html += '<div class="opic-track-actions">';
         html += '<button type="button" class="opic-script-toggle" data-script="' + id + '" aria-expanded="false">스크립트 보기</button>';
+        // 목록에 같은 이름의 링크가 여러 개이므로 aria-label로 어느 스토리인지 밝힌다
+        html += '<a class="opic-download" href="' + escapeHtml(story.audio) + '"' +
+                ' download="' + escapeHtml(downloadName(topic, story)) + '"' +
+                ' aria-label="' + escapeHtml('MP3 내려받기 — ' + story.title + ' (' + size + ')') + '">' +
+                '<span class="opic-download-icon" aria-hidden="true">⤓</span>MP3 내려받기</a>';
+        html += '</div>';
         html += '<div class="opic-script" id="script-' + id + '" hidden>' +
                 story.paragraphs.map(function (p) { return '<p>' + escapeHtml(p) + '</p>'; }).join('') +
                 '</div>';
@@ -206,7 +223,7 @@
 
     // 데스크톱 편의: 스페이스바 재생/일시정지
     document.addEventListener('keydown', function (event) {
-      if (event.code !== 'Space' || event.target.matches('input, textarea, button')) return;
+      if (event.code !== 'Space' || event.target.matches('input, textarea, button, a[href]')) return;
       if (current < 0) return;
       event.preventDefault();
       if (audio.paused) { audio.play(); } else { audio.pause(); }
