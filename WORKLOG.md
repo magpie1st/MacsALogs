@@ -4,6 +4,65 @@
 
 ---
 
+## 2026-09-15 (3) — 신사의 품격 전편 오디오 실배포 완료
+
+### 작업
+
+같은 날 앞 항목 (2)에서 "커밋·푸시 전"으로 남겨 두었던 것을 실제로 공개까지 마쳤다.
+
+**(1) Release 자산 확인**
+
+- <https://github.com/magpie1st/MacsALogs/releases/tag/tvshow-audio-2026-09-15-v1>
+  asset **20개**, 합계 **447,880,030 bytes** — 로컬 mp3 크기와 정확히 일치
+- 20개 전부에 `Range: bytes=0-0` 을 넣어 **HTTP 206 / 1 byte** 응답 확인.
+  Episode 1 하나만이 아니라 전 회차에서 Range 요청이 산다는 것을 확인했다
+
+**(2) 사이트 배포**
+
+- 사이트 커밋 `24a2c0a15f5c714311684b133c438c819d986ca3` 를 원격 `github` 의 `main` 에 push.
+  local/remote 해시 일치, ahead/behind **0/0**, 작업 트리 clean
+- GitHub Pages 가 **정확히 그 커밋에서 `built`** (2026-09-15T12:07:32Z)
+
+**(3) 공개 URL 검증**
+
+- 공개 `tvshow.html` **HTTP 200 / 3,031,074 bytes**, live 와 local 의 SHA-256 이
+  `03640c238b223ab79533e5ebb64da4993605b17843b64f1958ed9670d02b67ec` 로 일치
+- JS · `config.json` 200. manifest **20개 모두 200** 이고 live/local SHA 일치
+- Episode 20 의 Release MP3 에 대해 Range **206 / 1000 bytes** 재확인
+
+**(4) 공개 페이지 실제 조작**
+
+Chrome 152 로 공개 URL 을 직접 열어 확인했다.
+
+- Episode 1 **실제 재생** — `currentTime` 증가, 활성 문장 1개
+- `다음 에피소드` 로 E2 전환 — hash · select · `<audio src>` · **1,105 세그먼트** 동기화,
+  E2 도 실제 재생
+- Episode 20 에서 `다음` disabled, `이전` 으로 E19 이동. 가로 overflow **0**
+- 스크린샷 `/tmp/tvshow-all-audio-release-live-public.png`
+
+**(5) 보안 리뷰에서 걸린 두 건**
+
+독립 리뷰가 **처음에는 실패**했다. 두 건이었다.
+
+- 인라인 JSON 에 literal `</script>` 가 들어가면 stored XSS 가 된다
+- Release URL 화이트리스트가 **임의의 HTTPS host** 를 허용하고 있었다
+
+Claude(`-p --model opus`)로 TDD 로 고쳤다. JSON 의 `<`, `>`, `&` 와 U+2028/U+2029 를
+escape 하고, host 를 `github.com/<owner>/<repo>/releases/download/<tag>` 형태로 정확히
+제한했다. 테스트 **130 → 181 passed**. 최종 독립 리뷰 passed, concerns/errors **0**.
+이 보안 수정은 위와 **같은 `24a2c0a` 커밋에 포함되어 있다** — 즉 공개된 코드는 수정본이다.
+
+### 상태
+
+자동 검증은 여기서 끝났다. Release 크기·Range, 커밋/푸시/Pages 빌드, 공개 HTML·JS·manifest
+해시 일치, 브라우저 실제 재생·회차 이동까지 모두 확인했다.
+
+**여전히 사람 청취는 하지 않았다.** 발음·억양·이음새의 자연스러움은 미검증이며,
+15시간 33분 분량의 회차별 표본 청취가 남아 있다. 위 "재생됨"은 오디오가 흐르고 문장 하이라이트가
+따라온다는 뜻이지, 음질이 좋다는 뜻이 아니다.
+
+---
+
 ## 2026-09-15 (2)
 
 ### 작업
