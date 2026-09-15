@@ -36,11 +36,14 @@
 
 ### 배포 상태
 
-- (1)과 (2)는 **이미 커밋·푸시되어 GitHub Pages 에 반영되어 있다**
+- (1)과 (2)는 커밋·푸시되어 GitHub Pages 에 반영됐다
   (`b6ff0ee TVShow 스크립트 페이지 추가`, `417e378 신사의 품격 전편 스크립트 추가`)
-- (3)은 **아직 커밋·푸시 전이다.** 현재는 로컬 작업 트리에만 있다:
-  `docs/audio/tvshow/` (신규), `docs/tvshow.html`, `docs/js/tvshow.js`,
-  `docs/css/style.css`, `scripts/build_tvshow.py` (수정)
+- (3)도 `5c57ec8 Episode 1 Kokoro 오디오 플레이어 추가`로 GitHub `main`에 푸시했다.
+  Pages가 같은 SHA를 `built`로 처리한 뒤 페이지·JS·JSON·MP3의 HTTP 200을 확인했다.
+- 공개 MP3는 **42,627,210 bytes**로 로컬과 SHA-256이 일치했고, Range 요청
+  `bytes=0-999`가 **206 Partial Content**로 응답했다.
+- 실제 Chrome에서 재생 시간이 0초→2.315초로 진행되고 현재 문장 1개가 강조되는 것,
+  다음 문장 이동(6.795초), E1→E20에서 플레이어 숨김·음원 해제, E1 복귀를 확인했다.
 
 ### 검증
 
