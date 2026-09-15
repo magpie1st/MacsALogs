@@ -29,10 +29,10 @@
   },
   "audio": {
     "file": "episode-01.mp3",
-    "bitrate": "128k",
+    "bitrate": "64k",
     "durationSec": 2664.168,
-    "bytes": 42627210,
-    "sha256": "8aec11a4888329225e9125db7e34ece0172418848b7a2eb21025383bb9c0d9b9",
+    "bytes": 21313674,
+    "sha256": "601e6d8a09be5b66ff71cd51e931c27473437609cd000fbc26f677bbc5aa69c0",
     "segmentCount": 1006
   },
   "segments": [

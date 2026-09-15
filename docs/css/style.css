@@ -406,6 +406,23 @@ body.has-player .site-footer { margin-bottom: 8.5rem; }
 .tv-btn:disabled:hover { border-color: var(--border); color: var(--text); }
 .tv-btn--text { font-size: 0.75rem; padding: 0 0.6rem; }
 
+/* 에피소드 앞뒤 이동 — 하단 플레이어의 '문장' 이동 버튼과 헷갈리지 않아야 한다.
+   그쪽은 어두운 고정 바 안의 정사각 아이콘 버튼이고, 이쪽은 상단 도구모음의
+   채워진 가로 버튼이다. 라벨도 '에피소드'를 끝까지 적는다. */
+.tv-field--episode { min-width: 11rem; }
+.tv-epnav { display: flex; gap: 0.35rem; }
+.tv-btn--ep {
+  flex: 1 1 0; min-width: 0; padding: 0 0.5rem;
+  font-size: 0.75rem; font-weight: 600; white-space: nowrap;
+  background: var(--tag-bg); border-color: transparent;
+}
+.tv-btn--ep:hover:not(:disabled) { background: var(--tag-bg); border-color: var(--accent); color: var(--accent); }
+.tv-btn--ep:disabled { background: transparent; border-color: var(--border); }
+.tv-epnav-status {
+  font-size: 0.7rem; color: var(--text-muted);
+  min-height: 1rem; font-variant-numeric: tabular-nums;
+}
+
 .tv-search-count { font-size: 0.75rem; color: var(--text-muted); min-height: 1.1rem; }
 .tv-search-count.is-empty { color: var(--accent); }
 
@@ -574,6 +591,10 @@ body.has-tv-player { scroll-padding-bottom: 12rem; }
   .tv-toolbar { padding: 0.9rem; gap: 0.75rem; }
   .tv-field, .tv-select { width: 100%; }
   .tv-field--grow { flex-basis: 100%; }
+  /* 390px 에서도 두 버튼이 한 줄에 들어가야 한다. 넘치면 접지 말고 글자를 줄인다. */
+  .tv-field--episode { width: 100%; min-width: 0; }
+  .tv-epnav { width: 100%; }
+  .tv-btn--ep { font-size: 0.72rem; padding: 0 0.3rem; min-width: 0; }
   .tv-episode-title { font-size: 1.2rem; }
   .tv-scene { padding: 1rem 0; }
   .tv-top { right: 0.75rem; font-size: 0.75rem; height: 38px; padding: 0 0.75rem; }

@@ -1,5 +1,8 @@
-/* TVShow 스크립트 페이지 — 에피소드 선택 + 본문 검색 + 글자 크기 + 맨 위로
-   오디오가 있는 회차(현재 Episode 1)는 문장 단위로 동기화되는 플레이어를 함께 띄운다. */
+/* TVShow 스크립트 페이지 — 에피소드 선택/앞뒤 이동 + 본문 검색 + 글자 크기 + 맨 위로
+   오디오가 있는 회차는 문장 단위로 동기화되는 플레이어를 함께 띄운다.
+
+   '이전/다음 에피소드'(상단 도구모음)와 '이전/다음 문장'(하단 플레이어)은 다른 것이다.
+   말풍선·아이콘·위치를 모두 다르게 둔 이유가 그것이다. */
 (function () {
   'use strict';
 
@@ -440,6 +443,22 @@
     return null;
   }
 
+  /* 준비된 회차들 안에서의 위치. '준비 중' 회차는 목록에 없으므로 건너뛰어 이동한다. */
+  function currentIndex() {
+    return current ? episodes.indexOf(current) : -1;
+  }
+
+  function updateEpisodeNav() {
+    if (!el.epPrev || !el.epNext) return;
+    var i = currentIndex();
+    el.epPrev.disabled = i <= 0;
+    el.epNext.disabled = i < 0 || i >= episodes.length - 1;
+    if (el.epStatus) {
+      el.epStatus.textContent = i < 0 ? '' :
+        (i + 1) + ' / ' + episodes.length + '편';
+    }
+  }
+
   function selectEpisode(id, updateHash) {
     var ep = findEpisode(id) || episodes[0];
     if (!ep) return;
@@ -457,9 +476,34 @@
 
     renderEpisode();
     setupAudio();
+    updateEpisodeNav();
 
     if (updateHash && window.history && window.history.replaceState) {
       window.history.replaceState(null, '', '#' + ep.id);
+    }
+  }
+
+  function scrollToTop() {
+    // 우리가 만든 스크롤이므로 '따라가기'를 멈추게 하는 사용자 조작으로 세지 않는다
+    programmaticUntil = Date.now() + PROGRAMMATIC_SCROLL_MS;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /* 회차를 앞뒤로 넘긴다. `from` 은 이 이동을 일으킨 버튼이다 —
+     끝 회차에 닿아 그 버튼이 비활성이 되면 포커스가 body 로 떨어지므로 반대쪽으로 옮긴다. */
+  function stepEpisode(step, from) {
+    var i = currentIndex();
+    if (i < 0) return;
+    var next = i + step;
+    if (next < 0 || next >= episodes.length) return;
+
+    selectEpisode(episodes[next].id, true);
+    scrollToTop();
+
+    if (from && from.disabled) {
+      var other = from === el.epPrev ? el.epNext : el.epPrev;
+      if (other && !other.disabled) other.focus();
+      else if (el.series) el.series.focus();
     }
   }
 
@@ -524,6 +568,9 @@
       if (el.episode.value) selectEpisode(el.episode.value, true);
     });
 
+    el.epPrev.addEventListener('click', function () { stepEpisode(-1, el.epPrev); });
+    el.epNext.addEventListener('click', function () { stepEpisode(1, el.epNext); });
+
     el.search.addEventListener('input', function () {
       var value = el.search.value;
       window.clearTimeout(searchTimer);
@@ -570,13 +617,22 @@
       if (id && findEpisode(id)) selectEpisode(id, false);
     });
 
-    // 데스크톱 편의: '/' 로 검색창에 바로 들어간다
+    // 데스크톱 편의: '/' 로 검색창에, '[' ']' 로 앞뒤 에피소드로 간다
     document.addEventListener('keydown', function (event) {
-      if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
       if (isFormField(event.target)) return;
-      event.preventDefault();
-      el.search.focus();
-      el.search.select();
+
+      if (event.key === '/') {
+        event.preventDefault();
+        el.search.focus();
+        el.search.select();
+      } else if (event.key === '[') {
+        event.preventDefault();
+        stepEpisode(-1, null);
+      } else if (event.key === ']') {
+        event.preventDefault();
+        stepEpisode(1, null);
+      }
     });
 
     bindPlayer();
@@ -606,6 +662,9 @@
       seriesKo: document.getElementById('tv-series-ko'),
       stats: document.getElementById('tv-stats'),
       episode: document.getElementById('tv-episode'),
+      epPrev: document.getElementById('tv-ep-prev'),
+      epNext: document.getElementById('tv-ep-next'),
+      epStatus: document.getElementById('tv-ep-status'),
       search: document.getElementById('tv-search'),
       count: document.getElementById('tv-search-count'),
       prev: document.getElementById('tv-search-prev'),

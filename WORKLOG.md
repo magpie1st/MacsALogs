@@ -4,6 +4,74 @@
 
 ---
 
+## 2026-09-15 (2)
+
+### 작업
+
+TVShow 페이지에 **전 20편 오디오**를 붙이고, 에피소드 이동 UI를 넣었다.
+같은 날 앞 항목(Episode 1 단독 오디오)의 후속이며, 배포 방식이 바뀌었다.
+이번에도 Claude Code(`claude -p`, Opus)로 진행했다.
+
+**(1) 배포 방식 변경 — 음원을 GitHub Release로**
+
+기존에는 mp3를 `docs/audio/tvshow/`에 그대로 넣었다. 20편으로 늘리면 이 방식이 깨진다.
+GitHub Pages가 서빙하는 사이트 상한은 1GB인데, 작업 시작 시점 `docs/` 실측이 446,771,615 bytes였고
+여기에 20편 mp3를 더하면 넘는다. 64k로 낮춰도 448MB를 커밋하게 되어 git 이력에 영구히 쌓인다.
+
+- 음원은 Release 자산으로 올리고, Pages에는 타임라인 JSON만 둔다
+- `docs/audio/tvshow/config.json`(신규)에 `audioBaseUrl`을 적고, `scripts/build_tvshow.py`가
+  이를 읽어 오디오 `file`을 절대 https Release URL로 만든다. 없으면 기존 상대경로 동작 유지
+- URL은 화이트리스트로 검사한다(https만, 자격증명·쿼리·`..`·`%`·공백·비ASCII 금지,
+  trailing slash 정규화). 공개 HTML에 그대로 박히는 문자열이라 여기서 못 거르면 사이트에 남는다
+- 인라인 JSON에 로컬 경로가 섞이면 생성을 중단하는 검사도 넣었다
+
+**(2) 전 20편 오디오 (실측)**
+
+- Kokoro `af_heart` / speed 1.0 / 24kHz mono / **64k**. Episode 1도 기존 128k에서 64k로 재생성
+- mp3 20개 합계 **447,880,030 bytes**, 총 재생 길이 **55,984.176초(15:33:04.176)**,
+  문장 세그먼트 **20,710개**, 단일 최대 **26,622,474 bytes**
+- 회차별 원본 sha256 · mp3 sha256 · 문장 커버리지 · 타임라인 단조성 · ffprobe 재생 길이 검증 통과
+  (manifest 마지막 `end`와 실제 길이의 차는 최대 **0.068초**)
+- Release `tvshow-audio-2026-09-15-v1` 생성 완료 — draft/prerelease 아님, **asset 20개**,
+  크기가 로컬과 일치. Episode 1에 `Range: bytes=0-999`를 넣어 redirect 후 **HTTP 206 / 1000 bytes**
+  확인. Release 자산에서도 문장 단위 seek이 동작한다는 뜻이다
+- 반영 결과: `docs/audio/tvshow/`에 JSON 20개 + `config.json`, **mp3 0개**.
+  `docs/` 합계 **410,026,759 bytes**(1GB 대비 충분한 여유). `tvshow.html`은 20편 모두
+  Release URL을 참조하고 인라인 세그먼트 합계가 20,710으로 manifest와 일치
+
+**(3) 이전/다음 에피소드 버튼**
+
+20편이 되니 셀렉트만으로는 회차를 넘기기 번거로웠다.
+
+- `docs/tvshow.html` · `docs/js/tvshow.js` · `docs/css/style.css`에 추가
+- 셀렉트와 동기화, hash 갱신, 재생 정지 + `<audio src>` 교체, 검색 초기화, 상단 이동
+- Episode 1에서 이전 잠김 / Episode 20에서 다음 잠김 / 중간 회차 양쪽 활성.
+  끝에 닿아 버튼이 잠기면 포커스를 반대쪽 버튼으로 옮긴다(키보드 사용자가 포커스를 잃지 않도록)
+- 키보드 `[` / `]` 단축키, `role="group"` + `aria-label`, 상태는 `aria-live`로 알린다
+- **하단 플레이어의 `◀◀ 문장` / `문장 ▶▶`와 시각적으로 구분했다.** 라벨을 '에피소드'까지 적고,
+  위치(상단 도구모음)와 스타일(채워진 가로 버튼)을 다르게 뒀다
+
+**(4) 검증**
+
+- `uv run pytest -q` **130 passed** (tts-maker. Release URL·manifest-only·dry-run 무변경·
+  불안전 URL 거부·로컬 폴백·실제 mp3 검증 테스트 추가)
+- jsdom **17 passed** — E1/E2/E20 버튼 상태, 클릭 전환, hash, 재생정지/src 교체.
+  `/tmp/tvshow-jsdom`에서만 돌리고 이 저장소에 `node_modules`를 만들지 않았다
+- 실제 Chrome 152 desktop 1440×1200 / mobile 390×844: 버튼 상태·hash·src 교체 확인,
+  **가로 overflow 0**. 스크린샷 `/tmp/tvshow-all-audio-{desktop,mobile}.png`
+- `node --check`, python compile, `git diff --check` 통과
+
+### 상태
+
+**아직 이 저장소의 git commit / push / Pages 배포를 하지 않았다.**
+작업 트리에만 반영되어 있다. Release 자산 업로드는 끝났으므로, 커밋·푸시(원격 `github`)하면
+그때 공개 페이지에 반영된다.
+
+**음성 품질은 사람이 듣고 확인하지 않았다.** 자동 검증은 파일 생성·해시·길이·타임라인 정합까지다.
+발음·억양·이음새의 자연스러움은 미검증이며, 15시간 33분 분량이라 회차별 표본 청취가 남아 있다.
+
+---
+
 ## 2026-09-15
 
 ### 작업

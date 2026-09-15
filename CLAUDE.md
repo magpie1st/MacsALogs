@@ -58,25 +58,58 @@ JSON에 없는 회차는 선택 목록에 `준비 중`으로 표시된다.
 
 ### 회차 오디오 (문장 동기화 플레이어)
 
-`docs/audio/tvshow/episode-NN.{mp3,json}`은 **`tts-maker`가 만든 생성물이다. 손으로 고치지 말 것.**
-json은 문장별 start/end 타임라인이고, 페이지의 문장 강조·클릭 seek이 전부 여기에 의존한다.
+현재 **20편 전편에 오디오가 있다** (Kokoro `af_heart` / speed 1.0 / 24kHz mono / 64k).
 
-오디오가 있는 회차만 플레이어가 뜬다. 없는 회차는 기존 스크립트 화면 그대로다.
-현재 오디오가 있는 회차는 Episode 1 하나다.
+`docs/audio/tvshow/`의 내용물은 **`tts-maker`가 만든 생성물이다. 손으로 고치지 말 것.**
+
+| 파일 | 무엇 |
+|------|------|
+| `episode-NN.json` (20개) | 문장별 start/end 타임라인. 문장 강조·클릭 seek이 전부 여기에 의존한다 |
+| `config.json` | `audioBaseUrl` — 음원이 올라가 있는 Release 태그의 기준 URL |
+
+**mp3는 이 저장소에 두지 않는다. 손으로 복사해 넣지 말 것.**
+GitHub Pages가 서빙하는 사이트 상한이 1GB인데 20편이 448MB다. 커밋하면 git 이력에
+영구히 쌓여 되돌릴 수 없다. 음원은 Release 자산으로 올리고 Pages에는 JSON만 둔다.
+
+- 현재 Release: `tvshow-audio-2026-09-15-v1` (asset 20개)
+- 재생 URL: `https://github.com/magpie1st/MacsALogs/releases/download/tvshow-audio-2026-09-15-v1/episode-NN.mp3`
+- Release 자산도 Range 요청(206)을 지원하므로 문장 단위 seek이 그대로 동작한다.
 
 ```bash
 cd /home/magpie/Workspace/dev/macGitHub/tts-maker
 
-uv run tts-maker-tvshow -n --episode 1            # 생성 계획만 확인
-uv run tts-maker-tvshow --episode 1               # 실제 합성 (회차당 약 1분)
+# 생성 (이미 만들어진 회차는 설정이 같으면 건너뛴다)
+uv run tts-maker-tvshow -n --episode 1                    # 계획만 확인
+uv run tts-maker-tvshow --episode {1..20} --bitrate 64k   # 전편 생성
 
-uv run python scripts/publish_tvshow.py -n        # 배포 계획 + 검증만
-uv run python scripts/publish_tvshow.py           # 복사 + tvshow.html 갱신
+# 배포 — 반드시 -n 으로 먼저 확인한다
+uv run python scripts/publish_tvshow.py -n \
+    --episode {1..20} --manifests-only \
+    --audio-base-url https://github.com/magpie1st/MacsALogs/releases/download/tvshow-audio-2026-09-15-v1
+
+# 위 명령에서 -n 만 빼면 실제 반영 (JSON 20개 + config.json 복사, docs의 mp3 제거,
+# build_tvshow.py 실행까지)
 ```
 
 `publish_tvshow.py`가 이 저장소의 `scripts/build_tvshow.py`까지 실행한다.
+`build_tvshow.py`는 `config.json`이 있으면 오디오 `file`을 절대 https Release URL로 만들고
+로컬 mp3를 요구하지 않는다. 없으면 예전처럼 상대경로 + 로컬 mp3를 요구한다.
+
 manifest가 원본 대본과 어긋나면 **배포가 중단된다** — 문장 강조가 밀린 페이지를
-올리는 것보다 올리지 않는 편이 낫다. 그 뒤 커밋·푸시는 이 저장소에서 직접 한다.
+올리는 것보다 올리지 않는 편이 낫다.
+
+**업로드와 푸시는 자동화되어 있지 않다.** `publish_tvshow.py`는 파일만 준비하고 쓸 수 있는
+`gh release create …` 명령을 출력할 뿐이다. 릴리스 업로드도, 커밋·푸시(원격 `github`)도
+사람이 직접 한다.
+
+### tvshow.html 페이지 UI
+
+에피소드 전환 수단이 둘이다. 셀렉트와 `이전 에피소드` / `다음 에피소드` 버튼이며 서로 동기화된다
+(hash 갱신, 재생 정지, `<audio src>` 교체, 검색 초기화, 상단 이동). Episode 1에서 이전이,
+Episode 20에서 다음이 잠긴다. 키보드 `[` / `]` 로도 넘길 수 있다.
+
+하단 플레이어의 `◀◀ 문장` / `문장 ▶▶`와는 **다른 것이다.** 라벨·위치·스타일을 일부러 다르게
+뒀으니, 손댈 때 둘을 닮게 만들지 말 것.
 
 ## 스타일 규칙
 
