@@ -1,0 +1,4254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
+  <meta name="robots" content="noindex" />
+  <meta name="description" content="미드·한드 영어 스크립트를 에피소드별로 읽는 개인 학습용 페이지. 본문 검색과 글자 크기 조절을 지원합니다." />
+  <title>TVShow Script — MacsALogs</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#tv-script">본문 바로가기</a>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="index.html">홈</a>
+        <a href="about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="tv-hero">
+      <p class="tv-eyebrow">TV Show Script</p>
+      <h1 id="tv-series" tabindex="-1">A Gentleman's Dignity</h1>
+      <p class="tv-hero-sub">
+        <strong id="tv-series-ko">신사의 품격</strong> 영어 스크립트를 에피소드별로 읽는 개인 학습용 페이지입니다.
+        기울임체는 내레이션, <span class="tv-legend-note">[대괄호]</span>는 지문이고, 가로선은 장면이 바뀌는 지점입니다.
+        아래에서 에피소드를 고르고, 본문 검색과 글자 크기 조절로 읽기 편하게 맞춰 보세요.
+      </p>
+      <div class="tv-stats" id="tv-stats"></div>
+    </section>
+
+    <section class="tv-toolbar" aria-label="스크립트 읽기 도구">
+      <div class="tv-field">
+        <label class="tv-label" for="tv-episode">에피소드</label>
+        <select class="tv-select" id="tv-episode"></select>
+      </div>
+
+      <div class="tv-field tv-field--grow">
+        <label class="tv-label" for="tv-search">본문 검색</label>
+        <div class="tv-search-row">
+          <input class="tv-search" id="tv-search" type="search" autocomplete="off"
+                 placeholder="영어 단어나 문장 입력 (Enter: 다음 결과)"
+                 aria-describedby="tv-search-count" />
+          <button type="button" class="tv-btn" id="tv-search-prev" aria-label="이전 검색 결과" title="이전 결과 (Shift+Enter)" disabled>↑</button>
+          <button type="button" class="tv-btn" id="tv-search-next" aria-label="다음 검색 결과" title="다음 결과 (Enter)" disabled>↓</button>
+        </div>
+        <p class="tv-search-count" id="tv-search-count" role="status" aria-live="polite"></p>
+      </div>
+
+      <div class="tv-field">
+        <span class="tv-label" id="tv-font-label">글자 크기</span>
+        <div class="tv-font-group" role="group" aria-labelledby="tv-font-label">
+          <button type="button" class="tv-btn" id="tv-font-down" aria-label="글자 작게" title="글자 작게">A−</button>
+          <span class="tv-font-value" id="tv-font-value" aria-live="polite">100%</span>
+          <button type="button" class="tv-btn" id="tv-font-up" aria-label="글자 크게" title="글자 크게">A+</button>
+          <button type="button" class="tv-btn tv-btn--text" id="tv-font-reset">기본</button>
+        </div>
+      </div>
+    </section>
+
+    <article class="tv-script" id="tv-script" tabindex="-1" aria-labelledby="tv-episode-title">
+      <div class="empty-state"><p>스크립트를 불러오는 중…</p></div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank" rel="noopener">GitHub</a></p>
+    </div>
+  </footer>
+
+  <button type="button" class="tv-top" id="tv-top" hidden>
+    <span aria-hidden="true">↑</span> 맨 위로
+  </button>
+
+  <!-- 아래 블록은 scripts/build_tvshow.py 가 자동 생성합니다. 직접 수정하지 마세요. -->
+  <!-- TVSHOW-DATA:START -->
+  <script type="application/json" id="tvshow-data">
+{
+  "series": "A Gentleman's Dignity",
+  "seriesKo": "신사의 품격",
+  "lang": "en",
+  "generated": "2026-09-15",
+  "plannedEpisodes": 20,
+  "episodes": [
+    {
+      "number": 1,
+      "id": "ep01",
+      "title": "Episode 1",
+      "fullTitle": "A Gentleman's Dignity - Episode 1",
+      "source": "01/episode_01.md",
+      "sceneCount": 82,
+      "totalScenes": 82,
+      "truncated": false,
+      "lineCount": 932,
+      "wordCount": 5675,
+      "scenes": [
+        {
+          "n": 1,
+          "lines": [
+            {
+              "kind": "narration",
+              "text": "The age of forty,"
+            },
+            {
+              "kind": "narration",
+              "text": "is an age where an acquaintance may pass away at any moment."
+            },
+            {
+              "kind": "narration",
+              "text": "There's only one reason we've come here."
+            },
+            {
+              "kind": "narration",
+              "text": "A wealthy executive..."
+            },
+            {
+              "kind": "narration",
+              "text": "...'s ex-model wife..."
+            },
+            {
+              "kind": "narration",
+              "text": "...'s friends are also models."
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "lines": [
+            {
+              "kind": "narration",
+              "text": "That's the reason we dished out the bereavement money,"
+            },
+            {
+              "kind": "narration",
+              "text": "as our entrance fee to get in here."
+            },
+            {
+              "kind": "narration",
+              "text": "Wait."
+            }
+          ]
+        },
+        {
+          "n": 3,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Say hello."
+            },
+            {
+              "kind": "dialogue",
+              "text": "It's your dad."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Dad?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "What is she talking about?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "So it was you."
+            },
+            {
+              "kind": "dialogue",
+              "text": "How dare you come here! How dare you!"
+            }
+          ]
+        },
+        {
+          "n": 4,
+          "lines": [
+            {
+              "kind": "note",
+              "text": "Lee Jung Rok, Im Tae San, Choi Yoon, Kim Do Jin"
+            }
+          ]
+        },
+        {
+          "n": 5,
+          "lines": [
+            {
+              "kind": "narration",
+              "text": "Forty is also the age where in any situation,"
+            },
+            {
+              "kind": "narration",
+              "text": "you can always maintain your fortitude and dignity."
+            }
+          ]
+        },
+        {
+          "n": 6,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "You know that order we received to work on that inn last year?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "What's so important that I can't even sit down?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "A water leakage?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yes, a result of the downpour the day before yesterday."
+            },
+            {
+              "kind": "dialogue",
+              "text": "The drainpipe that was made to handle 100mm of rain an hour"
+            },
+            {
+              "kind": "dialogue",
+              "text": "couldn't endure the 120mm/hour downpour,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "so there was a leakage on the fifteenth floor."
+            },
+            {
+              "kind": "dialogue",
+              "text": "The owner of the building says they're going to sue."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Sue who?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "You take care of the meeting today."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Me?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "The skies that poured down 120mm an hour?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "The earth that has made our country into a subtropical zone?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Or the builders who ignored the design and used 100mm pipes?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "If not them,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "us, who warned them multiple times that they shouldn't use 100mm pipes?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Well..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Ridiculous, isn't it?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "But..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Hello."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Hello."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Director, this is the contract for President Song's boutique hotel."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Director, Director Im is on the phone,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "he says you're not picking up your phone."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Did you tell him I was here?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "He said that if you replied, \"Did you tell him I was here?\""
+            },
+            {
+              "kind": "dialogue",
+              "text": "That I could throw away my respect for you."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yeah, it's me."
+            },
+            {
+              "kind": "narration",
+              "text": "You always pick up the phone sounding all serious."
+            },
+            {
+              "kind": "narration",
+              "text": "Why are you ignoring my calls?"
+            },
+            {
+              "kind": "narration",
+              "text": "Why?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "'Cause the subject of our conversations aren't sweet?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm going to kill you, are you really going to be like this?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Are we supposed to give out endless free service to remodel?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "A contractor has responsibility towards the buildings he constructs."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yes, he does."
+            },
+            {
+              "kind": "dialogue",
+              "text": "But we need to get something out of this to take responsibility!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "It's seven times over our budget."
+            },
+            {
+              "kind": "dialogue",
+              "text": "And President Song doesn't care if we use domestic or imported products!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Even if I hold the bricks together with crap she'll say it's environmentally friendly!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Our company is just now beginning to stabilize, are you trying to ruin us again?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Hello?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "You little..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Why did you hang up?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm not used to being blamed. Work hard."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Hello? Hey! Hello?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Shall I return them and place another order?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "No."
+            },
+            {
+              "kind": "dialogue",
+              "text": "While trying to maintain the integrity of his design,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm going to make sure he sees his wage shrink."
+            }
+          ]
+        },
+        {
+          "n": 7,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Is there anything you're looking for in particular?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'd prefer sheepskin."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Something tough and soft."
+            },
+            {
+              "kind": "dialogue",
+              "text": "And the moment he puts it on,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I want him to look favorably upon whoever gave it to him,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "and want to hold her hand."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Something like that."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Then this would be perfect."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Please wrap it for me."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yes."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Would you like the initials stitched on it?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "You can put numbers on it too, right?"
+            },
+            {
+              "kind": "narration",
+              "text": "Yes."
+            }
+          ]
+        },
+        {
+          "n": 8,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Guess who?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Your hands are hot."
+            }
+          ]
+        },
+        {
+          "n": 9,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Is someone out there?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Wasn't our date for three?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I missed you, so I stepped on it."
+            },
+            {
+              "kind": "dialogue",
+              "text": "The conversation starts at three."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Please wait just a moment."
+            }
+          ]
+        },
+        {
+          "n": 10,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Yes, Tae San?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "No, I'm not busy, what is it?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Something you'd like to know?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "What is it?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Now I'm getting curious."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Well, I'm thinking about dating someone."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Dating?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yes."
+            },
+            {
+              "kind": "dialogue",
+              "text": "The friend you brought with you to the baseball field last time."
+            },
+            {
+              "kind": "dialogue",
+              "text": "The one who plays golf."
+            },
+            {
+              "kind": "narration",
+              "text": "She's completely my style,"
+            },
+            {
+              "kind": "narration",
+              "text": "and I was wondering if I could have her number."
+            }
+          ]
+        },
+        {
+          "n": 11,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "I'll send you a message."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Alright, then."
+            }
+          ]
+        },
+        {
+          "n": 12,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "I'm going."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Alright, I'm not seeing you out."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Boss, someone's here for the part-time job."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Tell them to come here."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Alright."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Please come this way."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Go work."
+            }
+          ]
+        },
+        {
+          "n": 13,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "May I see your resume?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Near the window, where we can see the rain."
+            }
+          ]
+        },
+        {
+          "n": 14,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Im Tae San?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "That tall man at the baseball field?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "What does he do? Does he have a lot of money?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "He graduated with an engineering degree,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "and he's the Director at a construction company."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You can ask him personally if he has a lot of money."
+            },
+            {
+              "kind": "dialogue",
+              "text": "He's a construction laborer?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Looks like he's calling."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Is this Im Tae San?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yeah."
+            },
+            {
+              "kind": "dialogue",
+              "text": "This guy has a hasty temper, right?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "You're not going to pick up?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "If you want to get expensive, shiny things from a man,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "you don't pick up calls from an engineer."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You can't always have bright and shiny relationships."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Tae San is a good person."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'll decide whether he's a good person,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "after we've golfed, shopped, and went on vacation together."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Twenty seconds was enough for me."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Who?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "A long time ago, some guy."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Don't ask anymore, I won't tell you."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You have a lot of secrets."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What's with the sudden rain?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I made an appointment at the salon."
+            }
+          ]
+        },
+        {
+          "n": 15,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Suddenly..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I wish something would happen suddenly in my life too."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Something like love."
+            }
+          ]
+        },
+        {
+          "n": 16,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Sorry!"
+            }
+          ]
+        },
+        {
+          "n": 17,
+          "lines": [
+            {
+              "kind": "narration",
+              "text": "How 'bout you take care of this first?"
+            }
+          ]
+        },
+        {
+          "n": 18,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "What happened?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "My clothes... why is it like this?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "So I can't see, but those people can?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "What do I do?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "What do I do?"
+            }
+          ]
+        },
+        {
+          "n": 19,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "So this is what you call true exposure."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Thank... What did you say?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Is your house close by?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "No."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Do you have a car?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "At home."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Then I guess there's no other way."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Let's go."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Walk."
+            },
+            {
+              "kind": "dialogue",
+              "text": "To where?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "You know why you can't stop, right?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Until I say stop, keep going straight."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Where did you pick up this thread?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I don't know when it started to unravel."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Why would I pick something like that up?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Your clothes got caught on my bag."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Then... you made my clothes this way?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "No, you did."
+            },
+            {
+              "kind": "dialogue",
+              "text": "How am I supposed to avoid an attacking butt?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "And it's the same now."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm sorry."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Just keep walking if you don't want to attract more attention."
+            }
+          ]
+        },
+        {
+          "n": 20,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Stop."
+            },
+            {
+              "kind": "dialogue",
+              "text": "How much is this?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Only 10,000 won."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Not that, this."
+            }
+          ]
+        },
+        {
+          "n": 21,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "It suits your attacking butt."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I know I'm at fault here as well, but-"
+            },
+            {
+              "kind": "dialogue",
+              "text": "\"Thank you, you're so kind.\""
+            },
+            {
+              "kind": "dialogue",
+              "text": "What?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm glad that you're thankful."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Well, then."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Thank you! Thank you, but..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "No matter how I think about it, I really think we were both at fault!"
+            }
+          ]
+        },
+        {
+          "n": 22,
+          "lines": [
+            {
+              "kind": "narration",
+              "text": "Damn."
+            },
+            {
+              "kind": "dialogue",
+              "text": "So that's how you came home?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "How embarrassing."
+            },
+            {
+              "kind": "dialogue",
+              "text": "If it was me, I would've just died."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Do you find it disagreeable I'm alive?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Don't be ridiculous."
+            },
+            {
+              "kind": "dialogue",
+              "text": "If you weren't here, who would make breakfast?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Where are you going that you're spending an hour just on make up?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Isn't it uncomfortable putting on fake eyelashes?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "And corsets? Sky-high heels? Are they comfortable?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "The more uncomfortable women are, the more tense they become,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "and the more tense they are, the more beautiful they become."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Who's here?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Oh, it must be the delivery guy."
+            }
+          ]
+        },
+        {
+          "n": 23,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Tae San, what brings you here?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "So there was a reason you become more beautiful every time I see you."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "That's not true..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I didn't mean for you to do that..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Looks like you had no trouble finding this place."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I already knew where you lived."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I drove Yi Soo back home a few times."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What happened?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Because of you, today is our first date."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I didn't know you two were in contact with each other."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You know I like engineers."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'll be late, don't wait up."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm going to go out too, I keep getting calls from somewhere..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Your phone was on the vanity counter."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Let's go."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Right."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yi Soo, I'll see you next time."
+            }
+          ]
+        },
+        {
+          "n": 24,
+          "lines": [
+            {
+              "kind": "narration",
+              "text": "You've worked hard this past year."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Once this vacation is over, you'll become second year students."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What's even more important than your third year, is your second year."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Legendary pitcher, Greg Maddux,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "said that what makes a pitcher great is not his arm,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "but his brain."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Don't spend your one week vacation studying all the time."
+            },
+            {
+              "kind": "dialogue",
+              "text": "'Cause even if you do, your college entrance exam grades won't get any higher."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Instead, think with your brain."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Where am I going to go?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "How do I want to spend my youth?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Will it be hot or boring?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Though judging by your standards... you'll probably just be the onlookers."
+            },
+            {
+              "kind": "dialogue",
+              "text": "And lastly, even though you're on break,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "if you're caught doing anything..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "or going anywhere a minor shouldn't..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "This especially pertains to those who are frequent patrons of the police department."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Don't make me have to bail you out."
+            },
+            {
+              "kind": "dialogue",
+              "text": "She's pretty even when she's glaring."
+            }
+          ]
+        },
+        {
+          "n": 25,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "That's all."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Have a good break,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "and Merry Christmas to everyone."
+            }
+          ]
+        },
+        {
+          "n": 26,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Please wrap this one for me."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yes, one moment please."
+            }
+          ]
+        },
+        {
+          "n": 27,
+          "lines": [
+            {
+              "kind": "narration",
+              "text": "Teach, you know what to do for this Christmas too, right?"
+            },
+            {
+              "kind": "narration",
+              "text": "Please tell Yoon oppa that my looks are no joke nowadays."
+            },
+            {
+              "kind": "narration",
+              "text": "I look like a goddess. Thanks for the favor!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "It's sad enough that I don't have a boyfriend,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "yet here I am acting as a student's messenger."
+            },
+            {
+              "kind": "narration",
+              "text": "Yes?"
+            }
+          ]
+        },
+        {
+          "n": 28,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "It's company policy."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Merry Christmas."
+            },
+            {
+              "kind": "dialogue",
+              "text": "It suits you well."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Even if you laugh, I won't take it off."
+            },
+            {
+              "kind": "dialogue",
+              "text": "My hair's all messed up."
+            },
+            {
+              "kind": "dialogue",
+              "text": "This, is Mae Ah Ri's heart."
+            },
+            {
+              "kind": "dialogue",
+              "text": "And this is mine."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Thanks for doing this every year."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I can never refuse Mae Ah Ri's request."
+            },
+            {
+              "kind": "dialogue",
+              "text": "She knows a huge weakness of mine."
+            },
+            {
+              "kind": "dialogue",
+              "text": "It's a very beneficial teacher/ student relationship, isn't it?"
+            }
+          ]
+        },
+        {
+          "n": 29,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Even though she calls you won't pick up,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "you don't answer her emails,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "or her messages, she worries a lot."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm sorry for barging in, but it's an emergency."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Excuse the intrusion."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I want a divorce."
+            },
+            {
+              "kind": "dialogue",
+              "text": "It's Christmas Eve."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm busy on Christmas day."
+            }
+          ]
+        },
+        {
+          "n": 30,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "It was so funny."
+            },
+            {
+              "kind": "narration",
+              "text": "Do you remember that time we went on the MT?"
+            },
+            {
+              "kind": "narration",
+              "text": "Yeah, I remember, that's right."
+            },
+            {
+              "kind": "dialogue",
+              "text": "One second."
+            }
+          ]
+        },
+        {
+          "n": 31,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "That's what she said to me."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What's so funny?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "We were talking about Se Ra's college days."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Oh."
+            },
+            {
+              "kind": "dialogue",
+              "text": "They're all lies, don't believe them."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What do you mean?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "She was terrifying to the underclassmen."
+            },
+            {
+              "kind": "dialogue",
+              "text": "So that's when she started being scary."
+            },
+            {
+              "kind": "narration",
+              "text": "It was no laughing matter."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Whenever we were gathered together, the men all fell over themselves."
+            },
+            {
+              "kind": "dialogue",
+              "text": "It's a great fortune that we were in the same year as Se Ra."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Right?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "If she had gone into the military instead of golfing,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "she would've earned some stars."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Can we talk? Somewhere quiet."
+            },
+            {
+              "kind": "dialogue",
+              "text": "If you want to kiss me, try to hold off,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "the focal point of my make up today are my lips."
+            }
+          ]
+        },
+        {
+          "n": 32,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "You're Im Tae San's friend,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "an architect by trade,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "and your name is?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I don't particularly like being interrogated."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I don't particularly like men who hide things."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Do you have a girlfriend?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "For about 165 days out of the year."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Why don't you meet her on the other days?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I do, another woman besides my girlfriend."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Am I sitting across from a player right now?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Well I'm not exactly gentle or modest."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You're very open."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You're completely my style."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What are you going to do about it?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "That's why I was just about to leave."
+            },
+            {
+              "kind": "dialogue",
+              "text": "If you see Im Tae San, tell him I left."
+            }
+          ]
+        },
+        {
+          "n": 33,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "I know you're angry."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What's wrong with you?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Why do you think?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Those bastards keep staring at your breasts, don't you know?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I wore this so that they'd look."
+            },
+            {
+              "kind": "dialogue",
+              "text": "These clothes show me off, saying, \"I have an amazing body.\""
+            },
+            {
+              "kind": "dialogue",
+              "text": "Even if I freeze to death, I won't put anything over this."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm telling you, those guys..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "have already touched you a hundred times over in their heads."
+            },
+            {
+              "kind": "dialogue",
+              "text": "All men are like that."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You should know well."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Why can't you just enjoy it? You're so old fashioned."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Is it cool and stylish for a woman with a boyfriend,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "to surround herself with men and laugh, \"haha, hoho\"?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Is that how you are?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "You were the same in the beginning, too."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You'd peek at my legs and glance at my chest."
+            },
+            {
+              "kind": "dialogue",
+              "text": "That's why you were attracted to me."
+            },
+            {
+              "kind": "dialogue",
+              "text": "That's how we started. Don't you remember?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yeah, you're right."
+            },
+            {
+              "kind": "dialogue",
+              "text": "But you know what?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I thought you were okay with it because it was me."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I must've been mistaken."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You're more than what I thought, and I mean that in a bad way."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What do you mean by that?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm your boyfriend."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Does anyone not know that?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Is there anyone there who doesn't know we're dating?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I know."
+            },
+            {
+              "kind": "dialogue",
+              "text": "But you..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You care more about your clothes than me."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I don't think I'm the right person for you."
+            },
+            {
+              "kind": "dialogue",
+              "text": "And I don't think you're the one fated for me."
+            },
+            {
+              "kind": "dialogue",
+              "text": "So let's end it here. I think that's the right thing to do."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Have a nice life."
+            }
+          ]
+        },
+        {
+          "n": 34,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Where are you?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I don't know."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Am I in heaven or hell?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Wow!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Merry Christmas, honey."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm the Christmas witch out to seduce the young boy."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You know, right? It's in your download history."
+            },
+            {
+              "kind": "dialogue",
+              "text": "That's from a really long time ago!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I won't watch, I really won't, really!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Are you actually scared?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "A little bit."
+            },
+            {
+              "kind": "dialogue",
+              "text": "The Christmas witch doesn't give presents to bad boys."
+            },
+            {
+              "kind": "dialogue",
+              "text": "She may not give presents to bad little boys,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "but she does give them to bad men,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "'cause bad men are sexy."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Our sexy guy, Lee Jung Rok, are you ready to receive your present?"
+            }
+          ]
+        },
+        {
+          "n": 35,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "You didn't have to."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You really didn't..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Looks familiar, right?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I found it in the front pocket of your shop apron."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Ah, I must've forgotten about it!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "It was getting in the way while I was doing the dishes."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I saw that you hired a new part-timer."
+            },
+            {
+              "kind": "dialogue",
+              "text": "She was pretty."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What are you thinking?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Do you think that me taking my ring off and that girl are somehow related?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "So that's why I fired her."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You fired her?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Good job, good job."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Why aren't you putting it on?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm putting it on."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Putting it on..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Tada!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Party over."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Honey."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Honey!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Noo-nim."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Park Mi Sook."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm ready."
+            }
+          ]
+        },
+        {
+          "n": 36,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "It really is an attack butt."
+            }
+          ]
+        },
+        {
+          "n": 37,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Merry Christmas, ahjusshi."
+            },
+            {
+              "kind": "dialogue",
+              "text": "By any chance, could you give us a smoke?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Sorry, but I don't smoke."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Merry Christmas."
+            }
+          ]
+        },
+        {
+          "n": 38,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Hello, Officer Kim."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Is it true?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Did they really start the fight first?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yes, they did."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Look."
+            },
+            {
+              "kind": "dialogue",
+              "text": "We were the ones beaten up."
+            },
+            {
+              "kind": "dialogue",
+              "text": "They picked the fight first,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "and since we're so young, we just couldn't do nothing."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Did you really pick the fight first?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Do you really believe that ridiculous story?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "We need to get both sides of the story."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What are you doing? Aren't you going to defend me?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Stop talking, it's humiliating."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I was walking down the street,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "and those two kids blocked my way,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "asking me if I had a smoke."
+            },
+            {
+              "kind": "dialogue",
+              "text": "So I said..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Sorry, but I don't smoke."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Merry Christmas."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Then can you give us some money so that we can buy some?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "You little..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What school do you go to?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Why is a student smoking?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Smoking causes cancer and various other ailments!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "And it's especially not good for the health of high schoolers!"
+            },
+            {
+              "kind": "narration",
+              "text": "What's going on?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Hey, Yoon."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What's with these punks?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Hey, high schoolers, come here."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Come here."
+            },
+            {
+              "kind": "dialogue",
+              "text": "That's how it happened."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'll even prove it."
+            }
+          ]
+        },
+        {
+          "n": 39,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "What do you think..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I can't waste time here trying to persuade you."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Today is Christmas Eve."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You little punks..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Well, we've verified what happened."
+            },
+            {
+              "kind": "dialogue",
+              "text": "But, what's the reason you recorded this?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I record everything that occurs in my life."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You're curious about the reason, right?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'll reveal it in court."
+            },
+            {
+              "kind": "dialogue",
+              "text": "There will be no settlement."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Well, you and your friend can leave."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Their teacher is coming right now, so we'll let her know what happened."
+            },
+            {
+              "kind": "dialogue",
+              "text": "And make sure to tell that teacher that there will be no settlement,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "that I want them punished."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What?"
+            }
+          ]
+        },
+        {
+          "n": 40,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Why don't you just let this go?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "The court has more important trials to oversee."
+            },
+            {
+              "kind": "dialogue",
+              "text": "They're just kids."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You're only saying that 'cause you weren't beaten as much as me."
+            },
+            {
+              "kind": "dialogue",
+              "text": "How is 17 a kid?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Don't they know how to walk? How to understand Korean?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "If they're second years,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "they're at an age where they can take responsibility for any punches they throw."
+            },
+            {
+              "kind": "dialogue",
+              "text": "And when they suspected me before-"
+            },
+            {
+              "kind": "dialogue",
+              "text": "What's wrong?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I saw someone I knew."
+            },
+            {
+              "kind": "dialogue",
+              "text": "She's a high school teacher."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Is she in charge of those kids?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Hey, hey, hey!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "It's true that we're the victims here,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "but it's nothing to be proud of."
+            },
+            {
+              "kind": "dialogue",
+              "text": "We're forty..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Forty..."
+            },
+            {
+              "kind": "narration",
+              "text": "Please, officer."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What do you mean a trial? They're so young..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Lower your eyes."
+            },
+            {
+              "kind": "dialogue",
+              "text": "The other party's number, please?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I don't need all eleven digits, just ten."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Is it not possible?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Your eyes today are quite..."
+            }
+          ]
+        },
+        {
+          "n": 41,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "I'll try to figure it out somehow."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Please help me with these kids."
+            },
+            {
+              "kind": "dialogue",
+              "text": "How 'bout we do this?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "You didn't give me the number, I stole it."
+            },
+            {
+              "kind": "dialogue",
+              "text": "That CCTV..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "That's it, right? The victim's card!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "You know I can't give this out."
+            },
+            {
+              "kind": "dialogue",
+              "text": "He has no intention of settling."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I see."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Could you just rip it up and give me half?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "There's no need, I memorized it while he was writing his address before."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You memorized it?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "This isn't the first time,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "we've been in a situation like this."
+            },
+            {
+              "kind": "dialogue",
+              "text": "How admirable..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Well, then, we'll be on our way now."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yes."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You little punks!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Thank you, once again."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Two forty year old men, and four high schoolers.."
+            },
+            {
+              "kind": "dialogue",
+              "text": "At least in the summer you faced equal numbers..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You're all dead. Follow me!"
+            }
+          ]
+        },
+        {
+          "n": 42,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Are you going to hit us?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Come on, Teach, corporal punishment is illegal."
+            },
+            {
+              "kind": "dialogue",
+              "text": "If you think it's unfair, report me."
+            },
+            {
+              "kind": "dialogue",
+              "text": "There's a thousand in here."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You're going to throw all thousand,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "and you guys are going to hit all thousand."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Then for at least two weeks, you won't even be able to raise your arms,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "meaning you can't go around throwing punches."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'd rather beat you to death and make them useless."
+            },
+            {
+              "kind": "dialogue",
+              "text": "But what can I do? The law says I can't."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You guys don't have to follow the law, but I do."
+            },
+            {
+              "kind": "dialogue",
+              "text": "So unfair, you know that?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Is it time for our confession?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Why don't you just buy us some seolleongtang and lecture us then?"
+            },
+            {
+              "kind": "narration",
+              "text": "Some soju would be nice too."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Don't you understand the situation we're in?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Let's go."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yeah."
+            }
+          ]
+        },
+        {
+          "n": 43,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "I'm sorry."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Don't."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I don't believe you."
+            }
+          ]
+        },
+        {
+          "n": 44,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Ball."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What are you doing?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Aren't you going?"
+            }
+          ]
+        },
+        {
+          "n": 45,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "How did that ring get into your wife's hands?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "There's a whistle-blower in my midst."
+            },
+            {
+              "kind": "dialogue",
+              "text": "When I get my hands on whoever it is..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "The hyungs are here."
+            }
+          ]
+        },
+        {
+          "n": 46,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "What happened to you guys? And what's wrong with your face?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Worry about yourself."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Your wife wants to divorce you. On Christmas."
+            },
+            {
+              "kind": "dialogue",
+              "text": "She said that on our anniversary too."
+            },
+            {
+              "kind": "dialogue",
+              "text": "So what happened to your faces?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "So you're saying that you two fought 17 guys?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "You want me to believe that?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Why won't you believe it? What do you get out of not believing it?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Do you think we got beaten by a couple of high school kids?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Tequila."
+            },
+            {
+              "kind": "narration",
+              "text": "Yes, sir."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What's with you? You should be having it the easiest."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What about Se Ra?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "What happened to their faces?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "They got beaten by a couple of high schoolers."
+            },
+            {
+              "kind": "dialogue",
+              "text": "No, we didn't!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Looks like you were against four of them."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Must be pretty humiliating."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Maybe they were robbed as well."
+            },
+            {
+              "kind": "dialogue",
+              "text": "They may have picked the fight first."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Where are you going? Can't stand the embarrassment?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Judging from your face it must've been an intense fight."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm going to the bathroom."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Go, go."
+            },
+            {
+              "kind": "dialogue",
+              "text": "With intensity."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Hey, that..."
+            }
+          ]
+        },
+        {
+          "n": 47,
+          "lines": [
+            {
+              "kind": "narration",
+              "text": "Sorry, but I don't smoke."
+            },
+            {
+              "kind": "narration",
+              "text": "Merry Christmas."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Then can you give us some money so that we can buy some?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "As you can tell by my clothes, I left my wallet at home."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Excuse us, but could we look through your clothes?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "You can."
+            },
+            {
+              "kind": "dialogue",
+              "text": "But it would be better not to."
+            },
+            {
+              "kind": "dialogue",
+              "text": "We weren't giving you a choice."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Take your hand out."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Is... there a reason... for me to do that?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm warning you, ahjusshi."
+            },
+            {
+              "kind": "dialogue",
+              "text": "If you keep talking to me informally, it'll end badly for you."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Oh... was I speaking... informally?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Take your hands out."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You kids..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "This ahjusshi..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I see it. Right there."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Fine."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Let's do this, then."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Let's buy those cigarettes."
+            },
+            {
+              "kind": "dialogue",
+              "text": "That is, if I have any money left after buying some cheese."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You only need one pack, right?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Both of you don't need one, right?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Are you kidding me?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "What are you kids doing?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Lawyer Yoon!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "He's a lawyer, a lawyer."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Little punks, who do you think you're robbing?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Hey, high schoolers, come here."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Come here."
+            }
+          ]
+        },
+        {
+          "n": 48,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Why didn't you just give them the money?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Why did you have to call over those kids?"
+            }
+          ]
+        },
+        {
+          "n": 49,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Hey!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Give it back!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "That was quite pathetic."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Oh, was I speaking, informally?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Hey, did you kneel too?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "You better give it to me right now."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You should thank Yoon."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Without Yoon, you would be dead!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I had it all taken care of! It's because he showed up that things got worse!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Why did you provoke them? They're young!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Don't give it to him! Don't give it to him!"
+            },
+            {
+              "kind": "narration",
+              "text": "We first met when we were 18,"
+            },
+            {
+              "kind": "narration",
+              "text": "and we've went through 22 years together."
+            },
+            {
+              "kind": "narration",
+              "text": "People who look at us may think we act forty."
+            },
+            {
+              "kind": "narration",
+              "text": "But whenever all four of us are together,"
+            },
+            {
+              "kind": "narration",
+              "text": "we always become 18 again."
+            }
+          ]
+        },
+        {
+          "n": 50,
+          "lines": [
+            {
+              "kind": "narration",
+              "text": "The New Year came once again,"
+            },
+            {
+              "kind": "narration",
+              "text": "and we became 41."
+            },
+            {
+              "kind": "narration",
+              "text": "But because we were together,"
+            },
+            {
+              "kind": "narration",
+              "text": "as always, we were just boys."
+            }
+          ]
+        },
+        {
+          "n": 51,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "It's the first day of the New Year."
+            },
+            {
+              "kind": "dialogue",
+              "text": "We had fun, right?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "It was fun."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Four men ate fishcakes together."
+            },
+            {
+              "kind": "dialogue",
+              "text": "And four men played Yut."
+            },
+            {
+              "kind": "dialogue",
+              "text": "And, four \"Mo\" came up in our Yut game."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Being a part of a couple is hard."
+            },
+            {
+              "kind": "dialogue",
+              "text": "This isn't even your house, why did you take a shower,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "when you don't even have underwear to change into?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Why not? I'm wearing underwear."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Whose?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yours."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You! Take it off!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Don't start the New Year off by yelling."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'll use rising prices as an incentive to get my wife to raise the rent."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Hey, come on..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You want to wear another one?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Layer it."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm going to sweat."
+            },
+            {
+              "kind": "dialogue",
+              "text": "These are tight."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Hey, you should've worn the shorts, not those!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Those are limited edition!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Really?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "By any chance, are these also limited edition?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Stop! Give it to me!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "It's no surprise, considering he's single."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Why are you overreacting?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "There's a reason for everything."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I said give it over!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Look, it's ripped!"
+            }
+          ]
+        },
+        {
+          "n": 52,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "What are you guys thinking?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I wasn't the one who ripped these."
+            },
+            {
+              "kind": "dialogue",
+              "text": "They were already ripped when she wore them here."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yeah, right."
+            },
+            {
+              "kind": "narration",
+              "text": "Truthfully, when we're together we may be boys,"
+            },
+            {
+              "kind": "narration",
+              "text": "but when we're alone, we can be very adult."
+            },
+            {
+              "kind": "dialogue",
+              "text": "The key to a boutique hotel's survival is for it to avoid announcing, \"Hey, I'm a hotel.\""
+            },
+            {
+              "kind": "dialogue",
+              "text": "in other words, an original design,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "along with a unique and entertaining use of interior space."
+            },
+            {
+              "kind": "dialogue",
+              "text": "So boring..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "When is Director Im getting here?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "He said he was nearby."
+            },
+            {
+              "kind": "dialogue",
+              "text": "He's here, Director Im."
+            },
+            {
+              "kind": "dialogue",
+              "text": "There was so much traffic."
+            },
+            {
+              "kind": "dialogue",
+              "text": "President Song?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "How have you gotten so young?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I thought he was interviewing a new employee."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Stop it, I was just about to get sad."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I brought the contract here because of you, Director Im."
+            },
+            {
+              "kind": "dialogue",
+              "text": "So why do I always have the meetings with Director Kim?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "These mean nothing to me."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I just need a smooth pillar like your arms."
+            },
+            {
+              "kind": "dialogue",
+              "text": "An open and bright window like your chest."
+            },
+            {
+              "kind": "dialogue",
+              "text": "That's all I need!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "President Song, you have such refined tastes."
+            },
+            {
+              "kind": "dialogue",
+              "text": "As expected!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Aren't you hot?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm not, I'm not."
+            },
+            {
+              "kind": "dialogue",
+              "text": "It's really cold today!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Even if you're not hot, President Song is."
+            },
+            {
+              "kind": "dialogue",
+              "text": "She's uncomfortable seeing you like that."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yeah, it is uncomfortable."
+            },
+            {
+              "kind": "dialogue",
+              "text": "President Song, looks like you've got a phone call."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You're so kind."
+            },
+            {
+              "kind": "dialogue",
+              "text": "One moment."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yes."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yes, Mr. Kang?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "You told me to come because of her, didn't you?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "She doesn't listen to anything I say, what else could I do?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I said two things and she said she was bored."
+            },
+            {
+              "kind": "dialogue",
+              "text": "This is a big project. Don't you want to work on a hotel?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "The level of our portfolio-"
+            },
+            {
+              "kind": "dialogue",
+              "text": "If it wasn't for your pride,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "not only our portfolio but-"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Director Im!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Mr. Kang, who I introduced you to last time,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "was so impressed by that villa,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "that he wants you to build a townhouse in Jeju!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Oh, right, what did we have to take care of first?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "It's hot, it's hot."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Let's get cool, and energize ourselves!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Where's that smooth pillar?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Right here!"
+            },
+            {
+              "kind": "narration",
+              "text": "He actually took it off."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I tell you, with that level of service, he could work in the red-light district tomorrow."
+            },
+            {
+              "kind": "dialogue",
+              "text": "So, did it end well?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "As long as Tae San doesn't die, she'll be a lifelong client."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Be careful today. I hit a home run in the last game."
+            },
+            {
+              "kind": "dialogue",
+              "text": "After getting a lesson from Hwang,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "it'll just continue flying."
+            },
+            {
+              "kind": "narration",
+              "text": "Hello. I'm contacting you again about the settlement."
+            },
+            {
+              "kind": "narration",
+              "text": "I'd like to meet you. Please."
+            }
+          ]
+        },
+        {
+          "n": 53,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "I don't want to meet you."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What is it?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "A woman who wants to meet me."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Can't you be faithful to just one?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Don't worry, 'cause I'm not faithful to anyone."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Change your clothes. A member of our team can't come."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm warning you! It's best not to say anything in the negative."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Any comments like \"I don't want to. You crazy? It's annoying,\" etc.,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "and our contract with President Song is over starting from today, alright?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I don't not want to."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Change your clothes, we have extra uniforms."
+            },
+            {
+              "kind": "dialogue",
+              "text": "And tie him up to make sure he doesn't run away."
+            },
+            {
+              "kind": "dialogue",
+              "text": "We're ready!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Follow me."
+            }
+          ]
+        },
+        {
+          "n": 54,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Strike, out!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Strike!"
+            }
+          ]
+        },
+        {
+          "n": 55,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Out!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Strike!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Strike out!"
+            },
+            {
+              "kind": "narration",
+              "text": "Behind you, behind you!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Out!"
+            }
+          ]
+        },
+        {
+          "n": 56,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Strike!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Strike out!"
+            }
+          ]
+        },
+        {
+          "n": 57,
+          "lines": [
+            {
+              "kind": "narration",
+              "text": "Fighting!"
+            }
+          ]
+        },
+        {
+          "n": 58,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Strike out!"
+            }
+          ]
+        },
+        {
+          "n": 59,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Strikeout, strikeout, ground ball, double play."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Were you playing against the national team?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm in charge of the visuals. I did the best I could."
+            },
+            {
+              "kind": "dialogue",
+              "text": "But is the ref a woman?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Right."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Whether it's a strike..."
+            }
+          ]
+        },
+        {
+          "n": 60,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "The referee is a woman."
+            }
+          ]
+        },
+        {
+          "n": 61,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "What do you think?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "About what?"
+            },
+            {
+              "kind": "narration",
+              "text": "Pretty, right?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I've only gotten a good look at her backside."
+            },
+            {
+              "kind": "dialogue",
+              "text": "She has a pretty butt."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You're such a rotten bastard."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Did you only look at the ref's butt and not the ball?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Exactly thirty seconds."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "\"My number is...\""
+            },
+            {
+              "kind": "dialogue",
+              "text": "The time it'll take for her to give me her number."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Watch carefully."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Don't do it! I won't allow it."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm going to be seeing her for a long time,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "and I want her to get together with Yoon."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Don't you dare!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yi Soo, good job today, it was hard, right?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Not at all. It's always fun and exciting."
+            },
+            {
+              "kind": "dialogue",
+              "text": "This is my embarrassing friend."
+            },
+            {
+              "kind": "narration",
+              "text": "So embarrassing..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I have to leave right away, something came up."
+            },
+            {
+              "kind": "narration",
+              "text": "You're not going out to eat with us?"
+            },
+            {
+              "kind": "narration",
+              "text": "Why not? Did something bad happen?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Later."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You were really great today."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Be safe, and let me know if you need any help!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Thirty seconds?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Shall I give you another thirty seconds?"
+            }
+          ]
+        },
+        {
+          "n": 62,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Excuse me."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Right now, back there."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I should've left quite an impression on you,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "and yet you acted as if you didn't even see me."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Then you can pretend you didn't see me as well."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Excuse me!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yes?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Usually, women are the ones who ask this of me,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "but don't you remember me?"
+            }
+          ]
+        },
+        {
+          "n": 63,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "I'm sorry... by any chance..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You're right."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Are you the parent of one of my students?"
+            }
+          ]
+        },
+        {
+          "n": 64,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "You remember now, right?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Oh..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Are you a supervisor?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Do you really not remember me?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Sorry, but that's such a common line,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "and I don't have the time right now."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Well, then."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Think carefully!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I remember your butt from last spring very well!"
+            }
+          ]
+        },
+        {
+          "n": 65,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "So embarrassing, so embarrassing!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Of all places, why did we have to meet here?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "What if he tells Tae San?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "What do I do?"
+            }
+          ]
+        },
+        {
+          "n": 66,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Are you in?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Is no one there?"
+            }
+          ]
+        },
+        {
+          "n": 67,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "What are you thinking about?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Last year, there were two women whose numbers I wanted."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What should we have for dinner?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "That Italian restaurant we went to last time was pretty good-"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Sorry."
+            },
+            {
+              "kind": "dialogue",
+              "text": "But I have to go."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Go where?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I really want to find out this woman's number."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'll call you."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Oppa!"
+            }
+          ]
+        },
+        {
+          "n": 68,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "One second."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Did you leave something?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yeah, but it's gone."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What is it? Is it something important?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Just put your ring on."
+            },
+            {
+              "kind": "narration",
+              "text": "I missed one of them like that,"
+            },
+            {
+              "kind": "narration",
+              "text": "and it was the same story with the other one."
+            },
+            {
+              "kind": "dialogue",
+              "text": "No matter how I think about it, I really think we were both at fault!"
+            }
+          ]
+        },
+        {
+          "n": 69,
+          "lines": [
+            {
+              "kind": "narration",
+              "text": "Those women were lucky."
+            },
+            {
+              "kind": "dialogue",
+              "text": "But today, I met one of them by chance,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "and I just realized something."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Those two women, were the same woman."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Really?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Funny, right?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "This woman's so persistent."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Hello?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "You picked up! Hello, I'm-"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I know who you are. And I know what you want."
+            },
+            {
+              "kind": "dialogue",
+              "text": "My answer is-"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Wait, wait!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Please don't cut me off,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'd appreciate it if you could listen to what I have to say."
+            },
+            {
+              "kind": "narration",
+              "text": "They're just immature, they're not bad kids."
+            },
+            {
+              "kind": "dialogue",
+              "text": "They still have so much ahead of them..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "So they have plenty of time ahead of them,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "and I only have 16,800 meters at most, so I should just endure it?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Don't kid yourself."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm still flowering,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "and you should be thankful..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Young?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "that I put a stop to lives that weren't going anywhere anyway. So let's hang up."
+            },
+            {
+              "kind": "dialogue",
+              "text": "They need to know that this is a world without compromise."
+            },
+            {
+              "kind": "dialogue",
+              "text": "That's part of their education. Well, then."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Is that phone call, by chance..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yeah, the teacher of those kids."
+            }
+          ]
+        },
+        {
+          "n": 70,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "You still haven't come to a settlement?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I have no reason to."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You...!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I know that teacher, and so does Tae San!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Plus, she's Se Ra's friend and they live together!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Didn't you see her today?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "That female referee at our game today."
+            },
+            {
+              "kind": "dialogue",
+              "text": "That woman is this woman?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yes, you idiot."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Flowering Kim Do Jin."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Come to a settlement while I ask you nicely, alright?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Get out!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I am!"
+            }
+          ]
+        },
+        {
+          "n": 71,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Why are you just telling this now?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "You should've said that before I said flowering!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "You had plenty of chances!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Bastard..."
+            }
+          ]
+        },
+        {
+          "n": 72,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "What?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Then that..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "The strikeouts, double play..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "that person who is Tae San's friend is..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yes, his name is Kim Do Jin."
+            },
+            {
+              "kind": "dialogue",
+              "text": "He's a Director at Tae San's architectural firm."
+            }
+          ]
+        },
+        {
+          "n": 73,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "I see."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Then, that middle-aged man who was with him that day, was he by any chance..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "No! No."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I wasn't the one with Do Jin."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I just heard about it from him."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Don't worry too much."
+            },
+            {
+              "kind": "dialogue",
+              "text": "If I can't persuade him, we have Tae San as well."
+            },
+            {
+              "kind": "dialogue",
+              "text": "No!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'll take care of it. I'll meet him."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Please don't tell Tae San."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Please."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Yes, don't worry."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Alright."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What do I do? What do I do?"
+            }
+          ]
+        },
+        {
+          "n": 74,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "I just can't catch a break in this life."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Not one break."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Really..."
+            }
+          ]
+        },
+        {
+          "n": 75,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Whatever, I can't do it!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "To think that he's the same person... the same person!"
+            }
+          ]
+        },
+        {
+          "n": 76,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Excuse me..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "How can he say in his own words that he's flowering?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "What do I do?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I don't think he's normal."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I should just get this over with."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Fine, let's do it."
+            },
+            {
+              "kind": "narration",
+              "text": "Can we meet just once?"
+            },
+            {
+              "kind": "narration",
+              "text": "Please, I'm begging you."
+            },
+            {
+              "kind": "narration",
+              "text": "And when you see me, are you just going to get to know me?"
+            },
+            {
+              "kind": "narration",
+              "text": "I'm not speaking informally, just to myself."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What's with this guy?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Even his messages are weird."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Does he want to meet or not?"
+            },
+            {
+              "kind": "narration",
+              "text": "Of course I can figure it out."
+            },
+            {
+              "kind": "narration",
+              "text": "As long as you agree to meet me, I'd be willing to hold a rose between my teeth."
+            },
+            {
+              "kind": "narration",
+              "text": "Just let me know where we should meet."
+            },
+            {
+              "kind": "narration",
+              "text": "Fine. Let's meet."
+            },
+            {
+              "kind": "narration",
+              "text": "Come with a rose between your teeth. To my office."
+            },
+            {
+              "kind": "narration",
+              "text": "You must come with the rose."
+            },
+            {
+              "kind": "dialogue",
+              "text": "That's just a saying!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Is this guy nuts or something?"
+            }
+          ]
+        },
+        {
+          "n": 77,
+          "lines": [
+            {
+              "kind": "narration",
+              "text": "Excuse me."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You must be really busy."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm not, but I'm pretending you're not there,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "'cause that's what you told me to do."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm sorry about what happened at the baseball field yesterday."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I won't accept your apology, 'cause you don't mean it."
+            },
+            {
+              "kind": "dialogue",
+              "text": "That's that."
+            },
+            {
+              "kind": "dialogue",
+              "text": "But do you really not remember me?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm not very good at remembering people's faces."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You don't know just how much I want to remember."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I see."
+            },
+            {
+              "kind": "dialogue",
+              "text": "But it looks like you don't even remember what happened yesterday,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "that doesn't allow me to put much faith in you."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You promised that you'd come with a flower between your teeth, didn't you?"
+            }
+          ]
+        },
+        {
+          "n": 78,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "I see you're contemplating whether I meant it or not. I did."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Let's pretend this meeting never happened. A promise is a promise, after all."
+            },
+            {
+              "kind": "dialogue",
+              "text": "No!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I wasn't sure."
+            },
+            {
+              "kind": "dialogue",
+              "text": "So... I did... prepare it..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "By any chance, if you're doing this because of my attitude yesterday-"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Enough with the explanations. Do what you promised to do,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "if you don't want to"
+            },
+            {
+              "kind": "dialogue",
+              "text": "I'm really sorry!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "But are you against me putting it behind my ears?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Well, I'll be able to endure it."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Put it behind your ears and wait. I was in the middle of something."
+            }
+          ]
+        },
+        {
+          "n": 79,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "That's not the right thing to do."
+            }
+          ]
+        },
+        {
+          "n": 80,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "I don't have any time today. Let's talk next time."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Wait. It'll only take five minutes."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I apologize for my behavior yesterday at the baseball field."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Since I've received my punishment like this,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "please, don't be angry anymore."
+            },
+            {
+              "kind": "dialogue",
+              "text": "And please excuse the behavior of my kids."
+            },
+            {
+              "kind": "dialogue",
+              "text": "They're still students who need guidance."
+            },
+            {
+              "kind": "dialogue",
+              "text": "They didn't seem to be weak enough to need guidance."
+            },
+            {
+              "kind": "dialogue",
+              "text": "They're young enough to need guidance."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Sorry, but I have no interest in those kids' lives."
+            },
+            {
+              "kind": "dialogue",
+              "text": "There will be no settlement."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Excuse-"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Excuse..."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Wait!"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Director Kim, wait!"
+            }
+          ]
+        },
+        {
+          "n": 81,
+          "lines": [
+            {
+              "kind": "dialogue",
+              "text": "Let me just ask you one thing."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Please, ask."
+            },
+            {
+              "kind": "dialogue",
+              "text": "You like Tae San, right?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Excuse me?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "Just you."
+            },
+            {
+              "kind": "dialogue",
+              "text": "What you'd call a one-sided love,"
+            },
+            {
+              "kind": "dialogue",
+              "text": "with your friend's boyfriend."
+            }
+          ]
+        },
+        {
+          "n": 82,
+          "lines": [
+            {
+              "kind": "narration",
+              "text": "Do you really not know me?"
+            },
+            {
+              "kind": "narration",
+              "text": "To think that man is that man."
+            },
+            {
+              "kind": "narration",
+              "text": "What do I do, what do I do, what do I do?"
+            },
+            {
+              "kind": "narration",
+              "text": "Men are lined up offering me diamonds, imported cars, and keys to officetels."
+            },
+            {
+              "kind": "dialogue",
+              "text": "Are there three of them? Or is one offering you all three?"
+            },
+            {
+              "kind": "narration",
+              "text": "If he gets caught this time, he'll get divorced immediately!"
+            },
+            {
+              "kind": "narration",
+              "text": "I forgot to tell you that I paid for the tab."
+            },
+            {
+              "kind": "dialogue",
+              "text": "And since I'm already spending, I splurged a bit more."
+            },
+            {
+              "kind": "narration",
+              "text": "You might as well have as much fun as you can."
+            },
+            {
+              "kind": "narration",
+              "text": "You took my pen, didn't you?"
+            },
+            {
+              "kind": "narration",
+              "text": "Pen? Why would I have taken that?"
+            },
+            {
+              "kind": "narration",
+              "text": "It's important to me!"
+            },
+            {
+              "kind": "narration",
+              "text": "She's grown up to be quite pretty."
+            },
+            {
+              "kind": "narration",
+              "text": "In my opinion, you're still someone's first love."
+            },
+            {
+              "kind": "narration",
+              "text": "I've been dragged around enough by you."
+            },
+            {
+              "kind": "narration",
+              "text": "Is this how I'm supposed to be punished for not remembering you?"
+            },
+            {
+              "kind": "dialogue",
+              "text": "This is the only way to punish you."
+            },
+            {
+              "kind": "dialogue",
+              "text": "I fell for you at first sight."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <!-- TVSHOW-DATA:END -->
+
+  <script src="js/tvshow.js"></script>
+</body>
+</html>

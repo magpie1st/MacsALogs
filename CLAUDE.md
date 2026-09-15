@@ -39,6 +39,22 @@ uv run python scripts/publish_blog.py             # 음원 복사 + opic.html �
 
 그 뒤 이 저장소에서 커밋·푸시하면 반영된다.
 
+## TVShow 스크립트 페이지
+
+`docs/tvshow.html`도 포스트가 아닌 독립형 페이지다(내비게이션에 없고 URL로만 접근).
+`<!-- TVSHOW-DATA:START -->` ~ `END` 사이 JSON은 **자동 생성 영역이다. 손으로 고치지 말 것.**
+
+원본은 `book-maker` 저장소의 `output/<NN>/episode_<NN>.md`이며, 이 저장소의 생성기가 읽어서
+JSON 블록만 교체한다(원본은 읽기 전용).
+
+```bash
+python3 scripts/build_tvshow.py            # 원본 전체 반영
+python3 scripts/build_tvshow.py --scenes 6 # 앞 6개 장면만 (발췌본)
+```
+
+에피소드 추가는 `book-maker/output/`에 `episode_02.md` … 를 만든 뒤 위 명령을 다시 실행하면 된다.
+JSON에 없는 회차는 선택 목록에 `준비 중`으로 표시된다.
+
 ## 스타일 규칙
 
 - 색상·여백 변경은 `style.css`의 `:root` 변수 값만 수정
