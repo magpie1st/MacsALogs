@@ -50,10 +50,33 @@ JSON 블록만 교체한다(원본은 읽기 전용).
 ```bash
 python3 scripts/build_tvshow.py            # 원본 전체 반영
 python3 scripts/build_tvshow.py --scenes 6 # 앞 6개 장면만 (발췌본)
+python3 scripts/build_tvshow.py --no-audio # 오디오 타임라인 무시하고 스크립트만
 ```
 
 에피소드 추가는 `book-maker/output/`에 `episode_02.md` … 를 만든 뒤 위 명령을 다시 실행하면 된다.
 JSON에 없는 회차는 선택 목록에 `준비 중`으로 표시된다.
+
+### 회차 오디오 (문장 동기화 플레이어)
+
+`docs/audio/tvshow/episode-NN.{mp3,json}`은 **`tts-maker`가 만든 생성물이다. 손으로 고치지 말 것.**
+json은 문장별 start/end 타임라인이고, 페이지의 문장 강조·클릭 seek이 전부 여기에 의존한다.
+
+오디오가 있는 회차만 플레이어가 뜬다. 없는 회차는 기존 스크립트 화면 그대로다.
+현재 오디오가 있는 회차는 Episode 1 하나다.
+
+```bash
+cd /home/magpie/Workspace/dev/macGitHub/tts-maker
+
+uv run tts-maker-tvshow -n --episode 1            # 생성 계획만 확인
+uv run tts-maker-tvshow --episode 1               # 실제 합성 (회차당 약 1분)
+
+uv run python scripts/publish_tvshow.py -n        # 배포 계획 + 검증만
+uv run python scripts/publish_tvshow.py           # 복사 + tvshow.html 갱신
+```
+
+`publish_tvshow.py`가 이 저장소의 `scripts/build_tvshow.py`까지 실행한다.
+manifest가 원본 대본과 어긋나면 **배포가 중단된다** — 문장 강조가 밀린 페이지를
+올리는 것보다 올리지 않는 편이 낫다. 그 뒤 커밋·푸시는 이 저장소에서 직접 한다.
 
 ## 스타일 규칙
 
