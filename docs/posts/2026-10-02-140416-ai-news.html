@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오늘의 AI 뉴스 — 2026-10-02 / Today's AI News — 2026-10-02 — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    @media (max-width: 799px) { .view-desktop { display: none; } }
+    @media (min-width: 800px) { .view-mobile { display: none; } }
+    .view-desktop { max-width: 100%; overflow-x: auto; }
+    html[lang="ko"] .i18n-en, html[lang="en"] .i18n-ko { display: none !important; }
+    html[lang="ko"] .view-lang-en, html[lang="en"] .view-lang-ko { display: none !important; }
+    html[lang="en"] .view-lang-en, html[lang="ko"] .view-lang-ko { display: block !important; }
+    .post-lang-switch { display:flex; gap:8px; flex-wrap:wrap; margin:1rem 0 0; }
+    .post-lang-switch button { border:1px solid #c7d2fe; background:#eef2ff; color:#3730a3; border-radius:999px; padding:6px 12px; font-weight:700; cursor:pointer; }
+    html[lang="ko"] [data-lang-button="ko"], html[lang="en"] [data-lang-button="en"] { background:#4f46e5; color:#fff; border-color:#4f46e5; }
+    .view-mobile .view-lang-ko {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: #eef0f5;
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.5;
+  }.view-mobile .view-lang-ko .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px 12px 24px;
+  }.view-mobile .view-lang-ko .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }.view-mobile .view-lang-ko .header-logo { font-size: 28px; margin-right: 10px; }.view-mobile .view-lang-ko .header-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }.view-mobile .view-lang-ko .header-sub { font-size: 11px; opacity: 0.75; margin-top: 2px; }.view-mobile .view-lang-ko .header-date { font-size: 13px; font-weight: 700; text-align: right; }.view-mobile .view-lang-ko .header-edition { font-size: 10px; opacity: 0.65; margin-top: 2px; text-align: right; }.view-mobile .view-lang-ko .sec-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }.view-mobile .view-lang-ko .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+  }.view-mobile .view-lang-ko .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }.view-mobile .view-lang-ko .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-mobile .view-lang-ko .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-mobile .view-lang-ko .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-mobile .view-lang-ko .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-mobile .view-lang-ko .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }.view-mobile .view-lang-ko .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }.view-mobile .view-lang-ko .num-ai { background: #e0e7ff; color: #3730a3; }.view-mobile .view-lang-ko .num-detail { background: #ede9fe; color: #5b21b6; }.view-mobile .view-lang-ko .num-economy { background: #d1fae5; color: #065f46; }.view-mobile .view-lang-ko .num-english { background: #fef3c7; color: #92400e; }.view-mobile .view-lang-ko .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    flex: 1;
+  }.view-mobile .view-lang-ko .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }.view-mobile .view-lang-ko .badge-ai { background: #e0e7ff; color: #4338ca; }.view-mobile .view-lang-ko .badge-detail { background: #ede9fe; color: #6d28d9; }.view-mobile .view-lang-ko .badge-economy { background: #d1fae5; color: #065f46; }.view-mobile .view-lang-ko .badge-english { background: #fef3c7; color: #92400e; }.view-mobile .view-lang-ko .bullets { list-style: none; margin: 4px 0 6px; }.view-mobile .view-lang-ko .bullets li {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.55;
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }.view-mobile .view-lang-ko .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    top: 5px;
+  }.view-mobile .view-lang-ko .card-ai     .bullets li::before { color: #6366f1; }.view-mobile .view-lang-ko .card-detail .bullets li::before { color: #7c3aed; }.view-mobile .view-lang-ko .card-economy .bullets li::before { color: #059669; }.view-mobile .view-lang-ko .card-source {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-mobile .view-lang-ko .card-source:hover { color: #64748b; text-decoration: underline; }.view-mobile .view-lang-ko .detail-block { margin-bottom: 8px; }.view-mobile .view-lang-ko .detail-lbl {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 3px;
+  }.view-mobile .view-lang-ko .detail-txt {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.55;
+  }.view-mobile .view-lang-ko .key-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }.view-mobile .view-lang-ko .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }.view-mobile .view-lang-ko .takeaway {
+    background: #f8f7ff;
+    border-left: 3px solid #8b5cf6;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 6px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+  }.view-mobile .view-lang-ko .impact-pill {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 6px;
+  }.view-mobile .view-lang-ko .impact-positive { background: #dcfce7; color: #166534; }.view-mobile .view-lang-ko .impact-negative { background: #fee2e2; color: #991b1b; }.view-mobile .view-lang-ko .impact-neutral { background: #f1f5f9; color: #475569; }.view-mobile .view-lang-ko .eng-phrase {
+    font-size: 22px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-mobile .view-lang-ko .eng-pron {
+    font-size: 14px;
+    color: #b45309;
+    font-family: monospace;
+    margin-bottom: 6px;
+  }.view-mobile .view-lang-ko .eng-meaning {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }.view-mobile .view-lang-ko .eng-ex {
+    font-size: 15px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.6;
+    background: #fffbeb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #fbbf24;
+    margin-bottom: 6px;
+  }.view-mobile .view-lang-ko .eng-ex-kr {
+    font-size: 14px;
+    color: #78716c;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }.view-mobile .view-lang-ko .eng-ctx {
+    font-size: 14px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 6px 10px;
+    border-radius: 6px;
+    line-height: 1.5;
+  }.view-mobile .view-lang-ko .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+.view-mobile .view-lang-en {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    background: #eef0f5;
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.5;
+  }.view-mobile .view-lang-en .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px 12px 24px;
+  }.view-mobile .view-lang-en .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }.view-mobile .view-lang-en .header-logo { font-size: 28px; margin-right: 10px; }.view-mobile .view-lang-en .header-title { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }.view-mobile .view-lang-en .header-sub { font-size: 11px; opacity: 0.75; margin-top: 2px; }.view-mobile .view-lang-en .header-date { font-size: 13px; font-weight: 700; text-align: right; }.view-mobile .view-lang-en .header-edition { font-size: 10px; opacity: 0.65; margin-top: 2px; text-align: right; }.view-mobile .view-lang-en .sec-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }.view-mobile .view-lang-en .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+  }.view-mobile .view-lang-en .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }.view-mobile .view-lang-en .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-mobile .view-lang-en .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-mobile .view-lang-en .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-mobile .view-lang-en .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-mobile .view-lang-en .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }.view-mobile .view-lang-en .card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }.view-mobile .view-lang-en .num-ai { background: #e0e7ff; color: #3730a3; }.view-mobile .view-lang-en .num-detail { background: #ede9fe; color: #5b21b6; }.view-mobile .view-lang-en .num-economy { background: #d1fae5; color: #065f46; }.view-mobile .view-lang-en .num-english { background: #fef3c7; color: #92400e; }.view-mobile .view-lang-en .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    flex: 1;
+  }.view-mobile .view-lang-en .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }.view-mobile .view-lang-en .badge-ai { background: #e0e7ff; color: #4338ca; }.view-mobile .view-lang-en .badge-detail { background: #ede9fe; color: #6d28d9; }.view-mobile .view-lang-en .badge-economy { background: #d1fae5; color: #065f46; }.view-mobile .view-lang-en .badge-english { background: #fef3c7; color: #92400e; }.view-mobile .view-lang-en .bullets { list-style: none; margin: 4px 0 6px; }.view-mobile .view-lang-en .bullets li {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.55;
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }.view-mobile .view-lang-en .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    top: 5px;
+  }.view-mobile .view-lang-en .card-ai     .bullets li::before { color: #6366f1; }.view-mobile .view-lang-en .card-detail .bullets li::before { color: #7c3aed; }.view-mobile .view-lang-en .card-economy .bullets li::before { color: #059669; }.view-mobile .view-lang-en .card-source {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-mobile .view-lang-en .card-source:hover { color: #64748b; text-decoration: underline; }.view-mobile .view-lang-en .detail-block { margin-bottom: 8px; }.view-mobile .view-lang-en .detail-lbl {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 3px;
+  }.view-mobile .view-lang-en .detail-txt {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.55;
+  }.view-mobile .view-lang-en .key-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }.view-mobile .view-lang-en .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }.view-mobile .view-lang-en .takeaway {
+    background: #f8f7ff;
+    border-left: 3px solid #8b5cf6;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 6px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+  }.view-mobile .view-lang-en .impact-pill {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 6px;
+  }.view-mobile .view-lang-en .impact-positive { background: #dcfce7; color: #166534; }.view-mobile .view-lang-en .impact-negative { background: #fee2e2; color: #991b1b; }.view-mobile .view-lang-en .impact-neutral { background: #f1f5f9; color: #475569; }.view-mobile .view-lang-en .eng-phrase {
+    font-size: 22px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-mobile .view-lang-en .eng-pron {
+    font-size: 14px;
+    color: #b45309;
+    font-family: monospace;
+    margin-bottom: 6px;
+  }.view-mobile .view-lang-en .eng-meaning {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d97706;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }.view-mobile .view-lang-en .eng-ex {
+    font-size: 15px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.6;
+    background: #fffbeb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #fbbf24;
+    margin-bottom: 6px;
+  }.view-mobile .view-lang-en .eng-ex-kr {
+    font-size: 14px;
+    color: #78716c;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }.view-mobile .view-lang-en .eng-ctx {
+    font-size: 14px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 6px 10px;
+    border-radius: 6px;
+    line-height: 1.5;
+  }.view-mobile .view-lang-en .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+    .view-desktop .lang-switch {
+    width: 100%; max-width: 860px; margin: 0 auto; padding: 10px 12px;
+    display: flex; justify-content: flex-end; gap: 8px; background: #0f172a;
+  }.view-desktop .lang-switch button { border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; padding: 7px 12px; font-weight: 800; cursor: pointer; background: rgba(255,255,255,0.12); color: #dbeafe; }.view-desktop .lang-switch button.active { background: #fff; color: #1e3a8a; }.view-desktop .lang-view { display: none; }.view-desktop .lang-view.active { display: block; }.view-desktop .section-bar {
+    width: 100%; max-width: 860px; margin: 0 auto; padding: 7px 6mm;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 8px;
+  }.view-desktop .webtoon-wrap { width: 100%; max-width: 860px; margin: 0 auto; background: #0f172a; }.view-desktop .webtoon-wrap img { width: 100%; display: block; }.view-desktop .audio-wrap { width: 100%; max-width: 860px; margin: 0 auto; padding:12px 14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15); }.view-desktop .audio-title { font-size:13px; font-weight:700; color:#3730a3; margin-bottom:8px; }.view-desktop .view-lang-ko {  }.view-desktop .view-lang-en { display:none; }
+
+  @page { size: A4 portrait; margin: 0; }.view-desktop {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-desktop .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-desktop {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-desktop .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-desktop .header { padding: 14px 20px; margin-bottom: 12px; }.view-desktop .header-title { font-size: 22px; }.view-desktop .header-sub { font-size: 12px; }.view-desktop .header-date { font-size: 15px; }.view-desktop .header-edition { font-size: 11px; }.view-desktop .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-desktop .grid-3 { gap: 12px; margin-bottom: 12px; }.view-desktop .grid-2 { gap: 12px; margin-bottom: 12px; }.view-desktop .card { padding: 16px 18px; border-radius: 12px; }.view-desktop .card-title { font-size: 15px; line-height: 1.5; }.view-desktop .card-title-sm { font-size: 13px; }.view-desktop .badge { font-size: 10px; padding: 2px 9px; }.view-desktop .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-desktop .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-desktop .detail-lbl { font-size: 10px; }.view-desktop .detail-txt { font-size: 13px; line-height: 1.65; }.view-desktop .key-chip { font-size: 11px; padding: 3px 9px; }.view-desktop .takeaway { font-size: 13px; padding: 7px 12px; }.view-desktop .impact-pill { font-size: 11px; padding: 3px 11px; }.view-desktop .eng-phrase { font-size: 17px; }.view-desktop .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-desktop .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-desktop .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-desktop .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-desktop .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-desktop .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-desktop .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-desktop .header-left { display: flex; align-items: center; gap: 10px; }.view-desktop .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-desktop .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-desktop .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-desktop .header-right { text-align: right; }.view-desktop .header-date { font-size: 12px; font-weight: 700; }.view-desktop .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-desktop .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-desktop .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-1 { margin-bottom: 5px; }.view-desktop .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-desktop .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-desktop .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-desktop .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-desktop .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-desktop .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-desktop .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-desktop .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-desktop .badge-ai { background: #e0e7ff; color: #4338ca; }.view-desktop .badge-detail { background: #ede9fe; color: #6d28d9; }.view-desktop .badge-economy { background: #d1fae5; color: #065f46; }.view-desktop .badge-english { background: #fef3c7; color: #92400e; }.view-desktop .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-desktop .card-title-sm { font-size: 10px; }.view-desktop .bullets { list-style: none; margin: 3px 0; }.view-desktop .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-desktop .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-desktop .card-ai .bullets li::before { color: #6366f1; }.view-desktop .card-detail .bullets li::before { color: #7c3aed; }.view-desktop .card-economy .bullets li::before { color: #059669; }.view-desktop .card-english .bullets li::before { color: #d97706; }.view-desktop .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-desktop .card-source:hover { color: #64748b; text-decoration: underline; }.view-desktop .detail-block { margin-bottom: 4px; }.view-desktop .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-desktop .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-desktop .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-desktop .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-desktop .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-desktop .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-desktop .impact-positive { background: #dcfce7; color: #166534; }.view-desktop .impact-negative { background: #fee2e2; color: #991b1b; }.view-desktop .impact-neutral { background: #f1f5f9; color: #475569; }.view-desktop .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-desktop .eng-pron { font-size: 8px; color: #b45309; margin-bottom: 3px; }.view-desktop .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-desktop .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-desktop .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-desktop .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-desktop .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
+  }
+
+
+  @page { size: A4 portrait; margin: 0; }.view-desktop {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: #eef0f5;
+    width: 210mm;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }.view-desktop .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 5mm 6mm;
+    background: #f5f6fa;
+  }@media screen {.view-desktop {
+      width: 100%;
+      max-width: 860px;
+      font-size: 15px;
+    }.view-desktop .page {
+      width: 100%;
+      min-height: unset;
+      padding: 16px 20px;
+    }.view-desktop .header { padding: 14px 20px; margin-bottom: 12px; }.view-desktop .header-title { font-size: 22px; }.view-desktop .header-sub { font-size: 12px; }.view-desktop .header-date { font-size: 15px; }.view-desktop .header-edition { font-size: 11px; }.view-desktop .sec-label { font-size: 12px; padding: 5px 12px; margin-bottom: 10px; }.view-desktop .grid-3 { gap: 12px; margin-bottom: 12px; }.view-desktop .grid-2 { gap: 12px; margin-bottom: 12px; }.view-desktop .card { padding: 16px 18px; border-radius: 12px; }.view-desktop .card-title { font-size: 15px; line-height: 1.5; }.view-desktop .card-title-sm { font-size: 13px; }.view-desktop .badge { font-size: 10px; padding: 2px 9px; }.view-desktop .bullets li { font-size: 13px; line-height: 1.65; padding: 3px 0 3px 16px; }.view-desktop .card-source { font-size: 11px; margin-top: 10px; padding-top: 7px; }.view-desktop .detail-lbl { font-size: 10px; }.view-desktop .detail-txt { font-size: 13px; line-height: 1.65; }.view-desktop .key-chip { font-size: 11px; padding: 3px 9px; }.view-desktop .takeaway { font-size: 13px; padding: 7px 12px; }.view-desktop .impact-pill { font-size: 11px; padding: 3px 11px; }.view-desktop .eng-phrase { font-size: 17px; }.view-desktop .eng-pron { font-size: 11px; margin-bottom: 5px; }.view-desktop .eng-meaning { font-size: 14px; margin-bottom: 9px; }.view-desktop .eng-ex { font-size: 13px; line-height: 1.65; padding: 7px 12px; }.view-desktop .eng-ex-kr { font-size: 12px; line-height: 1.55; margin-bottom: 6px; }.view-desktop .eng-ctx { font-size: 11px; padding: 5px 10px; }.view-desktop .footer { font-size: 11px; margin-top: 14px; padding-top: 10px; }
+  }.view-desktop .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }.view-desktop .header-left { display: flex; align-items: center; gap: 10px; }.view-desktop .header-logo {
+    font-size: 22px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 2px 6px;
+  }.view-desktop .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }.view-desktop .header-sub { font-size: 8.5px; opacity: 0.75; margin-top: 1px; }.view-desktop .header-right { text-align: right; }.view-desktop .header-date { font-size: 12px; font-weight: 700; }.view-desktop .header-edition { font-size: 8.5px; opacity: 0.65; margin-top: 1px; }.view-desktop .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }.view-desktop .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; margin-bottom: 5px; }.view-desktop .grid-1 { margin-bottom: 5px; }.view-desktop .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }.view-desktop .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }.view-desktop .card-ai::before { background: linear-gradient(90deg, #6366f1, #818cf8); }.view-desktop .card-detail::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }.view-desktop .card-economy::before { background: linear-gradient(90deg, #059669, #34d399); }.view-desktop .card-english::before { background: linear-gradient(90deg, #d97706, #fbbf24); }.view-desktop .card-header { display: flex; align-items: flex-start; margin-bottom: 5px; }.view-desktop .badge {
+    display: inline-block;
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }.view-desktop .badge-ai { background: #e0e7ff; color: #4338ca; }.view-desktop .badge-detail { background: #ede9fe; color: #6d28d9; }.view-desktop .badge-economy { background: #d1fae5; color: #065f46; }.view-desktop .badge-english { background: #fef3c7; color: #92400e; }.view-desktop .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    flex: 1;
+  }.view-desktop .card-title-sm { font-size: 10px; }.view-desktop .bullets { list-style: none; margin: 3px 0; }.view-desktop .bullets li {
+    font-size: 9.5px;
+    color: #334155;
+    line-height: 1.45;
+    padding: 1.5px 0 1.5px 12px;
+    position: relative;
+  }.view-desktop .bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-size: 8px;
+  }.view-desktop .card-ai .bullets li::before { color: #6366f1; }.view-desktop .card-detail .bullets li::before { color: #7c3aed; }.view-desktop .card-economy .bullets li::before { color: #059669; }.view-desktop .card-english .bullets li::before { color: #d97706; }.view-desktop .card-source {
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid #f1f5f9;
+    text-decoration: none;
+    display: block;
+  }.view-desktop .card-source:hover { color: #64748b; text-decoration: underline; }.view-desktop .detail-block { margin-bottom: 4px; }.view-desktop .detail-lbl {
+    font-size: 7.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7c3aed;
+    margin-bottom: 1px;
+  }.view-desktop .detail-txt {
+    font-size: 9px;
+    color: #475569;
+    line-height: 1.45;
+  }.view-desktop .key-chips { display: flex; gap: 3px; flex-wrap: wrap; margin: 3px 0; }.view-desktop .key-chip {
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }.view-desktop .takeaway {
+    background: #f8f7ff;
+    border-left: 2px solid #8b5cf6;
+    padding: 3px 7px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2d1b69;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+  }.view-desktop .impact-pill {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 4px;
+  }.view-desktop .impact-positive { background: #dcfce7; color: #166534; }.view-desktop .impact-negative { background: #fee2e2; color: #991b1b; }.view-desktop .impact-neutral { background: #f1f5f9; color: #475569; }.view-desktop .eng-phrase {
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    color: #92400e;
+    line-height: 1.2;
+    flex: 1;
+  }.view-desktop .eng-pron { font-size: 8px; color: #b45309; margin-bottom: 3px; }.view-desktop .eng-meaning { font-size: 10px; font-weight: 700; color: #d97706; margin-bottom: 5px; }.view-desktop .eng-ex {
+    font-size: 9px;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.45;
+    background: #fffbeb;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border-left: 2px solid #fbbf24;
+    margin-bottom: 2px;
+  }.view-desktop .eng-ex-kr { font-size: 8px; color: #78716c; line-height: 1.4; margin-bottom: 3px; }.view-desktop .eng-ctx {
+    font-size: 8px;
+    color: #78350f;
+    background: #fef3c7;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }.view-desktop .footer {
+    text-align: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #e2e8f0;
+  }@media print {.view-desktop { background: white; }.view-desktop .page { box-shadow: none; }
+  }
+
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../index.html">MacsALogs</a></h1>
+        <p class="site-tagline"><span class="i18n-ko">AI 개발 · 생산성 · 취미 기록</span><span class="i18n-en">AI development · productivity · creative logs</span></p>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html"><span class="i18n-ko">홈</span><span class="i18n-en">Home</span></a>
+        <a href="../about.html"><span class="i18n-ko">소개</span><span class="i18n-en">About</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../index.html"><span class="i18n-ko">← 목록으로</span><span class="i18n-en">← Back to posts</span></a>
+
+    <header class="post-header">
+      <h1><span class="i18n-ko">오늘의 AI 뉴스 — 2026-10-02</span><span class="i18n-en">Today's AI News — 2026-10-02</span></h1>
+      <div class="post-meta">
+        <span>2026-10-02</span>
+        <span><span class="i18n-ko">5분</span><span class="i18n-en">5 min</span></span>
+      </div>
+      <div class="tags" style="margin-top: 0.75rem;">
+        <span class="tag">AI</span>
+        <span class="tag"><span class="i18n-ko">뉴스</span><span class="i18n-en">News</span></span>
+        <span class="tag"><span class="i18n-ko">경제</span><span class="i18n-en">Markets</span></span>
+        <span class="tag"><span class="i18n-ko">영어</span><span class="i18n-en">English</span></span>
+      </div>
+      <div class="post-lang-switch" data-lang-switch>
+        <button type="button" data-lang-button="ko" aria-label="한국어 보기">한국어</button>
+        <button type="button" data-lang-button="en" aria-label="View in English">English</button>
+      </div>
+    </header>
+
+    <article class="post-body">
+      <div class="view-mobile"><div class="view-lang view-lang-ko active" data-lang-view="ko">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div>
+      <div class="header-date">2026-10-02-140416</div>
+      <div class="header-edition">No. 106</div>
+    </div>
+  </div>
+
+  
+  <!-- Audio overview player -->
+  <div style="border-radius:14px; margin-bottom:12px; padding:12px 14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; 귀로 듣는 오늘의 뉴스</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-10-02-140416-brief.m4a" type="audio/mp4">
+      브라우저가 오디오 재생을 지원하지 않습니다.
+    </audio>
+  </div>
+  <!-- Webtoon image -->
+  <div style="border-radius:14px; overflow:hidden; margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <img src="../images/2026-10-02-140416/page.png" alt="AI 뉴스 웹툰 2026-10-02-140416" style="width:100%; display:block;"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:28px 14px; text-align:center; background:#eef2ff; color:#3730a3; font-size:13px; font-weight:600;">🎨 웹툰 준비 중 — 곧 업데이트됩니다</div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">1</span>
+      <span class="card-title">구글, 제미나이 4 아르곤 공개</span>
+      <span class="badge badge-ai">LLM</span>
+    </div>
+    <ul class="bullets">
+      <li>7개월 만의 구글 첫 프런티어 모델로 Artificial Analysis 지수 53점, GPT-6 Astra와 동률</li><li>Claude Opus 5.5(58점)에는 5점 뒤지며 작업당 토큰 소모는 Astra의 2배 이상</li><li>입력 100만 토큰당 $2, 출력 $10 도입가에 출력 한도 6.4만→100만 토큰으로 확대</li>
+    </ul>
+    <a href="https://the-decoder.com/google-gemini-4-argon-closes-the-gap-with-openai-and-anthropic-but-doesnt-take-a-clear-lead/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">2</span>
+      <span class="card-title">OpenAI, 추론 탈취 증류 캠페인 차단</span>
+      <span class="badge badge-ai">안전기술</span>
+    </div>
+    <ul class="bullets">
+      <li>1.5만 개 이상 계정이 모델의 숨은 추론을 복제하려 한 조직적 증류 시도를 7월 28일까지 차단</li><li>7월 24~25일 4,000명 이상 사용자가 1.6만 건 요청을 집중, 일부는 Moonshot AI 관련자와 연계</li><li>연구진 재테스트(9월 13일)에서 같은 공격이 Azure의 GPT-6 Astra에는 여전히 통했다</li>
+    </ul>
+    <a href="https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign" class="card-source" target="_blank" rel="noopener">Source: OpenAI</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">3</span>
+      <span class="card-title">구글, 궤도 데이터센터용 TPU 위성 발사</span>
+      <span class="badge badge-ai">반도체</span>
+    </div>
+    <ul class="bullets">
+      <li>구글이 자사 TPU를 처음 우주로 보낸 프로토타입 위성을 SpaceX 로켓으로 발사</li><li>TPU에 1kW 연속 전력을 공급하고 15분 단위로 가동해 전력·냉각 한계를 검증</li><li>Suncatcher는 위성 81기 편대 구상이며 2035년 kg당 약 $200 발사비를 전제</li>
+    </ul>
+    <a href="https://techcrunch.com/2026/10/01/google-thinks-spacexs-starship-has-to-launch-1600-times-before-space-data-centers-get-off-the-ground/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+
+  <!-- ── Row 2: AI 상세 ── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">1</span>
+      <span class="card-title">구글, 제미나이 4 아르곤 공개</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">구글은 Gemini 3.1 Pro 이후 7개월 넘게 프런티어 모델을 내지 못했고 Gemini 3.5는 건너뛰었다. 이번 Argon은 코딩·기업 지식 업무·사이버 방어를 겨냥해 신뢰된 사이버 방어자 그룹에 먼저 제공된다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">구글이 독립 평가에서 OpenAI와 동률로 복귀해 상위 3개 랩 구도를 회복했지만 Anthropic 우위는 유지된다. 토큰 단가는 낮아도 토큰 소모량이 많아 실제 작업당 비용 경쟁력이 도입가 프로모션에 좌우된다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">Intelligence Index 53점 (Opus 5.5는 58점)</span><span class="key-chip">출력 한도 6.4만 → 100만 토큰</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 제미나이 4 아르곤은 구글을 선두권으로 복귀시켰지만 1위는 아니다.</div>
+    <a href="https://the-decoder.com/google-gemini-4-argon-closes-the-gap-with-openai-and-anthropic-but-doesnt-take-a-clear-lead/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">2</span>
+      <span class="card-title">OpenAI, 추론 탈취 증류 캠페인 차단</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">적대적 증류는 강한 모델의 추론 과정을 통째로 학습해 성능을 복제하는 기법이다. 암호화된 추론 패킷을 다른 세션·모델에서 재사용해 복호화하는 방식이 연구로 알려져 있었다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">추론 과정은 모델 지식재산의 핵심이며 한 업체의 API만 막아서는 보호가 되지 않는다. 클라우드 재판매 경로(Azure)마다 방어 수준이 달라 프런티어 모델 공급망 전체의 보안 기준이 쟁점이 된다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">15,000개 이상 계정 차단</span><span class="key-chip">7월 24~25일 요청 16,000건</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 모델 추론 탈취 방어는 API가 아니라 클라우드 유통 경로 전체에서 완성된다.</div>
+    <a href="https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign" class="card-source" target="_blank" rel="noopener">Source: OpenAI</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">3</span>
+      <span class="card-title">구글, 궤도 데이터센터용 TPU 위성 발사</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">배경</div>
+      <div class="detail-txt">구글은 Project Suncatcher로 지구 궤도에 대규모 컴퓨트 클러스터를 만드는 장기 계획을 추진 중이다. 이번 위성은 Planet Labs의 표준 플랫폼 기반이며 내년에는 컴퓨트 특화 위성 2기 데모가 예정돼 있다.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">왜 중요한가</div>
+      <div class="detail-txt">전력과 부지 제약이 커지는 AI 데이터센터의 대안으로 궤도 컴퓨트가 실험 단계에 들어갔다. 다만 경제성은 발사 비용이 학습곡선으로 연 20%씩 내려간다는 가정에 달려 있고, 구글 논문은 Starship 1,800회 발사 수준을 전제로 한다.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">TPU 1kW 연속 전력, 15분 가동 주기</span><span class="key-chip">위성 81기 구상, 2035년 kg당 $200 목표</span>
+    </div>
+    
+
+    <div class="takeaway">>>> 우주 데이터센터는 칩이 아니라 발사 단가가 성패를 가른다.</div>
+    <a href="https://techcrunch.com/2026/10/01/google-thinks-spacexs-starship-has-to-launch-1600-times-before-space-data-centers-get-off-the-ground/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+
+  <!-- ── Row 3: 경제 ── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">1</span>
+      <span class="card-title">크립토 카드로 미국 AI 모델 우회 구매</span>
+      <span class="badge badge-economy">규제</span>
+    </div>
+    <ul class="bullets">
+      <li>암호화폐 계좌에 연동된 결제카드가 중국 측의 미국 AI 모델 구매 통로로 쓰일 수 있다는 지적이 나옴</li><li>AI 호황 속 신종 크립토 사기와 접근 통제 우회가 맞물리며 AI 수출·이용 규제 강화 압력 확대</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ 부정적</span>
+    <a href="https://www.economist.com/finance-and-economics/2026/09/29/the-ai-boom-meets-a-new-kind-of-crypto-scam" class="card-source" target="_blank" rel="noopener">Source: The Economist</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">2</span>
+      <span class="card-title">美 국채금리 2002년 이후 최고, 투자 부담</span>
+      <span class="badge badge-economy">금리</span>
+    </div>
+    <ul class="bullets">
+      <li>미 국채 수익률이 2002년 이후 최고 수준으로 올라 소비자·기업 차입자를 압박</li><li>고금리는 쉽게 꺾이지 않을 전망이며 일부 주식 영역에 부담 요인, AI 데이터센터 자금조달 비용에도 부정적</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ 부정적</span>
+    <a href="https://www.nytimes.com/2026/10/01/business/bond-yields-10-year-treasury.html" class="card-source" target="_blank" rel="noopener">Source: The New York Times</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">3</span>
+      <span class="card-title">S&P500 신고가 직전, 종목은 부진</span>
+      <span class="badge badge-economy">시장</span>
+    </div>
+    <ul class="bullets">
+      <li>S&P 500이 사상 최고치 직전에서 거래되지만 대부분 개별 종목은 부진한 상태</li><li>지수 상승이 소수 대형 종목에 집중된 구조로, AI 대형주 쏠림과 시장 취약성 우려 부각</li>
+    </ul>
+    <span class="impact-pill impact-neutral">→ 중립</span>
+    <a href="https://www.marketwatch.com/story/the-stock-market-is-anything-but-normal-right-now-and-these-charts-show-it-91ea187d" class="card-source" target="_blank" rel="noopener">Source: MarketWatch</a>
+  </div>
+  
+
+  <!-- ── Row 4: 영어 표현 ── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">1</span>
+      <span class="eng-phrase">"Pareto frontier"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/pəˈreɪtoʊ frʌnˈtɪr/ [파레이토 프런티어]</div>
+    <div class="eng-meaning">→ 성능 대비 비용의 최적 한계선, 한쪽을 높이면 다른 쪽이 손해 보는 경계</div>
+    <div class="eng-ex">At a blended rate of $8 per million tokens, Argon shifts the Pareto frontier of the Text Arena and is currently the most cost-efficient model in the ranking.</div>
+    <div class="eng-ex-kr">백만 토큰당 혼합 요금 8달러에서 아르곤은 텍스트 아레나의 파레토 프런티어를 밀어 올렸으며, 현재 순위에서 가장 비용 효율적인 모델이다.</div>
+    <div class="eng-ctx">The Decoder의 Gemini 4 Argon 기사에서 가격 대비 성능 평가를 설명하며 나온 표현이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">2</span>
+      <span class="eng-phrase">"a big ask"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ə bɪɡ æsk/ [어 빅 애스크]</div>
+    <div class="eng-meaning">→ 들어주기 어려운 큰 요구, 달성이 만만치 않은 일</div>
+    <div class="eng-ex">That’s a big ask for a vehicle that has never flown more than five times in a year.</div>
+    <div class="eng-ex-kr">1년에 다섯 번 넘게 비행한 적이 없는 발사체에게는 너무 큰 요구다.</div>
+    <div class="eng-ctx">TechCrunch의 구글 궤도 데이터센터 기사에서 스타십이 연 180회 발사해야 한다는 가정의 비현실성을 짚으며 나온 표현이다.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">3</span>
+      <span class="eng-phrase">"paint a rosier picture"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/peɪnt ə ˈroʊziər ˈpɪktʃər/ [페인트 어 로지어 픽처]</div>
+    <div class="eng-meaning">→ 실제보다 더 낙관적인 그림을 보여주다</div>
+    <div class="eng-ex">Google's own benchmark results paint a rosier picture.</div>
+    <div class="eng-ex-kr">구글 자체 벤치마크 결과는 더 낙관적인 그림을 보여준다.</div>
+    <div class="eng-ctx">The Decoder의 Gemini 4 Argon 기사에서 독립 평가와 구글 자체 결과의 온도차를 대비하며 나온 표현이다.</div>
+  </div>
+  
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-10-02-140416 | AI News Card
+  </div>
+
+</div>
+</div><div class="view-lang view-lang-en" data-lang-view="en">
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">Today's AI News</div>
+        <div class="header-sub">News · Analysis · Markets · English Expressions</div>
+      </div>
+    </div>
+    <div>
+      <div class="header-date">2026-10-02-140416</div>
+      <div class="header-edition">No. 106</div>
+    </div>
+  </div>
+
+  
+  <!-- Audio overview player -->
+  <div style="border-radius:14px; margin-bottom:12px; padding:12px 14px; background:#eef2ff; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <div style="font-size:13px; font-weight:600; color:#3730a3; margin-bottom:8px;">&#127911; Listen to today's news</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-10-02-140416-brief-en.m4a" type="audio/mp4">
+      Your browser does not support audio playback.
+    </audio>
+  </div>
+  <!-- Webtoon image -->
+  <div style="border-radius:14px; overflow:hidden; margin-bottom:12px; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
+    <img src="../images/2026-10-02-140416/page-en.png" alt="AI News Webtoon 2026-10-02-140416" style="width:100%; display:block;"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:28px 14px; text-align:center; background:#eef2ff; color:#3730a3; font-size:13px; font-weight:600;">🎨 Webtoon is being prepared — coming soon</div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — Top 3 Stories</div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">1</span>
+      <span class="card-title">Google unveils Gemini 4 Argon</span>
+      <span class="badge badge-ai">LLM</span>
+    </div>
+    <ul class="bullets">
+      <li>Google's first frontier model in seven months scores 53 on the Artificial Analysis Index, tying GPT-6 Astra</li><li>Trails Claude Opus 5.5 (58) by 5 points and burns over 2x the tokens per task versus Astra</li><li>Intro price of $2 per 1M input and $10 per 1M output tokens; output limit raised from 64K to 1M tokens</li>
+    </ul>
+    <a href="https://the-decoder.com/google-gemini-4-argon-closes-the-gap-with-openai-and-anthropic-but-doesnt-take-a-clear-lead/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">2</span>
+      <span class="card-title">OpenAI blocks model-distillation campaign</span>
+      <span class="badge badge-ai">AI Safety</span>
+    </div>
+    <ul class="bullets">
+      <li>OpenAI shut down by July 28 a campaign of 15,000+ accounts trying to copy its models' hidden reasoning</li><li>On July 24-25, 4,000+ users sent 16,000 requests; a core group is linked to people associated with Moonshot AI</li><li>Researchers' Sept 13 retest showed the same attack still worked on GPT-6 Astra via Microsoft Azure</li>
+    </ul>
+    <a href="https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign" class="card-source" target="_blank" rel="noopener">Source: OpenAI</a>
+  </div>
+  
+  <div class="card card-ai">
+    <div class="card-header">
+      <span class="card-num num-ai">3</span>
+      <span class="card-title">Google launches TPU satellite for orbital compute</span>
+      <span class="badge badge-ai">Semiconductors</span>
+    </div>
+    <ul class="bullets">
+      <li>Google launched a prototype satellite carrying its first TPU into space on a SpaceX rocket</li><li>The TPU gets 1 kW of continuous power and runs in 15-minute bursts to test power and cooling limits</li><li>Project Suncatcher envisions 81 satellites in formation, assuming launch costs near $200/kg by 2035</li>
+    </ul>
+    <a href="https://techcrunch.com/2026/10/01/google-thinks-spacexs-starship-has-to-launch-1600-times-before-space-data-centers-get-off-the-ground/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+
+  <!-- ── Row 2: AI 상세 ── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — Why It Matters</div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">1</span>
+      <span class="card-title">Google unveils Gemini 4 Argon</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">Background</div>
+      <div class="detail-txt">Google had not shipped a frontier model since Gemini 3.1 Pro more than seven months ago and skipped Gemini 3.5 entirely. Argon targets coding, enterprise knowledge work and cyber defense, and goes first to a group of trusted cyber defenders.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">Why it matters</div>
+      <div class="detail-txt">Google returns to parity with OpenAI in independent testing and restores the top-three lab picture, though Anthropic keeps its lead. Low per-token prices are offset by higher token consumption, so real per-task cost depends on the promotional rate.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">Intelligence Index 53 (Opus 5.5: 58)</span><span class="key-chip">Output limit 64K to 1M tokens</span>
+    </div>
+    
+
+    <div class="takeaway">>>> Gemini 4 Argon puts Google back in the top tier but not in first place.</div>
+    <a href="https://the-decoder.com/google-gemini-4-argon-closes-the-gap-with-openai-and-anthropic-but-doesnt-take-a-clear-lead/" class="card-source" target="_blank" rel="noopener">Source: The Decoder</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">2</span>
+      <span class="card-title">OpenAI blocks model-distillation campaign</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">Background</div>
+      <div class="detail-txt">Adversarial distillation copies a stronger model's capabilities by learning from its full reasoning traces. Researchers had shown that encrypted reasoning packets can be reused across sessions and models to decrypt them.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">Why it matters</div>
+      <div class="detail-txt">Reasoning traces are core model IP, and securing one provider's API does not protect the wider ecosystem. Defense levels differ by cloud reseller such as Azure, making security standards across the frontier-model supply chain a live issue.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">15,000+ accounts banned</span><span class="key-chip">16,000 requests on July 24-25</span>
+    </div>
+    
+
+    <div class="takeaway">>>> Defending model reasoning is only as strong as the weakest cloud channel that serves the model.</div>
+    <a href="https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign" class="card-source" target="_blank" rel="noopener">Source: OpenAI</a>
+  </div>
+  
+  <div class="card card-detail">
+    <div class="card-header">
+      <span class="card-num num-detail">3</span>
+      <span class="card-title">Google launches TPU satellite for orbital compute</span>
+      <span class="badge badge-detail">DETAIL</span>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">Background</div>
+      <div class="detail-txt">Google is pursuing Project Suncatcher, a long-term plan for large compute clusters in Earth orbit. The satellite uses a Planet Labs standard platform, with a two-satellite compute-focused demo planned for next year.</div>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-lbl">Why it matters</div>
+      <div class="detail-txt">Orbital compute has entered the experimental stage as an alternative to power- and land-constrained AI data centers. Economics hinge on launch costs falling about 20% a year, and Google's analysis implies on the order of 1,800 Starship launches.</div>
+    </div>
+
+    
+    <div class="key-chips">
+      <span class="key-chip">1 kW continuous power, 15-minute bursts</span><span class="key-chip">81-satellite design, $200/kg launch target by 2035</span>
+    </div>
+    
+
+    <div class="takeaway">>>> For space data centers, launch cost rather than the chip decides success.</div>
+    <a href="https://techcrunch.com/2026/10/01/google-thinks-spacexs-starship-has-to-launch-1600-times-before-space-data-centers-get-off-the-ground/" class="card-source" target="_blank" rel="noopener">Source: TechCrunch</a>
+  </div>
+  
+
+  <!-- ── Row 3: 경제 ── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — Markets & Finance</div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">1</span>
+      <span class="card-title">Crypto Cards Open Back Door to US AI Models</span>
+      <span class="badge badge-economy">Regulation</span>
+    </div>
+    <ul class="bullets">
+      <li>Payment cards linked to crypto accounts may let Chinese buyers purchase access to American AI models</li><li>The AI boom is colliding with a new crypto scam, adding pressure for tighter AI access controls</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ Negative</span>
+    <a href="https://www.economist.com/finance-and-economics/2026/09/29/the-ai-boom-meets-a-new-kind-of-crypto-scam" class="card-source" target="_blank" rel="noopener">Source: The Economist</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">2</span>
+      <span class="card-title">US Bond Yields Hit Highest Since 2002</span>
+      <span class="badge badge-economy">Interest Rates</span>
+    </div>
+    <ul class="bullets">
+      <li>US Treasury yields reached their highest level since 2002, pressuring consumer and corporate borrowers</li><li>Higher yields are unlikely to ease soon and weigh on parts of the stock market, raising funding costs for AI data center buildouts</li>
+    </ul>
+    <span class="impact-pill impact-negative">↓ Negative</span>
+    <a href="https://www.nytimes.com/2026/10/01/business/bond-yields-10-year-treasury.html" class="card-source" target="_blank" rel="noopener">Source: The New York Times</a>
+  </div>
+  
+  <div class="card card-economy">
+    <div class="card-header">
+      <span class="card-num num-economy">3</span>
+      <span class="card-title">S&P 500 Near Record as Most Stocks Struggle</span>
+      <span class="badge badge-economy">Market</span>
+    </div>
+    <ul class="bullets">
+      <li>The S&P 500 trades just shy of record territory even as most individual stocks are struggling</li><li>Gains are concentrated in a few large names, highlighting AI mega-cap dependence and market fragility</li>
+    </ul>
+    <span class="impact-pill impact-neutral">→ Neutral</span>
+    <a href="https://www.marketwatch.com/story/the-stock-market-is-anything-but-normal-right-now-and-these-charts-show-it-91ea187d" class="card-source" target="_blank" rel="noopener">Source: MarketWatch</a>
+  </div>
+  
+
+  <!-- ── Row 4: 영어 표현 ── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 3 News Expressions</div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">1</span>
+      <span class="eng-phrase">"Pareto frontier"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/pəˈreɪtoʊ frʌnˈtɪr/ [파레이토 프런티어]</div>
+    <div class="eng-meaning">→ The boundary of optimal trade-offs, where improving one metric (e.g. quality) means worsening another (e.g. cost)</div>
+    <div class="eng-ex">At a blended rate of $8 per million tokens, Argon shifts the Pareto frontier of the Text Arena and is currently the most cost-efficient model in the ranking.</div>
+    <div class="eng-ex-kr">At a blended rate of $8 per million tokens, Argon shifts the Pareto frontier of the Text Arena and is currently the most cost-efficient model in the ranking.</div>
+    <div class="eng-ctx">Used in The Decoder's Gemini 4 Argon article to describe its price-to-performance ranking on Arena.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">2</span>
+      <span class="eng-phrase">"a big ask"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/ə bɪɡ æsk/ [어 빅 애스크]</div>
+    <div class="eng-meaning">→ A demanding request or goal that is difficult to achieve</div>
+    <div class="eng-ex">That’s a big ask for a vehicle that has never flown more than five times in a year.</div>
+    <div class="eng-ex-kr">That’s a big ask for a vehicle that has never flown more than five times in a year.</div>
+    <div class="eng-ctx">Used in TechCrunch's Google orbital data center article to question the assumption that Starship must fly 180 times a year.</div>
+  </div>
+  
+  <div class="card card-english">
+    <div class="card-header">
+      <span class="card-num num-english">3</span>
+      <span class="eng-phrase">"paint a rosier picture"</span>
+      <span class="badge badge-english">ENGLISH</span>
+    </div>
+    <div class="eng-pron">/peɪnt ə ˈroʊziər ˈpɪktʃər/ [페인트 어 로지어 픽처]</div>
+    <div class="eng-meaning">→ To present a more optimistic view of a situation than other evidence suggests</div>
+    <div class="eng-ex">Google's own benchmark results paint a rosier picture.</div>
+    <div class="eng-ex-kr">Google's own benchmark results paint a rosier picture.</div>
+    <div class="eng-ctx">Used in The Decoder's Gemini 4 Argon article to contrast Google's own benchmarks with independent evaluations.</div>
+  </div>
+  
+
+  <!-- Footer -->
+  <div class="footer">
+    Auto-generated | Sources: RSS feeds | 2026-10-02-140416 | AI News Card
+  </div>
+
+</div>
+</div></div>
+      <div class="view-desktop">
+  <div class="lang-switch" data-lang-switch>
+    <button type="button" data-lang-button="ko" class="active">한국어</button>
+    <button type="button" data-lang-button="en" class="">English</button>
+  </div>
+  <div class="lang-view view-lang-ko active" data-lang-view="ko">
+  <div class="section-bar">🎨 WEBTOON — AI 뉴스 웹툰 2026-10-02</div>
+  
+  <div class="audio-wrap">
+    <div class="audio-title">🎧 귀로 듣는 오늘의 뉴스</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-10-02-140416-brief.m4a" type="audio/mp4">
+      브라우저가 오디오 재생을 지원하지 않습니다.
+    </audio>
+  </div>
+  <div class="webtoon-wrap">
+    <img src="../images/2026-10-02-140416/page.png" alt="AI 뉴스 웹툰 2026-10-02"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:32px 14px; text-align:center; color:#93c5fd; font-size:13px; font-weight:600;">🎨 웹툰 준비 중 — 곧 업데이트됩니다</div>
+  </div>
+  <div class="section-bar" style="margin-top:0;">📰 NEWS CARD — 상세 뉴스 카드 2026-10-02</div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">오늘의 AI 뉴스</div>
+        <div class="header-sub">뉴스 · 해석 · 경제 · 영어 표현</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-10-02-140416</div>
+      <div class="header-edition">No. 106</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — 오늘의 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">구글, 제미나이 4 아르곤 공개</span>
+        <span class="badge badge-ai">LLM</span>
+      </div>
+      <ul class="bullets">
+        <li>7개월 만의 구글 첫 프런티어 모델로 Artificial Analysis 지수 53점, GPT-6 Astra와 동률</li><li>Claude Opus 5.5(58점)에는 5점 뒤지며 작업당 토큰 소모는 Astra의 2배 이상</li><li>입력 100만 토큰당 $2, 출력 $10 도입가에 출력 한도 6.4만→100만 토큰으로 확대</li>
+      </ul>
+      <a href="https://the-decoder.com/google-gemini-4-argon-closes-the-gap-with-openai-and-anthropic-but-doesnt-take-a-clear-lead/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">OpenAI, 추론 탈취 증류 캠페인 차단</span>
+        <span class="badge badge-ai">안전기술</span>
+      </div>
+      <ul class="bullets">
+        <li>1.5만 개 이상 계정이 모델의 숨은 추론을 복제하려 한 조직적 증류 시도를 7월 28일까지 차단</li><li>7월 24~25일 4,000명 이상 사용자가 1.6만 건 요청을 집중, 일부는 Moonshot AI 관련자와 연계</li><li>연구진 재테스트(9월 13일)에서 같은 공격이 Azure의 GPT-6 Astra에는 여전히 통했다</li>
+      </ul>
+      <a href="https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign" class="card-source" target="_blank" rel="noopener">📰 OpenAI</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">구글, 궤도 데이터센터용 TPU 위성 발사</span>
+        <span class="badge badge-ai">반도체</span>
+      </div>
+      <ul class="bullets">
+        <li>구글이 자사 TPU를 처음 우주로 보낸 프로토타입 위성을 SpaceX 로켓으로 발사</li><li>TPU에 1kW 연속 전력을 공급하고 15분 단위로 가동해 전력·냉각 한계를 검증</li><li>Suncatcher는 위성 81기 편대 구상이며 2035년 kg당 약 $200 발사비를 전제</li>
+      </ul>
+      <a href="https://techcrunch.com/2026/10/01/google-thinks-spacexs-starship-has-to-launch-1600-times-before-space-data-centers-get-off-the-ground/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — 왜 중요한가</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">구글, 제미나이 4 아르곤 공개</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">구글은 Gemini 3.1 Pro 이후 7개월 넘게 프런티어 모델을 내지 못했고 Gemini 3.5는 건너뛰었다. 이번 Argon은 코딩·기업 지식 업무·사이버 방어를 겨냥해 신뢰된 사이버 방어자 그룹에 먼저 제공된다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">구글이 독립 평가에서 OpenAI와 동률로 복귀해 상위 3개 랩 구도를 회복했지만 Anthropic 우위는 유지된다. 토큰 단가는 낮아도 토큰 소모량이 많아 실제 작업당 비용 경쟁력이 도입가 프로모션에 좌우된다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">Intelligence Index 53점 (Opus 5.5는 58점)</span><span class="key-chip">출력 한도 6.4만 → 100만 토큰</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 제미나이 4 아르곤은 구글을 선두권으로 복귀시켰지만 1위는 아니다.</div>
+      <a href="https://the-decoder.com/google-gemini-4-argon-closes-the-gap-with-openai-and-anthropic-but-doesnt-take-a-clear-lead/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">OpenAI, 추론 탈취 증류 캠페인 차단</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">적대적 증류는 강한 모델의 추론 과정을 통째로 학습해 성능을 복제하는 기법이다. 암호화된 추론 패킷을 다른 세션·모델에서 재사용해 복호화하는 방식이 연구로 알려져 있었다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">추론 과정은 모델 지식재산의 핵심이며 한 업체의 API만 막아서는 보호가 되지 않는다. 클라우드 재판매 경로(Azure)마다 방어 수준이 달라 프런티어 모델 공급망 전체의 보안 기준이 쟁점이 된다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">15,000개 이상 계정 차단</span><span class="key-chip">7월 24~25일 요청 16,000건</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 모델 추론 탈취 방어는 API가 아니라 클라우드 유통 경로 전체에서 완성된다.</div>
+      <a href="https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign" class="card-source" target="_blank" rel="noopener">📰 OpenAI</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">구글, 궤도 데이터센터용 TPU 위성 발사</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">배경</div>
+        <div class="detail-txt">구글은 Project Suncatcher로 지구 궤도에 대규모 컴퓨트 클러스터를 만드는 장기 계획을 추진 중이다. 이번 위성은 Planet Labs의 표준 플랫폼 기반이며 내년에는 컴퓨트 특화 위성 2기 데모가 예정돼 있다.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">왜 중요한가</div>
+        <div class="detail-txt">전력과 부지 제약이 커지는 AI 데이터센터의 대안으로 궤도 컴퓨트가 실험 단계에 들어갔다. 다만 경제성은 발사 비용이 학습곡선으로 연 20%씩 내려간다는 가정에 달려 있고, 구글 논문은 Starship 1,800회 발사 수준을 전제로 한다.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">TPU 1kW 연속 전력, 15분 가동 주기</span><span class="key-chip">위성 81기 구상, 2035년 kg당 $200 목표</span>
+      </div>
+      
+
+      <div class="takeaway">▶ 우주 데이터센터는 칩이 아니라 발사 단가가 성패를 가른다.</div>
+      <a href="https://techcrunch.com/2026/10/01/google-thinks-spacexs-starship-has-to-launch-1600-times-before-space-data-centers-get-off-the-ground/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — 경제·금융 핵심 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">크립토 카드로 미국 AI 모델 우회 구매</span>
+        <span class="badge badge-economy">규제</span>
+      </div>
+      <ul class="bullets">
+        <li>암호화폐 계좌에 연동된 결제카드가 중국 측의 미국 AI 모델 구매 통로로 쓰일 수 있다는 지적이 나옴</li><li>AI 호황 속 신종 크립토 사기와 접근 통제 우회가 맞물리며 AI 수출·이용 규제 강화 압력 확대</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ 부정적</span>
+      <a href="https://www.economist.com/finance-and-economics/2026/09/29/the-ai-boom-meets-a-new-kind-of-crypto-scam" class="card-source" target="_blank" rel="noopener">📰 The Economist</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">美 국채금리 2002년 이후 최고, 투자 부담</span>
+        <span class="badge badge-economy">금리</span>
+      </div>
+      <ul class="bullets">
+        <li>미 국채 수익률이 2002년 이후 최고 수준으로 올라 소비자·기업 차입자를 압박</li><li>고금리는 쉽게 꺾이지 않을 전망이며 일부 주식 영역에 부담 요인, AI 데이터센터 자금조달 비용에도 부정적</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ 부정적</span>
+      <a href="https://www.nytimes.com/2026/10/01/business/bond-yields-10-year-treasury.html" class="card-source" target="_blank" rel="noopener">📰 The New York Times</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">S&P500 신고가 직전, 종목은 부진</span>
+        <span class="badge badge-economy">시장</span>
+      </div>
+      <ul class="bullets">
+        <li>S&P 500이 사상 최고치 직전에서 거래되지만 대부분 개별 종목은 부진한 상태</li><li>지수 상승이 소수 대형 종목에 집중된 구조로, AI 대형주 쏠림과 시장 취약성 우려 부각</li>
+      </ul>
+      <span class="impact-pill impact-neutral">→ 중립</span>
+      <a href="https://www.marketwatch.com/story/the-stock-market-is-anything-but-normal-right-now-and-these-charts-show-it-91ea187d" class="card-source" target="_blank" rel="noopener">📰 MarketWatch</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 오늘의 영어 표현 3가지</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"Pareto frontier"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/pəˈreɪtoʊ frʌnˈtɪr/ [파레이토 프런티어]</div>
+      <div class="eng-meaning">→ 성능 대비 비용의 최적 한계선, 한쪽을 높이면 다른 쪽이 손해 보는 경계</div>
+      <div class="eng-ex">At a blended rate of $8 per million tokens, Argon shifts the Pareto frontier of the Text Arena and is currently the most cost-efficient model in the ranking.</div>
+      <div class="eng-ex-kr">백만 토큰당 혼합 요금 8달러에서 아르곤은 텍스트 아레나의 파레토 프런티어를 밀어 올렸으며, 현재 순위에서 가장 비용 효율적인 모델이다.</div>
+      <div class="eng-ctx">📌 The Decoder의 Gemini 4 Argon 기사에서 가격 대비 성능 평가를 설명하며 나온 표현이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"a big ask"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ə bɪɡ æsk/ [어 빅 애스크]</div>
+      <div class="eng-meaning">→ 들어주기 어려운 큰 요구, 달성이 만만치 않은 일</div>
+      <div class="eng-ex">That’s a big ask for a vehicle that has never flown more than five times in a year.</div>
+      <div class="eng-ex-kr">1년에 다섯 번 넘게 비행한 적이 없는 발사체에게는 너무 큰 요구다.</div>
+      <div class="eng-ctx">📌 TechCrunch의 구글 궤도 데이터센터 기사에서 스타십이 연 180회 발사해야 한다는 가정의 비현실성을 짚으며 나온 표현이다.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"paint a rosier picture"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/peɪnt ə ˈroʊziər ˈpɪktʃər/ [페인트 어 로지어 픽처]</div>
+      <div class="eng-meaning">→ 실제보다 더 낙관적인 그림을 보여주다</div>
+      <div class="eng-ex">Google's own benchmark results paint a rosier picture.</div>
+      <div class="eng-ex-kr">구글 자체 벤치마크 결과는 더 낙관적인 그림을 보여준다.</div>
+      <div class="eng-ctx">📌 The Decoder의 Gemini 4 Argon 기사에서 독립 평가와 구글 자체 결과의 온도차를 대비하며 나온 표현이다.</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    자동 생성 | 출처: RSS 피드 | 2026-10-02-140416 | AI News Card
+  </div>
+
+</div>
+</div>
+  <div class="lang-view view-lang-en " data-lang-view="en">
+  <div class="section-bar">🎨 WEBTOON — AI News Webtoon 2026-10-02</div>
+  
+  <div class="audio-wrap">
+    <div class="audio-title">🎧 Listen to today's news</div>
+    <audio controls preload="metadata" style="width:100%; display:block;">
+      <source src="../audio/2026-10-02-140416-brief-en.m4a" type="audio/mp4">
+      Your browser does not support audio playback.
+    </audio>
+  </div>
+  <div class="webtoon-wrap">
+    <img src="../images/2026-10-02-140416/page-en.png" alt="AI News Webtoon 2026-10-02"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div style="display:none; padding:32px 14px; text-align:center; color:#93c5fd; font-size:13px; font-weight:600;">🎨 Webtoon is being prepared — coming soon</div>
+  </div>
+  <div class="section-bar" style="margin-top:0;">📰 NEWS CARD — Detailed News Card 2026-10-02</div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-logo">🤖</div>
+      <div>
+        <div class="header-title">Today's AI News</div>
+        <div class="header-sub">News · Analysis · Markets · English Expressions</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-date">2026-10-02-140416</div>
+      <div class="header-edition">No. 106</div>
+    </div>
+  </div>
+
+  <!-- ── Row 1: AI 요약 ─────────────────────── -->
+  <div class="sec-label" style="background:#eef2ff; color:#3730a3;">🧠 AI TOPICS — Top 3 Stories</div>
+  <div class="grid-3">
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">Google unveils Gemini 4 Argon</span>
+        <span class="badge badge-ai">LLM</span>
+      </div>
+      <ul class="bullets">
+        <li>Google's first frontier model in seven months scores 53 on the Artificial Analysis Index, tying GPT-6 Astra</li><li>Trails Claude Opus 5.5 (58) by 5 points and burns over 2x the tokens per task versus Astra</li><li>Intro price of $2 per 1M input and $10 per 1M output tokens; output limit raised from 64K to 1M tokens</li>
+      </ul>
+      <a href="https://the-decoder.com/google-gemini-4-argon-closes-the-gap-with-openai-and-anthropic-but-doesnt-take-a-clear-lead/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">OpenAI blocks model-distillation campaign</span>
+        <span class="badge badge-ai">AI Safety</span>
+      </div>
+      <ul class="bullets">
+        <li>OpenAI shut down by July 28 a campaign of 15,000+ accounts trying to copy its models' hidden reasoning</li><li>On July 24-25, 4,000+ users sent 16,000 requests; a core group is linked to people associated with Moonshot AI</li><li>Researchers' Sept 13 retest showed the same attack still worked on GPT-6 Astra via Microsoft Azure</li>
+      </ul>
+      <a href="https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign" class="card-source" target="_blank" rel="noopener">📰 OpenAI</a>
+    </div>
+    
+    <div class="card card-ai">
+      <div class="card-header">
+        <span class="card-title">Google launches TPU satellite for orbital compute</span>
+        <span class="badge badge-ai">Semiconductors</span>
+      </div>
+      <ul class="bullets">
+        <li>Google launched a prototype satellite carrying its first TPU into space on a SpaceX rocket</li><li>The TPU gets 1 kW of continuous power and runs in 15-minute bursts to test power and cooling limits</li><li>Project Suncatcher envisions 81 satellites in formation, assuming launch costs near $200/kg by 2035</li>
+      </ul>
+      <a href="https://techcrunch.com/2026/10/01/google-thinks-spacexs-starship-has-to-launch-1600-times-before-space-data-centers-get-off-the-ground/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 2: AI 상세 ─────────────────────── -->
+  <div class="sec-label" style="background:#f5f3ff; color:#5b21b6;">🔍 AI DEEP DIVE — Why It Matters</div>
+  <div class="grid-3">
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">Google unveils Gemini 4 Argon</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">Background</div>
+        <div class="detail-txt">Google had not shipped a frontier model since Gemini 3.1 Pro more than seven months ago and skipped Gemini 3.5 entirely. Argon targets coding, enterprise knowledge work and cyber defense, and goes first to a group of trusted cyber defenders.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">Why it matters</div>
+        <div class="detail-txt">Google returns to parity with OpenAI in independent testing and restores the top-three lab picture, though Anthropic keeps its lead. Low per-token prices are offset by higher token consumption, so real per-task cost depends on the promotional rate.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">Intelligence Index 53 (Opus 5.5: 58)</span><span class="key-chip">Output limit 64K to 1M tokens</span>
+      </div>
+      
+
+      <div class="takeaway">▶ Gemini 4 Argon puts Google back in the top tier but not in first place.</div>
+      <a href="https://the-decoder.com/google-gemini-4-argon-closes-the-gap-with-openai-and-anthropic-but-doesnt-take-a-clear-lead/" class="card-source" target="_blank" rel="noopener">📰 The Decoder</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">OpenAI blocks model-distillation campaign</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">Background</div>
+        <div class="detail-txt">Adversarial distillation copies a stronger model's capabilities by learning from its full reasoning traces. Researchers had shown that encrypted reasoning packets can be reused across sessions and models to decrypt them.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">Why it matters</div>
+        <div class="detail-txt">Reasoning traces are core model IP, and securing one provider's API does not protect the wider ecosystem. Defense levels differ by cloud reseller such as Azure, making security standards across the frontier-model supply chain a live issue.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">15,000+ accounts banned</span><span class="key-chip">16,000 requests on July 24-25</span>
+      </div>
+      
+
+      <div class="takeaway">▶ Defending model reasoning is only as strong as the weakest cloud channel that serves the model.</div>
+      <a href="https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign" class="card-source" target="_blank" rel="noopener">📰 OpenAI</a>
+    </div>
+    
+    <div class="card card-detail">
+      <div class="card-header">
+        <span class="card-title card-title-sm">Google launches TPU satellite for orbital compute</span>
+        <span class="badge badge-detail">DETAIL</span>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">Background</div>
+        <div class="detail-txt">Google is pursuing Project Suncatcher, a long-term plan for large compute clusters in Earth orbit. The satellite uses a Planet Labs standard platform, with a two-satellite compute-focused demo planned for next year.</div>
+      </div>
+
+      <div class="detail-block">
+        <div class="detail-lbl">Why it matters</div>
+        <div class="detail-txt">Orbital compute has entered the experimental stage as an alternative to power- and land-constrained AI data centers. Economics hinge on launch costs falling about 20% a year, and Google's analysis implies on the order of 1,800 Starship launches.</div>
+      </div>
+
+      
+      <div class="key-chips">
+        <span class="key-chip">1 kW continuous power, 15-minute bursts</span><span class="key-chip">81-satellite design, $200/kg launch target by 2035</span>
+      </div>
+      
+
+      <div class="takeaway">▶ For space data centers, launch cost rather than the chip decides success.</div>
+      <a href="https://techcrunch.com/2026/10/01/google-thinks-spacexs-starship-has-to-launch-1600-times-before-space-data-centers-get-off-the-ground/" class="card-source" target="_blank" rel="noopener">📰 TechCrunch</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 3: 경제 ────────────────────────── -->
+  <div class="sec-label" style="background:#ecfdf5; color:#065f46;">💹 ECONOMY — Markets & Finance</div>
+  <div class="grid-3">
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">Crypto Cards Open Back Door to US AI Models</span>
+        <span class="badge badge-economy">Regulation</span>
+      </div>
+      <ul class="bullets">
+        <li>Payment cards linked to crypto accounts may let Chinese buyers purchase access to American AI models</li><li>The AI boom is colliding with a new crypto scam, adding pressure for tighter AI access controls</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ Negative</span>
+      <a href="https://www.economist.com/finance-and-economics/2026/09/29/the-ai-boom-meets-a-new-kind-of-crypto-scam" class="card-source" target="_blank" rel="noopener">📰 The Economist</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">US Bond Yields Hit Highest Since 2002</span>
+        <span class="badge badge-economy">Interest Rates</span>
+      </div>
+      <ul class="bullets">
+        <li>US Treasury yields reached their highest level since 2002, pressuring consumer and corporate borrowers</li><li>Higher yields are unlikely to ease soon and weigh on parts of the stock market, raising funding costs for AI data center buildouts</li>
+      </ul>
+      <span class="impact-pill impact-negative">↓ Negative</span>
+      <a href="https://www.nytimes.com/2026/10/01/business/bond-yields-10-year-treasury.html" class="card-source" target="_blank" rel="noopener">📰 The New York Times</a>
+    </div>
+    
+    <div class="card card-economy">
+      <div class="card-header">
+        <span class="card-title">S&P 500 Near Record as Most Stocks Struggle</span>
+        <span class="badge badge-economy">Market</span>
+      </div>
+      <ul class="bullets">
+        <li>The S&P 500 trades just shy of record territory even as most individual stocks are struggling</li><li>Gains are concentrated in a few large names, highlighting AI mega-cap dependence and market fragility</li>
+      </ul>
+      <span class="impact-pill impact-neutral">→ Neutral</span>
+      <a href="https://www.marketwatch.com/story/the-stock-market-is-anything-but-normal-right-now-and-these-charts-show-it-91ea187d" class="card-source" target="_blank" rel="noopener">📰 MarketWatch</a>
+    </div>
+    
+  </div>
+
+  <!-- ── Row 4: 영어 표현 ───────────────────── -->
+  <div class="sec-label" style="background:#fffbeb; color:#92400e;">📖 TODAY'S ENGLISH — 3 News Expressions</div>
+  <div class="grid-3">
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"Pareto frontier"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/pəˈreɪtoʊ frʌnˈtɪr/ [파레이토 프런티어]</div>
+      <div class="eng-meaning">→ The boundary of optimal trade-offs, where improving one metric (e.g. quality) means worsening another (e.g. cost)</div>
+      <div class="eng-ex">At a blended rate of $8 per million tokens, Argon shifts the Pareto frontier of the Text Arena and is currently the most cost-efficient model in the ranking.</div>
+      <div class="eng-ex-kr">At a blended rate of $8 per million tokens, Argon shifts the Pareto frontier of the Text Arena and is currently the most cost-efficient model in the ranking.</div>
+      <div class="eng-ctx">📌 Used in The Decoder's Gemini 4 Argon article to describe its price-to-performance ranking on Arena.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"a big ask"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/ə bɪɡ æsk/ [어 빅 애스크]</div>
+      <div class="eng-meaning">→ A demanding request or goal that is difficult to achieve</div>
+      <div class="eng-ex">That’s a big ask for a vehicle that has never flown more than five times in a year.</div>
+      <div class="eng-ex-kr">That’s a big ask for a vehicle that has never flown more than five times in a year.</div>
+      <div class="eng-ctx">📌 Used in TechCrunch's Google orbital data center article to question the assumption that Starship must fly 180 times a year.</div>
+    </div>
+    
+    <div class="card card-english">
+      <div class="card-header">
+        <span class="eng-phrase">"paint a rosier picture"</span>
+        <span class="badge badge-english">ENGLISH</span>
+      </div>
+      <div class="eng-pron">/peɪnt ə ˈroʊziər ˈpɪktʃər/ [페인트 어 로지어 픽처]</div>
+      <div class="eng-meaning">→ To present a more optimistic view of a situation than other evidence suggests</div>
+      <div class="eng-ex">Google's own benchmark results paint a rosier picture.</div>
+      <div class="eng-ex-kr">Google's own benchmark results paint a rosier picture.</div>
+      <div class="eng-ctx">📌 Used in The Decoder's Gemini 4 Argon article to contrast Google's own benchmarks with independent evaluations.</div>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Auto-generated | Sources: RSS feeds | 2026-10-02-140416 | AI News Card
+  </div>
+
+</div>
+</div>
+  <script>
+    (function () {
+      const buttons = document.querySelectorAll('[data-lang-button]');
+      const views = document.querySelectorAll('[data-lang-view]');
+      function setLang(lang) {
+        buttons.forEach((button) => button.classList.toggle('active', button.dataset.langButton === lang));
+        views.forEach((view) => view.classList.toggle('active', view.dataset.langView === lang));
+        document.documentElement.lang = lang;
+      }
+      buttons.forEach((button) => button.addEventListener('click', () => setLang(button.dataset.langButton)));
+    })();
+  </script>
+</div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+  <script>
+    (() => {
+      const setLang = (lang) => {
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-lang-button]').forEach((button) => {
+          button.classList.toggle('active', button.dataset.langButton === lang);
+        });
+        document.querySelectorAll('[data-lang-view]').forEach((view) => {
+          view.classList.toggle('active', view.dataset.langView === lang);
+        });
+      };
+      document.addEventListener('click', (event) => {
+        const button = event.target.closest('[data-lang-button]');
+        if (button) setLang(button.dataset.langButton || 'ko');
+      });
+      setLang(document.documentElement.lang || 'ko');
+    })();
+  </script>
+</body>
+</html>
