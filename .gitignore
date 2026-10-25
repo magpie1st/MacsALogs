@@ -3,3 +3,6 @@
 
 # 임시 파일
 **/tmp.png
+
+# MOM 녹음 업로드 대기 (build_mom.py) — 커밋 금지
+.mom-audio/

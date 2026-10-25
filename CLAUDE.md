@@ -111,6 +111,30 @@ Episode 20에서 다음이 잠긴다. 키보드 `[` / `]` 로도 넘길 수 있�
 하단 플레이어의 `◀◀ 문장` / `문장 ▶▶`와는 **다른 것이다.** 라벨·위치·스타일을 일부러 다르게
 뒀으니, 손댈 때 둘을 닮게 만들지 말 것.
 
+## MOM(회의록) 페이지
+
+`docs/mom.html`(목록)과 `docs/mom/<id>.html`(회의별 대본)도 내비게이션에 없는 독립형 페이지다.
+원본은 `voice-in-scribe` 저장소의 `output/*_대본.json` · `_대본.html`(대본형 회의록)이고 읽기 전용이다.
+
+**이 저장소는 공개이고 커밋은 자동 푸시된다(hermes `MacsALogs hourly auto-push monitor`).**
+회의 내용은 인명 · 인원 협상 · 파트너 일정이 담긴 회사 정보라 평문으로 두지 않는다.
+
+- 목록 JSON 과 대본 HTML 전체를 암호화해 `<!-- MOM-DATA:START -->` ~ `END` 에 넣는다.
+  **자동 생성 영역이다. 손으로 고치지 말 것.** 복호화는 `docs/js/mom.js`(PBKDF2-SHA256 60만 회 → AES-256-GCM)
+- `<id>` 는 암호를 키로 한 HMAC 이다. 파일 이름 · Release 자산 이름에서 회의를 알 수 없게 하려는 것이다
+- 암호는 `~/.config/macsalogs/mom_password`(또는 `MOM_PASSWORD`)에 있고 저장소에 두지 않는다.
+  **암호를 바꾸면 id 가 바뀌어** 녹음 Release 를 다시 올려야 한다
+- 녹음은 Release `mom-audio-v1` 자산이다(`<id>.m4a`). mp3 와 마찬가지로 저장소에 넣지 않는다.
+  Release 자산은 암호화되지 않는다
+
+```bash
+python3 scripts/build_mom.py -n   # 실을 회의 확인 (voice-in-scribe/output/*_대본.json 전부)
+python3 scripts/build_mom.py      # 생성 + .mom-audio/ 에 녹음 준비 + 업로드 명령 출력
+```
+
+대본을 고쳤으면 voice-in-scribe 에서 `dialogue.py build` 를 먼저 돌린다. html 이 json 보다 오래되면 경고가 뜬다.
+새 대본이 생기면 자동으로 목록에 들어가니, 싣지 않을 회의가 있으면 생성 전에 확인한다.
+
 ## 스타일 규칙
 
 - 색상·여백 변경은 `style.css`의 `:root` 변수 값만 수정
