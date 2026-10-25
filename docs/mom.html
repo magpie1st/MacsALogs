@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>MOM — MacsALogs</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="index.html">홈</a>
+        <a href="about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="mom-hero">
+      <p class="tv-eyebrow">Minutes of Meeting</p>
+      <h1>MOM</h1>
+      <p class="mom-hero-sub">
+        회의록과 화자별 대본입니다. 회의록 항목마다 근거가 된 대화를 펼쳐 보고 그 대목을 바로 들을 수 있습니다.
+        내용은 암호화되어 있어 암호를 넣어야 보입니다.
+      </p>
+    </section>
+
+    <div id="mom-lock"></div>
+
+    <section id="mom-body" hidden>
+      <div class="mom-list-head">
+        <span class="mom-count" id="mom-count"></span>
+        <button type="button" class="mom-logout" id="mom-logout" hidden>잠그기</button>
+      </div>
+      <div class="mom-list" id="mom-list"></div>
+    </section>
+  </main>
+
+  <!-- MOM-DATA:START -->
+<script type="application/json" id="mom-data">{"v": 1, "iter": 600000, "salt": "zLc6lbDXnzh05zxrIVxdNw==", "iv": "Ts22LLW1kMLuVrCz", "ct": "ASbvmPsIqsWCzM657DgkTtY7tUhJFfrplpoCNSsfzRCO9rAc5anVhfK7aQA37MIkZwx0LtIhNTHu3yFUy2nT4oAa10/zO4saFKbCeybhgkqBAoB51zdMaYtCxnK3YWvqtjzydQramVqTivFKACZWbERceB5Qw/mSLL9NTWxLxcd64ybg5zNKh1Njb8HBtmTTqTpwMtkMuS7qCUDrssd2xG2gGPm0QidQd28sC7CQjhX0ecnE3/TAZV4TetLgA/6wNARKioDWHfZxlkGXIHzbVawx7seLLx6SEkcMyguHJKH/cIRjxonbExZ8szCP4pjFoLJSGnWGBgH9m5XoRV9aQ6HfhG4dErz6tmPDEC4S8A2aT8P9z7QB561dznphTjYXn1FcjAuDND4uVE/VXNk1sW8891QVA8ARwCmlThRGlY5DHXzDbai4XVm7HfT0U5XLRmoJzkHycoA48KrONp0l5YlATn074zNybXJMXZCrSr2BrxZBSJvXjlkSjcOuFT+2xqjIrSWu8SdC78KjQWYhuX98pcKx1+H6Cht/6EOs6eaP3X6LnNMpg0FuK4p4ZivJEMf7JUAMU/q30pa+nZDtNed+yLvGHdE4vdxnLlJWA0hVke/sHkxvbzYNrQ8="}</script>
+<!-- MOM-DATA:END -->
+  <script src="js/mom.js"></script>
+  <script>MOM.openList();</script>
+</body>
+</html>
