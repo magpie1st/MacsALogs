@@ -2,17 +2,16 @@
 """MOM(회의록) 페이지 생성기 — voice-in-scribe 의 대본형 회의록을 암호화해 docs/ 에 싣는다.
 
 원본은 voice-in-scribe 저장소의 ``output/<이름>_대본.json`` 과 ``_대본.html`` 이다(읽기 전용).
-이 저장소는 공개 GitHub Pages 라서 **평문을 한 글자도 남기지 않는다.**
+기본은 **평문 공개**다(2026-10-25 사용자 결정). ``--encrypt`` 를 주면 암호로 잠근다.
 
-- ``docs/mom.html``        회의록 목록. 목록 JSON 을 암호화해 넣는다
-- ``docs/mom/<id>.html``   회의별 대본 페이지. 대본 HTML 전체를 암호화해 넣는다
-- ``<id>`` 는 암호를 키로 한 HMAC 이라 파일 이름 · Release 자산 이름에서 회의를 알 수 없다
-
-암호는 ``MOM_PASSWORD`` 환경변수 또는 ``~/.config/macsalogs/mom_password`` 에서 읽는다.
-암호를 바꾸면 id 도 바뀌므로 녹음 Release 를 다시 올려야 한다.
+- ``docs/mom.html``        회의록 목록. 목록 JSON 을 넣는다
+- ``docs/mom/<id>.html``   회의별 대본 페이지. 평문이면 대본 HTML 그대로, 암호화면 잠근 껍데기
+- ``<id>`` 는 ``~/.config/macsalogs/mom_password`` 를 키로 한 HMAC 이다. 녹음 Release 자산 이름과
+  맞물려 있으니 이 파일을 바꾸면 녹음을 다시 올려야 한다
 
     python3 scripts/build_mom.py            # 생성 + 녹음 업로드 명령 출력
     python3 scripts/build_mom.py -n         # 무엇을 만들지 확인만
+    python3 scripts/build_mom.py --encrypt  # 목록 · 대본을 암호로 잠근다
 
 브라우저 쪽 복호화는 ``docs/js/mom.js`` 가 한다 (PBKDF2-SHA256 → AES-256-GCM, WebCrypto).
 """
@@ -134,6 +133,7 @@ DETAIL = """<!DOCTYPE html>
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("-n", "--dry-run", action="store_true")
+    ap.add_argument("--encrypt", action="store_true", help="목록 · 대본을 암호로 잠근다")
     a = ap.parse_args()
 
     pw = password()
@@ -149,15 +149,19 @@ def main() -> None:
     keep = set()
     for m in ms:
         p = out / f"{m['id']}.html"
-        p.write_text(DETAIL, encoding="utf-8")
-        put(p, seal(pw, detail_html(m)))
+        if a.encrypt:
+            p.write_text(DETAIL, encoding="utf-8")
+            put(p, seal(pw, detail_html(m)))
+        else:
+            p.write_text(detail_html(m), encoding="utf-8")
         keep.add(p.name)
     for p in out.glob("*.html"):
         if p.name not in keep:
             p.unlink()
             print(f"  지움 {p.name} (원본에 없는 회의)")
-    put(DOCS / "mom.html", seal(pw, json.dumps([m["meta"] for m in ms], ensure_ascii=False)))
-    print(f"갱신: docs/mom.html, docs/mom/ ({len(ms)}개)")
+    listing = json.dumps([m["meta"] for m in ms], ensure_ascii=False)
+    put(DOCS / "mom.html", seal(pw, listing) if a.encrypt else listing.replace("</", "<\\/"))
+    print(f"갱신: docs/mom.html, docs/mom/ ({len(ms)}개, {'암호화' if a.encrypt else '평문'})")
 
     # 녹음은 id 이름으로 모아 두고 업로드 명령만 출력한다. 업로드는 사람이 한다
     shutil.rmtree(STAGE, ignore_errors=True)

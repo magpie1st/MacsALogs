@@ -1,6 +1,6 @@
 // MOM(회의록) 페이지 — 암호화된 목록 · 대본을 브라우저에서 푼다.
 // 데이터는 scripts/build_mom.py 가 만든다 (PBKDF2-SHA256 → AES-256-GCM).
-// 암호는 이번 탭(sessionStorage)에만 두고, '이 기기에 기억'을 고르면 localStorage 에도 둔다.
+// 목록이 평문이면 그대로 보여 준다. 암호는 이번 탭(sessionStorage)에만 두고, '이 기기에 기억'을 고르면 localStorage 에도 둔다.
 (function () {
   const KEY = 'mom-pw';
 
@@ -70,8 +70,10 @@
     return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   }
 
+  // 목록이 평문이면(암호화하지 않은 빌드) 입력 창 없이 바로 그린다
   function openList() {
-    unlock(plain => {
+    const raw = document.getElementById('mom-data').textContent;
+    const render = plain => {
       const list = JSON.parse(plain);
       document.getElementById('mom-count').textContent = `${list.length}건`;
       document.getElementById('mom-list').innerHTML = list.map(m => `
@@ -82,6 +84,10 @@
           <p class="mom-card-speakers">${m.speakers.map(s => `<span class="tag">${esc(s)}</span>`).join('')}</p>
         </a>`).join('');
       document.getElementById('mom-body').hidden = false;
+    };
+    if (!('ct' in JSON.parse(raw))) return render(raw);
+    unlock(plain => {
+      render(plain);
       document.getElementById('mom-logout').hidden = false;
     });
     document.getElementById('mom-logout').addEventListener('click', () => { forget(); location.reload(); });
