@@ -117,19 +117,20 @@ Episode 20에서 다음이 잠긴다. 키보드 `[` / `]` 로도 넘길 수 있�
 원본은 `voice-in-scribe` 저장소의 `output/*_대본.json` · `_대본.html`(대본형 회의록)이고 읽기 전용이다.
 
 **이 저장소는 공개이고 커밋은 자동 푸시된다(hermes `MacsALogs hourly auto-push monitor`).**
-회의 내용은 인명 · 인원 협상 · 파트너 일정이 담긴 회사 정보라 평문으로 두지 않는다.
+회의록은 **평문으로 공개**한다(2026-10-25 사용자 결정 — 처음엔 암호화해 올렸다가 풀었다).
+인명 · 인원 협상 · 파트너 일정이 담긴 회의라, 새 회의를 실을 때마다 공개해도 되는지 사용자에게 확인한다.
 
-- 목록 JSON 과 대본 HTML 전체를 암호화해 `<!-- MOM-DATA:START -->` ~ `END` 에 넣는다.
-  **자동 생성 영역이다. 손으로 고치지 말 것.** 복호화는 `docs/js/mom.js`(PBKDF2-SHA256 60만 회 → AES-256-GCM)
-- `<id>` 는 암호를 키로 한 HMAC 이다. 파일 이름 · Release 자산 이름에서 회의를 알 수 없게 하려는 것이다
-- 암호는 `~/.config/macsalogs/mom_password`(또는 `MOM_PASSWORD`)에 있고 저장소에 두지 않는다.
-  **암호를 바꾸면 id 가 바뀌어** 녹음 Release 를 다시 올려야 한다
-- 녹음은 Release `mom-audio-v1` 자산이다(`<id>.m4a`). mp3 와 마찬가지로 저장소에 넣지 않는다.
-  Release 자산은 암호화되지 않는다
+- `docs/mom.html` 의 `<!-- MOM-DATA:START -->` ~ `END` 는 목록 JSON 이고, `docs/mom/<id>.html` 은 대본 HTML 그대로다.
+  **둘 다 자동 생성물이다. 손으로 고치지 말 것**
+- `--encrypt` 를 주면 예전처럼 암호로 잠근다(PBKDF2-SHA256 60만 회 → AES-256-GCM, 복호화는 `docs/js/mom.js`).
+  암호는 `~/.config/macsalogs/mom_password`(또는 `MOM_PASSWORD`)이고 저장소에 두지 않는다
+- `<id>` 는 그 암호 파일을 키로 한 HMAC 이다. **암호 파일을 바꾸면 id 가 바뀌어** 녹음 Release 를 다시 올려야 한다
+- 녹음은 Release `mom-audio-v1` 자산이다(`<id>.m4a`, 암호화 없음). mp3 와 마찬가지로 저장소에 넣지 않는다
 
 ```bash
 python3 scripts/build_mom.py -n   # 실을 회의 확인 (voice-in-scribe/output/*_대본.json 전부)
 python3 scripts/build_mom.py      # 생성 + .mom-audio/ 에 녹음 준비 + 업로드 명령 출력
+python3 scripts/build_mom.py --encrypt   # 암호로 잠가 생성
 ```
 
 대본을 고쳤으면 voice-in-scribe 에서 `dialogue.py build` 를 먼저 돌린다. html 이 json 보다 오래되면 경고가 뜬다.
