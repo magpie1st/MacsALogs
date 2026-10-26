@@ -136,6 +136,24 @@ python3 scripts/build_mom.py --encrypt   # 암호로 잠가 생성
 대본을 고쳤으면 voice-in-scribe 에서 `dialogue.py build` 를 먼저 돌린다. html 이 json 보다 오래되면 경고가 뜬다.
 새 대본이 생기면 자동으로 목록에 들어가니, 싣지 않을 회의가 있으면 생성 전에 확인한다.
 
+## 영어 복습 페이지
+
+`docs/english.html`은 내비게이션 **"영어"** 메뉴로 연결되는 페이지다(`noindex`). 한 페이지 10카드, 한글만 보기·★ 헷갈림·섞기·🔊를 쓴다.
+`macSndBrain`의 `concepts/english-expression-notebook.md`(5열)와 `concepts/english-vocabulary-notebook.md`(6열)가 원본이고
+읽기 전용이다. **`docs/english.html` 전체가 자동 생성물이다. 손으로 고치지 말 것.**
+
+```bash
+cd /home/magpie/Workspace/dev/macGitHub/macSndBrain
+python3 scripts/build_english_page.py --blog   # → ../MacsALogs/docs/english.html
+```
+
+- 노트를 고쳤으면 위 명령을 다시 돌린 뒤 이 저장소에서 커밋한다. 노트 표 열 개수가 어긋나면 생성이 에러로 멈춘다.
+- **이 저장소는 공개이고 노트 전체가 평문으로 올라간다**(2026-10-26 사용자 결정). 회의에서 온 표현·예문(상대 발언·실명 포함)도 포함된다.
+  새 회의 출처 행이 노트에 늘면 공개해도 되는지 사용자에게 다시 확인한다.
+- 학습 상태(★·마지막 위치)는 브라우저 `localStorage`에만 저장되며 서버로 가지 않는다.
+- 새 정적 페이지를 만들면 내비게이션 `<a href="english.html">영어</a>` 줄처럼 `소개` 앞에 메뉴를 넣는다.
+  `ai-news` 자동 생성 포스트(i18n 헤더)에는 이 메뉴가 없다.
+
 ## 스타일 규칙
 
 - 색상·여백 변경은 `style.css`의 `:root` 변수 값만 수정
