@@ -83,15 +83,31 @@ python3 scripts/build_langstudy.py "~/Downloads/lang-study/에밀리, 파리에 
 - `docs/audio/shows/<작품 id>/sNNeNN.json` — 문장 타임라인 (다시 빌드할 때 쓴다)
 - `docs/tvshow.html` 의 JSON 블록 — 그 작품만
 
-### 4. 음원을 Release 에 올린다 (사용자가 직접)
-
-생성기가 쓸 수 있는 명령을 출력한다. **업로드와 푸시는 자동화하지 않는다.**
+### 4. 음원을 Release 에 올린다 — `publish_shows.py`
 
 ```bash
-cp "<폴더>/<...> 전체.mp3" /tmp/emily-in-paris-s05e01.mp3
-gh release create shows-audio-2026-10-31-v1 --title shows-audio-2026-10-31-v1 --notes ''
-gh release upload shows-audio-2026-10-31-v1 /tmp/emily-in-paris-s05e01.mp3 --clobber
+python3 scripts/publish_shows.py --show-id emily-in-paris -n        # 계획만
+python3 scripts/publish_shows.py --show-id emily-in-paris           # 올린다 (물어본다)
+python3 scripts/publish_shows.py --show-id emily-in-paris --yes --push   # 한 번에
 ```
+
+한 번에 이걸 다 한다.
+
+1. manifest 로 올릴 회차를 정하고, 내려받은 폴더에서 원본 mp3 를 찾는다
+   (manifest 의 `audio.sourceName`. 없으면 `시즌 N M화` 폴더 이름으로 짐작한다)
+2. Release 태그가 없으면 만들고 자산을 올린다 (`--clobber` 로 교체)
+3. `config.json` 의 `audioBaseUrl` 을 그 태그로 맞춘다
+4. `docs/tvshow.html` 의 그 회차 주소를 Release 로 돌리고 `preview` 표시를 지운다
+   (**세그먼트는 손대지 않는다** — HTML 에 있는 것이 정답이다)
+5. 올린 자산에 Range 요청을 보내 **206 인지** 확인한다 (200 이면 문장 seek 이 안 된다)
+6. `--push` 면 커밋·푸시까지
+
+**이 저장소는 공개다.** 올린 음원은 누구나 내려받을 수 있는 주소에 놓인다.
+터미널에서는 물어보고, 자동 실행(에이전트 등)에서는 `--yes` 가 없으면 **중단한다.**
+
+> `--yes` 를 **사용자가 공개를 요청했을 때만** 붙인다. "올려 줘", "웹에 올려 줘" 처럼
+> 명확히 말했을 때다. 애매하면 `-n` 으로 계획을 보여 주고 물어본다 — 한 번 올라간 음원은
+> Release 에서 지워도 내려받아 간 것을 되돌릴 수 없다.
 
 ### 5. 확인한다
 
@@ -126,6 +142,18 @@ seek 불가로 판단하고(`audio.seekable` 이 `[0,0]`), 문장 클릭·문장
 | `--scene-gap 4.0` | 문장 사이가 이만큼 벌어지면 장면을 끊는다 (초) |
 | `--audio-base-url` | Release 기준 URL. config.json 이 있으면 생략 |
 | `--script` / `--audio` | 폴더에 파일이 여러 개일 때 직접 지정 |
+| `--local-audio` | mp3 를 gitignore 된 docs 폴더로 복사해 로컬에서만 듣는다 (배포용 아님) |
+
+`publish_shows.py` 쪽 옵션:
+
+| 옵션 | 용도 |
+|------|------|
+| `-n` | 올리지 않고 계획만 |
+| `--episode sNNeNN` | 그 회차만 (여러 번 줄 수 있다). 생략하면 작품 전부 |
+| `--tag` | Release 태그. 생략하면 config.json 에서 읽고, 없으면 오늘 날짜로 |
+| `--from <폴더>` | 내려받기 폴더 (기본 `~/Downloads/lang-study`) |
+| `--yes` | 확인 없이 올린다. **사용자가 공개를 요청했을 때만** |
+| `--push` | 성공하면 커밋·푸시까지 |
 
 ## 판단이 필요한 지점
 
@@ -161,6 +189,8 @@ seek 불가로 판단하고(`audio.seekable` 이 `[0,0]`), 문장 클릭·문장
   보고한다.
 
 ## 배포
+
+`publish_shows.py --push` 가 음원 업로드와 함께 해 준다. 대본만 올릴 때는 직접 한다.
 
 ```bash
 cd /Users/mac/Documents/mac-codes/MacsALogs
