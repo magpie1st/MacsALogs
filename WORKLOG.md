@@ -50,12 +50,25 @@ currentTime 을 설정해도 0 에서 움직이지 않으므로 네 기능이 �
 ±10초·문장 이동·301번째 문장 클릭(977초)·따라가기 전부 동작.
 **배포된 페이지에서는 애초에 문제가 없다** — Release 자산이 206 을 돌려준다.
 
+### 음원 공개 도구 (`scripts/publish_shows.py`)
+
+"업로드까지 한 번에" 요청으로 추가했다. manifest 로 올릴 회차를 정하고, 내려받은 폴더에서
+원본 mp3 를 찾아(`audio.sourceName`) Release 에 올리고, `config.json` 과 `tvshow.html` 의
+주소를 Release 로 돌린 뒤 Range 206 을 확인한다. `--push` 면 커밋·푸시까지.
+
+- **세그먼트는 손대지 않는다.** HTML 에 이미 들어 있는 것이 정답이고(build_langstudy.py 가
+  넣었다), 다시 만들면 장면·줄 번호가 어긋날 위험만 생긴다. 주소와 `preview` 표시만 바꾼다
+- **공개 저장소라 기본은 물어본다.** 터미널이면 y/N, 자동 실행(에이전트)이면 `--yes` 가
+  없으면 중단한다. 한 번 올라간 음원은 Release 에서 지워도 내려받아 간 것을 되돌릴 수 없다
+- manifest 에 `audio.sourceName`(mp3 파일 **이름만**)을 남겨 업로드 쪽이 폴더를 다시 뒤지지
+  않게 했다. 경로를 담으면 공개되는 manifest 에 개인 머신 경로가 섞인다
+
 ### 아직 안 한 것
 
-- **음원을 Release 에 올리지 않았다.** `shows-audio-2026-10-31-v1` 태그에
-  `emily-in-paris-s05e01.mp3` 를 올려야 소리가 난다. 올리기 전에는 404 다.
-  이 저장소는 공개이므로 올리면 방송 음원 34분이 누구나 내려받을 수 있는 주소에 놓인다 —
-  대본과 달리 그건 판단이 필요한 일이라 올리지 않고 명령만 남겼다.
+- **음원을 Release 에 올리지 않았다.** 도구는 만들어 뒀다
+  (`python3 scripts/publish_shows.py --show-id emily-in-paris --yes --push`).
+  올리기 전에는 404 다. 이 저장소는 공개이므로 올리면 방송 음원 34분이 누구나 내려받을 수
+  있는 주소에 놓인다 — 실행은 사람이 한다.
   로컬에서 들을 때는 `--local-audio` 로 빌드하면 된다 (`docs/audio/shows` 는 .gitignore)
 - **문장 시간이 초 단위로 반올림돼 있다.** 1화는 lang-study v0.9.0 이전에 내보낸 것이라
   `sentences.csv` 로 읽었다. 문장 하이라이트가 최대 0.5초 밀린다 — lang-study 에서

@@ -34,6 +34,7 @@ def load(name: str):
 sys.path.insert(0, str(SCRIPTS))
 shows = load("shows")
 langstudy = load("build_langstudy")
+publish = load("publish_shows")
 
 failures: list[str] = []
 
@@ -230,6 +231,58 @@ print("\nresolve_show_id: 한글 제목은 영문 id 를 요구한다")
 check("영문 id 를 주면 슬러그", langstudy.resolve_show_id({"title": "x"}, "Emily In Paris"), "emily-in-paris")
 check("영문 제목이면 자동", langstudy.resolve_show_id({"title": "Emily in Paris"}, None), "emily-in-paris")
 raises("한글 제목만 있으면 중단", lambda: langstudy.resolve_show_id({"title": "에밀리, 파리에 가다"}, None))
+
+# ── 음원 공개 (업로드하지 않는 부분만) ──────────────────────────────────────
+print("\naudio_block / retarget: 주소를 Release 로 돌리고 세그먼트는 지킨다")
+
+TAG = "shows-audio-2026-10-31-v1"
+BASE2 = f"https://github.com/magpie1st/MacsALogs/releases/download/{TAG}"
+MANIFEST = {
+    "episodeId": "s05e01", "season": 5, "episode": 1, "generated": "2026-10-31",
+    "audio": {"asset": "emily-in-paris-s05e01.mp3", "sourceName": "원본.mp3",
+              "durationSec": 2043.82, "recordedSec": 1817.0},
+}
+
+block = publish.audio_block(MANIFEST, BASE2)
+check("Release 주소", block["file"], f"{BASE2}/emily-in-paris-s05e01.mp3")
+check("길이", block["durationSec"], 2043.82)
+check("녹음된 비율", block["coverage"], round(1817.0 / 2043.82, 3))
+check("preview 표시 없음", block.get("preview"), None)
+
+# --local-audio 로 만든 상태를 흉내 낸다 (상대경로 + preview)
+SEGS = [[1, 1, 0, 25320, 28110, 0, 17], [1, 2, 0, 28400, 30020, 0, 9]]
+payload2 = {"shows": [{"id": "emily-in-paris", "seasons": [{"number": 5, "episodes": [
+    {"number": 1, "id": "s05e01", "audio": {
+        "file": "audio/shows/emily-in-paris/emily-in-paris-s05e01.mp3",
+        "preview": True, "segments": SEGS, "segmentCount": 2}},
+]}]}]}
+touched = publish.retarget(payload2, "emily-in-paris", [MANIFEST], BASE2)
+after = payload2["shows"][0]["seasons"][0]["episodes"][0]["audio"]
+check("바꾼 회차", touched, ["s05e01"])
+check("주소가 Release 로", after["file"], f"{BASE2}/emily-in-paris-s05e01.mp3")
+check("preview 표시가 지워진다", after.get("preview"), None)
+check("세그먼트는 그대로", after["segments"], SEGS)
+check("문장 수도 그대로", after["segmentCount"], 2)
+
+# manifest 가 없는 회차는 건드리지 않는다
+payload3 = {"shows": [{"id": "emily-in-paris", "seasons": [{"number": 5, "episodes": [
+    {"number": 2, "id": "s05e02", "audio": {"file": "그대로.mp3"}}]}]}]}
+check("manifest 없는 회차는 그대로", publish.retarget(payload3, "emily-in-paris", [MANIFEST], BASE2), [])
+check("주소 유지", payload3["shows"][0]["seasons"][0]["episodes"][0]["audio"]["file"], "그대로.mp3")
+raises("없는 작품은 중단", lambda: publish.retarget({"shows": []}, "없는작품", [MANIFEST], BASE2))
+
+print("\nfind_source: manifest 의 sourceName 으로 원본을 찾는다")
+import tempfile
+with tempfile.TemporaryDirectory() as tmp:
+    root = Path(tmp)
+    folder = root / "에밀리, 파리에 가다 시즌 5 1화"
+    folder.mkdir()
+    (folder / "원본.mp3").write_bytes(b"x")
+    check("sourceName 으로 찾음", publish.find_source(MANIFEST, root, None), folder / "원본.mp3")
+    # sourceName 이 없는 예전 manifest → 시즌·회차로 폴더를 짐작한다
+    legacy = {"season": 5, "episode": 1, "audio": {"asset": "a.mp3"}}
+    check("시즌·회차로 짐작", publish.find_source(legacy, root, None), folder / "원본.mp3")
+    check("없으면 None", publish.find_source({"season": 9, "episode": 9, "audio": {}}, root, None), None)
 
 print()
 if failures:

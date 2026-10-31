@@ -105,6 +105,20 @@ python3 scripts/build_langstudy.py "~/Downloads/lang-study/<폴더>" \
 복사하고 상대경로를 쓰며, 그 경로는 `.gitignore`에 있어 커밋되지 않는다. 그 빌드에는
 `preview: true`가 붙고 페이지에 "로컬 미리보기 음원입니다" 경고가 뜬다.
 
+### 음원 공개 (`publish_shows.py`)
+
+```bash
+python3 scripts/publish_shows.py --show-id emily-in-paris -n          # 계획만
+python3 scripts/publish_shows.py --show-id emily-in-paris --yes --push  # 올리고 푸시
+```
+
+Release 태그 생성 → 자산 업로드(`--clobber`) → `config.json` 갱신 →
+`tvshow.html` 의 주소를 Release 로 돌림(`preview` 제거, **세그먼트는 손대지 않음**) →
+Range 206 확인 → `--push` 면 커밋·푸시.
+
+**이 저장소는 공개다.** 터미널에서는 물어보고, 자동 실행에서는 `--yes` 가 없으면 중단한다.
+한 번 올라간 음원은 Release 에서 지워도 내려받아 간 것을 되돌릴 수 없다.
+
 ### 로컬 미리보기 서버
 
 **`python3 -m http.server`를 쓰지 말 것.** Range 요청에 206 대신 200을 돌려주고, Chrome은

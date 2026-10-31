@@ -293,7 +293,7 @@ def build_audio_meta(script: dict, asset_name: str, base_url: str | None, audio_
 
 
 def write_manifest(show_id: str, episode_id: str, script: dict, episode: dict,
-                   script_path: Path, asset_name: str) -> Path:
+                   script_path: Path, asset_name: str, audio_path: Path | None = None) -> Path:
     """문장 타임라인을 docs/audio/shows/<작품>/ 에 남긴다.
 
     HTML 블록만으로도 페이지는 돌지만, 나중에 다시 빌드하거나 어긋남을 확인할 때
@@ -318,6 +318,9 @@ def write_manifest(show_id: str, episode_id: str, script: dict, episode: dict,
         },
         "audio": {
             "asset": asset_name,
+            # 올릴 원본 mp3 의 **파일 이름만** 둔다. publish_shows.py 가 내려받은 폴더에서
+            # 이 이름으로 찾는다. 경로를 담으면 공개되는 manifest 에 개인 머신 경로가 섞인다.
+            "sourceName": audio_path.name if audio_path else None,
             "durationSec": script.get("durationSec"),
             "recordedSec": script.get("recordedSec"),
             "rate": (script.get("audio") or {}).get("rate"),
@@ -477,7 +480,7 @@ def main() -> None:
         shutil.copyfile(audio_path, local_copy)
         print(f"\n→ {local_copy.relative_to(REPO_ROOT)} ({local_copy.stat().st_size / 1e6:.0f}MB, 커밋되지 않음)")
 
-    manifest_path = write_manifest(show_id, episode_id, script, episode, script_path, asset_name)
+    manifest_path = write_manifest(show_id, episode_id, script, episode, script_path, asset_name, audio_path)
 
     payload = read_payload()
     show = next((s for s in payload.get("shows") or [] if s.get("id") == show_id), None)
