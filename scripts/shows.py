@@ -32,6 +32,12 @@ END = "<!-- TVSHOW-DATA:END -->"
 
 SCHEMA = "tvshow-data/2"
 
+#: 작품 종류. 영화는 시즌·회차가 없다 — 회차 하나(`feature`)에 담되 화면에서 시즌·회차
+#: 선택을 숨긴다. 모양을 시리즈와 같게 둬야 리더의 본문 그리기·문장 강조를 그대로 쓴다.
+TYPE_SERIES = "series"
+TYPE_MOVIE = "movie"
+MOVIE_EPISODE_ID = "feature"
+
 #: 인라인 JSON 이 2.4MB 를 넘는다. 타임라인까지 들여쓰기로 펼치면 파일이 배로 커지므로
 #: 세그먼트 행만 한 줄짜리 배열로 따로 직렬화해 끼워 넣는다.
 SEGMENT_PLACEHOLDER = "@@TVSHOW_SEGMENTS_{id}@@"
@@ -251,6 +257,7 @@ def migrate(payload: dict) -> dict:
         "title": title,
         "titleKo": payload.get("seriesKo"),
         "lang": payload.get("lang") or "en",
+        "type": TYPE_SERIES,
         "kind": "tts",
         "hasKo": False,
         "seasons": [{
@@ -260,6 +267,16 @@ def migrate(payload: dict) -> dict:
         }],
     }
     return {"schema": SCHEMA, "generated": payload.get("generated"), "shows": [show]}
+
+
+def normalize(payload: dict) -> dict:
+    """빠진 기본값을 채운다. 스키마가 자란 뒤에도 예전 블록을 그대로 읽을 수 있어야 한다.
+
+    `type` 은 나중에 추가됐다 (영화 지원). 없는 작품은 시리즈다.
+    """
+    for show in payload.get("shows") or []:
+        show.setdefault("type", TYPE_SERIES)
+    return payload
 
 
 def read_payload() -> dict:
@@ -272,7 +289,7 @@ def read_payload() -> dict:
     if not body:
         return {"schema": SCHEMA, "generated": None, "shows": []}
     try:
-        return migrate(json.loads(body))
+        return normalize(migrate(json.loads(body)))
     except json.JSONDecodeError as exc:
         sys.exit(f"{TARGET} 의 JSON 블록을 읽을 수 없습니다: {exc}")
 

@@ -59,7 +59,8 @@ def load_manifests(show_id: str, only: list[str] | None) -> list[dict]:
     if not folder.is_dir():
         sys.exit(f"{folder} 가 없습니다. 먼저 build_langstudy.py 로 회차를 넣으세요.")
     out = []
-    for path in sorted(folder.glob("s*e*.json")):
+    # config.json 만 빼고 전부 manifest 다 (시리즈는 sNNeNN.json, 영화는 feature.json)
+    for path in sorted(p for p in folder.glob("*.json") if p.name != "config.json"):
         manifest = json.loads(path.read_text(encoding="utf-8"))
         if only and manifest.get("episodeId") not in only:
             continue

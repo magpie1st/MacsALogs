@@ -44,7 +44,11 @@ uv run python scripts/publish_blog.py             # 음원 복사 + opic.html �
 `docs/tvshow.html`도 포스트가 아닌 독립형 페이지다(내비게이션에 없고 URL로만 접근).
 `<!-- TVSHOW-DATA:START -->` ~ `END` 사이 JSON은 **자동 생성 영역이다. 손으로 고치지 말 것.**
 
-한 페이지가 **작품 → 시즌 → 화**로 나뉘고, 작품이 두 종류 섞여 있다.
+한 페이지에 **드라마와 영화**가 같이 있다. 드라마는 작품 → 시즌 → 화로 나뉘고, 영화는
+회차가 하나뿐이라(`feature`) 시즌·회차 선택과 회차 이동이 숨는다 (`show.type`이 `series`/`movie`).
+작품 선택 목록은 `시리즈`/`영화` 묶음으로 나뉘고, 영화 주소는 `#<작품 id>` 하나다.
+
+음원 출처로도 작품이 두 종류 섞여 있다.
 
 | kind | 무엇 | 원본 | 생성기 |
 |------|------|------|--------|
@@ -97,6 +101,13 @@ python3 scripts/build_langstudy.py "~/Downloads/lang-study/<폴더>" \
 - `docs/audio/shows/<작품 id>/config.json`의 `audioBaseUrl`이 없으면 **오디오를 아예 싣지 않고
   대본만 넣는다.** docs에 없는 mp3를 가리키는 상대경로를 박으면 배포 뒤에야 재생 실패로
   드러나기 때문이다.
+- **영화는 자동 판별한다.** 스크립트 JSON에 시즌·회차가 둘 다 없으면 영화로 넣는다
+  (Netflix 영화가 그렇게 온다). `--movie`/`--series`로 강제할 수 있다.
+- **작품 id는 작품마다 한 번만 정한다.** 한글 제목에서 ASCII 주소를 기계적으로 만들 수 없어서
+  `scripts/show_ids.json`에 `제목 → id`를 기억해 둔다. 두 번째 회차부터는 `--show-id`가 필요 없다.
+- `--publish --push`를 붙이면 대본 반영 → 음원 업로드 → 주소 교체 → Range 확인 → 커밋·푸시까지
+  한 번에 간다 (`publish_shows.py`를 호출한다).
+- `--remove-show ID`로 작품을 페이지·타임라인에서 지운다 (Release 자산은 남는다).
 - 상세 절차와 판단 기준은 `.claude/skills/script-reader/SKILL.md`에 있다. 시즌을 통째로
   올릴 때는 `script-reader-builder` 에이전트를 쓴다.
 

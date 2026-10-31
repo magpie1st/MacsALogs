@@ -227,10 +227,48 @@ check("깨진 파일은 None", langstudy.probe_duration(junk), None)
 check("없는 파일도 None (터지지 않는다)", langstudy.probe_duration(Path("/tmp/없는파일.mp3")), None)
 junk.unlink()
 
-print("\nresolve_show_id: 한글 제목은 영문 id 를 요구한다")
+print("\nresolve_show_id: 한글 제목은 영문 id 를 한 번만 요구한다")
 check("영문 id 를 주면 슬러그", langstudy.resolve_show_id({"title": "x"}, "Emily In Paris"), "emily-in-paris")
 check("영문 제목이면 자동", langstudy.resolve_show_id({"title": "Emily in Paris"}, None), "emily-in-paris")
-raises("한글 제목만 있으면 중단", lambda: langstudy.resolve_show_id({"title": "에밀리, 파리에 가다"}, None))
+# 레지스트리에 없는 한글 제목 → 사람에게 한 번 물어야 한다
+raises("기억에 없는 한글 제목은 중단",
+       lambda: langstudy.resolve_show_id({"title": "아직 기억에 없는 작품 제목"}, None))
+
+print("\n작품 id 레지스트리: 한 번 정하면 다음 회차부터 안 묻는다")
+saved = langstudy.REGISTRY.read_text(encoding="utf-8") if langstudy.REGISTRY.exists() else None
+try:
+    langstudy.remember_show("한글 작품", "hangul-show", "Hangul Show")
+    check("기억한 뒤에는 자동", langstudy.resolve_show_id({"title": "한글 작품"}, None), "hangul-show")
+    check("직접 준 값이 기억보다 우선",
+          langstudy.resolve_show_id({"title": "한글 작품"}, "other-id"), "other-id")
+    registry = langstudy.load_registry()
+    check("titleEn 도 함께", registry["한글 작품"]["titleEn"], "Hangul Show")
+    check("제목이 없으면 기억하지 않는다", langstudy.remember_show("", "x", None), None)
+finally:
+    if saved is None:
+        langstudy.REGISTRY.unlink(missing_ok=True)
+    else:
+        langstudy.REGISTRY.write_text(saved, encoding="utf-8")
+
+print("\n영화: 시즌·회차 없이 feature 회차 하나로 담는다")
+movie_script = {"title": "테스트 영화", "durationSec": 5400.0, "recordedSec": 5200.0,
+                "sentences": [sent(1, 12.0, 13.8, "Hello.", "안녕"),
+                              sent(2, 60.0, 61.5, "Bye.", "잘 가")]}
+groups = langstudy.group_scenes(movie_script["sentences"], 4.0)
+movie_ep = langstudy.build_episode(movie_script, groups, None, movie=True)
+check("회차 id", movie_ep["id"], shows.MOVIE_EPISODE_ID)
+check("제목은 작품 제목", movie_ep["title"], "테스트 영화")
+check("fullTitle 에 시즌이 안 붙는다", movie_ep["fullTitle"], "테스트 영화")
+check("줄 수", movie_ep["lineCount"], 2)
+# 시리즈로 만들면 같은 입력이 1화가 된다
+series_ep = langstudy.build_episode({**movie_script, "season": 5, "episodeNo": 3}, groups, None)
+check("시리즈는 sNNeNN", series_ep["id"], "s05e03")
+check("시리즈 제목", series_ep["title"], "3화")
+
+print("\nnormalize: type 이 없는 예전 작품은 시리즈로 본다")
+normalized = shows.normalize({"shows": [{"id": "a"}, {"id": "b", "type": "movie"}]})
+check("기본은 series", normalized["shows"][0]["type"], shows.TYPE_SERIES)
+check("있는 값은 그대로", normalized["shows"][1]["type"], shows.TYPE_MOVIE)
 
 # ── 음원 공개 (업로드하지 않는 부분만) ──────────────────────────────────────
 print("\naudio_block / retarget: 주소를 Release 로 돌리고 세그먼트는 지킨다")

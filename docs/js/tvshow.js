@@ -1,10 +1,15 @@
 /* TVShow 스크립트 페이지 — 작품·시즌·회차 선택 + 본문 검색 + 글자 크기 + 맨 위로
    오디오가 있는 회차는 문장 단위로 동기화되는 플레이어를 함께 띄운다.
 
-   작품은 두 종류다.
+   작품은 음원 출처로 두 종류다.
      kind: 'tts'        기계 합성 낭독 (book-maker 대본 + tts-maker 음성)
      kind: 'recording'  실제 방송 녹음 (lang-study 확장이 Netflix·쿠팡플레이에서 녹음)
    녹음 작품은 줄마다 한국어 자막(line.ko)이 붙고, 녹음이 빈 문장에 line.silent 가 붙는다.
+
+   모양으로도 두 종류다.
+     type: 'series'     시즌·회차가 있다
+     type: 'movie'      회차 하나(feature)뿐이다 — 시즌·회차 선택과 회차 이동을 숨긴다
+   영화도 회차 하나에 담는 이유는 본문 그리기·문장 강조 경로를 공유하기 위해서다.
 
    '이전/다음 에피소드'(상단 도구모음)와 '이전/다음 문장'(하단 플레이어)은 다른 것이다.
    말풍선·아이콘·위치를 모두 다르게 둔 이유가 그것이다. */
@@ -158,9 +163,14 @@
     return Boolean(show && show.hasKo);
   }
 
+  function isMovie() {
+    return Boolean(show && show.type === 'movie');
+  }
+
   /* 시즌 칸을 보여 줄지. 시즌이 여럿이면 당연히 보여 주고, 하나뿐이어도 그 번호가 1이
      아니면 보여 준다 — "시즌 5 1화"는 시즌 번호 자체가 정보다. */
   function seasonsWorthShowing() {
+    if (isMovie()) return false;   // 영화에는 시즌이 없다
     var list = seasonsOf(show);
     return list.length > 1 || (list.length === 1 && list[0].number !== 1);
   }
@@ -171,8 +181,12 @@
     var words = episodes.reduce(function (sum, ep) { return sum + (ep.wordCount || 0); }, 0);
 
     var chips = [];
-    if (seasonsWorthShowing() && season) chips.push('시즌 ' + season.number);
-    chips.push('에피소드 ' + available + '/' + planned + '편');
+    if (isMovie()) {
+      chips.push('영화');
+    } else {
+      if (seasonsWorthShowing() && season) chips.push('시즌 ' + season.number);
+      chips.push('에피소드 ' + available + '/' + planned + '편');
+    }
     chips.push('총 ' + words.toLocaleString('en-US') + ' words');
     chips.push(show && show.kind === 'recording' ? '방송 녹음' : '기계 합성 낭독');
     if (hasKo()) chips.push('한국어 자막');
@@ -199,7 +213,9 @@
         + ' 문장을 누르면 그 지점부터 실제 음성이 재생되고, 영어 아래에 한국어 자막이 함께 나옵니다.'
       : '영어 스크립트를 에피소드별로 읽는 개인 학습용 페이지입니다.'
         + ' 기울임체는 내레이션, [대괄호]는 지문이고, 가로선은 장면이 바뀌는 지점입니다.';
-    tail += ' 아래에서 작품과 회차를 고르고, 본문 검색과 글자 크기로 읽기 편하게 맞춰 보세요.';
+    tail += isMovie()
+      ? ' 위에서 작품을 고르고, 본문 검색과 글자 크기로 읽기 편하게 맞춰 보세요.'
+      : ' 아래에서 작품과 회차를 고르고, 본문 검색과 글자 크기로 읽기 편하게 맞춰 보세요.';
     // 보조 제목(titleKo)이 있을 때만 앞에 굵게 붙인다. 없으면 빈 strong 때문에 앞에 빈칸이 생긴다.
     var lead = show.titleKo
       ? '<strong id="tv-series-ko">' + escapeHtml(show.titleKo) + '</strong> '
@@ -209,10 +225,17 @@
   }
 
   function renderShowOptions() {
-    el.show.innerHTML = shows.map(function (s) {
+    var option = function (s) {
       var mark = s.kind === 'recording' ? ' · 녹음' : '';
       return '<option value="' + escapeHtml(s.id) + '">' + escapeHtml((s.title || s.id) + mark) + '</option>';
-    }).join('');
+    };
+    var series = shows.filter(function (s) { return s.type !== 'movie'; });
+    var movies = shows.filter(function (s) { return s.type === 'movie'; });
+    // 한쪽만 있으면 묶음 제목이 군더더기다
+    el.show.innerHTML = (series.length && movies.length)
+      ? '<optgroup label="시리즈">' + series.map(option).join('') + '</optgroup>'
+        + '<optgroup label="영화">' + movies.map(option).join('') + '</optgroup>'
+      : shows.map(option).join('');
     if (show) el.show.value = show.id;
     // 작품이 하나뿐이면 고를 것이 없다
     if (el.showField) el.showField.hidden = shows.length < 2;
@@ -228,6 +251,7 @@
   }
 
   function renderEpisodeOptions() {
+    if (el.episodeField) el.episodeField.hidden = isMovie();   // 고를 회차가 하나뿐이다
     var planned = (season && season.plannedEpisodes) || episodes.length;
     var total = Math.max(planned, episodes.length);
     var html = '';
@@ -581,6 +605,13 @@
 
   function updateEpisodeNav() {
     if (!el.epPrev || !el.epNext) return;
+    if (isMovie()) {
+      // 넘길 회차가 없다. 버튼을 남겨 두면 눌러도 아무 일이 없어 고장처럼 보인다
+      el.epPrev.hidden = el.epNext.hidden = true;
+      if (el.epStatus) el.epStatus.textContent = '';
+      return;
+    }
+    el.epPrev.hidden = el.epNext.hidden = false;
     var i = currentIndex();
     el.epPrev.disabled = i <= 0;
     el.epNext.disabled = i < 0 || i >= episodes.length - 1;
@@ -600,6 +631,9 @@
       if (s) return { show: s, episodeId: hash.slice(slash + 1) };
       return null;
     }
+    // `#inception` 처럼 작품 id 만 온 경우 (영화, 또는 작품의 첫 회차)
+    var direct = findShow(hash);
+    if (direct) return { show: direct, episodeId: null };
     for (var i = 0; i < shows.length; i++) {
       var list = seasonsOf(shows[i]);
       for (var j = 0; j < list.length; j++) {
@@ -613,7 +647,9 @@
   }
 
   function hashFor(ep) {
-    return '#' + (show ? show.id + '/' : '') + ep.id;
+    if (!show) return '#' + ep.id;
+    // 영화는 회차가 하나뿐이라 주소에 적을 것이 없다
+    return isMovie() ? '#' + show.id : '#' + show.id + '/' + ep.id;
   }
 
   /* 작품을 바꾼다. 시즌·회차는 그 작품의 첫 것으로 떨어진다. */
@@ -856,12 +892,10 @@
         event.preventDefault();
         el.search.focus();
         el.search.select();
-      } else if (event.key === '[') {
+      } else if (event.key === '[' || event.key === ']') {
+        if (isMovie()) return;   // 넘길 회차가 없다
         event.preventDefault();
-        stepEpisode(-1, null);
-      } else if (event.key === ']') {
-        event.preventDefault();
-        stepEpisode(1, null);
+        stepEpisode(event.key === '[' ? -1 : 1, null);
       } else if (event.key === 'k' || event.key === 'K') {
         if (!hasKo()) return;
         event.preventDefault();
@@ -903,6 +937,8 @@
       koField: document.getElementById('tv-ko-field'),
       koToggle: document.getElementById('tv-ko-toggle'),
       episode: document.getElementById('tv-episode'),
+      episodeField: document.getElementById('tv-episode')
+        && document.getElementById('tv-episode').closest('.tv-field'),
       epPrev: document.getElementById('tv-ep-prev'),
       epNext: document.getElementById('tv-ep-next'),
       epStatus: document.getElementById('tv-ep-status'),
