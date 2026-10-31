@@ -10,6 +10,9 @@
 # 생성기를 import 하면 생긴다 (scripts/test_shows.py)
 __pycache__/
 
+# watcher 가 처리한 폴더 기록 (이 머신에만 해당)
+scripts/.watch_state.json
+
 # lang-study 녹음 음원 — Release 자산으로만 올린다 (Pages 사이트 상한 1GB)
 docs/audio/shows/**/*.mp3
 docs/audio/shows/**/*.wav
