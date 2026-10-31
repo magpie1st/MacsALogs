@@ -309,6 +309,30 @@ try:
     check("영문 제목은 저절로", langstudy.english_title({"title": "Breaking Bad"}, None), "Breaking Bad")
     check("한글 제목은 영문으로 안 센다", langstudy.english_title({"title": "기생충"}, None), None)
 
+    print("\nUI 언어를 바꿔 제목이 달라져도 같은 작품으로 본다")
+    # 실제로 겪은 일: 넷플릭스 UI 를 영어로 바꾸자 '에밀리, 파리에 가다' 가 'Emily in Paris'
+    # 로 들어와 emily-in-paris-2 라는 작품이 새로 생겼다 (1·2화와 3화가 갈라졌다).
+    langstudy.REGISTRY.write_text(json.dumps({
+        "에밀리, 파리에 가다": {"id": "emily-in-paris", "assetSlug": "emily-in-paris",
+                           "titleEn": "Emily in Paris"},
+    }, ensure_ascii=False), encoding="utf-8")
+    check("영문 제목으로 들어와도 같은 작품",
+          langstudy.resolve_show_id({"title": "Emily in Paris"}, None), "emily-in-paris")
+    check("자산 슬러그도 같다",
+          langstudy.resolve_asset_slug({"title": "Emily in Paris"}, "emily-in-paris"), "emily-in-paris")
+    check("대소문자·공백은 무시", langstudy.resolve_show_id({"title": " emily in PARIS "}, None),
+          "emily-in-paris")
+    # 별칭으로 기억해 두면 titleEn 이 없어도 찾는다
+    langstudy.remember_show("Emily in Paris", "emily-in-paris", "emily-in-paris", None)
+    entry = langstudy.load_registry()["에밀리, 파리에 가다"]
+    check("별칭으로 기억한다", entry.get("aliases"), ["Emily in Paris"])
+    check("새 항목을 만들지 않는다", sorted(langstudy.load_registry()), ["에밀리, 파리에 가다"])
+    key, found = langstudy.find_entry(langstudy.load_registry(), "Emily in Paris")
+    check("find_entry 가 정본 제목을 돌려준다", key, "에밀리, 파리에 가다")
+    check("정말 다른 작품은 못 찾는다",
+          langstudy.find_entry(langstudy.load_registry(), "Breaking Bad"), (None, None))
+
+    langstudy.REGISTRY.write_text("{}", encoding="utf-8")
     # 다른 제목이 같은 id 를 쓰면 번호를 붙인다 (두 작품의 회차가 섞이면 눈에 안 띈다)
     langstudy.remember_show("어떤 작품", "same-id", "same-id", None)
     check("id 충돌이면 번호를 붙인다",

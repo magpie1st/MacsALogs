@@ -72,6 +72,10 @@ python3 scripts/build_langstudy.py "<폴더>" --publish --push         # 2) 끝�
 고르므로 한국어 자막은 그대로 나온다 (`content.js` 의 `PRIMARY`/`SECONDARY`).
 쿠팡플레이는 한국 서비스라 UI 를 영어로 바꿀 수 없다 → `--title-en` 을 쓴다.
 
+**UI 언어를 바꾸면 같은 작품이 다른 제목으로 들어온다** (`에밀리, 파리에 가다` → `Emily in
+Paris`). 레지스트리의 `titleEn`·`aliases` 로 찾으므로 갈라지지 않는다. 로그에
+`같은 작품으로 봅니다: ... = ...` 가 찍히면 제대로 합쳐진 것이다.
+
 `show_ids.json` 에 기억된 값은 **바뀌지 않는다.** 영문으로 바꾸려면 `--remove-show` 로 지우고
 `--title-en` 과 함께 다시 넣는다 (주소가 바뀌면 예전 항목이 남는다).
 **영문 제목은 처음 넣을 때 주는 것이 낫다.**

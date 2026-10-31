@@ -113,6 +113,8 @@ python3 scripts/build_langstudy.py "~/Downloads/lang-study/<폴더>" \
     한국어 자막은 그대로). 쿠팡플레이는 UI가 한국어뿐이라 `--title-en`을 쓴다
   - 셋 다 `scripts/show_ids.json`에 기억하고 **한 번 적은 값은 바꾸지 않는다** (주소가 움직이면
     북마크가 깨진다). 바꾸려면 `--remove-show` 후 다시 넣는다
+  - **UI 언어를 바꾸면 같은 작품이 다른 제목으로 들어온다.** 제목을 글자로만 비교하면 작품이
+    둘로 갈라지므로(2026-10-31에 3화에서 실제로 겪음), `titleEn`과 `aliases`로도 찾는다
   - 타임라인 폴더(`docs/audio/shows/<여기>`)는 자산 슬러그를 쓴다 — 경로는 ASCII로 둔다
   - 다른 제목이 같은 id를 쓰려 하면 번호를 붙인다 (두 작품의 회차가 섞이면 눈에 안 띈다)
 - `--publish --push`를 붙이면 대본 반영 → 음원 업로드 → 주소 교체 → Range 확인 → 커밋·푸시까지
