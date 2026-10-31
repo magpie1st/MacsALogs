@@ -54,10 +54,30 @@ def require_gh() -> None:
         sys.exit("gh 로그인이 필요합니다: gh auth login\n" + (probe.stderr or probe.stdout).strip())
 
 
+def find_folder(given: str) -> Path:
+    """타임라인 폴더를 찾는다. 폴더 이름(자산 슬러그) 또는 주소 id 로 찾을 수 있다.
+
+    둘이 다를 수 있다 — 주소에는 한글 제목(`에밀리-파리에-가다`)이, 폴더에는 ASCII
+    자산 슬러그(`emily-in-paris`)가 쓰인다. 쓰는 사람이 둘을 구분하지 않아도 되게 한다.
+    """
+    direct = SHOWS_DIR / given
+    if direct.is_dir():
+        return direct
+    if SHOWS_DIR.is_dir():
+        for folder in sorted(p for p in SHOWS_DIR.iterdir() if p.is_dir()):
+            for path in folder.glob("*.json"):
+                if path.name == "config.json":
+                    continue
+                try:
+                    if (json.loads(path.read_text(encoding="utf-8")) or {}).get("show") == given:
+                        return folder
+                except (OSError, json.JSONDecodeError):
+                    continue
+    sys.exit(f"{direct} 가 없습니다. 먼저 build_langstudy.py 로 회차를 넣으세요.")
+
+
 def load_manifests(show_id: str, only: list[str] | None) -> list[dict]:
-    folder = SHOWS_DIR / show_id
-    if not folder.is_dir():
-        sys.exit(f"{folder} 가 없습니다. 먼저 build_langstudy.py 로 회차를 넣으세요.")
+    folder = find_folder(show_id)
     out = []
     # config.json 만 빼고 전부 manifest 다 (시리즈는 sNNeNN.json, 영화는 feature.json)
     for path in sorted(p for p in folder.glob("*.json") if p.name != "config.json"):
@@ -218,7 +238,8 @@ def main() -> None:
     downloads = args.downloads.expanduser()
     manifests = load_manifests(args.show_id, args.episode)
 
-    config_path = SHOWS_DIR / args.show_id / "config.json"
+    folder = find_folder(args.show_id)
+    config_path = folder / "config.json"
     tag = args.tag
     if not tag and config_path.exists():
         raw = (json.loads(config_path.read_text(encoding="utf-8")) or {}).get("audioBaseUrl") or ""
@@ -280,11 +301,13 @@ def main() -> None:
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     payload = read_payload()
-    touched = retarget(payload, args.show_id, [m for m, _ in uploaded], base_url)
+    # 페이지에서 찾을 때는 manifest 에 적힌 주소 id 를 쓴다 (폴더 이름과 다를 수 있다)
+    page_show_id = (uploaded[0][0].get("show") or args.show_id)
+    touched = retarget(payload, page_show_id, [m for m, _ in uploaded], base_url)
     payload["generated"] = _dt.date.today().isoformat()
     write_payload(payload)
     print(f"\n→ {config_path.relative_to(REPO_ROOT)}")
-    print(f"→ docs/tvshow.html 의 {len(touched)}개 회차 주소를 Release 로 돌림")
+    print(f"→ docs/tvshow.html 의 '{page_show_id}' 작품 {len(touched)}개 회차 주소를 Release 로 돌림")
 
     print("\nRange 확인 (206 이어야 문장 단위 seek 이 된다)")
     for manifest, asset in uploaded:

@@ -40,6 +40,8 @@ from pathlib import Path
 
 from shows import (
     MOVIE_EPISODE_ID,
+    asset_slug_for,
+    show_id_for,
     TYPE_MOVIE,
     TYPE_SERIES,
     audio_href,
@@ -57,6 +59,9 @@ SHOWS_DIR = REPO_ROOT / "docs" / "audio" / "shows"
 AUDIO_URL_PREFIX = "audio/shows"
 
 SCRIPT_SCHEMA = "lang-study-script/1"
+RELEASE_CONFIG = "config.json"
+REPO = "magpie1st/MacsALogs"
+RELEASE_BASE = f"https://github.com/{REPO}/releases/download"
 MANIFEST_SCHEMA = "tvshow-audio/2"
 
 #: 문장 사이가 이만큼 벌어지면 장면이 바뀐 것으로 본다. 자막에는 장면 표시가 없어서
@@ -85,22 +90,29 @@ def load_registry() -> dict:
         sys.exit(f"{REGISTRY} 를 읽을 수 없습니다: {exc}")
 
 
-def remember_show(title: str, show_id: str, title_en: str | None) -> None:
-    """작품 제목 → id 를 적어 둔다. 다음 회차부터 --show-id 가 필요 없다."""
+def remember_show(title: str, show_id: str, asset_slug: str, title_en: str | None) -> None:
+    """작품 제목 → (주소 id, 자산 슬러그)를 적어 둔다.
+
+    **한 번 적은 값은 바꾸지 않는다.** 만드는 규칙이 나중에 바뀌어도 이미 올린 작품의
+    주소와 자산 이름은 그대로여야 한다 (주소가 바뀌면 북마크가 깨지고, 자산 이름이
+    바뀌면 Release 에 옛 파일이 남는다).
+    """
     if not title:
         return
     registry = load_registry()
     entry = registry.get(title) or {}
-    if entry.get("id") == show_id and (not title_en or entry.get("titleEn") == title_en):
-        return
-    entry["id"] = show_id
+    before = dict(entry)
+    entry.setdefault("id", show_id)
+    entry.setdefault("assetSlug", asset_slug)
     if title_en:
         entry["titleEn"] = title_en
+    if entry == before:
+        return
     registry[title] = entry
     REGISTRY.write_text(
         json.dumps(dict(sorted(registry.items())), ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8")
-    print(f"  작품 id 를 기억했습니다: {title!r} → {show_id} ({REGISTRY.name})")
+    print(f"  작품 id 를 기억했습니다: {title!r} → {entry['id']} / 자산 {entry['assetSlug']} ({REGISTRY.name})")
 
 
 def parse_clock(text: str) -> float:
@@ -339,20 +351,23 @@ def build_audio_meta(script: dict, asset_name: str, base_url: str | None, audio_
     return meta
 
 
-def write_manifest(show_id: str, episode_id: str, script: dict, episode: dict,
-                   script_path: Path, asset_name: str, audio_path: Path | None = None) -> Path:
+def write_manifest(folder_id: str, episode_id: str, script: dict, episode: dict,
+                   script_path: Path, asset_name: str, audio_path: Path | None = None,
+                   show_id: str | None = None) -> Path:
     """문장 타임라인을 docs/audio/shows/<작품>/ 에 남긴다.
 
     HTML 블록만으로도 페이지는 돌지만, 나중에 다시 빌드하거나 어긋남을 확인할 때
     원본에 다시 손대지 않고 여기서 읽을 수 있어야 한다.
     """
-    out_dir = SHOWS_DIR / show_id
+    out_dir = SHOWS_DIR / folder_id
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / f"{episode_id}.json"
     manifest = {
         "schema": MANIFEST_SCHEMA,
         "generated": _dt.date.today().isoformat(),
-        "show": show_id,
+        # show: 페이지 주소에 쓰는 id (한글 가능). folder: 이 폴더 이름 = 자산 슬러그 (ASCII)
+        "show": show_id or folder_id,
+        "folder": folder_id,
         "season": script.get("season") or 1,
         "episode": episode["number"],
         "episodeId": episode_id,
@@ -413,8 +428,56 @@ def remove_show(show_id: str, dry: bool) -> None:
     print("\n지웠습니다. 음원 Release 자산은 남아 있습니다 (필요하면 gh release delete-asset).")
 
 
-def resolve_show_id(script: dict, explicit: str | None) -> str:
-    """주소에 쓸 작품 id. 순서대로 — 직접 준 값 → 기억해 둔 값 → 영문 제목에서 만들기."""
+def english_title(script: dict, explicit: str | None) -> str | None:
+    """영문 제목. 직접 준 값 → 기억해 둔 값 → 제목 자체가 영문이면 그것.
+
+    넷플릭스·쿠팡플레이는 페이지에 **지역화된 제목만** 둔다 (제목을 DOM 에서 읽는다).
+    UI 언어가 영어면 제목이 애초에 영문으로 들어오고, 한국어면 한글로 들어온다.
+    그래서 영문 제목은 `--title-en` 으로 한 번 주거나 UI 언어를 영어로 바꿔야 얻어진다.
+    """
+    if explicit:
+        return explicit.strip() or None
+    title = (script.get("title") or "").strip()
+    entry = load_registry().get(title) or {}
+    if entry.get("titleEn"):
+        return entry["titleEn"]
+    return title if title.isascii() and any(c.isalnum() for c in title) else None
+
+
+def resolve_asset_slug(script: dict, show_id: str, title_en: str | None = None) -> str:
+    """mp3 자산 이름에 쓸 ASCII 슬러그. 기억해 둔 값이 먼저다.
+
+    주소 id 와 다른 값일 수 있다 — 영문 제목을 모르면 주소에는 한글 제목이 보이고
+    파일 이름만 로마자가 된다. 영문 제목을 알면 둘 다 그것으로 맞춘다.
+
+    예전에 적어 둔 항목에는 assetSlug 가 없다. 그때는 그 시절 자산 이름이 곧 id 였으므로
+    id 를 쓴다 (이미 Release 에 올라간 파일 이름을 바꾸면 안 된다).
+    """
+    title = script.get("title") or ""
+    entry = load_registry().get(title) or {}
+    if entry.get("assetSlug"):
+        return entry["assetSlug"]
+    if entry.get("id") and entry["id"].isascii():
+        return entry["id"]
+    for candidate in (title_en, title):
+        if not candidate:
+            continue
+        try:
+            return asset_slug_for(candidate)
+        except ValueError:
+            continue
+    return slugify(f"show-{script.get('videoId') or 'x'}")
+
+
+def resolve_show_id(script: dict, explicit: str | None, title_en: str | None = None) -> str:
+    """주소에 쓸 작품 id. 사람의 입력 없이도 끝까지 정해진다.
+
+    순서: 직접 준 값 → 기억해 둔 값 → 제목에서 만들기(영문 그대로/한글은 로마자)
+          → videoId.
+
+    **기억해 둔 값이 가장 먼저다.** 만드는 규칙이 나중에 바뀌어도 이미 올린 작품의
+    주소는 움직이지 않아야 한다 (주소가 바뀌면 북마크가 깨지고 예전 항목이 남는다).
+    """
     if explicit:
         try:
             return slugify(explicit)
@@ -422,18 +485,42 @@ def resolve_show_id(script: dict, explicit: str | None) -> str:
             sys.exit(f"--show-id 를 주소에 쓸 수 없습니다: {explicit!r} (영숫자와 - 만)")
 
     title = script.get("title") or ""
-    known = (load_registry().get(title) or {}).get("id")
+    registry = load_registry()
+    known = (registry.get(title) or {}).get("id")
     if known:
         return known
 
-    try:
-        return slugify(title)
-    except ValueError:
-        sys.exit(
-            f"작품 제목 {title!r} 으로 주소에 쓸 id 를 만들 수 없습니다 (한글은 주소 해시에 못 씀).\n"
-            f"  --show-id emily-in-paris 처럼 영문 id 를 **한 번만** 주세요.\n"
-            f"  {REGISTRY.name} 에 기억해 두므로 같은 작품의 다음 회차부터는 필요 없습니다."
-        )
+    # 영문 제목을 알면 주소도 영문으로 만든다 (#emily-in-paris). 모르면 제목을 그대로 쓴다.
+    for candidate in (english_title(script, title_en), title):
+        if not candidate:
+            continue
+        try:
+            base = show_id_for(candidate)
+            break
+        except ValueError:
+            continue
+    else:
+        base = None
+    if base is None:
+        # 제목이 기호뿐이라 아무것도 못 만든 경우. videoId 는 넷플릭스가 준 유일한 값이다.
+        video_id = str(script.get("videoId") or "").strip()
+        if not video_id.isalnum():
+            sys.exit(
+                f"작품 제목 {title!r} 으로 id 를 만들 수 없습니다.\n"
+                "  --show-id <영문-id> 로 한 번만 지정하세요."
+            )
+        return f"show-{video_id}"
+
+    # 다른 제목이 이미 그 id 를 쓰고 있으면 뒤에 번호를 붙인다. 안 그러면 두 작품의
+    # 회차가 한 작품에 섞여 들어가는데, 눈에 띄지 않아 더 나쁘다.
+    taken = {entry.get("id"): name for name, entry in registry.items() if name != title}
+    candidate = base
+    suffix = 2
+    while candidate in taken:
+        print(f"  ! id {candidate!r} 는 이미 {taken[candidate]!r} 가 쓰고 있어 번호를 붙입니다")
+        candidate = f"{base}-{suffix}"
+        suffix += 1
+    return candidate
 
 
 def main() -> None:
@@ -504,7 +591,9 @@ def main() -> None:
     if not script.get("title") and not args.title:
         sys.exit("작품 제목을 알 수 없습니다. --title \"에밀리, 파리에 가다\" 처럼 지정하세요.")
 
-    show_id = resolve_show_id(script, args.show_id)
+    title_en = english_title(script, args.title_en)
+    show_id = resolve_show_id(script, args.show_id, title_en)
+    asset_slug = resolve_asset_slug(script, show_id, title_en)
     if args.movie:
         season, number = 1, 1
         episode_id = MOVIE_EPISODE_ID
@@ -512,7 +601,8 @@ def main() -> None:
         season = script["season"]
         number = script["episodeNo"]
         episode_id = f"s{season:02d}e{number:02d}"
-    asset_name = f"{show_id}-{episode_id}.mp3"
+    # 자산 이름만 ASCII 다 (GitHub Release 제약). 주소에는 한글 제목이 그대로 보인다.
+    asset_name = f"{asset_slug}-{episode_id}.mp3"
     if not _ASSET_STEM_RE.match(asset_name):
         sys.exit(f"음원 파일 이름으로 쓸 수 없습니다: {asset_name!r}")
 
@@ -522,7 +612,21 @@ def main() -> None:
         except ValueError as exc:
             sys.exit(f"--audio-base-url 을 쓸 수 없습니다 — {exc}")
     else:
-        base_url = read_release_base_url(SHOWS_DIR / show_id)
+        config_path = SHOWS_DIR / asset_slug / RELEASE_CONFIG
+        # --publish 로 끝까지 갈 때는 처음 보는 작품이라도 기준 URL 을 먼저 정해 둔다.
+        # 그러지 않으면 이 빌드에 세그먼트가 빠진 채 들어가고(오디오 없음), 뒤이은 업로드가
+        # 주소만 바꿔 줘서 문장 버튼이 없는 회차가 남는다.
+        if args.publish and not config_path.exists() and not args.dry_run:
+            tag = f"shows-audio-{_dt.date.today().isoformat()}-v1"
+            config_path.parent.mkdir(parents=True, exist_ok=True)
+            config_path.write_text(json.dumps({
+                "schema": "shows-audio-release/1",
+                "generated": _dt.date.today().isoformat(),
+                "audioBaseUrl": f"{RELEASE_BASE}/{tag}",
+                "note": "mp3는 이 저장소에 두지 않는다. Release 자산으로만 올린다 (Pages 사이트 상한 1GB).",
+            }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            print(f"음원 태그  {tag} (새로 정했습니다 → {config_path.relative_to(REPO_ROOT)})")
+        base_url = read_release_base_url(SHOWS_DIR / asset_slug)
 
     # 로컬 미리보기: mp3 를 docs 로 복사하고 상대경로를 쓴다. 공개용이 아니므로 payload 에
     # preview 표시를 남기고, 페이지가 그것을 화면에 띄운다 (실수로 배포해도 바로 보인다).
@@ -593,7 +697,9 @@ def main() -> None:
         shutil.copyfile(audio_path, local_copy)
         print(f"\n→ {local_copy.relative_to(REPO_ROOT)} ({local_copy.stat().st_size / 1e6:.0f}MB, 커밋되지 않음)")
 
-    manifest_path = write_manifest(show_id, episode_id, script, episode, script_path, asset_name, audio_path)
+    # 타임라인 폴더는 ASCII 로 둔다 (git·zip·경로가 단순해진다). 주소 id 는 manifest 안에 적는다.
+    manifest_path = write_manifest(asset_slug, episode_id, script, episode, script_path,
+                                   asset_name, audio_path, show_id)
 
     payload = read_payload()
     show = next((s for s in payload.get("shows") or [] if s.get("id") == show_id), None)
@@ -615,7 +721,7 @@ def main() -> None:
     show["generated"] = _dt.date.today().isoformat()
     upsert_season(show, season, episode, args.planned)
     upsert_show(payload, show)
-    remember_show(script.get("title"), show_id, args.title_en)
+    remember_show(script.get("title"), show_id, asset_slug, title_en)
     payload["generated"] = _dt.date.today().isoformat()
     write_payload(payload)
 
@@ -627,7 +733,7 @@ def main() -> None:
         # publish_shows.py 를 따로 호출한다. 한 파일에 몰아넣으면 "대본만 넣기" 와
         # "공개하기" 가 섞여, 공개를 원하지 않을 때 실수로 올라갈 길이 생긴다.
         cmd = [sys.executable, str(Path(__file__).resolve().parent / "publish_shows.py"),
-               "--show-id", show_id, "--episode", episode_id, "--yes"]
+               "--show-id", asset_slug, "--episode", episode_id, "--yes"]
         if args.push:
             cmd.append("--push")
         if args.audio:

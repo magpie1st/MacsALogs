@@ -141,26 +141,26 @@ def read_script(folder: Path) -> dict | None:
     return None
 
 
-def known_show_id(title: str | None) -> str | None:
-    """`show_ids.json` 에 기억된 id, 또는 영문 제목에서 만든 id. 없으면 None."""
-    registry_path = SCRIPTS / "show_ids.json"
-    registry = {}
-    if registry_path.exists():
-        try:
-            registry = json.loads(registry_path.read_text(encoding="utf-8")) or {}
-        except (OSError, json.JSONDecodeError):
-            registry = {}
-    entry = registry.get(title or "")
-    if entry and entry.get("id"):
-        return entry["id"]
-    slug = "".join(c if (c.isascii() and (c.isalnum())) else "-" for c in (title or "").lower())
-    slug = "-".join(part for part in slug.split("-") if part)
-    return slug or None
+def show_id_of(title: str) -> str | None:
+    """빌더와 **같은 규칙**으로 작품 id 를 미리 보여 준다 (로그용).
+
+    실제로 정하는 것은 빌더다 (`resolve_show_id`). 여기서 따로 계산하면 둘이 어긋나
+    로그와 결과가 달라진다 — 그래서 빌더가 쓰는 모듈을 그대로 불러 쓴다.
+    """
+    sys.path.insert(0, str(SCRIPTS))
+    try:
+        import build_langstudy  # noqa: PLC0415  (경로를 넣은 뒤에 불러야 한다)
+        return build_langstudy.resolve_show_id({"title": title}, None)
+    except SystemExit:
+        return None
+    except Exception:  # noqa: BLE001  (로그용이라 실패해도 진행한다)
+        return None
 
 
-def build(folder: Path, script: dict | None, args, title: str, show_id: str) -> bool:
-    cmd = [sys.executable, str(SCRIPTS / "build_langstudy.py"), str(folder),
-           "--show-id", show_id, "--title", title]
+def build(folder: Path, script: dict | None, args, title: str) -> bool:
+    # --show-id 는 넘기지 않는다. 빌더가 기억해 둔 값을 먼저 쓰고, 없으면 제목에서 만든다
+    # (한글은 로마자). 여기서 지정하면 사람이 나중에 고쳐 둔 id 를 덮어쓴다.
+    cmd = [sys.executable, str(SCRIPTS / "build_langstudy.py"), str(folder), "--title", title]
     if not args.build_only:
         cmd += ["--publish"]
         if not args.no_push:
@@ -228,16 +228,11 @@ def process(folder: Path, state: dict, args) -> None:
     if not title:
         title = title_from_name(folder.name)
         log(f"  제목을 폴더 이름에서 읽었습니다: {title!r} (스크립트 JSON 이 없어서)")
-    show_id = known_show_id(title)
-    if not show_id:
-        log(f"  ! 작품 id 를 정해야 합니다. 한 번만 지정하면 기억됩니다:")
-        log(f"    python3 scripts/build_langstudy.py \"{folder}\" --show-id <영문-id> --publish --push")
-        return
-
+    show_id = show_id_of(title)
     kind = "영화" if (script and not script.get("season") and not script.get("episodeNo")) else "회차"
-    log(f"  작품 {title} (id: {show_id}) · {kind}")
+    log(f"  작품 {title} (id: {show_id or '빌더가 정함'}) · {kind}")
 
-    if build(folder, script, args, title, show_id):
+    if build(folder, script, args, title):
         if not args.dry_run:
             state[key] = {"at": _dt.datetime.now().isoformat(timespec="seconds"), "show": show_id}
             save_state(state)
