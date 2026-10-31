@@ -28,6 +28,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as _dt
+import hashlib
 import json
 import re
 import subprocess
@@ -74,6 +75,15 @@ def fingerprint(folder: Path) -> tuple:
         (str(p.relative_to(folder)), p.stat().st_size)
         for p in folder.rglob("*") if p.is_file()
     ))
+
+
+def digest(mark: tuple) -> str:
+    """지문을 짧은 문자열로. 상태 파일에 적어 **내용이 바뀌면 다시 처리**한다.
+
+    폴더 이름만 보면, 이미 올린 회차에 스크립트 JSON 을 뒤늦게 내려받아도 건너뛴다
+    (CSV 로 만든 회차의 문장 싱크를 고치는 바로 그 경우다).
+    """
+    return hashlib.sha256(repr(mark).encode("utf-8")).hexdigest()[:16]
 
 
 def unzip_sentences(folder: Path, dry: bool) -> Path | None:
@@ -239,7 +249,11 @@ def process(folder: Path, state: dict, args) -> None:
 
     if build(folder, script, args, title):
         if not args.dry_run:
-            state[key] = {"at": _dt.datetime.now().isoformat(timespec="seconds"), "show": show_id}
+            state[key] = {
+                "at": _dt.datetime.now().isoformat(timespec="seconds"),
+                "show": show_id,
+                "digest": digest(fingerprint(folder)),
+            }
             save_state(state)
         log("  완료")
     else:
@@ -255,13 +269,15 @@ def ready_folders(watch_dir: Path, state: dict, args, seen: dict) -> list[Path]:
     out = []
     now = time.monotonic()
     for folder in sorted(p for p in watch_dir.iterdir() if p.is_dir()):
-        if not args.force and folder.name in state:
-            continue
         try:
             current = fingerprint(folder)
         except OSError:
             continue  # 받는 중에 파일이 사라질 수 있다
         if not current:
+            continue
+        done = state.get(folder.name)
+        # 폴더 이름이 같아도 안에 파일이 늘었으면(스크립트 JSON 추가 등) 다시 처리한다
+        if not args.force and isinstance(done, dict) and done.get("digest") == digest(current):
             continue
         previous = seen.get(folder.name)
         if previous is None or previous[0] != current:
