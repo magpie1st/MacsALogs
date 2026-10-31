@@ -218,7 +218,14 @@ def title_from_name(name: str) -> str:
     return _SUFFIX_RE.sub("", name).strip() or name
 
 
-def process(folder: Path, state: dict, args) -> None:
+def process(folder: Path, state: dict, args) -> str:
+    """폴더 하나를 처리한다. 돌려주는 값으로 상태에 적을지 정한다.
+
+      done  올렸다 → 지문을 적는다
+      skip  올릴 입력이 없다 → 지문을 적는다. **같은 내용으로 다시 시도하지 않는다**
+            (내용이 바뀌면 지문이 달라져 다시 본다)
+      fail  하다가 실패했다 → 적지 않는다. 다음 순회에 다시 시도한다
+    """
     key = folder.name
     log(f"▶ {key}")
 
@@ -228,8 +235,8 @@ def process(folder: Path, state: dict, args) -> None:
     mp3, note = audio_of(folder)
     log(f"  {note}")
     if mp3 is None:
-        log("  건너뜁니다")
-        return
+        log("  건너뜁니다 (전체 MP3 를 내려받으면 다시 봅니다)")
+        return "skip"
 
     script = None
     for where in search_dirs:
@@ -237,6 +244,13 @@ def process(folder: Path, state: dict, args) -> None:
         if script:
             break
     if script is None:
+        # 대본이 아예 없으면 빌더가 중단한다. 15초마다 같은 실패를 반복하지 않도록 먼저 끊는다.
+        # glob() 은 제너레이터다 — any(generator) 는 언제나 참이므로 하나 꺼내 봐야 한다
+        has_csv = any(next(iter(p.glob("**/sentences.csv")), None) is not None for p in search_dirs)
+        if not has_csv:
+            log("  ! 대본이 없습니다 — '스크립트 JSON' 또는 '문장별 ZIP' 을 내려받으세요")
+            log("    건너뜁니다 (그 파일을 받으면 다시 봅니다)")
+            return "skip"
         log("  ! 스크립트 JSON 이 없습니다 — sentences.csv 로 떨어집니다 (문장 싱크가 0.5초 밀립니다)")
 
     title = (script or {}).get("title")
@@ -248,16 +262,24 @@ def process(folder: Path, state: dict, args) -> None:
     log(f"  작품 {title} (id: {show_id or '빌더가 정함'}) · {kind}")
 
     if build(folder, script, args, title):
-        if not args.dry_run:
-            state[key] = {
-                "at": _dt.datetime.now().isoformat(timespec="seconds"),
-                "show": show_id,
-                "digest": digest(fingerprint(folder)),
-            }
-            save_state(state)
         log("  완료")
-    else:
-        log("  ! 실패 — 상태에 기록하지 않습니다 (다음 순회에 다시 시도합니다)")
+        return "done"
+    log("  ! 실패 — 상태에 기록하지 않습니다 (다음 순회에 다시 시도합니다)")
+    return "fail"
+
+
+def record(folder: Path, status: str, state: dict, args) -> None:
+    """처리 결과를 상태에 적는다. 'fail' 은 적지 않아 다음 순회에 다시 시도한다."""
+    if args.dry_run or status == "fail":
+        return
+    entry = {
+        "at": _dt.datetime.now().isoformat(timespec="seconds"),
+        "digest": digest(fingerprint(folder)),
+    }
+    if status == "skip":
+        entry["skipped"] = "올릴 입력이 모자랍니다 (파일을 더 받으면 다시 봅니다)"
+    state[folder.name] = entry
+    save_state(state)
 
 
 def ready_folders(watch_dir: Path, state: dict, args, seen: dict) -> list[Path]:
@@ -325,7 +347,7 @@ def main() -> None:
             state = load_state()
             folders = ready_folders(watch_dir, state, args, seen)
             for folder in folders:
-                process(folder, state, args)
+                record(folder, process(folder, state, args), state, args)
                 seen.pop(folder.name, None)
             if args.once:
                 # 처음 본 폴더는 안정화를 기다리느라 한 번 밀린다. --once 는 한 번 더 본다.
@@ -333,7 +355,7 @@ def main() -> None:
                     log(f"안정화를 {args.stable}초 기다립니다")
                     time.sleep(args.stable)
                     for folder in ready_folders(watch_dir, state, args, seen):
-                        process(folder, state, args)
+                        record(folder, process(folder, state, args), state, args)
                         folders.append(folder)
                 if not folders:
                     log("처리할 새 폴더가 없습니다")
