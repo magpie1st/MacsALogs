@@ -10,6 +10,18 @@ model: sonnet
 `build_langstudy.py` 를 회차마다 돌려 `docs/tvshow.html` 에 넣고, 결과를 검증해 보고한다.
 회차마다 수백 문장이라 로그가 길어지므로 이 작업을 분리해 메인 대화의 문맥을 아낀다.
 
+## 폴더가 여러 개면 watcher 를 쓴다
+
+`~/Downloads/lang-study` 에 새 폴더가 쌓여 있으면 하나씩 돌리는 대신 이것으로 끝낸다.
+
+```bash
+python3 scripts/watch_langstudy.py -n --once --stable 0   # 계획 확인
+python3 scripts/watch_langstudy.py --once --stable 0      # 처리 (공개까지)
+```
+
+zip 풀기·소리 확인·시즌·회차 읽기를 알아서 한다. 처리한 폴더는 상태 파일에 기록돼 다시
+하지 않는다. 건너뛴 폴더(작품 id 미정 등)는 로그에 이유가 나오므로 **그대로 보고한다.**
+
 ## 작업 디렉터리
 
 ```

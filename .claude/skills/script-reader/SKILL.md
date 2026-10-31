@@ -57,6 +57,36 @@ python3 scripts/build_langstudy.py "<폴더>" --publish --push         # 2) 끝�
 처음 보는 작품이면 1)에서 영문 id 를 요구하며 멈춘다. 그때만 `--show-id` 를 한 번 주면
 `scripts/show_ids.json` 에 기억되어 **같은 작품의 다음 회차부터는 필요 없다.**
 
+## 내려받기만 하면 알아서 올라가게 (watcher)
+
+```bash
+cd /Users/mac/Documents/mac-codes/MacsALogs
+python3 scripts/watch_langstudy.py -n --once   # 계획만
+python3 scripts/watch_langstudy.py             # 계속 지켜본다 (Ctrl+C 로 중지)
+```
+
+`/Users/mac/Downloads/lang-study` 에 새 폴더가 생기면 폴더마다 이 순서로 한다.
+
+1. 다 내려왔는지 본다 (크기가 `--stable` 초 동안 그대로여야 손댄다 — 71MB zip 이 함께 온다)
+2. `*문장별*.zip` 을 폴더 안에 푼다 (zip 안의 `script.json`·`sentences.csv` 를 쓴다)
+3. ffprobe 로 소리를 확인한다 (0바이트·잘린 mp3 는 건너뛴다)
+4. 작품 id 를 정할 수 있는지 본다 — `show_ids.json` 에 있거나 제목이 영문이어야 한다
+5. `build_langstudy.py --publish --push`
+
+제목은 스크립트 JSON 에서 읽고, 없으면 폴더 이름(`<작품> 시즌 5 1화`)에서 떼어 쓴다.
+
+| 옵션 | 용도 |
+|------|------|
+| `-n` | 아무것도 쓰지 않고 계획만 |
+| `--once` | 지금 있는 것만 처리하고 끝낸다 |
+| `--build-only` | 대본만 넣는다 (음원 업로드·푸시 안 함) |
+| `--no-push` | 음원은 올리되 커밋·푸시는 안 한다 |
+| `--force` | 이미 처리한 폴더도 다시 |
+| `--stable 0` | 안정화 대기 없이 바로 (이미 다 내려온 폴더) |
+
+**처음 보는 한글 제목 작품은 건너뛰고 알린다.** 영문 id 는 사람이 한 번 정해야 하는 값이라
+watcher 가 지어낼 수 없다. 그때 안내되는 명령을 한 번 실행하면 그 뒤로는 자동이다.
+
 ## 절차 (하나씩 볼 때)
 
 ### 1. 무엇이 들어갈지 먼저 확인한다 (`-n`)

@@ -116,6 +116,22 @@ python3 scripts/build_langstudy.py "~/Downloads/lang-study/<폴더>" \
 복사하고 상대경로를 쓰며, 그 경로는 `.gitignore`에 있어 커밋되지 않는다. 그 빌드에는
 `preview: true`가 붙고 페이지에 "로컬 미리보기 음원입니다" 경고가 뜬다.
 
+### 내려받기 감시 (`watch_langstudy.py`)
+
+`/Users/mac/Downloads/lang-study` 를 지켜보다가 새 회차 폴더가 들어오면 알아서 올린다.
+
+```bash
+python3 scripts/watch_langstudy.py -n --once   # 무엇을 하려는지만
+python3 scripts/watch_langstudy.py             # 계속 지켜본다 (Ctrl+C)
+```
+
+폴더마다 ① 다 내려왔는지(크기가 20초간 그대로) ② `문장별.zip` 풀기 ③ ffprobe 로 소리 확인
+④ 작품 id 확인 ⑤ `build_langstudy.py --publish --push` 순이다.
+처리한 폴더는 `scripts/.watch_state.json`(gitignore)에 적어 다시 하지 않는다.
+
+**기본이 공개 배포다.** 대본만 넣으려면 `--build-only`, 푸시만 막으려면 `--no-push`.
+처음 보는 한글 제목 작품은 **건너뛰고 알린다** — 영문 id 는 사람이 한 번 정해야 한다.
+
 ### 음원 공개 (`publish_shows.py`)
 
 ```bash
