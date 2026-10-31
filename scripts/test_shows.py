@@ -332,6 +332,24 @@ try:
     check("정말 다른 작품은 못 찾는다",
           langstudy.find_entry(langstudy.load_registry(), "Breaking Bad"), (None, None))
 
+    print("\n--show-id 로 합치면 그 작품의 별칭·자산 이름을 따라간다")
+    # 한글로 먼저 녹음한 뒤 영어 UI 로 녹음하면 제목으로는 못 찾는다 (영문 제목을 모른다).
+    # 그때 --show-id 로 합치는데, 합친 사실이 기억되지 않으면 다음 회차에서 또 갈라진다.
+    langstudy.REGISTRY.write_text(json.dumps({
+        "투 브로크 걸즈": {"id": "투-브로크-걸즈", "assetSlug": "tu-beurokeu-geoljeu"},
+    }, ensure_ascii=False), encoding="utf-8")
+    script = {"title": "2 Broke Girls", "videoId": "cp-1"}
+    check("한글 id 도 --show-id 로 받는다",
+          langstudy.resolve_show_id(script, "투-브로크-걸즈"), "투-브로크-걸즈")
+    check("자산 이름은 합쳐진 작품을 따라간다",
+          langstudy.resolve_asset_slug(script, "투-브로크-걸즈"), "tu-beurokeu-geoljeu")
+    langstudy.remember_show("2 Broke Girls", "투-브로크-걸즈", "tu-beurokeu-geoljeu", "2 Broke Girls")
+    merged = langstudy.load_registry()
+    check("새 항목을 만들지 않는다", sorted(merged), ["투 브로크 걸즈"])
+    check("별칭으로 붙는다", merged["투 브로크 걸즈"].get("aliases"), ["2 Broke Girls"])
+    check("다음부터는 --show-id 없이 찾는다",
+          langstudy.resolve_show_id(script, None), "투-브로크-걸즈")
+
     langstudy.REGISTRY.write_text("{}", encoding="utf-8")
     # 다른 제목이 같은 id 를 쓰면 번호를 붙인다 (두 작품의 회차가 섞이면 눈에 안 띈다)
     langstudy.remember_show("어떤 작품", "same-id", "same-id", None)

@@ -42,6 +42,7 @@ from shows import (
     MOVIE_EPISODE_ID,
     asset_slug_for,
     show_id_for,
+    slugify_display,
     TYPE_MOVIE,
     TYPE_SERIES,
     audio_href,
@@ -120,6 +121,13 @@ def remember_show(title: str, show_id: str, asset_slug: str, title_en: str | Non
         return
     registry = load_registry()
     key, found = find_entry(registry, title)
+    if key is None:
+        # --show-id 로 이미 있는 작품을 가리킨 경우 → 그 작품의 별칭으로 붙인다.
+        # 안 그러면 합쳐 놓고도 다음 회차에서 또 "처음 보는 제목" 이 된다.
+        for name, e in registry.items():
+            if e.get("id") == show_id:
+                key, found = name, e
+                break
     key = key or title
     entry = dict(found or {})
     before = dict(entry)
@@ -483,8 +491,13 @@ def resolve_asset_slug(script: dict, show_id: str, title_en: str | None = None) 
     예전에 적어 둔 항목에는 assetSlug 가 없다. 그때는 그 시절 자산 이름이 곧 id 였으므로
     id 를 쓴다 (이미 Release 에 올라간 파일 이름을 바꾸면 안 된다).
     """
+    registry = load_registry()
     title = script.get("title") or ""
-    entry = find_entry(load_registry(), title)[1] or {}
+    entry = find_entry(registry, title)[1] or {}
+    if not entry:
+        # --show-id 로 이미 있는 작품에 합치는 경우. 제목으로는 못 찾지만 그 작품의 자산
+        # 이름을 따라가야 한다 — 안 그러면 같은 작품의 회차가 두 폴더로 갈라진다.
+        entry = next((e for e in registry.values() if e.get("id") == show_id), {})
     if entry.get("assetSlug"):
         return entry["assetSlug"]
     if entry.get("id") and entry["id"].isascii():
@@ -509,10 +522,12 @@ def resolve_show_id(script: dict, explicit: str | None, title_en: str | None = N
     주소는 움직이지 않아야 한다 (주소가 바뀌면 북마크가 깨지고 예전 항목이 남는다).
     """
     if explicit:
+        # 주소 id 는 한글을 써도 된다 (`#투-브로크-걸즈`). ASCII 전용 slugify 를 쓰면
+        # 한글 id 로 합치려 할 때 거부당한다.
         try:
-            return slugify(explicit)
+            return slugify_display(explicit)
         except ValueError:
-            sys.exit(f"--show-id 를 주소에 쓸 수 없습니다: {explicit!r} (영숫자와 - 만)")
+            sys.exit(f"--show-id 를 주소에 쓸 수 없습니다: {explicit!r}")
 
     title = script.get("title") or ""
     registry = load_registry()
@@ -552,6 +567,19 @@ def resolve_show_id(script: dict, explicit: str | None, title_en: str | None = N
         print(f"  ! id {candidate!r} 는 이미 {taken[candidate]!r} 가 쓰고 있어 번호를 붙입니다")
         candidate = f"{base}-{suffix}"
         suffix += 1
+
+    # 처음 보는 제목이다. **같은 작품인지 기계가 알 방법이 없다** — 넷플릭스는 작품 단위
+    # id 를 주지 않고(videoId 는 회차마다 다르다) 제목은 UI 언어를 따른다. 그래서 조용히
+    # 새 작품을 만들지 않고 이미 있는 작품을 보여 주며 합치는 방법을 알린다.
+    if registry:
+        print(f"  ! 처음 보는 제목입니다: {title!r} → 새 작품 {candidate!r} 로 넣습니다")
+        print("    이미 있는 작품:")
+        for name, e in sorted(registry.items()):
+            marks = [e.get("titleEn")] + list(e.get("aliases") or [])
+            also = " / ".join(sorted({m for m in marks if m and m != name}))
+            print(f"      {e.get('id'):24} {name}" + (f"  (= {also})" if also else ""))
+        print(f"    같은 작품이면 --show-id <위 id> 를 한 번 주면 합쳐집니다"
+              " (제목은 별칭으로 기억됩니다).")
     return candidate
 
 
