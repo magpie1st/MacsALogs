@@ -170,39 +170,44 @@ def load_script(folder: Path, explicit: Path | None) -> tuple[dict, Path, bool]:
     세 번째 값은 "시간이 정밀한가"다. 스크립트 JSON 은 항상 정밀하다.
     """
     if explicit:
-        path = explicit
-        if not path.exists():
-            sys.exit(f"스크립트 JSON 을 찾지 못했습니다: {path}")
+        candidates = [explicit]
+        if not explicit.exists():
+            sys.exit(f"스크립트 JSON 을 찾지 못했습니다: {explicit}")
     else:
-        found = sorted(p for p in folder.glob("*.json") if p.is_file())
-        if not found:
-            # 예전 내보내기: 문장별 ZIP 을 푼 폴더에 sentences.csv 가 있다
-            csvs = sorted(folder.glob("**/sentences.csv"))
-            if len(csvs) == 1:
-                data, precise = load_from_csv(csvs[0])
-                return data, csvs[0], precise
-            sys.exit(
-                f"{folder} 에 스크립트 JSON 이 없습니다.\n"
-                "  lang-study 사이드 패널 → 에피소드 탭 → '스크립트 JSON' 을 눌러 내려받으세요."
-            )
-        if len(found) > 1:
-            names = "\n".join(f"    {p.name}" for p in found)
-            sys.exit(f"{folder} 에 JSON 이 여러 개입니다. --script 로 지정하세요:\n{names}")
-        path = found[0]
+        # 최상위의 '<회차> 스크립트.json' 이 먼저고, 그다음이 문장별 ZIP 을 푼 폴더의
+        # script.json 이다. **ZIP 안도 봐야 한다** — MP3 와 ZIP 만 받으면 그쪽에만 있다.
+        candidates = [p for p in sorted(folder.glob("*.json")) if p.is_file()]
+        candidates += [p for p in sorted(folder.glob("*/script.json")) if p.is_file()]
 
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
-        sys.exit(f"{path} 를 읽을 수 없습니다: {exc}")
+    for path in candidates:
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            if explicit:
+                sys.exit(f"{path} 를 읽을 수 없습니다: {exc}")
+            continue
+        if data.get("schema") != SCRIPT_SCHEMA:
+            if explicit:
+                sys.exit(
+                    f"{path.name} 의 schema 가 {SCRIPT_SCHEMA} 가 아닙니다 ({data.get('schema')!r}).\n"
+                    "  lang-study 를 v0.9.0 이상으로 올린 뒤 다시 내보내세요."
+                )
+            continue
+        if not data.get("sentences"):
+            sys.exit(f"{path.name} 에 문장이 없습니다.")
+        return data, path, True
 
-    if data.get("schema") != SCRIPT_SCHEMA:
-        sys.exit(
-            f"{path.name} 의 schema 가 {SCRIPT_SCHEMA} 가 아닙니다 ({data.get('schema')!r}).\n"
-            "  lang-study 를 v0.9.0 이상으로 올린 뒤 다시 내보내세요."
-        )
-    if not data.get("sentences"):
-        sys.exit(f"{path.name} 에 문장이 없습니다.")
-    return data, path, True
+    # 예전 내보내기: 문장별 ZIP 을 푼 폴더에 sentences.csv 만 있다
+    csvs = sorted(folder.glob("**/sentences.csv"))
+    if len(csvs) == 1:
+        data, precise = load_from_csv(csvs[0])
+        return data, csvs[0], precise
+    sys.exit(
+        f"{folder} 에 스크립트 JSON 이 없습니다"
+        + (f" (JSON {len(candidates)}개를 봤지만 schema 가 맞지 않습니다)" if candidates else "")
+        + ".\n  lang-study 사이드 패널 → 에피소드 탭 → '스크립트 JSON' 또는 '문장별 ZIP' 을"
+        " 내려받으세요."
+    )
 
 
 def find_audio(folder: Path, explicit: Path | None) -> Path | None:
