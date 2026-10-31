@@ -252,8 +252,11 @@
 
   function renderEpisodeOptions() {
     if (el.episodeField) el.episodeField.hidden = isMovie();   // 고를 회차가 하나뿐이다
-    var planned = (season && season.plannedEpisodes) || episodes.length;
-    var total = Math.max(planned, episodes.length);
+    var planned = (season && season.plannedEpisodes) || 0;
+    // 회차 번호가 planned 보다 클 수 있다 (3화만 먼저 녹음한 경우). 그 회차가 목록에서
+    // 사라지면 고를 수 없으므로 가장 큰 번호까지 칸을 만든다.
+    var highest = episodes.reduce(function (max, ep) { return Math.max(max, ep.number || 0); }, 0);
+    var total = Math.max(planned, episodes.length, highest);
     var html = '';
 
     for (var n = 1; n <= total; n++) {
@@ -621,9 +624,20 @@
     }
   }
 
-  /* 주소 해시는 `#<작품>/<회차>` 다. 예전 주소(`#ep01`)로 들어오면 모든 작품을 훑어 찾는다. */
-  function resolveHash(raw) {
+  /* 주소 해시는 `#<작품>/<회차>` 다. 작품 id 에 한글이 올 수 있는데(`#에밀리-파리에-가다`)
+     브라우저는 `location.hash` 를 퍼센트 인코딩으로 준다 — 비교하기 전에 풀어야 한다.
+     예전 주소(`#ep01`)로 들어오면 모든 작품을 훑어 찾는다. */
+  function decodeHash(raw) {
     var hash = (raw || '').replace(/^#/, '');
+    try {
+      return decodeURIComponent(hash);
+    } catch (e) {
+      return hash;   // `%` 가 홀로 들어간 주소: 그대로 쓴다
+    }
+  }
+
+  function resolveHash(raw) {
+    var hash = decodeHash(raw);
     if (!hash) return null;
     var slash = hash.indexOf('/');
     if (slash > 0) {
@@ -647,9 +661,11 @@
   }
 
   function hashFor(ep) {
-    if (!show) return '#' + ep.id;
+    // 한글 id 는 인코딩해 넣는다. 주소창에는 브라우저가 한글로 보여 준다.
+    var part = function (text) { return encodeURIComponent(text); };
+    if (!show) return '#' + part(ep.id);
     // 영화는 회차가 하나뿐이라 주소에 적을 것이 없다
-    return isMovie() ? '#' + show.id : '#' + show.id + '/' + ep.id;
+    return isMovie() ? '#' + part(show.id) : '#' + part(show.id) + '/' + part(ep.id);
   }
 
   /* 작품을 바꾼다. 시즌·회차는 그 작품의 첫 것으로 떨어진다. */

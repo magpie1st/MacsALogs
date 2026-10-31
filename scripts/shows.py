@@ -40,9 +40,16 @@ MOVIE_EPISODE_ID = "feature"
 
 #: 인라인 JSON 이 2.4MB 를 넘는다. 타임라인까지 들여쓰기로 펼치면 파일이 배로 커지므로
 #: 세그먼트 행만 한 줄짜리 배열로 따로 직렬화해 끼워 넣는다.
+#:
+#: 번호만 쓴다. 작품·회차 id 를 넣으면 한글 id 에서 깨진다 — 본문은 ensure_ascii=False 로
+#: 직렬화하는데 자리표시자를 찾을 때 쓰는 json.dumps 는 기본이 ensure_ascii=True 라
+#: 한글이 \uXXXX 로 escape 되어 문자열이 서로 맞지 않는다 (치환이 조용히 실패한다).
 SEGMENT_PLACEHOLDER = "@@TVSHOW_SEGMENTS_{id}@@"
 
 _SLUG_RE = re.compile(r"[^a-z0-9]+")
+#: 주소 해시·폴더 이름에 쓸 수 없는 글자. 한글·영숫자는 남기고 나머지를 `-` 로 바꾼다.
+#: 경로 구분자(`/`)와 해시(`#`), 퍼센트(`%`)는 반드시 빠져야 한다.
+_DISPLAY_SLUG_RE = re.compile(r"[^\w가-힣]+", re.UNICODE)
 
 
 # ── 음원 주소 (공개 HTML 에 그대로 박히는 문자열) ────────────────────────────
@@ -194,11 +201,87 @@ def assert_publishable(text: str) -> None:
 
 
 def slugify(text: str) -> str:
-    """작품 id. 주소 해시(#emily-in-paris-s05e01)에 들어가므로 ASCII 로만 만든다."""
+    """ASCII 전용 슬러그. **GitHub Release 자산 이름**에 쓴다.
+
+    자산 이름은 ASCII 여야 한다 (`audio_href` 가 막는다). 주소 해시는 한글을 써도 되므로
+    그쪽은 `slugify_display` 를 쓴다.
+    """
     slug = _SLUG_RE.sub("-", (text or "").lower()).strip("-")
     if not slug:
         raise ValueError(f"작품 id 를 만들 수 없습니다: {text!r}")
     return slug
+
+
+def slugify_display(text: str) -> str:
+    """주소 해시·폴더 이름에 쓸 슬러그. **한글을 그대로 둔다.**
+
+    `#에밀리-파리에-가다/s05e01` 처럼 제목이 주소에 그대로 보인다. 브라우저는 퍼센트
+    인코딩으로 주고받지만 화면에는 한글로 보여 준다. 로마자로 옮기면
+    `emilri-parie-gada` 처럼 읽기 어려운 주소가 되므로 제목을 그대로 쓰는 편이 낫다.
+
+    경로·해시를 깨뜨릴 글자(`/`, `#`, `%`, 공백 등)는 `-` 로 바꾼다.
+    """
+    slug = _DISPLAY_SLUG_RE.sub("-", (text or "").strip().lower()).strip("-_")
+    if not slug:
+        raise ValueError(f"작품 id 를 만들 수 없습니다: {text!r}")
+    return slug
+
+
+# ── 한글 제목 → 주소에 쓸 ASCII id ─────────────────────────────────────────
+#
+# 주소 해시(`#emily-in-paris/s05e01`)는 ASCII 여야 한다. 작품 제목은 넷플릭스에서 읽은
+# 한글이라 그대로 쓸 수 없고, 영문 제목을 알 방법도 없다. 그래서 국어의 로마자 표기법
+# (Revised Romanization)으로 음절을 그대로 옮긴다 — 뜻이 아니라 **안정적이고 유일한**
+# 문자열이 필요한 자리이므로 이것으로 충분하다.
+#
+# 한 번 만든 id 는 `show_ids.json` 에 적어 둔다. 여기 표가 나중에 바뀌어도 이미 올린
+# 작품의 주소는 움직이지 않아야 한다 (주소가 바뀌면 북마크가 깨진다).
+
+_HANGUL_BASE = 0xAC00
+_HANGUL_LAST = 0xD7A3
+_CHO = ("g", "kk", "n", "d", "tt", "r", "m", "b", "pp", "s", "ss", "",
+        "j", "jj", "ch", "k", "t", "p", "h")
+_JUNG = ("a", "ae", "ya", "yae", "eo", "e", "yeo", "ye", "o", "wa", "wae", "oe",
+         "yo", "u", "wo", "we", "wi", "yu", "eu", "ui", "i")
+_JONG = ("", "k", "k", "k", "n", "n", "n", "t", "l", "l", "l", "l", "l", "l", "l",
+         "l", "m", "p", "p", "t", "t", "ng", "t", "t", "k", "t", "p", "t")
+
+
+def romanize(text: str) -> str:
+    """한글 음절을 로마자로 옮긴다. 한글이 아닌 글자는 그대로 둔다.
+
+    받침 뒤 연음 같은 규칙은 적용하지 않는다. 사람이 읽을 표기가 아니라 주소에 쓸
+    문자열을 만드는 것이고, 규칙을 넣으면 같은 제목이 버전마다 달라질 위험이 생긴다.
+    """
+    out = []
+    for char in text or "":
+        code = ord(char)
+        if _HANGUL_BASE <= code <= _HANGUL_LAST:
+            index = code - _HANGUL_BASE
+            out.append(_CHO[index // 588])
+            out.append(_JUNG[(index % 588) // 28])
+            out.append(_JONG[index % 28])
+        else:
+            out.append(char)
+    return "".join(out)
+
+
+def show_id_for(title: str) -> str:
+    """작품 제목으로 주소에 쓸 id 를 만든다. 제목을 그대로 쓴다 (한글 포함)."""
+    return slugify_display(title)
+
+
+def asset_slug_for(title: str) -> str:
+    """mp3 자산 이름에 쓸 ASCII 슬러그. 영문 제목은 그대로, 한글은 로마자로.
+
+    GitHub Release 자산 이름은 ASCII 여야 한다. 주소 해시(`show.id`)와 **다른 값**이다 —
+    주소에는 한글 제목이 그대로 보이고, 파일 이름만 로마자가 된다.
+    """
+    try:
+        return slugify(title)
+    except ValueError:
+        pass
+    return slugify(romanize(title))
 
 
 def iter_episodes(payload: dict):
@@ -225,17 +308,20 @@ def serialize(payload: dict) -> str:
     마지막에 `escape_inline_json` 을 거쳐 인라인 script 블록을 깨뜨릴 문자를 없앤다.
     """
     folded: dict[str, str] = {}
-    for key, episode in iter_episodes(payload):
+    for index, (_key, episode) in enumerate(iter_episodes(payload)):
         audio = episode.get("audio")
         if not audio or not isinstance(audio.get("segments"), list):
             continue
-        token = SEGMENT_PLACEHOLDER.format(id=key)
+        token = SEGMENT_PLACEHOLDER.format(id=index)
         folded[token] = json.dumps(audio["segments"], ensure_ascii=False, separators=(",", ":"))
         audio["segments"] = token
 
     text = json.dumps(payload, ensure_ascii=False, indent=2)
     for token, compact in folded.items():
-        text = text.replace(json.dumps(token), compact)
+        quoted = json.dumps(token, ensure_ascii=False)
+        if quoted not in text:
+            raise AssertionError(f"세그먼트 자리표시자를 찾지 못했습니다: {token}")
+        text = text.replace(quoted, compact)
     return escape_inline_json(text)
 
 

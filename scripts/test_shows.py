@@ -159,6 +159,40 @@ check("회차 id 가 겹쳐도 섞이지 않는다",
        twin_loaded["shows"][1]["seasons"][0]["episodes"][0]["audio"]["segments"]],
       [[[1, 1, 0, 0, 1, 0, 1]], [[2, 2, 0, 0, 2, 0, 2]]])
 
+# 한글 작품 id 가 자리표시자 치환을 깨뜨린 적이 있다 (본문은 ensure_ascii=False 로 쓰면서
+# 자리표시자는 기본 ensure_ascii=True 로 찾아 한글이 \uXXXX 로 escape 됐다 → 조용히 실패).
+hangul = {
+    "shows": [{
+        "id": "오징어-게임", "title": "오징어 게임", "type": "series",
+        "seasons": [{"number": 2, "episodes": [
+            {"number": 3, "id": "s02e03",
+             "scenes": [{"n": 1, "lines": [{"text": "Shall we?", "ko": "할까요?"}]}],
+             "audio": {"file": "x.mp3", "segments": [[1, 1, 0, 5500, 7200, 0, 9]]}}]}],
+    }],
+}
+hangul_text = shows.serialize(json.loads(json.dumps(hangul)))
+check_true("한글 id 에서도 자리표시자가 남지 않는다", "@@TVSHOW_SEGMENTS" not in hangul_text)
+hangul_loaded = json.loads(hangul_text)
+check("한글 id 에서도 세그먼트가 목록으로 복원된다",
+      hangul_loaded["shows"][0]["seasons"][0]["episodes"][0]["audio"]["segments"],
+      [[1, 1, 0, 5500, 7200, 0, 9]])
+check("한글 작품 id 보존", hangul_loaded["shows"][0]["id"], "오징어-게임")
+
+print("\nslugify / slugify_display: 주소는 한글, 자산 이름은 ASCII")
+check("표시용은 한글을 둔다", shows.slugify_display("오징어 게임"), "오징어-게임")
+check("표시용도 소문자 ASCII", shows.slugify_display("Emily In Paris"), "emily-in-paris")
+check("경로·해시를 깨는 글자는 바뀐다", shows.slugify_display("a/b#c%d e"), "a-b-c-d-e")
+check("자산 이름은 로마자", shows.asset_slug_for("오징어 게임"), "ojingeo-geim")
+check("영문 제목은 그대로", shows.asset_slug_for("Emily in Paris"), "emily-in-paris")
+check("자산 이름은 언제나 ASCII", shows.asset_slug_for("기생충").isascii(), True)
+raises("빈 제목은 거부", lambda: shows.slugify_display("   "))
+
+print("\nromanize: 음절을 그대로 옮긴다 (연음 규칙 없음 — 같은 제목이 늘 같은 값이어야 한다)")
+check("오징어 게임", shows.romanize("오징어 게임"), "ojingeo geim")
+check("받침은 표기법대로", shows.romanize("신사"), "sinsa")
+check("한글이 아닌 글자는 그대로", shows.romanize("Mr. 김"), "Mr. gim")
+check("빈 값", shows.romanize(""), "")
+
 print("\nassert_publishable: 개인 머신 경로와 script 탈출을 막는다")
 raises("</script> 거부", lambda: shows.assert_publishable('{"t": "</script>"}'))
 raises("/Users/ 경로 거부", lambda: shows.assert_publishable('{"t": "/Users/mac/Downloads/x.mp3"}'))
@@ -227,23 +261,58 @@ check("깨진 파일은 None", langstudy.probe_duration(junk), None)
 check("없는 파일도 None (터지지 않는다)", langstudy.probe_duration(Path("/tmp/없는파일.mp3")), None)
 junk.unlink()
 
-print("\nresolve_show_id: 한글 제목은 영문 id 를 한 번만 요구한다")
-check("영문 id 를 주면 슬러그", langstudy.resolve_show_id({"title": "x"}, "Emily In Paris"), "emily-in-paris")
-check("영문 제목이면 자동", langstudy.resolve_show_id({"title": "Emily in Paris"}, None), "emily-in-paris")
-# 레지스트리에 없는 한글 제목 → 사람에게 한 번 물어야 한다
-raises("기억에 없는 한글 제목은 중단",
-       lambda: langstudy.resolve_show_id({"title": "아직 기억에 없는 작품 제목"}, None))
-
-print("\n작품 id 레지스트리: 한 번 정하면 다음 회차부터 안 묻는다")
+print("\nresolve_show_id: 사람의 입력 없이도 끝까지 정해진다")
 saved = langstudy.REGISTRY.read_text(encoding="utf-8") if langstudy.REGISTRY.exists() else None
 try:
-    langstudy.remember_show("한글 작품", "hangul-show", "Hangul Show")
-    check("기억한 뒤에는 자동", langstudy.resolve_show_id({"title": "한글 작품"}, None), "hangul-show")
-    check("직접 준 값이 기억보다 우선",
-          langstudy.resolve_show_id({"title": "한글 작품"}, "other-id"), "other-id")
+    langstudy.REGISTRY.write_text("{}", encoding="utf-8")   # 빈 레지스트리에서 시작
+    check("영문 id 를 주면 슬러그",
+          langstudy.resolve_show_id({"title": "x"}, "Emily In Paris"), "emily-in-paris")
+    check("영문 제목은 그대로",
+          langstudy.resolve_show_id({"title": "Emily in Paris"}, None), "emily-in-paris")
+    # 한글 제목도 더는 멈추지 않는다 — 주소에 한글을 쓸 수 있다
+    check("한글 제목은 그대로 주소가 된다",
+          langstudy.resolve_show_id({"title": "오징어 게임"}, None), "오징어-게임")
+    check("자산 이름은 로마자",
+          langstudy.resolve_asset_slug({"title": "오징어 게임"}, "오징어-게임"), "ojingeo-geim")
+    # 제목이 기호뿐이면 videoId 로 떨어진다
+    check("제목이 없으면 videoId",
+          langstudy.resolve_show_id({"title": "!!!", "videoId": "81040344"}, None), "show-81040344")
+
+    print("\n작품 id 레지스트리: 한 번 정하면 바뀌지 않는다")
+    langstudy.remember_show("오징어 게임", "오징어-게임", "ojingeo-geim", "Squid Game")
     registry = langstudy.load_registry()
-    check("titleEn 도 함께", registry["한글 작품"]["titleEn"], "Hangul Show")
-    check("제목이 없으면 기억하지 않는다", langstudy.remember_show("", "x", None), None)
+    check("주소 id 와 자산 슬러그를 함께 기억",
+          [registry["오징어 게임"]["id"], registry["오징어 게임"]["assetSlug"]],
+          ["오징어-게임", "ojingeo-geim"])
+    check("titleEn 도 함께", registry["오징어 게임"]["titleEn"], "Squid Game")
+    # 규칙이 바뀌어도 기억한 값이 이긴다 (주소가 움직이면 북마크가 깨진다)
+    langstudy.remember_show("오징어 게임", "다른-id", "other-slug", None)
+    check("기억한 값을 덮어쓰지 않는다", langstudy.load_registry()["오징어 게임"]["id"], "오징어-게임")
+    check("기억한 뒤에는 그 값을 쓴다",
+          langstudy.resolve_show_id({"title": "오징어 게임"}, None), "오징어-게임")
+    check("직접 준 값이 기억보다 우선",
+          langstudy.resolve_show_id({"title": "오징어 게임"}, "other-id"), "other-id")
+    check("제목이 없으면 기억하지 않는다",
+          langstudy.remember_show("", "x", "y", None), None)
+
+    print("\n영문 제목을 알면 주소·파일 이름을 둘 다 영문으로")
+    korean = {"title": "투 브로크 걸즈", "videoId": "cp-777"}
+    check("영문 제목 없으면 한글 주소", langstudy.resolve_show_id(korean, None), "투-브로크-걸즈")
+    check("영문 제목 없으면 로마자 자산",
+          langstudy.resolve_asset_slug(korean, "투-브로크-걸즈"), "tu-beurokeu-geoljeu")
+    en = langstudy.english_title(korean, "2 Broke Girls")
+    check("영문 제목 받기", en, "2 Broke Girls")
+    check("영문 제목이면 영문 주소", langstudy.resolve_show_id(korean, None, en), "2-broke-girls")
+    check("영문 제목이면 영문 자산",
+          langstudy.resolve_asset_slug(korean, "2-broke-girls", en), "2-broke-girls")
+    # 제목 자체가 영문이면(넷플릭스 UI 가 영어) 따로 줄 필요가 없다
+    check("영문 제목은 저절로", langstudy.english_title({"title": "Breaking Bad"}, None), "Breaking Bad")
+    check("한글 제목은 영문으로 안 센다", langstudy.english_title({"title": "기생충"}, None), None)
+
+    # 다른 제목이 같은 id 를 쓰면 번호를 붙인다 (두 작품의 회차가 섞이면 눈에 안 띈다)
+    langstudy.remember_show("어떤 작품", "same-id", "same-id", None)
+    check("id 충돌이면 번호를 붙인다",
+          langstudy.resolve_show_id({"title": "Same Id"}, None), "same-id-2")
 finally:
     if saved is None:
         langstudy.REGISTRY.unlink(missing_ok=True)
