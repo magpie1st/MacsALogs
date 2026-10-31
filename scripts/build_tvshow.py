@@ -29,172 +29,38 @@ import json
 import re
 import sys
 from pathlib import Path
-from urllib.parse import urlsplit
+
+# JSON 블록 읽기·쓰기와 공개 문자열 검사는 shows.py 한곳에 둔다. 생성기가 둘이고(이 파일과
+# build_langstudy.py) 서로 다른 머신에서 돌기 때문에, 블록을 통째로 덮어쓰지 않고 자기 작품만
+# 갈아 끼워야 한다. 아래 이름들은 tts-maker 의 교차 테스트가 이 모듈에서 찾으므로 다시 내보낸다.
+from shows import (  # noqa: F401  (재내보내기)
+    AUDIO_URL_PREFIX,
+    END,
+    RELEASE_CONFIG_NAME,
+    SEGMENT_PLACEHOLDER,
+    START,
+    TARGET,
+    assert_publishable,
+    audio_href,
+    escape_inline_json,
+    normalize_base_url,
+    read_payload,
+    read_release_base_url,
+    serialize,
+    slugify,
+    upsert_show,
+    write_payload,
+)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-TARGET = REPO_ROOT / "docs" / "tvshow.html"
 AUDIO_DIR = REPO_ROOT / "docs" / "audio" / "tvshow"
-AUDIO_URL_PREFIX = "audio/tvshow"
-RELEASE_CONFIG_NAME = "config.json"
 DEFAULT_SOURCE = Path("/home/magpie/Workspace/dev/macGitHub/book-maker/output")
-
-START = "<!-- TVSHOW-DATA:START -->"
-END = "<!-- TVSHOW-DATA:END -->"
-
-#: 인라인 JSON 이 2.4MB 를 넘는다. 타임라인까지 들여쓰기로 펼치면 파일이 배로 커지므로
-#: 세그먼트 행만 한 줄짜리 배열로 따로 직렬화해 끼워 넣는다.
-SEGMENT_PLACEHOLDER = "@@TVSHOW_SEGMENTS_{id}@@"
 
 SERIES_TITLE = "A Gentleman's Dignity"
 SERIES_TITLE_KO = "신사의 품격"
 PLANNED_EPISODES = 20
 
 EPISODE_FILE_RE = re.compile(r"episode[_-]?(\d+)\.md$", re.IGNORECASE)
-
-
-# ── 음원 주소 (공개 HTML 에 그대로 박히는 문자열) ────────────────────────────
-#
-# 규칙은 tts-maker 의 src/tts_maker/release.py 와 같다. 여기 한 벌 더 두는 이유는 이
-# 저장소가 빌드 도구도 의존성도 없이 python3 하나로 돌아야 하기 때문이다. 둘이 어긋나면
-# tts-maker 쪽 tests/test_build_tvshow_helpers.py 가 잡는다.
-#
-# 화이트리스트로 검사한다. 태그와 파일 이름에 필요한 문자는 영숫자와 `.`, `_`, `-`, `~` 뿐이고,
-# 퍼센트 인코딩(`%`)은 `%2e%2e` 같은 우회로만 열어 주므로 통째로 막는다.
-
-_SEGMENT_RE = re.compile(r"^[A-Za-z0-9._~-]+$")
-_ASSET_NAME_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")
-
-#: 음원은 언제나 GitHub Release 자산이므로 호스트와 경로 모양까지 고정한다. 임의의 https
-#: 호스트를 받아 주면 config.json 한 줄로 공개 페이지가 남의 서버에서 음원을 불러온다.
-RELEASE_HOST = "github.com"
-RELEASE_PATH_MARKERS = ("releases", "download")
-RELEASE_URL_SHAPE = f"https://{RELEASE_HOST}/<owner>/<repo>/releases/download/<tag>"
-_FORBIDDEN_CHARS = frozenset("?#%\\<>\"'`{}|^ \t\r\n")
-
-#: 공개 HTML 에 절대 들어가면 안 되는 흔적. 개인 머신 경로가 남으면 지울 방법이 없다.
-#:
-#: 역슬래시(UNC `\\`, `C:\`)는 여기에 넣지 않는다. 대본은 자막에서 왔고 `{\a6}` 같은 ASS
-#: 서식 태그와 `\119` 같은 표기가 본문에 그대로 남아 있다. JSON 으로 직렬화하면 역슬래시가
-#: 두 개로 늘어나 UNC 경로와 구분되지 않는다 — 실제로 전편 생성이 여기서 한 번 멈췄다.
-#: Windows 경로는 이 워크플로에 등장하지 않으므로 검사에서 뺀다.
-_LEAKY = ("/home/", "/Users/", "/root/", "file://")
-
-#: 인라인 `<script type="application/json">` 안에서 HTML 파서는 JSON 을 모른다. 본문에
-#: `</script>` 가 있으면 블록이 거기서 끝나고 뒤가 HTML 로 해석된다 — 대본은 자막에서 왔으므로
-#: 언젠가 그런 줄이 들어올 수 있다. JSON 유니코드 이스케이프로 바꾸면 HTML 파서에는 보이지
-#: 않으면서 JSON.parse 결과는 원문 그대로다. `&` 는 script 안에서 실체화되지 않지만 같이 막아
-#: 둔다. U+2028/2029 는 JSON 에서는 합법이지만 JS 소스에서는 줄바꿈으로 읽힌다.
-_JSON_ESCAPES = {
-    "<": "\\u003c",
-    ">": "\\u003e",
-    "&": "\\u0026",
-    "\u2028": "\\u2028",
-    "\u2029": "\\u2029",
-}
-_JSON_ESCAPE_RE = re.compile("[<>&\u2028\u2029]")
-
-
-def escape_inline_json(text: str) -> str:
-    """직렬화된 JSON 에서 script 문맥을 깨는 문자를 JSON 이스케이프로 바꾼다.
-
-    이 문자들은 JSON 문법에서는 쓰이지 않으므로 **반드시 문자열 값 안에만** 있다.
-    그래서 통째로 치환해도 json.loads 결과는 원문과 같다.
-    """
-    return _JSON_ESCAPE_RE.sub(lambda m: _JSON_ESCAPES[m.group()], text)
-
-
-def normalize_base_url(raw: str) -> str:
-    """Release 자산의 기준 URL 을 검사하고 끝의 `/` 를 떼어 정규화한다.
-
-    https 만 받는다. http 주소는 https 로 서빙되는 페이지에서 mixed content 로 차단되어
-    "동작하지 않는 URL 을 조용히 심는" 결과가 된다.
-
-    받는 모양은 `https://github.com/<owner>/<repo>/releases/download/<tag>` 하나뿐이다.
-    owner/repo/tag 에만 자유 문자가 오고 호스트와 가운데 두 구간은 고정이다.
-    """
-    if not isinstance(raw, str):
-        raise ValueError(f"URL 은 문자열이어야 합니다: {type(raw).__name__}")
-
-    url = raw.strip()
-    if not url:
-        raise ValueError("URL 이 비어 있습니다.")
-    if not url.isascii() or any(c in _FORBIDDEN_CHARS or ord(c) < 0x20 for c in url):
-        raise ValueError(f"URL 에 쓸 수 없는 문자가 있습니다: {raw!r}")
-
-    parts = urlsplit(url)
-    if parts.scheme.lower() != "https":
-        raise ValueError(f"https URL 만 허용합니다: {raw!r}")
-    if parts.query or parts.fragment:
-        raise ValueError(f"URL 에 쿼리나 프래그먼트를 붙일 수 없습니다: {raw!r}")
-
-    host = parts.netloc.lower()
-    if "@" in host:
-        raise ValueError(f"URL 에 자격증명을 담을 수 없습니다: {raw!r}")
-    if host != RELEASE_HOST:
-        # 포트가 붙은 주소도 여기서 함께 걸린다 — Release 자산에는 포트가 없다
-        raise ValueError(f"{RELEASE_HOST} 의 Release 주소만 허용합니다: {raw!r}")
-
-    segments = parts.path.strip("/").split("/")
-    if len(segments) != 5 or tuple(segments[2:4]) != RELEASE_PATH_MARKERS:
-        raise ValueError(f"Release 주소가 {RELEASE_URL_SHAPE} 모양이 아닙니다: {raw!r}")
-    for segment in (segments[0], segments[1], segments[4]):
-        if not _SEGMENT_RE.match(segment) or segment in (".", ".."):
-            raise ValueError(f"URL 경로에 쓸 수 없는 구간이 있습니다 ({segment!r}): {raw!r}")
-
-    return f"https://{host}/" + "/".join(segments)
-
-
-def audio_href(name: str, base_url: str | None) -> str:
-    """manifest 의 파일 이름을 페이지가 쓸 주소로 바꾼다.
-
-    base_url 이 있으면 Release 자산의 절대 https 주소, 없으면 기존 상대경로다.
-    어느 쪽이든 파일 이름은 순수 basename 이어야 한다 — manifest 는 tts-maker 가 만들지만,
-    여기서 한 번 더 막지 않으면 `../` 하나로 엉뚱한 파일을 가리키게 할 수 있다.
-    """
-    if not isinstance(name, str) or not _ASSET_NAME_RE.match(name) or ".." in name:
-        raise ValueError(f"오디오 파일 이름으로 쓸 수 없습니다: {name!r}")
-    if base_url:
-        return f"{normalize_base_url(base_url)}/{name}"
-    return f"{AUDIO_URL_PREFIX}/{name}"
-
-
-def read_release_base_url(audio_dir: Path) -> str | None:
-    """docs/audio/tvshow/config.json 이 있으면 기준 URL 을 읽는다. 없으면 None.
-
-    깨진 설정은 **무시하지 않고 중단한다.** 조용히 넘기면 로컬 mp3 가 없는 상태로 상대경로가
-    박혀서, 배포된 뒤에야 재생 실패로 드러난다.
-    """
-    path = audio_dir / RELEASE_CONFIG_NAME
-    if not path.exists():
-        return None
-    try:
-        config = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
-        sys.exit(f"{path} 를 읽을 수 없습니다: {exc}")
-    raw = (config or {}).get("audioBaseUrl")
-    if not raw:
-        sys.exit(f"{path} 에 audioBaseUrl 이 없습니다.")
-    try:
-        return normalize_base_url(raw)
-    except ValueError as exc:
-        sys.exit(f"{path} 의 audioBaseUrl 을 쓸 수 없습니다 — {exc}")
-
-
-def assert_publishable(text: str) -> None:
-    """공개 HTML 에 들어갈 문자열을 마지막으로 본다. 개인 머신 경로와 script 탈출을 막는다.
-
-    `escape_inline_json` 이 이미 걸렀어야 하는 문자들을 한 번 더 확인한다. 직렬화 경로가
-    바뀌어 이스케이프가 빠지면 `</script>` 하나로 JSON 블록이 끝나고 뒤가 HTML 이 된다.
-    """
-    for needle in (*_LEAKY, str(Path.home())):
-        if needle and needle in text:
-            sys.exit(f"공개 JSON 에 로컬 경로가 섞였습니다 ({needle!r}). 생성을 중단합니다.")
-    for char in _JSON_ESCAPES:
-        if char in text:
-            sys.exit(
-                f"공개 JSON 에 이스케이프되지 않은 {char!r} 가 남았습니다. "
-                "인라인 script 블록을 깨뜨릴 수 있어 생성을 중단합니다."
-            )
 
 
 def strip_front_matter(lines: list[str]) -> tuple[dict, list[str]]:
@@ -410,58 +276,22 @@ def load_audio(episode: dict, source_sha: str, base_url: str | None = None) -> d
     }
 
 
-def build_payload(episodes: list[dict]) -> dict:
+def build_show(episodes: list[dict]) -> dict:
+    """이 시리즈를 작품 항목 하나로 만든다. 시즌 구분이 없는 시리즈라 시즌 1 하나에 담는다."""
     return {
-        "series": SERIES_TITLE,
-        "seriesKo": SERIES_TITLE_KO,
+        "id": slugify(SERIES_TITLE),
+        "title": SERIES_TITLE,
+        "titleKo": SERIES_TITLE_KO,
         "lang": "en",
+        "kind": "tts",
+        "hasKo": False,
         "generated": _dt.date.today().isoformat(),
-        "plannedEpisodes": PLANNED_EPISODES,
-        "episodes": episodes,
+        "seasons": [{
+            "number": 1,
+            "plannedEpisodes": PLANNED_EPISODES,
+            "episodes": episodes,
+        }],
     }
-
-
-def serialize(payload: dict) -> str:
-    """세그먼트 행만 한 줄로 접어서 직렬화한다.
-
-    json.dumps(indent=2) 는 숫자 하나마다 줄을 바꾼다. 타임라인 1,006행이면 7천 줄이
-    더 붙어 파일이 쓸데없이 커진다. 자리표시자로 빼 두었다가 압축 직렬화로 되돌린다.
-
-    마지막에 `escape_inline_json` 을 거쳐 인라인 script 블록을 깨뜨릴 문자를 없앤다.
-    """
-    folded: dict[str, str] = {}
-    for episode in payload["episodes"]:
-        audio = episode.get("audio")
-        if not audio:
-            continue
-        token = SEGMENT_PLACEHOLDER.format(id=episode["id"])
-        folded[token] = json.dumps(audio["segments"], ensure_ascii=False, separators=(",", ":"))
-        audio["segments"] = token
-
-    text = json.dumps(payload, ensure_ascii=False, indent=2)
-    for token, compact in folded.items():
-        text = text.replace(json.dumps(token), compact)
-    return escape_inline_json(text)
-
-
-def write_block(payload: dict) -> None:
-    html = TARGET.read_text(encoding="utf-8")
-    if START not in html or END not in html:
-        sys.exit(f"{TARGET} 에서 TVSHOW-DATA 마커를 찾지 못했습니다.")
-
-    serialized = serialize(payload)
-    assert_publishable(serialized)
-
-    block = (
-        START
-        + '\n  <script type="application/json" id="tvshow-data">\n'
-        + serialized
-        + "\n  </script>\n  "
-        + END
-    )
-    head, _, rest = html.partition(START)
-    _, _, tail = rest.partition(END)
-    TARGET.write_text(head + block + tail, encoding="utf-8")
 
 
 def main() -> None:
@@ -503,7 +333,11 @@ def main() -> None:
             episode["audio"] = audio
         episodes.append(episode)
 
-    write_block(build_payload(episodes))
+    # 블록을 통째로 덮어쓰지 않는다. 같은 블록에 lang-study 로 녹음한 작품도 들어 있다.
+    payload = read_payload()
+    payload["generated"] = _dt.date.today().isoformat()
+    upsert_show(payload, build_show(episodes))
+    write_payload(payload)
 
     print(f"→ {TARGET.relative_to(REPO_ROOT)} 갱신")
     if base_url:

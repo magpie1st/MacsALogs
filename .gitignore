@@ -6,3 +6,10 @@
 
 # MOM 녹음 업로드 대기 (build_mom.py) — 커밋 금지
 .mom-audio/
+
+# 생성기를 import 하면 생긴다 (scripts/test_shows.py)
+__pycache__/
+
+# lang-study 녹음 음원 — Release 자산으로만 올린다 (Pages 사이트 상한 1GB)
+docs/audio/shows/**/*.mp3
+docs/audio/shows/**/*.wav

@@ -1,0 +1,4711 @@
+{
+ "schema": "tvshow-audio/2",
+ "generated": "2026-10-31",
+ "show": "emily-in-paris",
+ "season": 5,
+ "episode": 1,
+ "episodeId": "s05e01",
+ "title": "1화",
+ "source": {
+  "name": "sentences.csv",
+  "sha256": "836aa1cec60a663b82722bfeb476f8e7db06c40191751227f5129b3f36e4b7e6",
+  "sentences": 586
+ },
+ "audio": {
+  "asset": "emily-in-paris-s05e01.mp3",
+  "durationSec": 2043.82,
+  "recordedSec": 1817.0,
+  "rate": null,
+  "channels": null
+ },
+ "segments": [
+  {
+   "no": 1,
+   "start": 25.0,
+   "end": 28.0,
+   "en": "Mmm. Come back to bed.",
+   "ko": "다시 침대로 와요",
+   "recorded": 1
+  },
+  {
+   "no": 2,
+   "start": 28.0,
+   "end": 30.0,
+   "en": "I'm already late for work.",
+   "ko": "지금도 지각이에요",
+   "recorded": 1
+  },
+  {
+   "no": 3,
+   "start": 30.0,
+   "end": 31.0,
+   "en": "It's almost 10:00.",
+   "ko": "10시 다 됐다고요",
+   "recorded": 1
+  },
+  {
+   "no": 4,
+   "start": 31.0,
+   "end": 33.0,
+   "en": "You're working for me.",
+   "ko": "어차피 내 일 하잖아요",
+   "recorded": 1
+  },
+  {
+   "no": 5,
+   "start": 33.0,
+   "end": 36.0,
+   "en": "-There's no such thing as late. -Hmm.",
+   "ko": "지각 같은 건 없어요",
+   "recorded": 1
+  },
+  {
+   "no": 6,
+   "start": 36.0,
+   "end": 38.0,
+   "en": "Hm?",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 7,
+   "start": 40.0,
+   "end": 42.0,
+   "en": "A couple more hours.",
+   "ko": "딱 몇 시간만 더요",
+   "recorded": 1
+  },
+  {
+   "no": 8,
+   "start": 42.0,
+   "end": 45.0,
+   "en": "Then it will be time for lunch.",
+   "ko": "그럼 점심시간이니까",
+   "recorded": 1
+  },
+  {
+   "no": 9,
+   "start": 45.0,
+   "end": 47.0,
+   "en": "And then…",
+   "ko": "그때는",
+   "recorded": 1
+  },
+  {
+   "no": 10,
+   "start": 55.0,
+   "end": 58.0,
+   "en": "It's my first day running the Rome office.",
+   "ko": "내가 로마 지사를 맡은 첫날이에요",
+   "recorded": 1
+  },
+  {
+   "no": 11,
+   "start": 58.0,
+   "end": 61.0,
+   "en": "And I still have to prepare for the meeting with your mother.",
+   "ko": "당신 어머니랑 회의 있는데 준비해야죠",
+   "recorded": 1
+  },
+  {
+   "no": 12,
+   "start": 61.0,
+   "end": 63.0,
+   "en": "Okay, I'll take you. Just let me get dressed.",
+   "ko": "좋아요, 그럼 옷만 입고 데려다줄게요",
+   "recorded": 1
+  },
+  {
+   "no": 13,
+   "start": 63.0,
+   "end": 66.0,
+   "en": "No, you stay in bed. I'll see you this afternoon.",
+   "ko": "좋아요, 그럼 옷만 입고 데려다줄게요 당신은 그냥 쉬어요 이따 오후에 만나요",
+   "recorded": 1
+  },
+  {
+   "no": 14,
+   "start": 66.0,
+   "end": 67.0,
+   "en": "How will you get there?",
+   "ko": "어떻게 가려고요?",
+   "recorded": 1
+  },
+  {
+   "no": 15,
+   "start": 67.0,
+   "end": 69.0,
+   "en": "I'm Roman now.",
+   "ko": "이제 로마 사람이니까 버스 타야죠",
+   "recorded": 1
+  },
+  {
+   "no": 16,
+   "start": 69.0,
+   "end": 70.0,
+   "en": "I take the bus.",
+   "ko": "이제 로마 사람이니까 버스 타야죠",
+   "recorded": 1
+  },
+  {
+   "no": 17,
+   "start": 71.0,
+   "end": 73.0,
+   "en": "You're really sure about that?",
+   "ko": "진짜 버스를 타겠다고요?",
+   "recorded": 1
+  },
+  {
+   "no": 18,
+   "start": 73.0,
+   "end": 75.0,
+   "en": "Yeah.",
+   "ko": "진짜 버스를 타겠다고요? 그럼요",
+   "recorded": 1
+  },
+  {
+   "no": 19,
+   "start": 75.0,
+   "end": 78.0,
+   "en": "Body, body Baby, move your body, body…",
+   "ko": "그럼요",
+   "recorded": 1
+  },
+  {
+   "no": 20,
+   "start": 84.0,
+   "end": 87.0,
+   "en": "You open an office here, now you leave. Why?",
+   "ko": "여기 사무실도 차렸는데 왜 떠나는 거야?",
+   "recorded": 1
+  },
+  {
+   "no": 21,
+   "start": 87.0,
+   "end": 90.0,
+   "en": "Oh, I would love to stay, but I have a business in Paris to run.",
+   "ko": "나도 남고 싶지만 내 회사가 파리에 있잖아",
+   "recorded": 1
+  },
+  {
+   "no": 22,
+   "start": 90.0,
+   "end": 92.0,
+   "en": "I have to be realistic.",
+   "ko": "현실적으로 생각해야지",
+   "recorded": 1
+  },
+  {
+   "no": 23,
+   "start": 92.0,
+   "end": 94.0,
+   "en": "Fuck realistic. What's more important?",
+   "ko": "현실은 개나 주고 뭐가 더 중요해?",
+   "recorded": 1
+  },
+  {
+   "no": 24,
+   "start": 94.0,
+   "end": 96.0,
+   "en": "Business or living the life you want to live?",
+   "ko": "사업이야? 꿈같이 사는 인생이야?",
+   "recorded": 1
+  },
+  {
+   "no": 25,
+   "start": 97.0,
+   "end": 99.0,
+   "en": "No, I prefer to have both.",
+   "ko": "난 둘 다 갖고 싶은데",
+   "recorded": 1
+  },
+  {
+   "no": 26,
+   "start": 100.0,
+   "end": 102.0,
+   "en": "A husband in Paris and a lover in Rome.",
+   "ko": "파리의 남편, 로마의 연인",
+   "recorded": 1
+  },
+  {
+   "no": 27,
+   "start": 103.0,
+   "end": 104.0,
+   "en": "Ah.",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 28,
+   "start": 104.0,
+   "end": 106.0,
+   "en": "So you're leaving for him?",
+   "ko": "남편 때문에 가는 거야?",
+   "recorded": 1
+  },
+  {
+   "no": 29,
+   "start": 106.0,
+   "end": 108.0,
+   "en": "No, I'm going back for work.",
+   "ko": "아니, 일하러 가는 거야",
+   "recorded": 1
+  },
+  {
+   "no": 30,
+   "start": 108.0,
+   "end": 111.0,
+   "en": "One account in Rome isn't enough to keep me here.",
+   "ko": "고객 한 명 보고 눌러앉을 순 없어",
+   "recorded": 1
+  },
+  {
+   "no": 31,
+   "start": 111.0,
+   "end": 114.0,
+   "en": "So stay longer and build a real business here.",
+   "ko": "그럼 여기 남아서 사업을 제대로 키워 봐",
+   "recorded": 1
+  },
+  {
+   "no": 32,
+   "start": 114.0,
+   "end": 116.0,
+   "en": "You know you love it here.",
+   "ko": "당신은 로마를 좋아하잖아",
+   "recorded": 1
+  },
+  {
+   "no": 33,
+   "start": 116.0,
+   "end": 119.0,
+   "en": "And selfishly, I love you here too.",
+   "ko": "사심 때문에 보내기도 싫고",
+   "recorded": 1
+  },
+  {
+   "no": 34,
+   "start": 119.0,
+   "end": 123.0,
+   "en": "Yeah, but I need to find some new Italian clients to justify it,",
+   "ko": "그러려면 남아도 될 만큼 새 이탈리아 고객들을 확보해야지",
+   "recorded": 1
+  },
+  {
+   "no": 35,
+   "start": 123.0,
+   "end": 125.0,
+   "en": "and quickly.",
+   "ko": "빨리",
+   "recorded": 1
+  },
+  {
+   "no": 36,
+   "start": 128.0,
+   "end": 129.0,
+   "en": "Oh my God.",
+   "ko": "\"바바차\" 어머나",
+   "recorded": 1
+  },
+  {
+   "no": 37,
+   "start": 129.0,
+   "end": 130.0,
+   "en": "What?",
+   "ko": "왜?",
+   "recorded": 1
+  },
+  {
+   "no": 38,
+   "start": 130.0,
+   "end": 134.0,
+   "en": "Well, that's a sign. It's Bavazza. They used to be our client in Paris.",
+   "ko": "이건 계시야 바바차는 파리 본사 고객이었어",
+   "recorded": 1
+  },
+  {
+   "no": 39,
+   "start": 134.0,
+   "end": 138.0,
+   "en": "Wait, if they worked with us in Paris, maybe we can sign them here too.",
+   "ko": "파리에서 우리랑 일했으니까 여기서도 계약 딸 수 있을 거야",
+   "recorded": 1
+  },
+  {
+   "no": 40,
+   "start": 140.0,
+   "end": 142.0,
+   "en": "Hello, Luc?",
+   "ko": "여보세요, 뤼크?",
+   "recorded": 1
+  },
+  {
+   "no": 41,
+   "start": 142.0,
+   "end": 145.0,
+   "en": "Tell me, how's your relationship with Bianca at Bavazza?",
+   "ko": "바바차의 비안카랑 어떤 사이예요?",
+   "recorded": 1
+  },
+  {
+   "no": 42,
+   "start": 145.0,
+   "end": 148.0,
+   "en": "She's just a friend. Nothing more.",
+   "ko": "친구 그 이상도 이하도 아니에요",
+   "recorded": 1
+  },
+  {
+   "no": 43,
+   "start": 148.0,
+   "end": 149.0,
+   "en": "I swear.",
+   "ko": "진짜예요",
+   "recorded": 1
+  },
+  {
+   "no": 44,
+   "start": 149.0,
+   "end": 152.0,
+   "en": "Well, keep her close and unpack your bags.",
+   "ko": "계속 친하게 지내고 짐도 다시 풀어요",
+   "recorded": 1
+  },
+  {
+   "no": 45,
+   "start": 152.0,
+   "end": 155.0,
+   "en": "-We're staying in Rome for a while. -Of course.",
+   "ko": "- 우리 당분간 여기 있기로 했어요 - 좋아요!",
+   "recorded": 1
+  },
+  {
+   "no": 46,
+   "start": 155.0,
+   "end": 158.0,
+   "en": "I'm just coming back from the airport right now.",
+   "ko": "지금 당장 공항에서 돌아갈게요",
+   "recorded": 1
+  },
+  {
+   "no": 47,
+   "start": 160.0,
+   "end": 163.0,
+   "en": "Driver, can you take me back to Rome immediately?",
+   "ko": "기사님, 당장 로마로 다시 가 줄래요?",
+   "recorded": 1
+  },
+  {
+   "no": 48,
+   "start": 166.0,
+   "end": 167.0,
+   "en": "A friend.",
+   "ko": "친구요?",
+   "recorded": 1
+  },
+  {
+   "no": 49,
+   "start": 170.0,
+   "end": 171.0,
+   "en": "What? I don't…",
+   "ko": "네? 무슨…",
+   "recorded": 1
+  },
+  {
+   "no": 50,
+   "start": 175.0,
+   "end": 178.0,
+   "en": "Um… what are you doing? I can't afford that.",
+   "ko": "\"돌체앤가바나\" 뭐 해요? 그 셔츠 살 돈 없어요",
+   "recorded": 1
+  },
+  {
+   "no": 51,
+   "start": 178.0,
+   "end": 180.0,
+   "en": "This shirt is to remember me by.",
+   "ko": "이거 보면서 내 생각 해요",
+   "recorded": 1
+  },
+  {
+   "no": 52,
+   "start": 182.0,
+   "end": 184.0,
+   "en": "And this is for you.",
+   "ko": "그리고 이거 입어요",
+   "recorded": 1
+  },
+  {
+   "no": 53,
+   "start": 184.0,
+   "end": 186.0,
+   "en": "When you come back to see me in Rome.",
+   "ko": "다음에 나 보러 올 때요",
+   "recorded": 1
+  },
+  {
+   "no": 54,
+   "start": 193.0,
+   "end": 194.0,
+   "en": "Oh! Buongiorno!",
+   "ko": "'부온조르노'",
+   "recorded": 1
+  },
+  {
+   "no": 55,
+   "start": 194.0,
+   "end": 195.0,
+   "en": "Ciao.",
+   "ko": "'차오'",
+   "recorded": 1
+  },
+  {
+   "no": 56,
+   "start": 195.0,
+   "end": 197.0,
+   "en": "-And ni hao. -Ni hao to you too.",
+   "ko": "- 그리고 '니하오' - 당신도 '니하오'요",
+   "recorded": 1
+  },
+  {
+   "no": 57,
+   "start": 198.0,
+   "end": 200.0,
+   "en": "Ah. How's Shanghai?",
+   "ko": "상하이는 어때요?",
+   "recorded": 1
+  },
+  {
+   "no": 58,
+   "start": 200.0,
+   "end": 203.0,
+   "en": "Well, you know the saying, \"You can't go home again\"?",
+   "ko": "'집을 떠나면 돌아갈 수 없다'라는 말이 있잖아요",
+   "recorded": 1
+  },
+  {
+   "no": 59,
+   "start": 203.0,
+   "end": 206.0,
+   "en": "Well, you can. It's leaving that's the hard part.",
+   "ko": "근데 가능해요, 떠나는 게 힘들지",
+   "recorded": 1
+  },
+  {
+   "no": 60,
+   "start": 206.0,
+   "end": 207.0,
+   "en": "Oh no, what does that mean?",
+   "ko": "어머, 무슨 뜻이에요?",
+   "recorded": 1
+  },
+  {
+   "no": 61,
+   "start": 207.0,
+   "end": 209.0,
+   "en": "They offered me a contract on Popstar.",
+   "ko": "팝 스타에서 계약하자고 했어요",
+   "recorded": 1
+  },
+  {
+   "no": 62,
+   "start": 209.0,
+   "end": 211.0,
+   "en": "Oh my God, that's amazing.",
+   "ko": "와, 잘됐네요",
+   "recorded": 1
+  },
+  {
+   "no": 63,
+   "start": 211.0,
+   "end": 213.0,
+   "en": "I turned it down.",
+   "ko": "근데 거절했어요",
+   "recorded": 1
+  },
+  {
+   "no": 64,
+   "start": 214.0,
+   "end": 216.0,
+   "en": "I'd rather be judging people in real life than on TV.",
+   "ko": "방송보다 현실에서 남들 까는 게 적성에 맞아서요",
+   "recorded": 1
+  },
+  {
+   "no": 65,
+   "start": 216.0,
+   "end": 219.0,
+   "en": "Plus, my life is in Paris,",
+   "ko": "그리고 내 인생은 파리에 있으니까",
+   "recorded": 1
+  },
+  {
+   "no": 66,
+   "start": 219.0,
+   "end": 221.0,
+   "en": "so that's where I'm headed.",
+   "ko": "거기로 가고 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 67,
+   "start": 222.0,
+   "end": 223.0,
+   "en": "-How's Rome? -Oh!",
+   "ko": "로마는 어때요?",
+   "recorded": 1
+  },
+  {
+   "no": 68,
+   "start": 223.0,
+   "end": 226.0,
+   "en": "Uh, I gotta go. This is my stop.",
+   "ko": "끊을게요, 지금 내려야 해요",
+   "recorded": 1
+  },
+  {
+   "no": 69,
+   "start": 226.0,
+   "end": 228.0,
+   "en": "Arrivederci.",
+   "ko": "그럼 안녕",
+   "recorded": 1
+  },
+  {
+   "no": 70,
+   "start": 231.0,
+   "end": 232.0,
+   "en": "Your scarf!",
+   "ko": "스카프 가져가요!",
+   "recorded": 1
+  },
+  {
+   "no": 71,
+   "start": 232.0,
+   "end": 234.0,
+   "en": "My scarf!",
+   "ko": "내 스카프!",
+   "recorded": 1
+  },
+  {
+   "no": 72,
+   "start": 245.0,
+   "end": 247.0,
+   "en": "Oh!",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 73,
+   "start": 266.0,
+   "end": 271.0,
+   "en": "Run, run Run back to when you took the turn",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 74,
+   "start": 271.0,
+   "end": 275.0,
+   "en": "Run back to when you fell for her",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 75,
+   "start": 275.0,
+   "end": 279.0,
+   "en": "I'll always be around, my love",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 76,
+   "start": 279.0,
+   "end": 281.0,
+   "en": "My love",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 77,
+   "start": 281.0,
+   "end": 286.0,
+   "en": "So I say run, run Run lighter when you read her name",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 78,
+   "start": 286.0,
+   "end": 290.0,
+   "en": "Run off the fever hearted way",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 79,
+   "start": 290.0,
+   "end": 294.0,
+   "en": "You know I'll be around, my love",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 80,
+   "start": 294.0,
+   "end": 297.0,
+   "en": "My love, so I said",
+   "ko": "좋아",
+   "recorded": 1
+  },
+  {
+   "no": 81,
+   "start": 299.0,
+   "end": 300.0,
+   "en": "Emily.",
+   "ko": "에밀리",
+   "recorded": 1
+  },
+  {
+   "no": 82,
+   "start": 302.0,
+   "end": 303.0,
+   "en": "Sylvie!",
+   "ko": "실비",
+   "recorded": 1
+  },
+  {
+   "no": 83,
+   "start": 303.0,
+   "end": 305.0,
+   "en": "Get your heels off that desk and put your phone away.",
+   "ko": "책상에서 신발 내리고 휴대폰 치워요",
+   "recorded": 1
+  },
+  {
+   "no": 84,
+   "start": 305.0,
+   "end": 307.0,
+   "en": "We got work to do.",
+   "ko": "우리 일해야죠",
+   "recorded": 1
+  },
+  {
+   "no": 85,
+   "start": 310.0,
+   "end": 313.0,
+   "en": "I had an epiphany at breakfast.",
+   "ko": "아침 먹다 계시를 받았어요",
+   "recorded": 1
+  },
+  {
+   "no": 86,
+   "start": 314.0,
+   "end": 316.0,
+   "en": "I thought, if we're gonna open an office in Rome,",
+   "ko": "이왕 로마에 사무실을 열었으니까",
+   "recorded": 1
+  },
+  {
+   "no": 87,
+   "start": 317.0,
+   "end": 319.0,
+   "en": "let's really show the Italians how it's done.",
+   "ko": "이탈리아인들에게 우리 능력을 보여 주죠",
+   "recorded": 1
+  },
+  {
+   "no": 88,
+   "start": 320.0,
+   "end": 322.0,
+   "en": "We need more than just Muratori.",
+   "ko": "무라토리 하나로는 부족해요",
+   "recorded": 1
+  },
+  {
+   "no": 89,
+   "start": 322.0,
+   "end": 326.0,
+   "en": "If we all focus, in a few weeks' time, we can build a real base here.",
+   "ko": "다 같이 매달리면 몇 주 안에 확실한 기반을 다질 수 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 90,
+   "start": 327.0,
+   "end": 329.0,
+   "en": "Starting with Bavazza. Luc?",
+   "ko": "바바차부터 시작하죠, 뤼크?",
+   "recorded": 1
+  },
+  {
+   "no": 91,
+   "start": 329.0,
+   "end": 331.0,
+   "en": "-Hmm? -How are things going with Bianca?",
+   "ko": "비안카랑 어때요?",
+   "recorded": 1
+  },
+  {
+   "no": 92,
+   "start": 331.0,
+   "end": 333.0,
+   "en": "Honestly, she's not the easiest woman.",
+   "ko": "솔직히 쉬운 여자는 아니에요",
+   "recorded": 1
+  },
+  {
+   "no": 93,
+   "start": 333.0,
+   "end": 336.0,
+   "en": "She has a very tempestuous nature.",
+   "ko": "성격이 굉장히 격정적이거든요",
+   "recorded": 1
+  },
+  {
+   "no": 94,
+   "start": 336.0,
+   "end": 337.0,
+   "en": "I'm referring to the business.",
+   "ko": "일 얘기예요",
+   "recorded": 1
+  },
+  {
+   "no": 95,
+   "start": 338.0,
+   "end": 340.0,
+   "en": "Oh yeah, she certainly gives me the business.",
+   "ko": "그러니까요 저한테 제대로 일 시키죠",
+   "recorded": 1
+  },
+  {
+   "no": 96,
+   "start": 340.0,
+   "end": 341.0,
+   "en": "That's for sure.",
+   "ko": "그건 확실해요",
+   "recorded": 1
+  },
+  {
+   "no": 97,
+   "start": 341.0,
+   "end": 344.0,
+   "en": "-Paris and Rome, make it happen. -I will.",
+   "ko": "- 파리와 로마, 성공시켜요 - 그러죠",
+   "recorded": 1
+  },
+  {
+   "no": 98,
+   "start": 344.0,
+   "end": 348.0,
+   "en": "Julien, you must still have some contacts from your time in Rome?",
+   "ko": "쥘리앵, 로마 시절 인맥이 남아 있겠죠?",
+   "recorded": 1
+  },
+  {
+   "no": 99,
+   "start": 348.0,
+   "end": 353.0,
+   "en": "Yes. Actually, I have been cultivating a relationship with Dolce & Gabbana.",
+   "ko": "네, 사실 돌체앤가바나와 관계를 다지고 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 100,
+   "start": 353.0,
+   "end": 354.0,
+   "en": "Bravo.",
+   "ko": "브라보",
+   "recorded": 1
+  },
+  {
+   "no": 101,
+   "start": 354.0,
+   "end": 356.0,
+   "en": "I love Dolce.",
+   "ko": "돌체 좋죠",
+   "recorded": 1
+  },
+  {
+   "no": 102,
+   "start": 357.0,
+   "end": 359.0,
+   "en": "And, Emily, how are things with Muratori?",
+   "ko": "에밀리, 무라토리랑 어떻게 돼 가요?",
+   "recorded": 1
+  },
+  {
+   "no": 103,
+   "start": 359.0,
+   "end": 362.0,
+   "en": "-I have a meeting with Antonia today. -Great.",
+   "ko": "- 오늘 안토니아랑 회의 있어요 - 좋아요",
+   "recorded": 1
+  },
+  {
+   "no": 104,
+   "start": 362.0,
+   "end": 363.0,
+   "en": "Uh, can we just have a word after this?",
+   "ko": "끝나고 얘기 좀 할까요?",
+   "recorded": 1
+  },
+  {
+   "no": 105,
+   "start": 364.0,
+   "end": 366.0,
+   "en": "Yes, a quick one. We don't have time for idle chit-chat.",
+   "ko": "짧게 끝내요 잡담할 여유 없으니까요",
+   "recorded": 1
+  },
+  {
+   "no": 106,
+   "start": 366.0,
+   "end": 368.0,
+   "en": "We have an opportunity here.",
+   "ko": "이건 우리 기회예요",
+   "recorded": 1
+  },
+  {
+   "no": 107,
+   "start": 368.0,
+   "end": 369.0,
+   "en": "Muratori's respected.",
+   "ko": "무라토리는 평판이 좋아 새 거래처를 뚫고",
+   "recorded": 1
+  },
+  {
+   "no": 108,
+   "start": 369.0,
+   "end": 370.0,
+   "en": "It can open doors to more business",
+   "ko": "무라토리는 평판이 좋아 새 거래처를 뚫고",
+   "recorded": 1
+  },
+  {
+   "no": 109,
+   "start": 370.0,
+   "end": 374.0,
+   "en": "and prove a French firm can beat the Italians at their own game.",
+   "ko": "프랑스 회사가 이탈리아 시장에서 통한다고 입증할 수 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 110,
+   "start": 374.0,
+   "end": 376.0,
+   "en": "Except in football.",
+   "ko": "축구만 빼고요",
+   "recorded": 1
+  },
+  {
+   "no": 111,
+   "start": 377.0,
+   "end": 379.0,
+   "en": "If we are all here,",
+   "ko": "다 여기 와 있으면",
+   "recorded": 1
+  },
+  {
+   "no": 112,
+   "start": 380.0,
+   "end": 381.0,
+   "en": "who's in Paris?",
+   "ko": "파리는 누가 지키죠?",
+   "recorded": 1
+  },
+  {
+   "no": 113,
+   "start": 384.0,
+   "end": 385.0,
+   "en": "Ah…",
+   "ko": "\"아장스 그라토 로마\"",
+   "recorded": 1
+  },
+  {
+   "no": 114,
+   "start": 385.0,
+   "end": 386.0,
+   "en": "Where is everyone?",
+   "ko": "다 어디 갔어요?",
+   "recorded": 1
+  },
+  {
+   "no": 115,
+   "start": 386.0,
+   "end": 389.0,
+   "en": "They'll be meeting you on Zoom from Rome.",
+   "ko": "담당자들은 줌으로 참석할 거예요 - 로마에서요 - 로마?",
+   "recorded": 1
+  },
+  {
+   "no": 116,
+   "start": 390.0,
+   "end": 391.0,
+   "en": "Rome?",
+   "ko": "- 로마에서요 - 로마?",
+   "recorded": 1
+  },
+  {
+   "no": 117,
+   "start": 391.0,
+   "end": 393.0,
+   "en": "Bonjour, Antoine.",
+   "ko": "'부온조르노', 앙투안",
+   "recorded": 1
+  },
+  {
+   "no": 118,
+   "start": 395.0,
+   "end": 397.0,
+   "en": "What are you doing in Rome?",
+   "ko": "로마에서 뭐 해?",
+   "recorded": 1
+  },
+  {
+   "no": 119,
+   "start": 397.0,
+   "end": 399.0,
+   "en": "I'm kick-starting a new office here.",
+   "ko": "지사 설립에 박차를 가하느라",
+   "recorded": 1
+  },
+  {
+   "no": 120,
+   "start": 399.0,
+   "end": 402.0,
+   "en": "I wish you would have kick-started this.",
+   "ko": "이거 홍보에 박차를 가했으면 했는데",
+   "recorded": 1
+  },
+  {
+   "no": 121,
+   "start": 403.0,
+   "end": 405.0,
+   "en": "Hey, Bébé is a disaster.",
+   "ko": "'헤이, 베이비' 망조야",
+   "recorded": 1
+  },
+  {
+   "no": 122,
+   "start": 406.0,
+   "end": 407.0,
+   "en": "Apparently, babies already smell good enough.",
+   "ko": "아기는 원래 좋은 냄새 나더라",
+   "recorded": 1
+  },
+  {
+   "no": 123,
+   "start": 408.0,
+   "end": 409.0,
+   "en": "Not with a full diaper.",
+   "ko": "기저귀가 깨끗할 때나 그러죠",
+   "recorded": 1
+  },
+  {
+   "no": 124,
+   "start": 410.0,
+   "end": 413.0,
+   "en": "Well, in fairness, you didn't give us much of a budget to work with.",
+   "ko": "솔직히 당신이 예산을 너무 빠듯하게 줬잖아",
+   "recorded": 1
+  },
+  {
+   "no": 125,
+   "start": 413.0,
+   "end": 417.0,
+   "en": "Sylvie, I have a factory full of fragrance that no baby wants,",
+   "ko": "실비, 난 공장에 아무도 안 찾는 향수가 쌓였는데",
+   "recorded": 1
+  },
+  {
+   "no": 126,
+   "start": 417.0,
+   "end": 419.0,
+   "en": "and you're in Rome.",
+   "ko": "로마에 있는 거야?",
+   "recorded": 1
+  },
+  {
+   "no": 127,
+   "start": 419.0,
+   "end": 420.0,
+   "en": "I'm not happy.",
+   "ko": "맘에 안 들어",
+   "recorded": 1
+  },
+  {
+   "no": 128,
+   "start": 420.0,
+   "end": 421.0,
+   "en": "Um…",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 129,
+   "start": 422.0,
+   "end": 425.0,
+   "en": "What if we created a new holiday in France?",
+   "ko": "프랑스에 새로운 기념일을 만드는 건 어때요?",
+   "recorded": 1
+  },
+  {
+   "no": 130,
+   "start": 425.0,
+   "end": 426.0,
+   "en": "Baby's Day.",
+   "ko": "아기의 날이요",
+   "recorded": 1
+  },
+  {
+   "no": 131,
+   "start": 428.0,
+   "end": 429.0,
+   "en": "It's like Mother's Day and Father's Day.",
+   "ko": "어머니 날이나 아버지 날처럼요",
+   "recorded": 1
+  },
+  {
+   "no": 132,
+   "start": 429.0,
+   "end": 431.0,
+   "en": "We could--",
+   "ko": "우리…",
+   "recorded": 1
+  },
+  {
+   "no": 133,
+   "start": 434.0,
+   "end": 437.0,
+   "en": "You know, Baby's Day is not a bad idea.",
+   "ko": "솔직히 아기의 날 나쁘지 않은데요",
+   "recorded": 1
+  },
+  {
+   "no": 134,
+   "start": 438.0,
+   "end": 439.0,
+   "en": "He'll be okay.",
+   "ko": "풀릴 거예요",
+   "recorded": 1
+  },
+  {
+   "no": 135,
+   "start": 439.0,
+   "end": 441.0,
+   "en": "Yeah, he's just a little rattled.",
+   "ko": "딸랑이처럼 흔들릴 뿐이죠",
+   "recorded": 1
+  },
+  {
+   "no": 136,
+   "start": 448.0,
+   "end": 450.0,
+   "en": "I'm going to meet Antonia and Marcello for lunch.",
+   "ko": "전 안토니아, 마르첼로랑 점심 먹고 올게요",
+   "recorded": 1
+  },
+  {
+   "no": 137,
+   "start": 451.0,
+   "end": 454.0,
+   "en": "Wonderful. Looking forward to being part of things",
+   "ko": "좋아요 나도 얼른 눈에 보이는 실무에 끼고 싶네요",
+   "recorded": 1
+  },
+  {
+   "no": 138,
+   "start": 454.0,
+   "end": 456.0,
+   "en": "when we have something concrete to present.",
+   "ko": "나도 얼른 눈에 보이는 실무에 끼고 싶네요",
+   "recorded": 1
+  },
+  {
+   "no": 139,
+   "start": 457.0,
+   "end": 458.0,
+   "en": "Right.",
+   "ko": "네",
+   "recorded": 1
+  },
+  {
+   "no": 140,
+   "start": 459.0,
+   "end": 462.0,
+   "en": "And also, wasn't this supposed to be my office?",
+   "ko": "그리고 여기 제 방 아닌가요?",
+   "recorded": 1
+  },
+  {
+   "no": 141,
+   "start": 463.0,
+   "end": 466.0,
+   "en": "Let's not get hung up on hierarchy, Emily.",
+   "ko": "우리 위계질서에 연연하지 말죠",
+   "recorded": 1
+  },
+  {
+   "no": 142,
+   "start": 466.0,
+   "end": 468.0,
+   "en": "You're welcome to use that stool when I'm gone.",
+   "ko": "나 없을 때 저 의자 써도 돼요",
+   "recorded": 1
+  },
+  {
+   "no": 143,
+   "start": 470.0,
+   "end": 475.0,
+   "en": "Since we're sharing, I'd appreciate it if you wouldn't smoke in here.",
+   "ko": "같이 쓰는 공간이니까 여기서 담배는 삼가 주세요",
+   "recorded": 1
+  },
+  {
+   "no": 144,
+   "start": 475.0,
+   "end": 477.0,
+   "en": "Or anywhere in the office, for that matter.",
+   "ko": "사무실 안 어디서든 금연 부탁해요",
+   "recorded": 1
+  },
+  {
+   "no": 145,
+   "start": 479.0,
+   "end": 480.0,
+   "en": "So many rules.",
+   "ko": "지킬 게 많네요",
+   "recorded": 1
+  },
+  {
+   "no": 146,
+   "start": 482.0,
+   "end": 484.0,
+   "en": "Mm. If you insist.",
+   "ko": "정 소원이라면요",
+   "recorded": 1
+  },
+  {
+   "no": 147,
+   "start": 484.0,
+   "end": 485.0,
+   "en": "I really do.",
+   "ko": "꼭 지켜 주세요",
+   "recorded": 1
+  },
+  {
+   "no": 148,
+   "start": 487.0,
+   "end": 487.0,
+   "en": "Hmm.",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 149,
+   "start": 489.0,
+   "end": 490.0,
+   "en": "Okay.",
+   "ko": "좋아요",
+   "recorded": 1
+  },
+  {
+   "no": 150,
+   "start": 490.0,
+   "end": 491.0,
+   "en": "Ciao.",
+   "ko": "'차오'",
+   "recorded": 1
+  },
+  {
+   "no": 151,
+   "start": 494.0,
+   "end": 497.0,
+   "en": "Oh, I thought your mother was joining us.",
+   "ko": "당신 어머니랑 같이 올 줄 알았는데",
+   "recorded": 1
+  },
+  {
+   "no": 152,
+   "start": 497.0,
+   "end": 498.0,
+   "en": "Change of plans.",
+   "ko": "계획이 바뀌었어요",
+   "recorded": 1
+  },
+  {
+   "no": 153,
+   "start": 498.0,
+   "end": 500.0,
+   "en": "I'm taking you to her. Hmm?",
+   "ko": "어머니께 데려갈게요",
+   "recorded": 1
+  },
+  {
+   "no": 154,
+   "start": 501.0,
+   "end": 504.0,
+   "en": "-My car is right down the street. -Okay.",
+   "ko": "- 내 차는 저기 있어요 - 좋아요",
+   "recorded": 1
+  },
+  {
+   "no": 155,
+   "start": 504.0,
+   "end": 506.0,
+   "en": "By the way, do you have any other shoes?",
+   "ko": "근데 그거 신고 가려고요?",
+   "recorded": 1
+  },
+  {
+   "no": 156,
+   "start": 506.0,
+   "end": 508.0,
+   "en": "To meet your mother in? No, these will be fine.",
+   "ko": "당신 어머니 만나는 자리에요? 괜찮아요",
+   "recorded": 1
+  },
+  {
+   "no": 157,
+   "start": 508.0,
+   "end": 510.0,
+   "en": "Mm. As you wish.",
+   "ko": "맘대로 해요",
+   "recorded": 1
+  },
+  {
+   "no": 158,
+   "start": 529.0,
+   "end": 531.0,
+   "en": "They look really happy.",
+   "ko": "둘이 행복해 보이네요",
+   "recorded": 1
+  },
+  {
+   "no": 159,
+   "start": 531.0,
+   "end": 532.0,
+   "en": "They are.",
+   "ko": "맞아요",
+   "recorded": 1
+  },
+  {
+   "no": 160,
+   "start": 533.0,
+   "end": 535.0,
+   "en": "You know. You can learn a lot about yourself",
+   "ko": "사랑하는 사람과 떨어지면 몰랐던 내 모습을 알게 되죠",
+   "recorded": 1
+  },
+  {
+   "no": 161,
+   "start": 535.0,
+   "end": 537.0,
+   "en": "by being away from the person you love.",
+   "ko": "사랑하는 사람과 떨어지면 몰랐던 내 모습을 알게 되죠",
+   "recorded": 1
+  },
+  {
+   "no": 162,
+   "start": 537.0,
+   "end": 540.0,
+   "en": "Sometimes it's better to know when to let go.",
+   "ko": "그냥 놔줘야 할 때도 있나 봐요",
+   "recorded": 1
+  },
+  {
+   "no": 163,
+   "start": 541.0,
+   "end": 542.0,
+   "en": "Love is patient.",
+   "ko": "사랑은 집요하죠",
+   "recorded": 1
+  },
+  {
+   "no": 164,
+   "start": 543.0,
+   "end": 545.0,
+   "en": "If you're meant to be together, you will.",
+   "ko": "두 사람이 운명이라면 결국 맺어져요",
+   "recorded": 1
+  },
+  {
+   "no": 165,
+   "start": 545.0,
+   "end": 548.0,
+   "en": "I don't know. I have the impression she's moved on.",
+   "ko": "글쎄요, 에밀리는 마음 정리 했나 본데요",
+   "recorded": 1
+  },
+  {
+   "no": 166,
+   "start": 549.0,
+   "end": 551.0,
+   "en": "She needs to live some life.",
+   "ko": "에밀리는 다른 삶도 살아 봐야죠",
+   "recorded": 1
+  },
+  {
+   "no": 167,
+   "start": 551.0,
+   "end": 553.0,
+   "en": "Take some risks.",
+   "ko": "모험도 하고요",
+   "recorded": 1
+  },
+  {
+   "no": 168,
+   "start": 553.0,
+   "end": 555.0,
+   "en": "And maybe you do too.",
+   "ko": "당신도 그렇게 해요",
+   "recorded": 1
+  },
+  {
+   "no": 169,
+   "start": 555.0,
+   "end": 558.0,
+   "en": "I think it was a stupid idea to come here.",
+   "ko": "여기까지 온 제가 바보 같네요",
+   "recorded": 1
+  },
+  {
+   "no": 170,
+   "start": 558.0,
+   "end": 561.0,
+   "en": "Let me know if you feel that way after I take you to lunch.",
+   "ko": "이 식당 갔다 와서도 그런 말 하는지 보죠",
+   "recorded": 1
+  },
+  {
+   "no": 171,
+   "start": 561.0,
+   "end": 564.0,
+   "en": "I found the most amazing trattoria nearby.",
+   "ko": "이 근처에서 최고의 이탈리아 가정식 식당을 찾았어요",
+   "recorded": 1
+  },
+  {
+   "no": 172,
+   "start": 564.0,
+   "end": 566.0,
+   "en": "No meat - but the freshest vegetables you ever tasted.",
+   "ko": "고기는 안 들어가는데 채소가…",
+   "recorded": 1
+  },
+  {
+   "no": 173,
+   "start": 566.0,
+   "end": 567.0,
+   "en": "Let's go.",
+   "ko": "가죠",
+   "recorded": 1
+  },
+  {
+   "no": 174,
+   "start": 584.0,
+   "end": 587.0,
+   "en": "So, I have an important question to ask you.",
+   "ko": "중요한 질문 하나 할게요",
+   "recorded": 1
+  },
+  {
+   "no": 175,
+   "start": 587.0,
+   "end": 589.0,
+   "en": "I hope you answer correctly.",
+   "ko": "대답 잘해야 해요",
+   "recorded": 1
+  },
+  {
+   "no": 176,
+   "start": 589.0,
+   "end": 591.0,
+   "en": "I will do my best.",
+   "ko": "최선을 다할게요",
+   "recorded": 1
+  },
+  {
+   "no": 177,
+   "start": 592.0,
+   "end": 593.0,
+   "en": "Do you like truffles?",
+   "ko": "송로 좋아해요?",
+   "recorded": 1
+  },
+  {
+   "no": 178,
+   "start": 594.0,
+   "end": 596.0,
+   "en": "-I've only tried them once. -Mm-hm.",
+   "ko": "딱 한 번 먹어 봤어요",
+   "recorded": 1
+  },
+  {
+   "no": 179,
+   "start": 596.0,
+   "end": 597.0,
+   "en": "With Gabriel.",
+   "ko": "가브리엘이랑요",
+   "recorded": 1
+  },
+  {
+   "no": 180,
+   "start": 598.0,
+   "end": 599.0,
+   "en": "Ah, Gabriel.",
+   "ko": "아, 가브리엘",
+   "recorded": 1
+  },
+  {
+   "no": 181,
+   "start": 600.0,
+   "end": 602.0,
+   "en": "-Yeah, my… my ex. -Ah.",
+   "ko": "- 내 전 남친이요 - 그래요",
+   "recorded": 1
+  },
+  {
+   "no": 182,
+   "start": 603.0,
+   "end": 604.0,
+   "en": "And?",
+   "ko": "근데요?",
+   "recorded": 1
+  },
+  {
+   "no": 183,
+   "start": 605.0,
+   "end": 606.0,
+   "en": "-Amazing. -Hm.",
+   "ko": "끝내줬어요",
+   "recorded": 1
+  },
+  {
+   "no": 184,
+   "start": 606.0,
+   "end": 607.0,
+   "en": "The truffles.",
+   "ko": "송로가요",
+   "recorded": 1
+  },
+  {
+   "no": 185,
+   "start": 607.0,
+   "end": 608.0,
+   "en": "Okay, good.",
+   "ko": "좋아요",
+   "recorded": 1
+  },
+  {
+   "no": 186,
+   "start": 609.0,
+   "end": 612.0,
+   "en": "Because we are going to have a big truffle dinner in Solitano.",
+   "ko": "솔리타노에서 저녁으로 송로 만찬을 즐길 거니까요",
+   "recorded": 1
+  },
+  {
+   "no": 187,
+   "start": 612.0,
+   "end": 613.0,
+   "en": "Uh, dinner?",
+   "ko": "저녁이요?",
+   "recorded": 1
+  },
+  {
+   "no": 188,
+   "start": 613.0,
+   "end": 615.0,
+   "en": "I thought we were having lunch.",
+   "ko": "점심 먹는 줄 알았는데요",
+   "recorded": 1
+  },
+  {
+   "no": 189,
+   "start": 615.0,
+   "end": 617.0,
+   "en": "The truffles take time.",
+   "ko": "송로 요리는 오래 걸려요",
+   "recorded": 1
+  },
+  {
+   "no": 190,
+   "start": 617.0,
+   "end": 620.0,
+   "en": "Like getting a meeting with your mother.",
+   "ko": "당신 어머니를 만나는 것처럼요",
+   "recorded": 1
+  },
+  {
+   "no": 191,
+   "start": 620.0,
+   "end": 621.0,
+   "en": "She's canceled on me twice.",
+   "ko": "두 번이나 취소하셨어요",
+   "recorded": 1
+  },
+  {
+   "no": 192,
+   "start": 622.0,
+   "end": 625.0,
+   "en": "I guess you're beginning to realize something I've known my entire life.",
+   "ko": "난 평생 알고 있던 걸 이제야 깨달았나 보네요",
+   "recorded": 1
+  },
+  {
+   "no": 193,
+   "start": 626.0,
+   "end": 627.0,
+   "en": "She's not easy.",
+   "ko": "엄마는 쉽지 않아요",
+   "recorded": 1
+  },
+  {
+   "no": 194,
+   "start": 628.0,
+   "end": 630.0,
+   "en": "Difficult women are my specialty.",
+   "ko": "까다로운 여성이 내 전문이죠",
+   "recorded": 1
+  },
+  {
+   "no": 195,
+   "start": 630.0,
+   "end": 634.0,
+   "en": "Well, we should have sold to JVMA when we had the chance.",
+   "ko": "JVMA가 인수한다고 했을 때 팔아야 했어요",
+   "recorded": 1
+  },
+  {
+   "no": 196,
+   "start": 634.0,
+   "end": 637.0,
+   "en": "I'm curious what this magic marketing bullet of yours is",
+   "ko": "당신이 어떤 신박한 마케팅 마술로 해결한다는 건지 모르겠네요",
+   "recorded": 1
+  },
+  {
+   "no": 197,
+   "start": 637.0,
+   "end": 639.0,
+   "en": "that will come in and fix things.",
+   "ko": "당신이 어떤 신박한 마케팅 마술로 해결한다는 건지 모르겠네요",
+   "recorded": 1
+  },
+  {
+   "no": 198,
+   "start": 639.0,
+   "end": 640.0,
+   "en": "Well-- Um…",
+   "ko": "저…",
+   "recorded": 1
+  },
+  {
+   "no": 199,
+   "start": 641.0,
+   "end": 643.0,
+   "en": "-Yeah, I don't-- I don't have it yet. -Ah.",
+   "ko": "아직 아이디어는 없어요",
+   "recorded": 1
+  },
+  {
+   "no": 200,
+   "start": 643.0,
+   "end": 645.0,
+   "en": "But don't bet against me.",
+   "ko": "근데 나 무시하지 마요",
+   "recorded": 1
+  },
+  {
+   "no": 201,
+   "start": 648.0,
+   "end": 651.0,
+   "en": "As long as I get to spend time with you in Rome,",
+   "ko": "난 로마에서 당신과 지낼 수 있다면",
+   "recorded": 1
+  },
+  {
+   "no": 202,
+   "start": 652.0,
+   "end": 653.0,
+   "en": "I'm happy.",
+   "ko": "그거로 족해요",
+   "recorded": 1
+  },
+  {
+   "no": 203,
+   "start": 676.0,
+   "end": 678.0,
+   "en": "Wow.",
+   "ko": "와",
+   "recorded": 1
+  },
+  {
+   "no": 204,
+   "start": 693.0,
+   "end": 696.0,
+   "en": "This is not Solitano.",
+   "ko": "여기 솔리타노 아니잖아요",
+   "recorded": 1
+  },
+  {
+   "no": 205,
+   "start": 696.0,
+   "end": 698.0,
+   "en": "Who said we were going to Solitano?",
+   "ko": "누가 솔리타노에 간다고 했어요?",
+   "recorded": 1
+  },
+  {
+   "no": 206,
+   "start": 699.0,
+   "end": 700.0,
+   "en": "For the truffle dinner?",
+   "ko": "송로 만찬은요?",
+   "recorded": 1
+  },
+  {
+   "no": 207,
+   "start": 700.0,
+   "end": 704.0,
+   "en": "But before we eat the truffles, we have to hunt for the truffles.",
+   "ko": "송로를 먹으려면 송로를 찾아야죠",
+   "recorded": 1
+  },
+  {
+   "no": 208,
+   "start": 710.0,
+   "end": 713.0,
+   "en": "-Emily! Buongiorno! -Ah!",
+   "ko": "에밀리! '부온조르노'",
+   "recorded": 1
+  },
+  {
+   "no": 209,
+   "start": 713.0,
+   "end": 715.0,
+   "en": "Buongiorno, Antonia!",
+   "ko": "'부온조르노', 안토니아",
+   "recorded": 1
+  },
+  {
+   "no": 210,
+   "start": 717.0,
+   "end": 718.0,
+   "en": "Hi.",
+   "ko": "안녕하세요",
+   "recorded": 1
+  },
+  {
+   "no": 211,
+   "start": 718.0,
+   "end": 720.0,
+   "en": "And these are my sisters, Livia and Francesca.",
+   "ko": "이쪽은 내 동생들 리비아와 프란체스카예요",
+   "recorded": 1
+  },
+  {
+   "no": 212,
+   "start": 720.0,
+   "end": 722.0,
+   "en": "-Oh! -Hi!",
+   "ko": "안녕하세요",
+   "recorded": 1
+  },
+  {
+   "no": 213,
+   "start": 722.0,
+   "end": 723.0,
+   "en": "Ciao!",
+   "ko": "'차오'",
+   "recorded": 1
+  },
+  {
+   "no": 214,
+   "start": 723.0,
+   "end": 724.0,
+   "en": "It's so nice to meet you.",
+   "ko": "만나서 반가워요",
+   "recorded": 1
+  },
+  {
+   "no": 215,
+   "start": 724.0,
+   "end": 727.0,
+   "en": "We've heard so much about you.",
+   "ko": "당신 얘기 많이 들었어요",
+   "recorded": 1
+  },
+  {
+   "no": 216,
+   "start": 727.0,
+   "end": 728.0,
+   "en": "-So beautiful. -Yeah.",
+   "ko": "- 정말 아름답네요 - 그러니까",
+   "recorded": 1
+  },
+  {
+   "no": 217,
+   "start": 729.0,
+   "end": 731.0,
+   "en": "Ah. Are those your shoes?",
+   "ko": "그거 신고 왔어요?",
+   "recorded": 1
+  },
+  {
+   "no": 218,
+   "start": 731.0,
+   "end": 734.0,
+   "en": "Oh, yeah, I wasn't totally informed of the plans.",
+   "ko": "네, 뭐 하는지 제대로 못 들었거든요",
+   "recorded": 1
+  },
+  {
+   "no": 219,
+   "start": 734.0,
+   "end": 737.0,
+   "en": "Oh, Marcello, the poor girl. Those shoes are for the runway.",
+   "ko": "마르첼로, 딱해라 이 신발은 무대용이잖아",
+   "recorded": 1
+  },
+  {
+   "no": 220,
+   "start": 737.0,
+   "end": 739.0,
+   "en": "Oh, no, it's okay, I'll be fine.",
+   "ko": "아니에요, 괜찮을 거예요",
+   "recorded": 1
+  },
+  {
+   "no": 221,
+   "start": 739.0,
+   "end": 741.0,
+   "en": "And I'm so excited to be truffle hunting.",
+   "ko": "송로 사냥이라니 신나네요",
+   "recorded": 1
+  },
+  {
+   "no": 222,
+   "start": 741.0,
+   "end": 743.0,
+   "en": "But I thought that you used pigs.",
+   "ko": "근데 돼지를 쓰지 않나요?",
+   "recorded": 1
+  },
+  {
+   "no": 223,
+   "start": 743.0,
+   "end": 745.0,
+   "en": "No, they stopped using pigs years ago.",
+   "ko": "옛날에나 그랬죠 돼지들은 너무 과격해서 적당히라는 걸 몰라요",
+   "recorded": 1
+  },
+  {
+   "no": 224,
+   "start": 745.0,
+   "end": 748.0,
+   "en": "Yeah, they're too aggressive and didn't know when to stop.",
+   "ko": "돼지들은 너무 과격해서 적당히라는 걸 몰라요",
+   "recorded": 1
+  },
+  {
+   "no": 225,
+   "start": 748.0,
+   "end": 749.0,
+   "en": "Well, that's not very good.",
+   "ko": "그러면 곤란하죠",
+   "recorded": 1
+  },
+  {
+   "no": 226,
+   "start": 749.0,
+   "end": 751.0,
+   "en": "Anyway, I love dogs.",
+   "ko": "어쨌든 전 개를 좋아해요",
+   "recorded": 1
+  },
+  {
+   "no": 227,
+   "start": 751.0,
+   "end": 752.0,
+   "en": "And they love me!",
+   "ko": "그리고 개통령이죠!",
+   "recorded": 1
+  },
+  {
+   "no": 228,
+   "start": 753.0,
+   "end": 756.0,
+   "en": "Ah, well, let's go!",
+   "ko": "- 그럼 가 봅시다 - 가요",
+   "recorded": 1
+  },
+  {
+   "no": 229,
+   "start": 757.0,
+   "end": 758.0,
+   "en": "Could've warned me.",
+   "ko": "귀띔해 줬어야죠",
+   "recorded": 1
+  },
+  {
+   "no": 230,
+   "start": 758.0,
+   "end": 760.0,
+   "en": "-I thought you liked surprises. -I really don't.",
+   "ko": "- 놀라기 좋아하잖아요? - 절대 아니에요",
+   "recorded": 1
+  },
+  {
+   "no": 231,
+   "start": 760.0,
+   "end": 762.0,
+   "en": "Oh.",
+   "ko": "- 놀라기 좋아하잖아요? - 절대 아니에요",
+   "recorded": 1
+  },
+  {
+   "no": 232,
+   "start": 783.0,
+   "end": 787.0,
+   "en": "-Bravo! -Bravo, amore!",
+   "ko": "- 브라보 - 잘했어! 착해라! 근사한 것 좀 봐!",
+   "recorded": 1
+  },
+  {
+   "no": 233,
+   "start": 790.0,
+   "end": 793.0,
+   "en": "Ooh! Good boy!",
+   "ko": "잘한다!",
+   "recorded": 1
+  },
+  {
+   "no": 234,
+   "start": 797.0,
+   "end": 799.0,
+   "en": "Oh my God, guys, look what I found!",
+   "ko": "어머나, 저 이거 찾았어요!",
+   "recorded": 1
+  },
+  {
+   "no": 235,
+   "start": 799.0,
+   "end": 801.0,
+   "en": "Ooh.",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 236,
+   "start": 801.0,
+   "end": 803.0,
+   "en": "Ha! Look.",
+   "ko": "보세요!",
+   "recorded": 1
+  },
+  {
+   "no": 237,
+   "start": 804.0,
+   "end": 805.0,
+   "en": "Oh.",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 238,
+   "start": 806.0,
+   "end": 808.0,
+   "en": "That's not a truffle.",
+   "ko": "그건 송로가 아니에요",
+   "recorded": 1
+  },
+  {
+   "no": 239,
+   "start": 808.0,
+   "end": 809.0,
+   "en": "-That's a stinkhorn. -A what?",
+   "ko": "- 악취 나는 버섯이죠 - 뭐요?",
+   "recorded": 1
+  },
+  {
+   "no": 240,
+   "start": 810.0,
+   "end": 812.0,
+   "en": "It looks like a truffle, but it's not.",
+   "ko": "송로랑 비슷한데 아니에요",
+   "recorded": 1
+  },
+  {
+   "no": 241,
+   "start": 812.0,
+   "end": 813.0,
+   "en": "Oh.",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 242,
+   "start": 813.0,
+   "end": 815.0,
+   "en": "Well, why do they call it a…",
+   "ko": "근데 왜 그렇게 말해요?",
+   "recorded": 1
+  },
+  {
+   "no": 243,
+   "start": 815.0,
+   "end": 816.0,
+   "en": "-Oh! -Mm.",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 244,
+   "start": 816.0,
+   "end": 818.0,
+   "en": "Ugh!",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 245,
+   "start": 818.0,
+   "end": 820.0,
+   "en": "It's okay. I have enough for dinner.",
+   "ko": "저녁거리는 충분하니 괜찮아요",
+   "recorded": 1
+  },
+  {
+   "no": 246,
+   "start": 824.0,
+   "end": 826.0,
+   "en": "Does she want to poison us?",
+   "ko": "우리 독살할 생각인가?",
+   "recorded": 1
+  },
+  {
+   "no": 247,
+   "start": 828.0,
+   "end": 829.0,
+   "en": "Come on, stinkhorn.",
+   "ko": "가요, 악취 버섯",
+   "recorded": 1
+  },
+  {
+   "no": 248,
+   "start": 830.0,
+   "end": 832.0,
+   "en": "-That name better not stick. -Okay.",
+   "ko": "- 또 그렇게 부르기만 해요 - 알겠어요",
+   "recorded": 1
+  },
+  {
+   "no": 249,
+   "start": 835.0,
+   "end": 837.0,
+   "en": "Emily, your beautiful shoes are ruined.",
+   "ko": "에밀리, 예쁜 신발이 엉망이 됐네요",
+   "recorded": 1
+  },
+  {
+   "no": 250,
+   "start": 837.0,
+   "end": 839.0,
+   "en": "All to find a stinkhorn.",
+   "ko": "악취 버섯밖에 못 찾았는데",
+   "recorded": 1
+  },
+  {
+   "no": 251,
+   "start": 839.0,
+   "end": 841.0,
+   "en": "Marcello, what were you thinking?",
+   "ko": "오빠, 왜 그랬어?",
+   "recorded": 1
+  },
+  {
+   "no": 252,
+   "start": 841.0,
+   "end": 843.0,
+   "en": "I would have brought you boots.",
+   "ko": "당신 장화도 챙길 걸 그랬네요",
+   "recorded": 1
+  },
+  {
+   "no": 253,
+   "start": 844.0,
+   "end": 847.0,
+   "en": "I'll take you shopping tomorrow for another pair.",
+   "ko": "내일 쇼핑 갑시다, 새로 사 줄게요 괜찮아요",
+   "recorded": 1
+  },
+  {
+   "no": 254,
+   "start": 847.0,
+   "end": 848.0,
+   "en": "It's fine.",
+   "ko": "괜찮아요",
+   "recorded": 1
+  },
+  {
+   "no": 255,
+   "start": 849.0,
+   "end": 851.0,
+   "en": "I'll go see if your mom needs any help in the kitchen.",
+   "ko": "주방에 도울 일은 없는지 물어볼게요 그래요",
+   "recorded": 1
+  },
+  {
+   "no": 256,
+   "start": 851.0,
+   "end": 852.0,
+   "en": "Okay.",
+   "ko": "그래요",
+   "recorded": 1
+  },
+  {
+   "no": 257,
+   "start": 856.0,
+   "end": 858.0,
+   "en": "Emily is pretty, but what do you know about her?",
+   "ko": "사랑스러운 아가씨지만 저 여자 잘 알아?",
+   "recorded": 1
+  },
+  {
+   "no": 258,
+   "start": 858.0,
+   "end": 862.0,
+   "en": "-What does she really want? -Why do you want to date an American girl?",
+   "ko": "- 진짜 속셈이 뭘까? - 왜 미국 여자를 만나?",
+   "recorded": 1
+  },
+  {
+   "no": 259,
+   "start": 862.0,
+   "end": 864.0,
+   "en": "She's just taking our money.",
+   "ko": "우리 돈이나 뜯어 가지",
+   "recorded": 1
+  },
+  {
+   "no": 260,
+   "start": 864.0,
+   "end": 865.0,
+   "en": "We don't trust her.",
+   "ko": "믿음이 안 가",
+   "recorded": 1
+  },
+  {
+   "no": 261,
+   "start": 865.0,
+   "end": 867.0,
+   "en": "Enough!",
+   "ko": "그만해!",
+   "recorded": 1
+  },
+  {
+   "no": 262,
+   "start": 867.0,
+   "end": 868.0,
+   "en": "She's a wonderful girl.",
+   "ko": "멋진 여자야",
+   "recorded": 1
+  },
+  {
+   "no": 263,
+   "start": 868.0,
+   "end": 870.0,
+   "en": "You just need to get to know her.",
+   "ko": "일단 친해지면 알아",
+   "recorded": 1
+  },
+  {
+   "no": 264,
+   "start": 872.0,
+   "end": 874.0,
+   "en": "-Can I, uh, do anything to help? -Oh!",
+   "ko": "뭐 도와드릴까요?",
+   "recorded": 1
+  },
+  {
+   "no": 265,
+   "start": 875.0,
+   "end": 877.0,
+   "en": "Nothing left to do now but stir.",
+   "ko": "이제 이것만 저으면 돼요",
+   "recorded": 1
+  },
+  {
+   "no": 266,
+   "start": 877.0,
+   "end": 879.0,
+   "en": "It smells delicious.",
+   "ko": "냄새가 끝내주네요",
+   "recorded": 1
+  },
+  {
+   "no": 267,
+   "start": 880.0,
+   "end": 883.0,
+   "en": "Antonia, can I talk to you about a few ideas that I have?",
+   "ko": "안토니아, 제 아이디어 좀 들어 보실래요?",
+   "recorded": 1
+  },
+  {
+   "no": 268,
+   "start": 883.0,
+   "end": 886.0,
+   "en": "Not while I'm making risotto.",
+   "ko": "리소토 만들 때는 곤란해요",
+   "recorded": 1
+  },
+  {
+   "no": 269,
+   "start": 887.0,
+   "end": 888.0,
+   "en": "No problem.",
+   "ko": "알겠어요",
+   "recorded": 1
+  },
+  {
+   "no": 270,
+   "start": 888.0,
+   "end": 890.0,
+   "en": "I'll talk to you at dinner.",
+   "ko": "식사하면서 말씀드리죠",
+   "recorded": 1
+  },
+  {
+   "no": 271,
+   "start": 890.0,
+   "end": 892.0,
+   "en": "Uh, we don't discuss business at dinner.",
+   "ko": "우린 식탁에서 일 얘기 안 해요",
+   "recorded": 1
+  },
+  {
+   "no": 272,
+   "start": 893.0,
+   "end": 893.0,
+   "en": "Another time.",
+   "ko": "다음에 듣죠",
+   "recorded": 1
+  },
+  {
+   "no": 273,
+   "start": 894.0,
+   "end": 896.0,
+   "en": "Relax. Enjoy.",
+   "ko": "마음 편히 즐겨요",
+   "recorded": 1
+  },
+  {
+   "no": 274,
+   "start": 898.0,
+   "end": 899.0,
+   "en": "I know you're avoiding me.",
+   "ko": "저 피하시는 거 알아요",
+   "recorded": 1
+  },
+  {
+   "no": 275,
+   "start": 901.0,
+   "end": 905.0,
+   "en": "So my real question is, why exactly did you hire us?",
+   "ko": "그래서 사실 우리랑 왜 계약하셨는지 궁금해요",
+   "recorded": 1
+  },
+  {
+   "no": 276,
+   "start": 905.0,
+   "end": 906.0,
+   "en": "Honestly,",
+   "ko": "솔직히",
+   "recorded": 1
+  },
+  {
+   "no": 277,
+   "start": 908.0,
+   "end": 910.0,
+   "en": "I just want to run out the clock.",
+   "ko": "난 시간을 끄는 거예요",
+   "recorded": 1
+  },
+  {
+   "no": 278,
+   "start": 910.0,
+   "end": 913.0,
+   "en": "In six months' time, JVMA will lose interest,",
+   "ko": "반년 후에는 JVMA의 관심이 식을 테니",
+   "recorded": 1
+  },
+  {
+   "no": 279,
+   "start": 914.0,
+   "end": 916.0,
+   "en": "and Marcello will forget all about this.",
+   "ko": "마르첼로도 모든 걸 포기하겠죠",
+   "recorded": 1
+  },
+  {
+   "no": 280,
+   "start": 916.0,
+   "end": 918.0,
+   "en": "So you hired us to do nothing?",
+   "ko": "일 시킬 생각 없었어요?",
+   "recorded": 1
+  },
+  {
+   "no": 281,
+   "start": 918.0,
+   "end": 921.0,
+   "en": "Emily, we don't need a brand that gets diluted.",
+   "ko": "우린 브랜드 가치를 떨어뜨릴 수 없어요",
+   "recorded": 1
+  },
+  {
+   "no": 282,
+   "start": 921.0,
+   "end": 922.0,
+   "en": "Not while I'm running things.",
+   "ko": "내가 경영하는 한은요",
+   "recorded": 1
+  },
+  {
+   "no": 283,
+   "start": 922.0,
+   "end": 926.0,
+   "en": "At least let us create a beautiful social campaign",
+   "ko": "하다못해 SNS 광고라도 만들게 해 주세요",
+   "recorded": 1
+  },
+  {
+   "no": 284,
+   "start": 926.0,
+   "end": 929.0,
+   "en": "that showcases your brand and your lifestyle.",
+   "ko": "무라토리 브랜드와 생활 방식을 소개하게요",
+   "recorded": 1
+  },
+  {
+   "no": 285,
+   "start": 929.0,
+   "end": 930.0,
+   "en": "For what purpose?",
+   "ko": "뭐 하러요?",
+   "recorded": 1
+  },
+  {
+   "no": 286,
+   "start": 932.0,
+   "end": 934.0,
+   "en": "We're not able to increase production of our cashmere",
+   "ko": "우린 캐시미어 생산을 늘릴 수 없고",
+   "recorded": 1
+  },
+  {
+   "no": 287,
+   "start": 934.0,
+   "end": 936.0,
+   "en": "and keep the same quality.",
+   "ko": "품질을 똑같이 유지해야 해요",
+   "recorded": 1
+  },
+  {
+   "no": 288,
+   "start": 937.0,
+   "end": 938.0,
+   "en": "You see,",
+   "ko": "알다시피",
+   "recorded": 1
+  },
+  {
+   "no": 289,
+   "start": 938.0,
+   "end": 940.0,
+   "en": "luxury has become homogenized.",
+   "ko": "명품도 다 비슷비슷해졌잖아요",
+   "recorded": 1
+  },
+  {
+   "no": 290,
+   "start": 940.0,
+   "end": 943.0,
+   "en": "Gucci, Prada, they're like chain stores in every wealthy town.",
+   "ko": "구찌나 프라다나 체인점처럼 부촌마다 있죠",
+   "recorded": 1
+  },
+  {
+   "no": 291,
+   "start": 943.0,
+   "end": 946.0,
+   "en": "If people want Muratori, they have to come to Rome.",
+   "ko": "무라토리를 사고 싶으면 로마로 와야 해요",
+   "recorded": 1
+  },
+  {
+   "no": 292,
+   "start": 947.0,
+   "end": 948.0,
+   "en": "It keeps us special,",
+   "ko": "그래서 우리가 계속 특별하고 난 그 방식이 좋아요",
+   "recorded": 1
+  },
+  {
+   "no": 293,
+   "start": 948.0,
+   "end": 949.0,
+   "en": "and I like it that way.",
+   "ko": "그래서 우리가 계속 특별하고 난 그 방식이 좋아요",
+   "recorded": 1
+  },
+  {
+   "no": 294,
+   "start": 959.0,
+   "end": 962.0,
+   "en": "I'm very happy you decided to stay longer in Rome.",
+   "ko": "당신이 로마에서 더 머물기로 해서 진짜 행복해",
+   "recorded": 1
+  },
+  {
+   "no": 295,
+   "start": 962.0,
+   "end": 965.0,
+   "en": "I'm happy too. But it's not going to be easy.",
+   "ko": "나도 행복해 하지만 쉽지는 않을 거야",
+   "recorded": 1
+  },
+  {
+   "no": 296,
+   "start": 965.0,
+   "end": 969.0,
+   "en": "I've got to make clients in both cities feel they're getting my full attention.",
+   "ko": "어느 도시 고객에게나 헌신한다는 인상을 줘야 하니까",
+   "recorded": 1
+  },
+  {
+   "no": 297,
+   "start": 970.0,
+   "end": 972.0,
+   "en": "Oh, kind of juggling two men.",
+   "ko": "두 남자 사이를 오가는 것처럼",
+   "recorded": 1
+  },
+  {
+   "no": 298,
+   "start": 972.0,
+   "end": 973.0,
+   "en": "Or is it more?",
+   "ko": "더 있나?",
+   "recorded": 1
+  },
+  {
+   "no": 299,
+   "start": 973.0,
+   "end": 975.0,
+   "en": "Is there someone in Madrid I should know about?",
+   "ko": "마드리드에도 내 라이벌 있어?",
+   "recorded": 1
+  },
+  {
+   "no": 300,
+   "start": 975.0,
+   "end": 977.0,
+   "en": "Mm. Don't give me ideas.",
+   "ko": "이러면 만드는 수가 있어",
+   "recorded": 1
+  },
+  {
+   "no": 301,
+   "start": 977.0,
+   "end": 978.0,
+   "en": "Sylvie!",
+   "ko": "실비!",
+   "recorded": 1
+  },
+  {
+   "no": 302,
+   "start": 981.0,
+   "end": 985.0,
+   "en": "Oh! How long have you been in Rome without getting in touch with me?",
+   "ko": "로마에 언제 왔길래 나한테 연락도 안 했어요?",
+   "recorded": 1
+  },
+  {
+   "no": 303,
+   "start": 985.0,
+   "end": 988.0,
+   "en": "-Oh, I'm sorry. -And who's this handsome man?",
+   "ko": "로마에 언제 왔길래 나한테 연락도 안 했어요? - 미안해요 - 이 미남은 누구죠?",
+   "recorded": 1
+  },
+  {
+   "no": 304,
+   "start": 988.0,
+   "end": 989.0,
+   "en": "Giancarlo Petri.",
+   "ko": "잔카를로 페트리요",
+   "recorded": 1
+  },
+  {
+   "no": 305,
+   "start": 989.0,
+   "end": 993.0,
+   "en": "Allow me to introduce Principessa Gianna Grapezzi di Saturnia.",
+   "ko": "잔나 그라페치 디 사투르니아 왕자비를 소개할게",
+   "recorded": 1
+  },
+  {
+   "no": 306,
+   "start": 993.0,
+   "end": 994.0,
+   "en": "You can call me Princess Jane.",
+   "ko": "제인 왕자비라고 해도 돼요",
+   "recorded": 1
+  },
+  {
+   "no": 307,
+   "start": 994.0,
+   "end": 997.0,
+   "en": "Or just plain Jane. But not \"plain Jane.\"",
+   "ko": "단순히 제인도 좋아요 '단순히 제인' 말고요",
+   "recorded": 1
+  },
+  {
+   "no": 308,
+   "start": 997.0,
+   "end": 999.0,
+   "en": "No, she's anything but that.",
+   "ko": "절대 단순하지 않지",
+   "recorded": 1
+  },
+  {
+   "no": 309,
+   "start": 999.0,
+   "end": 1003.0,
+   "en": "God, I met Princess Jane years ago, during my time in Rome.",
+   "ko": "몇 년 전에 로마에 있을 때 제인 왕자비를 만났어",
+   "recorded": 1
+  },
+  {
+   "no": 310,
+   "start": 1003.0,
+   "end": 1005.0,
+   "en": "-Mm-hm. -And I haven't had as much fun since.",
+   "ko": "그때가 제일 재밌었어요",
+   "recorded": 1
+  },
+  {
+   "no": 311,
+   "start": 1005.0,
+   "end": 1007.0,
+   "en": "I didn't know we had a British princess in Rome.",
+   "ko": "로마에 영국인 왕자비가 있는 줄 몰랐네요",
+   "recorded": 1
+  },
+  {
+   "no": 312,
+   "start": 1007.0,
+   "end": 1010.0,
+   "en": "Oh, yes, it was a real fairy tale.",
+   "ko": "맞아요, 진짜 동화 같았죠",
+   "recorded": 1
+  },
+  {
+   "no": 313,
+   "start": 1010.0,
+   "end": 1014.0,
+   "en": "I met my Italian prince after my… third marriage.",
+   "ko": "이탈리아 왕자님을 만났거든요 세 번째 결혼 후에요",
+   "recorded": 1
+  },
+  {
+   "no": 314,
+   "start": 1014.0,
+   "end": 1015.0,
+   "en": "Uh-huh.",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 315,
+   "start": 1015.0,
+   "end": 1017.0,
+   "en": "Vittorio Leonardo Grapezzi di Saturnia.",
+   "ko": "비토리오 레오나르도 그라페치 디 사투르니아요",
+   "recorded": 1
+  },
+  {
+   "no": 316,
+   "start": 1018.0,
+   "end": 1019.0,
+   "en": "Ah, pretender to the throne.",
+   "ko": "자칭 왕세자요",
+   "recorded": 1
+  },
+  {
+   "no": 317,
+   "start": 1019.0,
+   "end": 1022.0,
+   "en": "Well, tell that to my palazzo, darling.",
+   "ko": "그래도 엄연히 궁에 살고 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 318,
+   "start": 1022.0,
+   "end": 1024.0,
+   "en": "Now, where are you two off to? Let's have a drink!",
+   "ko": "어디 가는 길이에요? 같이 한잔해요",
+   "recorded": 1
+  },
+  {
+   "no": 319,
+   "start": 1024.0,
+   "end": 1026.0,
+   "en": "It's never one drink with this one.",
+   "ko": "절대 한 잔으로 안 끝나",
+   "recorded": 1
+  },
+  {
+   "no": 320,
+   "start": 1026.0,
+   "end": 1028.0,
+   "en": "I have an early shoot tomorrow.",
+   "ko": "내일 일찍 촬영 있어",
+   "recorded": 1
+  },
+  {
+   "no": 321,
+   "start": 1028.0,
+   "end": 1030.0,
+   "en": "Oh. All right, we'll catch up soon.",
+   "ko": "내일 일찍 촬영 있어 그럼 조만간 만나요",
+   "recorded": 1
+  },
+  {
+   "no": 322,
+   "start": 1030.0,
+   "end": 1031.0,
+   "en": "No, no, no, you stay out.",
+   "ko": "당신은 다녀와",
+   "recorded": 1
+  },
+  {
+   "no": 323,
+   "start": 1031.0,
+   "end": 1034.0,
+   "en": "Now that I know you're here for a while, I don't mind sharing you.",
+   "ko": "당분간 로마에 있기로 했으니 독차지할 생각 없어",
+   "recorded": 1
+  },
+  {
+   "no": 324,
+   "start": 1034.0,
+   "end": 1035.0,
+   "en": "Amore.",
+   "ko": "내 사랑",
+   "recorded": 1
+  },
+  {
+   "no": 325,
+   "start": 1036.0,
+   "end": 1038.0,
+   "en": "\"Amore.\" Ciao!",
+   "ko": "내 사랑, '차오'",
+   "recorded": 1
+  },
+  {
+   "no": 326,
+   "start": 1038.0,
+   "end": 1039.0,
+   "en": "-Ciao. -Ciao.",
+   "ko": "- 갈게 - 안녕",
+   "recorded": 1
+  },
+  {
+   "no": 327,
+   "start": 1042.0,
+   "end": 1045.0,
+   "en": "Do you remember that time we got into the car",
+   "ko": "그때 기억나요? 클럽에 가자던 러시아 훈남 둘이랑 한차에 탔었잖아요",
+   "recorded": 1
+  },
+  {
+   "no": 328,
+   "start": 1045.0,
+   "end": 1049.0,
+   "en": "with those two hot Russian guys that wanted to take us to that club?",
+   "ko": "클럽에 가자던 러시아 훈남 둘이랑 한차에 탔었잖아요",
+   "recorded": 1
+  },
+  {
+   "no": 329,
+   "start": 1049.0,
+   "end": 1050.0,
+   "en": "Yes.",
+   "ko": "그럼요",
+   "recorded": 1
+  },
+  {
+   "no": 330,
+   "start": 1050.0,
+   "end": 1052.0,
+   "en": "I didn't know if they wanted to shoot us or screw us,",
+   "ko": "죽이려는 건지 재미 보려는 건지 몰랐지만",
+   "recorded": 1
+  },
+  {
+   "no": 331,
+   "start": 1052.0,
+   "end": 1054.0,
+   "en": "but I was willing to take a chance.",
+   "ko": "모험할 준비가 됐었죠",
+   "recorded": 1
+  },
+  {
+   "no": 332,
+   "start": 1056.0,
+   "end": 1059.0,
+   "en": "Now, where's your gorgeous husband?",
+   "ko": "매력적인 당신 남편은 어디 있어요?",
+   "recorded": 1
+  },
+  {
+   "no": 333,
+   "start": 1059.0,
+   "end": 1063.0,
+   "en": "Oh, Paris or Saint-Tropez… I'm not sure which.",
+   "ko": "파리나 생트로페요, 정확히 몰라요",
+   "recorded": 1
+  },
+  {
+   "no": 334,
+   "start": 1063.0,
+   "end": 1066.0,
+   "en": "Well, you picked the right city to have an affair.",
+   "ko": "외도하기 딱 좋은 도시를 골랐네요",
+   "recorded": 1
+  },
+  {
+   "no": 335,
+   "start": 1067.0,
+   "end": 1070.0,
+   "en": "Have fun Saturday night, confess Sunday, clean slate.",
+   "ko": "토요일 밤에 재미 보고 일요일에 고해하면 없던 일 돼요",
+   "recorded": 1
+  },
+  {
+   "no": 336,
+   "start": 1070.0,
+   "end": 1074.0,
+   "en": "No wonder I feel so at home here.",
+   "ko": "어쩐지 여기가 집처럼 편하더라니",
+   "recorded": 1
+  },
+  {
+   "no": 337,
+   "start": 1074.0,
+   "end": 1077.0,
+   "en": "Rome is a city of secrets.",
+   "ko": "로마는 비밀의 도시잖아요",
+   "recorded": 1
+  },
+  {
+   "no": 338,
+   "start": 1077.0,
+   "end": 1078.0,
+   "en": "It's not so easy to crack.",
+   "ko": "뚫기 힘들죠",
+   "recorded": 1
+  },
+  {
+   "no": 339,
+   "start": 1081.0,
+   "end": 1084.0,
+   "en": "No one spoke to me for the first three years.",
+   "ko": "처음 3년은 말 거는 사람 하나 없었어요",
+   "recorded": 1
+  },
+  {
+   "no": 340,
+   "start": 1084.0,
+   "end": 1086.0,
+   "en": "And I'm royalty.",
+   "ko": "왕족인데도요",
+   "recorded": 1
+  },
+  {
+   "no": 341,
+   "start": 1086.0,
+   "end": 1089.0,
+   "en": "-You sure you want to open an office here? -I already have one client.",
+   "ko": "- 진짜 여기에 지사 차릴 거예요? - 벌써 고객 한 명 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 342,
+   "start": 1090.0,
+   "end": 1091.0,
+   "en": "Antonia Muratori.",
+   "ko": "안토니아 무라토리요",
+   "recorded": 1
+  },
+  {
+   "no": 343,
+   "start": 1091.0,
+   "end": 1092.0,
+   "en": "Antonia Muratori.",
+   "ko": "안토니아 무라토리",
+   "recorded": 1
+  },
+  {
+   "no": 344,
+   "start": 1092.0,
+   "end": 1094.0,
+   "en": "She's a big tease.",
+   "ko": "애태우기 선수죠",
+   "recorded": 1
+  },
+  {
+   "no": 345,
+   "start": 1094.0,
+   "end": 1097.0,
+   "en": "She drops enough bait to keep people hooked.",
+   "ko": "사람들이 계속 걸려들게 미끼를 던지지만",
+   "recorded": 1
+  },
+  {
+   "no": 346,
+   "start": 1097.0,
+   "end": 1098.0,
+   "en": "She never commits.",
+   "ko": "주는 건 없어요",
+   "recorded": 1
+  },
+  {
+   "no": 347,
+   "start": 1101.0,
+   "end": 1105.0,
+   "en": "Why don't you let me throw you a welcome party at the palazzo?",
+   "ko": "내가 궁에서 환영 파티 열어 줄까요?",
+   "recorded": 1
+  },
+  {
+   "no": 348,
+   "start": 1105.0,
+   "end": 1107.0,
+   "en": "I can introduce you to some people.",
+   "ko": "사람들을 소개해 줄게요",
+   "recorded": 1
+  },
+  {
+   "no": 349,
+   "start": 1107.0,
+   "end": 1108.0,
+   "en": "That would be amazing.",
+   "ko": "그럼 좋죠",
+   "recorded": 1
+  },
+  {
+   "no": 350,
+   "start": 1108.0,
+   "end": 1110.0,
+   "en": "Well, anything to keep you in town.",
+   "ko": "어떻게든 당신을 여기 붙잡아 둬야죠",
+   "recorded": 1
+  },
+  {
+   "no": 351,
+   "start": 1110.0,
+   "end": 1112.0,
+   "en": "-Oh! -More drinks.",
+   "ko": "술 더 시켜요",
+   "recorded": 1
+  },
+  {
+   "no": 352,
+   "start": 1121.0,
+   "end": 1123.0,
+   "en": "Sylvie, I was with Antonia last night.",
+   "ko": "실비, 어젯밤에 안토니아 만났는데",
+   "recorded": 1
+  },
+  {
+   "no": 353,
+   "start": 1123.0,
+   "end": 1128.0,
+   "en": "She's only hired us as a stalling tactic to run out the clock on the JVMA offer.",
+   "ko": "JVMA이 흥미가 떨어질 때까지 시간 끌려고 우리를 고용했대요",
+   "recorded": 1
+  },
+  {
+   "no": 354,
+   "start": 1128.0,
+   "end": 1130.0,
+   "en": "She doesn't actually want us to do anything.",
+   "ko": "일 시킬 생각이 아니라요",
+   "recorded": 1
+  },
+  {
+   "no": 355,
+   "start": 1130.0,
+   "end": 1133.0,
+   "en": "You know, I'm just worried we're wasting our time here.",
+   "ko": "여기서 시간만 버리는 거 같아 걱정이에요",
+   "recorded": 1
+  },
+  {
+   "no": 356,
+   "start": 1133.0,
+   "end": 1137.0,
+   "en": "Well, it's a good thing I'm working on getting other business in Rome.",
+   "ko": "내가 다른 거래처들을 알아보고 있으니 다행이죠",
+   "recorded": 1
+  },
+  {
+   "no": 357,
+   "start": 1138.0,
+   "end": 1140.0,
+   "en": "A very well-connected friend of mine",
+   "ko": "인맥이 화려한 친구가",
+   "recorded": 1
+  },
+  {
+   "no": 358,
+   "start": 1140.0,
+   "end": 1144.0,
+   "en": "is throwing us a party to introduce us to new clients.",
+   "ko": "파티를 열어서 새 고객을 소개해 준대요",
+   "recorded": 1
+  },
+  {
+   "no": 359,
+   "start": 1144.0,
+   "end": 1145.0,
+   "en": "That's amazing.",
+   "ko": "정말 잘됐네요",
+   "recorded": 1
+  },
+  {
+   "no": 360,
+   "start": 1145.0,
+   "end": 1147.0,
+   "en": "-Mm-hm. -Well, what can I do?",
+   "ko": "전 뭘 할까요?",
+   "recorded": 1
+  },
+  {
+   "no": 361,
+   "start": 1147.0,
+   "end": 1149.0,
+   "en": "Well, keep your attention on Muratori.",
+   "ko": "무라토리한테 집중해요",
+   "recorded": 1
+  },
+  {
+   "no": 362,
+   "start": 1149.0,
+   "end": 1151.0,
+   "en": "The business, not the man.",
+   "ko": "남자 말고 회사에요",
+   "recorded": 1
+  },
+  {
+   "no": 363,
+   "start": 1155.0,
+   "end": 1157.0,
+   "en": "Buongiorno! I've been waiting for you.",
+   "ko": "좋은 아침! 기다리고 있었어요",
+   "recorded": 1
+  },
+  {
+   "no": 364,
+   "start": 1157.0,
+   "end": 1159.0,
+   "en": "Somebody sent us a gift.",
+   "ko": "누가 우리한테 선물을 보냈어요",
+   "recorded": 1
+  },
+  {
+   "no": 365,
+   "start": 1159.0,
+   "end": 1162.0,
+   "en": "-What's this? -It's a present for the office.",
+   "ko": "- 이게 뭐예요? - 사무실로 온 선물이요",
+   "recorded": 1
+  },
+  {
+   "no": 366,
+   "start": 1162.0,
+   "end": 1163.0,
+   "en": "-Wow. -Oh, Antoine.",
+   "ko": "- 와 - 앙투안",
+   "recorded": 1
+  },
+  {
+   "no": 367,
+   "start": 1163.0,
+   "end": 1164.0,
+   "en": "Huh.",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 368,
+   "start": 1165.0,
+   "end": 1169.0,
+   "en": "Maybe you can dump these in Italy",
+   "ko": "'이탈리아에서 처분할 수 있는지 봐'",
+   "recorded": 1
+  },
+  {
+   "no": 369,
+   "start": 1169.0,
+   "end": 1171.0,
+   "en": "because I can't sell them in France.",
+   "ko": "'프랑스에서는 못 파니까'",
+   "recorded": 1
+  },
+  {
+   "no": 370,
+   "start": 1172.0,
+   "end": 1174.0,
+   "en": "That's actually nice. I think it was wasted on babies.",
+   "ko": "이거 좋은데요 아기한테 쓰기는 아깝죠",
+   "recorded": 1
+  },
+  {
+   "no": 371,
+   "start": 1174.0,
+   "end": 1177.0,
+   "en": "Antoine should put them in new bottles and sell it to people.",
+   "ko": "새로운 병에 담아서 팔라고 해요",
+   "recorded": 1
+  },
+  {
+   "no": 372,
+   "start": 1177.0,
+   "end": 1179.0,
+   "en": "Don't you know you can't put old wine in new bottles?",
+   "ko": "묵은 포도주는 새 부대에 못 담아요",
+   "recorded": 1
+  },
+  {
+   "no": 373,
+   "start": 1179.0,
+   "end": 1180.0,
+   "en": "It's in the Bible.",
+   "ko": "성경에 나오죠",
+   "recorded": 1
+  },
+  {
+   "no": 374,
+   "start": 1180.0,
+   "end": 1182.0,
+   "en": "It does smell good.",
+   "ko": "향은 진짜 좋네요",
+   "recorded": 1
+  },
+  {
+   "no": 375,
+   "start": 1182.0,
+   "end": 1184.0,
+   "en": "Yeah, Antoine has a great nose.",
+   "ko": "앙투안은 후각이 뛰어나죠",
+   "recorded": 1
+  },
+  {
+   "no": 376,
+   "start": 1184.0,
+   "end": 1186.0,
+   "en": "Except this time it led him in the wrong direction.",
+   "ko": "이번에는 방향을 잘못 잡았을 뿐이에요",
+   "recorded": 1
+  },
+  {
+   "no": 377,
+   "start": 1186.0,
+   "end": 1188.0,
+   "en": "But he shouldn't take it out on us.",
+   "ko": "근데 화풀이는 딴 데 해야죠",
+   "recorded": 1
+  },
+  {
+   "no": 378,
+   "start": 1193.0,
+   "end": 1196.0,
+   "en": "Maybe we can sell this in Italy.",
+   "ko": "이탈리아에서 팔 수 있겠는데",
+   "recorded": 1
+  },
+  {
+   "no": 379,
+   "start": 1211.0,
+   "end": 1213.0,
+   "en": "Merci.",
+   "ko": "고마워요",
+   "recorded": 1
+  },
+  {
+   "no": 380,
+   "start": 1213.0,
+   "end": 1215.0,
+   "en": "I hate to be the bearer of bad news,",
+   "ko": "나쁜 소식을 전하긴 싫지만",
+   "recorded": 1
+  },
+  {
+   "no": 381,
+   "start": 1215.0,
+   "end": 1217.0,
+   "en": "but Antoine has asked me to cut your budget.",
+   "ko": "앙투안이 식당 예산을 줄이라네요",
+   "recorded": 1
+  },
+  {
+   "no": 382,
+   "start": 1218.0,
+   "end": 1220.0,
+   "en": "Cut my budget? I just won a Michelin star.",
+   "ko": "줄이라고요? 미슐랭 스타를 받았는데요?",
+   "recorded": 1
+  },
+  {
+   "no": 383,
+   "start": 1220.0,
+   "end": 1222.0,
+   "en": "Yeah, that's part of the problem.",
+   "ko": "그래요, 그것도 문제예요",
+   "recorded": 1
+  },
+  {
+   "no": 384,
+   "start": 1222.0,
+   "end": 1225.0,
+   "en": "He said Michelin star restaurants can be money losers.",
+   "ko": "미슐랭 식당이 돈 먹는 하마일 수 있대요",
+   "recorded": 1
+  },
+  {
+   "no": 385,
+   "start": 1225.0,
+   "end": 1228.0,
+   "en": "So what, he wants to punish me for being successful?",
+   "ko": "그래서 지금 성공했다고 벌주는 거예요?",
+   "recorded": 1
+  },
+  {
+   "no": 386,
+   "start": 1228.0,
+   "end": 1230.0,
+   "en": "I suppose that depends on how you define success.",
+   "ko": "그건 성공의 정의에 따라 다르죠",
+   "recorded": 1
+  },
+  {
+   "no": 387,
+   "start": 1230.0,
+   "end": 1232.0,
+   "en": "You know what?",
+   "ko": "그러지 말고 당분간 앙투안이 간섭 못 하게 막아 줄래요?",
+   "recorded": 1
+  },
+  {
+   "no": 388,
+   "start": 1232.0,
+   "end": 1235.0,
+   "en": "Can you just keep him off my back for a little while, please?",
+   "ko": "그러지 말고 당분간 앙투안이 간섭 못 하게 막아 줄래요?",
+   "recorded": 1
+  },
+  {
+   "no": 389,
+   "start": 1235.0,
+   "end": 1237.0,
+   "en": "I got some great changes coming to the menu.",
+   "ko": "메뉴를 대폭 바꾸려고 하거든요",
+   "recorded": 1
+  },
+  {
+   "no": 390,
+   "start": 1238.0,
+   "end": 1239.0,
+   "en": "Can I get a hint?",
+   "ko": "힌트 좀 주죠?",
+   "recorded": 1
+  },
+  {
+   "no": 391,
+   "start": 1240.0,
+   "end": 1242.0,
+   "en": "Let's just say I got inspired by a trip I took this week.",
+   "ko": "이번 주 여행에서 영감을 받았다고 해 두죠",
+   "recorded": 1
+  },
+  {
+   "no": 392,
+   "start": 1242.0,
+   "end": 1244.0,
+   "en": "You're not gonna start cooking with cannabis, are you?",
+   "ko": "대마 요리를 만드는 건 아니죠?",
+   "recorded": 1
+  },
+  {
+   "no": 393,
+   "start": 1244.0,
+   "end": 1248.0,
+   "en": "Dude, you know what? That would be a Michelin first.",
+   "ko": "그럼 미슐랭 식당 최초가 되겠네요",
+   "recorded": 1
+  },
+  {
+   "no": 394,
+   "start": 1248.0,
+   "end": 1250.0,
+   "en": "Ah! The international pop star returns.",
+   "ko": "세계적인 스타 가수가 돌아왔네요",
+   "recorded": 1
+  },
+  {
+   "no": 395,
+   "start": 1250.0,
+   "end": 1255.0,
+   "en": "I really wish you guys could comprehend how big of a deal I am in China.",
+   "ko": "내가 중국에서 얼마나 유명한지 모르다니 아쉽네요",
+   "recorded": 1
+  },
+  {
+   "no": 396,
+   "start": 1255.0,
+   "end": 1256.0,
+   "en": "Tell us all about it.",
+   "ko": "말해 봐요",
+   "recorded": 1
+  },
+  {
+   "no": 397,
+   "start": 1256.0,
+   "end": 1258.0,
+   "en": "I'd love to hear more, but I got a kitchen to run.",
+   "ko": "나도 듣고 싶지만 요리하러 가야겠어요",
+   "recorded": 1
+  },
+  {
+   "no": 398,
+   "start": 1258.0,
+   "end": 1259.0,
+   "en": "Uh, hold on.",
+   "ko": "잠깐만요",
+   "recorded": 1
+  },
+  {
+   "no": 399,
+   "start": 1259.0,
+   "end": 1262.0,
+   "en": "I did not just stumble over here by accident.",
+   "ko": "내가 그냥 지나가다 들른 게 아니에요",
+   "recorded": 1
+  },
+  {
+   "no": 400,
+   "start": 1263.0,
+   "end": 1266.0,
+   "en": "With Emily gone, I really am gonna depend on you guys for dinner dates.",
+   "ko": "에밀리도 없으니 둘이 내 저녁밥 친구가 돼 줘야죠",
+   "recorded": 1
+  },
+  {
+   "no": 401,
+   "start": 1266.0,
+   "end": 1270.0,
+   "en": "And I don't mind being a third wheel as long as I'm not paying.",
+   "ko": "밥값만 안 받으면 데이트 꼽사리도 괜찮아요",
+   "recorded": 1
+  },
+  {
+   "no": 402,
+   "start": 1270.0,
+   "end": 1272.0,
+   "en": "Well, that won't be an issue.",
+   "ko": "그건 걱정 말아요",
+   "recorded": 1
+  },
+  {
+   "no": 403,
+   "start": 1272.0,
+   "end": 1274.0,
+   "en": "My girlfriend and I broke up.",
+   "ko": "여자 친구랑 헤어졌거든요",
+   "recorded": 1
+  },
+  {
+   "no": 404,
+   "start": 1274.0,
+   "end": 1275.0,
+   "en": "Oh.",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 405,
+   "start": 1276.0,
+   "end": 1278.0,
+   "en": "Well, in that case, you can buy me dinner.",
+   "ko": "그렇다면 나한테 저녁 사요",
+   "recorded": 1
+  },
+  {
+   "no": 406,
+   "start": 1278.0,
+   "end": 1279.0,
+   "en": "Wow.",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 407,
+   "start": 1279.0,
+   "end": 1281.0,
+   "en": "You know what? Consider it on the house.",
+   "ko": "오늘은 서비스로 줄게요",
+   "recorded": 1
+  },
+  {
+   "no": 408,
+   "start": 1281.0,
+   "end": 1283.0,
+   "en": "-Really? -Oui, oui.",
+   "ko": "- 정말요? - 그래요",
+   "recorded": 1
+  },
+  {
+   "no": 409,
+   "start": 1285.0,
+   "end": 1287.0,
+   "en": "Merci.",
+   "ko": "고마워요",
+   "recorded": 1
+  },
+  {
+   "no": 410,
+   "start": 1287.0,
+   "end": 1288.0,
+   "en": "Cheers, mate.",
+   "ko": "고마워요, 친구",
+   "recorded": 1
+  },
+  {
+   "no": 411,
+   "start": 1289.0,
+   "end": 1292.0,
+   "en": "I was so worried that he was going to find Emily in Rome",
+   "ko": "사실 엄청 걱정했거든요 가브리엘이 에밀리를 찾아가 마르첼로랑 끝장낼 줄 알았어요",
+   "recorded": 1
+  },
+  {
+   "no": 412,
+   "start": 1292.0,
+   "end": 1294.0,
+   "en": "and blow up her relationship with Marcello.",
+   "ko": "가브리엘이 에밀리를 찾아가 마르첼로랑 끝장낼 줄 알았어요",
+   "recorded": 1
+  },
+  {
+   "no": 413,
+   "start": 1295.0,
+   "end": 1297.0,
+   "en": "No. I think he's over the drama.",
+   "ko": "아니에요, 다 정리했나 봐요",
+   "recorded": 1
+  },
+  {
+   "no": 414,
+   "start": 1297.0,
+   "end": 1299.0,
+   "en": "-Mm? -He just wants her to be happy.",
+   "ko": "에밀리의 행복을 빌어요",
+   "recorded": 1
+  },
+  {
+   "no": 415,
+   "start": 1299.0,
+   "end": 1303.0,
+   "en": "Mm. So how much rosé do I need to catch up with you?",
+   "ko": "페이스 맞추려면 얼마나 마셔야 해요?",
+   "recorded": 1
+  },
+  {
+   "no": 416,
+   "start": 1303.0,
+   "end": 1304.0,
+   "en": "A lot.",
+   "ko": "많이요",
+   "recorded": 1
+  },
+  {
+   "no": 417,
+   "start": 1304.0,
+   "end": 1306.0,
+   "en": "-Oh, is that a challenge? Great. -Mm-hm.",
+   "ko": "붙자고요? 좋아요",
+   "recorded": 1
+  },
+  {
+   "no": 418,
+   "start": 1308.0,
+   "end": 1311.0,
+   "en": "So what really happened between you and Nico?",
+   "ko": "그나저나 니코랑 어떻게 된 거예요?",
+   "recorded": 1
+  },
+  {
+   "no": 419,
+   "start": 1312.0,
+   "end": 1314.0,
+   "en": "Well, he didn't support my career.",
+   "ko": "내 일을 응원해 주지 않았어요",
+   "recorded": 1
+  },
+  {
+   "no": 420,
+   "start": 1314.0,
+   "end": 1317.0,
+   "en": "And when he realized he couldn't control me,",
+   "ko": "그리고 내가 자기 마음대로 안 된다 싶으니까",
+   "recorded": 1
+  },
+  {
+   "no": 421,
+   "start": 1318.0,
+   "end": 1321.0,
+   "en": "he… dropped our song online commercially,",
+   "ko": "그리고 내가 자기 마음대로 안 된다 싶으니까 우리 곡을 광고에 삽입해 인터넷에 올렸죠",
+   "recorded": 1
+  },
+  {
+   "no": 422,
+   "start": 1321.0,
+   "end": 1323.0,
+   "en": "which disqualified us from Eurovision.",
+   "ko": "덕분에 유로비전에서 실격됐어요",
+   "recorded": 1
+  },
+  {
+   "no": 423,
+   "start": 1324.0,
+   "end": 1325.0,
+   "en": "Oh, that's rough.",
+   "ko": "너무 심하네요",
+   "recorded": 1
+  },
+  {
+   "no": 424,
+   "start": 1326.0,
+   "end": 1327.0,
+   "en": "No, it's all good.",
+   "ko": "알아요, 그래도 괜찮아요",
+   "recorded": 1
+  },
+  {
+   "no": 425,
+   "start": 1327.0,
+   "end": 1329.0,
+   "en": "It inspired me to write my own music,",
+   "ko": "덕분에 내 곡을 쓰게 됐고",
+   "recorded": 1
+  },
+  {
+   "no": 426,
+   "start": 1329.0,
+   "end": 1335.0,
+   "en": "which got me the judging gig on Chinese Popstar, so…",
+   "ko": "'차이니스 팝 스타' 심사 위원까지 됐으니까요",
+   "recorded": 1
+  },
+  {
+   "no": 427,
+   "start": 1335.0,
+   "end": 1336.0,
+   "en": "By the way,",
+   "ko": "그나저나",
+   "recorded": 1
+  },
+  {
+   "no": 428,
+   "start": 1336.0,
+   "end": 1340.0,
+   "en": "I'm actually a pretty big deal in Italy too.",
+   "ko": "나 이탈리아에서도 좀 알아줘요",
+   "recorded": 1
+  },
+  {
+   "no": 429,
+   "start": 1340.0,
+   "end": 1341.0,
+   "en": "-All right. -No, really.",
+   "ko": "- 좋아요 - 허세가 아니라요",
+   "recorded": 1
+  },
+  {
+   "no": 430,
+   "start": 1342.0,
+   "end": 1345.0,
+   "en": "It's just I haven't crossed over to… France yet.",
+   "ko": "소문이 느려서 그렇죠 프랑스는요",
+   "recorded": 1
+  },
+  {
+   "no": 431,
+   "start": 1345.0,
+   "end": 1346.0,
+   "en": "Well, that's a relief.",
+   "ko": "그거 다행이네요",
+   "recorded": 1
+  },
+  {
+   "no": 432,
+   "start": 1346.0,
+   "end": 1348.0,
+   "en": "You've still got your privacy.",
+   "ko": "아직 사생활이 있잖아요",
+   "recorded": 1
+  },
+  {
+   "no": 433,
+   "start": 1349.0,
+   "end": 1350.0,
+   "en": "-Are you mocking me? -Me? Never.",
+   "ko": "- 나 놀리는 거죠? - 설마요",
+   "recorded": 1
+  },
+  {
+   "no": 434,
+   "start": 1351.0,
+   "end": 1353.0,
+   "en": "Never, never.",
+   "ko": "절대 아니에요",
+   "recorded": 1
+  },
+  {
+   "no": 435,
+   "start": 1354.0,
+   "end": 1355.0,
+   "en": "But can I tell you a secret?",
+   "ko": "비밀 말해 줄까요?",
+   "recorded": 1
+  },
+  {
+   "no": 436,
+   "start": 1355.0,
+   "end": 1356.0,
+   "en": "Always.",
+   "ko": "대환영이죠",
+   "recorded": 1
+  },
+  {
+   "no": 437,
+   "start": 1357.0,
+   "end": 1359.0,
+   "en": "I never liked Nico.",
+   "ko": "니코 원래 별로였어요",
+   "recorded": 1
+  },
+  {
+   "no": 438,
+   "start": 1361.0,
+   "end": 1363.0,
+   "en": "-Really? -Really. Yeah.",
+   "ko": "- 정말요? - 진짜요",
+   "recorded": 1
+  },
+  {
+   "no": 439,
+   "start": 1363.0,
+   "end": 1365.0,
+   "en": "I always thought you were too good for him.",
+   "ko": "항상 당신이 아깝다고 생각했죠",
+   "recorded": 1
+  },
+  {
+   "no": 440,
+   "start": 1366.0,
+   "end": 1367.0,
+   "en": "Yeah, well,",
+   "ko": "그래요, 뭐",
+   "recorded": 1
+  },
+  {
+   "no": 441,
+   "start": 1368.0,
+   "end": 1369.0,
+   "en": "true, but…",
+   "ko": "그건 사실이지만",
+   "recorded": 1
+  },
+  {
+   "no": 442,
+   "start": 1371.0,
+   "end": 1374.0,
+   "en": "-You should see him with his shirt off. -Come on. You should see me without mine.",
+   "ko": "- 상탈 한 모습을 못 봐서 그래요 - 내가 상탈 한 걸 보고 말해요",
+   "recorded": 1
+  },
+  {
+   "no": 443,
+   "start": 1376.0,
+   "end": 1377.0,
+   "en": "No, I'm being serious.",
+   "ko": "진심이에요",
+   "recorded": 1
+  },
+  {
+   "no": 444,
+   "start": 1377.0,
+   "end": 1379.0,
+   "en": "-Okay, well, let's see. -Whoa, whoa, whoa!",
+   "ko": "좋아요, 보여 줘요",
+   "recorded": 1
+  },
+  {
+   "no": 445,
+   "start": 1380.0,
+   "end": 1382.0,
+   "en": "I meant about Nico.",
+   "ko": "니코 얘기요",
+   "recorded": 1
+  },
+  {
+   "no": 446,
+   "start": 1382.0,
+   "end": 1383.0,
+   "en": "What?",
+   "ko": "뭐가요?",
+   "recorded": 1
+  },
+  {
+   "no": 447,
+   "start": 1385.0,
+   "end": 1386.0,
+   "en": "He didn't deserve you.",
+   "ko": "당신이 과분했어요",
+   "recorded": 1
+  },
+  {
+   "no": 448,
+   "start": 1391.0,
+   "end": 1393.0,
+   "en": "You're really cute.",
+   "ko": "정말 귀엽네요",
+   "recorded": 1
+  },
+  {
+   "no": 449,
+   "start": 1394.0,
+   "end": 1396.0,
+   "en": "Am I allowed to say that?",
+   "ko": "이런 말 해도 돼요?",
+   "recorded": 1
+  },
+  {
+   "no": 450,
+   "start": 1397.0,
+   "end": 1399.0,
+   "en": "I think you just did.",
+   "ko": "이미 한 거 같은데요",
+   "recorded": 1
+  },
+  {
+   "no": 451,
+   "start": 1420.0,
+   "end": 1423.0,
+   "en": "This is all for us?",
+   "ko": "다 우리를 위한 거예요?",
+   "recorded": 1
+  },
+  {
+   "no": 452,
+   "start": 1423.0,
+   "end": 1426.0,
+   "en": "Well, it's who you know, Emily.",
+   "ko": "이래서 인맥이 중요해요, 에밀리",
+   "recorded": 1
+  },
+  {
+   "no": 453,
+   "start": 1426.0,
+   "end": 1427.0,
+   "en": "Always remember that.",
+   "ko": "항상 명심해요",
+   "recorded": 1
+  },
+  {
+   "no": 454,
+   "start": 1429.0,
+   "end": 1430.0,
+   "en": "Jane!",
+   "ko": "제인!",
+   "recorded": 1
+  },
+  {
+   "no": 455,
+   "start": 1430.0,
+   "end": 1433.0,
+   "en": "Oh, this is just unbelievable.",
+   "ko": "보고도 못 믿겠네요",
+   "recorded": 1
+  },
+  {
+   "no": 456,
+   "start": 1433.0,
+   "end": 1435.0,
+   "en": "-I don't know how to thank you. -Oh!",
+   "ko": "너무 고마워서 어쩌죠?",
+   "recorded": 1
+  },
+  {
+   "no": 457,
+   "start": 1435.0,
+   "end": 1438.0,
+   "en": "I'm so pleased that you're happy.",
+   "ko": "만족했다니 나도 기뻐요",
+   "recorded": 1
+  },
+  {
+   "no": 458,
+   "start": 1438.0,
+   "end": 1442.0,
+   "en": "And this is my American colleague,",
+   "ko": "이쪽은 내… 미국인 동료 에밀리 쿠퍼예요",
+   "recorded": 1
+  },
+  {
+   "no": 459,
+   "start": 1442.0,
+   "end": 1443.0,
+   "en": "Emily Cooper.",
+   "ko": "미국인 동료 에밀리 쿠퍼예요",
+   "recorded": 1
+  },
+  {
+   "no": 460,
+   "start": 1443.0,
+   "end": 1447.0,
+   "en": "Emily, Principessa Gianna Grapezzi di Saturnia.",
+   "ko": "에밀리, 잔나 그라페치 디 사투르니아 왕자비예요",
+   "recorded": 1
+  },
+  {
+   "no": 461,
+   "start": 1447.0,
+   "end": 1450.0,
+   "en": "-Oh, Princess Gianna is fine. -Oh!",
+   "ko": "그냥 잔나 왕자비라고 해요",
+   "recorded": 1
+  },
+  {
+   "no": 462,
+   "start": 1451.0,
+   "end": 1452.0,
+   "en": "Um-- Uh…",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 463,
+   "start": 1452.0,
+   "end": 1454.0,
+   "en": "Lovely to meet you, Princess Gianna.",
+   "ko": "반갑습니다, 잔나 왕자비님",
+   "recorded": 1
+  },
+  {
+   "no": 464,
+   "start": 1454.0,
+   "end": 1456.0,
+   "en": "Your palazzo is amazing, magical.",
+   "ko": "궁이 정말 환상적이에요",
+   "recorded": 1
+  },
+  {
+   "no": 465,
+   "start": 1457.0,
+   "end": 1460.0,
+   "en": "-Oh my God, is that a step and repeat? -Oh, yes.",
+   "ko": "- 어머, 로고 포토 월이에요? - 맞아요",
+   "recorded": 1
+  },
+  {
+   "no": 466,
+   "start": 1460.0,
+   "end": 1464.0,
+   "en": "It's to honor the Italian brands who are sponsoring this evening's soirée.",
+   "ko": "오늘 야회를 후원해 준 이탈리아 회사들을 알려 줘야죠",
+   "recorded": 1
+  },
+  {
+   "no": 467,
+   "start": 1464.0,
+   "end": 1465.0,
+   "en": "Oh!",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 468,
+   "start": 1465.0,
+   "end": 1467.0,
+   "en": "-Nutella crêpe? -Oh!",
+   "ko": "누텔라 크레이프?",
+   "recorded": 1
+  },
+  {
+   "no": 469,
+   "start": 1467.0,
+   "end": 1471.0,
+   "en": "Mmm!",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 470,
+   "start": 1471.0,
+   "end": 1472.0,
+   "en": "Delicious.",
+   "ko": "맛있어요",
+   "recorded": 1
+  },
+  {
+   "no": 471,
+   "start": 1473.0,
+   "end": 1474.0,
+   "en": "Um, that's Antonia.",
+   "ko": "안토니아예요",
+   "recorded": 1
+  },
+  {
+   "no": 472,
+   "start": 1474.0,
+   "end": 1475.0,
+   "en": "Please, excuse me.",
+   "ko": "실례할게요",
+   "recorded": 1
+  },
+  {
+   "no": 473,
+   "start": 1475.0,
+   "end": 1478.0,
+   "en": "It was a pleasure to meet you, Princess Gianna.",
+   "ko": "정말 반가웠어요, 잔나 왕자비님",
+   "recorded": 1
+  },
+  {
+   "no": 474,
+   "start": 1478.0,
+   "end": 1479.0,
+   "en": "Grapezzi di Saturnia.",
+   "ko": "잔나 그라페치 디 사투르니아요",
+   "recorded": 1
+  },
+  {
+   "no": 475,
+   "start": 1480.0,
+   "end": 1481.0,
+   "en": "Sì.",
+   "ko": "네",
+   "recorded": 1
+  },
+  {
+   "no": 476,
+   "start": 1486.0,
+   "end": 1487.0,
+   "en": "Sylvie?",
+   "ko": "실비?",
+   "recorded": 1
+  },
+  {
+   "no": 477,
+   "start": 1488.0,
+   "end": 1491.0,
+   "en": "I know everyone in Rome, from Fiat to Fendi,",
+   "ko": "난 피아트에서 펜디까지 로마의 모두를 아니까",
+   "recorded": 1
+  },
+  {
+   "no": 478,
+   "start": 1491.0,
+   "end": 1493.0,
+   "en": "and I would love to bring you business.",
+   "ko": "거래처를 소개하고 싶어요",
+   "recorded": 1
+  },
+  {
+   "no": 479,
+   "start": 1494.0,
+   "end": 1495.0,
+   "en": "That would be wonderful.",
+   "ko": "그러면 정말 좋죠",
+   "recorded": 1
+  },
+  {
+   "no": 480,
+   "start": 1495.0,
+   "end": 1497.0,
+   "en": "For a piece of your business.",
+   "ko": "거래에 끼워 주면요",
+   "recorded": 1
+  },
+  {
+   "no": 481,
+   "start": 1498.0,
+   "end": 1500.0,
+   "en": "I'm a princess without a portfolio, if you know what I mean.",
+   "ko": "난 포트폴리오가 없는 왕자비예요 알아듣죠?",
+   "recorded": 1
+  },
+  {
+   "no": 482,
+   "start": 1501.0,
+   "end": 1503.0,
+   "en": "No, not exactly.",
+   "ko": "아뇨, 잘 모르겠네요",
+   "recorded": 1
+  },
+  {
+   "no": 483,
+   "start": 1504.0,
+   "end": 1506.0,
+   "en": "I'm palazzo poor, darling.",
+   "ko": "난 궁 푸어예요",
+   "recorded": 1
+  },
+  {
+   "no": 484,
+   "start": 1506.0,
+   "end": 1510.0,
+   "en": "We Airbnb this entire place, apart from a few rooms on the top floor.",
+   "ko": "꼭대기 방 몇 개만 빼고 전부 여행객들에게 세줘요",
+   "recorded": 1
+  },
+  {
+   "no": 485,
+   "start": 1510.0,
+   "end": 1512.0,
+   "en": "My husband and I live up there,",
+   "ko": "우리 부부는 저 위에 살죠",
+   "recorded": 1
+  },
+  {
+   "no": 486,
+   "start": 1513.0,
+   "end": 1514.0,
+   "en": "like squirrels.",
+   "ko": "다람쥐처럼요",
+   "recorded": 1
+  },
+  {
+   "no": 487,
+   "start": 1515.0,
+   "end": 1518.0,
+   "en": "I would love a meeting with Fendi.",
+   "ko": "펜디를 만나고 싶어요",
+   "recorded": 1
+  },
+  {
+   "no": 488,
+   "start": 1519.0,
+   "end": 1520.0,
+   "en": "Fendi for a fee.",
+   "ko": "수수료가 들어요",
+   "recorded": 1
+  },
+  {
+   "no": 489,
+   "start": 1521.0,
+   "end": 1522.0,
+   "en": "Let's talk.",
+   "ko": "얘기해 보죠",
+   "recorded": 1
+  },
+  {
+   "no": 490,
+   "start": 1524.0,
+   "end": 1527.0,
+   "en": "Antonia, thank you for coming.",
+   "ko": "안토니아, 와 줘서 감사해요",
+   "recorded": 1
+  },
+  {
+   "no": 491,
+   "start": 1527.0,
+   "end": 1529.0,
+   "en": "My pleasure.",
+   "ko": "천만에요",
+   "recorded": 1
+  },
+  {
+   "no": 492,
+   "start": 1529.0,
+   "end": 1532.0,
+   "en": "I've always been curious about this palazzo.",
+   "ko": "항상 이 궁에 와 보고 싶었거든요",
+   "recorded": 1
+  },
+  {
+   "no": 493,
+   "start": 1532.0,
+   "end": 1534.0,
+   "en": "So you are expanding your business in Rome?",
+   "ko": "로마에서 사업을 확장하는 거예요?",
+   "recorded": 1
+  },
+  {
+   "no": 494,
+   "start": 1534.0,
+   "end": 1535.0,
+   "en": "We're going to try.",
+   "ko": "노력 중이에요",
+   "recorded": 1
+  },
+  {
+   "no": 495,
+   "start": 1535.0,
+   "end": 1539.0,
+   "en": "That makes me happy if it means you're planning to stay here even longer.",
+   "ko": "당신이 여기 더 오래 머문다면 나로서는 반가운 얘기네요",
+   "recorded": 1
+  },
+  {
+   "no": 496,
+   "start": 1539.0,
+   "end": 1540.0,
+   "en": "Yes.",
+   "ko": "그래요",
+   "recorded": 1
+  },
+  {
+   "no": 497,
+   "start": 1540.0,
+   "end": 1542.0,
+   "en": "-But my main focus is still Muratori. -Mm.",
+   "ko": "하지만 주 관심사는 무라토리예요",
+   "recorded": 1
+  },
+  {
+   "no": 498,
+   "start": 1542.0,
+   "end": 1546.0,
+   "en": "What if I told you I had a way for you to increase your revenue,",
+   "ko": "저한테 수입을 늘릴 방법이 있다면 어떠세요?",
+   "recorded": 1
+  },
+  {
+   "no": 499,
+   "start": 1546.0,
+   "end": 1547.0,
+   "en": "but you wouldn't have to increase production?",
+   "ko": "지금 생산량 그대로요",
+   "recorded": 1
+  },
+  {
+   "no": 500,
+   "start": 1548.0,
+   "end": 1549.0,
+   "en": "I'm listening.",
+   "ko": "계속해요",
+   "recorded": 1
+  },
+  {
+   "no": 501,
+   "start": 1549.0,
+   "end": 1551.0,
+   "en": "Okay, if people can't afford to buy a piece of Muratori,",
+   "ko": "무라토리를 살 형편이 안 되는 사람들에게",
+   "recorded": 1
+  },
+  {
+   "no": 502,
+   "start": 1551.0,
+   "end": 1554.0,
+   "en": "they can still connect to the brand with a fragrance.",
+   "ko": "향으로 브랜드를 접하게 하는 거죠",
+   "recorded": 1
+  },
+  {
+   "no": 503,
+   "start": 1554.0,
+   "end": 1556.0,
+   "en": "-Perfume. -Mm-hm!",
+   "ko": "향수요",
+   "recorded": 1
+  },
+  {
+   "no": 504,
+   "start": 1556.0,
+   "end": 1558.0,
+   "en": "-We've heard that one before. -True.",
+   "ko": "- 신선하진 않네요 - 맞아요",
+   "recorded": 1
+  },
+  {
+   "no": 505,
+   "start": 1558.0,
+   "end": 1561.0,
+   "en": "We've been approached, but nothing that ever excited me.",
+   "ko": "제안은 있었지만 끌린 적이 없어요",
+   "recorded": 1
+  },
+  {
+   "no": 506,
+   "start": 1561.0,
+   "end": 1563.0,
+   "en": "Well, it's something I've been thinking of for a long time,",
+   "ko": "제가 오랫동안 생각했던 건데",
+   "recorded": 1
+  },
+  {
+   "no": 507,
+   "start": 1564.0,
+   "end": 1566.0,
+   "en": "and I have just the right person to do it.",
+   "ko": "이 일에 딱 맞는 적임자가 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 508,
+   "start": 1572.0,
+   "end": 1573.0,
+   "en": "Sylvie, please,",
+   "ko": "실비, 부탁이니",
+   "recorded": 1
+  },
+  {
+   "no": 509,
+   "start": 1574.0,
+   "end": 1576.0,
+   "en": "don't make Luc go back to Paris. Hm?",
+   "ko": "뤼크를 계속 여기 둬요",
+   "recorded": 1
+  },
+  {
+   "no": 510,
+   "start": 1576.0,
+   "end": 1579.0,
+   "en": "I promise, if he stays, Bavazza will come through.",
+   "ko": "뤼크만 남으면 바바차도 보답할 거예요",
+   "recorded": 1
+  },
+  {
+   "no": 511,
+   "start": 1579.0,
+   "end": 1580.0,
+   "en": "Big time.",
+   "ko": "크게요",
+   "recorded": 1
+  },
+  {
+   "no": 512,
+   "start": 1580.0,
+   "end": 1582.0,
+   "en": "You have that kind of authority?",
+   "ko": "그럴 권한은 있어요?",
+   "recorded": 1
+  },
+  {
+   "no": 513,
+   "start": 1582.0,
+   "end": 1584.0,
+   "en": "Bianca, she's more important than she looks.",
+   "ko": "비안카가 보기보다 거물이에요",
+   "recorded": 1
+  },
+  {
+   "no": 514,
+   "start": 1584.0,
+   "end": 1585.0,
+   "en": "It's true.",
+   "ko": "맞아요",
+   "recorded": 1
+  },
+  {
+   "no": 515,
+   "start": 1585.0,
+   "end": 1588.0,
+   "en": "I decide where Bavazza's money goes for marketing.",
+   "ko": "마케팅 예산을 어디에 쓸지 전적으로 나한테 달렸어요",
+   "recorded": 1
+  },
+  {
+   "no": 516,
+   "start": 1588.0,
+   "end": 1592.0,
+   "en": "Well, then I think it's time to introduce bavazzatini to Rome.",
+   "ko": "그럼 이제 바바차티니를 로마에 소개해야겠네요",
+   "recorded": 1
+  },
+  {
+   "no": 517,
+   "start": 1592.0,
+   "end": 1595.0,
+   "en": "-Italian espresso meets French vodka. -Yeah!",
+   "ko": "이탈리아 에스프레소와 프랑스 보드카의 만남 맞아요, 문화의 아름다운 결합이죠",
+   "recorded": 1
+  },
+  {
+   "no": 518,
+   "start": 1595.0,
+   "end": 1597.0,
+   "en": "It's a beautiful commingling of cultures.",
+   "ko": "맞아요, 문화의 아름다운 결합이죠",
+   "recorded": 1
+  },
+  {
+   "no": 519,
+   "start": 1606.0,
+   "end": 1611.0,
+   "en": "Please raise a bottle of Peroni Nastro Azzurro",
+   "ko": "'페로니 나스트로 아추로' 병을 들고",
+   "recorded": 1
+  },
+  {
+   "no": 520,
+   "start": 1611.0,
+   "end": 1613.0,
+   "en": "to welcome my great friend",
+   "ko": "멋진 내 친구를 환영해 주세요",
+   "recorded": 1
+  },
+  {
+   "no": 521,
+   "start": 1613.0,
+   "end": 1616.0,
+   "en": "and brilliant marketeer, Sylvie Grateau, to Rome,",
+   "ko": "마케팅의 귀재이기도 한 실비 그라토가 로마에 왔죠",
+   "recorded": 1
+  },
+  {
+   "no": 522,
+   "start": 1616.0,
+   "end": 1621.0,
+   "en": "where she will bring her French savoir-faire to Italian brands.",
+   "ko": "프랑스식 감각을 이탈리아 브랜드에 선보일 거예요",
+   "recorded": 1
+  },
+  {
+   "no": 523,
+   "start": 1625.0,
+   "end": 1627.0,
+   "en": "Here's to you, Sylvie.",
+   "ko": "실비를 위하여",
+   "recorded": 1
+  },
+  {
+   "no": 524,
+   "start": 1628.0,
+   "end": 1629.0,
+   "en": "And most of all,",
+   "ko": "그리고 무엇보다",
+   "recorded": 1
+  },
+  {
+   "no": 525,
+   "start": 1630.0,
+   "end": 1631.0,
+   "en": "to Peroni.",
+   "ko": "'페로니'를 위하여",
+   "recorded": 1
+  },
+  {
+   "no": 526,
+   "start": 1633.0,
+   "end": 1635.0,
+   "en": "Mmm. Delicious.",
+   "ko": "맛있어요",
+   "recorded": 1
+  },
+  {
+   "no": 527,
+   "start": 1636.0,
+   "end": 1639.0,
+   "en": "Here's to old friends and new partnerships.",
+   "ko": "오랜 친구들과 새로운 파트너들을 위하여",
+   "recorded": 1
+  },
+  {
+   "no": 528,
+   "start": 1641.0,
+   "end": 1642.0,
+   "en": "How beautiful.",
+   "ko": "정말 아름다워요",
+   "recorded": 1
+  },
+  {
+   "no": 529,
+   "start": 1643.0,
+   "end": 1646.0,
+   "en": "Who does she think she is? Eva Peroni?",
+   "ko": "자기가 무슨 에바 페론인 줄 아나 봐요",
+   "recorded": 1
+  },
+  {
+   "no": 530,
+   "start": 1646.0,
+   "end": 1649.0,
+   "en": "-Have you seen Antoine? -He's over by the Farlini pasta station.",
+   "ko": "- 앙투안 봤어요? - '팔리니' 파스타에 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 531,
+   "start": 1649.0,
+   "end": 1653.0,
+   "en": "Look, I thought I was a label whore, but this is next level.",
+   "ko": "내가 명품 도배남인 줄 알았는데 이건 차원이 다르네요",
+   "recorded": 1
+  },
+  {
+   "no": 532,
+   "start": 1655.0,
+   "end": 1657.0,
+   "en": "-Hey, Bébé. -Don't ever mention that.",
+   "ko": "- 헤이, 베이비 - 그 이름 꺼내지도 마세요",
+   "recorded": 1
+  },
+  {
+   "no": 533,
+   "start": 1658.0,
+   "end": 1660.0,
+   "en": "I told them this is a new fragrance you've worked on for a while,",
+   "ko": "당신이 그 브랜드에서 영감받아 개발한 향수라고 말해 놨어요",
+   "recorded": 1
+  },
+  {
+   "no": 534,
+   "start": 1660.0,
+   "end": 1662.0,
+   "en": "inspired by their brand.",
+   "ko": "당신이 그 브랜드에서 영감받아 개발한 향수라고 말해 놨어요",
+   "recorded": 1
+  },
+  {
+   "no": 535,
+   "start": 1662.0,
+   "end": 1664.0,
+   "en": "Of course. I love Muratori.",
+   "ko": "그래요, 난 무라토리 좋아해요",
+   "recorded": 1
+  },
+  {
+   "no": 536,
+   "start": 1664.0,
+   "end": 1667.0,
+   "en": "If this doesn't work, I hope at least I get a cashmere sweater.",
+   "ko": "이게 실패하면 캐시미어 스웨터라도 사고 싶네요",
+   "recorded": 1
+  },
+  {
+   "no": 537,
+   "start": 1669.0,
+   "end": 1670.0,
+   "en": "So, where is she?",
+   "ko": "어디 있어요?",
+   "recorded": 1
+  },
+  {
+   "no": 538,
+   "start": 1670.0,
+   "end": 1671.0,
+   "en": "Over there.",
+   "ko": "저쪽이요",
+   "recorded": 1
+  },
+  {
+   "no": 539,
+   "start": 1671.0,
+   "end": 1674.0,
+   "en": "But, you know, don't come on too strong.",
+   "ko": "대신 너무 밀어붙이진 마세요",
+   "recorded": 1
+  },
+  {
+   "no": 540,
+   "start": 1674.0,
+   "end": 1677.0,
+   "en": "Don't tell me how to talk to a woman.",
+   "ko": "여자 상대는 내가 알아서 해요",
+   "recorded": 1
+  },
+  {
+   "no": 541,
+   "start": 1678.0,
+   "end": 1682.0,
+   "en": "Antonia Muratori, I would like you to meet Antoine Lambert,",
+   "ko": "안토니아 무라토리 앙투안 랑베르를 소개할게요",
+   "recorded": 1
+  },
+  {
+   "no": 542,
+   "start": 1682.0,
+   "end": 1685.0,
+   "en": "the owner of Maison Lavaux and the premier perfumer in Paris.",
+   "ko": "메종 라보 대표이자 파리 최고의 조향사죠",
+   "recorded": 1
+  },
+  {
+   "no": 543,
+   "start": 1686.0,
+   "end": 1687.0,
+   "en": "Signore Muratori.",
+   "ko": "무라토리 씨",
+   "recorded": 1
+  },
+  {
+   "no": 544,
+   "start": 1688.0,
+   "end": 1690.0,
+   "en": "I'm such an admirer.",
+   "ko": "열렬한 팬입니다",
+   "recorded": 1
+  },
+  {
+   "no": 545,
+   "start": 1690.0,
+   "end": 1691.0,
+   "en": "What a pleasure.",
+   "ko": "반가워요",
+   "recorded": 1
+  },
+  {
+   "no": 546,
+   "start": 1693.0,
+   "end": 1694.0,
+   "en": "And what brings you to Rome?",
+   "ko": "로마에는 왜 오셨죠?",
+   "recorded": 1
+  },
+  {
+   "no": 547,
+   "start": 1695.0,
+   "end": 1697.0,
+   "en": "-You, of course. -Hm?!",
+   "ko": "당신을 보러요",
+   "recorded": 1
+  },
+  {
+   "no": 548,
+   "start": 1699.0,
+   "end": 1700.0,
+   "en": "And I am her son, Marcello.",
+   "ko": "저는 아들 마르첼로예요",
+   "recorded": 1
+  },
+  {
+   "no": 549,
+   "start": 1700.0,
+   "end": 1702.0,
+   "en": "Yes, Marcello.",
+   "ko": "네, 마르첼로예요",
+   "recorded": 1
+  },
+  {
+   "no": 550,
+   "start": 1702.0,
+   "end": 1704.0,
+   "en": "I'm very happy to meet you both.",
+   "ko": "두 사람 다 반가워요",
+   "recorded": 1
+  },
+  {
+   "no": 551,
+   "start": 1704.0,
+   "end": 1707.0,
+   "en": "When Emily told me she was in business with Muratori…",
+   "ko": "에밀리가 무라토리와 일한다는 얘기를 듣고",
+   "recorded": 1
+  },
+  {
+   "no": 552,
+   "start": 1707.0,
+   "end": 1709.0,
+   "en": "…well, it made me realize",
+   "ko": "생각해 보니",
+   "recorded": 1
+  },
+  {
+   "no": 553,
+   "start": 1709.0,
+   "end": 1712.0,
+   "en": "you're one of the only great fashion brands without your own fragrance.",
+   "ko": "향수가 없는 고급 패션 브랜드 중 하나더라고요",
+   "recorded": 1
+  },
+  {
+   "no": 554,
+   "start": 1713.0,
+   "end": 1714.0,
+   "en": "We've explored it before.",
+   "ko": "시도해 봤어요",
+   "recorded": 1
+  },
+  {
+   "no": 555,
+   "start": 1714.0,
+   "end": 1715.0,
+   "en": "Not with me.",
+   "ko": "나 없이요",
+   "recorded": 1
+  },
+  {
+   "no": 556,
+   "start": 1715.0,
+   "end": 1719.0,
+   "en": "Antoine is a genius. He created Heartbreak for Baccarat.",
+   "ko": "앙투안은 천재예요, 바카라의 '실연의 아픔'도 앙투안 작품이죠",
+   "recorded": 1
+  },
+  {
+   "no": 557,
+   "start": 1719.0,
+   "end": 1722.0,
+   "en": "And now I'd like to create Muratori for you.",
+   "ko": "이제 당신을 위해 무라토리를 만들고 싶어요",
+   "recorded": 1
+  },
+  {
+   "no": 558,
+   "start": 1723.0,
+   "end": 1725.0,
+   "en": "It's something I've been thinking about for a long time.",
+   "ko": "내가 오랫동안 생각했던 거예요",
+   "recorded": 1
+  },
+  {
+   "no": 559,
+   "start": 1725.0,
+   "end": 1728.0,
+   "en": "Notes of fresh laundry and hay to ground us to the land.",
+   "ko": "갓 나온 세탁물과 건초 향이 대지를 느끼게 하고",
+   "recorded": 1
+  },
+  {
+   "no": 560,
+   "start": 1728.0,
+   "end": 1730.0,
+   "en": "Something masculine",
+   "ko": "남성적인 향으로",
+   "recorded": 1
+  },
+  {
+   "no": 561,
+   "start": 1730.0,
+   "end": 1732.0,
+   "en": "to evoke the memory of the great Umberto Muratori.",
+   "ko": "위대한 움베르토 무라토리를 추억하게 하죠",
+   "recorded": 1
+  },
+  {
+   "no": 562,
+   "start": 1733.0,
+   "end": 1734.0,
+   "en": "Oh.",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 563,
+   "start": 1734.0,
+   "end": 1737.0,
+   "en": "And when can I learn more about this fragrance?",
+   "ko": "향수에 대해 더 자세한 건 언제 알 수 있나요?",
+   "recorded": 1
+  },
+  {
+   "no": 564,
+   "start": 1737.0,
+   "end": 1738.0,
+   "en": "I'm wearing it now.",
+   "ko": "뿌리고 왔어요",
+   "recorded": 1
+  },
+  {
+   "no": 565,
+   "start": 1740.0,
+   "end": 1741.0,
+   "en": "Would you care to dance?",
+   "ko": "춤출까요?",
+   "recorded": 1
+  },
+  {
+   "no": 566,
+   "start": 1743.0,
+   "end": 1745.0,
+   "en": "It's the best way to experience the scent.",
+   "ko": "그게 향을 가장 잘 느낄 수 있죠",
+   "recorded": 1
+  },
+  {
+   "no": 567,
+   "start": 1745.0,
+   "end": 1747.0,
+   "en": "Uh… why not?",
+   "ko": "좋죠",
+   "recorded": 1
+  },
+  {
+   "no": 568,
+   "start": 1748.0,
+   "end": 1749.0,
+   "en": "Grazie.",
+   "ko": "고맙다",
+   "recorded": 1
+  },
+  {
+   "no": 569,
+   "start": 1763.0,
+   "end": 1765.0,
+   "en": "How long have you been planning this?",
+   "ko": "언제부터 계획한 거예요?",
+   "recorded": 1
+  },
+  {
+   "no": 570,
+   "start": 1765.0,
+   "end": 1768.0,
+   "en": "Oh, I thought you loved surprises.",
+   "ko": "놀라기 좋아하잖아요?",
+   "recorded": 1
+  },
+  {
+   "no": 571,
+   "start": 1768.0,
+   "end": 1770.0,
+   "en": "I really don't.",
+   "ko": "절대 아니에요",
+   "recorded": 1
+  },
+  {
+   "no": 572,
+   "start": 1774.0,
+   "end": 1776.0,
+   "en": "And so you will produce this?",
+   "ko": "그럼 당신이 생산하나요?",
+   "recorded": 1
+  },
+  {
+   "no": 573,
+   "start": 1776.0,
+   "end": 1777.0,
+   "en": "Of course.",
+   "ko": "당연하죠",
+   "recorded": 1
+  },
+  {
+   "no": 574,
+   "start": 1777.0,
+   "end": 1779.0,
+   "en": "At no cost to you.",
+   "ko": "당신은 투자 없이",
+   "recorded": 1
+  },
+  {
+   "no": 575,
+   "start": 1780.0,
+   "end": 1783.0,
+   "en": "It's a license. You get a piece of whatever we sell.",
+   "ko": "라이선스로 우리 상품 매출의 일부를 받게 돼요",
+   "recorded": 1
+  },
+  {
+   "no": 576,
+   "start": 1783.0,
+   "end": 1786.0,
+   "en": "And with the right bottle and marketing,",
+   "ko": "병 디자인과 마케팅만 잘하면",
+   "recorded": 1
+  },
+  {
+   "no": 577,
+   "start": 1786.0,
+   "end": 1789.0,
+   "en": "I can see this become a global hit.",
+   "ko": "전 세계적으로 히트 칠 거예요",
+   "recorded": 1
+  },
+  {
+   "no": 578,
+   "start": 1789.0,
+   "end": 1790.0,
+   "en": "Hm.",
+   "ko": "전 세계적으로 히트 칠 거예요",
+   "recorded": 1
+  },
+  {
+   "no": 579,
+   "start": 1795.0,
+   "end": 1797.0,
+   "en": "It's subtle and fresh.",
+   "ko": "은근하고 신선하네요",
+   "recorded": 1
+  },
+  {
+   "no": 580,
+   "start": 1798.0,
+   "end": 1800.0,
+   "en": "It gives me a happy feeling.",
+   "ko": "기분이 좋아져요",
+   "recorded": 1
+  },
+  {
+   "no": 581,
+   "start": 1800.0,
+   "end": 1802.0,
+   "en": "Well, then, I guess we should keep dancing.",
+   "ko": "그럼 계속 춤춰야겠네요",
+   "recorded": 1
+  },
+  {
+   "no": 582,
+   "start": 1803.0,
+   "end": 1805.0,
+   "en": "Oh!",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 583,
+   "start": 1807.0,
+   "end": 1809.0,
+   "en": "I don't believe it.",
+   "ko": "말도 안 돼",
+   "recorded": 1
+  },
+  {
+   "no": 584,
+   "start": 1809.0,
+   "end": 1812.0,
+   "en": "I think she's falling for this.",
+   "ko": "엄마가 넘어갔나 봐요",
+   "recorded": 1
+  },
+  {
+   "no": 585,
+   "start": 1812.0,
+   "end": 1814.0,
+   "en": "You wrote me off too soon.",
+   "ko": "날 끝까지 믿었어야죠",
+   "recorded": 1
+  },
+  {
+   "no": 586,
+   "start": 1814.0,
+   "end": 1817.0,
+   "en": "I won't be making that mistake twice.",
+   "ko": "이제 그런 실수 안 할게요",
+   "recorded": 1
+  }
+ ]
+}
