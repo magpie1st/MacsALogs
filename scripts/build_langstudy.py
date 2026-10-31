@@ -90,6 +90,25 @@ def load_registry() -> dict:
         sys.exit(f"{REGISTRY} 를 읽을 수 없습니다: {exc}")
 
 
+def find_entry(registry: dict, title: str) -> tuple[str | None, dict | None]:
+    """제목으로 기억해 둔 항목을 찾는다. **같은 작품이 다른 제목으로 들어올 수 있다.**
+
+    넷플릭스 UI 언어를 바꾸면 제목이 바뀐다 — '에밀리, 파리에 가다' 가 'Emily in Paris' 로
+    들어온다. 글자만 비교하면 같은 작품이 둘로 갈라지므로(실제로 3화에서 그랬다), 기억해 둔
+    영문 제목(titleEn)과 예전에 본 제목(aliases)까지 함께 본다.
+    """
+    if not title:
+        return None, None
+    if title in registry:
+        return title, registry[title]
+    low = title.strip().lower()
+    for name, entry in registry.items():
+        names = [entry.get("titleEn") or ""] + list(entry.get("aliases") or [])
+        if any(n.strip().lower() == low for n in names if n):
+            return name, entry
+    return None, None
+
+
 def remember_show(title: str, show_id: str, asset_slug: str, title_en: str | None) -> None:
     """작품 제목 → (주소 id, 자산 슬러그)를 적어 둔다.
 
@@ -100,15 +119,21 @@ def remember_show(title: str, show_id: str, asset_slug: str, title_en: str | Non
     if not title:
         return
     registry = load_registry()
-    entry = registry.get(title) or {}
+    key, found = find_entry(registry, title)
+    key = key or title
+    entry = dict(found or {})
     before = dict(entry)
     entry.setdefault("id", show_id)
     entry.setdefault("assetSlug", asset_slug)
     if title_en:
         entry["titleEn"] = title_en
+    # 다른 제목으로 들어온 같은 작품을 기억한다 (UI 언어를 또 바꿔도 갈라지지 않는다)
+    if title != key:
+        aliases = sorted(set(entry.get("aliases") or []) | {title})
+        entry["aliases"] = aliases
     if entry == before:
         return
-    registry[title] = entry
+    registry[key] = entry
     REGISTRY.write_text(
         json.dumps(dict(sorted(registry.items())), ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8")
@@ -443,7 +468,7 @@ def english_title(script: dict, explicit: str | None) -> str | None:
     if explicit:
         return explicit.strip() or None
     title = (script.get("title") or "").strip()
-    entry = load_registry().get(title) or {}
+    entry = find_entry(load_registry(), title)[1] or {}
     if entry.get("titleEn"):
         return entry["titleEn"]
     return title if title.isascii() and any(c.isalnum() for c in title) else None
@@ -459,7 +484,7 @@ def resolve_asset_slug(script: dict, show_id: str, title_en: str | None = None) 
     id 를 쓴다 (이미 Release 에 올라간 파일 이름을 바꾸면 안 된다).
     """
     title = script.get("title") or ""
-    entry = load_registry().get(title) or {}
+    entry = find_entry(load_registry(), title)[1] or {}
     if entry.get("assetSlug"):
         return entry["assetSlug"]
     if entry.get("id") and entry["id"].isascii():
@@ -491,9 +516,11 @@ def resolve_show_id(script: dict, explicit: str | None, title_en: str | None = N
 
     title = script.get("title") or ""
     registry = load_registry()
-    known = (registry.get(title) or {}).get("id")
-    if known:
-        return known
+    known_key, known_entry = find_entry(registry, title)
+    if known_entry and known_entry.get("id"):
+        if known_key != title:
+            print(f"  같은 작품으로 봅니다: {title!r} = {known_key!r} (id: {known_entry['id']})")
+        return known_entry["id"]
 
     # 영문 제목을 알면 주소도 영문으로 만든다 (#emily-in-paris). 모르면 제목을 그대로 쓴다.
     for candidate in (english_title(script, title_en), title):
@@ -518,7 +545,7 @@ def resolve_show_id(script: dict, explicit: str | None, title_en: str | None = N
 
     # 다른 제목이 이미 그 id 를 쓰고 있으면 뒤에 번호를 붙인다. 안 그러면 두 작품의
     # 회차가 한 작품에 섞여 들어가는데, 눈에 띄지 않아 더 나쁘다.
-    taken = {entry.get("id"): name for name, entry in registry.items() if name != title}
+    taken = {e.get("id"): name for name, e in registry.items() if name != (known_key or title)}
     candidate = base
     suffix = 2
     while candidate in taken:
