@@ -1,5 +1,10 @@
-/* TVShow 스크립트 페이지 — 에피소드 선택/앞뒤 이동 + 본문 검색 + 글자 크기 + 맨 위로
+/* TVShow 스크립트 페이지 — 작품·시즌·회차 선택 + 본문 검색 + 글자 크기 + 맨 위로
    오디오가 있는 회차는 문장 단위로 동기화되는 플레이어를 함께 띄운다.
+
+   작품은 두 종류다.
+     kind: 'tts'        기계 합성 낭독 (book-maker 대본 + tts-maker 음성)
+     kind: 'recording'  실제 방송 녹음 (lang-study 확장이 Netflix·쿠팡플레이에서 녹음)
+   녹음 작품은 줄마다 한국어 자막(line.ko)이 붙고, 녹음이 빈 문장에 line.silent 가 붙는다.
 
    '이전/다음 에피소드'(상단 도구모음)와 '이전/다음 문장'(하단 플레이어)은 다른 것이다.
    말풍선·아이콘·위치를 모두 다르게 둔 이유가 그것이다. */
@@ -20,8 +25,12 @@
   var PROGRAMMATIC_SCROLL_MS = 1200;
 
   var data = null;
-  var episodes = [];
+  var shows = [];
+  var show = null;         // 지금 보고 있는 작품
+  var season = null;       // 그 작품의 지금 시즌
+  var episodes = [];       // 그 시즌의 회차 (번호 순)
   var current = null;
+  var showKo = true;       // 한국어 자막 표시 (녹음 작품에서만 쓴다)
   var query = '';
   var hits = [];
   var hitIndex = -1;
@@ -49,13 +58,14 @@
       if (typeof saved.fontIndex === 'number' && FONT_STEPS[saved.fontIndex]) fontIndex = saved.fontIndex;
       if (RATES.indexOf(saved.rate) !== -1) rate = saved.rate;
       if (typeof saved.follow === 'boolean') follow = saved.follow;
+      if (typeof saved.showKo === 'boolean') showKo = saved.showKo;
     } catch (e) { /* 시크릿 모드 등: 기본값 사용 */ }
   }
 
   function savePrefs() {
     try {
       localStorage.setItem(STORE_KEY, JSON.stringify({
-        fontIndex: fontIndex, rate: rate, follow: follow
+        fontIndex: fontIndex, rate: rate, follow: follow, showKo: showKo
       }));
     } catch (e) { /* 저장 실패는 무시 */ }
   }
@@ -102,22 +112,123 @@
   }
 
   /* ── 렌더링 ── */
+  /* 예전 형식(작품 하나, 시즌 없음)도 받는다. 생성기가 둘이라 한쪽만 돌린 블록이
+     올라올 수 있고, 그때도 페이지는 돌아가야 한다. */
+  function normalizeShows(payload) {
+    if (payload.shows && payload.shows.length) return payload.shows;
+    if (payload.episodes && payload.episodes.length) {
+      return [{
+        id: 'default',
+        title: payload.series,
+        titleKo: payload.seriesKo,
+        lang: payload.lang,
+        kind: 'tts',
+        seasons: [{
+          number: 1,
+          plannedEpisodes: payload.plannedEpisodes,
+          episodes: payload.episodes
+        }]
+      }];
+    }
+    return [];
+  }
+
+  function findShow(id) {
+    for (var i = 0; i < shows.length; i++) {
+      if (shows[i].id === id) return shows[i];
+    }
+    return null;
+  }
+
+  function seasonsOf(s) {
+    return (s && s.seasons ? s.seasons : []).slice().sort(function (a, b) {
+      return (a.number || 0) - (b.number || 0);
+    });
+  }
+
+  function findSeason(s, number) {
+    var list = seasonsOf(s);
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].number === number) return list[i];
+    }
+    return list[0] || null;
+  }
+
+  function hasKo() {
+    return Boolean(show && show.hasKo);
+  }
+
+  /* 시즌 칸을 보여 줄지. 시즌이 여럿이면 당연히 보여 주고, 하나뿐이어도 그 번호가 1이
+     아니면 보여 준다 — "시즌 5 1화"는 시즌 번호 자체가 정보다. */
+  function seasonsWorthShowing() {
+    var list = seasonsOf(show);
+    return list.length > 1 || (list.length === 1 && list[0].number !== 1);
+  }
+
   function renderStats() {
     var available = episodes.length;
-    var planned = data.plannedEpisodes || available;
-    var words = episodes.reduce(function (sum, ep) { return sum + ep.wordCount; }, 0);
+    var planned = (season && season.plannedEpisodes) || available;
+    var words = episodes.reduce(function (sum, ep) { return sum + (ep.wordCount || 0); }, 0);
 
-    var chips = ['에피소드 ' + available + '/' + planned + '편', '총 ' + words.toLocaleString('en-US') + ' words'];
-    if (data.lang) chips.push(data.lang === 'en' ? '영어 스크립트' : data.lang);
-    if (data.generated) chips.push('갱신 ' + data.generated);
+    var chips = [];
+    if (seasonsWorthShowing() && season) chips.push('시즌 ' + season.number);
+    chips.push('에피소드 ' + available + '/' + planned + '편');
+    chips.push('총 ' + words.toLocaleString('en-US') + ' words');
+    chips.push(show && show.kind === 'recording' ? '방송 녹음' : '기계 합성 낭독');
+    if (hasKo()) chips.push('한국어 자막');
+    var lang = (show && show.lang) || data.lang;
+    if (lang) chips.push(lang === 'en' ? '영어 스크립트' : lang);
+    var generated = (show && show.generated) || data.generated;
+    if (generated) chips.push('갱신 ' + generated);
 
     el.stats.innerHTML = chips.map(function (s) {
       return '<span class="tv-stat">' + escapeHtml(s) + '</span>';
     }).join('');
   }
 
+  function renderHero() {
+    if (!show) return;
+    var name = show.title || show.id;
+    el.series.textContent = name;
+    document.title = name + ' 스크립트 — MacsALogs';
+    if (el.seriesKo) el.seriesKo.textContent = show.titleKo || '';
+
+    if (!el.heroSub) return;
+    var tail = show.kind === 'recording'
+      ? '방송 음성을 녹음해 자막 문장과 맞춰 둔 개인 학습용 페이지입니다.'
+        + ' 문장을 누르면 그 지점부터 실제 음성이 재생되고, 영어 아래에 한국어 자막이 함께 나옵니다.'
+      : '영어 스크립트를 에피소드별로 읽는 개인 학습용 페이지입니다.'
+        + ' 기울임체는 내레이션, [대괄호]는 지문이고, 가로선은 장면이 바뀌는 지점입니다.';
+    tail += ' 아래에서 작품과 회차를 고르고, 본문 검색과 글자 크기로 읽기 편하게 맞춰 보세요.';
+    // 보조 제목(titleKo)이 있을 때만 앞에 굵게 붙인다. 없으면 빈 strong 때문에 앞에 빈칸이 생긴다.
+    var lead = show.titleKo
+      ? '<strong id="tv-series-ko">' + escapeHtml(show.titleKo) + '</strong> '
+      : '<strong id="tv-series-ko" hidden></strong>';
+    el.heroSub.innerHTML = lead + escapeHtml(tail);
+    el.seriesKo = document.getElementById('tv-series-ko');
+  }
+
+  function renderShowOptions() {
+    el.show.innerHTML = shows.map(function (s) {
+      var mark = s.kind === 'recording' ? ' · 녹음' : '';
+      return '<option value="' + escapeHtml(s.id) + '">' + escapeHtml((s.title || s.id) + mark) + '</option>';
+    }).join('');
+    if (show) el.show.value = show.id;
+    // 작품이 하나뿐이면 고를 것이 없다
+    if (el.showField) el.showField.hidden = shows.length < 2;
+  }
+
+  function renderSeasonOptions() {
+    var list = seasonsOf(show);
+    el.season.innerHTML = list.map(function (s) {
+      return '<option value="' + s.number + '">시즌 ' + s.number + '</option>';
+    }).join('');
+    if (season) el.season.value = String(season.number);
+    if (el.seasonField) el.seasonField.hidden = !seasonsWorthShowing();
+  }
+
   function renderEpisodeOptions() {
-    var planned = data.plannedEpisodes || episodes.length;
+    var planned = (season && season.plannedEpisodes) || episodes.length;
     var total = Math.max(planned, episodes.length);
     var html = '';
 
@@ -131,7 +242,7 @@
         html += '<option value="' + escapeHtml(ep.id) + '">' + escapeHtml(ep.title + mark) + '</option>';
       } else {
         // 아직 원본이 없는 회차도 목록에 남겨 둬야 어디까지 준비됐는지 바로 보인다
-        html += '<option value="" disabled>Episode ' + n + ' · 준비 중</option>';
+        html += '<option value="" disabled>' + n + '화 · 준비 중</option>';
       }
     }
     el.episode.innerHTML = html;
@@ -173,10 +284,24 @@
               '개 장면 중 앞부분 ' + current.sceneCount + '개만 실려 있습니다.</p>';
     }
     if (current.audio) {
-      html += '<p class="tv-episode-audio">🔊 낭독 ' + escapeHtml(formatTime(current.audio.durationSec)) +
-              ' · 문장 ' + current.audio.segmentCount.toLocaleString('en-US') + '개 · ' +
-              escapeHtml(current.audio.voice || '') +
-              '<br /><span class="tv-episode-audio-hint">문장을 누르면 그 지점부터 재생됩니다. 기계 합성 음성입니다.</span></p>';
+      var recording = show && show.kind === 'recording';
+      var label = recording ? '🔊 녹음 ' : '🔊 낭독 ';
+      var source = recording ? '방송 음성' : escapeHtml(current.audio.voice || '기계 합성 음성');
+      html += '<p class="tv-episode-audio">' + label + escapeHtml(formatTime(current.audio.durationSec)) +
+              ' · 문장 ' + current.audio.segmentCount.toLocaleString('en-US') + '개 · ' + source;
+      // 녹음에 빈 구간이 있으면 알려 준다. 안 보고 지나간 장면은 소리가 없다
+      if (recording && typeof current.audio.coverage === 'number' && current.audio.coverage < 0.995) {
+        html += ' · 녹음된 구간 ' + Math.round(current.audio.coverage * 100) + '%';
+      }
+      html += '<br /><span class="tv-episode-audio-hint">문장을 누르면 그 지점부터 재생됩니다.' +
+              (recording ? ' 녹음이 없는 문장은 흐리게 보입니다.' : ' 기계 합성 음성입니다.') +
+              '</span>';
+      // --local-audio 로 만든 빌드. 배포하면 소리가 안 나므로 화면에서 바로 보이게 둔다
+      if (current.audio.preview) {
+        html += '<br /><span class="tv-episode-audio-warn">로컬 미리보기 음원입니다. ' +
+                '이 상태로 배포하면 소리가 나지 않습니다.</span>';
+      }
+      html += '</p>';
     }
     html += '</header>';
 
@@ -187,7 +312,13 @@
         var kind = line.kind === 'narration' || line.kind === 'note' ? line.kind : 'dialogue';
         var ids = segByLine[scene.n + '|' + (order + 1)];
         var body = (ids && ids.length) ? renderLineWithSegments(line, ids) : highlight(line.text);
-        html += '<p class="tv-line tv-line--' + kind + '">' + body + '</p>';
+        // 녹음이 없는 문장은 흐리게. 대본에서 빼지는 않는다 — 읽을 때 대사가 비면 흐름이 끊긴다
+        var cls = 'tv-line tv-line--' + kind + (line.silent ? ' tv-line--silent' : '');
+        html += '<p class="' + cls + '">' + body + '</p>';
+        // 한국어 자막은 영어 줄 바로 아래. 검색(highlight)은 영어만 걸린다
+        if (line.ko && showKo) {
+          html += '<p class="tv-line-ko">' + escapeHtml(line.ko) + '</p>';
+        }
       });
       html += '</section>';
     });
@@ -459,6 +590,91 @@
     }
   }
 
+  /* 주소 해시는 `#<작품>/<회차>` 다. 예전 주소(`#ep01`)로 들어오면 모든 작품을 훑어 찾는다. */
+  function resolveHash(raw) {
+    var hash = (raw || '').replace(/^#/, '');
+    if (!hash) return null;
+    var slash = hash.indexOf('/');
+    if (slash > 0) {
+      var s = findShow(hash.slice(0, slash));
+      if (s) return { show: s, episodeId: hash.slice(slash + 1) };
+      return null;
+    }
+    for (var i = 0; i < shows.length; i++) {
+      var list = seasonsOf(shows[i]);
+      for (var j = 0; j < list.length; j++) {
+        var eps = list[j].episodes || [];
+        for (var k = 0; k < eps.length; k++) {
+          if (eps[k].id === hash) return { show: shows[i], episodeId: hash };
+        }
+      }
+    }
+    return null;
+  }
+
+  function hashFor(ep) {
+    return '#' + (show ? show.id + '/' : '') + ep.id;
+  }
+
+  /* 작품을 바꾼다. 시즌·회차는 그 작품의 첫 것으로 떨어진다. */
+  function selectShow(id, episodeId, updateHash) {
+    var next = findShow(id) || shows[0];
+    if (!next) return;
+    show = next;
+    el.show.value = show.id;
+    renderHero();
+    renderSeasonOptions();
+    syncKoToggle();
+
+    // 회차 id 를 받았으면 그 회차가 있는 시즌으로 간다
+    var list = seasonsOf(show);
+    var target = list[0] || null;
+    if (episodeId) {
+      for (var i = 0; i < list.length; i++) {
+        var eps = list[i].episodes || [];
+        for (var j = 0; j < eps.length; j++) {
+          if (eps[j].id === episodeId) { target = list[i]; break; }
+        }
+      }
+    }
+    selectSeason(target ? target.number : 1, episodeId, updateHash);
+  }
+
+  function selectSeason(number, episodeId, updateHash) {
+    season = findSeason(show, number);
+    episodes = ((season && season.episodes) || []).slice().sort(function (a, b) {
+      return a.number - b.number;
+    });
+    if (el.season) el.season.value = season ? String(season.number) : '';
+    renderSeasonOptions();
+    renderEpisodeOptions();
+    renderStats();
+    if (!episodes.length) {
+      current = null;
+      el.script.innerHTML = '<div class="empty-state"><p>이 시즌에는 아직 등록된 회차가 없습니다.</p></div>';
+      updateEpisodeNav();
+      return;
+    }
+    selectEpisode(findEpisode(episodeId) ? episodeId : episodes[0].id, updateHash);
+  }
+
+  function syncKoToggle() {
+    if (!el.koField) return;
+    el.koField.hidden = !hasKo();
+    if (el.koToggle) {
+      el.koToggle.textContent = showKo ? '한국어 숨기기' : '한국어 보이기';
+      el.koToggle.setAttribute('aria-pressed', String(showKo));
+    }
+  }
+
+  function toggleKo() {
+    if (!hasKo()) return;
+    showKo = !showKo;
+    savePrefs();
+    syncKoToggle();
+    renderEpisode();
+  }
+
   function selectEpisode(id, updateHash) {
     var ep = findEpisode(id) || episodes[0];
     if (!ep) return;
@@ -479,7 +695,7 @@
     updateEpisodeNav();
 
     if (updateHash && window.history && window.history.replaceState) {
-      window.history.replaceState(null, '', '#' + ep.id);
+      window.history.replaceState(null, '', hashFor(ep));
     }
   }
 
@@ -564,6 +780,20 @@
   }
 
   function bind() {
+    el.show.addEventListener('change', function () {
+      selectShow(el.show.value, null, true);
+      scrollToTop();
+    });
+
+    if (el.season) {
+      el.season.addEventListener('change', function () {
+        selectSeason(parseInt(el.season.value, 10), null, true);
+        scrollToTop();
+      });
+    }
+
+    if (el.koToggle) el.koToggle.addEventListener('click', toggleKo);
+
     el.episode.addEventListener('change', function () {
       if (el.episode.value) selectEpisode(el.episode.value, true);
     });
@@ -632,6 +862,10 @@
       } else if (event.key === ']') {
         event.preventDefault();
         stepEpisode(1, null);
+      } else if (event.key === 'k' || event.key === 'K') {
+        if (!hasKo()) return;
+        event.preventDefault();
+        toggleKo();
       }
     });
 
@@ -651,16 +885,23 @@
       return;
     }
 
-    episodes = (data.episodes || []).slice().sort(function (a, b) { return a.number - b.number; });
-    if (!episodes.length) {
-      scriptEl.innerHTML = '<div class="empty-state"><p>아직 등록된 에피소드가 없습니다.</p></div>';
+    shows = normalizeShows(data);
+    if (!shows.length) {
+      scriptEl.innerHTML = '<div class="empty-state"><p>아직 등록된 작품이 없습니다.</p></div>';
       return;
     }
 
     el = {
       series: document.getElementById('tv-series'),
       seriesKo: document.getElementById('tv-series-ko'),
+      heroSub: document.getElementById('tv-hero-sub'),
       stats: document.getElementById('tv-stats'),
+      show: document.getElementById('tv-show'),
+      showField: document.getElementById('tv-show') && document.getElementById('tv-show').closest('.tv-field'),
+      season: document.getElementById('tv-season'),
+      seasonField: document.getElementById('tv-season-field'),
+      koField: document.getElementById('tv-ko-field'),
+      koToggle: document.getElementById('tv-ko-toggle'),
       episode: document.getElementById('tv-episode'),
       epPrev: document.getElementById('tv-ep-prev'),
       epNext: document.getElementById('tv-ep-next'),
@@ -691,22 +932,16 @@
     };
     audioEl = document.getElementById('tv-audio');
 
-    if (data.series) {
-      el.series.textContent = data.series;
-      document.title = data.series + ' 스크립트 — MacsALogs';
-    }
-    if (data.seriesKo) el.seriesKo.textContent = data.seriesKo;
-
     loadPrefs();
     applyFont();
     if (el.rate) el.rate.value = String(rate);
     if (el.follow) el.follow.checked = follow;
-    renderStats();
-    renderEpisodeOptions();
 
-    // 해시로 들어온 회차가 있으면 그 회차를, 없으면 첫 회차(Episode 1)를 바로 보여 준다
-    var hashId = window.location.hash.replace('#', '');
-    selectEpisode(findEpisode(hashId) ? hashId : episodes[0].id, false);
+    // 해시로 들어온 작품·회차가 있으면 그것을, 없으면 첫 작품의 첫 회차를 보여 준다
+    var target = resolveHash(window.location.hash);
+    show = target ? target.show : shows[0];
+    renderShowOptions();
+    selectShow(show.id, target ? target.episodeId : null, false);
 
     bind();
   }

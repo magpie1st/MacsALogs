@@ -44,8 +44,25 @@ uv run python scripts/publish_blog.py             # 음원 복사 + opic.html �
 `docs/tvshow.html`도 포스트가 아닌 독립형 페이지다(내비게이션에 없고 URL로만 접근).
 `<!-- TVSHOW-DATA:START -->` ~ `END` 사이 JSON은 **자동 생성 영역이다. 손으로 고치지 말 것.**
 
+한 페이지가 **작품 → 시즌 → 화**로 나뉘고, 작품이 두 종류 섞여 있다.
+
+| kind | 무엇 | 원본 | 생성기 |
+|------|------|------|--------|
+| `tts` | 기계 합성 낭독 | `book-maker/output/<NN>/episode_<NN>.md` | `scripts/build_tvshow.py` |
+| `recording` | 실제 방송 녹음 (영어+한국어 자막) | `~/Downloads/lang-study/<회차>/` | `scripts/build_langstudy.py` |
+
+**두 생성기는 블록을 통째로 덮어쓰지 않고 자기 작품만 갈아 끼운다.** 서로 다른 머신에서
+돌기 때문이다 — TTS 쪽은 `book-maker` 원본이 있는 머신에서만 돈다. 공통 로직(블록 읽기·쓰기,
+예전 형식 옮기기, 공개 문자열 검사)은 `scripts/shows.py` 한곳에 있고,
+`python3 scripts/test_shows.py`로 검사한다(의존성 없음).
+
+예전 형식(작품 하나, 시즌 개념 없음)은 읽는 즉시 새 형식으로 옮긴다. 원본 Markdown 없이도
+옮길 수 있도록 **HTML에 이미 들어 있는 episodes를 그대로** 쓴다.
+
+### TTS 시리즈 (book-maker + tts-maker)
+
 원본은 `book-maker` 저장소의 `output/<NN>/episode_<NN>.md`이며, 이 저장소의 생성기가 읽어서
-JSON 블록만 교체한다(원본은 읽기 전용).
+JSON 블록의 그 작품만 교체한다(원본은 읽기 전용).
 
 ```bash
 python3 scripts/build_tvshow.py            # 원본 전체 반영
@@ -55,6 +72,50 @@ python3 scripts/build_tvshow.py --no-audio # 오디오 타임라인 무시하고
 
 에피소드 추가는 `book-maker/output/`에 `episode_02.md` … 를 만든 뒤 위 명령을 다시 실행하면 된다.
 JSON에 없는 회차는 선택 목록에 `준비 중`으로 표시된다.
+
+### lang-study 녹음 작품 (실제 방송 음성 + 한국어 자막)
+
+lang-study 크롬 확장이 Netflix·쿠팡플레이를 보면서 녹음한 회차를 올린다. 입력은 사이드 패널
+**에피소드** 탭에서 내려받은 두 파일이고, 같은 폴더에 있다.
+
+```
+~/Downloads/lang-study/<작품> 시즌 5 1화/
+  <...> 스크립트.json     ← '스크립트 JSON' 버튼 (문장·소수점 초·영어·한국어)
+  <...> 전체.mp3          ← '전체 MP3' 버튼 (파일 시간 = 영상 시간)
+```
+
+```bash
+python3 scripts/build_langstudy.py -n "~/Downloads/lang-study/<폴더>" --show-id emily-in-paris
+python3 scripts/build_langstudy.py "~/Downloads/lang-study/<폴더>" \
+    --show-id emily-in-paris --title "에밀리, 파리에 가다" --season 5 --episode 1 --planned 10
+```
+
+- `--show-id`는 주소 해시(`#emily-in-paris/s05e01`)에 들어가므로 **영문**이어야 한다.
+  한글 제목만 있으면 생성기가 중단하며 요구한다.
+- **스크립트 JSON이 있어야 한다.** 없으면 `sentences.csv`로 떨어지는데, CSV의 시간 열은
+  초 단위로 반올림된 값이라 문장 하이라이트가 최대 0.5초 밀린다. 생성기가 경고를 띄운다.
+- `docs/audio/shows/<작품 id>/config.json`의 `audioBaseUrl`이 없으면 **오디오를 아예 싣지 않고
+  대본만 넣는다.** docs에 없는 mp3를 가리키는 상대경로를 박으면 배포 뒤에야 재생 실패로
+  드러나기 때문이다.
+- 상세 절차와 판단 기준은 `.claude/skills/script-reader/SKILL.md`에 있다. 시즌을 통째로
+  올릴 때는 `script-reader-builder` 에이전트를 쓴다.
+
+`docs/audio/shows/`에도 **mp3를 두지 않는다.** TTS 쪽과 같은 이유다 (아래 참조).
+로컬에서 소리까지 들어 보려면 `--local-audio` 로 빌드한다 — mp3를 `docs/audio/shows/`로
+복사하고 상대경로를 쓰며, 그 경로는 `.gitignore`에 있어 커밋되지 않는다. 그 빌드에는
+`preview: true`가 붙고 페이지에 "로컬 미리보기 음원입니다" 경고가 뜬다.
+
+### 로컬 미리보기 서버
+
+**`python3 -m http.server`를 쓰지 말 것.** Range 요청에 206 대신 200을 돌려주고, Chrome은
+그 미디어를 seek 불가로 판단한다(`audio.seekable`이 `[0,0]`). 그러면 문장 클릭·문장 이동·
+±10초가 전부 먹지 않는데 증상은 플레이어 버그처럼 보인다.
+
+```bash
+python3 scripts/serve_docs.py        # http://localhost:8788, Range 206 지원
+```
+
+배포된 페이지에서는 문제가 없다 — Release 자산이 206을 돌려준다.
 
 ### 회차 오디오 (문장 동기화 플레이어)
 
@@ -104,9 +165,17 @@ manifest가 원본 대본과 어긋나면 **배포가 중단된다** — 문장 
 
 ### tvshow.html 페이지 UI
 
+작품·시즌·회차를 셀렉트로 고른다. 작품이 하나뿐이면 작품 칸이, 시즌이 하나이고 그 번호가 1이면
+시즌 칸이 숨는다 — "시즌 5 1화"처럼 **번호 자체가 정보인 경우에는 하나여도 보여 준다.**
+주소 해시는 `#<작품 id>/<회차 id>`이고, 예전 주소(`#ep01`)로 들어오면 모든 작품을 훑어 찾는다.
+
+녹음 작품에서만 **한국어** 토글이 나타난다(`K`). 영어 줄 바로 아래에 한국어 자막을 깔고,
+녹음이 빈 문장은 흐리게 보여 준다 — 대본에서 빼면 읽을 때 흐름이 끊기기 때문이다.
+본문 검색은 영어만 걸린다.
+
 에피소드 전환 수단이 둘이다. 셀렉트와 `이전 에피소드` / `다음 에피소드` 버튼이며 서로 동기화된다
-(hash 갱신, 재생 정지, `<audio src>` 교체, 검색 초기화, 상단 이동). Episode 1에서 이전이,
-Episode 20에서 다음이 잠긴다. 키보드 `[` / `]` 로도 넘길 수 있다.
+(hash 갱신, 재생 정지, `<audio src>` 교체, 검색 초기화, 상단 이동). 첫 회차에서 이전이,
+마지막 회차에서 다음이 잠긴다(그 시즌 안에서만 움직인다). 키보드 `[` / `]` 로도 넘길 수 있다.
 
 하단 플레이어의 `◀◀ 문장` / `문장 ▶▶`와는 **다른 것이다.** 라벨·위치·스타일을 일부러 다르게
 뒀으니, 손댈 때 둘을 닮게 만들지 말 것.

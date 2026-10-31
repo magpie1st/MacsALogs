@@ -470,6 +470,33 @@ body.has-player .site-footer { margin-bottom: 8.5rem; }
   padding-left: 0.7rem;
 }
 
+/* --local-audio 로 만든 빌드에만 나타난다. 배포 전에 눈에 띄어야 한다. */
+.tv-episode-audio-warn {
+  display: inline-block;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--mark-text, #000);
+  background: var(--mark-bg, #ffe58f);
+  border-radius: 3px;
+  padding: 0.1rem 0.4rem;
+}
+
+/* 녹음 작품(lang-study)에서만 쓴다. 영어 줄 바로 아래 붙는 한국어 자막이라
+   영어와 간격을 거의 두지 않고, 크기를 줄여 영어가 먼저 읽히게 한다. */
+.tv-line-ko {
+  font-size: calc(0.85rem * var(--tv-font-scale));
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: -0.3rem 0 0.75rem;
+}
+.tv-line-ko:last-child { margin-bottom: 0; }
+
+/* 녹음이 비어 소리가 없는 문장. 대본에서 빼지 않고 흐리게만 둔다 —
+   대사가 통째로 빠지면 읽을 때 흐름이 끊긴다. */
+.tv-line--silent { opacity: 0.55; }
+.tv-line--silent .tv-seg { cursor: default; text-decoration: line-through dotted; }
+
 .tv-script mark {
   background: var(--mark-bg); color: var(--mark-text);
   border-radius: 3px; padding: 0 0.1em;
