@@ -177,10 +177,12 @@ def build(folder: Path, script: dict | None, args, title: str) -> bool:
     return done.returncode == 0
 
 
-#: 내려받은 폴더 이름은 lang-study 가 "<작품> 시즌 N M화" 로 만든다 (episodeBase 참고).
+#: 내려받은 폴더 이름은 lang-study 가 만든다 (sidepanel.js 의 episodeLabel 참고).
+#: 제목이 한글이면 "<작품> 시즌 5 1화", 영문이면 "<작품> S05E01" 이다. 둘 다 읽는다.
+_SXXEXX_RE = re.compile(r"\bS(\d+)\s*[:xE]?\s*E?(\d+)\b", re.IGNORECASE)
 _SEASON_RE = re.compile(r"시즌\s*(\d+)")
 _EPISODE_RE = re.compile(r"(\d+)\s*화")
-_SUFFIX_RE = re.compile(r"\s*시즌\s*\d+.*$|\s*\d+\s*화.*$")
+_SUFFIX_RE = re.compile(r"\s*시즌\s*\d+.*$|\s*\d+\s*화.*$|\s*\bS\d+\s*[:xE]?\s*E?\d+\b.*$", re.IGNORECASE)
 
 
 def season_episode_from_name(name: str) -> tuple[int | None, int | None]:
@@ -188,6 +190,9 @@ def season_episode_from_name(name: str) -> tuple[int | None, int | None]:
 
     짐작이므로 스크립트 JSON 에 값이 있으면 그쪽을 쓴다.
     """
+    both = _SXXEXX_RE.search(name)
+    if both:
+        return int(both.group(1)), int(both.group(2))
     season = _SEASON_RE.search(name)
     episode = _EPISODE_RE.search(name)
     return (int(season.group(1)) if season else None,
