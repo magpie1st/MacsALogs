@@ -39,6 +39,9 @@ import sys
 from pathlib import Path
 
 from shows import (
+    MOVIE_EPISODE_ID,
+    TYPE_MOVIE,
+    TYPE_SERIES,
     audio_href,
     normalize_base_url,
     read_payload,
@@ -65,6 +68,39 @@ DEFAULT_SCENE_GAP = 4.0
 MAX_LINES_PER_SCENE = 40
 
 _ASSET_STEM_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")
+
+#: 작품 제목 → 주소에 쓸 영문 id. 한글 제목에서 id 를 기계적으로 만들 수는 없어서
+#: (주소 해시는 ASCII 여야 한다) 작품마다 **한 번만** 사람이 정하고 여기에 적어 둔다.
+#: 그 뒤 같은 작품의 다른 회차는 --show-id 없이 돌아간다.
+#: docs/ 밖에 둔다 — 빌드 설정이고 공개할 것이 아니다.
+REGISTRY = Path(__file__).resolve().parent / "show_ids.json"
+
+
+def load_registry() -> dict:
+    if not REGISTRY.exists():
+        return {}
+    try:
+        return json.loads(REGISTRY.read_text(encoding="utf-8")) or {}
+    except (OSError, json.JSONDecodeError) as exc:
+        sys.exit(f"{REGISTRY} 를 읽을 수 없습니다: {exc}")
+
+
+def remember_show(title: str, show_id: str, title_en: str | None) -> None:
+    """작품 제목 → id 를 적어 둔다. 다음 회차부터 --show-id 가 필요 없다."""
+    if not title:
+        return
+    registry = load_registry()
+    entry = registry.get(title) or {}
+    if entry.get("id") == show_id and (not title_en or entry.get("titleEn") == title_en):
+        return
+    entry["id"] = show_id
+    if title_en:
+        entry["titleEn"] = title_en
+    registry[title] = entry
+    REGISTRY.write_text(
+        json.dumps(dict(sorted(registry.items())), ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8")
+    print(f"  작품 id 를 기억했습니다: {title!r} → {show_id} ({REGISTRY.name})")
 
 
 def parse_clock(text: str) -> float:
@@ -222,14 +258,18 @@ def group_scenes(sentences: list[dict], gap: float) -> list[list[dict]]:
     return scenes
 
 
-def build_episode(script: dict, groups: list[list[dict]], audio_meta: dict | None) -> dict:
-    """회차 하나를 만든다. scenes/lines/segments 모양은 TTS 쪽과 똑같이 맞춘다.
+def build_episode(script: dict, groups: list[list[dict]], audio_meta: dict | None,
+                  movie: bool = False) -> dict:
+    """회차(또는 영화) 하나를 만든다. scenes/lines/segments 모양은 TTS 쪽과 똑같이 맞춘다.
 
     리더(tvshow.js)의 본문 그리기와 문장 강조를 그대로 쓰기 위해서다. 다른 점은
     줄에 `ko`(한국어 자막)가 붙고, 녹음이 빈 문장에 `silent` 가 붙는 것뿐이다.
+
+    영화는 시즌·회차가 없다. 회차 하나(`feature`)에 담되 제목을 작품 제목으로 둔다 —
+    화면에서는 시즌·회차 선택이 숨고 제목만 보인다.
     """
-    season = script.get("season") or 1
-    number = script.get("episodeNo") or 1
+    season = 1 if movie else (script.get("season") or 1)
+    number = 1 if movie else (script.get("episodeNo") or 1)
     scenes = []
     segments = []
     for scene_index, group in enumerate(groups, start=1):
@@ -253,17 +293,24 @@ def build_episode(script: dict, groups: list[list[dict]], audio_meta: dict | Non
             ])
         scenes.append({"n": scene_index, "lines": lines})
 
-    title = f"{number}화"
-    if script.get("episodeTitle"):
-        title = f"{number}화 {script['episodeTitle']}"
+    if movie:
+        title = script.get("title") or "영화"
+        episode_id = MOVIE_EPISODE_ID
+        full_title = title
+    else:
+        title = f"{number}화"
+        if script.get("episodeTitle"):
+            title = f"{number}화 {script['episodeTitle']}"
+        episode_id = f"s{season:02d}e{number:02d}"
+        full_title = " ".join(
+            part for part in [script.get("title"), f"시즌 {season}", title] if part
+        )
 
     episode = {
         "number": number,
-        "id": f"s{season:02d}e{number:02d}",
+        "id": episode_id,
         "title": title,
-        "fullTitle": " ".join(
-            part for part in [script.get("title"), f"시즌 {season}", title] if part
-        ),
+        "fullTitle": full_title,
         "sceneCount": len(scenes),
         "totalScenes": len(scenes),
         "truncated": False,
@@ -338,30 +385,71 @@ def write_manifest(show_id: str, episode_id: str, script: dict, episode: dict,
     return path
 
 
+def remove_show(show_id: str, dry: bool) -> None:
+    """작품을 페이지와 타임라인에서 지운다.
+
+    Release 자산(mp3)은 지우지 않는다 — 다른 작품이 같은 태그를 쓸 수 있고, 지우는 쪽이
+    되돌릴 수 없는 쪽이라 사람이 판단하게 둔다 (`gh release delete-asset`).
+    """
+    payload = read_payload()
+    before = len(payload.get("shows") or [])
+    payload["shows"] = [s for s in (payload.get("shows") or []) if s.get("id") != show_id]
+    found = len(payload["shows"]) < before
+    folder = SHOWS_DIR / show_id
+
+    print(f"작품      {show_id}")
+    print(f"페이지    {'지웁니다' if found else '없습니다'}")
+    print(f"타임라인  {folder.relative_to(REPO_ROOT) if folder.is_dir() else '(없음)'}")
+    if dry:
+        print("\n(-n 이라 아무것도 지우지 않았습니다)")
+        return
+    if not found and not folder.is_dir():
+        sys.exit("지울 것이 없습니다.")
+
+    if found:
+        write_payload(payload)
+    if folder.is_dir():
+        shutil.rmtree(folder)
+    print("\n지웠습니다. 음원 Release 자산은 남아 있습니다 (필요하면 gh release delete-asset).")
+
+
 def resolve_show_id(script: dict, explicit: str | None) -> str:
+    """주소에 쓸 작품 id. 순서대로 — 직접 준 값 → 기억해 둔 값 → 영문 제목에서 만들기."""
     if explicit:
         try:
             return slugify(explicit)
         except ValueError:
             sys.exit(f"--show-id 를 주소에 쓸 수 없습니다: {explicit!r} (영숫자와 - 만)")
+
     title = script.get("title") or ""
+    known = (load_registry().get(title) or {}).get("id")
+    if known:
+        return known
+
     try:
         return slugify(title)
     except ValueError:
         sys.exit(
             f"작품 제목 {title!r} 으로 주소에 쓸 id 를 만들 수 없습니다 (한글은 주소 해시에 못 씀).\n"
-            "  --show-id emily-in-paris 처럼 영문 id 를 주세요."
+            f"  --show-id emily-in-paris 처럼 영문 id 를 **한 번만** 주세요.\n"
+            f"  {REGISTRY.name} 에 기억해 두므로 같은 작품의 다음 회차부터는 필요 없습니다."
         )
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("folder", type=Path, help="lang-study 가 내려받은 회차 폴더")
+    parser.add_argument("folder", type=Path, nargs="?", help="lang-study 가 내려받은 회차 폴더")
+    parser.add_argument("--remove-show", metavar="ID",
+                        help="작품을 페이지에서 지운다 (타임라인 manifest 도 함께). 음원 Release 자산은 남는다")
     parser.add_argument("--script", type=Path, help="스크립트 JSON 경로 (폴더에 여러 개일 때)")
     parser.add_argument("--audio", type=Path, help="전체 MP3 경로 (폴더에 여러 개일 때)")
     parser.add_argument("--show-id", help="작품 id (주소 해시에 쓴다. 한글 제목이면 필수)")
     parser.add_argument("--title", help="화면에 보일 작품 제목 (생략하면 스크립트 JSON 의 제목)")
     parser.add_argument("--title-en", help="영문 제목 (제목 아래 보조로 보인다)")
+    parser.add_argument("--movie", action="store_true",
+                        help="영화로 넣는다 (시즌·회차 없음). 스크립트 JSON 에 시즌·회차가 없으면 자동 판별")
+    parser.add_argument("--series", action="store_true",
+                        help="자동 판별을 무시하고 시리즈로 넣는다 (--season·--episode 와 함께)")
     parser.add_argument("--season", type=int, help="시즌 번호 (CSV 로 읽을 때는 알 수 없어 필수)")
     parser.add_argument("--episode", type=int, help="회차 번호 (CSV 로 읽을 때는 알 수 없어 필수)")
     parser.add_argument("--planned", type=int, help="그 시즌의 전체 회차 수 (선택 목록에 '준비 중' 표시)")
@@ -371,9 +459,20 @@ def main() -> None:
                         help="mp3 를 docs 로 복사해 로컬에서 들어 본다 (배포용이 아니다. docs/audio/shows 는 .gitignore)")
     parser.add_argument("--audio-base-url", metavar="URL",
                         help="Release 자산의 기준 https URL. 생략하면 docs/audio/shows/<작품>/config.json")
+    parser.add_argument("--publish", action="store_true",
+                        help="넣은 뒤 음원을 Release 에 올린다 (publish_shows.py --yes). 공개 저장소다")
+    parser.add_argument("--push", action="store_true", help="--publish 와 함께: 커밋·푸시까지")
     parser.add_argument("-n", "--dry-run", action="store_true", help="쓰지 않고 무엇이 바뀔지만 보여 준다")
     args = parser.parse_args()
+    if args.push and not args.publish:
+        sys.exit("--push 는 --publish 와 함께 씁니다.")
 
+    if args.remove_show:
+        remove_show(args.remove_show, args.dry_run)
+        return
+
+    if not args.folder:
+        sys.exit("회차 폴더를 주세요 (또는 --remove-show ID).")
     folder = args.folder.expanduser()
     if not folder.is_dir():
         sys.exit(f"폴더가 아닙니다: {folder}")
@@ -388,18 +487,31 @@ def main() -> None:
         script["episodeNo"] = args.episode
     if args.title:
         script["title"] = args.title
-    if not script.get("season") or not script.get("episodeNo"):
+    # 영화 판별: 자막에 시즌·회차가 없으면 영화다 (Netflix 영화는 둘 다 비어 온다).
+    # CSV 로 읽은 경우는 원래 비어 있으므로 판별에 쓸 수 없다 — 그때는 사람이 정한다.
+    movie = args.movie
+    if not movie and not args.series and precise and not script.get("season") and not script.get("episodeNo"):
+        movie = True
+        print("영화      스크립트 JSON 에 시즌·회차가 없어 영화로 넣습니다 (--series 로 바꿀 수 있습니다)")
+    args.movie = movie
+
+    if not args.movie and (not script.get("season") or not script.get("episodeNo")):
         sys.exit(
             "시즌·회차를 알 수 없습니다. --season 5 --episode 1 처럼 지정하세요.\n"
+            "  영화라면 --movie 를 주세요 (시즌·회차 없이 넣습니다).\n"
             "  (스크립트 JSON 에는 들어 있지만 sentences.csv 에는 없습니다.)"
         )
     if not script.get("title") and not args.title:
         sys.exit("작품 제목을 알 수 없습니다. --title \"에밀리, 파리에 가다\" 처럼 지정하세요.")
 
     show_id = resolve_show_id(script, args.show_id)
-    season = script["season"]
-    number = script["episodeNo"]
-    episode_id = f"s{season:02d}e{number:02d}"
+    if args.movie:
+        season, number = 1, 1
+        episode_id = MOVIE_EPISODE_ID
+    else:
+        season = script["season"]
+        number = script["episodeNo"]
+        episode_id = f"s{season:02d}e{number:02d}"
     asset_name = f"{show_id}-{episode_id}.mp3"
     if not _ASSET_STEM_RE.match(asset_name):
         sys.exit(f"음원 파일 이름으로 쓸 수 없습니다: {asset_name!r}")
@@ -442,7 +554,7 @@ def main() -> None:
             audio_meta["preview"] = True
     else:
         audio_meta = None
-    episode = build_episode(script, groups, audio_meta)
+    episode = build_episode(script, groups, audio_meta, movie=args.movie)
 
     sentences = script["sentences"]
     with_ko = sum(1 for s in sentences if s.get("ko"))
@@ -451,7 +563,8 @@ def main() -> None:
     minutes, seconds = divmod(int(duration), 60)
 
     print(f"작품      {args.title or script.get('title')}  (id: {show_id})")
-    print(f"회차      시즌 {season} {number}화 · {episode_id}")
+    print(f"{'영화      ' if args.movie else '회차      '}"
+          + (f"{episode['title']} · {episode_id}" if args.movie else f"시즌 {season} {number}화 · {episode_id}"))
     print(f"문장      {len(sentences)}개 · 장면 {len(groups)}개 · 한국어 {with_ko}개 · 소리 없음 {silent}개")
     print(f"길이      {minutes}:{seconds:02d}")
     print(f"입력      {script_path.name}")
@@ -484,21 +597,46 @@ def main() -> None:
 
     payload = read_payload()
     show = next((s for s in payload.get("shows") or [] if s.get("id") == show_id), None)
+    now = TYPE_MOVIE if args.movie else TYPE_SERIES
     if show is None:
-        show = {"id": show_id, "kind": "recording", "lang": "en", "seasons": []}
+        show = {"id": show_id, "kind": "recording", "lang": "en", "type": now, "seasons": []}
+    else:
+        # 영화를 시리즈로(또는 반대로) 바꾸면 예전 회차가 섞인다. 바뀌면 비우고 다시 담는다.
+        was = show.get("type") or TYPE_SERIES
+        if was != now:
+            print(f"  ! 작품 종류가 {was} → {now} 로 바뀝니다. 이전 회차 목록을 비웁니다.")
+            show["seasons"] = []
     show["title"] = args.title or script.get("title") or show_id
     if args.title_en:
         show["titleKo"] = args.title_en
     show["kind"] = "recording"
+    show["type"] = TYPE_MOVIE if args.movie else TYPE_SERIES
     show["hasKo"] = True
     show["generated"] = _dt.date.today().isoformat()
     upsert_season(show, season, episode, args.planned)
     upsert_show(payload, show)
+    remember_show(script.get("title"), show_id, args.title_en)
     payload["generated"] = _dt.date.today().isoformat()
     write_payload(payload)
 
     print(f"\n→ {manifest_path.relative_to(REPO_ROOT)}")
     print(f"→ docs/tvshow.html 의 '{show['title']}' 작품 갱신")
+
+    if args.publish:
+        # E2E: 음원 업로드 → 주소 교체 → Range 확인 → (--push 면) 커밋·푸시.
+        # publish_shows.py 를 따로 호출한다. 한 파일에 몰아넣으면 "대본만 넣기" 와
+        # "공개하기" 가 섞여, 공개를 원하지 않을 때 실수로 올라갈 길이 생긴다.
+        cmd = [sys.executable, str(Path(__file__).resolve().parent / "publish_shows.py"),
+               "--show-id", show_id, "--episode", episode_id, "--yes"]
+        if args.push:
+            cmd.append("--push")
+        if args.audio:
+            cmd += ["--audio", str(audio_path)]
+        print("\n" + "─" * 60)
+        done = subprocess.run(cmd, cwd=str(REPO_ROOT))
+        if done.returncode != 0:
+            sys.exit(f"\n음원 공개가 실패했습니다 (대본은 이미 반영돼 있습니다). 종료 코드 {done.returncode}")
+        return
 
     if local_copy:
         print(

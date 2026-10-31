@@ -283,6 +283,7 @@ def build_show(episodes: list[dict]) -> dict:
         "title": SERIES_TITLE,
         "titleKo": SERIES_TITLE_KO,
         "lang": "en",
+        "type": "series",
         "kind": "tts",
         "hasKo": False,
         "generated": _dt.date.today().isoformat(),
