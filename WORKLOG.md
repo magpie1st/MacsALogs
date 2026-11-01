@@ -4,6 +4,21 @@
 
 ---
 
+## 2026-11-01 — 오디오북 음원을 별도 저장소로 분리 (`5dfccac`)
+
+음원 세 벌이 다 차면 약 780MB 라 블로그 저장소·Pages(1GB)를 압박한다. 잠근 음원을 새 공개 저장소 `magpie1st/audiobook-audio` 의
+Pages 로 옮겼다(블로그와 같은 `magpie1st.github.io` 도메인이라 fetch 제약 없음, `access-control-allow-origin: *` 도 확인).
+
+- `config.json` 에 `audioRepoDir`(로컬 폴더) 추가. 생성기가 그리로 복사하고, 저장소(.git)가 없으면 멈춘다 — 저장소를 만들기 전에
+  자동 갱신이 돌아 깨진 주소를 가리키는 페이지를 올리는 것을 막으려고
+- tts-maker 자동 실행은 음원 저장소를 **먼저** 푸시한 뒤 블로그를 푸시한다
+- 블로그의 `.bin` 3개를 지웠다 (이력에는 약 4MB 남는다)
+- 저장소 생성은 Claude Code 자동 모드가 "Create Public Surface" 로 막았다. 사용자가 `~/.claude/settings.json` 에
+  `Bash(gh repo create magpie1st/audiobook-audio:*)`, `Bash(gh api -X POST repos/magpie1st/audiobook-audio/pages:*)` 를 허용해 진행
+- 확인: 배포된 페이지(평문 없음)를 저장된 암호로 풀어 음원 21개가 모두 새 주소, 5개를 받아 풀어 mp3 헤더 정상. 블로그 페이지 origin 에서 새 주소 fetch 200
+
+---
+
 ## 2026-11-01 — 오디오북 책갈피 · 엔진 선택 · 자동 갱신
 
 - 📖 읽던 곳: 화면 맨 위(10px 아래)에 걸친 첫 문단을 스크롤이 멈춘 뒤 기억한다. 처음엔 화면 20%·80px 기준이었는데 한 줄짜리 대사 문단이
