@@ -59,8 +59,10 @@
     .ab-marks li { display: flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0; border-bottom: 1px dashed var(--border); }
     .ab-marks a { flex: 1; color: var(--text); text-decoration: none; font-size: 0.88rem; }
     .ab-marks a:hover { color: var(--accent); }
-    /* ── 얇은 플레이어 ── */
-    .ab-player { padding: 0.3rem 0 calc(0.35rem + env(safe-area-inset-bottom)); }
+    /* ── 얇은 플레이어 ──
+       조작 줄(.tv-ctl·.tv-ico·.tv-sep·.tv-rate-select)과 본문 아래 여백은 style.css 에
+       한 벌만 둔다. tvshow 의 스크립트 리더와 **같은 플레이어**라 따로 두면 한쪽만
+       고쳐지고 서로 어긋난다. 여기에는 오디오북에만 있는 것(상태 줄·이어듣기 칩)만 둔다. */
     .ab-now { font-size: 0.72rem; color: var(--accent); text-align: center; margin: 0 0 0.15rem;
               white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .ab-now:empty { display: none; }
@@ -68,29 +70,6 @@
     .ab-seek { flex: 1; min-width: 0; height: 4px; margin: 0; }
     .ab-chip { font-size: 0.68rem; padding: 0.05rem 0.45rem; border: 1px solid var(--accent); color: var(--accent);
                background: var(--bg); border-radius: 999px; cursor: pointer; white-space: nowrap; }
-    .ab-controls { display: flex; align-items: center; justify-content: center; gap: 0.15rem; margin-top: 0.2rem;
-                   flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
-    .ab-controls::-webkit-scrollbar { display: none; }
-    .ab-ico { flex: 0 0 auto; width: 34px; height: 32px; padding: 0; border: 0; border-radius: 8px; background: none;
-              color: var(--text); display: inline-flex; align-items: center; justify-content: center;
-              cursor: pointer; font-size: 1rem; line-height: 1; }
-    .ab-ico:hover { background: var(--tag-bg); color: var(--accent); }
-    .ab-ico:focus-visible, .ab-rate:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-    .ab-ico:disabled { opacity: 0.35; cursor: default; }
-    .ab-play { width: 40px; height: 34px; background: var(--accent); color: #fff; border-radius: 999px; font-size: 0.95rem; }
-    .ab-play:hover { background: var(--accent-hover); color: #fff; }
-    .ab-letter { font-size: 0.8rem; font-weight: 700; width: 28px; height: 26px; border: 1px solid var(--border); border-radius: 6px; }
-    .ab-letter[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
-    .ab-sep { flex: 0 0 auto; width: 1px; height: 18px; background: var(--border); margin: 0 0.15rem; }
-    .ab-rate { flex: 0 0 auto; height: 26px; font-size: 0.75rem; border: 1px solid var(--border); border-radius: 6px;
-               background: var(--bg); color: var(--text); padding: 0 0.15rem; margin-left: 0.1rem; cursor: pointer; width: 3.4rem; }
-    /* tvshow 용 여백(11rem)보다 얇게 */
-    body.has-tv-player .site-footer { margin-bottom: 5.5rem; }
-    body.has-tv-player .tv-top { bottom: calc(6rem + env(safe-area-inset-bottom)); }
-    body.has-tv-player { scroll-padding-bottom: 6rem; }
-    @media (max-width: 440px) { .ab-controls { gap: 0.05rem; } .ab-ico { width: 28px; } .ab-letter { width: 24px; }
-                                .ab-play { width: 38px; } .ab-sep { display: none; } .ab-rate { width: 3.1rem; } }
-    .tv-btn.is-on { background: var(--tag-bg); border-color: var(--accent); color: var(--accent); }
   </style>
 </head>
 <body>
@@ -184,7 +163,7 @@
 
   <!-- 오디오가 있는 챕터에서만 나타난다. 목차와 음원 없는 챕터에서는 숨는다. -->
   <!-- 오디오가 있는 챕터에서만 나타난다. 얇게: 시간·진행 막대 한 줄 + 아이콘 버튼 한 줄 -->
-  <section class="tv-player ab-player" id="ab-player" aria-label="문장 동기화 오디오 플레이어" hidden>
+  <section class="tv-player" id="ab-player" aria-label="문장 동기화 오디오 플레이어" hidden>
     <div class="container">
       <!-- 상태 메시지(음원 푸는 중, 오류)만 잠깐 보인다. 비어 있으면 줄이 사라진다 -->
       <p class="ab-now" id="ab-now" aria-live="polite"></p>
@@ -194,17 +173,17 @@
         <span class="tv-time" id="ab-time-total">0:00</span>
         <span id="ab-resume-bar" hidden><button type="button" class="ab-chip" id="ab-resume">↩ 이어듣기</button></span>
       </div>
-      <div class="ab-controls" role="group" aria-label="재생 조작">
-        <button type="button" class="ab-ico" id="ab-seg-prev" title="이전 문장 ( ← )" aria-label="이전 문장"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M11.5 6v12L3 12z"/><path d="M21 6v12l-8.5-6z"/></svg></button>
-        <button type="button" class="ab-ico ab-play" id="ab-play" title="재생 / 일시정지 ( Space )" aria-label="재생">▶</button>
-        <button type="button" class="ab-ico" id="ab-seg-next" title="다음 문장 ( → )" aria-label="다음 문장"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12.5 6v12L21 12z"/><path d="M3 6v12l8.5-6z"/></svg></button>
-        <span class="ab-sep" aria-hidden="true"></span>
-        <button type="button" class="ab-ico" id="ab-repeat" title="이 문장 다시 한 번 ( A )" aria-label="이 문장 다시 듣기"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><polyline points="20 4 20 9 15 9"/></svg></button>
-        <button type="button" class="ab-ico ab-letter" id="ab-loop" aria-pressed="false" title="문장 반복 — 끌 때까지 이 문장만 ( R )" aria-label="문장 반복">R</button>
-        <button type="button" class="ab-ico ab-letter" id="ab-stepmode" aria-pressed="false" title="문장마다 멈춤 — 따라 말하기용 ( S )" aria-label="문장마다 멈춤">S</button>
-        <button type="button" class="ab-ico ab-letter" id="ab-follow" aria-pressed="true" title="따라가기 — 낭독 위치로 본문 스크롤 ( F )" aria-label="따라가기">F</button>
-        <button type="button" class="ab-ico" id="ab-bookmark-bar" title="지금 낭독 중인 문단에 책갈피 ( B )" aria-label="책갈피"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg></button>
-        <select class="ab-rate" id="ab-rate" title="재생 속도" aria-label="재생 속도">
+      <div class="tv-ctl" role="group" aria-label="재생 조작">
+        <button type="button" class="tv-ico" id="ab-seg-prev" title="이전 문장 ( ← )" aria-label="이전 문장"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M11.5 6v12L3 12z"/><path d="M21 6v12l-8.5-6z"/></svg></button>
+        <button type="button" class="tv-ico tv-ico--play" id="ab-play" title="재생 / 일시정지 ( Space )" aria-label="재생">▶</button>
+        <button type="button" class="tv-ico" id="ab-seg-next" title="다음 문장 ( → )" aria-label="다음 문장"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12.5 6v12L21 12z"/><path d="M3 6v12l8.5-6z"/></svg></button>
+        <span class="tv-sep" aria-hidden="true"></span>
+        <button type="button" class="tv-ico" id="ab-repeat" title="이 문장 다시 한 번 ( A )" aria-label="이 문장 다시 듣기"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><polyline points="20 4 20 9 15 9"/></svg></button>
+        <button type="button" class="tv-ico tv-ico--letter" id="ab-loop" aria-pressed="false" title="문장 반복 — 끌 때까지 이 문장만 ( R )" aria-label="문장 반복">R</button>
+        <button type="button" class="tv-ico tv-ico--letter" id="ab-stepmode" aria-pressed="false" title="문장마다 멈춤 — 따라 말하기용 ( S )" aria-label="문장마다 멈춤">S</button>
+        <button type="button" class="tv-ico tv-ico--letter" id="ab-follow" aria-pressed="true" title="따라가기 — 낭독 위치로 본문 스크롤 ( F )" aria-label="따라가기">F</button>
+        <button type="button" class="tv-ico" id="ab-bookmark-bar" title="지금 낭독 중인 문단에 책갈피 ( B )" aria-label="책갈피"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg></button>
+        <select class="tv-rate-select" id="ab-rate" title="재생 속도" aria-label="재생 속도">
           <option value="0.75">0.75×</option>
           <option value="0.9">0.9×</option>
           <option value="1" selected>1×</option>
