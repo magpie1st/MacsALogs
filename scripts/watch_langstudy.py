@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""`/Users/mac/Downloads/lang-study` 를 지켜보다가 새 회차가 들어오면 스크립트 리더에 올린다.
+"""Chrome 다운로드 폴더의 `lang-study/` 를 지켜보다가 새 회차가 들어오면 스크립트 리더에 올린다.
 
     python3 scripts/watch_langstudy.py -n            # 무엇을 하려는지만 보여 준다
     python3 scripts/watch_langstudy.py --once        # 지금 있는 것만 처리하고 끝낸다
@@ -18,7 +18,12 @@
   5. `build_langstudy.py` 를 돌린다 (기본은 `--publish --push` 까지).
 
 처리한 폴더는 `.watch_state.json` 에 기록해 다시 하지 않는다. 다시 하려면 그 항목을 지운다
-(또는 `--force`).
+(또는 `--force`). 폴더 안 파일이 늘면(스크립트 JSON 을 뒤늦게 받는 등) 지문이 바뀌어 다시 한다.
+
+**어디를 지켜보는가.** 확장은 Chrome 다운로드 폴더 기준 상대 경로로 파일을 쓰므로
+(`lang-study/<작품> <회차>/...`), 그 설정을 읽어 따라간다 — Chrome Preferences 의
+`download.default_directory`, 없으면 OS 기본값(리눅스는 XDG `XDG_DOWNLOAD_DIR` 도 본다).
+`--dir` 로 직접 지정할 수 있다. 맥·리눅스 모두 동작한다.
 
 **기본이 공개 배포다.** 이 저장소는 공개이고 음원이 Release 에 올라간다. 시작할 때 무엇을
 할지 띄우니 확인하고 쓴다. 대본만 넣으려면 `--build-only`.
@@ -38,9 +43,15 @@ import zipfile
 from pathlib import Path
 
 SCRIPTS = Path(__file__).resolve().parent
+sys.path.insert(0, str(SCRIPTS))
 REPO_ROOT = SCRIPTS.parent
-WATCH_DIR = Path("/Users/mac/Downloads/lang-study")
 STATE = SCRIPTS / ".watch_state.json"
+
+#: 어디를 지켜볼지는 downloads.py 가 정한다 (Chrome 설정 → OS 기본값).
+#: publish_shows.py 도 같은 모듈을 쓴다 — 둘이 다른 폴더를 보면 음원을 못 찾는다.
+from downloads import SUBDIR, chrome_download_dir, default_watch_dir  # noqa: E402
+
+WATCH_DIR = default_watch_dir()
 
 #: 파일 크기·개수가 이만큼 그대로면 다 내려온 것으로 본다. 16MB mp3 와 71MB zip 이
 #: 함께 내려오므로 짧게 잡으면 받는 중에 손대게 된다.
@@ -329,12 +340,23 @@ def main() -> None:
 
     watch_dir = args.dir.expanduser()
     if not watch_dir.is_dir():
-        sys.exit(f"지켜볼 폴더가 없습니다: {watch_dir}")
+        # 폴더가 없는 흔한 이유는 둘이다: 아직 아무것도 안 받았거나, Chrome 다운로드 폴더가
+        # 다른 곳이다. 어느 쪽인지 알려 준다 — 조용히 죽는 것이 가장 나쁘다.
+        chrome_dir = chrome_download_dir()
+        hint = (f"Chrome 다운로드 폴더는 {chrome_dir} 입니다. --dir \"{chrome_dir / SUBDIR}\" 로 지켜보세요."
+                if chrome_dir and chrome_dir / SUBDIR != watch_dir
+                else "아직 아무것도 내려받지 않았다면 한 회차를 받은 뒤 다시 실행하세요.")
+        sys.exit(f"지켜볼 폴더가 없습니다: {watch_dir}\n  {hint}")
 
     mode = ("대본만 넣습니다" if args.build_only else
             "음원을 Release 에 올립니다 (푸시 안 함)" if args.no_push else
             "음원을 Release 에 올리고 커밋·푸시합니다")
     print(f"지켜봅니다  {watch_dir}")
+    chrome_dir = chrome_download_dir()
+    if chrome_dir is None:
+        print(f"           (Chrome 다운로드 폴더 설정 없음 → OS 기본값 ~/Downloads 로 봅니다)")
+    elif chrome_dir / SUBDIR != watch_dir:
+        print(f"           ⚠ Chrome 은 {chrome_dir / SUBDIR} 에 내려받습니다. 폴더가 다릅니다!")
     print(f"할 일      {mode}" + ("  [-n: 실제로는 아무것도 안 함]" if args.dry_run else ""))
     if not args.build_only and not args.dry_run:
         print("           ⚠ magpie1st/MacsALogs 는 공개 저장소입니다. 올린 음원은 누구나 내려받습니다.")

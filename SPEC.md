@@ -36,7 +36,8 @@ MacsALogs의 기술 구조와 기능 명세입니다. 변경 시 해당 섹션�
 | `scripts/build_tvshow.py` | TTS 시리즈 생성기 (`book-maker` 원본 → JSON 블록) |
 | `scripts/build_langstudy.py` | 녹음 작품 생성기 (lang-study 내보내기 → 타임라인 + JSON 블록) |
 | `scripts/publish_shows.py` | 녹음 음원을 Release에 올리고 주소를 돌림, Range 206 확인, 커밋·푸시 |
-| `scripts/watch_langstudy.py` | `~/Downloads/lang-study` 감시 → zip 풀기·소리 확인 → 위 둘 실행 |
+| `scripts/watch_langstudy.py` | 내려받기 폴더의 `lang-study/` 감시 → zip 풀기·소리 확인 → 위 둘 실행 |
+| `scripts/downloads.py` | 확장이 내려놓는 폴더 찾기 (Chrome 설정 → OS 기본값, 맥·리눅스) |
 | `scripts/serve_docs.py` | 로컬 미리보기 서버 (**Range 206 지원** — `http.server`로는 문장 seek이 안 된다) |
 | `scripts/test_shows.py` | 위 스크립트들의 자체 검사 (의존성 없음, `python3`만) |
 | `scripts/show_ids.json` | 작품 제목 → 주소 id·자산 슬러그·영문 제목 (한 번 적으면 바꾸지 않는다) |

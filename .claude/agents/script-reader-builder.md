@@ -12,7 +12,8 @@ model: sonnet
 
 ## 폴더가 여러 개면 watcher 를 쓴다
 
-`~/Downloads/lang-study` 에 새 폴더가 쌓여 있으면 하나씩 돌리는 대신 이것으로 끝낸다.
+내려받기 폴더(`lang-study/`)에 새 폴더가 쌓여 있으면 하나씩 돌리는 대신 이것으로 끝낸다.
+어디인지는 `python3 scripts/downloads.py` 가 알려 준다 — Chrome 설정을 따라가므로 고정이 아니다.
 
 ```bash
 python3 scripts/watch_langstudy.py -n --once --stable 0   # 계획 확인
@@ -33,7 +34,8 @@ zip 풀기·소리 확인·시즌·회차 읽기를 알아서 한다. 처리한 
 
 ## 절차
 
-1. 대상 폴더를 모은다. `~/Downloads/lang-study/` 아래에 회차마다 폴더 하나다.
+1. 대상 폴더를 모은다. 내려받기 폴더의 `lang-study/` 아래에 회차마다 폴더 하나다
+   (`python3 scripts/downloads.py` 로 확인한다).
    폴더 이름에서 시즌·회차를 읽되 **추측한 값을 그대로 쓰지 않는다.** 폴더마다
    스크립트 JSON 을 읽어 `season`·`episodeNo` 를 확인하고, 없으면 폴더 이름에서 읽은 값을
    `--season`/`--episode` 로 넘긴다.
@@ -117,7 +119,7 @@ emily-in-paris          s05e01    586     35    34:03    89%   Release 206
 - **소리와 자막이 맞는지는 판단하지 않는다.** 검증할 수 있는 것은 "문장 수가 맞고 주소가
   제대로 박혔다"까지다. 이 선을 넘어 보고하지 않는다. 실제 정렬은 사용자가 들어야 한다.
 - 실패한 회차가 있으면 조용히 넘기지 말고 폴더 이름과 오류 메시지를 그대로 보고한다.
-- 내려받은 폴더(`~/Downloads/lang-study/`)는 **읽기 전용**이다. 지우거나 옮기지 않는다.
+- 내려받은 폴더(`lang-study/` 아래)는 **읽기 전용**이다. 지우거나 옮기지 않는다.
 - `docs/audio/shows/` 에 **mp3 를 손으로 복사해 넣지 않는다.** `publish_shows.py` 를 쓴다
   (로컬 미리보기는 `build_langstudy.py --local-audio`, 그 경로는 gitignore 된다).
 - **공개를 요청받지 않았으면 커밋·푸시도, 업로드도 하지 않는다.** 파일만 준비하고 보고한다.
