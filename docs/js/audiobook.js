@@ -36,6 +36,8 @@
   var autoNext = true;
   var loopOn = false;
   var stepMode = false;
+  var engine = null;           // 고른 낭독 엔진 (gemini / kokoro-bf_emma / kokoro-af_heart). null 이면 책의 defaultEngine
+  var ENGINE_NAMES = { gemini: 'Gemini · Sulafat', 'kokoro-bf_emma': 'Kokoro · 영국 여성', 'kokoro-af_heart': 'Kokoro · 미국 여성' };
   var positions = {};          // "책/챕터" -> 초
 
   var audioEl = null;
@@ -49,6 +51,14 @@
   var lastUserScrollAt = 0;
   var programmaticUntil = 0;
   var pendingAutoplay = false;
+
+  /* 책갈피: 책마다 { last: 읽던 곳(자동), list: 책갈피(직접) }. 이 브라우저(localStorage)에만 있다 */
+  var MARKS_KEY = 'audiobook-marks';
+  var marks = {};
+  var segPara = [];            // 전역 문장 번호 → 문단 번호
+  var shownLast = null;        // 이 챕터를 열 때의 '읽던 곳' (읽는 동안 따라 움직이지 않게 고정)
+  var lastTimer = null;
+  var flashTimer = null;
 
   /* 암호화 페이지 (build_audiobook.py 기본) */
   var PW_KEY = 'audiobook-pw';
@@ -67,7 +77,31 @@
     try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* 무시 */ }
   }
   function savePrefs() {
-    writeStore(PREFS_KEY, { font: fontIndex, rate: rate, follow: follow, autoNext: autoNext, stepMode: stepMode });
+    writeStore(PREFS_KEY, { font: fontIndex, rate: rate, follow: follow, autoNext: autoNext, stepMode: stepMode, engine: engine });
+  }
+
+  /* 챕터마다 audios = { gemini: …, kokoro: … }. 고른 엔진이 없으면 있는 엔진으로 */
+  function wantedEngine(b) { return engine || b.defaultEngine || 'gemini'; }
+  function applyEngine() {
+    books.forEach(function (b) {
+      var want = wantedEngine(b);
+      b.chapters.forEach(function (c) {
+        var a = c.audios || (c.audio ? { legacy: c.audio } : {});
+        var keys = Object.keys(a);
+        c.audios = a;
+        c.audio = a[want] || (keys.length ? a[keys[0]] : null);
+      });
+    });
+  }
+  function renderEngineOptions() {
+    var have = {};
+    book.chapters.forEach(function (c) { Object.keys(c.audios || {}).forEach(function (k) { have[k] = (have[k] || 0) + 1; }); });
+    var keys = Object.keys(have).filter(function (k) { return ENGINE_NAMES[k]; });
+    el.engineWrap.hidden = keys.length < 2;
+    el.engine.innerHTML = keys.map(function (k) {
+      return '<option value="' + k + '">' + ENGINE_NAMES[k] + ' (' + have[k] + '챕터)</option>';
+    }).join('');
+    el.engine.value = wantedEngine(book);
   }
 
   /* ── 복호화 (PBKDF2-SHA256 → AES-256-GCM, WebCrypto) ── */
@@ -172,7 +206,7 @@
   function isFormField(n) {
     return n && (n.tagName === 'INPUT' || n.tagName === 'SELECT' || n.tagName === 'TEXTAREA');
   }
-  function posKey(ch) { return book.id + '/' + ch.id; }
+  function posKey(ch) { return book.id + '/' + ch.id + (ch.audio && ch.audio.engine ? '/' + ch.audio.engine : ''); }
 
   /* 문단 텍스트의 [a,b) 구간을 em 구간을 살려 HTML 로 만든다 */
   function renderRange(text, a, b, em) {
@@ -226,10 +260,107 @@
     el.prev.textContent = i === 0 ? '◀ 목차' : '◀ 이전 챕터';
   }
 
+  /* ── 책갈피 ── */
+  function bookMarks() {
+    if (!marks[book.id]) marks[book.id] = { last: null, list: [] };
+    return marks[book.id];
+  }
+  function saveMarks() { writeStore(MARKS_KEY, marks); }
+  function paraNodes() { return el.script.querySelectorAll('.ab-para'); }
+  function chapterById(id) { return book.chapters.filter(function (c) { return c.id === id; })[0] || null; }
+  function snippet(ch, p) {
+    var para = ch && ch.paragraphs[p];
+    if (!para) return '';
+    var t = para[1];
+    return t.length > 72 ? t.slice(0, 72) + '…' : t;
+  }
+  function paraHref(chId, p) {
+    return '#' + encodeURIComponent(book.id) + '/' + encodeURIComponent(chId) + '/p' + p;
+  }
+  /* 지금 읽는 문단: 재생 중이면 낭독 중인 문장의 문단, 아니면 화면 위쪽에 걸친 첫 문단 */
+  function currentPara() {
+    if (audioEl && !audioEl.paused && activeSeg >= 0 && segPara[activeSeg] != null) return segPara[activeSeg];
+    var nodes = paraNodes();
+    var top = 10;   // 화면 맨 위에 걸친 첫 문단 = 지금 읽는 곳 (짧은 대사 문단이 이어져도 건너뛰지 않게)
+    for (var i = 0; i < nodes.length; i++) {
+      if (nodes[i].getBoundingClientRect().bottom > top) return i;
+    }
+    return Math.max(0, nodes.length - 1);
+  }
+  function rememberLast() {
+    if (!chapter || !paraNodes().length) return;
+    bookMarks().last = { ch: chapter.id, para: currentPara(), at: Date.now() };
+    saveMarks();
+  }
+  function markIndex(chId, p) {
+    var list = bookMarks().list;
+    for (var i = 0; i < list.length; i++) if (list[i].ch === chId && list[i].para === p) return i;
+    return -1;
+  }
+  function paintMarks() {
+    var nodes = paraNodes();
+    for (var i = 0; i < nodes.length; i++) {
+      nodes[i].classList.toggle('has-mark', markIndex(chapter.id, i) >= 0);
+      nodes[i].classList.toggle('is-last', !!shownLast && shownLast.para === i);
+    }
+  }
+  function flash(msg) {
+    el.markStatus.textContent = msg;
+    clearTimeout(flashTimer);
+    flashTimer = setTimeout(function () { el.markStatus.textContent = ''; }, 2500);
+  }
+  function toggleMark(p) {
+    if (!chapter) { flash('챕터를 연 뒤에 꽂을 수 있습니다'); return; }
+    if (p == null) p = currentPara();
+    var list = bookMarks().list;
+    var i = markIndex(chapter.id, p);
+    if (i >= 0) {
+      list.splice(i, 1);
+      flash('책갈피를 뺐습니다');
+    } else {
+      list.push({ ch: chapter.id, para: p, at: Date.now(), text: snippet(chapter, p) });
+      flash('🔖 ' + chapter.title + ' · 문단 ' + (p + 1) + '에 꽂았습니다');
+    }
+    saveMarks();
+    paintMarks();
+  }
+  function jumpToPara(p) {
+    var node = paraNodes()[p];
+    if (!node) return;
+    programmaticUntil = Date.now() + PROGRAMMATIC_SCROLL_MS;
+    lastUserScrollAt = Date.now();   // 낭독 따라가기가 곧바로 다른 곳으로 끌고 가지 않게
+    node.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    node.classList.add('is-flash');
+    setTimeout(function () { node.classList.remove('is-flash'); }, 1800);
+  }
+  function renderMarksSection() {
+    var bm = bookMarks();
+    var html = '';
+    var last = bm.last && chapterById(bm.last.ch);
+    if (last) {
+      html += '<p class="ab-last-link">📖 읽던 곳: <a href="' + paraHref(last.id, bm.last.para) + '">' + esc(last.title) +
+        ' · 문단 ' + (bm.last.para + 1) + '</a> <span class="ab-toc-meta">' + esc(snippet(last, bm.last.para)) + '</span></p>';
+    }
+    var list = bm.list.filter(function (m) { return chapterById(m.ch); }).sort(function (a, b) {
+      return chapterById(a.ch).number - chapterById(b.ch).number || a.para - b.para;
+    });
+    if (list.length) {
+      html += '<h3 class="ab-marks-head">🔖 책갈피 ' + list.length + '</h3><ul class="ab-marks">' + list.map(function (m) {
+        var ch = chapterById(m.ch);
+        return '<li><a href="' + paraHref(m.ch, m.para) + '"><strong>' + esc(ch.title) + '</strong> · ' +
+          esc(snippet(ch, m.para) || m.text || '') + '</a>' +
+          '<button type="button" class="tv-btn tv-btn--text" data-del-ch="' + esc(m.ch) + '" data-del-p="' + m.para +
+          '" aria-label="책갈피 빼기">✕</button></li>';
+      }).join('') + '</ul>';
+    }
+    return html;
+  }
+
   /* ── 목차 ── */
   function renderToc() {
     var html = '<header class="tv-episode-head"><h2 class="tv-episode-title" id="ab-head">목차</h2>' +
-      '<p class="tv-episode-meta">챕터를 누르면 본문과 낭독으로 이동합니다. 목차는 낭독하지 않습니다.</p></header>';
+      '<p class="tv-episode-meta">챕터를 누르면 본문과 낭독으로 이동합니다. 목차는 낭독하지 않습니다.</p></header>' +
+      renderMarksSection();
     var epi = (book.front && book.front.epigraph) || [];
     if (epi.length) {
       html += '<blockquote class="ab-epigraph">' + epi.map(function (p) {
@@ -260,12 +391,23 @@
     else if (c.audio.partial) html += '<p class="tv-episode-note">낭독을 만드는 중입니다. 앞 ' + c.audio.rows.length + '문장(전체 ' +
       c.sentenceCount + '문장)까지만 음원이 있습니다.</p>';
     else if (c.audio.preview) html += '<p class="tv-episode-note">로컬 미리보기 음원입니다.</p>';
+    if (c.audio && c.audio.engine && c.audio.engine !== wantedEngine(book)) {
+      html += '<p class="tv-episode-note">' + (ENGINE_NAMES[wantedEngine(book)] || wantedEngine(book)) + ' 낭독이 아직 없어 ' +
+        (ENGINE_NAMES[c.audio.engine] || c.audio.engine) + ' 낭독으로 재생합니다.</p>';
+    }
+    var bm = bookMarks();
+    shownLast = bm.last && bm.last.ch === c.id ? { para: bm.last.para } : null;
+    if (shownLast && shownLast.para > 0) {
+      html += '<p class="ab-last-row"><button type="button" class="tv-btn tv-btn--text" id="ab-golast">📖 읽던 곳으로 · 문단 ' +
+        (shownLast.para + 1) + '</button></p>';
+    }
     html += '</header>';
 
     var g = 0;
     var firstProse = true;
     segText = [];
-    c.paragraphs.forEach(function (p) {
+    segPara = [];
+    c.paragraphs.forEach(function (p, pi) {
       var kind = p[0], text = p[1], em = p[2], spans = p[3];
       var cls = 'ab-para ab-para--' + kind;
       if (kind === 'p' && firstProse) { cls += ' ab-para--first'; firstProse = false; }
@@ -273,15 +415,19 @@
       var inner = spans.map(function (s) {
         var i = g++;
         segText[i] = text.slice(s[0], s[1]).trim();
+        segPara[i] = pi;
         var body = renderRange(text, s[0], s[1], em);
         return c.audio && i < c.audio.rows.length ? '<span class="tv-seg" role="button" tabindex="0" data-seg="' + i + '">' + body + '</span>' : body;
       }).join('');
-      html += '<p class="' + cls + '">' + inner + '</p>';
+      html += '<p class="' + cls + '" data-p="' + pi + '">' +
+        '<button type="button" class="ab-ribbon" data-ribbon="' + pi + '" title="책갈피 빼기" aria-label="책갈피 빼기">🔖</button>' +
+        inner + '</p>';
     });
     el.script.innerHTML = html;
     segNodes = [];
     var nodes = el.script.querySelectorAll('.tv-seg');
     for (var i = 0; i < nodes.length; i++) segNodes[+nodes[i].getAttribute('data-seg')] = nodes[i];
+    paintMarks();
   }
 
   function applyFont() {
@@ -502,13 +648,15 @@
   }
 
   /* ── 전환 ── */
-  function show(bookId, chapterId, updateHash) {
+  function show(bookId, chapterId, updateHash, para) {
     var b = books.filter(function (x) { return x.id === bookId; })[0] || books[0];
     var c = chapterId ? b.chapters.filter(function (x) { return x.id === chapterId; })[0] || null : null;
     if (audioEl && chapter && chapter.audio && audioEl.currentTime > 0) savePosition();
+    if (chapter) rememberLast();
     book = b;
     chapter = c;
     renderOptions();
+    renderEngineOptions();
     renderHero();
     if (chapter) renderChapter(); else renderToc();
     applyFont();
@@ -518,18 +666,24 @@
       var h = '#' + encodeURIComponent(book.id) + (chapter ? '/' + encodeURIComponent(chapter.id) : '');
       if (location.hash !== h) history.pushState(null, '', h);
     }
+    if (chapter && para != null) setTimeout(function () { jumpToPara(para); }, 60);
+    else window.scrollTo({ top: 0 });
   }
   function stepChapter(d) {
     var i = chapterIndex() + d;
     if (i < -1 || i >= book.chapters.length) return;
     show(book.id, i < 0 ? null : book.chapters[i].id, true);
-    window.scrollTo({ top: 0 });
   }
   function fromHash() {
     var raw = decodeURIComponent(location.hash.replace(/^#/, ''));
     var parts = raw.split('/');
-    if (book && book.id === parts[0] && (chapter ? chapter.id : null) === (parts[1] || null)) return;
-    show(parts[0] || books[0].id, parts[1] || null, false);
+    var m = /^p(\d+)$/.exec(parts[2] || '');
+    var para = m ? +m[1] : null;
+    if (book && book.id === parts[0] && (chapter ? chapter.id : null) === (parts[1] || null)) {
+      if (para != null) jumpToPara(para);
+      return;
+    }
+    show(parts[0] || books[0].id, parts[1] || null, false, para);
   }
 
   /* ── 시작 ── */
@@ -540,11 +694,13 @@
     var ids = ['book-title', 'book-sub', 'stats', 'book-field', 'book', 'chapter', 'ch-prev', 'ch-next',
                'font-down', 'font-value', 'font-up', 'font-reset', 'top', 'player', 'resume-bar', 'resume',
                'now', 'time-now', 'seek', 'time-total', 'seg-prev', 'back10', 'play', 'fwd10', 'seg-next',
-               'repeat', 'loop', 'stepmode', 'rate', 'follow', 'autonext', 'audio'];
+               'repeat', 'loop', 'stepmode', 'rate', 'follow', 'autonext', 'audio',
+               'bookmark', 'bookmark-bar', 'mark-status', 'engine', 'engine-wrap'];
     var names = ['title', 'sub', 'stats', 'bookField', 'book', 'chapter', 'prev', 'next',
                  'fontDown', 'fontValue', 'fontUp', 'fontReset', 'top', 'player', 'resumeBar', 'resume',
                  'now', 'timeNow', 'seek', 'timeTotal', 'segPrev', 'back10', 'play', 'fwd10', 'segNext',
-                 'repeat', 'loop', 'stepmode', 'rate', 'follow', 'autonext', 'audio'];
+                 'repeat', 'loop', 'stepmode', 'rate', 'follow', 'autonext', 'audio',
+                 'bookmark', 'bookmarkBar', 'markStatus', 'engine', 'engineWrap'];
     ids.forEach(function (id, i) { el[names[i]] = document.getElementById('ab-' + id); });
     el.script = document.getElementById('tv-script');
     el.toolbar = document.querySelector('.tv-toolbar');
@@ -577,6 +733,8 @@
     if (typeof prefs.autoNext === 'boolean') autoNext = prefs.autoNext;
     if (typeof prefs.stepMode === 'boolean') stepMode = prefs.stepMode;
     positions = readStore(POS_KEY, {});
+    if (prefs.engine) engine = prefs.engine;
+    applyEngine();
     el.rate.value = String(rate);
     if (el.rate.value !== String(rate)) { rate = 1; el.rate.value = '1'; }
     el.follow.checked = follow;
@@ -615,6 +773,27 @@
       holdSeg = loopOn || stepMode ? currentSeg() : -1;
       syncToggles();
     });
+    marks = readStore(MARKS_KEY, {});
+    el.engine.addEventListener('change', function () {
+      engine = el.engine.value;
+      savePrefs();
+      applyEngine();
+      show(book.id, chapter ? chapter.id : null, false);
+    });
+    el.bookmark.addEventListener('click', function () { toggleMark(); });
+    el.bookmarkBar.addEventListener('click', function () { toggleMark(); });
+    el.script.addEventListener('click', function (e) {
+      var t = e.target;
+      if (!t.closest) return;
+      var rib = t.closest('.ab-ribbon');
+      if (rib) { e.stopPropagation(); toggleMark(+rib.getAttribute('data-ribbon')); return; }
+      if (t.closest('#ab-golast') && shownLast) { jumpToPara(shownLast.para); return; }
+      var del = t.closest('[data-del-ch]');
+      if (del) {
+        var i = markIndex(del.getAttribute('data-del-ch'), +del.getAttribute('data-del-p'));
+        if (i >= 0) { bookMarks().list.splice(i, 1); saveMarks(); renderToc(); }
+      }
+    }, true);
     el.stepmode.addEventListener('click', function () {
       stepMode = !stepMode;
       holdSeg = loopOn || stepMode ? currentSeg() : -1;
@@ -643,7 +822,7 @@
     });
 
     audioEl.addEventListener('play', function () { updatePlayButton(); el.resumeBar.hidden = true; startTick(); });
-    audioEl.addEventListener('pause', function () { updatePlayButton(); if (chapter && chapter.audio) savePosition(); });
+    audioEl.addEventListener('pause', function () { updatePlayButton(); if (chapter && chapter.audio) savePosition(); rememberLast(); });
     audioEl.addEventListener('timeupdate', function () { if (audioEl.paused) updateProgress(); });
     audioEl.addEventListener('ended', function () {
       updatePlayButton();
@@ -658,14 +837,17 @@
     });
 
     window.addEventListener('scroll', function () {
+      if (chapter) { clearTimeout(lastTimer); lastTimer = setTimeout(rememberLast, 900); }
       if (Date.now() > programmaticUntil) lastUserScrollAt = Date.now();
       el.top.hidden = window.scrollY < 400;
     }, { passive: true });
     el.top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    window.addEventListener('pagehide', function () { rememberLast(); });
     window.addEventListener('pagehide', function () { if (chapter && chapter.audio && audioEl.currentTime > 0) savePosition(); });
 
     document.addEventListener('keydown', function (e) {
       if (isFormField(e.target) || e.metaKey || e.ctrlKey || e.altKey) return;
+      if ((e.key === 'b' || e.key === 'B') && chapter) { toggleMark(); return; }
       var hasAudio = chapter && chapter.audio;
       if (e.key === '[' || e.key === ']') { e.preventDefault(); stepChapter(e.key === '[' ? -1 : 1); }
       else if (!hasAudio) return;

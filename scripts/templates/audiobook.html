@@ -43,6 +43,23 @@
     .ab-lock { max-width: 26rem; margin: 1rem auto 3rem; display: flex; flex-direction: column; gap: 0.7rem; }
     .ab-lock-row { display: flex; gap: 0.4rem; }
     .ab-lock-remember { align-self: flex-start; }
+    /* 책갈피 */
+    .ab-para { position: relative; border-radius: 4px; transition: background 0.4s; }
+    .ab-ribbon { display: none; position: absolute; top: -0.35rem; right: -0.2rem; border: 0; background: none;
+                 cursor: pointer; font-size: 1rem; line-height: 1; padding: 0.2rem; text-indent: 0; font-style: normal; }
+    .ab-para.has-mark { box-shadow: inset 3px 0 0 var(--accent); padding-left: 0.7rem; padding-right: 1.6rem; }
+    .ab-para.has-mark .ab-ribbon { display: block; }
+    .ab-para.is-last { background: linear-gradient(to right, var(--tag-bg), transparent 70%); }
+    .ab-para.is-last::before { content: '📖 읽던 곳'; display: block; font-size: 0.7rem; color: var(--accent);
+                               text-indent: 0; font-style: normal; font-weight: 600; }
+    .ab-para.is-flash { background: var(--tag-bg); }
+    .ab-last-row { margin-top: 0.6rem; }
+    .ab-last-link { margin: 1rem 0 0.3rem; font-size: 0.9rem; }
+    .ab-marks-head { font-size: 0.95rem; margin: 1.2rem 0 0.3rem; }
+    .ab-marks { list-style: none; padding: 0; margin: 0 0 0.5rem; }
+    .ab-marks li { display: flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0; border-bottom: 1px dashed var(--border); }
+    .ab-marks a { flex: 1; color: var(--text); text-decoration: none; font-size: 0.88rem; }
+    .ab-marks a:hover { color: var(--accent); }
     .tv-btn.is-on { background: var(--tag-bg); border-color: var(--accent); color: var(--accent); }
   </style>
 </head>
@@ -102,6 +119,13 @@
         <span class="tv-label">&nbsp;</span>
         <button type="button" class="tv-btn tv-btn--text" id="ab-lock" hidden title="기억한 암호를 지우고 잠급니다">🔒 잠그기</button>
       </div>
+
+      <!-- 지금 읽는 문단에 책갈피를 꽂거나 뺀다 ( B ). 읽던 곳은 따로 자동으로 기억한다 -->
+      <div class="tv-field">
+        <span class="tv-label">책갈피</span>
+        <button type="button" class="tv-btn tv-btn--text" id="ab-bookmark" title="지금 읽는 문단에 책갈피 ( B )">🔖 책갈피</button>
+        <p class="tv-search-count" id="ab-mark-status" role="status" aria-live="polite"></p>
+      </div>
     </section>
 
     <article class="tv-script" id="tv-script" tabindex="-1">
@@ -149,6 +173,12 @@
             <option value="1.5">1.5×</option>
           </select>
         </label>
+        <!-- 챕터에 낭독이 둘 이상(Gemini·Kokoro) 있을 때만 보인다. 고른 값은 이 기기에 기억한다 -->
+        <label class="tv-rate" id="ab-engine-wrap" hidden title="낭독 엔진">
+          <span class="tv-visually-hidden">낭독 엔진</span>
+          <select class="tv-rate-select" id="ab-engine"></select>
+        </label>
+        <button type="button" class="tv-btn tv-btn--text" id="ab-bookmark-bar" title="지금 낭독 중인 문단에 책갈피 ( B )">🔖</button>
         <label class="tv-follow" title="재생 위치를 따라 본문을 스크롤합니다">
           <input type="checkbox" id="ab-follow" checked /> 따라가기
         </label>
