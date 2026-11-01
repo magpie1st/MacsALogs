@@ -850,7 +850,15 @@ def main() -> None:
             show["seasons"] = []
     show["title"] = args.title or script.get("title") or show_id
     if args.title_en:
-        show["titleKo"] = args.title_en
+        # 제목 옆에 굵게 붙는 **보조 제목**. 주 제목이 한글이면 보조는 영문이고(titleEn),
+        # 주 제목이 영문이면 보조는 한글이다(titleKo). 칸 이름을 실제와 맞춰 둔다 —
+        # 영문 이름이 titleKo 에 들어 있으면 나중에 읽는 사람이 반드시 헷갈린다.
+        key = "titleKo" if show["title"].isascii() else "titleEn"
+        show.pop("titleEn" if key == "titleKo" else "titleKo", None)
+        if args.title_en == show["title"]:
+            show.pop(key, None)   # 주 제목과 같은 값은 보조 제목이 아니다
+        else:
+            show[key] = args.title_en
     show["kind"] = "recording"
     show["type"] = TYPE_MOVIE if args.movie else TYPE_SERIES
     show["hasKo"] = True
