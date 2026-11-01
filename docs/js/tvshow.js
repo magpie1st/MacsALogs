@@ -583,6 +583,14 @@
     if (keepPlaying && audioEl.paused) requestPlay();
   }
 
+  /* 지금 문장을 처음부터 다시 듣는다 (확장의 S 와 같다).
+   * 재생 중이면 그 자리로 되감기만 하고, 멈춰 있으면 거기서부터 재생한다. */
+  function repeatSegment() {
+    if (!audioEl || !segRows.length) return;
+    var i = activeSeg >= 0 ? activeSeg : findSegment(audioEl.currentTime * 1000);
+    seekToSegment(i >= 0 ? i : 0, true);
+  }
+
   function stepSegment(delta) {
     if (!audioEl || !segRows.length) return;
     var base = activeSeg >= 0 ? activeSeg : findSegment(audioEl.currentTime * 1000);
@@ -754,13 +762,19 @@
     selectEpisode(findEpisode(episodeId) ? episodeId : episodes[0].id, updateHash);
   }
 
+  /* 한국어 버튼은 **두 곳**에 있다 — 위 도구 모음과 플레이어 바.
+   * 도구 모음은 스크롤하면 사라지므로, 들으면서 쓰려면 바에도 있어야 한다.
+   * 상태는 showKo 하나뿐이고 여기서 둘을 함께 맞춘다 (따로 두면 어긋난다). */
   function syncKoToggle() {
-    if (!el.koField) return;
-    el.koField.hidden = !hasKo();
-    if (el.koToggle) {
-      el.koToggle.textContent = showKo ? '한국어 숨기기' : '한국어 보이기';
-      el.koToggle.setAttribute('aria-pressed', String(showKo));
-    }
+    var on = hasKo();
+    if (el.koField) el.koField.hidden = !on;
+    if (el.koBar) el.koBar.hidden = !on;
+    var label = showKo ? '한국어 숨기기' : '한국어 보이기';
+    [el.koToggle, el.koBar].forEach(function (btn) {
+      if (!btn) return;
+      btn.textContent = label;
+      btn.setAttribute('aria-pressed', String(showKo));
+    });
   }
 
   function toggleKo() {
@@ -828,6 +842,7 @@
     el.fwd10.addEventListener('click', function () { skip(SKIP_SECONDS); });
     el.segPrev.addEventListener('click', function () { stepSegment(-1); });
     el.segNext.addEventListener('click', function () { stepSegment(1); });
+    if (el.repeat) el.repeat.addEventListener('click', repeatSegment);
 
     el.rate.addEventListener('change', function () {
       rate = parseFloat(el.rate.value) || 1;
@@ -892,6 +907,7 @@
     }
 
     if (el.koToggle) el.koToggle.addEventListener('click', toggleKo);
+    if (el.koBar) el.koBar.addEventListener('click', toggleKo);
 
     el.episode.addEventListener('change', function () {
       if (el.episode.value) selectEpisode(el.episode.value, true);
@@ -946,7 +962,7 @@
       if (id && findEpisode(id)) selectEpisode(id, false);
     });
 
-    // 데스크톱 편의: '/' 로 검색창에, '[' ']' 로 앞뒤 에피소드로 간다
+    // 데스크톱 편의: '/' 검색창, '[' ']' 앞뒤 에피소드, K 한국어, R 이 문장 다시
     document.addEventListener('keydown', function (event) {
       if (event.metaKey || event.ctrlKey || event.altKey) return;
       if (isFormField(event.target)) return;
@@ -963,6 +979,10 @@
         if (!hasKo()) return;
         event.preventDefault();
         toggleKo();
+      } else if (event.key === 'r' || event.key === 'R') {
+        if (!segRows.length) return;
+        event.preventDefault();
+        repeatSegment();
       }
     });
 
@@ -1027,7 +1047,9 @@
       segPrev: document.getElementById('tv-seg-prev'),
       segNext: document.getElementById('tv-seg-next'),
       rate: document.getElementById('tv-rate'),
-      follow: document.getElementById('tv-follow')
+      follow: document.getElementById('tv-follow'),
+      repeat: document.getElementById('tv-repeat'),
+      koBar: document.getElementById('tv-ko-bar')
     };
     audioEl = document.getElementById('tv-audio');
 
