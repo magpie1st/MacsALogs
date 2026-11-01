@@ -130,7 +130,10 @@ python3 scripts/build_langstudy.py "~/Downloads/lang-study/<폴더>" \
 
 ### 내려받기 감시 (`watch_langstudy.py`)
 
-`/Users/mac/Downloads/lang-study` 를 지켜보다가 새 회차 폴더가 들어오면 알아서 올린다.
+Chrome 이 내려받는 폴더의 `lang-study/` 를 지켜보다가 새 회차 폴더가 들어오면 알아서 올린다.
+**경로는 박아 두지 않는다** — 확장이 상대 경로로 내려받으므로 Chrome 설정(`download.`
+`default_directory`)을 읽고, 없으면 OS 기본값을 쓴다 (리눅스는 XDG `~/다운로드` 까지 본다).
+어디를 볼지 확인하려면 `python3 scripts/downloads.py`, 직접 지정하려면 `--dir` 이다.
 
 ```bash
 python3 scripts/watch_langstudy.py -n --once   # 무엇을 하려는지만

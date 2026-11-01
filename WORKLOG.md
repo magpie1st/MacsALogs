@@ -44,6 +44,29 @@ Release 태그는 `shows-audio-2026-10-31-v1`(자산 10개)과 `shows-audio-2026
   **싸우지 않기로 했다** — 완료 판정이 자막 문장만 보므로 크레딧 꼬리는 판정에 안 들어간다
   (실제로 에밀리 1~10화 전부 마지막 자막 뒤가 2:54~4:00이고 자막이 없었다)
 
+### 감시 폴더를 Chrome 설정에 맞췄다 (`scripts/downloads.py`)
+
+"watcher가 지켜볼 폴더가 확장이 내려받는 곳으로 되어 있나? 리눅스·맥 모두 되나?" 질문에서
+나왔다. watcher와 publisher가 `~/Downloads/lang-study`를 **박아 두고** 있었다.
+
+문제는 틀렸을 때의 모양이다. 확장은 `chrome.downloads.download({filename: 'lang-study/...'})`
+로 **상대 경로**를 넘기므로 실제 위치는 Chrome 설정이 정한다. 사용자가 그 설정을 바꾸면
+watcher는 없는 폴더를 보며 **오류 없이 가만히 있고**, publisher는 음원을 못 찾는다.
+
+- `scripts/downloads.py` 를 새로 두고 watcher·publisher가 함께 쓴다 (둘이 다른 폴더를 보면
+  watcher가 넣은 회차의 음원을 publisher가 못 찾는다)
+- Chrome `Preferences` 의 `download.default_directory` → 없으면 OS 기본값
+- 맥 `~/Library/Application Support/Google/Chrome`, 리눅스 `~/.config/google-chrome`,
+  베타·Chromium 채널까지 본다. 깨진 `Preferences` 는 건너뛴다
+- 리눅스 OS 기본값은 XDG `~/.config/user-dirs.dirs` 의 `XDG_DOWNLOAD_DIR` 를 읽는다 —
+  한국어 환경은 `~/다운로드` 다. 맥은 언제나 `~/Downloads` (Finder가 이름만 번역한다)
+- 시작 배너에 어디를 보는지 띄우고, Chrome 설정과 다르면 ⚠ 로 알린다. 폴더가 없을 때의
+  종료 메시지도 두 원인(아직 안 받았다 / 폴더가 다르다)을 구분해 말한다
+
+확인: HOME을 임시 폴더로 바꿔 리눅스 환경을 흉내 내 7가지를 자체 검사에 넣었다
+(리눅스 경로 읽기, 한국어 XDG 폴더, 설정 없을 때, 깨진 Preferences). watcher와 publisher가
+같은 폴더를 가리키는지도 확인한다. 이 맥은 설정이 비어 있어 전과 같은 `~/Downloads/lang-study`.
+
 ### 아직 안 한 것
 
 - 피날레 포스트플레이의 실제 축소 비율 확인 → `postPlayShrunk`의 `SHRUNK_RATIO` 보정
@@ -138,7 +161,7 @@ currentTime 을 설정해도 0 에서 움직이지 않으므로 네 기능이 �
 ### 내려받기 감시 (`scripts/watch_langstudy.py`)
 
 "폴더가 생기면 소리 확인하고 zip 풀고 스크립트 리더까지" 요청으로 추가했다.
-`/Users/mac/Downloads/lang-study` 를 지켜보다가 새 폴더가 들어오면 끝까지 올린다.
+내려받기 폴더의 `lang-study/` 를 지켜보다가 새 폴더가 들어오면 끝까지 올린다.
 
 - **안정화 대기**가 핵심이다. 16MB mp3 와 71MB zip 이 함께 내려오므로 한 번 보고 판단하면
   받는 중에 손대 잘린 파일로 빌드가 돌아간다. 폴더 안 (경로, 크기) 지문을 순회 사이에 들고

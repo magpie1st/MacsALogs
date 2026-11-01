@@ -45,7 +45,8 @@ MacsALogs/
 │   ├── build_tvshow.py    # TTS 시리즈 (book-maker 원본)
 │   ├── build_langstudy.py # 녹음 작품 (lang-study 내보내기)
 │   ├── publish_shows.py   # 음원 Release 업로드 + 주소 교체 + 푸시
-│   ├── watch_langstudy.py # ~/Downloads/lang-study 감시 → 자동 반영
+│   ├── watch_langstudy.py # 내려받기 폴더의 lang-study/ 감시 → 자동 반영
+│   ├── downloads.py       # 그 폴더 찾기 (Chrome 설정 → OS 기본값)
 │   ├── serve_docs.py      # 로컬 미리보기 (Range 206 지원)
 │   └── test_shows.py      # 자체 검사
 ├── .claude/               # 스킬·에이전트 (script-reader)

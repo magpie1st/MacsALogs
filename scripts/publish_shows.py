@@ -35,11 +35,12 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+from downloads import langstudy_dir
 from shows import normalize_base_url, read_payload, upsert_show, write_payload
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SHOWS_DIR = REPO_ROOT / "docs" / "audio" / "shows"
-DEFAULT_DOWNLOADS = Path("~/Downloads/lang-study").expanduser()
+DEFAULT_DOWNLOADS = langstudy_dir()  # Chrome 다운로드 설정을 따라간다 (downloads.py)
 REPO = "magpie1st/MacsALogs"
 RELEASE_BASE = f"https://github.com/{REPO}/releases/download"
 

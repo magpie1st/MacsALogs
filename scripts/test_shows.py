@@ -433,6 +433,51 @@ with tempfile.TemporaryDirectory() as tmp:
     check("시즌·회차로 짐작", publish.find_source(legacy, root, None), folder / "원본.mp3")
     check("없으면 None", publish.find_source({"season": 9, "episode": 9, "audio": {}}, root, None), None)
 
+# ── watcher 가 지켜볼 폴더 (맥·리눅스) ─────────────────────────────────────
+print("\n감시 폴더: Chrome 설정을 따라가고, 맥·리눅스 모두 본다")
+
+downloads = load("downloads")
+
+import os
+import tempfile
+
+with tempfile.TemporaryDirectory() as tmp:
+    home = Path(tmp)
+    linux = home / ".config/google-chrome/Default"
+    linux.mkdir(parents=True)
+    (linux / "Preferences").write_text(
+        json.dumps({"download": {"default_directory": "/home/u/내려받기"}}), encoding="utf-8")
+    korean = home / "다운로드"
+    korean.mkdir()
+    (home / ".config/user-dirs.dirs").write_text(
+        'XDG_DOWNLOAD_DIR="$HOME/다운로드"\n', encoding="utf-8")
+
+    saved_home = os.environ.get("HOME")
+    os.environ["HOME"] = str(home)
+    try:
+        # 리눅스 Chrome 경로(~/.config/google-chrome)에서 설정을 읽는다
+        check("리눅스 Chrome 설정을 읽는다",
+              downloads.chrome_download_dir(), Path("/home/u/내려받기"))
+        check("감시 폴더는 Chrome 설정을 따른다",
+              downloads.langstudy_dir(), Path("/home/u/내려받기/lang-study"))
+
+        # 설정이 없으면 OS 기본값. 리눅스 한국어 환경은 ~/다운로드 다.
+        (linux / "Preferences").write_text(json.dumps({"download": {}}), encoding="utf-8")
+        check("설정이 없으면 None", downloads.chrome_download_dir(), None)
+        check("XDG 한국어 폴더를 읽는다", downloads.os_download_dir(), korean)
+        check("그때 감시 폴더", downloads.langstudy_dir(), korean / "lang-study")
+
+        # XDG 도 없으면 ~/Downloads (맥은 언제나 이쪽)
+        (home / ".config/user-dirs.dirs").unlink()
+        check("XDG 도 없으면 ~/Downloads", downloads.os_download_dir(), home / "Downloads")
+
+        # 깨진 Preferences 때문에 멈추지 않는다
+        (linux / "Preferences").write_text("{깨짐", encoding="utf-8")
+        check("깨진 Preferences 는 건너뛴다", downloads.chrome_download_dir(), None)
+    finally:
+        if saved_home:
+            os.environ["HOME"] = saved_home
+
 print()
 if failures:
     print(f"실패 {len(failures)}건: " + ", ".join(failures))

@@ -94,7 +94,9 @@ python3 scripts/watch_langstudy.py -n --once   # 계획만
 python3 scripts/watch_langstudy.py             # 계속 지켜본다 (Ctrl+C 로 중지)
 ```
 
-`/Users/mac/Downloads/lang-study` 에 새 폴더가 생기면 폴더마다 이 순서로 한다.
+내려받기 폴더의 `lang-study/` 에 새 폴더가 생기면 폴더마다 이 순서로 한다. 어디를 보는지는
+Chrome 의 다운로드 설정이 정하므로 (`python3 scripts/downloads.py` 로 확인) 아래 예시 경로가
+다를 수 있다. 다르면 `--dir` 로 준다.
 
 1. 다 내려왔는지 본다 (크기가 `--stable` 초 동안 그대로여야 손댄다 — 71MB zip 이 함께 온다)
 2. `*문장별*.zip` 을 폴더 안에 푼다 (zip 안의 `script.json`·`sentences.csv` 를 쓴다)
@@ -112,6 +114,7 @@ python3 scripts/watch_langstudy.py             # 계속 지켜본다 (Ctrl+C 로
 | `--no-push` | 음원은 올리되 커밋·푸시는 안 한다 |
 | `--force` | 이미 처리한 폴더도 다시 |
 | `--stable 0` | 안정화 대기 없이 바로 (이미 다 내려온 폴더) |
+| `--dir <폴더>` | 지켜볼 폴더를 직접 (기본은 Chrome 다운로드 설정 + `lang-study`) |
 
 **사람이 끼어들 지점이 없다.** 작품 id 는 제목에서 만들고, 시즌·회차는 스크립트 JSON 이나
 폴더 이름에서 읽고, 영화는 시즌·회차가 없는 것으로 알아본다.
@@ -235,7 +238,7 @@ seek 불가로 판단하고(`audio.seekable` 이 `[0,0]`), 문장 클릭·문장
 | `-n` | 올리지 않고 계획만 |
 | `--episode sNNeNN` | 그 회차만 (여러 번 줄 수 있다). 생략하면 작품 전부 |
 | `--tag` | Release 태그. 생략하면 config.json 에서 읽고, 없으면 오늘 날짜로 |
-| `--from <폴더>` | 내려받기 폴더 (기본 `~/Downloads/lang-study`) |
+| `--from <폴더>` | 내려받기 폴더 (기본은 Chrome 설정을 따른다 — 보통 `~/Downloads/lang-study`) |
 | `--yes` | 확인 없이 올린다. **사용자가 공개를 요청했을 때만** |
 | `--push` | 성공하면 커밋·푸시까지 |
 
