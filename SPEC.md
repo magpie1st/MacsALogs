@@ -132,6 +132,17 @@ Release 자산은 **Range 요청(206)을 지원**하므로 문장 단위 seek이
 200을 돌려주고, 그러면 Chrome이 미디어를 seek 불가로 판단해(`audio.seekable`이 `[0,0]`)
 문장 클릭·문장 이동·±10초가 **전부** 먹지 않습니다.
 
+### 지금 올라가 있는 것 (2026-11-01)
+
+| 작품 id | 종류 | 회차 | Release 태그 |
+|---|---|---|---|
+| `a-gentleman-s-dignity` | `tts` | 시즌 1 · 20화 | `tvshow-audio-2026-09-15-v1` |
+| `emily-in-paris` | `recording` | 시즌 5 · 10화 | `shows-audio-2026-10-31-v1` |
+| `workin-moms` | `recording` | 시즌 1 · 3화 | `shows-audio-2026-11-01-v1` |
+
+녹음 작품은 전부 24kHz 모노다. 타임라인은 `docs/audio/shows/<작품>/sNNeNN.json`,
+작품 id 매핑은 `scripts/show_ids.json`에 있다.
+
 ### 작품 id
 
 주소 해시와 폴더 이름에 쓰는 값입니다. 사람의 입력 없이 정해집니다.
