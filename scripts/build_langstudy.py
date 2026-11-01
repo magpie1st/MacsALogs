@@ -466,6 +466,68 @@ def remove_show(show_id: str, dry: bool) -> None:
     print("\n지웠습니다. 음원 Release 자산은 남아 있습니다 (필요하면 gh release delete-asset).")
 
 
+def remove_episode(show_id: str, season_no: int, episode_no: int, dry: bool,
+                   delete_asset: bool = False) -> None:
+    """회차 하나를 페이지·타임라인에서 지운다. 녹음이 잘못됐을 때 쓴다.
+
+    회차가 통째로 잘못 올라가는 일은 실제로 생긴다 — 소리가 하나도 안 담긴(완전 무음) mp3 가
+    그렇다. 길이는 멀쩡하고 용량도 정상이라(CBR mp3 는 무음도 같은 크기) 눈으로는 안 보인다.
+
+    Release 자산은 기본적으로 **남긴다**. 지우는 쪽이 되돌릴 수 없고, 다시 녹음해 같은 이름으로
+    올리면 `--clobber` 로 덮어써지기 때문이다. 정말 지우려면 `--delete-asset` 을 준다.
+    """
+    payload = read_payload()
+    show = next((x for x in (payload.get("shows") or []) if x.get("id") == show_id), None)
+    if show is None:
+        sys.exit(f"그 작품이 페이지에 없습니다: {show_id}")
+
+    season = next((x for x in (show.get("seasons") or []) if x.get("number") == season_no), None)
+    episode = next((e for e in ((season or {}).get("episodes") or [])
+                    if e.get("number") == episode_no), None)
+    tag = f"s{season_no:02d}e{episode_no:02d}"
+    manifest = SHOWS_DIR / show_id / f"{tag}.json"
+    asset = ((episode or {}).get("audio") or {}).get("file") or ""
+    asset_name = asset.rsplit("/", 1)[-1]
+
+    print(f"작품      {show_id}")
+    print(f"회차      {tag}  {'· ' + str(episode.get('lineCount')) + '줄' if episode else '(페이지에 없음)'}")
+    print(f"타임라인  {manifest.relative_to(REPO_ROOT) if manifest.is_file() else '(없음)'}")
+    print(f"음원      {asset_name or '(없음)'}  {'지웁니다' if delete_asset and asset_name else '남깁니다'}")
+    if dry:
+        print("\n(-n 이라 아무것도 지우지 않았습니다)")
+        return
+    if episode is None and not manifest.is_file():
+        sys.exit("지울 것이 없습니다.")
+
+    if episode is not None:
+        season["episodes"] = [e for e in season["episodes"] if e.get("number") != episode_no]
+        # 시즌이 비면 시즌을, 작품이 비면 작품을 함께 걷어낸다 (빈 칸이 선택 목록에 남지 않게)
+        if not season["episodes"]:
+            show["seasons"] = [x for x in show["seasons"] if x is not season]
+        if not show.get("seasons"):
+            payload["shows"] = [x for x in payload["shows"] if x is not show]
+            print(f"! 회차가 하나도 남지 않아 작품 {show_id} 를 함께 지웁니다")
+        write_payload(payload)
+    if manifest.is_file():
+        manifest.unlink()
+
+    if delete_asset and asset_name:
+        # 주소 자체가 저장소·태그를 담고 있다: .../<owner>/<repo>/releases/download/<태그>/<파일>
+        m = re.search(r"github\.com/([^/]+/[^/]+)/releases/download/([^/]+)/", asset)
+        if not m:
+            print(f"! 음원 주소에서 Release 태그를 못 읽어 자산은 남깁니다: {asset[:80]}")
+        else:
+            done = subprocess.run(["gh", "release", "delete-asset", m.group(2), asset_name,
+                                   "--repo", m.group(1), "--yes"], capture_output=True, text=True)
+            print("음원 자산을 지웠습니다" if done.returncode == 0
+                  else f"! 음원 자산을 못 지웠습니다: {done.stderr.strip()[:200]}")
+    elif asset_name:
+        print(f"\n음원은 Release 에 남아 있습니다. 정말 지우려면 --delete-asset 또는\n"
+              f"  gh release delete-asset <태그> {asset_name} --repo <owner/repo>")
+
+    print("\n지웠습니다. 같은 회차를 다시 녹음해 올리면 그 자리에 들어갑니다.")
+
+
 def english_title(script: dict, explicit: str | None) -> str | None:
     """영문 제목. 직접 준 값 → 기억해 둔 값 → 제목 자체가 영문이면 그것.
 
@@ -588,6 +650,10 @@ def main() -> None:
     parser.add_argument("folder", type=Path, nargs="?", help="lang-study 가 내려받은 회차 폴더")
     parser.add_argument("--remove-show", metavar="ID",
                         help="작품을 페이지에서 지운다 (타임라인 manifest 도 함께). 음원 Release 자산은 남는다")
+    parser.add_argument("--remove-episode", metavar="sNNeNN",
+                        help="회차 하나를 페이지에서 지운다 (--show-id 와 함께). 녹음이 잘못됐을 때")
+    parser.add_argument("--delete-asset", action="store_true",
+                        help="--remove-episode 와 함께: Release 음원 자산까지 지운다 (되돌릴 수 없다)")
     parser.add_argument("--script", type=Path, help="스크립트 JSON 경로 (폴더에 여러 개일 때)")
     parser.add_argument("--audio", type=Path, help="전체 MP3 경로 (폴더에 여러 개일 때)")
     parser.add_argument("--show-id", help="작품 id (주소 해시에 쓴다. 한글 제목이면 필수)")
@@ -618,8 +684,18 @@ def main() -> None:
         remove_show(args.remove_show, args.dry_run)
         return
 
+    if args.remove_episode:
+        if not args.show_id:
+            sys.exit("--remove-episode 는 --show-id 와 함께 씁니다.")
+        m = re.fullmatch(r"s(\d+)e(\d+)", args.remove_episode.strip(), re.I)
+        if not m:
+            sys.exit(f"회차 모양이 sNNeNN 이어야 합니다: {args.remove_episode}")
+        remove_episode(args.show_id, int(m.group(1)), int(m.group(2)),
+                       args.dry_run, args.delete_asset)
+        return
+
     if not args.folder:
-        sys.exit("회차 폴더를 주세요 (또는 --remove-show ID).")
+        sys.exit("회차 폴더를 주세요 (또는 --remove-show / --remove-episode).")
     folder = args.folder.expanduser()
     if not folder.is_dir():
         sys.exit(f"폴더가 아닙니다: {folder}")

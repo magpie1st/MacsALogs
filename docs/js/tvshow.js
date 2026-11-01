@@ -524,6 +524,51 @@
     el.timeNow.textContent = formatTime(audioEl.currentTime);
   }
 
+  /* 재생을 건다. 실패하면 **음원을 다시 열고 그 자리로 돌아가** 한 번 더 해 본다.
+   *
+   * GitHub Release 음원 주소는 302 로 서명된 임시 주소로 넘긴다. 그 서명이 30분이면
+   * 만료된다 (JWT exp - nbf = 1800초). 그래서 한참 멈춰 뒀다가 다시 누르면 음원 요청이
+   * 403 으로 막히고, 플레이어는 아무 말 없이 가만히 있는다 — play() 가 거부당해도
+   * 조용히 무시했기 때문이다. 회차를 바꾸면 되살아나는 이유도 이것이다: src 를 다시
+   * 넣으면서 302 를 새로 타 새 서명을 받는다.
+   *
+   * 되살리는 방법이 그것뿐이므로 그걸 여기서 한다. 한 번만 시도한다 (정말 음원이
+   * 없으면 무한히 다시 열지 않는다). */
+  var reviving = false;
+  function requestPlay() {
+    if (!audioEl) return;
+    var attempt = audioEl.play();
+    if (!attempt || !attempt.catch) return;
+    attempt.catch(function () {
+      if (reviving || !current || !current.audio) return;
+      revive(true);
+    });
+  }
+
+  function revive(thenPlay) {
+    if (!audioEl || reviving || !current || !current.audio) return;
+    reviving = true;
+    var forEpisode = current;
+    var at = audioEl.currentTime;
+    var wasRate = audioEl.playbackRate;
+    el.now.textContent = '음원을 다시 엽니다…';
+    audioEl.src = current.audio.file;   /* 302 를 다시 타 새 서명을 받는다 */
+    audioEl.addEventListener('loadedmetadata', function back() {
+      audioEl.removeEventListener('loadedmetadata', back);
+      reviving = false;
+      if (current !== forEpisode) return;   // 그 사이에 회차를 바꿨으면 손대지 않는다
+      audioEl.playbackRate = wasRate;
+      try { audioEl.currentTime = at; } catch (e) { /* 범위를 벗어나면 그대로 둔다 */ }
+      setActive(findSegment(at * 1000), true);
+      if (thenPlay) {
+        audioEl.play().catch(function () {
+          el.now.textContent = '음원을 재생할 수 없습니다. 새로고침해 주세요.';
+        });
+      }
+    });
+    audioEl.load();
+  }
+
   function updatePlayButton() {
     var playing = audioEl && !audioEl.paused;
     el.play.textContent = playing ? '일시정지' : '재생';
@@ -535,9 +580,7 @@
     audioEl.currentTime = segRows[i][3] / 1000;
     setActive(i, true);
     updateProgress();
-    if (keepPlaying && audioEl.paused) {
-      audioEl.play().catch(function () { /* 자동재생 차단 등은 무시 */ });
-    }
+    if (keepPlaying && audioEl.paused) requestPlay();
   }
 
   function stepSegment(delta) {
@@ -555,7 +598,7 @@
 
   function togglePlay() {
     if (!audioEl) return;
-    if (audioEl.paused) audioEl.play().catch(function () { /* 무시 */ });
+    if (audioEl.paused) requestPlay();
     else audioEl.pause();
   }
 
@@ -564,6 +607,7 @@
     if (!audioEl) return;
 
     audioEl.pause();
+    reviving = false;
     clearActive();
 
     if (!current || !current.audio) {
@@ -820,7 +864,10 @@
       clearActive();
     });
     audioEl.addEventListener('error', function () {
-      if (audioEl.getAttribute('src')) el.now.textContent = '오디오를 불러오지 못했습니다.';
+      if (!audioEl.getAttribute('src')) return;
+      // 서명 만료(403)도 여기로 온다. 한 번은 다시 열어 본다 — 사용자가 멈춰 둔 자리를 지킨다.
+      if (!reviving && current && current.audio && audioEl.currentTime > 0) revive(false);
+      else el.now.textContent = '오디오를 불러오지 못했습니다.';
     });
 
     // 본문의 문장을 누르면 그 지점으로 이동한다
