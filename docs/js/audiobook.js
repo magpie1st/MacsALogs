@@ -694,12 +694,12 @@
     try { data = JSON.parse(node.textContent); } catch (e) { /* 아래에서 처리 */ }
     var ids = ['book-title', 'book-sub', 'stats', 'book-field', 'book', 'chapter', 'ch-prev', 'ch-next',
                'font-down', 'font-value', 'font-up', 'font-reset', 'top', 'player', 'resume-bar', 'resume',
-               'now', 'time-now', 'seek', 'time-total', 'seg-prev', 'back10', 'play', 'fwd10', 'seg-next',
+               'now', 'time-now', 'seek', 'time-total', 'seg-prev', 'play', 'seg-next',
                'repeat', 'loop', 'stepmode', 'rate', 'follow', 'autonext', 'audio',
                'bookmark', 'bookmark-bar', 'mark-status', 'engine', 'engine-wrap'];
     var names = ['title', 'sub', 'stats', 'bookField', 'book', 'chapter', 'prev', 'next',
                  'fontDown', 'fontValue', 'fontUp', 'fontReset', 'top', 'player', 'resumeBar', 'resume',
-                 'now', 'timeNow', 'seek', 'timeTotal', 'segPrev', 'back10', 'play', 'fwd10', 'segNext',
+                 'now', 'timeNow', 'seek', 'timeTotal', 'segPrev', 'play', 'segNext',
                  'repeat', 'loop', 'stepmode', 'rate', 'follow', 'autonext', 'audio',
                  'bookmark', 'bookmarkBar', 'markStatus', 'engine', 'engineWrap'];
     ids.forEach(function (id, i) { el[names[i]] = document.getElementById('ab-' + id); });
@@ -765,8 +765,6 @@
     el.play.addEventListener('click', togglePlay);
     el.segPrev.addEventListener('click', function () { stepSegment(-1); });
     el.segNext.addEventListener('click', function () { stepSegment(1); });
-    el.back10.addEventListener('click', function () { skip(-SKIP_SECONDS); });
-    el.fwd10.addEventListener('click', function () { skip(SKIP_SECONDS); });
     el.repeat.addEventListener('click', repeatSegment);
     el.loop.addEventListener('click', function () {
       loopOn = !loopOn;
