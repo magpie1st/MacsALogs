@@ -236,21 +236,30 @@ manifest가 원본 대본과 어긋나면 **배포가 중단된다** — 문장 
 하단 플레이어의 `◀◀ 문장` / `문장 ▶▶`와는 **다른 것이다.** 라벨·위치·스타일을 일부러 다르게
 뒀으니, 손댈 때 둘을 닮게 만들지 말 것.
 
-## 오디오북 페이지 (로컬 전용)
+## 오디오북 페이지 (암호화 공개)
 
-`docs/audiobook.html` 은 책 · 챕터를 고르고 문장 동기화 낭독을 듣는 독립형 페이지다. **책 본문 전문이 들어가므로
-`.gitignore` 에 있고 커밋하지 않는다** (이 저장소는 공개 + 자동 푸시). 음원 폴더 `docs/audio/audiobook/` 도 마찬가지다.
-공개하려면 저작권 문제를 먼저 사용자와 정한다.
+`docs/audiobook.html` 은 책 · 챕터를 고르고 문장 동기화 낭독을 듣는 독립형 페이지다. **책 본문 전문이 들어가므로 언제나
+암호화해서 올린다** (이 저장소는 공개 + 자동 푸시). 접속하면 암호 입력 화면이 먼저 뜬다. 평문으로 보이는 것은 책 제목·저자뿐이다.
 
-- 코드: `scripts/build_audiobook.py`(생성기), `scripts/templates/audiobook.html`(틀), `docs/js/audiobook.js`(플레이어)
-- 본문: `book-maker/output/audiobook/<책 id>/book.json` (`book-maker/scripts/build_audiobook_text.py`)
-- 음원: `tts-maker/output/gemini/audiobook/<책 id>/<챕터 id>.{json,mp3}` (`tts-maker/gemini/audiobook_gemini.py`)
-- 타임라인의 `textSha256` 이 본문과 다르면 그 챕터는 음원 없이 실린다
-- 첫 화면은 목차(낭독 없음, 이어듣기 위치 표시). 플레이어: ←/→ 문장, R 다시, L 문장 반복, P 문장마다 멈춤, [ ] 챕터
+- 암호는 사용자가 정한다: `python3 scripts/audiobook_password.py` → `~/.config/macsalogs/audiobook_password` (저장소 밖, 600)
+- 암호화: PBKDF2-SHA256(60만 회, salt 는 `scripts/audiobook_crypto.json`, 커밋) → AES-256-GCM. 복호화는 `docs/js/audiobook.js`(WebCrypto)
+- **평문 빌드(`--plain`)와 미리보기 빌드(`--local-audio`)는 `docs/audiobook-local.html` 로만 간다 (gitignore).** `docs/audiobook.html` 에
+  평문을 쓰는 경로는 없고, 생성기가 쓰고 나서 본문 문장이 평문으로 보이면 실패한다. 이 안전장치를 풀지 말 것
+- 음원도 같은 열쇠로 잠근 `.bin`(iv 12바이트 + 암호문)이다. `.audiobook-audio/<책>/` 에 모인다 (gitignore).
+  브라우저가 fetch 해서 풀어야 하므로 **CORS 를 허용하는 곳**에 둔다 — GitHub Pages 는 되고 GitHub Release 는 안 된다(2026-11-01 확인).
+  지금은 **이 블로그 Pages 안**이다: `config.json` 의 `audioBaseUrl` 이 `audio/audiobook/my-oxford-year`(상대경로)이면 생성기가
+  잠근 `.bin` 을 그 폴더로 복사하고 같은 챕터의 예전 `.bin` 은 지운다. 커밋되는 음원은 암호화된 `.bin` 뿐이다(평문 mp3 는 gitignore).
+  책 전체(약 9시간, 64k)면 약 260MB 이고 다시 만든 챕터는 git 이력에 쌓인다 — 사이트 1GB 상한이 가까워지면 별도 저장소 Pages 로 옮긴다
+- 본문: `book-maker/output/audiobook/<책>/book.json`, 음원: `tts-maker/output/gemini/audiobook/<책>/<챕터>.{json,mp3}`.
+  타임라인의 `textSha256` 이 본문과 다르면 그 챕터는 음원 없이 실린다
+- 첫 화면은 목차(낭독 없음). 플레이어: ←/→ 문장, R 다시, L 문장 반복, P 문장마다 멈춤, [ ] 챕터. 🔒 잠그기 = 기억한 암호 지우기
+- 다른 세션이 MacsALogs 를 커밋할 때 작업 중인 파일까지 쓸려 들어간 적이 있다(2026-11-01 `309485d`). 생성물을 docs 에 남겨 두지 않는다
 
 ```bash
-python3 scripts/build_audiobook.py --local-audio   # mp3 를 docs/audio/audiobook 로 복사(gitignore)
-python3 scripts/serve_docs.py                      # http://localhost:8788/audiobook.html
+python3 scripts/audiobook_password.py                                   # 암호 정하기 (사용자가 직접)
+uv run --with cryptography python scripts/build_audiobook.py            # → docs/audiobook.html (암호화, 올리는 파일)
+uv run --with cryptography python scripts/build_audiobook.py --local-audio   # → docs/audiobook-local.html (로컬 미리보기)
+python3 scripts/serve_docs.py                                           # http://localhost:8788/audiobook.html
 ```
 
 ## MOM(회의록) 페이지

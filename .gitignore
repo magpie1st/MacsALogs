@@ -17,6 +17,8 @@ scripts/.watch_state.json
 docs/audio/shows/**/*.mp3
 docs/audio/shows/**/*.wav
 
-# 오디오북 — 책 본문 전문이 들어간 생성물. 공개 저장소에 올리지 않는다 (scripts/build_audiobook.py)
-docs/audiobook.html
-docs/audio/audiobook/
+# 오디오북 (scripts/build_audiobook.py). 올리는 것은 암호화된 docs/audiobook.html, 잠근 음원 docs/audio/audiobook/**/*.bin, config.json.
+# 평문 페이지·평문 mp3·잠근 음원 모음(.audiobook-audio)은 올리지 않는다
+docs/audiobook-local.html
+docs/audio/audiobook/**/*.mp3
+.audiobook-audio/

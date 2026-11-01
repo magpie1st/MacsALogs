@@ -240,11 +240,24 @@ watch_langstudy.py (감시)                            │
 들어 있습니다(lang-study v0.9.0+). 둘 다 없으면 `sentences.csv`로 떨어지는데, CSV의 시간 열은
 초 단위로 반올림된 값이라 문장 강조가 최대 0.5초 밀리고 녹음이 모자란 문장은 아예 빠집니다.
 
-## 오디오북 페이지 (`docs/audiobook.html`, 로컬 전용)
+## 오디오북 페이지 (`docs/audiobook.html`, 암호화)
 
 책 · 챕터를 고르고 문장 동기화 낭독을 듣는 독립형 페이지. tvshow 의 `.tv-*` 스타일을 그대로 쓰고 전용 스타일은 템플릿 안에 둔다.
-**책 전문이 들어가므로 생성물은 `.gitignore` 에 있다** (`docs/audiobook.html`, `docs/audio/audiobook/`). 공개 여부는 저작권을
-사용자와 정한 뒤에 바꾼다.
+**책 전문이 들어가므로 본문·타임라인·음원을 모두 암호화해 올린다.** 평문 페이지는 `docs/audiobook-local.html`(gitignore)로만 만든다.
+
+### 암호화
+
+| 대상 | 방식 |
+|---|---|
+| 열쇠 | PBKDF2-SHA256(암호, salt, 600,000회) → 256비트. salt·횟수는 `scripts/audiobook_crypto.json` (비밀 아님). 같은 암호면 같은 열쇠 |
+| 본문 | 데이터 JSON 전체를 AES-256-GCM 으로 잠가 `#audiobook-data` 의 `sealed`(`v, iter, salt, iv, ct`)에 싣는다. 평문은 `outline`(책 제목·저자·챕터 수)뿐 |
+| 음원 | `<챕터>-<HMAC-SHA256(열쇠, mp3 sha256) 앞 12자>.bin` = iv(12바이트) + AES-GCM 암호문. 암호를 바꾸면 이름이 바뀐다 |
+| 암호 | 사용자가 `scripts/audiobook_password.py` 로 정해 `~/.config/macsalogs/audiobook_password` 에 둔다 (12자 이상) |
+| 브라우저 | 입력한 암호는 탭(sessionStorage)에, "이 기기에 기억"이면 localStorage 에도 둔다. 🔒 잠그기로 지운다 |
+
+음원은 `fetch` → 복호화 → `Blob` → `URL.createObjectURL` 로 재생한다(blob 은 seek 가능). 그래서 음원을 두는 곳은 CORS 를 허용해야 한다:
+GitHub Pages 는 `access-control-allow-origin: *`, GitHub Release 는 302 응답에 CORS 헤더가 없어 쓸 수 없다 (2026-11-01 curl 확인).
+챕터를 바꾸면 이전 blob 주소를 해제하고, 늦게 도착한 음원은 버린다(`audioSeq`).
 
 ### 파이프라인
 

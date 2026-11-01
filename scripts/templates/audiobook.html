@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <style>
     /* 오디오북 전용. 나머지는 tvshow 의 .tv-* 스타일을 그대로 쓴다. */
+    [hidden] { display: none !important; }   /* .tv-toolbar·.tv-btn 의 display 가 hidden 을 이기지 않게 */
     .ab-para {
       font-size: calc(1.02rem * var(--tv-font-scale));
       line-height: 1.85; margin: 0 0 0.9rem; text-indent: 1.2em;
@@ -39,6 +40,9 @@
     .ab-epigraph p { margin: 0; line-height: 1.7; }
     .ab-epigraph .ab-epi-attr { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem; }
     .ab-resume-bar { display: flex; justify-content: center; margin-bottom: 0.35rem; }
+    .ab-lock { max-width: 26rem; margin: 1rem auto 3rem; display: flex; flex-direction: column; gap: 0.7rem; }
+    .ab-lock-row { display: flex; gap: 0.4rem; }
+    .ab-lock-remember { align-self: flex-start; }
     .tv-btn.is-on { background: var(--tag-bg); border-color: var(--accent); color: var(--accent); }
   </style>
 </head>
@@ -91,6 +95,12 @@
           <button type="button" class="tv-btn" id="ab-font-up" aria-label="글자 크게">A+</button>
           <button type="button" class="tv-btn tv-btn--text" id="ab-font-reset">기본</button>
         </div>
+      </div>
+
+      <!-- 암호화 페이지에서 연 뒤에만 보인다. 이 기기에 기억한 암호를 지우고 다시 잠근다 -->
+      <div class="tv-field">
+        <span class="tv-label">&nbsp;</span>
+        <button type="button" class="tv-btn tv-btn--text" id="ab-lock" hidden title="기억한 암호를 지우고 잠급니다">🔒 잠그기</button>
       </div>
     </section>
 
