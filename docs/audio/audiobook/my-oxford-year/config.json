@@ -1,4 +1,5 @@
 {
  "audioBaseUrl": "audio/audiobook/my-oxford-year",
- "note": "잠근 음원(.bin)을 이 블로그 Pages 에 둔다. scripts/build_audiobook.py 가 복사한다"
+ "note": "잠근 음원(.bin)을 이 블로그 Pages 에 둔다. defaultEngine = 페이지 기본 낭독 엔진(gemini|kokoro), 보는 사람이 플레이어에서 바꿀 수 있다",
+ "defaultEngine": "gemini"
 }
