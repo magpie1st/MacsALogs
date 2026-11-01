@@ -236,6 +236,23 @@ manifest가 원본 대본과 어긋나면 **배포가 중단된다** — 문장 
 하단 플레이어의 `◀◀ 문장` / `문장 ▶▶`와는 **다른 것이다.** 라벨·위치·스타일을 일부러 다르게
 뒀으니, 손댈 때 둘을 닮게 만들지 말 것.
 
+## 오디오북 페이지 (로컬 전용)
+
+`docs/audiobook.html` 은 책 · 챕터를 고르고 문장 동기화 낭독을 듣는 독립형 페이지다. **책 본문 전문이 들어가므로
+`.gitignore` 에 있고 커밋하지 않는다** (이 저장소는 공개 + 자동 푸시). 음원 폴더 `docs/audio/audiobook/` 도 마찬가지다.
+공개하려면 저작권 문제를 먼저 사용자와 정한다.
+
+- 코드: `scripts/build_audiobook.py`(생성기), `scripts/templates/audiobook.html`(틀), `docs/js/audiobook.js`(플레이어)
+- 본문: `book-maker/output/audiobook/<책 id>/book.json` (`book-maker/scripts/build_audiobook_text.py`)
+- 음원: `tts-maker/output/gemini/audiobook/<책 id>/<챕터 id>.{json,mp3}` (`tts-maker/gemini/audiobook_gemini.py`)
+- 타임라인의 `textSha256` 이 본문과 다르면 그 챕터는 음원 없이 실린다
+- 첫 화면은 목차(낭독 없음, 이어듣기 위치 표시). 플레이어: ←/→ 문장, R 다시, L 문장 반복, P 문장마다 멈춤, [ ] 챕터
+
+```bash
+python3 scripts/build_audiobook.py --local-audio   # mp3 를 docs/audio/audiobook 로 복사(gitignore)
+python3 scripts/serve_docs.py                      # http://localhost:8788/audiobook.html
+```
+
 ## MOM(회의록) 페이지
 
 `docs/mom.html`(목록)과 `docs/mom/<id>.html`(회의별 대본)도 내비게이션에 없는 독립형 페이지다.

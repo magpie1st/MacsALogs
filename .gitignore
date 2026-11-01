@@ -16,3 +16,7 @@ scripts/.watch_state.json
 # lang-study 녹음 음원 — Release 자산으로만 올린다 (Pages 사이트 상한 1GB)
 docs/audio/shows/**/*.mp3
 docs/audio/shows/**/*.wav
+
+# 오디오북 — 책 본문 전문이 들어간 생성물. 공개 저장소에 올리지 않는다 (scripts/build_audiobook.py)
+docs/audiobook.html
+docs/audio/audiobook/

@@ -240,6 +240,49 @@ watch_langstudy.py (감시)                            │
 들어 있습니다(lang-study v0.9.0+). 둘 다 없으면 `sentences.csv`로 떨어지는데, CSV의 시간 열은
 초 단위로 반올림된 값이라 문장 강조가 최대 0.5초 밀리고 녹음이 모자란 문장은 아예 빠집니다.
 
+## 오디오북 페이지 (`docs/audiobook.html`, 로컬 전용)
+
+책 · 챕터를 고르고 문장 동기화 낭독을 듣는 독립형 페이지. tvshow 의 `.tv-*` 스타일을 그대로 쓰고 전용 스타일은 템플릿 안에 둔다.
+**책 전문이 들어가므로 생성물은 `.gitignore` 에 있다** (`docs/audiobook.html`, `docs/audio/audiobook/`). 공개 여부는 저작권을
+사용자와 정한 뒤에 바꾼다.
+
+### 파이프라인
+
+```
+book-maker  scripts/build_audiobook_text.py  → output/audiobook/<책>/book.json      (문단·문장 구간)
+tts-maker   gemini/audiobook_gemini.py       → output/gemini/audiobook/<책>/<챕터>.{mp3,json}
+MacsALogs   scripts/build_audiobook.py       → docs/audiobook.html  (템플릿 scripts/templates/audiobook.html)
+            docs/js/audiobook.js             ← 플레이어
+```
+
+- 타임라인의 `textSha256` 을 본문에서 다시 계산해 비교한다(book-maker SPEC 4.5 와 같은 식). 다르거나 문장 수가 다르면
+  **그 챕터는 음원 없이** 싣는다 — 강조가 밀린 페이지보다 낫다
+- 음원 주소: `docs/audio/audiobook/<책>/config.json` 의 `audioBaseUrl` 이 있으면 `<base>/<책>-<챕터>.mp3`(Release 자산),
+  `--local-audio` 면 mp3 를 `docs/audio/audiobook/<책>/` 로 복사하고 상대경로(`preview: true`), 둘 다 없으면 본문만
+
+### 데이터 (`#audiobook-data`, `audiobook-data/1`)
+
+```jsonc
+{"schema": "audiobook-data/1", "generated": "…",
+ "books": [{"id", "title", "author", "front": {"epigraph": [...]},
+   "chapters": [{"id": "ch01", "number", "title", "chars", "words", "sentenceCount",
+     "paragraphs": [[kind, text, emSpans, sentenceSpans], ...],      // 키 반복을 줄인 배열
+     "audio": {"file", "durationSec", "voice", "rows": [[startMs, endMs], ...], "preview"?}}]}]}
+```
+
+`rows` 의 n번째 = 챕터의 n번째 문장 (문단 순서대로 이어 센 번호).
+
+### 화면과 조작
+
+- 주소: `#<책>` = 목차, `#<책>/<챕터>` = 챕터. 책이 하나면 책 선택 칸이 숨는다
+- **목차**: 첫 화면. 낭독하지 않는다. Epigraph, 챕터별 단어 수·재생 길이·`준비 중`·이어듣기 위치
+- **챕터**: 문단 종류별 모양(verse 들여 기울임, attribution 작게, title 굵게), 문장 클릭 = 그 문장부터 재생
+- **플레이어**: ◀◀/▶▶ 문장(←/→), ±10초, ↻ 다시(R), 문장 반복(L), 문장마다 멈춤(P), 속도, 따라가기, 다음 챕터 자동, [ ] 챕터
+- 문장 반복·문장마다 멈춤은 `timeupdate`(초당 약 4회)로는 문장 끝을 최대 0.25초 넘기므로 재생 중 `requestAnimationFrame` 으로 판정한다
+- 이어듣기: 챕터별 마지막 위치를 `localStorage`(`audiobook-pos`)에 3초마다 저장, 끝까지 들으면 지운다.
+  이어듣기 버튼은 그 위치가 든 **문장의 처음**으로 돌아간다
+- Release 음원의 30분 서명 만료로 재생이 거부되면 한 번만 음원을 다시 열고 그 자리로 돌아간다 (tvshow 와 같은 처리)
+
 ## 스타일 시스템
 
 - CSS 변수(`--bg`, `--text`, `--accent` 등)로 라이트/다크 테마 관리

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
+  <meta name="robots" content="noindex" />
+  <title>Audiobook — MacsALogs</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* 오디오북 전용. 나머지는 tvshow 의 .tv-* 스타일을 그대로 쓴다. */
+    .ab-para {
+      font-size: calc(1.02rem * var(--tv-font-scale));
+      line-height: 1.85; margin: 0 0 0.9rem; text-indent: 1.2em;
+    }
+    .ab-para--first, .ab-para--verse, .ab-para--attribution, .ab-para--title { text-indent: 0; }
+    .ab-para--verse { font-style: italic; margin: 0 0 0.25rem 1.5rem; color: var(--text-muted); }
+    .ab-para--attribution { font-size: calc(0.85rem * var(--tv-font-scale)); color: var(--text-muted);
+                            margin: 0.4rem 0 1.6rem 1.5rem; }
+    .ab-para--title { font-weight: 700; font-style: italic; margin-top: 1.4rem; }
+    .ab-para em { font-style: italic; }
+    .ab-para--verse em { font-style: normal; }
+
+    .ab-toc { list-style: none; padding: 0; margin: 1rem 0 0; border-top: 1px solid var(--border); }
+    .ab-toc li { border-bottom: 1px solid var(--border); }
+    .ab-toc a {
+      display: flex; align-items: baseline; gap: 0.75rem;
+      padding: 0.7rem 0.25rem; color: var(--text); text-decoration: none;
+    }
+    .ab-toc a:hover { color: var(--accent); background: var(--surface); }
+    .ab-toc-title { flex: 1; font-weight: 600; }
+    .ab-toc-meta { font-size: 0.75rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+    .ab-toc-resume { font-size: 0.72rem; color: var(--accent); white-space: nowrap; }
+    .ab-toc-pending { font-size: 0.72rem; color: var(--text-muted); border: 1px dashed var(--border);
+                      border-radius: 999px; padding: 0 0.5rem; }
+    .ab-epigraph { margin: 1.5rem 0 0.5rem; padding: 1rem 1.25rem; background: var(--surface);
+                   border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; }
+    .ab-epigraph p { margin: 0; line-height: 1.7; }
+    .ab-epigraph .ab-epi-attr { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem; }
+    .ab-resume-bar { display: flex; justify-content: center; margin-bottom: 0.35rem; }
+    .tv-btn.is-on { background: var(--tag-bg); border-color: var(--accent); color: var(--accent); }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#tv-script">본문 바로가기</a>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="index.html">홈</a>
+        <a href="english.html">영어</a>
+        <a href="about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="tv-hero">
+      <p class="tv-eyebrow">Audiobook</p>
+      <h1 id="ab-book-title" tabindex="-1">Audiobook</h1>
+      <p class="tv-hero-sub" id="ab-book-sub"></p>
+      <div class="tv-stats" id="ab-stats"></div>
+    </section>
+
+    <section class="tv-toolbar" aria-label="오디오북 도구">
+      <div class="tv-field" id="ab-book-field">
+        <label class="tv-label" for="ab-book">책</label>
+        <select class="tv-select" id="ab-book"></select>
+      </div>
+
+      <div class="tv-field tv-field--episode">
+        <label class="tv-label" for="ab-chapter">챕터</label>
+        <select class="tv-select" id="ab-chapter"></select>
+        <!-- 아래 플레이어의 '문장' 이동과 헷갈리지 않도록 '챕터'를 끝까지 적는다 -->
+        <div class="tv-epnav" role="group" aria-label="챕터 이동">
+          <button type="button" class="tv-btn tv-btn--ep" id="ab-ch-prev" title="이전 챕터 ( [ )">◀ 이전 챕터</button>
+          <button type="button" class="tv-btn tv-btn--ep" id="ab-ch-next" title="다음 챕터 ( ] )">다음 챕터 ▶</button>
+        </div>
+      </div>
+
+      <div class="tv-field">
+        <span class="tv-label" id="ab-font-label">글자 크기</span>
+        <div class="tv-font-group" role="group" aria-labelledby="ab-font-label">
+          <button type="button" class="tv-btn" id="ab-font-down" aria-label="글자 작게">A−</button>
+          <span class="tv-font-value" id="ab-font-value" aria-live="polite">100%</span>
+          <button type="button" class="tv-btn" id="ab-font-up" aria-label="글자 크게">A+</button>
+          <button type="button" class="tv-btn tv-btn--text" id="ab-font-reset">기본</button>
+        </div>
+      </div>
+    </section>
+
+    <article class="tv-script" id="tv-script" tabindex="-1">
+      <div class="empty-state"><p>불러오는 중…</p></div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© 2026 Mac · 개인 학습용</p></div>
+  </footer>
+
+  <button type="button" class="tv-top" id="ab-top" hidden><span aria-hidden="true">↑</span> 맨 위로</button>
+
+  <!-- 오디오가 있는 챕터에서만 나타난다. 목차와 음원 없는 챕터에서는 숨는다. -->
+  <section class="tv-player" id="ab-player" aria-label="문장 동기화 오디오 플레이어" hidden>
+    <div class="container">
+      <div class="ab-resume-bar" id="ab-resume-bar" hidden>
+        <button type="button" class="tv-btn tv-btn--text" id="ab-resume">↩ 이어듣기</button>
+      </div>
+      <p class="tv-player-now" id="ab-now" aria-live="polite">—</p>
+      <div class="tv-seek-row">
+        <span class="tv-time" id="ab-time-now">0:00</span>
+        <input class="tv-seek" id="ab-seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="재생 위치" />
+        <span class="tv-time" id="ab-time-total">0:00</span>
+      </div>
+      <div class="tv-controls">
+        <button type="button" class="tv-btn" id="ab-seg-prev" title="이전 문장 ( ← )">◀◀ 문장</button>
+        <button type="button" class="tv-btn" id="ab-back10" title="10초 뒤로">-10초</button>
+        <button type="button" class="tv-btn tv-btn--play" id="ab-play" aria-label="재생">재생</button>
+        <button type="button" class="tv-btn" id="ab-fwd10" title="10초 앞으로">+10초</button>
+        <button type="button" class="tv-btn" id="ab-seg-next" title="다음 문장 ( → )">문장 ▶▶</button>
+        <button type="button" class="tv-btn" id="ab-repeat" title="이 문장 다시 듣기 ( R )">↻ 다시</button>
+        <button type="button" class="tv-btn tv-btn--text" id="ab-loop" aria-pressed="false"
+                title="지금 문장을 계속 반복 ( L )">문장 반복</button>
+        <button type="button" class="tv-btn tv-btn--text" id="ab-stepmode" aria-pressed="false"
+                title="문장이 끝날 때마다 멈춤 — 따라 말하기용 ( P )">문장마다 멈춤</button>
+        <label class="tv-rate">
+          <span class="tv-visually-hidden">재생 속도</span>
+          <select class="tv-rate-select" id="ab-rate">
+            <option value="0.75">0.75×</option>
+            <option value="0.9">0.9×</option>
+            <option value="1" selected>1.0×</option>
+            <option value="1.15">1.15×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+          </select>
+        </label>
+        <label class="tv-follow" title="재생 위치를 따라 본문을 스크롤합니다">
+          <input type="checkbox" id="ab-follow" checked /> 따라가기
+        </label>
+        <label class="tv-follow" title="챕터가 끝나면 다음 챕터를 이어서 재생합니다">
+          <input type="checkbox" id="ab-autonext" checked /> 다음 챕터 자동
+        </label>
+      </div>
+      <audio id="ab-audio" preload="metadata"></audio>
+    </div>
+  </section>
+
+  <!-- 아래 블록은 scripts/build_audiobook.py 가 생성합니다. 직접 수정하지 마세요. -->
+  <!-- AUDIOBOOK-DATA:START -->
+  <script type="application/json" id="audiobook-data">{"schema":"audiobook-data/1","books":[]}</script>
+  <!-- AUDIOBOOK-DATA:END -->
+
+  <script src="js/audiobook.js"></script>
+</body>
+</html>
