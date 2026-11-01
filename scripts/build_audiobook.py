@@ -16,8 +16,10 @@
   - 쓰고 나서 페이지에 본문 문장이 평문으로 남지 않았는지 검사한다. 남았으면 파일을 지우고 실패한다
 
 음원 주소 (잠근 .bin)
-  - docs/audio/audiobook/<책>/config.json 의 audioBaseUrl 이 상대경로면 이 블로그 Pages 안 — 잠근 .bin 을 그 폴더로 복사한다 (지금 방식)
-  - audioBaseUrl 이 https 주소면 <base>/<파일> — **CORS 를 허용하는 곳**이어야 한다.
+  - docs/audio/audiobook/<책>/config.json 의 audioBaseUrl 이 https 이고 audioRepoDir 가 있으면, 잠근 .bin 을 그 로컬 폴더로 복사한다.
+    지금 방식: 음원 전용 저장소 magpie1st/audiobook-audio 의 Pages (블로그와 같은 도메인 → CORS 문제 없음, Pages 용량도 따로)
+  - audioBaseUrl 이 상대경로면 이 블로그 Pages 안 (docs/<경로>)
+  - audioBaseUrl 이 https 이고 audioRepoDir 가 없으면 주소만 쓴다 — **CORS 를 허용하는 곳**이어야 한다.
     GitHub Pages 는 허용, GitHub Release 는 허용하지 않아(2026-11-01 확인) 브라우저가 받아 풀 수 없다
   - --local-audio 면 docs/audio/audiobook/<책>/ 로 복사하고 상대경로. 이 빌드는 docs/audiobook-local.html 로 간다 (gitignore)
   - 둘 다 없으면 본문만
@@ -115,7 +117,7 @@ def read_password() -> str:
 # ── 음원 ──────────────────────────────────────────────────────────────────
 
 def load_audio(book_id: str, chapter: dict, args, base_url: str | None, sealer: Sealer | None,
-               engine: str, audio_dir: Path) -> tuple[dict | None, str]:
+               engine: str, audio_dir: Path, repo_dir: Path | None = None) -> tuple[dict | None, str]:
     manifest_path = audio_dir / book_id / f"{chapter['id']}.json"
     mp3 = audio_dir / book_id / f"{chapter['id']}.mp3"
     if not manifest_path.exists():
@@ -153,12 +155,15 @@ def load_audio(book_id: str, chapter: dict, args, base_url: str | None, sealer: 
 
     if base_url and not args.local_audio:
         audio["file"] = f"{base_url.rstrip('/')}/{name}"
-        if "://" in base_url:   # 바깥 호스트: 올리는 것은 사람이 한다
-            return audio, f"{base_url} (올릴 파일: {where})"
         if not sealer:
-            return None, "블로그 경로에는 잠근 음원만 둔다 (--plain 빌드에서는 싣지 않음)"
-        # 이 블로그의 Pages 안 (같은 사이트라 CORS 문제 없음). 잠근 .bin 만 커밋한다. 같은 챕터의 예전 파일은 치운다
-        dest_dir = DOCS / base_url.strip("/")
+            return None, "공개 경로에는 잠근 음원만 둔다 (--plain 빌드에서는 싣지 않음)"
+        if "://" in base_url:
+            if repo_dir is None:   # 바깥 호스트에 올리는 것은 사람이 한다
+                return audio, f"{base_url} (올릴 파일: {where})"
+            dest_dir = repo_dir     # 음원 전용 저장소의 로컬 폴더 (그 저장소의 Pages 가 base_url)
+        else:
+            # 이 블로그의 Pages 안. 잠근 .bin 만 커밋한다
+            dest_dir = DOCS / base_url.strip("/")
         if not args.dry_run:
             dest_dir.mkdir(parents=True, exist_ok=True)
             for old in dest_dir.glob(f"{engine}-{chapter['id']}-*.bin"):
@@ -166,7 +171,7 @@ def load_audio(book_id: str, chapter: dict, args, base_url: str | None, sealer: 
                     old.unlink()
             if not (dest_dir / name).exists():
                 shutil.copy2(where, dest_dir / name)
-        return audio, f"블로그 docs/{base_url.strip('/')}/{name}"
+        return audio, f"{dest_dir}/{name}"
     if args.local_audio:
         dest = DOCS / "audio" / "audiobook" / book_id / name
         if not args.dry_run and (not dest.exists() or dest.stat().st_size != where.stat().st_size):
@@ -221,6 +226,15 @@ def main(argv=None) -> int:
         cfg_path = DOCS / "audio" / "audiobook" / src["id"] / "config.json"
         cfg = json.loads(cfg_path.read_text()) if cfg_path.exists() else {}
         base_url = cfg.get("audioBaseUrl")
+        # audioRepoDir: base_url 이 다른 저장소의 Pages 일 때 그 저장소의 로컬 폴더 (이 저장소 기준 상대경로 가능)
+        repo_dir = (REPO / cfg["audioRepoDir"]).resolve() if cfg.get("audioRepoDir") else None
+        if repo_dir and sealer and not args.local_audio:
+            root = next((d for d in [repo_dir, *repo_dir.parents] if (d / ".git").exists()), None)
+            if root is None:
+                # 음원 저장소 없이 새 주소를 가리키는 페이지를 올리면 재생이 깨진다
+                print(f"중단: 음원 저장소가 준비되지 않았습니다 ({repo_dir} 위에 .git 없음). "
+                      f"config.json 의 audioRepoDir 를 확인하세요", file=sys.stderr)
+                return 1
         engines = [e.strip() for e in args.engines.split(",") if e.strip() in ENGINES]
         default_engine = cfg.get("defaultEngine", engines[0] if engines else "gemini")
         chapters, voiced = [], 0
@@ -229,7 +243,7 @@ def main(argv=None) -> int:
             c = compact_chapter(ch)
             notes = []
             for eng in engines:
-                audio, note = load_audio(src["id"], ch, args, base_url, sealer, eng, ENGINES[eng])
+                audio, note = load_audio(src["id"], ch, args, base_url, sealer, eng, ENGINES[eng], repo_dir)
                 if audio:
                     c.setdefault("audios", {})[eng] = audio
                     part = f" 부분 {len(audio['rows'])}/{ch['sentenceCount']}" if audio.get("partial") else ""
