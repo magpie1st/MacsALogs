@@ -406,6 +406,11 @@ body.has-player .site-footer { margin-bottom: 8.5rem; }
 .tv-btn:disabled:hover { border-color: var(--border); color: var(--text); }
 .tv-btn--text { font-size: 0.75rem; padding: 0 0.6rem; }
 
+/* 반복이 켜져 있으면 눈에 보여야 한다 — 끌 때까지 한 문장만 돌기 때문이다 */
+#tv-repeat[aria-pressed="true"] {
+  background: var(--accent); border-color: var(--accent); color: #fff;
+}
+
 /* 에피소드 앞뒤 이동 — 하단 플레이어의 '문장' 이동 버튼과 헷갈리지 않아야 한다.
    그쪽은 어두운 고정 바 안의 정사각 아이콘 버튼이고, 이쪽은 상단 도구모음의
    채워진 가로 버튼이다. 라벨도 '에피소드'를 끝까지 적는다. */

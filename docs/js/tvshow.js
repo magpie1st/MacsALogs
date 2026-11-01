@@ -36,6 +36,8 @@
   var episodes = [];       // 그 시즌의 회차 (번호 순)
   var current = null;
   var showKo = true;       // 한국어 자막 표시 (녹음 작품에서만 쓴다)
+  var repeatSeg = -1;      // 반복해 들을 문장 (-1 이면 반복 끔). 저장하지 않는다 —
+                           // 새로 열었을 때 한 문장만 돌고 있으면 고장으로 보인다.
   var query = '';
   var hits = [];
   var hitIndex = -1;
@@ -590,18 +592,63 @@
 
   function seekToSegment(i, keepPlaying) {
     if (!audioEl || !segRows[i]) return;
+    // 반복 중에 다른 문장으로 옮기면 반복 대상도 그 문장이 된다
+    if (repeatSeg >= 0 && repeatSeg !== i) {
+      repeatSeg = i;
+      syncRepeat();
+    }
     audioEl.currentTime = segRows[i][3] / 1000;
     setActive(i, true);
     updateProgress();
     if (keepPlaying && audioEl.paused) requestPlay();
   }
 
-  /* 지금 문장을 처음부터 다시 듣는다 (확장의 S 와 같다).
-   * 재생 중이면 그 자리로 되감기만 하고, 멈춰 있으면 거기서부터 재생한다. */
-  function repeatSegment() {
+  /* 문장의 끝 시각(초). 데이터에 끝이 없으면 다음 문장의 시작, 그것도 없으면 길이로 본다. */
+  function segEnd(i) {
+    var row = segRows[i];
+    if (!row) return 0;
+    if (row[4] > row[3]) return row[4] / 1000;
+    if (segRows[i + 1]) return segRows[i + 1][3] / 1000;
+    return duration();
+  }
+
+  /* 반복 토글: 켜 두면 **끌 때까지 그 문장만** 돈다.
+   *
+   * 반복할 문장은 켤 때의 문장으로 고정하되, 그 뒤 문장을 누르거나 ◀◀ ▶▶ 로 옮기면
+   * 반복 대상도 따라 옮긴다 (seekToSegment 가 갱신한다). 그렇게 하지 않으면 반복을 켠
+   * 채로는 다른 문장을 들을 수 없다. */
+  function toggleRepeat() {
     if (!audioEl || !segRows.length) return;
+    if (repeatSeg >= 0) {
+      repeatSeg = -1;
+      syncRepeat();
+      return;
+    }
     var i = activeSeg >= 0 ? activeSeg : findSegment(audioEl.currentTime * 1000);
-    seekToSegment(i >= 0 ? i : 0, true);
+    repeatSeg = i >= 0 ? i : 0;
+    syncRepeat();
+    seekToSegment(repeatSeg, true);
+  }
+
+  function syncRepeat() {
+    if (!el.repeat) return;
+    var on = repeatSeg >= 0;
+    el.repeat.textContent = on ? '↻ 반복 중' : '↻ 반복';
+    el.repeat.setAttribute('aria-pressed', String(on));
+    el.repeat.setAttribute('aria-label', on ? '문장 반복 끄기' : '이 문장만 반복해 듣기');
+  }
+
+  /* 반복 중이면 문장 끝에서 그 문장의 처음으로 되감는다. timeupdate 에서 부른다.
+   * 되감았으면 true — 그때는 문장 하이라이트를 다시 계산하지 않아도 된다. */
+  function loopIfRepeating() {
+    if (repeatSeg < 0 || !segRows[repeatSeg]) return false;
+    var from = segRows[repeatSeg][3] / 1000;
+    var to = segEnd(repeatSeg);
+    if (audioEl.currentTime >= to || audioEl.currentTime < from - 0.5) {
+      audioEl.currentTime = from;
+      return true;
+    }
+    return false;
   }
 
   function stepSegment(delta) {
@@ -629,6 +676,8 @@
 
     audioEl.pause();
     reviving = false;
+    repeatSeg = -1;   // 문장 번호는 회차마다 다르다. 들고 가면 엉뚱한 곳을 돈다.
+    syncRepeat();
     clearActive();
 
     if (!current || !current.audio) {
@@ -855,7 +904,7 @@
     el.fwd10.addEventListener('click', function () { skip(SKIP_SECONDS); });
     el.segPrev.addEventListener('click', function () { stepSegment(-1); });
     el.segNext.addEventListener('click', function () { stepSegment(1); });
-    if (el.repeat) el.repeat.addEventListener('click', repeatSegment);
+    if (el.repeat) el.repeat.addEventListener('click', toggleRepeat);
 
     el.rate.addEventListener('change', function () {
       rate = parseFloat(el.rate.value) || 1;
@@ -876,6 +925,10 @@
     });
 
     audioEl.addEventListener('timeupdate', function () {
+      if (loopIfRepeating()) {
+        updateProgress();
+        return;   // 되감았다. 하이라이트는 그 문장에 그대로 둔다.
+      }
       updateProgress();
       setActive(findSegment(audioEl.currentTime * 1000), true);
     });
@@ -888,6 +941,11 @@
     audioEl.addEventListener('play', updatePlayButton);
     audioEl.addEventListener('pause', updatePlayButton);
     audioEl.addEventListener('ended', function () {
+      // 마지막 문장을 반복 중이면 끝에 닿아도 멈추지 않는다
+      if (repeatSeg >= 0 && segRows[repeatSeg]) {
+        seekToSegment(repeatSeg, true);
+        return;
+      }
       updatePlayButton();
       clearActive();
     });
@@ -995,7 +1053,7 @@
       } else if (event.key === 'r' || event.key === 'R') {
         if (!segRows.length) return;
         event.preventDefault();
-        repeatSegment();
+        toggleRepeat();
       }
     });
 
