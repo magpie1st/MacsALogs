@@ -253,6 +253,11 @@ manifest가 원본 대본과 어긋나면 **배포가 중단된다** — 문장 
 - 본문: `book-maker/output/audiobook/<책>/book.json`, 음원: `tts-maker/output/gemini/audiobook/<책>/<챕터>.{json,mp3}`.
   타임라인의 `textSha256` 이 본문과 다르면 그 챕터는 음원 없이 실린다
 - 첫 화면은 목차(낭독 없음). 플레이어: ←/→ 문장, R 다시, L 문장 반복, P 문장마다 멈춤, [ ] 챕터. 🔒 잠그기 = 기억한 암호 지우기
+- 낭독 엔진 세 가지를 챕터마다 모두 싣는다: `gemini`, `kokoro-bf_emma`(영국 여성), `kokoro-af_heart`(미국 여성). **기본 엔진은
+  `docs/audio/audiobook/<책>/config.json` 의 `defaultEngine`** 이고 보는 사람이 플레이어에서 바꿀 수 있다(기기에 기억). 고른 엔진이 없는 챕터는 있는 것으로 재생
+- 📖 읽던 곳(자동)·🔖 책갈피(B 키) — 브라우저 localStorage 에만 있다. 주소 `#책/챕터/p문단` 으로 그 문단에 간다
+- **자동 갱신**: tts-maker 의 launchd `ai.audiobook-gemini`(6시간마다)가 이 저장소에서 `build_audiobook.py` 를 돌리고
+  `docs/audiobook.html`·`docs/audio/audiobook` 만 커밋·푸시한다(커밋 메시지 "오디오북 음원 갱신 (자동)"). 그 밖의 오디오북 코드는 손으로 커밋한다
 - 다른 세션이 MacsALogs 를 커밋할 때 작업 중인 파일까지 쓸려 들어간 적이 있다(2026-11-01 `309485d`). 생성물을 docs 에 남겨 두지 않는다
 
 ```bash
