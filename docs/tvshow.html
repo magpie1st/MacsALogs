@@ -128,6 +128,7 @@
         <button type="button" class="tv-btn tv-btn--play" id="tv-play" aria-label="재생">재생</button>
         <button type="button" class="tv-btn" id="tv-fwd10" aria-label="10초 앞으로" title="10초 앞으로">+10초</button>
         <button type="button" class="tv-btn" id="tv-seg-next" aria-label="다음 문장으로" title="다음 문장">문장 ▶▶</button>
+        <button type="button" class="tv-btn" id="tv-repeat" aria-label="이 문장 다시 듣기" title="이 문장 다시 듣기 ( R )">↻ 반복</button>
 
         <label class="tv-rate">
           <span class="tv-visually-hidden">재생 속도</span>
@@ -143,6 +144,11 @@
           <input type="checkbox" id="tv-follow" checked />
           따라가기
         </label>
+
+        <!-- 위 도구 모음과 같은 버튼이다. 들으면서 쓰는 것이라 손 닿는 곳에 함께 둔다.
+             한국어 자막이 있는 작품에서만 나타난다. -->
+        <button type="button" class="tv-btn tv-btn--text" id="tv-ko-bar" aria-pressed="true"
+                title="한국어 자막 보이기/숨기기 ( K )" hidden>한국어 숨기기</button>
       </div>
 
       <audio id="tv-audio" preload="metadata"></audio>
