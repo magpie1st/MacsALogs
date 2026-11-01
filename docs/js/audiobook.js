@@ -50,6 +50,12 @@
   var programmaticUntil = 0;
   var pendingAutoplay = false;
 
+  /* 암호화 페이지 (build_audiobook.py 기본) */
+  var PW_KEY = 'audiobook-pw';
+  var cryptoKey = null;        // 본문을 푼 열쇠. 잠근 음원(.bin)도 이 열쇠로 푼다
+  var blobUrl = null;          // 지금 재생 중인 복호화 음원
+  var audioSeq = 0;            // 챕터를 빨리 넘길 때 늦게 도착한 음원을 버리기 위한 번호
+
   var el = {};
 
   /* ── 저장 (실패해도 페이지는 동작해야 한다) ── */
@@ -62,6 +68,90 @@
   }
   function savePrefs() {
     writeStore(PREFS_KEY, { font: fontIndex, rate: rate, follow: follow, autoNext: autoNext, stepMode: stepMode });
+  }
+
+  /* ── 복호화 (PBKDF2-SHA256 → AES-256-GCM, WebCrypto) ── */
+  function b64(s) { return Uint8Array.from(atob(s), function (c) { return c.charCodeAt(0); }); }
+
+  function openSealed(pw, box) {
+    return crypto.subtle.importKey('raw', new TextEncoder().encode(pw), 'PBKDF2', false, ['deriveKey'])
+      .then(function (base) {
+        return crypto.subtle.deriveKey({ name: 'PBKDF2', hash: 'SHA-256', salt: b64(box.salt), iterations: box.iter },
+          base, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+      })
+      .then(function (key) {
+        return crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64(box.iv) }, key, b64(box.ct)).then(function (plain) {
+          return { key: key, data: JSON.parse(new TextDecoder().decode(plain)) };
+        });
+      });
+  }
+
+  /* 잠근 음원: 파일 = iv(12바이트) + 암호문. 통째로 받아 풀고 blob 주소로 재생한다 (blob 은 seek 가능) */
+  function openAudio(url) {
+    return fetch(url).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.arrayBuffer();
+    }).then(function (buf) {
+      return crypto.subtle.decrypt({ name: 'AES-GCM', iv: new Uint8Array(buf, 0, 12) }, cryptoKey, new Uint8Array(buf, 12));
+    }).then(function (plain) {
+      return URL.createObjectURL(new Blob([plain], { type: 'audio/mpeg' }));
+    });
+  }
+
+  function storedPw() {
+    try { return sessionStorage.getItem(PW_KEY) || localStorage.getItem(PW_KEY); } catch (e) { return null; }
+  }
+  function rememberPw(pw, persist) {
+    try { sessionStorage.setItem(PW_KEY, pw); if (persist) localStorage.setItem(PW_KEY, pw); } catch (e) { /* 무시 */ }
+  }
+  function forgetPw() {
+    try { sessionStorage.removeItem(PW_KEY); localStorage.removeItem(PW_KEY); } catch (e) { /* 무시 */ }
+  }
+
+  /* 저장된 암호로 먼저 풀어 보고, 없거나 틀리면 입력 창을 띄운다 */
+  function unlock(data, onOpen) {
+    var outline = data.outline || [];
+    var first = outline[0] || {};
+    el.title.textContent = first.title || 'Audiobook';
+    el.sub.textContent = (first.author ? first.author + ' · ' : '') + '암호가 걸린 페이지입니다';
+    el.stats.innerHTML = '';
+    el.toolbar.hidden = true;
+    var saved = storedPw();
+    function done(res) {
+      cryptoKey = res.key;
+      el.toolbar.hidden = false;
+      el.lock.hidden = false;
+      onOpen(res.data);
+    }
+    function ask() {
+      el.script.innerHTML =
+        '<form class="ab-lock" autocomplete="on">' +
+        '<h2 class="tv-episode-title">🔒 암호를 입력하세요</h2>' +
+        '<p class="tv-episode-meta">' + esc(outline.map(function (b) { return b.title + ' (' + b.chapterCount + '챕터)'; }).join(' · ')) + '</p>' +
+        '<input type="text" name="username" value="audiobook" autocomplete="username" hidden />' +
+        '<div class="ab-lock-row"><input class="tv-search" id="ab-pw" type="password" autocomplete="current-password" required aria-label="암호" />' +
+        '<button class="tv-btn tv-btn--play" type="submit">열기</button></div>' +
+        '<label class="tv-follow ab-lock-remember"><input type="checkbox" id="ab-persist" /> 이 기기에 기억</label>' +
+        '<p class="tv-search-count" id="ab-pw-msg" role="status" aria-live="polite"></p></form>';
+      var form = el.script.querySelector('form');
+      var msg = el.script.querySelector('#ab-pw-msg');
+      var input = el.script.querySelector('#ab-pw');
+      input.focus();
+      form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var pw = input.value;
+        msg.textContent = '푸는 중…';
+        openSealed(pw, data.sealed).then(function (res) {
+          rememberPw(pw, el.script.querySelector('#ab-persist').checked);
+          done(res);
+        }, function () {
+          msg.textContent = '암호가 맞지 않습니다.';
+          input.select();
+        });
+      });
+    }
+    if (saved) openSealed(saved, data.sealed).then(done, function () { forgetPw(); ask(); });
+    else ask();
   }
 
   /* ── 유틸 ── */
@@ -149,7 +239,8 @@
     }
     html += '<ol class="ab-toc">' + book.chapters.map(function (c) {
       var pos = positions[posKey(c)];
-      var meta = c.audio ? fmt(c.audio.durationSec) : '<span class="ab-toc-pending">준비 중</span>';
+      var meta = c.audio ? fmt(c.audio.durationSec) + (c.audio.partial ? ' <span class="ab-toc-pending">일부</span>' : '')
+                         : '<span class="ab-toc-pending">준비 중</span>';
       var resume = c.audio && pos >= RESUME_MIN_SEC
         ? '<span class="ab-toc-resume">이어듣기 ' + fmt(pos) + '</span>' : '';
       return '<li><a href="#' + encodeURIComponent(book.id) + '/' + encodeURIComponent(c.id) + '">' +
@@ -166,6 +257,8 @@
       '<p class="tv-episode-meta">' + c.words.toLocaleString() + ' 단어 · 문장 ' + c.sentenceCount +
       (c.audio ? ' · ' + fmt(c.audio.durationSec) : '') + '</p>';
     if (!c.audio) html += '<p class="tv-episode-note">이 챕터는 아직 낭독 음원이 없습니다. 본문만 볼 수 있습니다.</p>';
+    else if (c.audio.partial) html += '<p class="tv-episode-note">낭독을 만드는 중입니다. 앞 ' + c.audio.rows.length + '문장(전체 ' +
+      c.sentenceCount + '문장)까지만 음원이 있습니다.</p>';
     else if (c.audio.preview) html += '<p class="tv-episode-note">로컬 미리보기 음원입니다.</p>';
     html += '</header>';
 
@@ -181,7 +274,7 @@
         var i = g++;
         segText[i] = text.slice(s[0], s[1]).trim();
         var body = renderRange(text, s[0], s[1], em);
-        return c.audio ? '<span class="tv-seg" role="button" tabindex="0" data-seg="' + i + '">' + body + '</span>' : body;
+        return c.audio && i < c.audio.rows.length ? '<span class="tv-seg" role="button" tabindex="0" data-seg="' + i + '">' + body + '</span>' : body;
       }).join('');
       html += '<p class="' + cls + '">' + inner + '</p>';
     });
@@ -298,7 +391,7 @@
   function requestPlay() {
     var p = audioEl.play();
     if (p && p.catch) p.catch(function () {
-      if (reviving || !chapter || !chapter.audio) return;
+      if (reviving || !chapter || !chapter.audio || chapter.audio.enc) return;   // blob 음원은 만료되지 않는다
       reviving = true;
       var at = audioEl.currentTime, mine = chapter;
       el.now.textContent = '음원을 다시 엽니다…';
@@ -369,7 +462,28 @@
     rows = a.rows;
     el.player.hidden = false;
     document.body.classList.add('has-tv-player');
-    audioEl.src = a.file;
+    var seq = ++audioSeq;
+    if (blobUrl) { URL.revokeObjectURL(blobUrl); blobUrl = null; }
+    if (a.enc) {
+      audioEl.removeAttribute('src');
+      el.play.disabled = true;
+      el.now.textContent = '음원을 받아 푸는 중…';
+      openAudio(a.file).then(function (url) {
+        if (seq !== audioSeq) { URL.revokeObjectURL(url); return; }   // 그 사이 챕터를 바꿨다
+        blobUrl = url;
+        audioEl.src = url;
+        audioEl.playbackRate = rate;
+        el.play.disabled = false;
+        el.now.textContent = '—';
+        if (pendingAutoplay) { pendingAutoplay = false; requestPlay(); }
+      }, function (err) {
+        if (seq !== audioSeq) return;
+        el.now.textContent = '음원을 열 수 없습니다 (' + err.message + ')';
+      });
+    } else {
+      el.play.disabled = false;
+      audioEl.src = a.file;
+    }
     audioEl.playbackRate = rate;
     el.seek.max = String(a.durationSec);
     el.seek.value = '0';
@@ -381,7 +495,7 @@
       el.resumeBar.hidden = false;
     }
     updatePlayButton();
-    if (pendingAutoplay) {
+    if (pendingAutoplay && !a.enc) {
       pendingAutoplay = false;
       requestPlay();
     }
@@ -433,8 +547,23 @@
                  'repeat', 'loop', 'stepmode', 'rate', 'follow', 'autonext', 'audio'];
     ids.forEach(function (id, i) { el[names[i]] = document.getElementById('ab-' + id); });
     el.script = document.getElementById('tv-script');
+    el.toolbar = document.querySelector('.tv-toolbar');
+    el.lock = document.getElementById('ab-lock');
     audioEl = el.audio;
+    el.lock.addEventListener('click', function () { forgetPw(); location.reload(); });
 
+    if (data && data.sealed) {
+      if (!(window.crypto && crypto.subtle)) {
+        el.script.innerHTML = '<div class="empty-state"><p>이 브라우저에서는 암호를 풀 수 없습니다 (https 로 열어 주세요).</p></div>';
+        return;
+      }
+      unlock(data, start);
+    } else {
+      start(data);
+    }
+  }
+
+  function start(data) {
     books = (data && data.books) || [];
     if (!books.length) {
       el.script.innerHTML = '<div class="empty-state"><p>아직 실린 책이 없습니다.</p></div>';

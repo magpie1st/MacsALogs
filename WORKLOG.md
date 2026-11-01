@@ -4,6 +4,40 @@
 
 ---
 
+## 2026-11-01 — 오디오북 암호화 페이지 공개 + 에필로그 부분 음원
+
+- 사용자가 암호를 정했고(`scripts/audiobook_password.py`), 암호화 `docs/audiobook.html` 과 에필로그 부분 음원(Gemini Sulafat, 앞 28/58문장,
+  2.1분)을 올렸다
+- 음원은 이 블로그 Pages 에 둔다 (`docs/audio/audiobook/my-oxford-year/<챕터>-<태그>.bin`, `config.json` 의 상대경로). Release 는 CORS 가
+  없어 못 쓰고, 별도 저장소는 아직 필요 없는 크기라서다. 다시 만든 챕터는 이력에 쌓이므로 1GB 에 가까워지면 옮긴다
+- 올리기 전 확인: 페이지에 본문 문장 5개 검색 → 없음, 공개 데이터는 책 제목·저자·챕터 수뿐, 저장된 암호로 본문(31챕터)과 `.bin`
+  복호화 → mp3 헤더 정상, `.bin` 자체는 mp3 헤더 아님
+
+---
+
+## 2026-11-01 — 오디오북 페이지를 암호로 잠가 블로그에 올리는 구조로
+
+사용자가 블로그에 올리기를 원했다. 저작권 있는 소설 전문을 공개 저장소에 평문으로 올리지 않기로 하고(사용자도 암호 방식에 동의),
+본문·타임라인·음원을 모두 암호화하는 구조로 바꿨다. 구조는 SPEC "오디오북 페이지 → 암호화".
+
+- 기본 빌드가 암호화(`docs/audiobook.html`, 올리는 파일). `--plain`·`--local-audio` 빌드는 `docs/audiobook-local.html`(gitignore)로만 간다.
+  쓰고 나서 챕터마다 가장 긴 문장이 평문으로 보이는지 검사하고, 보이면 실패한다
+- 암호는 사용자가 `scripts/audiobook_password.py` 로 정한다. MOM 페이지와 같은 PBKDF2 → AES-GCM 이지만 salt 를 고정 파일에 두어
+  같은 암호면 같은 열쇠가 되게 했다 — 음원(.bin)을 빌드마다 다시 암호화·업로드하지 않기 위해서다
+- 음원을 GitHub Release 에 둘 수 없다는 것을 확인했다: 302 응답에 CORS 헤더가 없어 브라우저가 받아 풀 수 없다. Pages 는 `*`.
+  음원 위치(이 블로그 Pages vs 별도 저장소 Pages)는 음원이 생기면 정한다
+
+### 확인
+
+시험 암호로 미리보기 빌드 → Chrome: 잠긴 상태에서 도구 모음·잠그기 숨김, 틀린 암호 거절, 맞는 암호로 본문 58문장 표시,
+잠근 에필로그 시험 음원(.bin)이 blob 으로 풀려 4:07 재생, 실제 클릭 재생·다음 문장 정상. 시험 산출물은 지웠다.
+
+- `.tv-toolbar`·`.tv-btn` 의 `display` 가 `hidden` 속성을 이겨 잠긴 상태에서도 보였다. 템플릿에 `[hidden]{display:none!important}`
+- 같은 시각 다른 세션의 커밋 `309485d`(TVShow 반복 토글)에 이 작업의 코드 파일(audiobook.js, 생성기, 템플릿, 문서)이 함께 들어가
+  푸시됐다. 그때 `docs/audiobook.html` 은 gitignore 상태라 본문은 들어가지 않았다(`git log --all -- docs/audiobook.html` 비어 있음)
+
+---
+
 ## 2026-11-01 — 오디오북 페이지 (로컬 전용)
 
 소설을 TVShow 리더처럼 듣는 `audiobook.html` 을 만들었다. 첫 책은 *My Oxford Year*(31챕터).
