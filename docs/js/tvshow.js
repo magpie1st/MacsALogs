@@ -550,6 +550,14 @@
    * 되살리는 방법이 그것뿐이므로 그걸 여기서 한다. 한 번만 시도한다 (정말 음원이
    * 없으면 무한히 다시 열지 않는다). */
   var reviving = false;
+  //: 되돌아갈 자리. 음원을 다시 열면 0 으로 돌아가므로, **마지막으로 알고 있던 위치**를
+  //: 따로 들고 있다가 복구가 끝나면 그 자리로 간다.
+  //:
+  //: 복구를 시작할 때의 값을 스냅샷으로 들고 있으면 안 된다 — 복구가 끝나기 전에 사용자가
+  //: 다른 문장을 누르면, 늦게 깨어난 복구 핸들러가 **예전 자리로 끌어당긴다.** (실제로
+  //: 그랬다: 반복 버튼이 고른 문장으로 갔다가 곧 이전 위치로 되돌아갔다.) 그래서 seek 과
+  //: 재생이 언제나 이 값을 갱신하게 두고, 복구는 **그때의 최신 값**을 쓴다.
+  var wantTime = 0;
   function requestPlay() {
     if (!audioEl) return;
     var attempt = audioEl.play();
@@ -564,7 +572,6 @@
     if (!audioEl || reviving || !current || !current.audio) return;
     reviving = true;
     var forEpisode = current;
-    var at = audioEl.currentTime;
     var wasRate = audioEl.playbackRate;
     el.now.textContent = '음원을 다시 엽니다…';
     audioEl.src = current.audio.file;   /* 302 를 다시 타 새 서명을 받는다 */
@@ -573,6 +580,7 @@
       reviving = false;
       if (current !== forEpisode) return;   // 그 사이에 회차를 바꿨으면 손대지 않는다
       audioEl.playbackRate = wasRate;
+      var at = wantTime;   // 복구를 기다리는 사이 사용자가 옮겼으면 그 자리가 들어 있다
       try { audioEl.currentTime = at; } catch (e) { /* 범위를 벗어나면 그대로 둔다 */ }
       setActive(findSegment(at * 1000), true);
       if (thenPlay) {
@@ -586,7 +594,7 @@
 
   function updatePlayButton() {
     var playing = audioEl && !audioEl.paused;
-    el.play.textContent = playing ? '일시정지' : '재생';
+    el.play.textContent = playing ? '❚❚' : '▶';
     el.play.setAttribute('aria-label', playing ? '일시정지' : '재생');
   }
 
@@ -597,7 +605,7 @@
       repeatSeg = i;
       syncRepeat();
     }
-    audioEl.currentTime = segRows[i][3] / 1000;
+    audioEl.currentTime = wantTime = segRows[i][3] / 1000;
     setActive(i, true);
     updateProgress();
     if (keepPlaying && audioEl.paused) requestPlay();
@@ -630,10 +638,22 @@
     seekToSegment(repeatSeg, true);
   }
 
+  /* 지금 문장을 처음부터 한 번 다시. 반복 토글(R)과 달리 한 번만이다. */
+  function repeatOnce() {
+    if (!audioEl || !segRows.length) return;
+    var i = activeSeg >= 0 ? activeSeg : findSegment(audioEl.currentTime * 1000);
+    seekToSegment(i >= 0 ? i : 0, true);
+  }
+
+  function syncFollow() {
+    if (!el.follow) return;
+    el.follow.setAttribute('aria-pressed', String(follow));
+    el.follow.setAttribute('aria-label', follow ? '따라가기 끄기' : '따라가기 켜기');
+  }
+
   function syncRepeat() {
     if (!el.repeat) return;
     var on = repeatSeg >= 0;
-    el.repeat.textContent = on ? '↻ 반복 중' : '↻ 반복';
     el.repeat.setAttribute('aria-pressed', String(on));
     el.repeat.setAttribute('aria-label', on ? '문장 반복 끄기' : '이 문장만 반복해 듣기');
   }
@@ -645,7 +665,7 @@
     var from = segRows[repeatSeg][3] / 1000;
     var to = segEnd(repeatSeg);
     if (audioEl.currentTime >= to || audioEl.currentTime < from - 0.5) {
-      audioEl.currentTime = from;
+      audioEl.currentTime = wantTime = from;
       return true;
     }
     return false;
@@ -660,7 +680,7 @@
 
   function skip(seconds) {
     if (!audioEl) return;
-    audioEl.currentTime = Math.min(duration(), Math.max(0, audioEl.currentTime + seconds));
+    audioEl.currentTime = wantTime = Math.min(duration(), Math.max(0, audioEl.currentTime + seconds));
     updateProgress();
   }
 
@@ -676,6 +696,7 @@
 
     audioEl.pause();
     reviving = false;
+    wantTime = 0;
     repeatSeg = -1;   // 문장 번호는 회차마다 다르다. 들고 가면 엉뚱한 곳을 돈다.
     syncRepeat();
     clearActive();
@@ -831,12 +852,15 @@
     var on = hasKo();
     if (el.koField) el.koField.hidden = !on;
     if (el.koBar) el.koBar.hidden = !on;
-    var label = showKo ? '한국어 숨기기' : '한국어 보이기';
-    [el.koToggle, el.koBar].forEach(function (btn) {
-      if (!btn) return;
-      btn.textContent = label;
-      btn.setAttribute('aria-pressed', String(showKo));
-    });
+    // 위 도구 모음은 글로, 플레이어 바는 '한' 글자 버튼으로 보여 준다 (바는 자리가 좁다)
+    if (el.koToggle) {
+      el.koToggle.textContent = showKo ? '한국어 숨기기' : '한국어 보이기';
+      el.koToggle.setAttribute('aria-pressed', String(showKo));
+    }
+    if (el.koBar) {
+      el.koBar.setAttribute('aria-pressed', String(showKo));
+      el.koBar.setAttribute('aria-label', showKo ? '한국어 자막 숨기기' : '한국어 자막 보이기');
+    }
   }
 
   function toggleKo() {
@@ -905,6 +929,7 @@
     el.segPrev.addEventListener('click', function () { stepSegment(-1); });
     el.segNext.addEventListener('click', function () { stepSegment(1); });
     if (el.repeat) el.repeat.addEventListener('click', toggleRepeat);
+    if (el.repeatOnce) el.repeatOnce.addEventListener('click', repeatOnce);
 
     el.rate.addEventListener('change', function () {
       rate = parseFloat(el.rate.value) || 1;
@@ -912,19 +937,21 @@
       savePrefs();
     });
 
-    el.follow.addEventListener('change', function () {
-      follow = el.follow.checked;
+    el.follow.addEventListener('click', function () {
+      follow = !follow;
+      syncFollow();
       lastUserScrollAt = 0;   // 직접 켠 것이므로 곧바로 따라가게 한다
       savePrefs();
       if (follow && activeSeg >= 0 && segNodes[activeSeg]) scrollTo(segNodes[activeSeg]);
     });
 
     el.seek.addEventListener('input', function () {
-      audioEl.currentTime = parseFloat(el.seek.value) || 0;
+      audioEl.currentTime = wantTime = parseFloat(el.seek.value) || 0;
       el.timeNow.textContent = formatTime(audioEl.currentTime);
     });
 
     audioEl.addEventListener('timeupdate', function () {
+      if (!reviving) wantTime = audioEl.currentTime;
       if (loopIfRepeating()) {
         updateProgress();
         return;   // 되감았다. 하이라이트는 그 문장에 그대로 둔다.
@@ -1033,7 +1060,8 @@
       if (id && findEpisode(id)) selectEpisode(id, false);
     });
 
-    // 데스크톱 편의: '/' 검색창, '[' ']' 앞뒤 에피소드, K 한국어, R 이 문장 다시
+    // 단축키: '/' 검색창, '[' ']' 앞뒤 에피소드, Space 재생, A·D 문장 이동,
+    // R 문장 반복, F 따라가기, K 한국어 (audiobook.html 과 같은 짜임새)
     document.addEventListener('keydown', function (event) {
       if (event.metaKey || event.ctrlKey || event.altKey) return;
       if (isFormField(event.target)) return;
@@ -1054,6 +1082,23 @@
         if (!segRows.length) return;
         event.preventDefault();
         toggleRepeat();
+      } else if (event.key === 'f' || event.key === 'F') {
+        if (!segRows.length) return;
+        event.preventDefault();
+        el.follow.click();
+      } else if (event.key === 'a' || event.key === 'A') {
+        if (!segRows.length) return;
+        event.preventDefault();
+        stepSegment(-1);
+      } else if (event.key === 'd' || event.key === 'D') {
+        if (!segRows.length) return;
+        event.preventDefault();
+        stepSegment(1);
+      } else if (event.key === ' ') {
+        // 기본 동작(페이지 스크롤)을 막고 재생·일시정지로 쓴다
+        if (!segRows.length) return;
+        event.preventDefault();
+        togglePlay();
       }
     });
 
@@ -1120,6 +1165,7 @@
       rate: document.getElementById('tv-rate'),
       follow: document.getElementById('tv-follow'),
       repeat: document.getElementById('tv-repeat'),
+      repeatOnce: document.getElementById('tv-repeat-once'),
       koBar: document.getElementById('tv-ko-bar')
     };
     audioEl = document.getElementById('tv-audio');
@@ -1127,7 +1173,7 @@
     loadPrefs();
     applyFont();
     if (el.rate) el.rate.value = String(rate);
-    if (el.follow) el.follow.checked = follow;
+    syncFollow();
 
     // 해시로 들어온 작품·회차가 있으면 그것을, 없으면 첫 작품의 첫 회차를 보여 준다
     var target = resolveHash(window.location.hash);
