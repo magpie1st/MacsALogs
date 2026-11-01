@@ -16,7 +16,7 @@ GitHub Pages가 `main` 브랜치의 `docs/` 폴더를 그대로 서빙합니다 
 
 | 주소 | 무엇 |
 |---|---|
-| [`/tvshow.html`](https://magpie1st.github.io/MacsALogs/tvshow.html) | **TV쇼·영화 스크립트 리더.** 대본을 읽으며 문장을 누르면 그 지점부터 재생. 작품 → 시즌 → 화, 한국어 자막 토글(`K`), 본문 검색 |
+| [`/tvshow.html`](https://magpie1st.github.io/MacsALogs/tvshow.html) | **TV쇼·영화 스크립트 리더.** 대본을 읽으며 문장을 누르면 그 지점부터 재생. 작품 → 시즌 → 화, 한국어 자막 토글(`K`), 본문 검색.<br>지금 담긴 것: 신사의 품격(TTS 20화) · 에밀리, 파리에 가다(녹음 시즌5 10화) · Workin' Moms(녹음 시즌1 3화) |
 | [`/opic.html`](https://magpie1st.github.io/MacsALogs/opic.html) | OPIc 스크립트 음원 재생목록 |
 | [`/english.html`](https://magpie1st.github.io/MacsALogs/english.html) | 영어 노트 카드형 복습 |
 | `/mom.html` | 회의록 대본 |
