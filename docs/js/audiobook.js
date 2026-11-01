@@ -10,9 +10,10 @@
    '이전/다음 챕터'(상단)와 '이전/다음 문장'(하단 플레이어)은 다른 것이다 — tvshow 와 같은 원칙.
 
    플레이어 동작
-     ↻ 다시         지금 문장을 처음부터 한 번 더
-     문장 반복      켜 두면 지금 문장을 끝없이 되풀이 (L)
-     문장마다 멈춤  문장 끝마다 멈추고, 재생을 누르면 다음 문장 (P) — 따라 말하기용
+     ↻ 다시 (A)     지금 문장을 처음부터 한 번 더
+     R 문장 반복    켜 두면 지금 문장을 끝없이 되풀이 (R, L)
+     S 문장마다 멈춤 문장 끝마다 멈추고, 재생을 누르면 다음 문장 (S, P) — 따라 말하기용
+     F 따라가기     낭독 위치를 따라 본문 스크롤 (F)
      이어듣기       챕터별 마지막 위치를 이 브라우저에 기억한다 (localStorage) */
 (function () {
   'use strict';
@@ -472,7 +473,7 @@
         scrollToNode(segNodes[i]);
       }
     }
-    el.now.textContent = i >= 0 ? (i + 1) + '/' + rows.length + ' · ' + segText[i] : '—';
+    // 지금 문장은 본문 강조로 보인다. 플레이어 줄(el.now)에는 상태 메시지만 쓴다 — 바를 얇게 두려고
   }
 
   /* ── 재생 루프 ──
@@ -521,11 +522,11 @@
 
   function updatePlayButton() {
     var playing = audioEl && !audioEl.paused;
-    el.play.textContent = playing ? '일시정지' : '재생';
+    el.play.textContent = playing ? '❚❚' : '▶';
     el.play.setAttribute('aria-label', playing ? '일시정지' : '재생');
   }
   function syncToggles() {
-    [[el.loop, loopOn], [el.stepmode, stepMode]].forEach(function (pair) {
+    [[el.loop, loopOn], [el.stepmode, stepMode], [el.follow, follow]].forEach(function (pair) {
       pair[0].classList.toggle('is-on', pair[1]);
       pair[0].setAttribute('aria-pressed', String(pair[1]));
     });
@@ -620,7 +621,7 @@
         audioEl.src = url;
         audioEl.playbackRate = rate;
         el.play.disabled = false;
-        el.now.textContent = '—';
+        el.now.textContent = '';
         if (pendingAutoplay) { pendingAutoplay = false; requestPlay(); }
       }, function (err) {
         if (seq !== audioSeq) return;
@@ -737,7 +738,6 @@
     applyEngine();
     el.rate.value = String(rate);
     if (el.rate.value !== String(rate)) { rate = 1; el.rate.value = '1'; }
-    el.follow.checked = follow;
     el.autonext.checked = autoNext;
     syncToggles();
 
@@ -812,7 +812,13 @@
       audioEl.playbackRate = rate;
       savePrefs();
     });
-    el.follow.addEventListener('change', function () { follow = el.follow.checked; savePrefs(); });
+    el.follow.addEventListener('click', function () {
+      follow = !follow;
+      if (follow) lastUserScrollAt = 0;   // 켜는 순간 지금 문장으로 돌아간다
+      syncToggles();
+      savePrefs();
+      if (follow && activeSeg >= 0 && segNodes[activeSeg]) scrollToNode(segNodes[activeSeg]);
+    });
     el.autonext.addEventListener('change', function () { autoNext = el.autonext.checked; savePrefs(); });
     el.seek.addEventListener('input', function () {
       audioEl.currentTime = parseFloat(el.seek.value) || 0;
@@ -854,9 +860,10 @@
       else if (e.key === ' ' && !(e.target.classList && e.target.classList.contains('tv-seg'))) { e.preventDefault(); togglePlay(); }
       else if (e.key === 'ArrowLeft') { e.preventDefault(); stepSegment(-1); }
       else if (e.key === 'ArrowRight') { e.preventDefault(); stepSegment(1); }
-      else if (e.key === 'r' || e.key === 'R') repeatSegment();
-      else if (e.key === 'l' || e.key === 'L') el.loop.click();
-      else if (e.key === 'p' || e.key === 'P') el.stepmode.click();
+      else if (e.key === 'a' || e.key === 'A') repeatSegment();
+      else if (e.key === 'r' || e.key === 'R' || e.key === 'l' || e.key === 'L') el.loop.click();
+      else if (e.key === 's' || e.key === 'S' || e.key === 'p' || e.key === 'P') el.stepmode.click();
+      else if (e.key === 'f' || e.key === 'F') el.follow.click();
     });
 
     fromHash();
