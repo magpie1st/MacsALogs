@@ -1,24 +1,28 @@
 {
-  "Friends": {
-    "id": "friends",
-    "assetSlug": "friends",
-    "titleEn": "Friends"
-  },
-  "Workin' Moms": {
-    "id": "workin-moms",
-    "assetSlug": "workin-moms",
-    "titleEn": "Workin' Moms"
-  },
-  "에밀리, 파리에 가다": {
-    "id": "emily-in-paris",
-    "titleEn": "Emily in Paris",
-    "assetSlug": "emily-in-paris",
-    "aliases": [
-      "Emily in Paris"
-    ]
-  },
-  "투 브로크 걸즈": {
-    "id": "투-브로크-걸즈",
-    "assetSlug": "tu-beurokeu-geoljeu"
-  }
+ "Friends": {
+  "id": "friends",
+  "assetSlug": "friends",
+  "titleEn": "Friends"
+ },
+ "Workin' Moms": {
+  "id": "workin-moms",
+  "assetSlug": "workin-moms",
+  "titleEn": "Workin' Moms"
+ },
+ "에밀리, 파리에 가다": {
+  "id": "emily-in-paris",
+  "titleEn": "Emily in Paris",
+  "assetSlug": "emily-in-paris",
+  "aliases": [
+   "Emily in Paris"
+  ]
+ },
+ "투 브로크 걸즈": {
+  "id": "투-브로크-걸즈",
+  "assetSlug": "tu-beurokeu-geoljeu",
+  "titleEn": "2 Broke Girls",
+  "aliases": [
+   "2 Broke Girls"
+  ]
+ }
 }

@@ -205,7 +205,7 @@
     var name = show.title || show.id;
     el.series.textContent = name;
     document.title = name + ' 스크립트 — MacsALogs';
-    if (el.seriesKo) el.seriesKo.textContent = show.titleKo || '';
+    if (el.seriesKo) el.seriesKo.textContent = altTitle(show);
 
     if (!el.heroSub) return;
     var tail = show.kind === 'recording'
@@ -216,18 +216,31 @@
     tail += isMovie()
       ? ' 위에서 작품을 고르고, 본문 검색과 글자 크기로 읽기 편하게 맞춰 보세요.'
       : ' 아래에서 작품과 회차를 고르고, 본문 검색과 글자 크기로 읽기 편하게 맞춰 보세요.';
-    // 보조 제목(titleKo)이 있을 때만 앞에 굵게 붙인다. 없으면 빈 strong 때문에 앞에 빈칸이 생긴다.
-    var lead = show.titleKo
-      ? '<strong id="tv-series-ko">' + escapeHtml(show.titleKo) + '</strong> '
+    // 보조 제목이 있을 때만 앞에 굵게 붙인다. 없으면 빈 strong 때문에 앞에 빈칸이 생긴다.
+    var alt = altTitle(show);
+    var lead = alt
+      ? '<strong id="tv-series-ko">' + escapeHtml(alt) + '</strong> '
       : '<strong id="tv-series-ko" hidden></strong>';
     el.heroSub.innerHTML = lead + escapeHtml(tail);
     el.seriesKo = document.getElementById('tv-series-ko');
   }
 
+  /* 제목 옆에 붙는 보조 제목. 주 제목이 영문이면 한국어 이름이(titleKo), 한글이면 영문
+   * 이름이(titleEn) 들어온다. 예전 데이터에는 titleKo 만 있다. */
+  function altTitle(show) {
+    var alt = (show && (show.titleKo || show.titleEn)) || '';
+    // 주 제목과 같은 값이 들어 있는 데이터가 있다 (예전 --title-en 처리의 흔적).
+    // 그대로 쓰면 "Emily in Paris (Emily in Paris)" 가 된다.
+    return alt && alt !== (show.title || '') ? alt : '';
+  }
+
   function renderShowOptions() {
     var option = function (s) {
       var mark = s.kind === 'recording' ? ' · 녹음' : '';
-      return '<option value="' + escapeHtml(s.id) + '">' + escapeHtml((s.title || s.id) + mark) + '</option>';
+      var alt = altTitle(s);
+      // 한글 제목 작품을 영문으로도 찾을 수 있게 둘 다 적는다
+      var name = (s.title || s.id) + (alt ? ' (' + alt + ')' : '') + mark;
+      return '<option value="' + escapeHtml(s.id) + '">' + escapeHtml(name) + '</option>';
     };
     var series = shows.filter(function (s) { return s.type !== 'movie'; });
     var movies = shows.filter(function (s) { return s.type === 'movie'; });
