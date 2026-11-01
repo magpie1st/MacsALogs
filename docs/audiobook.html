@@ -68,8 +68,6 @@
     .ab-now:empty { display: none; }
     .ab-seek-row { display: flex; align-items: center; gap: 0.45rem; }
     .ab-seek { flex: 1; min-width: 0; height: 4px; margin: 0; }
-    .ab-chip { font-size: 0.68rem; padding: 0.05rem 0.45rem; border: 1px solid var(--accent); color: var(--accent);
-               background: var(--bg); border-radius: 999px; cursor: pointer; white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -171,7 +169,7 @@
         <span class="tv-time" id="ab-time-now">0:00</span>
         <input class="tv-seek ab-seek" id="ab-seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="재생 위치" />
         <span class="tv-time" id="ab-time-total">0:00</span>
-        <span id="ab-resume-bar" hidden><button type="button" class="ab-chip" id="ab-resume">↩ 이어듣기</button></span>
+        <span id="ab-resume-bar" hidden><button type="button" class="tv-chip" id="ab-resume">↩ 이어듣기</button></span>
       </div>
       <div class="tv-ctl" role="group" aria-label="재생 조작">
         <button type="button" class="tv-ico" id="ab-seg-prev" title="이전 문장 ( ← )" aria-label="이전 문장"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M11.5 6v12L3 12z"/><path d="M21 6v12l-8.5-6z"/></svg></button>
