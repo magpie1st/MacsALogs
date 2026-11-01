@@ -242,6 +242,21 @@ seek 불가로 판단하고(`audio.seekable` 이 `[0,0]`), 문장 클릭·문장
 | `--yes` | 확인 없이 올린다. **사용자가 공개를 요청했을 때만** |
 | `--push` | 성공하면 커밋·푸시까지 |
 
+## 잘못 올라간 회차 지우기
+
+녹음이 무음이거나 회차를 잘못 넣었을 때. 페이지와 타임라인에서 빼고, 음원은 기본적으로 남긴다
+(다시 녹음해 같은 이름으로 올리면 `--clobber` 로 덮어써진다).
+
+```bash
+python3 scripts/build_langstudy.py --show-id friends --remove-episode s10e04 -n   # 확인
+python3 scripts/build_langstudy.py --show-id friends --remove-episode s10e04      # 지운다
+```
+
+- 회차가 하나도 남지 않으면 시즌·작품도 함께 걷어낸다 (빈 칸이 선택 목록에 남지 않게)
+- Release 자산까지 지우려면 `--delete-asset`. **되돌릴 수 없다** — 정말 지울 때만
+- watcher 가 다시 올리지 않게 `scripts/.watch_state.json` 에서 그 폴더 항목도 지운다
+- 작품을 통째로 지우는 것은 `--remove-show <ID>` 다
+
 ## 판단이 필요한 지점
 
 - **시즌을 여러 화 올려 달라는 요청**: 회차마다 한 번씩 돌린다. 회차가 5개를 넘으면

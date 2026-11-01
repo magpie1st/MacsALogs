@@ -34,7 +34,7 @@ MacsALogs의 기술 구조와 기능 명세입니다. 변경 시 해당 섹션�
 | `docs/english.html`, `docs/mom.html`, `docs/mom/` | 영어 복습·회의록 (독립 페이지) |
 | `scripts/shows.py` | `tvshow.html` JSON 블록 읽기·쓰기, 예전 형식 옮기기, 공개 문자열 검사 |
 | `scripts/build_tvshow.py` | TTS 시리즈 생성기 (`book-maker` 원본 → JSON 블록) |
-| `scripts/build_langstudy.py` | 녹음 작품 생성기 (lang-study 내보내기 → 타임라인 + JSON 블록) |
+| `scripts/build_langstudy.py` | 녹음 작품 생성기 (lang-study 내보내기 → 타임라인 + JSON 블록). `--remove-show`·`--remove-episode` 로 지운다 |
 | `scripts/publish_shows.py` | 녹음 음원을 Release에 올리고 주소를 돌림, Range 206 확인, 커밋·푸시 |
 | `scripts/watch_langstudy.py` | 내려받기 폴더의 `lang-study/` 감시 → zip 풀기·소리 확인 → 위 둘 실행 |
 | `scripts/downloads.py` | 확장이 내려놓는 폴더 찾기 (Chrome 설정 → OS 기본값, 맥·리눅스) |
