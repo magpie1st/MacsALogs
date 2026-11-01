@@ -55,7 +55,13 @@ PASSWORD_FILE = Path(os.path.expanduser("~/.config/macsalogs/audiobook_password"
 ITERATIONS = 600_000
 CODE_ROOT = REPO.parent
 DEFAULT_BOOKS = CODE_ROOT / "book-maker" / "output" / "audiobook"
-DEFAULT_AUDIO = CODE_ROOT / "tts-maker" / "output" / "gemini" / "audiobook"
+# 엔진별 음원 폴더. 페이지에는 챕터마다 있는 엔진을 모두 싣고, 기본 엔진은 config.json 의 defaultEngine 으로 정한다
+# id 는 config.json 의 defaultEngine 값이자 잠근 음원 파일 이름 앞머리다. 바꾸면 이미 올린 .bin 이름이 바뀐다
+ENGINES = {
+    "gemini": CODE_ROOT / "tts-maker" / "output" / "gemini" / "audiobook",
+    "kokoro-bf_emma": CODE_ROOT / "tts-maker" / "output" / "kokoro" / "bf_emma" / "audiobook",
+    "kokoro-af_heart": CODE_ROOT / "tts-maker" / "output" / "kokoro" / "af_heart" / "audiobook",
+}
 START, END = "<!-- AUDIOBOOK-DATA:START -->", "<!-- AUDIOBOOK-DATA:END -->"
 
 
@@ -108,9 +114,10 @@ def read_password() -> str:
 
 # ── 음원 ──────────────────────────────────────────────────────────────────
 
-def load_audio(book_id: str, chapter: dict, args, base_url: str | None, sealer: Sealer | None) -> tuple[dict | None, str]:
-    manifest_path = args.audio_dir / book_id / f"{chapter['id']}.json"
-    mp3 = args.audio_dir / book_id / f"{chapter['id']}.mp3"
+def load_audio(book_id: str, chapter: dict, args, base_url: str | None, sealer: Sealer | None,
+               engine: str, audio_dir: Path) -> tuple[dict | None, str]:
+    manifest_path = audio_dir / book_id / f"{chapter['id']}.json"
+    mp3 = audio_dir / book_id / f"{chapter['id']}.mp3"
     if not manifest_path.exists():
         return None, "음원 없음"
     m = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -126,22 +133,23 @@ def load_audio(book_id: str, chapter: dict, args, base_url: str | None, sealer: 
         return None, "타임라인 문장 번호가 앞에서부터 이어지지 않음"
     if not mp3.exists():
         return None, "타임라인은 있으나 mp3 없음"
-    engine = m.get("engine", {})
+    meta = m.get("engine", {})
     audio = {"durationSec": m["audio"]["durationSec"],
-             "voice": " ".join(x for x in (engine.get("name", "").replace("gemini", "Gemini TTS"), engine.get("voice")) if x),
+             "voice": " ".join(x for x in (meta.get("name", "").replace("gemini", "Gemini TTS"), meta.get("voice")) if x),
              "rows": [[r[2], r[3]] for r in m["rows"]]}   # 문장 번호 = 배열 순서. 부분 음원이면 앞부분만
     if partial:
         audio["partial"] = True
 
+    audio["engine"] = engine
     if sealer:
-        name = sealer.asset_name(chapter["id"], hashlib.sha256(mp3.read_bytes()).hexdigest())
+        name = f"{engine}-" + sealer.asset_name(chapter["id"], hashlib.sha256(mp3.read_bytes()).hexdigest())
         staged = STAGE / book_id / name
         if not args.dry_run and not staged.exists():
             sealer.seal_file(mp3, staged)
         audio["enc"] = True
         where = staged
     else:
-        name, where = mp3.name, mp3
+        name, where = f"{engine}-{mp3.name}", mp3
 
     if base_url and not args.local_audio:
         audio["file"] = f"{base_url.rstrip('/')}/{name}"
@@ -153,7 +161,7 @@ def load_audio(book_id: str, chapter: dict, args, base_url: str | None, sealer: 
         dest_dir = DOCS / base_url.strip("/")
         if not args.dry_run:
             dest_dir.mkdir(parents=True, exist_ok=True)
-            for old in dest_dir.glob(f"{chapter['id']}-*.bin"):
+            for old in dest_dir.glob(f"{engine}-{chapter['id']}-*.bin"):
                 if old.name != name:
                     old.unlink()
             if not (dest_dir / name).exists():
@@ -192,7 +200,7 @@ def leaked(page: str, books: list[dict]) -> str | None:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--books-dir", type=Path, default=DEFAULT_BOOKS, help="<책 id>/book.json 들이 있는 폴더")
-    ap.add_argument("--audio-dir", type=Path, default=DEFAULT_AUDIO, help="tts-maker 오디오북 출력 폴더")
+    ap.add_argument("--engines", default=",".join(ENGINES), help="실을 엔진 (쉼표로). 기본: 전부")
     ap.add_argument("--plain", action="store_true", help="암호화하지 않은 로컬 전용 페이지 → docs/audiobook-local.html")
     ap.add_argument("--local-audio", action="store_true", help="음원을 docs 로 복사해 로컬에서 듣는다 (올리지 않는 빌드)")
     ap.add_argument("-n", "--dry-run", action="store_true")
@@ -211,21 +219,29 @@ def main(argv=None) -> int:
             print(f"건너뜀 {bf}: 형식 {src.get('schema')}", file=sys.stderr)
             continue
         cfg_path = DOCS / "audio" / "audiobook" / src["id"] / "config.json"
-        base_url = json.loads(cfg_path.read_text()).get("audioBaseUrl") if cfg_path.exists() else None
+        cfg = json.loads(cfg_path.read_text()) if cfg_path.exists() else {}
+        base_url = cfg.get("audioBaseUrl")
+        engines = [e.strip() for e in args.engines.split(",") if e.strip() in ENGINES]
+        default_engine = cfg.get("defaultEngine", engines[0] if engines else "gemini")
         chapters, voiced = [], 0
         print(f"{src['title']} ({src['id']})")
         for ch in src["chapters"]:
-            audio, note = load_audio(src["id"], ch, args, base_url, sealer)
             c = compact_chapter(ch)
-            if audio:
-                c["audio"] = audio
+            notes = []
+            for eng in engines:
+                audio, note = load_audio(src["id"], ch, args, base_url, sealer, eng, ENGINES[eng])
+                if audio:
+                    c.setdefault("audios", {})[eng] = audio
+                    part = f" 부분 {len(audio['rows'])}/{ch['sentenceCount']}" if audio.get("partial") else ""
+                    notes.append(f"{eng} ♪{audio['durationSec'] / 60:.1f}분{part}")
+                else:
+                    notes.append(f"{eng} —")
+            if c.get("audios"):
                 voiced += 1
             chapters.append(c)
-            part = f" · 부분 {len(audio['rows'])}/{ch['sentenceCount']}문장" if audio and audio.get("partial") else ""
-            print(f"  {ch['id']:10} 문장 {ch['sentenceCount']:4}  "
-                  + (f"♪ {audio['durationSec'] / 60:5.1f}분{part} ({note})" if audio else f"— {note}"))
+            print(f"  {ch['id']:10} 문장 {ch['sentenceCount']:4}  " + " · ".join(notes))
         books.append({"id": src["id"], "title": src["title"], "author": src.get("author", ""),
-                      "front": src.get("front", {}), "chapters": chapters})
+                      "front": src.get("front", {}), "defaultEngine": default_engine, "chapters": chapters})
         outline.append({"id": src["id"], "title": src["title"], "author": src.get("author", ""),
                         "chapterCount": len(chapters)})
         print(f"  → 챕터 {len(chapters)}개 중 음원 {voiced}개")
