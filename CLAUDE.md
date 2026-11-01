@@ -247,9 +247,10 @@ manifest가 원본 대본과 어긋나면 **배포가 중단된다** — 문장 
   평문을 쓰는 경로는 없고, 생성기가 쓰고 나서 본문 문장이 평문으로 보이면 실패한다. 이 안전장치를 풀지 말 것
 - 음원도 같은 열쇠로 잠근 `.bin`(iv 12바이트 + 암호문)이다. `.audiobook-audio/<책>/` 에 모인다 (gitignore).
   브라우저가 fetch 해서 풀어야 하므로 **CORS 를 허용하는 곳**에 둔다 — GitHub Pages 는 되고 GitHub Release 는 안 된다(2026-11-01 확인).
-  지금은 **이 블로그 Pages 안**이다: `config.json` 의 `audioBaseUrl` 이 `audio/audiobook/my-oxford-year`(상대경로)이면 생성기가
-  잠근 `.bin` 을 그 폴더로 복사하고 같은 챕터의 예전 `.bin` 은 지운다. 커밋되는 음원은 암호화된 `.bin` 뿐이다(평문 mp3 는 gitignore).
-  책 전체(약 9시간, 64k)면 약 260MB 이고 다시 만든 챕터는 git 이력에 쌓인다 — 사이트 1GB 상한이 가까워지면 별도 저장소 Pages 로 옮긴다
+  **음원은 별도 저장소 `magpie1st/audiobook-audio` 의 Pages 에 있다** (2026-11-01 분리, 로컬 `../audiobook-audio`). `config.json` 의
+  `audioBaseUrl` = `https://magpie1st.github.io/audiobook-audio/my-oxford-year`, `audioRepoDir` = `../audiobook-audio/my-oxford-year`.
+  생성기가 잠근 `.bin` 을 그 폴더로 복사하고 같은 엔진·챕터의 예전 파일은 지운다. 같은 github.io 도메인이라 CORS 문제가 없고,
+  블로그와 Pages 용량(각 1GB)을 나눠 쓰지 않는다. 음원 저장소가 없으면 생성기가 멈춘다. **이 저장소에는 음원을 두지 않는다
 - 본문: `book-maker/output/audiobook/<책>/book.json`, 음원: `tts-maker/output/gemini/audiobook/<책>/<챕터>.{json,mp3}`.
   타임라인의 `textSha256` 이 본문과 다르면 그 챕터는 음원 없이 실린다
 - 첫 화면은 목차(낭독 없음). 플레이어: ←/→ 문장, R 다시, L 문장 반복, P 문장마다 멈춤, [ ] 챕터. 🔒 잠그기 = 기억한 암호 지우기
