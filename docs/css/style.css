@@ -591,6 +591,13 @@ body.has-player .site-footer { margin-bottom: 8.5rem; }
 /* 도구 모음의 글 버튼 토글 (audiobook 의 책갈피·잠그기 등) */
 .tv-btn.is-on { background: var(--tag-bg); border-color: var(--accent); color: var(--accent); }
 .tv-sep { flex: 0 0 auto; width: 1px; height: 18px; background: var(--border); margin: 0 0.15rem; }
+/* 이어듣기 칩 (audiobook 과 공용) */
+.tv-chip {
+  font-size: 0.68rem; padding: 0.05rem 0.45rem; border: 1px solid var(--accent); color: var(--accent);
+  background: var(--bg); border-radius: 999px; cursor: pointer; white-space: nowrap;
+}
+/* 해시(#작품/회차/sNN)로 문장을 가리켜 들어왔을 때 잠깐 비춘다 */
+.tv-seg.is-flash { background: var(--tag-bg); outline: 2px solid var(--accent); }
 .tv-btn--play { background: var(--accent); border-color: var(--accent); color: #fff; min-width: 64px; }
 .tv-btn--play:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: #fff; }
 

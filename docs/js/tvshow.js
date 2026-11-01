@@ -23,7 +23,6 @@
   var TOP_AT = 400;         // 이만큼 내려가면 '맨 위로' 버튼을 띄운다
 
   var RATES = [0.75, 1, 1.25, 1.5];
-  var SKIP_SECONDS = 10;
   /* 손으로 스크롤한 뒤 이만큼은 자동 추적을 멈춘다. 읽던 자리를 뺏기지 않게 하려는 것이다. */
   var FOLLOW_PAUSE_MS = 6000;
   /* scrollIntoView 가 만드는 scroll 이벤트를 사용자의 조작으로 오인하지 않도록 두는 여유 */
@@ -75,6 +74,55 @@
         fontIndex: fontIndex, rate: rate, follow: follow, showKo: showKo
       }));
     } catch (e) { /* 저장 실패는 무시 */ }
+  }
+
+  function readStore(key, fallback) {
+    try {
+      var v = JSON.parse(localStorage.getItem(key));
+      return v == null ? fallback : v;
+    } catch (e) {
+      return fallback;   // 시크릿 모드 등
+    }
+  }
+
+  function writeStore(key, value) {
+    try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* 무시 */ }
+  }
+
+  /* ── 이어듣기 ── */
+  function posKey() {
+    return current ? (show ? show.id : '') + '/' + current.id : '';
+  }
+
+  /* 재생 중 3초마다 자리를 적어 둔다. 끝까지 들었으면 지운다 — 다 본 회차에 이어듣기를
+     권하면 방해만 된다. */
+  function savePosition() {
+    if (!current || !current.audio || !audioEl) return;
+    lastSaveAt = Date.now();
+    var t = audioEl.currentTime;
+    var dur = duration();
+    if (!t || (dur && dur - t < RESUME_TAIL_SEC)) delete positions[posKey()];
+    else positions[posKey()] = Math.round(t);
+    writeStore(POS_KEY, positions);
+  }
+
+  /* 이어볼 자리. 없으면 null. */
+  function resumeAt() {
+    if (!current || !current.audio) return null;
+    var pos = positions[posKey()];
+    return pos >= RESUME_MIN_SEC ? { sec: pos } : null;
+  }
+
+  function syncResume() {
+    if (!el.resumeBar) return;
+    var at = resumeAt();
+    if (!at) {
+      el.resumeBar.hidden = true;
+      return;
+    }
+    el.resume.textContent = '↩ ' + formatTime(at.sec) + '부터';
+    el.resume.title = formatTime(at.sec) + ' 지점부터 이어듣습니다';
+    el.resumeBar.hidden = false;
   }
 
   /* ── 유틸 ── */
@@ -537,6 +585,8 @@
     if (!audioEl) return;
     el.seek.value = String(audioEl.currentTime);
     el.timeNow.textContent = formatTime(audioEl.currentTime);
+    // 재생 중 3초마다 자리를 적어 둔다 (책갈피가 있으면 그것이 먼저다 — resumeAt 참고)
+    if (!audioEl.paused && Date.now() - lastSaveAt > SAVE_EVERY_MS) savePosition();
   }
 
   /* 재생을 건다. 실패하면 **음원을 다시 열고 그 자리로 돌아가** 한 번 더 해 본다.
@@ -558,6 +608,18 @@
   //: 그랬다: 반복 버튼이 고른 문장으로 갔다가 곧 이전 위치로 되돌아갔다.) 그래서 seek 과
   //: 재생이 언제나 이 값을 갱신하게 두고, 복구는 **그때의 최신 값**을 쓴다.
   var wantTime = 0;
+
+  /* 이어듣기. **회차마다** 마지막으로 듣던 자리를 이 브라우저에만 적어 둔다 (localStorage).
+   * 서버로 아무것도 보내지 않는다. audiobook.html 의 이어듣기와 같은 짜임새다.
+   *
+   * 책갈피(직접 꽂는 목록)도 만들어 봤다가 걷어냈다 (2026-11-01 사용자 결정) — 누르는 뜻이
+   * "다음에 여기서부터" 라면 자동으로 적히는 이어듣기와 같은 일이고, 버튼만 하나 더 느는 셈이다. */
+  var POS_KEY = 'tvshow-pos';       // "작품/회차" -> 초
+  var RESUME_MIN_SEC = 15;          // 이보다 앞이면 이어듣기를 권하지 않는다
+  var RESUME_TAIL_SEC = 5;          // 끝에서 이만큼 안이면 다 본 것으로 보고 지운다
+  var SAVE_EVERY_MS = 3000;
+  var positions = {};
+  var lastSaveAt = 0;
   function requestPlay() {
     if (!audioEl) return;
     var attempt = audioEl.play();
@@ -678,11 +740,6 @@
     seekToSegment(next, !audioEl.paused);
   }
 
-  function skip(seconds) {
-    if (!audioEl) return;
-    audioEl.currentTime = wantTime = Math.min(duration(), Math.max(0, audioEl.currentTime + seconds));
-    updateProgress();
-  }
 
   function togglePlay() {
     if (!audioEl) return;
@@ -709,6 +766,7 @@
       document.body.classList.remove('has-tv-player');
       audioEl.removeAttribute('src');
       audioEl.load();   // 남은 버퍼까지 버려야 다른 회차에서 소리가 새지 않는다
+      if (el.resumeBar) el.resumeBar.hidden = true;
       updatePlayButton();
       return;
     }
@@ -774,6 +832,19 @@
   function resolveHash(raw) {
     var hash = decodeHash(raw);
     if (!hash) return null;
+    // 끝에 /sNN 이 붙으면 그 문장까지 가리킨다 (책갈피 링크)
+    var seg = null;
+    var segHit = hash.match(/^(.*)\/s(\d+)$/);
+    if (segHit) {
+      hash = segHit[1];
+      seg = Number(segHit[2]);
+    }
+    var out = resolveShowEpisode(hash);
+    if (out) out.seg = seg;
+    return out;
+  }
+
+  function resolveShowEpisode(hash) {
     var slash = hash.indexOf('/');
     if (slash > 0) {
       var s = findShow(hash.slice(0, slash));
@@ -874,6 +945,9 @@
   function selectEpisode(id, updateHash) {
     var ep = findEpisode(id) || episodes[0];
     if (!ep) return;
+    // **current 를 바꾸기 전에** 떠나는 회차의 자리를 적는다. 바꾼 뒤에 적으면 이전 회차의
+    // 시간이 새 회차 키에 들어간다 (posKey 가 current 를 쓴다).
+    if (current && current.id !== ep.id) savePosition();
     current = ep;
     el.episode.value = ep.id;
 
@@ -889,10 +963,26 @@
     renderEpisode();
     setupAudio();
     updateEpisodeNav();
+    syncResume();
 
     if (updateHash && window.history && window.history.replaceState) {
       window.history.replaceState(null, '', hashFor(ep));
     }
+  }
+
+  /* 해시가 가리키는 곳으로 간다. 문장까지 있으면(/sNN) 그 문장을 비춘다. */
+  function goTo(target) {
+    if (!target) return;
+    if (!show || target.show.id !== show.id) selectShow(target.show.id, target.episodeId, false);
+    else if (target.episodeId && (!current || current.id !== target.episodeId)) {
+      selectEpisode(target.episodeId, false);
+    }
+    if (target.seg == null) return;
+    // 본문을 그린 뒤라야 문장 DOM 이 있다
+    setTimeout(function () {
+      setActive(target.seg, false);
+      flashSeg(target.seg);
+    }, 60);
   }
 
   function scrollToTop() {
@@ -924,12 +1014,21 @@
     if (!audioEl) return;
 
     el.play.addEventListener('click', togglePlay);
-    el.back10.addEventListener('click', function () { skip(-SKIP_SECONDS); });
-    el.fwd10.addEventListener('click', function () { skip(SKIP_SECONDS); });
     el.segPrev.addEventListener('click', function () { stepSegment(-1); });
     el.segNext.addEventListener('click', function () { stepSegment(1); });
     if (el.repeat) el.repeat.addEventListener('click', toggleRepeat);
     if (el.repeatOnce) el.repeatOnce.addEventListener('click', repeatOnce);
+    if (el.resume) el.resume.addEventListener('click', function () {
+      var at = resumeAt();
+      if (!at) return;
+      if (at.seg >= 0) seekToSegment(at.seg, true);
+      else {
+        audioEl.currentTime = wantTime = at.sec;
+        setActive(findSegment(at.sec * 1000), true);
+        requestPlay();
+      }
+      el.resumeBar.hidden = true;
+    });
 
     el.rate.addEventListener('change', function () {
       rate = parseFloat(el.rate.value) || 1;
@@ -966,7 +1065,10 @@
       }
     });
     audioEl.addEventListener('play', updatePlayButton);
-    audioEl.addEventListener('pause', updatePlayButton);
+    audioEl.addEventListener('pause', function () {
+      updatePlayButton();
+      savePosition();   // 주기(3초) 사이에 멈추면 그 자리를 놓친다
+    });
     audioEl.addEventListener('ended', function () {
       // 마지막 문장을 반복 중이면 끝에 닿아도 멈추지 않는다
       if (repeatSeg >= 0 && segRows[repeatSeg]) {
@@ -1055,9 +1157,11 @@
       if (Date.now() > programmaticUntil) lastUserScrollAt = Date.now();
     }, { passive: true });
 
+    // 주소가 바뀌면 그 작품·회차·문장으로 간다. 책갈피 목록의 링크가 이 길로 들어온다 —
+    // 예전에는 회차 id 만 보고 있어서 `#작품/회차/s12` 형태를 못 알아들었다.
     window.addEventListener('hashchange', function () {
-      var id = window.location.hash.replace('#', '');
-      if (id && findEpisode(id)) selectEpisode(id, false);
+      var target = resolveHash(window.location.hash);
+      if (target) goTo(target);
     });
 
     // 단축키: '/' 검색창, '[' ']' 앞뒤 에피소드, Space 재생, A·D 문장 이동,
@@ -1158,19 +1262,21 @@
       timeNow: document.getElementById('tv-time-now'),
       timeTotal: document.getElementById('tv-time-total'),
       play: document.getElementById('tv-play'),
-      back10: document.getElementById('tv-back10'),
-      fwd10: document.getElementById('tv-fwd10'),
       segPrev: document.getElementById('tv-seg-prev'),
       segNext: document.getElementById('tv-seg-next'),
       rate: document.getElementById('tv-rate'),
       follow: document.getElementById('tv-follow'),
       repeat: document.getElementById('tv-repeat'),
       repeatOnce: document.getElementById('tv-repeat-once'),
-      koBar: document.getElementById('tv-ko-bar')
+      koBar: document.getElementById('tv-ko-bar'),
+      resumeBar: document.getElementById('tv-resume-bar'),
+      resume: document.getElementById('tv-resume')
+
     };
     audioEl = document.getElementById('tv-audio');
 
     loadPrefs();
+    positions = readStore(POS_KEY, {});
     applyFont();
     if (el.rate) el.rate.value = String(rate);
     syncFollow();
@@ -1180,6 +1286,12 @@
     show = target ? target.show : shows[0];
     renderShowOptions();
     selectShow(show.id, target ? target.episodeId : null, false);
+    if (target && target.seg != null) {
+      setTimeout(function () {
+        setActive(target.seg, false);
+        flashSeg(target.seg);
+      }, 80);
+    }
 
     bind();
   }

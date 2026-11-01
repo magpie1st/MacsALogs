@@ -95,6 +95,7 @@
       </div>
     </section>
 
+
     <article class="tv-script" id="tv-script" tabindex="-1" aria-labelledby="tv-episode-title">
       <div class="empty-state"><p>스크립트를 불러오는 중…</p></div>
     </article>
@@ -120,16 +121,16 @@
         <input class="tv-seek" id="tv-seek" type="range" min="0" max="100" step="0.1" value="0"
                aria-label="재생 위치" />
         <span class="tv-time" id="tv-time-total">0:00</span>
+        <!-- 이 회차를 듣던 자리가 기억돼 있으면 나타난다 (audiobook 의 이어듣기와 같다) -->
+        <span id="tv-resume-bar" hidden><button type="button" class="tv-chip" id="tv-resume">↩ 이어듣기</button></span>
       </div>
 
       <!-- audiobook.html 과 같은 짜임새: 아이콘 한 줄. 글자 버튼은 토글(aria-pressed)이다.
            예전에는 글자 버튼이 넓어 휴대폰에서 두세 줄로 접혀 바가 화면의 1/4을 먹었다. -->
       <div class="tv-ctl" role="group" aria-label="재생 조작">
-        <button type="button" class="tv-ico" id="tv-back10" title="10초 뒤로" aria-label="10초 뒤로">−10</button>
         <button type="button" class="tv-ico" id="tv-seg-prev" title="이전 문장 ( A )" aria-label="이전 문장"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M11.5 6v12L3 12z"/><path d="M21 6v12l-8.5-6z"/></svg></button>
         <button type="button" class="tv-ico tv-ico--play" id="tv-play" title="재생 / 일시정지 ( Space )" aria-label="재생">▶</button>
         <button type="button" class="tv-ico" id="tv-seg-next" title="다음 문장 ( D )" aria-label="다음 문장"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12.5 6v12L21 12z"/><path d="M3 6v12l8.5-6z"/></svg></button>
-        <button type="button" class="tv-ico" id="tv-fwd10" title="10초 앞으로" aria-label="10초 앞으로">+10</button>
 
         <span class="tv-sep" aria-hidden="true"></span>
 
@@ -140,6 +141,7 @@
                 title="따라가기 — 재생 위치로 본문 스크롤 ( F )" aria-label="따라가기">F</button>
         <button type="button" class="tv-ico tv-ico--letter" id="tv-ko-bar" aria-pressed="true"
                 title="한국어 자막 보이기/숨기기 ( K )" aria-label="한국어 자막" hidden>한</button>
+
 
         <select class="tv-rate-select" id="tv-rate" title="재생 속도" aria-label="재생 속도">
           <option value="0.75">0.75×</option>
