@@ -119,7 +119,11 @@ python3 scripts/build_langstudy.py "~/Downloads/lang-study/<폴더>" \
   - 다른 제목이 같은 id를 쓰려 하면 번호를 붙인다 (두 작품의 회차가 섞이면 눈에 안 띈다)
 - `--publish --push`를 붙이면 대본 반영 → 음원 업로드 → 주소 교체 → Range 확인 → 커밋·푸시까지
   한 번에 간다 (`publish_shows.py`를 호출한다).
-- `--remove-show ID`로 작품을 페이지·타임라인에서 지운다 (Release 자산은 남는다).
+- `--remove-show ID`로 작품을, `--show-id ID --remove-episode sNNeNN`으로 **회차 하나만**
+  지운다 (페이지 + `docs/audio/shows/<작품>/sNNeNN.json`). 회차가 하나도 남지 않으면 시즌·
+  작품도 함께 걷어낸다. **Release 자산은 기본적으로 남긴다** — 지우는 쪽이 되돌릴 수 없고,
+  다시 녹음해 같은 이름으로 올리면 `--clobber`로 덮어써진다. 정말 지울 때만 `--delete-asset`.
+  watcher 가 다시 올리지 않게 `scripts/.watch_state.json`의 그 폴더 항목도 지운다.
 - 상세 절차와 판단 기준은 `.claude/skills/script-reader/SKILL.md`에 있다. 시즌을 통째로
   올릴 때는 `script-reader-builder` 에이전트를 쓴다.
 
@@ -147,6 +151,25 @@ python3 scripts/watch_langstudy.py             # 계속 지켜본다 (Ctrl+C)
 **기본이 공개 배포다.** 대본만 넣으려면 `--build-only`, 푸시만 막으려면 `--no-push`.
 처음 보는 한글 제목 작품은 **건너뛰고 알린다** — 영문 id 는 사람이 한 번 정해야 한다.
 
+### 스크립트 리더 플레이어 (`docs/tvshow.html`)
+
+`audiobook.html` 과 **같은 구조·같은 CSS** 다. 조작 줄 스타일은 `docs/css/style.css` 에
+한 벌만 두고 두 페이지가 같은 클래스를 쓴다 (`.tv-ctl`·`.tv-ico`·`.tv-ico--letter`·
+`.tv-sep`·`.tv-chip`). 따로 두면 한쪽만 고쳐져 어긋난다.
+
+```
+◀◀ · ▶ · ▶▶ │ ↻ · R · F · 한 · 1×
+```
+
+- 글자 버튼은 토글(`aria-pressed`): `R` 문장 반복(끌 때까지), `F` 따라가기, `한` 한국어 자막
+- `↻` 는 이 문장 한 번만. **±10초는 없다** (문장 단위로 움직이는 편이 낫다)
+- 단축키: `Space` · `A`·`D` · `R` · `F` · `K` · `[` `]` · `/`
+- **이어듣기**: 회차마다 듣던 자리를 `tvshow-pos` 에 적어 두고 돌아오면 `↩ m:ss부터` 칩이
+  뜬다. 자동으로 뛰지는 않는다. 회차를 떠날 때의 저장은 `current` 를 바꾸기 **전에** 해야
+  한다 — `posKey()` 가 `current` 를 쓰므로 순서가 바뀌면 이전 회차의 시간이 새 회차에 적힌다
+- Release 음원 주소의 서명은 **30분**이면 만료된다. 재생 거부·`error` 를 무시하지 않고
+  음원을 다시 열어 멈춰 둔 자리로 돌아간다 (`requestPlay` → `revive`)
+
 ### 음원 공개 (`publish_shows.py`)
 
 ```bash
@@ -165,7 +188,7 @@ Range 206 확인 → `--push` 면 커밋·푸시.
 
 **`python3 -m http.server`를 쓰지 말 것.** Range 요청에 206 대신 200을 돌려주고, Chrome은
 그 미디어를 seek 불가로 판단한다(`audio.seekable`이 `[0,0]`). 그러면 문장 클릭·문장 이동·
-±10초가 전부 먹지 않는데 증상은 플레이어 버그처럼 보인다.
+이어듣기가 전부 먹지 않는데 증상은 플레이어 버그처럼 보인다.
 
 ```bash
 python3 scripts/serve_docs.py        # http://localhost:8788, Range 206 지원

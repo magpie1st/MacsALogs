@@ -214,7 +214,7 @@ python3 scripts/serve_docs.py        # Range 206 지원. http://localhost:8788
 ```
 
 **`python3 -m http.server` 를 쓰지 않는다.** Range 를 지원하지 않아 Chrome 이 오디오를
-seek 불가로 판단하고(`audio.seekable` 이 `[0,0]`), 문장 클릭·문장 이동·±10초가 전부
+seek 불가로 판단하고(`audio.seekable` 이 `[0,0]`), 문장 클릭·문장 이동·이어듣기가 전부
 먹지 않는다 — 코드 문제처럼 보이지만 서버 탓이다. 실제로 한 번 여기서 헤맸다.
 
 소리까지 들어 보려면 `--local-audio` 로 빌드한다 (mp3 를 gitignore 된 docs 폴더로 복사).
