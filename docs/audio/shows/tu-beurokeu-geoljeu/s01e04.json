@@ -1,0 +1,2873 @@
+{
+ "schema": "tvshow-audio/2",
+ "generated": "2026-11-02",
+ "show": "투-브로크-걸즈",
+ "folder": "tu-beurokeu-geoljeu",
+ "season": 1,
+ "episode": 4,
+ "episodeId": "s01e04",
+ "title": "4화 부자들의 문제",
+ "source": {
+  "name": "투 브로크 걸즈 시즌 1 4화 스크립트.json",
+  "sha256": "72af4dbb0f38fb3bca2d27a8eee1b9a957e8475c40ce067ca58f2eea0504672f",
+  "sentences": 356
+ },
+ "audio": {
+  "asset": "tu-beurokeu-geoljeu-s01e04.mp3",
+  "sourceName": "투 브로크 걸즈 시즌 1 4화 전체.mp3",
+  "durationSec": 1250,
+  "recordedSec": 1248,
+  "rate": 24000,
+  "channels": 1
+ },
+ "segments": [
+  {
+   "no": 1,
+   "start": 2.38,
+   "end": 3.92,
+   "en": "Evening, Hot Chocolate.",
+   "ko": "저 왔어요, 핫초코",
+   "recorded": 1
+  },
+  {
+   "no": 2,
+   "start": 5.09,
+   "end": 7.38,
+   "en": "Max, we got big trouble from Little China.",
+   "ko": "맥스, 저 작은 중국인 때문에 큰일 났어",
+   "recorded": 1
+  },
+  {
+   "no": 3,
+   "start": 8.26,
+   "end": 9.09,
+   "en": "Hi, Max.",
+   "ko": "안녕, 맥스",
+   "recorded": 1
+  },
+  {
+   "no": 4,
+   "start": 10.22,
+   "end": 12.35,
+   "en": "Big trouble? There's nothing big about him.",
+   "ko": "큰일이요? 저 사람한테 큰 게 뭐가 있어요?",
+   "recorded": 1
+  },
+  {
+   "no": 5,
+   "start": 12.43,
+   "end": 14.56,
+   "en": "He looks like I won him in a bear-claw machine.",
+   "ko": "인형 뽑기 기계에서 뽑은 것처럼 생겼는데",
+   "recorded": 1
+  },
+  {
+   "no": 6,
+   "start": 15.77,
+   "end": 17.27,
+   "en": "Max, what is the worst sentence",
+   "ko": "한의 입으로 절대 듣고 싶지 않은 말이 뭐야?",
+   "recorded": 1
+  },
+  {
+   "no": 7,
+   "start": 17.35,
+   "end": 19.23,
+   "en": "you ever want to hear come out of Han's mouth?",
+   "ko": "한의 입으로 절대 듣고 싶지 않은 말이 뭐야?",
+   "recorded": 1
+  },
+  {
+   "no": 8,
+   "start": 19.65,
+   "end": 20.73,
+   "en": "\"I got you pregnant\"?",
+   "ko": "'내가 너를 임신시켰어'?",
+   "recorded": 1
+  },
+  {
+   "no": 9,
+   "start": 23.65,
+   "end": 25.36,
+   "en": "Come on. Bad, bad.",
+   "ko": "그것보다 훨씬 더 나쁜 말",
+   "recorded": 1
+  },
+  {
+   "no": 10,
+   "start": 25.61,
+   "end": 27.03,
+   "en": "\"I got you pregnant again\"?",
+   "ko": "'내가 너를 또 임신시켰어'?",
+   "recorded": 1
+  },
+  {
+   "no": 11,
+   "start": 28.95,
+   "end": 31.53,
+   "en": "- \"I'm putting in karaoke.\" - No.",
+   "ko": "'노래방 기계를 설치할 거야' 안 돼!",
+   "recorded": 1
+  },
+  {
+   "no": 12,
+   "start": 31.82,
+   "end": 32.66,
+   "en": "No.",
+   "ko": "안 돼!",
+   "recorded": 1
+  },
+  {
+   "no": 13,
+   "start": 34.78,
+   "end": 36.95,
+   "en": "Han, those guys better be up there",
+   "ko": "한 저 사람들이 저기 올라가 있는 건",
+   "recorded": 1
+  },
+  {
+   "no": 14,
+   "start": 37.04,
+   "end": 39.75,
+   "en": "because we're officially putting ass crack on the menu.",
+   "ko": "저 사람들이 저기 올라가 있는 건 엉덩이 골도 정식 메뉴에 넣기 위해서겠죠?",
+   "recorded": 1
+  },
+  {
+   "no": 15,
+   "start": 41.54,
+   "end": 44.13,
+   "en": "I am adding a TV to bring in more customers.",
+   "ko": "손님을 끌기 위해 TV를 설치하는 거야",
+   "recorded": 1
+  },
+  {
+   "no": 16,
+   "start": 44.38,
+   "end": 45.71,
+   "en": "We can have theme nights.",
+   "ko": "테마별 행사도 열자고",
+   "recorded": 1
+  },
+  {
+   "no": 17,
+   "start": 45.8,
+   "end": 47.05,
+   "en": "Ultimate Fighting Night,",
+   "ko": "'종합 격투기의 밤'",
+   "recorded": 1
+  },
+  {
+   "no": 18,
+   "start": 47.13,
+   "end": 49.8,
+   "en": "Real Desperate Housewives of Bravo City Night,",
+   "ko": "'진짜 '위기의 주부들'의 밤'",
+   "recorded": 1
+  },
+  {
+   "no": 19,
+   "start": 49.88,
+   "end": 52.55,
+   "en": "and best of all, Karaoke Night.",
+   "ko": "그중에서도 최고는 '노래방의 밤'이지",
+   "recorded": 1
+  },
+  {
+   "no": 20,
+   "start": 53.76,
+   "end": 55.72,
+   "en": "You can't give hipsters a microphone.",
+   "ko": "힙스터들한테 마이크를 주면 안 돼요",
+   "recorded": 1
+  },
+  {
+   "no": 21,
+   "start": 55.81,
+   "end": 58.56,
+   "en": "That's like throwing gasoline on a pretentious fire.",
+   "ko": "허세의 불길에 휘발유를 붓는 꼴이라고요",
+   "recorded": 1
+  },
+  {
+   "no": 22,
+   "start": 60.23,
+   "end": 62.15,
+   "en": "Hipsters like karaoke.",
+   "ko": "힙스터들은 노래방을 좋아해",
+   "recorded": 1
+  },
+  {
+   "no": 23,
+   "start": 62.65,
+   "end": 65.19,
+   "en": "Replace the word \"like\" with the word \"Hitler\"",
+   "ko": "그 문장에서 '좋아해'를 '히틀러'로 바꾸면",
+   "recorded": 1
+  },
+  {
+   "no": 24,
+   "start": 65.27,
+   "end": 67.19,
+   "en": "and you've got the three worst things in history.",
+   "ko": "역사상 최악의 세 가지가 되겠네요",
+   "recorded": 1
+  },
+  {
+   "no": 25,
+   "start": 68.19,
+   "end": 70.11,
+   "en": "Max, I hear what you say.",
+   "ko": "맥스, 네 생각은 알겠는데",
+   "recorded": 1
+  },
+  {
+   "no": 26,
+   "start": 70.19,
+   "end": 74.7,
+   "en": "But everybody else say, \"Hey, where my single ladies?\"",
+   "ko": "맥스, 네 생각은 알겠는데 다른 사람들의 생각은 달라 헤이, 싱글 레이디들 소리 질러!",
+   "recorded": 1
+  },
+  {
+   "no": 27,
+   "start": 87.21,
+   "end": 91.26,
+   "en": "Okay, next person is going to sing Teenage Dream by Katy Perry,",
+   "ko": "자, 다음 분이 부를 곡은 케이티 페리의 '틴에이지 드림'입니다",
+   "recorded": 1
+  },
+  {
+   "no": 28,
+   "start": 91.34,
+   "end": 94.05,
+   "en": "who is pretty now, but used to have very horrible acne.",
+   "ko": "지금은 예쁘지만 예전엔 여드름이 심했던 여자죠",
+   "recorded": 1
+  },
+  {
+   "no": 29,
+   "start": 95.18,
+   "end": 98.06,
+   "en": "This is the third Teenage Dream in 45 minutes.",
+   "ko": "45분 동안 '틴에이지 드림'만 세 번째야",
+   "recorded": 1
+  },
+  {
+   "no": 30,
+   "start": 98.14,
+   "end": 100.85,
+   "en": "Why don't I just close my nuts in the cashier's drawer?",
+   "ko": "계산대 서랍에 내 불알을 넣고 닫는 게 낫겠어",
+   "recorded": 1
+  },
+  {
+   "no": 31,
+   "start": 103.94,
+   "end": 106.19,
+   "en": "Come on up now, girl named Stacey.",
+   "ko": "스테이시라는 이름의 손님 어서 나오세요",
+   "recorded": 1
+  },
+  {
+   "no": 32,
+   "start": 106.27,
+   "end": 107.11,
+   "en": "I got this.",
+   "ko": "제가 해결할게요",
+   "recorded": 1
+  },
+  {
+   "no": 33,
+   "start": 107.9,
+   "end": 110.24,
+   "en": "Look, I don't know you, but I like you,",
+   "ko": "손님, 초면이지만 저는 손님이 마음에 들고",
+   "recorded": 1
+  },
+  {
+   "no": 34,
+   "start": 110.32,
+   "end": 111.82,
+   "en": "and I respect both hair choices.",
+   "ko": "두 가지 머리색 모두 존중해요",
+   "recorded": 1
+  },
+  {
+   "no": 35,
+   "start": 112.82,
+   "end": 114.16,
+   "en": "I hate karaoke.",
+   "ko": "저는 노래방을 증오해요",
+   "recorded": 1
+  },
+  {
+   "no": 36,
+   "start": 114.62,
+   "end": 117.12,
+   "en": "I can't afford to have any more hate in my head.",
+   "ko": "제 머릿속에는 증오가 더 들어갈 공간이 없어요",
+   "recorded": 1
+  },
+  {
+   "no": 37,
+   "start": 117.2,
+   "end": 118.91,
+   "en": "My hate is at capacity.",
+   "ko": "증오가 이미 꽉 찼죠",
+   "recorded": 1
+  },
+  {
+   "no": 38,
+   "start": 120.04,
+   "end": 122.08,
+   "en": "Sit this one out, I'll comp your cobbler.",
+   "ko": "이번에 안 부르시면 파이 공짜로 드릴게요",
+   "recorded": 1
+  },
+  {
+   "no": 39,
+   "start": 125.17,
+   "end": 126.04,
+   "en": "What did you do?",
+   "ko": "뭘 한 거야?",
+   "recorded": 1
+  },
+  {
+   "no": 40,
+   "start": 127.04,
+   "end": 128.5,
+   "en": "I saved Earl's nuts.",
+   "ko": "얼의 불알을 구했어요",
+   "recorded": 1
+  },
+  {
+   "no": 41,
+   "start": 131.26,
+   "end": 133.3,
+   "en": "Pick up. Hot food. Pick up.",
+   "ko": "음식 나왔어, 빨리 가져가",
+   "recorded": 1
+  },
+  {
+   "no": 42,
+   "start": 133.38,
+   "end": 135.8,
+   "en": "Calm your bells down, Oleg. Not my stations.",
+   "ko": "진정해요, 올렉 내 구역 아니에요",
+   "recorded": 1
+  },
+  {
+   "no": 43,
+   "start": 135.89,
+   "end": 136.72,
+   "en": "Where's Caroline?",
+   "ko": "캐럴라인은 어디 갔지?",
+   "recorded": 1
+  },
+  {
+   "no": 44,
+   "start": 136.8,
+   "end": 139.93,
+   "en": "Would it make you jealous if I said she was back here with me?",
+   "ko": "이 안에 나랑 같이 있었다면 질투가 날까?",
+   "recorded": 1
+  },
+  {
+   "no": 45,
+   "start": 140.93,
+   "end": 142.31,
+   "en": "Jealous? No.",
+   "ko": "질투요? 아뇨, 화가 나겠죠",
+   "recorded": 1
+  },
+  {
+   "no": 46,
+   "start": 142.39,
+   "end": 143.77,
+   "en": "Pissed, probably, because we're busy",
+   "ko": "질투요? 아뇨, 화가 나겠죠 바빠 죽겠는데 걔 입과 손에 붙은 테이프를 떼어 내야 하잖아요",
+   "recorded": 1
+  },
+  {
+   "no": 47,
+   "start": 143.85,
+   "end": 146.81,
+   "en": "and it would take me all that time to get the duct tape off her mouth and hands.",
+   "ko": "바빠 죽겠는데 걔 입과 손에 붙은 테이프를 떼어 내야 하잖아요",
+   "recorded": 1
+  },
+  {
+   "no": 48,
+   "start": 149.36,
+   "end": 150.9,
+   "en": "What are you doing, Snow White?",
+   "ko": "여기서 뭐 해, 백설 공주?",
+   "recorded": 1
+  },
+  {
+   "no": 49,
+   "start": 150.98,
+   "end": 153.32,
+   "en": "If you're looking for one of your dwarves, he's there holding the mic.",
+   "ko": "난쟁이를 찾는 거라면 밖에서 마이크 잡고 있어",
+   "recorded": 1
+  },
+  {
+   "no": 50,
+   "start": 154.66,
+   "end": 156.82,
+   "en": "Look, my bite is off. See, I did the bite test.",
+   "ko": "이것 봐, 치아가 어긋나 있어 자가 진단을 해 봤는데",
+   "recorded": 1
+  },
+  {
+   "no": 51,
+   "start": 156.91,
+   "end": 159.16,
+   "en": "Number 7 Incisor is crossing over Number 9.",
+   "ko": "7번 앞니가 9번을 넘어가고 있어",
+   "recorded": 1
+  },
+  {
+   "no": 52,
+   "start": 159.24,
+   "end": 161.37,
+   "en": "Hold up. You know the names of your teeth?",
+   "ko": "잠깐만, 너 치아 이름을 다 아는 거야?",
+   "recorded": 1
+  },
+  {
+   "no": 53,
+   "start": 161.62,
+   "end": 164.08,
+   "en": "- Don't you? - I don't even know the name of my father.",
+   "ko": "넌 몰라? 난 우리 아빠 이름도 몰라",
+   "recorded": 1
+  },
+  {
+   "no": 54,
+   "start": 165.21,
+   "end": 166.46,
+   "en": "I just bit my tongue.",
+   "ko": "나 방금 혀 깨물었어",
+   "recorded": 1
+  },
+  {
+   "no": 55,
+   "start": 167.21,
+   "end": 168.79,
+   "en": "Number 12 just joined the party.",
+   "ko": "12번도 합류한 모양이네",
+   "recorded": 1
+  },
+  {
+   "no": 56,
+   "start": 169.84,
+   "end": 171.05,
+   "en": "I'd stop doing that right now.",
+   "ko": "나라면 그거 당장 그만두겠어",
+   "recorded": 1
+  },
+  {
+   "no": 57,
+   "start": 179.55,
+   "end": 181.64,
+   "en": "You just made it into Oleg's spank bank.",
+   "ko": "너 방금 올렉의 야한 상상 속에 들어간 거야",
+   "recorded": 1
+  },
+  {
+   "no": 58,
+   "start": 183.43,
+   "end": 185.14,
+   "en": "Congratulations.",
+   "ko": "축하해",
+   "recorded": 1
+  },
+  {
+   "no": 59,
+   "start": 188.77,
+   "end": 190.69,
+   "en": "What am I going to do without my bite guard?",
+   "ko": "마우스피스가 없는데 어떻게 하지?",
+   "recorded": 1
+  },
+  {
+   "no": 60,
+   "start": 190.77,
+   "end": 192.44,
+   "en": "My teeth don't know where to go.",
+   "ko": "내 치아가 어디로 가야 할지를 모르고 있어",
+   "recorded": 1
+  },
+  {
+   "no": 61,
+   "start": 192.86,
+   "end": 194.7,
+   "en": "Well, maybe they should just backpack for a couple of years",
+   "ko": "배낭여행이라도 몇 년 다니면 깨달을지도 모르지",
+   "recorded": 1
+  },
+  {
+   "no": 62,
+   "start": 194.78,
+   "end": 195.95,
+   "en": "till they figure it out.",
+   "ko": "배낭여행이라도 몇 년 다니면 깨달을지도 모르지",
+   "recorded": 1
+  },
+  {
+   "no": 63,
+   "start": 196.95,
+   "end": 200.24,
+   "en": "Listen, Perfect Teeth, this is a nightmare for me.",
+   "ko": "네 치아는 완벽하겠지만 나한테 이건 악몽이야",
+   "recorded": 1
+  },
+  {
+   "no": 64,
+   "start": 200.33,
+   "end": 202.74,
+   "en": "The technical term for this is advanced bruxism.",
+   "ko": "정확한 용어로는 '중증 이갈이'라고 해",
+   "recorded": 1
+  },
+  {
+   "no": 65,
+   "start": 202.83,
+   "end": 205.41,
+   "en": "And the technical term for you is overly dramatic.",
+   "ko": "너에게 맞는 용어는 '과민 반응'이야",
+   "recorded": 1
+  },
+  {
+   "no": 66,
+   "start": 205.87,
+   "end": 208.21,
+   "en": "Yesterday, you freaked out because we were out of toilet paper.",
+   "ko": "어제는 화장지가 떨어졌다고 난리를 쳤잖아",
+   "recorded": 1
+  },
+  {
+   "no": 67,
+   "start": 208.29,
+   "end": 210.5,
+   "en": "Just hold it till you get to work like everybody else.",
+   "ko": "그냥 남들처럼 출근한 후에 해결해",
+   "recorded": 1
+  },
+  {
+   "no": 68,
+   "start": 213.21,
+   "end": 215.38,
+   "en": "Now maybe I sing while others wait.",
+   "ko": "손님들 기다리는 동안 제가 노래를 불러 볼까요",
+   "recorded": 1
+  },
+  {
+   "no": 69,
+   "start": 216.51,
+   "end": 217.84,
+   "en": "We got real problems now.",
+   "ko": "진짜 문제가 발생했어",
+   "recorded": 1
+  },
+  {
+   "no": 70,
+   "start": 218.18,
+   "end": 221.51,
+   "en": "I choose Susan Boyle popular song from all clips on Internet.",
+   "ko": "인터넷에 많이 올라와 있는 수잔 보일의 인기곡이에요",
+   "recorded": 1
+  },
+  {
+   "no": 71,
+   "start": 221.6,
+   "end": 223.14,
+   "en": "It's called I Dream--",
+   "ko": "'나는 꿈을...'",
+   "recorded": 1
+  },
+  {
+   "no": 72,
+   "start": 225.68,
+   "end": 226.52,
+   "en": "Keep dreaming.",
+   "ko": "계속 꿈이나 꿔요",
+   "recorded": 1
+  },
+  {
+   "no": 73,
+   "start": 234.78,
+   "end": 237.15,
+   "en": "Oh, you're back. We thought you ran away.",
+   "ko": "돌아왔구나 도망간 줄 알았어",
+   "recorded": 1
+  },
+  {
+   "no": 74,
+   "start": 237.7,
+   "end": 240.87,
+   "en": "Chestnut and I were just about to pick out another human from the shelter.",
+   "ko": "체스트넛하고 보호소에 가서 다른 인간을 데려올까 했지",
+   "recorded": 1
+  },
+  {
+   "no": 75,
+   "start": 242.74,
+   "end": 245.87,
+   "en": "I had quite a day. 8 to 10, grind, grind, pain.",
+   "ko": "정말 힘든 하루였어 8시부터 10시까지 갈고, 갈고, 아프고",
+   "recorded": 1
+  },
+  {
+   "no": 76,
+   "start": 245.95,
+   "end": 248.04,
+   "en": "10 to 11, pain, pain, grind.",
+   "ko": "10시부터 11시까시 아프고, 아프고, 갈고",
+   "recorded": 1
+  },
+  {
+   "no": 77,
+   "start": 248.12,
+   "end": 250.25,
+   "en": "Went to the drug store and bought an eight-dollar bite guard,",
+   "ko": "10시부터 11시까시 아프고, 아프고, 갈고 약국에 가서 8달러짜리 마우스피스를 샀는데",
+   "recorded": 1
+  },
+  {
+   "no": 78,
+   "start": 250.33,
+   "end": 252.75,
+   "en": "which didn't fit my freaky Tim Burton mouth.",
+   "ko": "팀 버튼 영화처럼 괴상한 내 입에는 안 맞더라고",
+   "recorded": 1
+  },
+  {
+   "no": 79,
+   "start": 253.04,
+   "end": 256.46,
+   "en": "And when I tried to return it, the cashier, Rhonda, whose name tag said",
+   "ko": "환불받으려고 했더니 계산원인 론다가 기꺼이 도와드리겠다는 이름표를 달고도",
+   "recorded": 1
+  },
+  {
+   "no": 80,
+   "start": 256.55,
+   "end": 259.43,
+   "en": "she was happy to help, but who was neither happy nor helpful,",
+   "ko": "기꺼이 도와드리겠다는 이름표를 달고도 전혀 기껍지 않은 태도로",
+   "recorded": 1
+  },
+  {
+   "no": 81,
+   "start": 259.8,
+   "end": 263.68,
+   "en": "said that I couldn't return it because it had already touched my \"teef.\"",
+   "ko": "이미 내 치아에 닿았기 때문에 환불이 안 된다는 거야",
+   "recorded": 1
+  },
+  {
+   "no": 82,
+   "start": 264.56,
+   "end": 267.89,
+   "en": "For someone whose jaw is about to unhinge, you're sure flapping it a lot.",
+   "ko": "턱이 빠지기 직전인 사람치고는 상당히 잘 떠드네",
+   "recorded": 1
+  },
+  {
+   "no": 83,
+   "start": 269.35,
+   "end": 271.44,
+   "en": "Why is this rag with my father on it here?",
+   "ko": "왜 우리 아빠가 실린 쓰레기 신문이 여기 있지? \"또다시 노코멘트\"",
+   "recorded": 1
+  },
+  {
+   "no": 84,
+   "start": 272.15,
+   "end": 273.52,
+   "en": "Don't look at me, Chestnut bought it.",
+   "ko": "난 몰라, 체스트넛이 사 왔어",
+   "recorded": 1
+  },
+  {
+   "no": 85,
+   "start": 274.77,
+   "end": 277.61,
+   "en": "He likes it when I read him his daily horse-oscope.",
+   "ko": "내가 말을 위한 운세를 읽어 주는 걸 좋아해",
+   "recorded": 1
+  },
+  {
+   "no": 86,
+   "start": 278.86,
+   "end": 281.99,
+   "en": "Why is everybody obsessed with the fact that he hasn't said anything?",
+   "ko": "왜 아빠가 입을 안 연다고 다들 난리인 거야?",
+   "recorded": 1
+  },
+  {
+   "no": 87,
+   "start": 282.07,
+   "end": 284.12,
+   "en": "Haven't you ever been at a loss for words?",
+   "ko": "넌 할 말을 잃어 본 적이 한 번도 없어?",
+   "recorded": 1
+  },
+  {
+   "no": 88,
+   "start": 284.2,
+   "end": 286.45,
+   "en": "Tampons, yes. Words, no.",
+   "ko": "넌 할 말을 잃어 본 적이 한 번도 없어? 탐폰이라면 몰라도 말을 잃어 본 적은 없지",
+   "recorded": 1
+  },
+  {
+   "no": 89,
+   "start": 287.58,
+   "end": 289.21,
+   "en": "Well, this will make me feel better.",
+   "ko": "기분이 좋아질 만한 게 있어",
+   "recorded": 1
+  },
+  {
+   "no": 90,
+   "start": 289.5,
+   "end": 291.71,
+   "en": "Whenever I'm in pain, I need a treat.",
+   "ko": "아플 때는 즐거움이 필요하거든",
+   "recorded": 1
+  },
+  {
+   "no": 91,
+   "start": 291.79,
+   "end": 294.04,
+   "en": "You know, whenever you're in pain, that is my treat.",
+   "ko": "네가 아픈 게 나한테는 즐거움인데",
+   "recorded": 1
+  },
+  {
+   "no": 92,
+   "start": 295.5,
+   "end": 298.55,
+   "en": "Sushi. I hope you like crab roll.",
+   "ko": "초밥이야 네가 게살롤을 좋아했으면 좋겠네",
+   "recorded": 1
+  },
+  {
+   "no": 93,
+   "start": 298.92,
+   "end": 300.01,
+   "en": "I never had sushi.",
+   "ko": "초밥 먹어 본 적 없어",
+   "recorded": 1
+  },
+  {
+   "no": 94,
+   "start": 300.97,
+   "end": 302.43,
+   "en": "That doesn't even make sense.",
+   "ko": "그게 말이 돼?",
+   "recorded": 1
+  },
+  {
+   "no": 95,
+   "start": 303.85,
+   "end": 306.97,
+   "en": "No sushi, no dentist. Who are you?",
+   "ko": "초밥도 안 먹고 치과에도 안 가고 너 뭐야?",
+   "recorded": 1
+  },
+  {
+   "no": 96,
+   "start": 307.89,
+   "end": 309.02,
+   "en": "A poor person.",
+   "ko": "가난한 사람?",
+   "recorded": 1
+  },
+  {
+   "no": 97,
+   "start": 311.31,
+   "end": 312.65,
+   "en": "Sushi's lazy.",
+   "ko": "초밥은 게으른 음식이야",
+   "recorded": 1
+  },
+  {
+   "no": 98,
+   "start": 312.73,
+   "end": 313.9,
+   "en": "If I come to your restaurant,",
+   "ko": "내가 식당에 가면 당장 일어나서 생선을 구워야지",
+   "recorded": 1
+  },
+  {
+   "no": 99,
+   "start": 313.98,
+   "end": 316.11,
+   "en": "get up off your ass and cook the damn fish.",
+   "ko": "내가 식당에 가면 당장 일어나서 생선을 구워야지",
+   "recorded": 1
+  },
+  {
+   "no": 100,
+   "start": 317.27,
+   "end": 320.32,
+   "en": "I wish we could afford to go to this sushi place in Tribeca",
+   "ko": "아빠랑 자주 가던 트라이베카의 초밥집에 갈 수 있으면 좋을 텐데",
+   "recorded": 1
+  },
+  {
+   "no": 101,
+   "start": 320.4,
+   "end": 321.95,
+   "en": "where my father always took me.",
+   "ko": "아빠랑 자주 가던 트라이베카의 초밥집에 갈 수 있으면 좋을 텐데",
+   "recorded": 1
+  },
+  {
+   "no": 102,
+   "start": 322.45,
+   "end": 323.62,
+   "en": "We had this little joke.",
+   "ko": "거기서 맨날 장난을 쳤어",
+   "recorded": 1
+  },
+  {
+   "no": 103,
+   "start": 323.7,
+   "end": 325.66,
+   "en": "Every time we'd walk in, I'd always say...",
+   "ko": "그 식당에 갈 때마다 내가 이렇게 말했거든",
+   "recorded": 1
+  },
+  {
+   "no": 104,
+   "start": 329.12,
+   "end": 330.71,
+   "en": "And we would just laugh.",
+   "ko": "그리고 한바탕 웃는 거야",
+   "recorded": 1
+  },
+  {
+   "no": 105,
+   "start": 333.63,
+   "end": 335.59,
+   "en": "So you're not funny in Japanese either.",
+   "ko": "넌 일본어로도 안 웃기구나?",
+   "recorded": 1
+  },
+  {
+   "no": 106,
+   "start": 337.46,
+   "end": 338.84,
+   "en": "I got this at a corner deli.",
+   "ko": "길모퉁이 식품점에서 사 왔어",
+   "recorded": 1
+  },
+  {
+   "no": 107,
+   "start": 338.92,
+   "end": 341.09,
+   "en": "The cashier was Japanese. She said it was good.",
+   "ko": "계산원이 일본인인데 맛있다고 하더라고",
+   "recorded": 1
+  },
+  {
+   "no": 108,
+   "start": 341.38,
+   "end": 342.68,
+   "en": "Oh, I'm sure it's great.",
+   "ko": "그럼 당연히 맛있겠네",
+   "recorded": 1
+  },
+  {
+   "no": 109,
+   "start": 342.76,
+   "end": 345.72,
+   "en": "The disenfranchised immigrant serving the spoiled white girl",
+   "ko": "그럼 당연히 맛있겠네 소외 계층 이민자가 곱게 자란 백인 여자에게",
+   "recorded": 1
+  },
+  {
+   "no": 110,
+   "start": 345.8,
+   "end": 347.18,
+   "en": "would have no reason to lie.",
+   "ko": "거짓말할 이유가 없잖아",
+   "recorded": 1
+  },
+  {
+   "no": 111,
+   "start": 348.52,
+   "end": 351.14,
+   "en": "Get ready for something heavenly.",
+   "ko": "천국을 맛볼 준비해",
+   "recorded": 1
+  },
+  {
+   "no": 112,
+   "start": 355.06,
+   "end": 356.86,
+   "en": "That's not heaven. Spit it out.",
+   "ko": "이건 천국이 아냐 빨리 뱉어",
+   "recorded": 1
+  },
+  {
+   "no": 113,
+   "start": 359.44,
+   "end": 361.86,
+   "en": "What a disappointment. Your first time.",
+   "ko": "너무 실망이다 너의 첫 초밥인데",
+   "recorded": 1
+  },
+  {
+   "no": 114,
+   "start": 362.57,
+   "end": 364.87,
+   "en": "Well, that's kind of the way it goes with me and first times.",
+   "ko": "나는 모든 첫 경험이 이런 식이었어",
+   "recorded": 1
+  },
+  {
+   "no": 115,
+   "start": 366.95,
+   "end": 368.33,
+   "en": "Here. Clean yourself off.",
+   "ko": "자, 네가 닦아",
+   "recorded": 1
+  },
+  {
+   "no": 116,
+   "start": 368.66,
+   "end": 370.25,
+   "en": "That's exactly the way it goes.",
+   "ko": "딱 이런 식이었지",
+   "recorded": 1
+  },
+  {
+   "no": 117,
+   "start": 380.84,
+   "end": 381.72,
+   "en": "It's not that bad.",
+   "ko": "그렇게 나쁘지 않네",
+   "recorded": 1
+  },
+  {
+   "no": 118,
+   "start": 382.17,
+   "end": 383.13,
+   "en": "It's not that bad.",
+   "ko": "그렇게 나쁘지 않아",
+   "recorded": 1
+  },
+  {
+   "no": 119,
+   "start": 383.22,
+   "end": 384.09,
+   "en": "It's not that bad.",
+   "ko": "그렇게 나쁘지 않아",
+   "recorded": 1
+  },
+  {
+   "no": 120,
+   "start": 384.38,
+   "end": 387.35,
+   "en": "No, for a dentist's office in the subway, it's pretty good.",
+   "ko": "그래 지하철역 안에 있는 치과치고는 괜찮네",
+   "recorded": 1
+  },
+  {
+   "no": 121,
+   "start": 389.22,
+   "end": 391.68,
+   "en": "Seriously, how are you not running out of here?",
+   "ko": "어떻게 아직도 도망을 안 치고 있는 거야?",
+   "recorded": 1
+  },
+  {
+   "no": 122,
+   "start": 392.18,
+   "end": 393.27,
+   "en": "I have no choice.",
+   "ko": "방법이 없잖아",
+   "recorded": 1
+  },
+  {
+   "no": 123,
+   "start": 393.35,
+   "end": 395.19,
+   "en": "Now that I have no money or health insurance,",
+   "ko": "이제 돈도 없고 보험도 없으니",
+   "recorded": 1
+  },
+  {
+   "no": 124,
+   "start": 395.27,
+   "end": 397.56,
+   "en": "I have to get used to this third-world situation.",
+   "ko": "이런 제3 세계 상황에 익숙해져야지",
+   "recorded": 1
+  },
+  {
+   "no": 125,
+   "start": 398.57,
+   "end": 399.77,
+   "en": "Third-world situation?",
+   "ko": "'제3 세계 상황'?",
+   "recorded": 1
+  },
+  {
+   "no": 126,
+   "start": 400.11,
+   "end": 401.94,
+   "en": "This is an underworld situation.",
+   "ko": "이건 지하 세계 상황이야",
+   "recorded": 1
+  },
+  {
+   "no": 127,
+   "start": 403.32,
+   "end": 406.87,
+   "en": "Okay, there's bulletproof glass with a bullet in it.",
+   "ko": "저것 봐, 방탄유리야 총알 자국도 있네",
+   "recorded": 1
+  },
+  {
+   "no": 128,
+   "start": 408.66,
+   "end": 410.37,
+   "en": "All right, so the glass works.",
+   "ko": "방탄이 되긴 하나 보네",
+   "recorded": 1
+  },
+  {
+   "no": 129,
+   "start": 412.25,
+   "end": 413.41,
+   "en": "It says to sign in.",
+   "ko": "여기에 이름 쓰래",
+   "recorded": 1
+  },
+  {
+   "no": 130,
+   "start": 417.42,
+   "end": 420,
+   "en": "Look, why don't you just take some of our cupcake business savings",
+   "ko": "그냥 컵케이크 자금을 조금 빼서",
+   "recorded": 1
+  },
+  {
+   "no": 131,
+   "start": 420.09,
+   "end": 421.8,
+   "en": "and go to a good dentist's office?",
+   "ko": "좋은 치과에 가자",
+   "recorded": 1
+  },
+  {
+   "no": 132,
+   "start": 421.88,
+   "end": 423.47,
+   "en": "You know, one where you won't get a staph infection",
+   "ko": "여긴 바닥을 보기만 해도 포도상 구균에 감염될 것 같아",
+   "recorded": 1
+  },
+  {
+   "no": 133,
+   "start": 423.55,
+   "end": 425.05,
+   "en": "just from looking at the floor.",
+   "ko": "여긴 바닥을 보기만 해도 포도상 구균에 감염될 것 같아",
+   "recorded": 1
+  },
+  {
+   "no": 134,
+   "start": 425.72,
+   "end": 427.84,
+   "en": "No, we can't do that. That's our future.",
+   "ko": "안 돼, 그 돈은 우리의 미래야",
+   "recorded": 1
+  },
+  {
+   "no": 135,
+   "start": 427.93,
+   "end": 430.1,
+   "en": "Once we start doing that, it's a slippery slope.",
+   "ko": "한번 빼 쓰기 시작하면 걷잡을 수 없어",
+   "recorded": 1
+  },
+  {
+   "no": 136,
+   "start": 432.47,
+   "end": 433.73,
+   "en": "\"Nicole Richie\"?",
+   "ko": "'니콜 리치'?",
+   "recorded": 1
+  },
+  {
+   "no": 137,
+   "start": 438.19,
+   "end": 439.94,
+   "en": "I don't want anyone to know I was here.",
+   "ko": "여기에 왔다는 사실을 알리고 싶지 않아",
+   "recorded": 1
+  },
+  {
+   "no": 138,
+   "start": 442.03,
+   "end": 446.74,
+   "en": "I know this situation is less than ideal, but I am having a dental emergency.",
+   "ko": "이게 최선이 아니라는 건 알지만 내 치아가 응급 상황이잖아",
+   "recorded": 1
+  },
+  {
+   "no": 139,
+   "start": 449.95,
+   "end": 453.45,
+   "en": "No, he's having a dental emergency.",
+   "ko": "아니 저런 사람이 응급 환자야",
+   "recorded": 1
+  },
+  {
+   "no": 140,
+   "start": 456.54,
+   "end": 459.08,
+   "en": "Come on, let's go over here and see if this man can help me.",
+   "ko": "저쪽으로 가서 저 사람한테 물어보자",
+   "recorded": 1
+  },
+  {
+   "no": 141,
+   "start": 474.39,
+   "end": 475.23,
+   "en": "Hi.",
+   "ko": "안녕하세요",
+   "recorded": 1
+  },
+  {
+   "no": 142,
+   "start": 478.14,
+   "end": 480.06,
+   "en": "Welcome to Subway Smiles.",
+   "ko": "지하철 미소 치과에 오신 걸 환영합니다",
+   "recorded": 1
+  },
+  {
+   "no": 143,
+   "start": 483.73,
+   "end": 486.11,
+   "en": "I told you, we'll get to you.",
+   "ko": "조금만 기다리라니까요",
+   "recorded": 1
+  },
+  {
+   "no": 144,
+   "start": 488.61,
+   "end": 491.24,
+   "en": "I'm sorry, girls, I'm a little shaky.",
+   "ko": "미안해요, 아가씨들 손이 좀 떨리네요",
+   "recorded": 1
+  },
+  {
+   "no": 145,
+   "start": 491.99,
+   "end": 493.08,
+   "en": "I was just shot at.",
+   "ko": "총에 맞아서요",
+   "recorded": 1
+  },
+  {
+   "no": 146,
+   "start": 495.12,
+   "end": 497.41,
+   "en": "I have a problem with my teeth migrating.",
+   "ko": "치아가 점점 어긋나서요",
+   "recorded": 1
+  },
+  {
+   "no": 147,
+   "start": 497.5,
+   "end": 498.92,
+   "en": "I have advanced bruxism.",
+   "ko": "중증 이갈이예요",
+   "recorded": 1
+  },
+  {
+   "no": 148,
+   "start": 500.17,
+   "end": 501.13,
+   "en": "I have hep C.",
+   "ko": "난 C형 간염이에요",
+   "recorded": 1
+  },
+  {
+   "no": 149,
+   "start": 503.88,
+   "end": 505.8,
+   "en": "Everybody's got their something.",
+   "ko": "다들 병이 하나씩 있죠",
+   "recorded": 1
+  },
+  {
+   "no": 150,
+   "start": 507.92,
+   "end": 510.09,
+   "en": "- What do you need? - We need to be leaving.",
+   "ko": "필요한 게 뭐예요? 그만 가야겠어요",
+   "recorded": 1
+  },
+  {
+   "no": 151,
+   "start": 510.18,
+   "end": 511.55,
+   "en": "I just need a bite guard.",
+   "ko": "마우스피스가 필요해요",
+   "recorded": 1
+  },
+  {
+   "no": 152,
+   "start": 513.05,
+   "end": 514.01,
+   "en": "I can do that.",
+   "ko": "그건 해 줄 수 있죠",
+   "recorded": 1
+  },
+  {
+   "no": 153,
+   "start": 514.47,
+   "end": 518.18,
+   "en": "That's where I squirt foam into your mouth and make a mold.",
+   "ko": "입안에 거품을 쏜 다음에 본을 뜨면 돼요",
+   "recorded": 1
+  },
+  {
+   "no": 154,
+   "start": 518.85,
+   "end": 519.89,
+   "en": "Come in the back.",
+   "ko": "안으로 들어와요",
+   "recorded": 1
+  },
+  {
+   "no": 155,
+   "start": 520.65,
+   "end": 524.23,
+   "en": "If you go back there with him, you'll need a bite guard and a rape guard.",
+   "ko": "저 안에 들어가면 이갈이뿐 아니라 강간 방지 장치도 필요할 거야",
+   "recorded": 1
+  },
+  {
+   "no": 156,
+   "start": 525.36,
+   "end": 527.99,
+   "en": "- Do you want the gas? - Is that necessary?",
+   "ko": "마취할 거예요? 마취도 해야 해요?",
+   "recorded": 1
+  },
+  {
+   "no": 157,
+   "start": 528.7,
+   "end": 530.36,
+   "en": "You're going to want the gas, sweetheart.",
+   "ko": "하는 게 좋을 거예요, 아가씨",
+   "recorded": 1
+  },
+  {
+   "no": 158,
+   "start": 539.16,
+   "end": 541.17,
+   "en": "One more song before we close.",
+   "ko": "문 닫기 전에 한 곡 더 부르죠",
+   "recorded": 1
+  },
+  {
+   "no": 159,
+   "start": 541.25,
+   "end": 545.79,
+   "en": "I sing Spice Girls, \"Oh, tell me what you want, what you really, really want.\"",
+   "ko": "스파이스 걸스의 '네가 정말정말 원하는 것을 말해 줘'",
+   "recorded": 1
+  },
+  {
+   "no": 160,
+   "start": 548.47,
+   "end": 549.55,
+   "en": "That boy's more stiff",
+   "ko": "저 녀석은 치펜데일쇼에 간 미셸 바크먼 남편보다 더 뻣뻣해",
+   "recorded": 1
+  },
+  {
+   "no": 161,
+   "start": 549.63,
+   "end": 551.93,
+   "en": "than Michele Bachmann's husband at a Chippendales.",
+   "ko": "저 녀석은 치펜데일쇼에 간 미셸 바크먼 남편보다 더 뻣뻣해",
+   "recorded": 1
+  },
+  {
+   "no": 162,
+   "start": 554.26,
+   "end": 556.6,
+   "en": "I will give you the money for trip to fancy dentist.",
+   "ko": "좋은 치과 갈 돈은 내가 대 줄게",
+   "recorded": 1
+  },
+  {
+   "no": 163,
+   "start": 557.14,
+   "end": 559.35,
+   "en": "Really? Oleg, you would do that?",
+   "ko": "정말요? 그렇게 해 줄래요?",
+   "recorded": 1
+  },
+  {
+   "no": 164,
+   "start": 559.43,
+   "end": 560.89,
+   "en": "Is favor I do for you.",
+   "ko": "이번엔 내가 도와줄 테니",
+   "recorded": 1
+  },
+  {
+   "no": 165,
+   "start": 560.98,
+   "end": 563.15,
+   "en": "And at some point, when I come to you for favor,",
+   "ko": "언젠가 내가 너한테 뭔가 부탁하면",
+   "recorded": 1
+  },
+  {
+   "no": 166,
+   "start": 563.23,
+   "end": 565.07,
+   "en": "you will say yes like I say yes now.",
+   "ko": "너도 지금의 나처럼 동의해 주면 돼",
+   "recorded": 1
+  },
+  {
+   "no": 167,
+   "start": 566.65,
+   "end": 568.86,
+   "en": "Well, I'd need to know what that favor might be.",
+   "ko": "어떤 부탁을 할 건지 알아야 해요",
+   "recorded": 1
+  },
+  {
+   "no": 168,
+   "start": 568.94,
+   "end": 569.99,
+   "en": "I can't say for sure.",
+   "ko": "아직 확실하지 않아",
+   "recorded": 1
+  },
+  {
+   "no": 169,
+   "start": 571.32,
+   "end": 572.74,
+   "en": "Will it be in a week or a month?",
+   "ko": "일주일 후일까요 한 달 후일까요?",
+   "recorded": 1
+  },
+  {
+   "no": 170,
+   "start": 572.82,
+   "end": 573.95,
+   "en": "I can't say for sure.",
+   "ko": "그것도 확실하지 않아",
+   "recorded": 1
+  },
+  {
+   "no": 171,
+   "start": 574.82,
+   "end": 576.74,
+   "en": "- Will it be sexual? - Yes, it will be.",
+   "ko": "성적인 부탁일까요? 응, 그럴 거야",
+   "recorded": 1
+  },
+  {
+   "no": 172,
+   "start": 579.2,
+   "end": 580.5,
+   "en": "This I can say for sure.",
+   "ko": "그거 하나는 확실해",
+   "recorded": 1
+  },
+  {
+   "no": 173,
+   "start": 582.12,
+   "end": 583.46,
+   "en": "Thank you, but no.",
+   "ko": "고맙지만 사양할게요",
+   "recorded": 1
+  },
+  {
+   "no": 174,
+   "start": 586.38,
+   "end": 587.8,
+   "en": "I am such an idiot.",
+   "ko": "난 정말 바보야",
+   "recorded": 1
+  },
+  {
+   "no": 175,
+   "start": 588.13,
+   "end": 589.21,
+   "en": "I like it. Keep going.",
+   "ko": "재미있네, 계속해 봐",
+   "recorded": 1
+  },
+  {
+   "no": 176,
+   "start": 590.8,
+   "end": 593.59,
+   "en": "My bite guard is just sitting in the bathroom of my townhouse.",
+   "ko": "내가 살던 타운 하우스 욕실에 마우스피스가 있을 거야",
+   "recorded": 1
+  },
+  {
+   "no": 177,
+   "start": 593.68,
+   "end": 596.43,
+   "en": "If I could only get up on the roof, then I could break in through the skylight",
+   "ko": "내가 살던 타운 하우스 욕실에 마우스피스가 있을 거야 지붕에 올라가기만 하면 채광창으로 들어갈 수 있어",
+   "recorded": 1
+  },
+  {
+   "no": 178,
+   "start": 596.51,
+   "end": 598.52,
+   "en": "like I used to when I snuck out in high school.",
+   "ko": "고등학교 때 그렇게 몰래 나가곤 했단 말이야",
+   "recorded": 1
+  },
+  {
+   "no": 179,
+   "start": 599.14,
+   "end": 600.6,
+   "en": "Hello, I'm Max. Have we met?",
+   "ko": "안녕, 난 맥스야 우리 만난 적 있나?",
+   "recorded": 1
+  },
+  {
+   "no": 180,
+   "start": 601.85,
+   "end": 605.48,
+   "en": "When I was 15, I paid the security guys extra to not wire the skylight,",
+   "ko": "15살 때 보안업체 직원들한테 돈 주고 채광창엔 경보기를 안 달게 했어",
+   "recorded": 1
+  },
+  {
+   "no": 181,
+   "start": 605.56,
+   "end": 608.32,
+   "en": "and then I snuck out and went to Liana Shapiro's sweet 16.",
+   "ko": "그리고 몰래 일리아나 샤피로의 16살 생일 파티에 갔지",
+   "recorded": 1
+  },
+  {
+   "no": 182,
+   "start": 608.4,
+   "end": 610.03,
+   "en": "- Cute. - In Greece.",
+   "ko": "- 귀엽네 - 그리스에서 한 파티야",
+   "recorded": 1
+  },
+  {
+   "no": 183,
+   "start": 611.11,
+   "end": 611.95,
+   "en": "Hardcore.",
+   "ko": "장난 아닌데",
+   "recorded": 1
+  },
+  {
+   "no": 184,
+   "start": 613.11,
+   "end": 616.28,
+   "en": "I used to sneak out of the house and huff spray paint with an ex-marine.",
+   "ko": "난 집에서 몰래 빠져나가서 전직 해병이랑 스프레이 페인트 들이마셨는데",
+   "recorded": 1
+  },
+  {
+   "no": 185,
+   "start": 617.53,
+   "end": 622,
+   "en": "And sometimes, I'd just sneak out, look up at the stars, and dream.",
+   "ko": "가끔은 몰래 나가서 별 보면서 꿈을 꾸곤 했지",
+   "recorded": 1
+  },
+  {
+   "no": 186,
+   "start": 623.08,
+   "end": 624.12,
+   "en": "And then you said that.",
+   "ko": "거기까지만 하자",
+   "recorded": 1
+  },
+  {
+   "no": 187,
+   "start": 628.96,
+   "end": 631.38,
+   "en": "See, I told you I could get the skylight open.",
+   "ko": "내가 채광창은 열 수 있다고 했잖아",
+   "recorded": 1
+  },
+  {
+   "no": 188,
+   "start": 631.46,
+   "end": 634.3,
+   "en": "- Turn on a light. - Wait till I close the closet door.",
+   "ko": "불 좀 켜 봐 옷방 문부터 닫고",
+   "recorded": 1
+  },
+  {
+   "no": 189,
+   "start": 635.39,
+   "end": 637.14,
+   "en": "Why are the floors so bouncy?",
+   "ko": "바닥이 왜 이렇게 푹신해?",
+   "recorded": 1
+  },
+  {
+   "no": 190,
+   "start": 637.6,
+   "end": 639.05,
+   "en": "It's called carpet.",
+   "ko": "그게 카펫이라는 거야",
+   "recorded": 1
+  },
+  {
+   "no": 191,
+   "start": 641.77,
+   "end": 642.64,
+   "en": "What?",
+   "ko": "뭐야?",
+   "recorded": 1
+  },
+  {
+   "no": 192,
+   "start": 643.89,
+   "end": 644.81,
+   "en": "No way.",
+   "ko": "말도 안 돼 믿을 수가 없어!",
+   "recorded": 1
+  },
+  {
+   "no": 193,
+   "start": 645.19,
+   "end": 646.65,
+   "en": "No way.",
+   "ko": "말도 안 돼 믿을 수가 없어!",
+   "recorded": 1
+  },
+  {
+   "no": 194,
+   "start": 646.73,
+   "end": 648.11,
+   "en": "Is this Narnia?",
+   "ko": "여기가 나니아인가?",
+   "recorded": 1
+  },
+  {
+   "no": 195,
+   "start": 649.86,
+   "end": 652.44,
+   "en": "I'm about to say something I swore I'd never say.",
+   "ko": "나 이런 말은 절대 안 쓰려고 했는데",
+   "recorded": 1
+  },
+  {
+   "no": 196,
+   "start": 652.74,
+   "end": 654.7,
+   "en": "OMG.",
+   "ko": "오, 마이, 갓",
+   "recorded": 1
+  },
+  {
+   "no": 197,
+   "start": 655.61,
+   "end": 657.24,
+   "en": "Again, OMG.",
+   "ko": "다시 한번 오, 마이, 갓",
+   "recorded": 1
+  },
+  {
+   "no": 198,
+   "start": 657.32,
+   "end": 659.2,
+   "en": "It's lame, but nothing else really nails it.",
+   "ko": "유치하지만 다른 표현이 없어",
+   "recorded": 1
+  },
+  {
+   "no": 199,
+   "start": 659.28,
+   "end": 661.83,
+   "en": "This is the room that OMG was born for.",
+   "ko": "이런 방을 표현하라고 그 말이 존재하는 거야",
+   "recorded": 1
+  },
+  {
+   "no": 200,
+   "start": 662.91,
+   "end": 664.66,
+   "en": "Max, it's just my closet.",
+   "ko": "맥스, 그냥 옷방이야",
+   "recorded": 1
+  },
+  {
+   "no": 201,
+   "start": 664.75,
+   "end": 666.37,
+   "en": "Your clothes have a house.",
+   "ko": "맥스, 그냥 옷방이야 옷을 위한 집이잖아!",
+   "recorded": 1
+  },
+  {
+   "no": 202,
+   "start": 666.71,
+   "end": 667.58,
+   "en": "Look.",
+   "ko": "이것 봐",
+   "recorded": 1
+  },
+  {
+   "no": 203,
+   "start": 668.96,
+   "end": 670.59,
+   "en": "You are rich.",
+   "ko": "너 부자구나",
+   "recorded": 1
+  },
+  {
+   "no": 204,
+   "start": 670.67,
+   "end": 674.47,
+   "en": "Like, I know you said you were rich, but you are rich.",
+   "ko": "부자인 건 알고 있었지만 진짜 부자다!",
+   "recorded": 1
+  },
+  {
+   "no": 205,
+   "start": 674.97,
+   "end": 676.43,
+   "en": "You're embarrassing me.",
+   "ko": "네가 이러니까 민망해",
+   "recorded": 1
+  },
+  {
+   "no": 206,
+   "start": 676.51,
+   "end": 677.47,
+   "en": "Are you crazy?",
+   "ko": "너 미쳤어? 이건 민망해할 일이 아냐",
+   "recorded": 1
+  },
+  {
+   "no": 207,
+   "start": 677.55,
+   "end": 679.3,
+   "en": "This is nothing to be embarrassed about.",
+   "ko": "너 미쳤어? 이건 민망해할 일이 아냐",
+   "recorded": 1
+  },
+  {
+   "no": 208,
+   "start": 681.01,
+   "end": 681.89,
+   "en": "What's this do?",
+   "ko": "이건 뭐야?",
+   "recorded": 1
+  },
+  {
+   "no": 209,
+   "start": 684.77,
+   "end": 687.73,
+   "en": "Oh, my god, you have a shoe rotisserie.",
+   "ko": "세상에 구두 회전 장치가 있어?",
+   "recorded": 1
+  },
+  {
+   "no": 210,
+   "start": 688.61,
+   "end": 691.44,
+   "en": "I designed it. I call it my Ferris heels.",
+   "ko": "내가 디자인한 거야 난 이걸 '구두 관람차'라고 불러",
+   "recorded": 1
+  },
+  {
+   "no": 211,
+   "start": 693.44,
+   "end": 696.36,
+   "en": "I'd judge you if that wasn't exactly what I'd call it if I had one.",
+   "ko": "비웃고 싶지만 나라도 그렇게 불렀을 거야",
+   "recorded": 1
+  },
+  {
+   "no": 212,
+   "start": 697.32,
+   "end": 699.66,
+   "en": "Okay, we should really go now. Let me just grab my bite guard.",
+   "ko": "이제 나가야 해 마우스피스만 가지고 나올게",
+   "recorded": 1
+  },
+  {
+   "no": 213,
+   "start": 702.62,
+   "end": 703.54,
+   "en": "What?",
+   "ko": "뭐야?",
+   "recorded": 1
+  },
+  {
+   "no": 214,
+   "start": 706.25,
+   "end": 708.42,
+   "en": "You have a museum in your closet?",
+   "ko": "옷방 안에 박물관이 있어?",
+   "recorded": 1
+  },
+  {
+   "no": 215,
+   "start": 709.46,
+   "end": 711.34,
+   "en": "Come on, it's just a bathroom.",
+   "ko": "이건 그냥 욕실이야",
+   "recorded": 1
+  },
+  {
+   "no": 216,
+   "start": 711.42,
+   "end": 713,
+   "en": "Just a bathroom?",
+   "ko": "'그냥 욕실'?",
+   "recorded": 1
+  },
+  {
+   "no": 217,
+   "start": 713.09,
+   "end": 715.13,
+   "en": "It's the Louvre of pooping.",
+   "ko": "이건 똥을 위한 루브르 박물관이야",
+   "recorded": 1
+  },
+  {
+   "no": 218,
+   "start": 717.13,
+   "end": 717.97,
+   "en": "Here it is.",
+   "ko": "여기 있다",
+   "recorded": 1
+  },
+  {
+   "no": 219,
+   "start": 727.31,
+   "end": 728.23,
+   "en": "Oh, yeah.",
+   "ko": "좋아",
+   "recorded": 1
+  },
+  {
+   "no": 220,
+   "start": 730.23,
+   "end": 731.86,
+   "en": "Do you two need to be left alone?",
+   "ko": "잠깐 자리 비켜 줄까?",
+   "recorded": 1
+  },
+  {
+   "no": 221,
+   "start": 733.32,
+   "end": 735.32,
+   "en": "We have to go. Can't risk staying much longer.",
+   "ko": "이제 가자 오래 있으면 위험해",
+   "recorded": 1
+  },
+  {
+   "no": 222,
+   "start": 737.2,
+   "end": 739.32,
+   "en": "Just when I thought your voice couldn't get any more grating.",
+   "ko": "네 목소리가 더 이상 거슬릴 수는 없다고 생각했는데",
+   "recorded": 1
+  },
+  {
+   "no": 223,
+   "start": 739.99,
+   "end": 740.91,
+   "en": "It'll loosen up.",
+   "ko": "조금 있으면 풀려",
+   "recorded": 1
+  },
+  {
+   "no": 224,
+   "start": 742.83,
+   "end": 743.83,
+   "en": "I know what we need.",
+   "ko": "좋은 생각이 났어",
+   "recorded": 1
+  },
+  {
+   "no": 225,
+   "start": 746.87,
+   "end": 748.12,
+   "en": "Seriously, we should go.",
+   "ko": "이제 진짜 가자",
+   "recorded": 1
+  },
+  {
+   "no": 226,
+   "start": 750.75,
+   "end": 752.46,
+   "en": "I just have to do one thing before we go.",
+   "ko": "가기 전에 한 가지만 해 볼게",
+   "recorded": 1
+  },
+  {
+   "no": 227,
+   "start": 760.01,
+   "end": 762.14,
+   "en": "I think me and your tub are going steady.",
+   "ko": "나랑 네 욕조 진지하게 사귀는 것 같아",
+   "recorded": 1
+  },
+  {
+   "no": 228,
+   "start": 763.51,
+   "end": 765.35,
+   "en": "You found the jacuzzi button.",
+   "ko": "자쿠지 버튼을 찾았구나",
+   "recorded": 1
+  },
+  {
+   "no": 229,
+   "start": 765.85,
+   "end": 768.1,
+   "en": "I don't know who found who, but we're together now.",
+   "ko": "누가 누굴 찾았는지는 몰라도 이제 우린 함께야",
+   "recorded": 1
+  },
+  {
+   "no": 230,
+   "start": 770.85,
+   "end": 772.69,
+   "en": "Did you go to the prom with your dad?",
+   "ko": "너 졸업 무도회에 아빠랑 같이 갔어?",
+   "recorded": 1
+  },
+  {
+   "no": 231,
+   "start": 773.44,
+   "end": 775.98,
+   "en": "That's my debutante dance when I came out.",
+   "ko": "사교계 데뷔 무도회에서 찍은 사진이야",
+   "recorded": 1
+  },
+  {
+   "no": 232,
+   "start": 776.28,
+   "end": 779.03,
+   "en": "Out? Like, you came out that you were dating your dad?",
+   "ko": "'데뷔'? 네가 아빠의 연인으로서 데뷔한 거야?",
+   "recorded": 1
+  },
+  {
+   "no": 233,
+   "start": 780.7,
+   "end": 781.53,
+   "en": "Gross.",
+   "ko": "토 나와",
+   "recorded": 1
+  },
+  {
+   "no": 234,
+   "start": 782.45,
+   "end": 784.45,
+   "en": "I think I can still fit a goose-feather pillow in.",
+   "ko": "거위털 베개 하나 더 넣을 수 있을 것 같아",
+   "recorded": 1
+  },
+  {
+   "no": 235,
+   "start": 787.08,
+   "end": 789.33,
+   "en": "Hey, what's this one of you and Chestnut and your dad?",
+   "ko": "너랑 아빠랑 체스트넛이랑 같이 찍은 사진은 뭐야?",
+   "recorded": 1
+  },
+  {
+   "no": 236,
+   "start": 790.79,
+   "end": 793.04,
+   "en": "That's when my dad bought Chestnut for me.",
+   "ko": "아빠가 체스트넛을 사 줬을 때의 사진이야",
+   "recorded": 1
+  },
+  {
+   "no": 237,
+   "start": 793.13,
+   "end": 794.96,
+   "en": "It was my first period present.",
+   "ko": "아빠가 체스트넛을 사 줬을 때의 사진이야 내 첫 생리 선물이었어",
+   "recorded": 1
+  },
+  {
+   "no": 238,
+   "start": 796.17,
+   "end": 798.59,
+   "en": "Your dad got you a horse for getting your period?",
+   "ko": "생리했다고 아빠가 말을 사 줘?",
+   "recorded": 1
+  },
+  {
+   "no": 239,
+   "start": 799.09,
+   "end": 800.72,
+   "en": "OMG.",
+   "ko": "오, 마이, 갓",
+   "recorded": 1
+  },
+  {
+   "no": 240,
+   "start": 802.18,
+   "end": 804.3,
+   "en": "You know how I celebrated getting my period?",
+   "ko": "난 첫 생리를 어떻게 축하했게?",
+   "recorded": 1
+  },
+  {
+   "no": 241,
+   "start": 804.39,
+   "end": 807.39,
+   "en": "Stole a painkiller and half a beer from my mom's boyfriend.",
+   "ko": "엄마 남자 친구한테서 진통제와 맥주 반 캔을 훔쳤지",
+   "recorded": 1
+  },
+  {
+   "no": 242,
+   "start": 808.14,
+   "end": 811.35,
+   "en": "It wasn't a horse, but it was pretty awesome.",
+   "ko": "말은 아니었지만 꽤 괜찮았어",
+   "recorded": 1
+  },
+  {
+   "no": 243,
+   "start": 813.19,
+   "end": 814.77,
+   "en": "How come there are no pictures of your mom?",
+   "ko": "너희 엄마 사진은 왜 없어?",
+   "recorded": 1
+  },
+  {
+   "no": 244,
+   "start": 815.32,
+   "end": 816.27,
+   "en": "'Cause there aren't any.",
+   "ko": "엄마가 없으니까",
+   "recorded": 1
+  },
+  {
+   "no": 245,
+   "start": 816.65,
+   "end": 820.24,
+   "en": "She cheated on my dad when I was five, and my grandmother got rid of her.",
+   "ko": "내가 5살 때 엄마가 바람을 피워서 할머니가 없애 버렸대",
+   "recorded": 1
+  },
+  {
+   "no": 246,
+   "start": 820.9,
+   "end": 824.2,
+   "en": "Not in, like, a mob way. In a society way, which is worse.",
+   "ko": "마피아식으로 없앤 건 아니고 사회적으로 말이야 그게 더 나쁘지만",
+   "recorded": 1
+  },
+  {
+   "no": 247,
+   "start": 824.91,
+   "end": 825.99,
+   "en": "So who raised you?",
+   "ko": "그럼 누가 널 키웠어?",
+   "recorded": 1
+  },
+  {
+   "no": 248,
+   "start": 826.99,
+   "end": 830.91,
+   "en": "Well, Estella from 1989 to '96.",
+   "ko": "그게... 1989년부터 1996년까지는 에스텔라",
+   "recorded": 1
+  },
+  {
+   "no": 249,
+   "start": 831,
+   "end": 835.04,
+   "en": "Then Dominica from '97 until she went back to Guatemala.",
+   "ko": "1997년부터는 도미니카가 돌봐 주다가 과테말라로 돌아갔지",
+   "recorded": 1
+  },
+  {
+   "no": 250,
+   "start": 835.92,
+   "end": 836.88,
+   "en": "Then no one.",
+   "ko": "그 후엔 없었어",
+   "recorded": 1
+  },
+  {
+   "no": 251,
+   "start": 839.63,
+   "end": 842.18,
+   "en": "Funny. You didn't have a father, I didn't have a mother.",
+   "ko": "재미있지? 넌 아빠가 없고 난 엄마가 없으니까...",
+   "recorded": 1
+  },
+  {
+   "no": 252,
+   "start": 842.26,
+   "end": 844.14,
+   "en": "- So we're kind of-- - Oh, we're alike?",
+   "ko": "재미있지? 넌 아빠가 없고 난 엄마가 없으니까... 그래서 비슷하다고?",
+   "recorded": 1
+  },
+  {
+   "no": 253,
+   "start": 844.72,
+   "end": 846.72,
+   "en": "Look around. We have nothing in common.",
+   "ko": "주변을 둘러봐 우린 공통점이 전혀 없어",
+   "recorded": 1
+  },
+  {
+   "no": 254,
+   "start": 849.27,
+   "end": 851.68,
+   "en": "- Hey, what's this button for? - Music.",
+   "ko": "이 버튼은 뭐야? 음악",
+   "recorded": 1
+  },
+  {
+   "no": 255,
+   "start": 852.35,
+   "end": 854.65,
+   "en": "Oh, let me guess. Show tunes? Boy bands?",
+   "ko": "내가 맞혀 볼게 뮤지컬? 보이 밴드?",
+   "recorded": 1
+  },
+  {
+   "no": 256,
+   "start": 856.86,
+   "end": 858.48,
+   "en": "- I love this song. - I love this song.",
+   "ko": "- 나 이 노래 좋아하는데! - 나 이 노래 좋아하는데!",
+   "recorded": 1
+  },
+  {
+   "no": 257,
+   "start": 897.73,
+   "end": 901.03,
+   "en": "See, I knew what we had in common wouldn't last.",
+   "ko": "거봐 우리의 공통점은 오래가지 않을 줄 알았지",
+   "recorded": 1
+  },
+  {
+   "no": 258,
+   "start": 901.98,
+   "end": 904.61,
+   "en": "- Were you crumping for a second? - Maybe.",
+   "ko": "네가 방금 춘 거 크럼핑 아냐? 그럴지도",
+   "recorded": 1
+  },
+  {
+   "no": 259,
+   "start": 905.32,
+   "end": 907.24,
+   "en": "Were you tootsie rolling for a second?",
+   "ko": "네가 춘 건 투시 롤 아냐?",
+   "recorded": 1
+  },
+  {
+   "no": 260,
+   "start": 908.37,
+   "end": 909.24,
+   "en": "Yes.",
+   "ko": "맞아",
+   "recorded": 1
+  },
+  {
+   "no": 261,
+   "start": 911.54,
+   "end": 913.2,
+   "en": "Okay, get dressed. We really should go now.",
+   "ko": "이제 옷 입어, 진짜 가야 해",
+   "recorded": 1
+  },
+  {
+   "no": 262,
+   "start": 913.29,
+   "end": 914.12,
+   "en": "Okay.",
+   "ko": "이제 옷 입어, 진짜 가야 해",
+   "recorded": 1
+  },
+  {
+   "no": 263,
+   "start": 914.54,
+   "end": 915.79,
+   "en": "I have all the essentials.",
+   "ko": "필수품은 다 챙겼어",
+   "recorded": 1
+  },
+  {
+   "no": 264,
+   "start": 915.87,
+   "end": 918.63,
+   "en": "Tampons, toilet paper, comforter, body shimmer.",
+   "ko": "탐폰, 화장지, 이불 보디 하이라이터",
+   "recorded": 1
+  },
+  {
+   "no": 265,
+   "start": 919.38,
+   "end": 920.59,
+   "en": "Wait. What about the clothes?",
+   "ko": "옷은?",
+   "recorded": 1
+  },
+  {
+   "no": 266,
+   "start": 920.67,
+   "end": 921.63,
+   "en": "Oh, what am I going to do,",
+   "ko": "3천 달러짜리 드레스 입고 윌리엄스버그를 돌아다니라고?",
+   "recorded": 1
+  },
+  {
+   "no": 267,
+   "start": 921.71,
+   "end": 924.22,
+   "en": "walk around Williamsburg in a 3,000-dollar gown?",
+   "ko": "3천 달러짜리 드레스 입고 윌리엄스버그를 돌아다니라고?",
+   "recorded": 1
+  },
+  {
+   "no": 268,
+   "start": 925.05,
+   "end": 927.22,
+   "en": "Oh, my god. Wait a minute.",
+   "ko": "잠깐만 아니지",
+   "recorded": 1
+  },
+  {
+   "no": 269,
+   "start": 927.55,
+   "end": 930.39,
+   "en": "Grab everything with a price tag on it that we can resell,",
+   "ko": "가격표가 달린 옷을 다 가져가서 팔면 되잖아",
+   "recorded": 1
+  },
+  {
+   "no": 270,
+   "start": 930.76,
+   "end": 932.39,
+   "en": "or that you think I'd look amazing in.",
+   "ko": "내가 입으면 근사할 옷이나",
+   "recorded": 1
+  },
+  {
+   "no": 271,
+   "start": 935.44,
+   "end": 937.19,
+   "en": "Not the furs! They're wired.",
+   "ko": "모피는 안 돼 경보기가 달려 있어!",
+   "recorded": 1
+  },
+  {
+   "no": 272,
+   "start": 937.27,
+   "end": 938.98,
+   "en": "Why would you wire the furs?",
+   "ko": "왜 모피에 경보기를 달아?",
+   "recorded": 1
+  },
+  {
+   "no": 273,
+   "start": 939.06,
+   "end": 941.23,
+   "en": "Everybody wires the furs, bitch.",
+   "ko": "원래 모피에는 다 달아 놓는 거야, 이년아!",
+   "recorded": 1
+  },
+  {
+   "no": 274,
+   "start": 942.57,
+   "end": 943.94,
+   "en": "Security's going to be here in ten minutes.",
+   "ko": "10분 안에 경비들이 올 거야",
+   "recorded": 1
+  },
+  {
+   "no": 275,
+   "start": 944.03,
+   "end": 945.74,
+   "en": "Just grab everything you can.",
+   "ko": "챙길 수 있는 건 다 챙겨",
+   "recorded": 1
+  },
+  {
+   "no": 276,
+   "start": 946.95,
+   "end": 949.28,
+   "en": "Wait. How are we going to carry it all back to Brooklyn?",
+   "ko": "잠깐만, 브루클린까지 어떻게 들고 가?",
+   "recorded": 1
+  },
+  {
+   "no": 277,
+   "start": 949.95,
+   "end": 951.37,
+   "en": "Watch the doors, please.",
+   "ko": "열차 출입문 열립니다",
+   "recorded": 1
+  },
+  {
+   "no": 278,
+   "start": 957.92,
+   "end": 959.54,
+   "en": "Watch the closing doors, please.",
+   "ko": "열차 출입문 닫힙니다",
+   "recorded": 1
+  },
+  {
+   "no": 279,
+   "start": 959.63,
+   "end": 960.63,
+   "en": "Jealous?",
+   "ko": "열차 출입문 닫힙니다 부러워요?",
+   "recorded": 1
+  },
+  {
+   "no": 280,
+   "start": 962.84,
+   "end": 963.96,
+   "en": "Look, two seats.",
+   "ko": "저기 두 자리 있다",
+   "recorded": 1
+  },
+  {
+   "no": 281,
+   "start": 974.85,
+   "end": 976.27,
+   "en": "I think you got more stuff than me.",
+   "ko": "네가 나보다 더 많이 챙긴 것 같네",
+   "recorded": 1
+  },
+  {
+   "no": 282,
+   "start": 976.81,
+   "end": 979.02,
+   "en": "Well, you spent five minutes saying goodbye to the tub.",
+   "ko": "넌 5분 동안 욕조랑 작별 인사 했잖아",
+   "recorded": 1
+  },
+  {
+   "no": 283,
+   "start": 981.86,
+   "end": 984.86,
+   "en": "This was my fave purse to take dancing.",
+   "ko": "춤추러 갈 때 제일 많이 들었던 가방인데",
+   "recorded": 1
+  },
+  {
+   "no": 284,
+   "start": 985.61,
+   "end": 988.36,
+   "en": "How'd you keep it on your shoulder when you went all mad crump?",
+   "ko": "그렇게 크럼핑을 해 대는데 어떻게 어깨에 붙어 있었대?",
+   "recorded": 1
+  },
+  {
+   "no": 285,
+   "start": 989.28,
+   "end": 990.11,
+   "en": "Look.",
+   "ko": "이것 봐",
+   "recorded": 1
+  },
+  {
+   "no": 286,
+   "start": 990.82,
+   "end": 992.66,
+   "en": "Two hundred dollars.",
+   "ko": "200달러야!",
+   "recorded": 1
+  },
+  {
+   "no": 287,
+   "start": 993.08,
+   "end": 995.16,
+   "en": "It's not enough we're sitting on the subway in furs,",
+   "ko": "모피 입고 지하철에 타 놓고 이제 돈까지 뿌리려고?",
+   "recorded": 1
+  },
+  {
+   "no": 288,
+   "start": 995.24,
+   "end": 996.16,
+   "en": "you got to make it rain?",
+   "ko": "모피 입고 지하철에 타 놓고 이제 돈까지 뿌리려고?",
+   "recorded": 1
+  },
+  {
+   "no": 289,
+   "start": 997.08,
+   "end": 1000.04,
+   "en": "This is so exciting. It's going right into our cupcake fund.",
+   "ko": "너무 신난다 컵케이크 자금에 보태자",
+   "recorded": 1
+  },
+  {
+   "no": 290,
+   "start": 1000.92,
+   "end": 1002.5,
+   "en": "- Or... - Or what?",
+   "ko": "- 아니면... - 뭐?",
+   "recorded": 1
+  },
+  {
+   "no": 291,
+   "start": 1003.38,
+   "end": 1005.21,
+   "en": "Where was that place you always went with your dad?",
+   "ko": "네가 아빠랑 자주 가던 식당이 어디라고?",
+   "recorded": 1
+  },
+  {
+   "no": 292,
+   "start": 1006.84,
+   "end": 1008.8,
+   "en": "Toro with black truffle.",
+   "ko": "송로버섯을 올린 참치뱃살초밥?",
+   "recorded": 1
+  },
+  {
+   "no": 293,
+   "start": 1009.13,
+   "end": 1011.64,
+   "en": "You are about to have a sushi toro-gasm.",
+   "ko": "넌 이제 초밥 오르가슴을 느끼게 될 거야",
+   "recorded": 1
+  },
+  {
+   "no": 294,
+   "start": 1011.93,
+   "end": 1013.6,
+   "en": "Will you calm down? It's just...",
+   "ko": "진정해, 그냥...",
+   "recorded": 1
+  },
+  {
+   "no": 295,
+   "start": 1013.97,
+   "end": 1017.06,
+   "en": "Oh, sweet bejesus, that's delicious.",
+   "ko": "하느님 맙소사 이거 진짜 맛있네",
+   "recorded": 1
+  },
+  {
+   "no": 296,
+   "start": 1018.48,
+   "end": 1021.69,
+   "en": "If this is sushi, what was that other stuff we ate?",
+   "ko": "이게 초밥이면 그때 먹었던 그건 뭐야?",
+   "recorded": 1
+  },
+  {
+   "no": 297,
+   "start": 1022.02,
+   "end": 1023.77,
+   "en": "Wrong, on every level.",
+   "ko": "모든 면에서 잘못된 초밥이지",
+   "recorded": 1
+  },
+  {
+   "no": 298,
+   "start": 1024.57,
+   "end": 1026.73,
+   "en": "We need more of this. Like, all of it.",
+   "ko": "이거 더 먹자, 전부 다",
+   "recorded": 1
+  },
+  {
+   "no": 299,
+   "start": 1026.82,
+   "end": 1029.11,
+   "en": "Can we have some more toro? Thank you so much.",
+   "ko": "참치뱃살초밥 더 주세요 고맙습니다, 그리고...",
+   "recorded": 1
+  },
+  {
+   "no": 300,
+   "start": 1029.2,
+   "end": 1030.03,
+   "en": "And...",
+   "ko": "고맙습니다, 그리고...",
+   "recorded": 1
+  },
+  {
+   "no": 301,
+   "start": 1041,
+   "end": 1042.46,
+   "en": "I get it now 'cause I'm rich.",
+   "ko": "부자가 되니까 이해가 되네",
+   "recorded": 1
+  },
+  {
+   "no": 302,
+   "start": 1046.25,
+   "end": 1047.71,
+   "en": "I don't know how you're pulling it off.",
+   "ko": "대체 어떻게 견디는 거야?",
+   "recorded": 1
+  },
+  {
+   "no": 303,
+   "start": 1048.13,
+   "end": 1048.96,
+   "en": "What do you mean?",
+   "ko": "무슨 소리야?",
+   "recorded": 1
+  },
+  {
+   "no": 304,
+   "start": 1049.76,
+   "end": 1051.59,
+   "en": "Giving up everything that you had.",
+   "ko": "네가 가지고 있던 걸 모두 포기했잖아",
+   "recorded": 1
+  },
+  {
+   "no": 305,
+   "start": 1051.93,
+   "end": 1055.85,
+   "en": "The maids, the closet, the dentist, the sushi, the tub, all of it.",
+   "ko": "가정부, 옷방, 치과 초밥, 욕조까지",
+   "recorded": 1
+  },
+  {
+   "no": 306,
+   "start": 1056.14,
+   "end": 1056.97,
+   "en": "The tub.",
+   "ko": "그 욕조...",
+   "recorded": 1
+  },
+  {
+   "no": 307,
+   "start": 1058.77,
+   "end": 1061.52,
+   "en": "I almost can't give it up and I only had it for an hour.",
+   "ko": "난 겨우 한 시간 즐겼는데도 포기하기가 힘든데",
+   "recorded": 1
+  },
+  {
+   "no": 308,
+   "start": 1062.31,
+   "end": 1063.44,
+   "en": "You're kind of a badass.",
+   "ko": "너 끝내주게 멋있다",
+   "recorded": 1
+  },
+  {
+   "no": 309,
+   "start": 1064.65,
+   "end": 1067.15,
+   "en": "Max, you just called me a badass.",
+   "ko": "맥스, 너 방금 나한테 끝내준다고 했어",
+   "recorded": 1
+  },
+  {
+   "no": 310,
+   "start": 1068.19,
+   "end": 1069.57,
+   "en": "I'm drunk on black truffle.",
+   "ko": "송로버섯에 취해서 그래",
+   "recorded": 1
+  },
+  {
+   "no": 311,
+   "start": 1074.37,
+   "end": 1075.24,
+   "en": "It's my dad.",
+   "ko": "아빠잖아!",
+   "recorded": 1
+  },
+  {
+   "no": 312,
+   "start": 1075.87,
+   "end": 1077.16,
+   "en": "Wait, he actually exists?",
+   "ko": "실제로 존재하는 사람이었어?",
+   "recorded": 1
+  },
+  {
+   "no": 313,
+   "start": 1077.54,
+   "end": 1079.12,
+   "en": "Like the town house and the tub?",
+   "ko": "타운 하우스와 욕조처럼?",
+   "recorded": 1
+  },
+  {
+   "no": 314,
+   "start": 1079.2,
+   "end": 1080.04,
+   "en": "The tub.",
+   "ko": "그 욕조...",
+   "recorded": 1
+  },
+  {
+   "no": 315,
+   "start": 1081.5,
+   "end": 1083,
+   "en": "Hi, Daddy. How are you?",
+   "ko": "아빠, 잘 있었어요?",
+   "recorded": 1
+  },
+  {
+   "no": 316,
+   "start": 1083.25,
+   "end": 1084.79,
+   "en": "I miss you so much.",
+   "ko": "너무 보고 싶어요",
+   "recorded": 1
+  },
+  {
+   "no": 317,
+   "start": 1085.75,
+   "end": 1087.38,
+   "en": "I'm good. No, really.",
+   "ko": "난 잘 있어요 아뇨, 정말이에요 브루클린의 맥스네 집에 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 318,
+   "start": 1087.46,
+   "end": 1089.63,
+   "en": "I'm still staying in Brooklyn with my friend Max.",
+   "ko": "아뇨, 정말이에요 브루클린의 맥스네 집에 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 319,
+   "start": 1090.17,
+   "end": 1091.01,
+   "en": "She's great.",
+   "ko": "좋은 애예요",
+   "recorded": 1
+  },
+  {
+   "no": 320,
+   "start": 1095.22,
+   "end": 1097.51,
+   "en": "Oh, okay. Hold on. Love you, Daddy.",
+   "ko": "그래요, 잠깐만요 사랑해요, 아빠",
+   "recorded": 1
+  },
+  {
+   "no": 321,
+   "start": 1098.06,
+   "end": 1100.02,
+   "en": "- He wants to talk to you. - Me? Why?",
+   "ko": "- 너하고 얘기하고 싶대 - 나? 왜?",
+   "recorded": 1
+  },
+  {
+   "no": 322,
+   "start": 1101.43,
+   "end": 1105.02,
+   "en": "- I wouldn't know what to say. - Take it. He's only allowed five minutes.",
+   "ko": "무슨 말을 해? 받아, 5분밖에 통화 못 한대",
+   "recorded": 1
+  },
+  {
+   "no": 323,
+   "start": 1108.11,
+   "end": 1109.86,
+   "en": "Yo, what's up, Martin Channing?",
+   "ko": "안녕하세요, 마틴 채닝 씨",
+   "recorded": 1
+  },
+  {
+   "no": 324,
+   "start": 1114.66,
+   "end": 1115.99,
+   "en": "You're welcome, but I di...",
+   "ko": "별말씀을요, 저는...",
+   "recorded": 1
+  },
+  {
+   "no": 325,
+   "start": 1117.45,
+   "end": 1118.78,
+   "en": "Well, thank you.",
+   "ko": "감사합니다",
+   "recorded": 1
+  },
+  {
+   "no": 326,
+   "start": 1120.33,
+   "end": 1121.33,
+   "en": "Yeah, she's great.",
+   "ko": "네, 잘 지내요",
+   "recorded": 1
+  },
+  {
+   "no": 327,
+   "start": 1121.75,
+   "end": 1122.66,
+   "en": "Real trouper.",
+   "ko": "아주 씩씩해요",
+   "recorded": 1
+  },
+  {
+   "no": 328,
+   "start": 1124.04,
+   "end": 1125.5,
+   "en": "Well, bye. What?",
+   "ko": "안녕히 계세요, 네?",
+   "recorded": 1
+  },
+  {
+   "no": 329,
+   "start": 1127.63,
+   "end": 1128.63,
+   "en": "Okay, I'll tell her.",
+   "ko": "그렇게 전할게요",
+   "recorded": 1
+  },
+  {
+   "no": 330,
+   "start": 1130.71,
+   "end": 1131.55,
+   "en": "Daddy?",
+   "ko": "아빠?",
+   "recorded": 1
+  },
+  {
+   "no": 331,
+   "start": 1133.05,
+   "end": 1133.88,
+   "en": "He's gone.",
+   "ko": "끊었네",
+   "recorded": 1
+  },
+  {
+   "no": 332,
+   "start": 1135.51,
+   "end": 1137.3,
+   "en": "So that's what a father sounds like.",
+   "ko": "아빠의 목소리란 이런 거구나",
+   "recorded": 1
+  },
+  {
+   "no": 333,
+   "start": 1137.68,
+   "end": 1138.55,
+   "en": "What did he say?",
+   "ko": "뭐래?",
+   "recorded": 1
+  },
+  {
+   "no": 334,
+   "start": 1139.93,
+   "end": 1141.93,
+   "en": "He wanted me to remind you to wear your bite guard.",
+   "ko": "마우스피스 끼는 거 잊지 말래",
+   "recorded": 1
+  },
+  {
+   "no": 335,
+   "start": 1143.77,
+   "end": 1147.15,
+   "en": "See? He can't be as bad as everyone says.",
+   "ko": "거봐, 사람들 말처럼 나쁜 사람은 아냐",
+   "recorded": 1
+  },
+  {
+   "no": 336,
+   "start": 1147.23,
+   "end": 1148.11,
+   "en": "He just can't be.",
+   "ko": "그럴 리가 없어",
+   "recorded": 1
+  },
+  {
+   "no": 337,
+   "start": 1153.69,
+   "end": 1156.95,
+   "en": "Oh, my god. The 200 didn't cover it.",
+   "ko": "맙소사 200달러로 모자라잖아",
+   "recorded": 1
+  },
+  {
+   "no": 338,
+   "start": 1157.45,
+   "end": 1158.87,
+   "en": "Start checking the purses.",
+   "ko": "핸드백들 다 뒤져 봐",
+   "recorded": 1
+  },
+  {
+   "no": 339,
+   "start": 1160.24,
+   "end": 1161.83,
+   "en": "Oh, hey, do you take hats?",
+   "ko": "혹시 모자도 받아요?",
+   "recorded": 1
+  },
+  {
+   "no": 340,
+   "start": 1165.58,
+   "end": 1167.38,
+   "en": "Any cougars in the house?",
+   "ko": "혹시 여기에 '쿠거' 있나요?",
+   "recorded": 1
+  },
+  {
+   "no": 341,
+   "start": 1169.84,
+   "end": 1171.09,
+   "en": "In case you don't know,",
+   "ko": "아시는지 모르겠는데",
+   "recorded": 1
+  },
+  {
+   "no": 342,
+   "start": 1171.17,
+   "end": 1174.26,
+   "en": "\"cougar\" means older lady with a large sexual appetite.",
+   "ko": "아시는지 모르겠는데 쿠거는 성욕이 왕성한 늙은 여자를 뜻하는 말이에요",
+   "recorded": 1
+  },
+  {
+   "no": 343,
+   "start": 1174.96,
+   "end": 1178.14,
+   "en": "Lady past prime with tight clothes who wants sex from young men.",
+   "ko": "나이 들고도 딱 붙는 옷을 입고 젊은 남자와 자고 싶어 하죠",
+   "recorded": 1
+  },
+  {
+   "no": 344,
+   "start": 1179.93,
+   "end": 1182.52,
+   "en": "Max, what is the one thing worse than karaoke?",
+   "ko": "맥스, 노래방보다 더 끔찍한 게 뭘까?",
+   "recorded": 1
+  },
+  {
+   "no": 345,
+   "start": 1182.85,
+   "end": 1185.1,
+   "en": "- Oh, no. - That's right. Open mic night.",
+   "ko": "- 안 돼 - 맞아, 자유 무대야",
+   "recorded": 1
+  },
+  {
+   "no": 346,
+   "start": 1186.02,
+   "end": 1189.4,
+   "en": "Cougar also have facelift. From behind look 22.",
+   "ko": "쿠거들은 리프팅 수술도 받아요 뒤에서 보면 22살인데",
+   "recorded": 1
+  },
+  {
+   "no": 347,
+   "start": 1189.48,
+   "end": 1191.11,
+   "en": "She turn around, 72.",
+   "ko": "돌아서면 72살이죠",
+   "recorded": 1
+  },
+  {
+   "no": 348,
+   "start": 1193.07,
+   "end": 1195.44,
+   "en": "It's true. It's funny 'cause it's true.",
+   "ko": "사실이에요 사실이라서 웃기네",
+   "recorded": 1
+  },
+  {
+   "no": 349,
+   "start": 1197.36,
+   "end": 1200.91,
+   "en": "Bad news. They heightened security because we tripped the alarm.",
+   "ko": "나쁜 소식이야 우리 때문에 경보기가 울린 후로 보안을 더 강화했대",
+   "recorded": 1
+  },
+  {
+   "no": 350,
+   "start": 1200.99,
+   "end": 1203.7,
+   "en": "The entire town house is locked down. We can never go back.",
+   "ko": "타운 하우스 전체가 봉쇄돼서 이제 다시는 못 가",
+   "recorded": 1
+  },
+  {
+   "no": 351,
+   "start": 1203.79,
+   "end": 1204.91,
+   "en": "My tub.",
+   "ko": "내 욕조!",
+   "recorded": 1
+  },
+  {
+   "no": 352,
+   "start": 1205.2,
+   "end": 1208.17,
+   "en": "Why does anything that gives me pleasure wind up behind bars?",
+   "ko": "왜 나한테 즐거움을 주는 건 다 철창 안에 갇히는 거야?",
+   "recorded": 1
+  },
+  {
+   "no": 353,
+   "start": 1208.96,
+   "end": 1210.25,
+   "en": "Forget about the tub.",
+   "ko": "욕조는 잊어",
+   "recorded": 1
+  },
+  {
+   "no": 354,
+   "start": 1210.33,
+   "end": 1212.84,
+   "en": "Everything was inventoried. We can't sell the furs.",
+   "ko": "모든 물건이 기록에 남아 있어서 모피를 팔 수도 없어",
+   "recorded": 1
+  },
+  {
+   "no": 355,
+   "start": 1212.92,
+   "end": 1215.13,
+   "en": "- I should've thought of that. - Yeah, you should've.",
+   "ko": "그 생각을 했어야 했는데 그래, 했어야지",
+   "recorded": 1
+  },
+  {
+   "no": 356,
+   "start": 1215.21,
+   "end": 1217.8,
+   "en": "'Cause you know they always inventory the furs, bitch.",
+   "ko": "원래 모피는 다 기록해 놓는 거야, 이년아!",
+   "recorded": 1
+  }
+ ]
+}
