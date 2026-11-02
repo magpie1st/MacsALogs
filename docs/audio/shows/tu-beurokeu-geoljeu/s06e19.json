@@ -1,0 +1,3217 @@
+{
+ "schema": "tvshow-audio/2",
+ "generated": "2026-11-02",
+ "show": "투-브로크-걸즈",
+ "folder": "tu-beurokeu-geoljeu",
+ "season": 6,
+ "episode": 19,
+ "episodeId": "s06e19",
+ "title": "19화 아기와 이런저런 문제들",
+ "source": {
+  "name": "투 브로크 걸즈 시즌 6 19화 스크립트.json",
+  "sha256": "df4daea0d87b01582c1f55f40d4c2eb55e5878f6b9a1abf7ea135f28956907fc",
+  "sentences": 399
+ },
+ "audio": {
+  "asset": "tu-beurokeu-geoljeu-s06e19.mp3",
+  "sourceName": "투 브로크 걸즈 시즌 6 19화 전체.mp3",
+  "durationSec": 1274.73,
+  "recordedSec": 1274.7,
+  "rate": 24000,
+  "channels": 1
+ },
+ "segments": [
+  {
+   "no": 1,
+   "start": 0.58,
+   "end": 1.88,
+   "en": "More lemonade, sir?",
+   "ko": "레모네이드 더 드려요, 손님?",
+   "recorded": 1
+  },
+  {
+   "no": 2,
+   "start": 2.17,
+   "end": 5.51,
+   "en": "Full disclosure, it's a pitcher of water we can't get the lemon taste out of.",
+   "ko": "사실은 레몬 향이 찌든 병에 맹물 담은 거예요",
+   "recorded": 1
+  },
+  {
+   "no": 3,
+   "start": 7.76,
+   "end": 8.59,
+   "en": "Sir?",
+   "ko": "손님?",
+   "recorded": 1
+  },
+  {
+   "no": 4,
+   "start": 12.47,
+   "end": 14.72,
+   "en": "Max, either this guy's pretending to be dead",
+   "ko": "맥스, 계산 안 하려고 죽은 척한 게 아니면",
+   "recorded": 1
+  },
+  {
+   "no": 5,
+   "start": 14.81,
+   "end": 15.72,
+   "en": "to get out of paying the check",
+   "ko": "맥스, 계산 안 하려고 죽은 척한 게 아니면",
+   "recorded": 1
+  },
+  {
+   "no": 6,
+   "start": 15.81,
+   "end": 17.77,
+   "en": "or Oleg's chili has killed again.",
+   "ko": "올렉의 칠리소스가 또 사람 잡았나 봐",
+   "recorded": 1
+  },
+  {
+   "no": 7,
+   "start": 18.94,
+   "end": 20.06,
+   "en": "This is my Earl mirror.",
+   "ko": "얼 전용 거울이야",
+   "recorded": 1
+  },
+  {
+   "no": 8,
+   "start": 20.44,
+   "end": 22.69,
+   "en": "I use it during naps to make sure he's still breathing.",
+   "ko": "이걸로 얼이 낮잠 잘 때 숨은 붙었나 확인해",
+   "recorded": 1
+  },
+  {
+   "no": 9,
+   "start": 23.32,
+   "end": 24.98,
+   "en": "And 80 percent of the time, he is.",
+   "ko": "숨 쉬는 확률이 80%야",
+   "recorded": 1
+  },
+  {
+   "no": 10,
+   "start": 31.82,
+   "end": 34.08,
+   "en": "Han, there's a dead body at Table 3,",
+   "ko": "한, 3번 테이블에 시체가 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 11,
+   "start": 34.83,
+   "end": 37.29,
+   "en": "the saddest place to die other than Table 2.",
+   "ko": "2번 테이블 다음으로 비참한 곳에서 죽었네요",
+   "recorded": 1
+  },
+  {
+   "no": 12,
+   "start": 38.33,
+   "end": 39.62,
+   "en": "Oleg, get out here!",
+   "ko": "올렉, 어서 나와 봐",
+   "recorded": 1
+  },
+  {
+   "no": 13,
+   "start": 39.87,
+   "end": 41.83,
+   "en": "Someone's deader than Max's emotions.",
+   "ko": "맥스의 감정보다 차갑게 식은 시체야",
+   "recorded": 1
+  },
+  {
+   "no": 14,
+   "start": 44,
+   "end": 45.8,
+   "en": "I really should throw away that chili.",
+   "ko": "이제 정말 칠리소스를 내다 버려야겠다",
+   "recorded": 1
+  },
+  {
+   "no": 15,
+   "start": 47.51,
+   "end": 50.3,
+   "en": "Let's prop him up outside with a Salvation Army bucket.",
+   "ko": "구세군 자선냄비 옆에 시체를 세워 두자",
+   "recorded": 1
+  },
+  {
+   "no": 16,
+   "start": 50.55,
+   "end": 52.76,
+   "en": "Whatever he collects, we split in the morning.",
+   "ko": "돈이 모이면 아침에 나눠 갖자고",
+   "recorded": 1
+  },
+  {
+   "no": 17,
+   "start": 53.43,
+   "end": 55.14,
+   "en": "Count me out.",
+   "ko": "난 빼 줘",
+   "recorded": 1
+  },
+  {
+   "no": 18,
+   "start": 55.64,
+   "end": 58.1,
+   "en": "If they catch the five of us with a dead body,",
+   "ko": "우리 다섯이 시체 가지고 작당하는 걸 들키면",
+   "recorded": 1
+  },
+  {
+   "no": 19,
+   "start": 58.18,
+   "end": 59.85,
+   "en": "you know they're going to blame the Black guy.",
+   "ko": "분명 흑인한테 뒤집어씌울걸",
+   "recorded": 1
+  },
+  {
+   "no": 20,
+   "start": 61.73,
+   "end": 63.81,
+   "en": "Okay, everyone, grab a limb and lift.",
+   "ko": "좋아, 팔다리 하나씩 잡고 들어 올리자",
+   "recorded": 1
+  },
+  {
+   "no": 21,
+   "start": 69.15,
+   "end": 70.11,
+   "en": "How's everything tasting?",
+   "ko": "음식은 입에 맞으세요?",
+   "recorded": 1
+  },
+  {
+   "no": 22,
+   "start": 82.62,
+   "end": 84.08,
+   "en": "Max, you're not going to believe it.",
+   "ko": "맥스, 이 상황이 믿겨?",
+   "recorded": 1
+  },
+  {
+   "no": 23,
+   "start": 84.46,
+   "end": 86.04,
+   "en": "Bobby's in the shower!",
+   "ko": "보비가 샤워하고 있어",
+   "recorded": 1
+  },
+  {
+   "no": 24,
+   "start": 86.55,
+   "end": 89.01,
+   "en": "That's how much he likes me, he's using our shower.",
+   "ko": "얼마나 나를 좋아하면 우리 집에서 샤워하겠니",
+   "recorded": 1
+  },
+  {
+   "no": 25,
+   "start": 90.72,
+   "end": 93.26,
+   "en": "He makes me so happy.",
+   "ko": "쟤 때문에 기분이 너무 좋아",
+   "recorded": 1
+  },
+  {
+   "no": 26,
+   "start": 93.93,
+   "end": 95.22,
+   "en": "Yeah, I heard.",
+   "ko": "나도 그렇게 들었어",
+   "recorded": 1
+  },
+  {
+   "no": 27,
+   "start": 97.43,
+   "end": 98.85,
+   "en": "It sounded like someone was trying to connect",
+   "ko": "둘이 재미 보는 소리가 모뎀 연결음 같았지 뭐야",
+   "recorded": 1
+  },
+  {
+   "no": 28,
+   "start": 98.93,
+   "end": 100.39,
+   "en": "with a dial-up modem out here.",
+   "ko": "둘이 재미 보는 소리가 모뎀 연결음 같았지 뭐야",
+   "recorded": 1
+  },
+  {
+   "no": 29,
+   "start": 102.89,
+   "end": 103.77,
+   "en": "Sorry.",
+   "ko": "미안",
+   "recorded": 1
+  },
+  {
+   "no": 30,
+   "start": 103.85,
+   "end": 107.32,
+   "en": "That's just what I sound like when I go online.",
+   "ko": "난 그런 소리를 낼 때 온라인 상태가 되지",
+   "recorded": 1
+  },
+  {
+   "no": 31,
+   "start": 108.53,
+   "end": 110.74,
+   "en": "But really, he makes me feel like that all the time.",
+   "ko": "보비 덕분에 항상 기분 좋은 건 진짜야",
+   "recorded": 1
+  },
+  {
+   "no": 32,
+   "start": 110.82,
+   "end": 113.45,
+   "en": "He's perfect. We're perfect.",
+   "ko": "완벽한 사람이지 우리는 완벽해",
+   "recorded": 1
+  },
+  {
+   "no": 33,
+   "start": 113.66,
+   "end": 115.95,
+   "en": "Caroline, you shouldn't get too carried away.",
+   "ko": "캐럴라인, 너무 들뜨지 마",
+   "recorded": 1
+  },
+  {
+   "no": 34,
+   "start": 116.03,
+   "end": 117.62,
+   "en": "Nothing is perfect.",
+   "ko": "완벽한 건 없어",
+   "recorded": 1
+  },
+  {
+   "no": 35,
+   "start": 117.7,
+   "end": 119.79,
+   "en": "Except that game I pitched for the Yankees.",
+   "ko": "내가 양키스 투수로 퍼펙트게임 던진 날 말고는",
+   "recorded": 1
+  },
+  {
+   "no": 36,
+   "start": 121.08,
+   "end": 122.75,
+   "en": "Actually, it is perfect.",
+   "ko": "완벽한 거 맞거든?",
+   "recorded": 1
+  },
+  {
+   "no": 37,
+   "start": 122.83,
+   "end": 124,
+   "en": "We're amazing together,",
+   "ko": "우린 궁합도 좋아",
+   "recorded": 1
+  },
+  {
+   "no": 38,
+   "start": 124.08,
+   "end": 126.29,
+   "en": "and I really don't want to hear from Negative Nancy.",
+   "ko": "'냉소적인 낸시'한테 한 소리 듣기 싫어",
+   "recorded": 1
+  },
+  {
+   "no": 39,
+   "start": 126.88,
+   "end": 128.67,
+   "en": "What the... who's Negative Nancy?",
+   "ko": "누구더러 냉소적인 낸시래?",
+   "recorded": 1
+  },
+  {
+   "no": 40,
+   "start": 129.8,
+   "end": 132.34,
+   "en": "Everyone knows I go by \"Negative Juggs McGee.\"",
+   "ko": "내가 '냉소적인 왕가슴'인 건 누구나 다 알아",
+   "recorded": 1
+  },
+  {
+   "no": 41,
+   "start": 133.8,
+   "end": 135.72,
+   "en": "I'm just saying you don't know him that well yet.",
+   "ko": "넌 아직 저 남자를 잘 몰라",
+   "recorded": 1
+  },
+  {
+   "no": 42,
+   "start": 136.47,
+   "end": 139.26,
+   "en": "I know what this is about, and it's not me and Bobby.",
+   "ko": "왜 이러는지 알겠다 나랑 보비 때문이 아니네",
+   "recorded": 1
+  },
+  {
+   "no": 43,
+   "start": 139.6,
+   "end": 140.72,
+   "en": "You're worried I'm going to get hurt",
+   "ko": "너랑 랜디가 겪은 일로 내가 상처받을까 봐 그래?",
+   "recorded": 1
+  },
+  {
+   "no": 44,
+   "start": 140.81,
+   "end": 142.6,
+   "en": "because of what happened between you and Randy.",
+   "ko": "너랑 랜디가 겪은 일로 내가 상처받을까 봐 그래?",
+   "recorded": 1
+  },
+  {
+   "no": 45,
+   "start": 142.85,
+   "end": 144.27,
+   "en": "It's not about that.",
+   "ko": "그런 게 아니야",
+   "recorded": 1
+  },
+  {
+   "no": 46,
+   "start": 144.52,
+   "end": 147.1,
+   "en": "I just know guys, and you haven't been in a relationship",
+   "ko": "난 남자에 빠삭한데 넌 벤 애플렉 리즈 시절 이후로 제대로 된 연애를 안 했잖아",
+   "recorded": 1
+  },
+  {
+   "no": 47,
+   "start": 147.19,
+   "end": 148.82,
+   "en": "since Ben was the best Affleck.",
+   "ko": "넌 벤 애플렉 리즈 시절 이후로 제대로 된 연애를 안 했잖아",
+   "recorded": 1
+  },
+  {
+   "no": 48,
+   "start": 150.65,
+   "end": 152.36,
+   "en": "Hey there. It's amazing.",
+   "ko": "안녕 묘하네, 씻기 전보다 더 꾀죄죄해진 것 같아",
+   "recorded": 1
+  },
+  {
+   "no": 49,
+   "start": 152.44,
+   "end": 154.82,
+   "en": "I'm somehow less clean now than when I went in.",
+   "ko": "묘하네, 씻기 전보다 더 꾀죄죄해진 것 같아",
+   "recorded": 1
+  },
+  {
+   "no": 50,
+   "start": 156.87,
+   "end": 158.99,
+   "en": "I got to get going, babe. I'll meet you at the dessert bar.",
+   "ko": "이만 가 볼게 디저트 바에서 보자",
+   "recorded": 1
+  },
+  {
+   "no": 51,
+   "start": 159.28,
+   "end": 161.08,
+   "en": "We're having lunch with his mom and his sister.",
+   "ko": "보비 어머님과 누나랑 점심 먹을 거야",
+   "recorded": 1
+  },
+  {
+   "no": 52,
+   "start": 161.16,
+   "end": 162.75,
+   "en": "I'm almost part of the family now.",
+   "ko": "이제 나도 가족이나 다름없는 듯해",
+   "recorded": 1
+  },
+  {
+   "no": 53,
+   "start": 162.95,
+   "end": 165.71,
+   "en": "Well, if you were part of the family, you'd be addicted to Diet Pepsi",
+   "ko": "우리 가족이면 다이어트 펩시에 중독돼 있고",
+   "recorded": 1
+  },
+  {
+   "no": 54,
+   "start": 165.79,
+   "end": 167.63,
+   "en": "and get into mall fights on Black Friday.",
+   "ko": "블랙 프라이데이엔 쇼핑몰에서 몸싸움이나 벌였을걸",
+   "recorded": 1
+  },
+  {
+   "no": 55,
+   "start": 168.5,
+   "end": 169.88,
+   "en": "Then, I might be a cousin.",
+   "ko": "나도 사촌은 되겠다",
+   "recorded": 1
+  },
+  {
+   "no": 56,
+   "start": 171.17,
+   "end": 172.34,
+   "en": "Oh, you know what? I'll walk you out.",
+   "ko": "내가 바래다줄게",
+   "recorded": 1
+  },
+  {
+   "no": 57,
+   "start": 172.42,
+   "end": 173.72,
+   "en": "If Homeless Larry tries to grab you,",
+   "ko": "노숙자 래리가 붙잡기라도 하면",
+   "recorded": 1
+  },
+  {
+   "no": 58,
+   "start": 173.8,
+   "end": 175.26,
+   "en": "- I can fend him off. - Yeah.",
+   "ko": "- 내가 쫓아내야지 - 그래",
+   "recorded": 1
+  },
+  {
+   "no": 59,
+   "start": 175.76,
+   "end": 177.89,
+   "en": "Oh, careful, he's got barbecue tongs now.",
+   "ko": "그 사람 바비큐용 집게 들고 있으니 조심해",
+   "recorded": 1
+  },
+  {
+   "no": 60,
+   "start": 184.06,
+   "end": 185.14,
+   "en": "Look at those two.",
+   "ko": "쟤네 좀 봐",
+   "recorded": 1
+  },
+  {
+   "no": 61,
+   "start": 185.39,
+   "end": 189.9,
+   "en": "That PDA is making me want to M-A-S-T-U...",
+   "ko": "애정 행각을 벌이는 걸 보니 나도 내 거시기에 애정 표현을 하고 싶...",
+   "recorded": 1
+  },
+  {
+   "no": 62,
+   "start": 191.27,
+   "end": 194.36,
+   "en": "I would stop you, but I doubt you know what comes after \"U.\"",
+   "ko": "일단 말려야겠는데 그 뒤에 뭔 짓을 할지 감이 안 오네요",
+   "recorded": 1
+  },
+  {
+   "no": 63,
+   "start": 195.24,
+   "end": 196.49,
+   "en": "Yeah. Usually me.",
+   "ko": "내가 상대해 주곤 해",
+   "recorded": 1
+  },
+  {
+   "no": 64,
+   "start": 201.2,
+   "end": 202.41,
+   "en": "What do you guys want?",
+   "ko": "뭐 하러 왔어요?",
+   "recorded": 1
+  },
+  {
+   "no": 65,
+   "start": 202.99,
+   "end": 206,
+   "en": "Well, we're looking for some entertainment.",
+   "ko": "있잖아 재밌는 걸 찾아다니고 있어",
+   "recorded": 1
+  },
+  {
+   "no": 66,
+   "start": 206.58,
+   "end": 209.38,
+   "en": "Oleg and I have binge-watched everything.",
+   "ko": "올렉하고 어지간한 건 다 정주행했거든",
+   "recorded": 1
+  },
+  {
+   "no": 67,
+   "start": 209.79,
+   "end": 212.42,
+   "en": "You know, we even watched the Santa Clarita Diet.",
+   "ko": "'산타클라리타 다이어트'도 봤어",
+   "recorded": 1
+  },
+  {
+   "no": 68,
+   "start": 212.71,
+   "end": 214.72,
+   "en": "Now, that's one diet I'm not going to stick to.",
+   "ko": "그런 다이어트는 절대 안 할 거지만",
+   "recorded": 1
+  },
+  {
+   "no": 69,
+   "start": 217.93,
+   "end": 219.68,
+   "en": "Bobby must have left his phone here.",
+   "ko": "보비가 휴대폰을 두고 갔나 봐요",
+   "recorded": 1
+  },
+  {
+   "no": 70,
+   "start": 220.85,
+   "end": 221.68,
+   "en": "Oh, crap.",
+   "ko": "이럴 수가",
+   "recorded": 1
+  },
+  {
+   "no": 71,
+   "start": 222.14,
+   "end": 222.97,
+   "en": "What's wrong?",
+   "ko": "왜 그래?",
+   "recorded": 1
+  },
+  {
+   "no": 72,
+   "start": 223.35,
+   "end": 225.77,
+   "en": "It's a text from Bobby's ex, Jessica.",
+   "ko": "보비 전 여친인 제시카가 문자했어요",
+   "recorded": 1
+  },
+  {
+   "no": 73,
+   "start": 226.06,
+   "end": 227.89,
+   "en": "It says, \"Call me about baby.\"",
+   "ko": "아기 문제가 있으니 전화하래요",
+   "recorded": 1
+  },
+  {
+   "no": 74,
+   "start": 228.98,
+   "end": 230.94,
+   "en": "Do Bobby and Jessica have a baby?",
+   "ko": "보비와 제시카 사이에 아기가 있다고요?",
+   "recorded": 1
+  },
+  {
+   "no": 75,
+   "start": 231.44,
+   "end": 232.77,
+   "en": "Are they going to have one?",
+   "ko": "아니면 출산 예정일까요?",
+   "recorded": 1
+  },
+  {
+   "no": 76,
+   "start": 233.02,
+   "end": 235.24,
+   "en": "And why does Bobby have a rose gold iPhone?",
+   "ko": "그리고 왜 보비 아이폰은 로즈 골드 색이죠?",
+   "recorded": 1
+  },
+  {
+   "no": 77,
+   "start": 236.78,
+   "end": 239.07,
+   "en": "Maybe he got it with his yearly mammogram.",
+   "ko": "유방암 검진 받고 사은품으로 받았나 봐",
+   "recorded": 1
+  },
+  {
+   "no": 78,
+   "start": 241.12,
+   "end": 243.7,
+   "en": "I knew this relationship was too good to be true.",
+   "ko": "어쩐지 너무 잘 풀린다 싶었어요",
+   "recorded": 1
+  },
+  {
+   "no": 79,
+   "start": 244.12,
+   "end": 248.67,
+   "en": "Looks like I'm not Negative Nancy, more like Reality Check Rita.",
+   "ko": "난 역시 냉소적인 낸시가 아니라 '팩폭 전문 리타'였어요",
+   "recorded": 1
+  },
+  {
+   "no": 80,
+   "start": 249.79,
+   "end": 251.84,
+   "en": "Then, why the hell have I been calling you Max?",
+   "ko": "그럼 난 왜 너를 여태껏 맥스라 불렀니?",
+   "recorded": 1
+  },
+  {
+   "no": 81,
+   "start": 254.84,
+   "end": 257.47,
+   "en": "Oh, just a heads-up, Bobby's family is on its way over,",
+   "ko": "미리 일러둘게 보비네 가족이 곧 오니까",
+   "recorded": 1
+  },
+  {
+   "no": 82,
+   "start": 257.55,
+   "end": 260.3,
+   "en": "so any X-rated puppeteering you have to do,",
+   "ko": "19금 저질 쇼 같은 거 하고 싶으면",
+   "recorded": 1
+  },
+  {
+   "no": 83,
+   "start": 260.39,
+   "end": 261.39,
+   "en": "now is the time.",
+   "ko": "지금 맘껏 해",
+   "recorded": 1
+  },
+  {
+   "no": 84,
+   "start": 262.43,
+   "end": 265.72,
+   "en": "Speaking of Bobby and people he knows,",
+   "ko": "보비랑 그 지인들 얘기가 나와서 말인데",
+   "recorded": 1
+  },
+  {
+   "no": 85,
+   "start": 266.81,
+   "end": 269.64,
+   "en": "does he still talk to what's-her-name, Jessica?",
+   "ko": "보비가 아직도 제시카란 애랑 연락한대?",
+   "recorded": 1
+  },
+  {
+   "no": 86,
+   "start": 270.56,
+   "end": 274.4,
+   "en": "No. She is long gone, like my bangs or democracy.",
+   "ko": "아니, 걔는 내 앞머리처럼 멀리 떠나갔어 민주주의도 그렇지",
+   "recorded": 1
+  },
+  {
+   "no": 87,
+   "start": 276.78,
+   "end": 278.15,
+   "en": "Bobby never brings her up.",
+   "ko": "보비는 걔 얘기도 안 꺼내",
+   "recorded": 1
+  },
+  {
+   "no": 88,
+   "start": 278.24,
+   "end": 279.95,
+   "en": "We just talk about our common interests,",
+   "ko": "우리 대화 주제는 공통 관심사뿐이야",
+   "recorded": 1
+  },
+  {
+   "no": 89,
+   "start": 280.03,
+   "end": 283.28,
+   "en": "like how much we like my hair or how pretty I am.",
+   "ko": "내 빛나는 머릿결이나 내 외모 얘길 하지",
+   "recorded": 1
+  },
+  {
+   "no": 90,
+   "start": 283.37,
+   "end": 285.83,
+   "en": "Yeah, but circling back to other people,",
+   "ko": "그건 알겠고 다른 사람 얘기로 돌아가 볼까?",
+   "recorded": 1
+  },
+  {
+   "no": 91,
+   "start": 285.91,
+   "end": 287.25,
+   "en": "which is very hard with you,",
+   "ko": "네겐 어렵겠지만 말이야",
+   "recorded": 1
+  },
+  {
+   "no": 92,
+   "start": 288.62,
+   "end": 290.96,
+   "en": "Jessica, do they talk? Text?",
+   "ko": "제시카랑 보비는 연락해? 문자는 해?",
+   "recorded": 1
+  },
+  {
+   "no": 93,
+   "start": 291.04,
+   "end": 292.21,
+   "en": "Share custody?",
+   "ko": "공동 양육도 한대?",
+   "recorded": 1
+  },
+  {
+   "no": 94,
+   "start": 293.63,
+   "end": 295.3,
+   "en": "Max, why are you asking about her?",
+   "ko": "맥스, 왜 자꾸 그 여자 얘기야?",
+   "recorded": 1
+  },
+  {
+   "no": 95,
+   "start": 295.38,
+   "end": 297.63,
+   "en": "Jessica is his ex-girlfriend.",
+   "ko": "제시카는 보비의 전 여친일 뿐이야",
+   "recorded": 1
+  },
+  {
+   "no": 96,
+   "start": 297.88,
+   "end": 300.43,
+   "en": "All Bobby's ever said about her is that she's a wedding planner",
+   "ko": "보비는 그 여자가 웨딩 플래너고 이제 상대할 일 없댔어",
+   "recorded": 1
+  },
+  {
+   "no": 97,
+   "start": 300.51,
+   "end": 301.55,
+   "en": "and she's out of his life.",
+   "ko": "보비는 그 여자가 웨딩 플래너고 이제 상대할 일 없댔어",
+   "recorded": 1
+  },
+  {
+   "no": 98,
+   "start": 302.22,
+   "end": 305.6,
+   "en": "I know that's hard for you to believe, like the moon landing.",
+   "ko": "네게는 뭐든 의심스럽겠지 달 착륙처럼 말이야",
+   "recorded": 1
+  },
+  {
+   "no": 99,
+   "start": 305.89,
+   "end": 306.72,
+   "en": "Hey!",
+   "ko": "야!",
+   "recorded": 1
+  },
+  {
+   "no": 100,
+   "start": 307.31,
+   "end": 308.6,
+   "en": "You never see their faces.",
+   "ko": "우주인들은 얼굴을 가렸고",
+   "recorded": 1
+  },
+  {
+   "no": 101,
+   "start": 308.68,
+   "end": 310.69,
+   "en": "They brought back no cheese. Just saying.",
+   "ko": "치즈도 없이 귀환했어 그냥 그렇다고",
+   "recorded": 1
+  },
+  {
+   "no": 102,
+   "start": 312.9,
+   "end": 314.31,
+   "en": "Now, please, just drop it.",
+   "ko": "이제 그만 좀 해",
+   "recorded": 1
+  },
+  {
+   "no": 103,
+   "start": 314.4,
+   "end": 316.02,
+   "en": "- Fine! - Fine.",
+   "ko": "- 알았슈! - 알겠슈",
+   "recorded": 1
+  },
+  {
+   "no": 104,
+   "start": 318.28,
+   "end": 319.65,
+   "en": "Oh, hi, Denise.",
+   "ko": "안녕하세요, 데니즈",
+   "recorded": 1
+  },
+  {
+   "no": 105,
+   "start": 320.15,
+   "end": 321.36,
+   "en": "Where's your mom and Bobby?",
+   "ko": "어머님과 보비는요?",
+   "recorded": 1
+  },
+  {
+   "no": 106,
+   "start": 321.57,
+   "end": 324.24,
+   "en": "Oh, we don't ride the subway together, in case there's a crash.",
+   "ko": "우리 가족은 사고를 대비해서 지하철을 따로 타",
+   "recorded": 1
+  },
+  {
+   "no": 107,
+   "start": 325.28,
+   "end": 327.29,
+   "en": "Somebody's got to be around for Black Friday.",
+   "ko": "블랙 프라이데이 때 활약할 누군가는 있어야지",
+   "recorded": 1
+  },
+  {
+   "no": 108,
+   "start": 328.12,
+   "end": 329.7,
+   "en": "Well, now that Bobby's sister is here,",
+   "ko": "보비 누나분이 오셨으니",
+   "recorded": 1
+  },
+  {
+   "no": 109,
+   "start": 329.79,
+   "end": 331.96,
+   "en": "I don't want to mess up your perfect brunch.",
+   "ko": "내가 있으면 완벽한 브런치가 엉망이 되겠네",
+   "recorded": 1
+  },
+  {
+   "no": 110,
+   "start": 332.25,
+   "end": 334,
+   "en": "I'm going to the diner, where the only perfect thing",
+   "ko": "난 식당에 갈게 쥐 잡는 올빼미 비율만 완벽한 곳이지",
+   "recorded": 1
+  },
+  {
+   "no": 111,
+   "start": 334.08,
+   "end": 335.67,
+   "en": "is the owl-to-rat ratio.",
+   "ko": "쥐 잡는 올빼미 비율만 완벽한 곳이지",
+   "recorded": 1
+  },
+  {
+   "no": 112,
+   "start": 337.25,
+   "end": 339.17,
+   "en": "So, you own this place?",
+   "ko": "네가 여기 사장이니?",
+   "recorded": 1
+  },
+  {
+   "no": 113,
+   "start": 339.42,
+   "end": 341.55,
+   "en": "Man, I'd love to be my own boss.",
+   "ko": "나도 사장 자리에 앉고 싶구나",
+   "recorded": 1
+  },
+  {
+   "no": 114,
+   "start": 341.63,
+   "end": 343.39,
+   "en": "Mine treats me like garbage.",
+   "ko": "내 상사는 나를 쓰레기 취급 해",
+   "recorded": 1
+  },
+  {
+   "no": 115,
+   "start": 343.47,
+   "end": 346.39,
+   "en": "If I want to get freaky with the UPS guy on my break,",
+   "ko": "쉬는 시간에 UPS 기사랑 떡을 치든 말든",
+   "recorded": 1
+  },
+  {
+   "no": 116,
+   "start": 346.47,
+   "end": 347.81,
+   "en": "that's my time.",
+   "ko": "난 간섭받기 싫어",
+   "recorded": 1
+  },
+  {
+   "no": 117,
+   "start": 349.14,
+   "end": 351.89,
+   "en": "So, what is it you do, besides the UPS guy?",
+   "ko": "무슨 일 하시는데요? UPS 기사랑 하는 거 말고요",
+   "recorded": 1
+  },
+  {
+   "no": 118,
+   "start": 352.6,
+   "end": 355.36,
+   "en": "I work the counter at the Mail Boxes and Other Things.",
+   "ko": "'메일 박스와 이것저것' 카운터에서 일해",
+   "recorded": 1
+  },
+  {
+   "no": 119,
+   "start": 355.44,
+   "end": 357.94,
+   "en": "It's like Mail Boxes Etc, but we have other things.",
+   "ko": "메일 박스 Etc 같은 곳인데 정말 이것저것 하지",
+   "recorded": 1
+  },
+  {
+   "no": 120,
+   "start": 359.32,
+   "end": 362.45,
+   "en": "I know it sounds cool, but my boss is always on me.",
+   "ko": "괜찮아 보일지 몰라도 상사가 항상 날 갈궈",
+   "recorded": 1
+  },
+  {
+   "no": 121,
+   "start": 362.78,
+   "end": 364.24,
+   "en": "Well, maybe you should talk to your boss.",
+   "ko": "상사랑 대화해 보세요",
+   "recorded": 1
+  },
+  {
+   "no": 122,
+   "start": 364.32,
+   "end": 366.58,
+   "en": "You know, tell him how you feel, stand up for yourself.",
+   "ko": "어떤 기분인지 당당히 말하는 거죠",
+   "recorded": 1
+  },
+  {
+   "no": 123,
+   "start": 366.87,
+   "end": 368.33,
+   "en": "I'm not great with confrontation,",
+   "ko": "난 정면으로 마주하는 건 잘 못해",
+   "recorded": 1
+  },
+  {
+   "no": 124,
+   "start": 368.41,
+   "end": 371.16,
+   "en": "partially because I had bad depth perception.",
+   "ko": "거리 감각이 나쁜 것도 한몫한단다",
+   "recorded": 1
+  },
+  {
+   "no": 125,
+   "start": 371.54,
+   "end": 374.67,
+   "en": "Like, I have no idea how far away you are right now.",
+   "ko": "지금 너랑 나 사이 거리도 감이 안 잡혀",
+   "recorded": 1
+  },
+  {
+   "no": 126,
+   "start": 378.5,
+   "end": 379.42,
+   "en": "I'm right here.",
+   "ko": "저 여기 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 127,
+   "start": 381.05,
+   "end": 382.22,
+   "en": "On second base.",
+   "ko": "2루쯤 되겠네요",
+   "recorded": 1
+  },
+  {
+   "no": 128,
+   "start": 385.43,
+   "end": 387.55,
+   "en": "Well, I think you're great,",
+   "ko": "제가 보기에 데니즈는 훌륭해요",
+   "recorded": 1
+  },
+  {
+   "no": 129,
+   "start": 387.64,
+   "end": 389.6,
+   "en": "and not inappropriate at all.",
+   "ko": "부적절한 분도 아니고요",
+   "recorded": 1
+  },
+  {
+   "no": 130,
+   "start": 390.81,
+   "end": 393.02,
+   "en": "And if your boss can't see that, well, maybe you should quit.",
+   "ko": "상사가 데니즈의 진가를 모르면 일 그만두세요",
+   "recorded": 1
+  },
+  {
+   "no": 131,
+   "start": 395.52,
+   "end": 398.27,
+   "en": "So, the gentleman who looked like Abraham Lincoln,",
+   "ko": "에이브러햄 링컨 닮은 그 남자 말인데",
+   "recorded": 1
+  },
+  {
+   "no": 132,
+   "start": 398.65,
+   "end": 400.98,
+   "en": "was that a hipster or an Orthodox Jew?",
+   "ko": "힙스터였니? 아니면 정통 유대인이었니?",
+   "recorded": 1
+  },
+  {
+   "no": 133,
+   "start": 402.57,
+   "end": 404.82,
+   "en": "Either way, I don't understand why you gave him a dollar.",
+   "ko": "아무튼 그 사람에게 1달러를 왜 주셨는지 의문이네요",
+   "recorded": 1
+  },
+  {
+   "no": 134,
+   "start": 408.03,
+   "end": 409.66,
+   "en": "Mom, I quit!",
+   "ko": "엄마 나 일 그만둘래요",
+   "recorded": 1
+  },
+  {
+   "no": 135,
+   "start": 412.5,
+   "end": 414.33,
+   "en": "Wait, your mom is your boss?",
+   "ko": "어머님이 직장 상사세요?",
+   "recorded": 1
+  },
+  {
+   "no": 136,
+   "start": 414.62,
+   "end": 415.92,
+   "en": "Is it the UPS man?",
+   "ko": "UPS 기사 때문이니?",
+   "recorded": 1
+  },
+  {
+   "no": 137,
+   "start": 416.12,
+   "end": 417.67,
+   "en": "He's your godfather. It's untoward.",
+   "ko": "네 대부님과 파렴치한 짓은 안 돼!",
+   "recorded": 1
+  },
+  {
+   "no": 138,
+   "start": 419.38,
+   "end": 420.46,
+   "en": "Where's this coming from?",
+   "ko": "난데없이 왜 이래?",
+   "recorded": 1
+  },
+  {
+   "no": 139,
+   "start": 420.84,
+   "end": 423.92,
+   "en": "From my new best friend and women-in-business mentor,",
+   "ko": "새로 사귄 절친이자 여성 사업가 멘토 덕분이죠",
+   "recorded": 1
+  },
+  {
+   "no": 140,
+   "start": 424.34,
+   "end": 425.18,
+   "en": "Caroline.",
+   "ko": "캐럴라인이요",
+   "recorded": 1
+  },
+  {
+   "no": 141,
+   "start": 430.39,
+   "end": 432.93,
+   "en": "You told my daughter to quit working for me?",
+   "ko": "내 밑에서 일하지 말라고 딸애를 부추겼니?",
+   "recorded": 1
+  },
+  {
+   "no": 142,
+   "start": 433.52,
+   "end": 435.35,
+   "en": "I'm sure she meant a different Caroline.",
+   "ko": "다른 캐럴라인을 말했겠죠",
+   "recorded": 1
+  },
+  {
+   "no": 143,
+   "start": 436.14,
+   "end": 437.02,
+   "en": "I don't know.",
+   "ko": "글쎄요",
+   "recorded": 1
+  },
+  {
+   "no": 144,
+   "start": 437.1,
+   "end": 439.52,
+   "en": "Everything got blurry after she touched my boobs.",
+   "ko": "데니즈가 제 가슴을 만진 뒤로는 기억이 흐릿해요",
+   "recorded": 1
+  },
+  {
+   "no": 145,
+   "start": 443.36,
+   "end": 445.99,
+   "en": "Han, I'm about to say what you said to me",
+   "ko": "한 19금 영화 보려고 할 때 내게 했던 말 그대로 할게요",
+   "recorded": 1
+  },
+  {
+   "no": 146,
+   "start": 446.07,
+   "end": 447.86,
+   "en": "when you were trying to get into an R-rated movie.",
+   "ko": "19금 영화 보려고 할 때 내게 했던 말 그대로 할게요",
+   "recorded": 1
+  },
+  {
+   "no": 147,
+   "start": 448.53,
+   "end": 449.41,
+   "en": "I need your help.",
+   "ko": "'나 좀 도와줘요'",
+   "recorded": 1
+  },
+  {
+   "no": 148,
+   "start": 450.33,
+   "end": 453.66,
+   "en": "I told you three times, I don't fit up drain pipes.",
+   "ko": "세 번이나 말했잖아 난 배수관에 못 들어가",
+   "recorded": 1
+  },
+  {
+   "no": 149,
+   "start": 454.7,
+   "end": 456.37,
+   "en": "Listen, I just saw this text on Bobby's phone",
+   "ko": "보비 휴대폰에 온 문자를 봤는데 전 여친 제시카가 보낸 거였어요",
+   "recorded": 1
+  },
+  {
+   "no": 150,
+   "start": 456.46,
+   "end": 457.96,
+   "en": "from his ex-girlfriend, Jessica.",
+   "ko": "전 여친 제시카가 보낸 거였어요",
+   "recorded": 1
+  },
+  {
+   "no": 151,
+   "start": 458.04,
+   "end": 460.71,
+   "en": "I think they might have a secret baby together.",
+   "ko": "숨겨 둔 아기가 있는 듯해요",
+   "recorded": 1
+  },
+  {
+   "no": 152,
+   "start": 460.96,
+   "end": 463.76,
+   "en": "Wow, that would really devastate Caroline.",
+   "ko": "캐럴라인이 상심이 엄청 크겠다",
+   "recorded": 1
+  },
+  {
+   "no": 153,
+   "start": 464.51,
+   "end": 467.97,
+   "en": "More importantly, Bobby and I are rose gold buddies.",
+   "ko": "근데 무엇보다도 보비랑 내가 로즈 골드 동지였네",
+   "recorded": 1
+  },
+  {
+   "no": 154,
+   "start": 469.18,
+   "end": 471.64,
+   "en": "I just have to make sure before I say anything",
+   "ko": "캐럴라인이 멘붕 오기 전에 자초지종을 확인해야 해요",
+   "recorded": 1
+  },
+  {
+   "no": 155,
+   "start": 471.72,
+   "end": 472.76,
+   "en": "to panic Caroline.",
+   "ko": "캐럴라인이 멘붕 오기 전에 자초지종을 확인해야 해요",
+   "recorded": 1
+  },
+  {
+   "no": 156,
+   "start": 472.85,
+   "end": 474.31,
+   "en": "I need to do some detective work,",
+   "ko": "수사 좀 해야겠으니까",
+   "recorded": 1
+  },
+  {
+   "no": 157,
+   "start": 474.39,
+   "end": 476.77,
+   "en": "so you and I are going to go down to Jessica's wedding planning business",
+   "ko": "제시카의 웨딩 플래너 업체에 나랑 가서 부부인 척해요",
+   "recorded": 1
+  },
+  {
+   "no": 158,
+   "start": 476.85,
+   "end": 478.06,
+   "en": "and pretend we're a couple.",
+   "ko": "제시카의 웨딩 플래너 업체에 나랑 가서 부부인 척해요",
+   "recorded": 1
+  },
+  {
+   "no": 159,
+   "start": 478.14,
+   "end": 479.56,
+   "en": "Obviously, I'll be the groom.",
+   "ko": "물론 내가 신랑 역이고요",
+   "recorded": 1
+  },
+  {
+   "no": 160,
+   "start": 480.86,
+   "end": 484.44,
+   "en": "Max, this might come as a surprise to you, but I'm a very busy man.",
+   "ko": "맥스, 믿기 힘들겠지만 난 무지 바쁜 몸이야",
+   "recorded": 1
+  },
+  {
+   "no": 161,
+   "start": 484.65,
+   "end": 487.11,
+   "en": "I don't have time for your sophomoric high jinks.",
+   "ko": "유치한 장난에 어울릴 시간 따위는 없어",
+   "recorded": 1
+  },
+  {
+   "no": 162,
+   "start": 487.2,
+   "end": 490.78,
+   "en": "That's what they said to Adam Sandler, and it only made him richer.",
+   "ko": "아담 샌들러도 그런 말 듣고 후에 더 부자가 됐죠",
+   "recorded": 1
+  },
+  {
+   "no": 163,
+   "start": 491.83,
+   "end": 493.74,
+   "en": "I'm flattered I was your first choice.",
+   "ko": "1순위로 나를 정해서 영광이네",
+   "recorded": 1
+  },
+  {
+   "no": 164,
+   "start": 494.16,
+   "end": 496.66,
+   "en": "Man, she asked me five people ago.",
+   "ko": "얘가 부탁한 사람만 나 포함해 다섯이 넘어",
+   "recorded": 1
+  },
+  {
+   "no": 165,
+   "start": 496.91,
+   "end": 500.54,
+   "en": "I think she was down to you or a broom, and the broom was busy.",
+   "ko": "최종 후보로 자네와 빗자루를 점찍었는데 빗자루가 바빴나 보군",
+   "recorded": 1
+  },
+  {
+   "no": 166,
+   "start": 502.46,
+   "end": 505.84,
+   "en": "If I'm doing this, we have to use our best acting skills,",
+   "ko": "이왕 할 거면 명품 연기를 선보여야 할걸",
+   "recorded": 1
+  },
+  {
+   "no": 167,
+   "start": 505.92,
+   "end": 508.63,
+   "en": "'cause who's going to believe you landed me?",
+   "ko": "명품 연기를 선보여야 할걸 네가 날 꼬셨다고 누가 믿어 주겠어?",
+   "recorded": 1
+  },
+  {
+   "no": 168,
+   "start": 510.09,
+   "end": 512.93,
+   "en": "Really wish Steve the Broom didn't have Pilates at 4.",
+   "ko": "빗자루 스티브가 하필 4시에 필라테스라니",
+   "recorded": 1
+  },
+  {
+   "no": 169,
+   "start": 515.47,
+   "end": 518.14,
+   "en": "I'm so sorry, Mrs. Ferraro.",
+   "ko": "정말 죄송해요, 어머님",
+   "recorded": 1
+  },
+  {
+   "no": 170,
+   "start": 518.23,
+   "end": 521.73,
+   "en": "I had no idea you were the awful boss that was making her life miserable.",
+   "ko": "데니즈의 삶을 망치는 상사가 어머님인 줄 몰랐어요",
+   "recorded": 1
+  },
+  {
+   "no": 171,
+   "start": 523.06,
+   "end": 524.11,
+   "en": "Bobby, why didn't you tell me",
+   "ko": "보비, 왜 나한테 어머님이",
+   "recorded": 1
+  },
+  {
+   "no": 172,
+   "start": 524.19,
+   "end": 526.61,
+   "en": "your mom owns a Mail Boxes and Other Things?",
+   "ko": "보비, 왜 나한테 어머님이 메일 박스와 이것저것 사장님이라고 말 안 했어?",
+   "recorded": 1
+  },
+  {
+   "no": 173,
+   "start": 526.82,
+   "end": 529.2,
+   "en": "I didn't want you to date me for the unlimited bubble wrap.",
+   "ko": "무제한 뽁뽁이를 노리고 나랑 사귀는 건 싫었어",
+   "recorded": 1
+  },
+  {
+   "no": 174,
+   "start": 529.95,
+   "end": 531.7,
+   "en": "Denise can't cope out in the world.",
+   "ko": "데니즈는 세상 밖에 나가면 혼자 못 살아",
+   "recorded": 1
+  },
+  {
+   "no": 175,
+   "start": 531.78,
+   "end": 534.7,
+   "en": "You know how many times she's touched our neighbor's electric fence.",
+   "ko": "옆집 전기 울타리를 얼마나 건드려 댔는지 알잖니?",
+   "recorded": 1
+  },
+  {
+   "no": 176,
+   "start": 534.78,
+   "end": 538.04,
+   "en": "To be fair, they installed it to keep her from falling in their pool.",
+   "ko": "누나가 자기네 수영장에 빠질까 봐 설치했었죠",
+   "recorded": 1
+  },
+  {
+   "no": 177,
+   "start": 539.04,
+   "end": 540.79,
+   "en": "Well, you did this. You take care of it.",
+   "ko": "네가 자초했으니 알아서 수습해",
+   "recorded": 1
+  },
+  {
+   "no": 178,
+   "start": 540.87,
+   "end": 542.29,
+   "en": "She's your responsibility now.",
+   "ko": "우리 딸 책임져",
+   "recorded": 1
+  },
+  {
+   "no": 179,
+   "start": 542.5,
+   "end": 544.5,
+   "en": "Bobby, bring home some desserts for me.",
+   "ko": "보비, 집에 올 때 디저트 사 와",
+   "recorded": 1
+  },
+  {
+   "no": 180,
+   "start": 545.13,
+   "end": 546.17,
+   "en": "From Dunkin'!",
+   "ko": "던킨 도너츠 걸로",
+   "recorded": 1
+  },
+  {
+   "no": 181,
+   "start": 547.84,
+   "end": 549.55,
+   "en": "Bobby, I am so sorry.",
+   "ko": "보비, 정말 미안해",
+   "recorded": 1
+  },
+  {
+   "no": 182,
+   "start": 549.76,
+   "end": 552.01,
+   "en": "I don't want our first fight to be over a misunderstanding.",
+   "ko": "고작 오해 때문에 첫 사랑싸움을 하고 싶진 않아",
+   "recorded": 1
+  },
+  {
+   "no": 183,
+   "start": 552.09,
+   "end": 555.89,
+   "en": "I want it to be about something important, like if you want a soul patch.",
+   "ko": "더 의미 있는 문제로 싸우고 싶어 입술 밑 수염 같은 걸로",
+   "recorded": 1
+  },
+  {
+   "no": 184,
+   "start": 556.77,
+   "end": 558.81,
+   "en": "We're not fighting. This is a bump.",
+   "ko": "싸운 게 아니라 살짝 부딪친 것뿐이지",
+   "recorded": 1
+  },
+  {
+   "no": 185,
+   "start": 559.1,
+   "end": 560.23,
+   "en": "I think you're overreacting.",
+   "ko": "당신이 너무 예민한 거야",
+   "recorded": 1
+  },
+  {
+   "no": 186,
+   "start": 560.98,
+   "end": 563.81,
+   "en": "- Then, why are you yelling? - I'm not yelling.",
+   "ko": "근데 왜 소리 질러? 소리 안 질렀어",
+   "recorded": 1
+  },
+  {
+   "no": 187,
+   "start": 564.56,
+   "end": 566.48,
+   "en": "Man, what's with all the yelling?",
+   "ko": "왜들 소리 지르고 난리야?",
+   "recorded": 1
+  },
+  {
+   "no": 188,
+   "start": 567.32,
+   "end": 571.03,
+   "en": "Oh, Oleg, let's see where this goes.",
+   "ko": "올렉 어떻게 전개되나 지켜보자",
+   "recorded": 1
+  },
+  {
+   "no": 189,
+   "start": 571.57,
+   "end": 574.07,
+   "en": "It's already better than everything on Amazon.",
+   "ko": "아마존 드라마보다 벌써 흥미진진하네",
+   "recorded": 1
+  },
+  {
+   "no": 190,
+   "start": 575.24,
+   "end": 578.04,
+   "en": "Just wish it was a little bit more Game of Thrones-y.",
+   "ko": "'왕좌의 게임' 느낌이 더 묻어나면 좋겠어",
+   "recorded": 1
+  },
+  {
+   "no": 191,
+   "start": 578.12,
+   "end": 580.37,
+   "en": "And by that, I mean a little more topless.",
+   "ko": "윗도리를 벗었으면 좋겠다는 거지 그래서 내 말은...",
+   "recorded": 1
+  },
+  {
+   "no": 192,
+   "start": 580.46,
+   "end": 582.79,
+   "en": "And by that I mean, oh, Bobby.",
+   "ko": "그래서 내 말은... 보비가 벗어야지",
+   "recorded": 1
+  },
+  {
+   "no": 193,
+   "start": 584.67,
+   "end": 585.71,
+   "en": "Caroline, we're not fighting.",
+   "ko": "캐럴라인, 우린 안 싸웠어",
+   "recorded": 1
+  },
+  {
+   "no": 194,
+   "start": 586.75,
+   "end": 590.17,
+   "en": "But please, don't get in the middle of my ma and Denise again.",
+   "ko": "근데 엄마와 누나 사이에 다시는 참견하지 마",
+   "recorded": 1
+  },
+  {
+   "no": 195,
+   "start": 590.26,
+   "end": 593.43,
+   "en": "My aunt tried once. Now, she's really scared of ceiling fans.",
+   "ko": "우리 이모가 그러다가 천장 선풍기 공포증이 생겼어",
+   "recorded": 1
+  },
+  {
+   "no": 196,
+   "start": 594.26,
+   "end": 596.39,
+   "en": "I got to go. I still can't find my phone.",
+   "ko": "가 볼게 아직 내 휴대폰 못 찾았어",
+   "recorded": 1
+  },
+  {
+   "no": 197,
+   "start": 597.51,
+   "end": 599.68,
+   "en": "Oleg, this is our new show.",
+   "ko": "올렉, 새로 볼 드라마를 찾았어",
+   "recorded": 1
+  },
+  {
+   "no": 198,
+   "start": 600.23,
+   "end": 602.1,
+   "en": "Grab the popcorn from my purse.",
+   "ko": "내 가방에서 팝콘 꺼내",
+   "recorded": 1
+  },
+  {
+   "no": 199,
+   "start": 603.77,
+   "end": 605.65,
+   "en": "You want cheddar cheese or kettle corn?",
+   "ko": "체더치즈 맛하고 케틀콘 중 뭐 줄까?",
+   "recorded": 1
+  },
+  {
+   "no": 200,
+   "start": 607.11,
+   "end": 608.57,
+   "en": "You know I can hear you, right?",
+   "ko": "나 귀 안 먹었거든요?",
+   "recorded": 1
+  },
+  {
+   "no": 201,
+   "start": 611.11,
+   "end": 613.15,
+   "en": "Okay, this must be Jessica's office.",
+   "ko": "여기가 분명 제시카 사무실이에요",
+   "recorded": 1
+  },
+  {
+   "no": 202,
+   "start": 613.36,
+   "end": 615.66,
+   "en": "Oh, here, better put this on for the bit.",
+   "ko": "자, 이걸 끼워야 더 그럴듯할 거야",
+   "recorded": 1
+  },
+  {
+   "no": 203,
+   "start": 615.91,
+   "end": 617.53,
+   "en": "This was smuggled out of North Korea",
+   "ko": "위대하신 증조부님이 북한에서 밀반입한 건데",
+   "recorded": 1
+  },
+  {
+   "no": 204,
+   "start": 617.62,
+   "end": 620.08,
+   "en": "by my great-grandfather in his great backside.",
+   "ko": "위대하신 증조부님이 북한에서 밀반입한 건데 위대하신 뒷구멍에 숨기셨지",
+   "recorded": 1
+  },
+  {
+   "no": 205,
+   "start": 621.45,
+   "end": 623.62,
+   "en": "Oh, the classic tush cut.",
+   "ko": "그 유명한 엉덩이 컷이네요",
+   "recorded": 1
+  },
+  {
+   "no": 206,
+   "start": 625.83,
+   "end": 627.79,
+   "en": "Now, remember, we're detectives.",
+   "ko": "지금 우리는 형사란 거 명심해요",
+   "recorded": 1
+  },
+  {
+   "no": 207,
+   "start": 627.88,
+   "end": 630.46,
+   "en": "We're like Cagney and the only guy I could get to come with me.",
+   "ko": "형사 콤비 캐그니와 내가 억지로 끌고 온 아무나요",
+   "recorded": 1
+  },
+  {
+   "no": 208,
+   "start": 632.55,
+   "end": 633.67,
+   "en": "Hi.",
+   "ko": "안녕하세요",
+   "recorded": 1
+  },
+  {
+   "no": 209,
+   "start": 633.76,
+   "end": 635.89,
+   "en": "You must be Max and Han.",
+   "ko": "맥스와 한이시군요",
+   "recorded": 1
+  },
+  {
+   "no": 210,
+   "start": 636.18,
+   "end": 637.43,
+   "en": "I'm Jessica.",
+   "ko": "저는 제시카예요",
+   "recorded": 1
+  },
+  {
+   "no": 211,
+   "start": 637.72,
+   "end": 639.56,
+   "en": "Thanks so much for coming in.",
+   "ko": "와 주셔서 감사합니다",
+   "recorded": 1
+  },
+  {
+   "no": 212,
+   "start": 639.81,
+   "end": 642.89,
+   "en": "Oh, you guys are so super cute.",
+   "ko": "너무나 귀여운 한 쌍이시네요",
+   "recorded": 1
+  },
+  {
+   "no": 213,
+   "start": 643.93,
+   "end": 647.23,
+   "en": "How does our cuteness compare to, say, a baby?",
+   "ko": "저희가 얼마나 귀여운지 모르겠네요 아기 정도일까요?",
+   "recorded": 1
+  },
+  {
+   "no": 214,
+   "start": 647.61,
+   "end": 649.32,
+   "en": "Wow, you're thinking ahead.",
+   "ko": "벌써 미래를 그리시네요",
+   "recorded": 1
+  },
+  {
+   "no": 215,
+   "start": 649.69,
+   "end": 651.9,
+   "en": "Or are you expecting a little one?",
+   "ko": "아니면 곧 출산하실 예정인가요?",
+   "recorded": 1
+  },
+  {
+   "no": 216,
+   "start": 652.69,
+   "end": 654.45,
+   "en": "I've already got a little one.",
+   "ko": "아이라면 여기 있잖아요",
+   "recorded": 1
+  },
+  {
+   "no": 217,
+   "start": 656.07,
+   "end": 656.95,
+   "en": "What about you?",
+   "ko": "그쪽은 어때요?",
+   "recorded": 1
+  },
+  {
+   "no": 218,
+   "start": 657.53,
+   "end": 659.78,
+   "en": "Making fun of my size is kind of our thing.",
+   "ko": "제 체구로 놀리는 데에 우린 이미 도가 텄죠",
+   "recorded": 1
+  },
+  {
+   "no": 219,
+   "start": 660.12,
+   "end": 661.95,
+   "en": "Like, making sweet love.",
+   "ko": "달달하게 사랑 나누는 것처럼요",
+   "recorded": 1
+  },
+  {
+   "no": 220,
+   "start": 667.42,
+   "end": 669.54,
+   "en": "So I'm with child. Are you?",
+   "ko": "아무튼 전 애가 있어요 그쪽은요?",
+   "recorded": 1
+  },
+  {
+   "no": 221,
+   "start": 670.46,
+   "end": 671.67,
+   "en": "Actually, I'm--",
+   "ko": "사실 저는...",
+   "recorded": 1
+  },
+  {
+   "no": 222,
+   "start": 671.75,
+   "end": 672.84,
+   "en": "So, for the wedding,",
+   "ko": "결혼식 말인데요",
+   "recorded": 1
+  },
+  {
+   "no": 223,
+   "start": 672.92,
+   "end": 675.05,
+   "en": "I was thinking of a nature theme.",
+   "ko": "자연을 테마로 했으면 좋겠어요",
+   "recorded": 1
+  },
+  {
+   "no": 224,
+   "start": 675.43,
+   "end": 677.43,
+   "en": "Something in the park, whimsical of course,",
+   "ko": "공원 같은 데서 몽환적인 분위기로 등불과 꽃 장식을 하는 거죠",
+   "recorded": 1
+  },
+  {
+   "no": 225,
+   "start": 677.51,
+   "end": 679.6,
+   "en": "with lanterns and flowers, a big tent.",
+   "ko": "몽환적인 분위기로 등불과 꽃 장식을 하는 거죠 큰 텐트도 치고요",
+   "recorded": 1
+  },
+  {
+   "no": 226,
+   "start": 680.18,
+   "end": 681.18,
+   "en": "Oh, really?",
+   "ko": "진심이야?",
+   "recorded": 1
+  },
+  {
+   "no": 227,
+   "start": 681.51,
+   "end": 683.52,
+   "en": "You want a big top, Pee-wee? Jessica was talking.",
+   "ko": "꼬맹이 주제에 큰 천막을? 제시카 말 끊지 마",
+   "recorded": 1
+  },
+  {
+   "no": 228,
+   "start": 685.1,
+   "end": 686.14,
+   "en": "Sorry, dear.",
+   "ko": "죄송해요",
+   "recorded": 1
+  },
+  {
+   "no": 229,
+   "start": 686.23,
+   "end": 688.86,
+   "en": "The old ball and chain hates when I get a word in.",
+   "ko": "마누라는 제가 한마디하는 것도 싫어해요",
+   "recorded": 1
+  },
+  {
+   "no": 230,
+   "start": 689.52,
+   "end": 690.9,
+   "en": "Sign me up for a lifetime.",
+   "ko": "평생 이럴 팔자예요",
+   "recorded": 1
+  },
+  {
+   "no": 231,
+   "start": 693.07,
+   "end": 696.2,
+   "en": "Sorry, I missed what you were saying about having a baby.",
+   "ko": "죄송한데 아기 계획 얘기를 제대로 못 들었네요",
+   "recorded": 1
+  },
+  {
+   "no": 232,
+   "start": 696.65,
+   "end": 698.2,
+   "en": "We're not here to talk about me.",
+   "ko": "제 얘기로 오신 게 아니잖아요",
+   "recorded": 1
+  },
+  {
+   "no": 233,
+   "start": 698.28,
+   "end": 700.33,
+   "en": "Let's talk about you and your affair.",
+   "ko": "여러분과 여러분의 바람을 들어 보죠",
+   "recorded": 1
+  },
+  {
+   "no": 234,
+   "start": 700.62,
+   "end": 703.04,
+   "en": "Oh, I'm definitely going to have one.",
+   "ko": "바람은 꼭 피워 보고 싶네요",
+   "recorded": 1
+  },
+  {
+   "no": 235,
+   "start": 708.5,
+   "end": 710.21,
+   "en": "Thanks for texting, Caroline.",
+   "ko": "문자해 줘서 고마워 캐럴라인",
+   "recorded": 1
+  },
+  {
+   "no": 236,
+   "start": 710.59,
+   "end": 713.25,
+   "en": "I've been a little lost since you made me quit my job with Ma.",
+   "ko": "너 때문에 엄마 회사 나온 뒤로 살짝 방황했어",
+   "recorded": 1
+  },
+  {
+   "no": 237,
+   "start": 713.84,
+   "end": 715.67,
+   "en": "Mostly 'cause I couldn't find the L train.",
+   "ko": "사실은 L선을 못 찾았던 게 크지",
+   "recorded": 1
+  },
+  {
+   "no": 238,
+   "start": 716.42,
+   "end": 717.97,
+   "en": "But I saw a guy kill a chicken.",
+   "ko": "어떤 사람은 닭을 잡더라",
+   "recorded": 1
+  },
+  {
+   "no": 239,
+   "start": 719.55,
+   "end": 723.1,
+   "en": "I thought you and I could get together and figure out your next career move,",
+   "ko": "같이 데니즈의 이직 문제를 논의했으면 해요",
+   "recorded": 1
+  },
+  {
+   "no": 240,
+   "start": 723.39,
+   "end": 726.52,
+   "en": "which does not necessarily need to be forward.",
+   "ko": "그렇다고 꼭 앞으로 나아갈 필요는 없어요",
+   "recorded": 1
+  },
+  {
+   "no": 241,
+   "start": 727.56,
+   "end": 729.4,
+   "en": "No, I'm not going back to my ma's store",
+   "ko": "엄마 회사에 돌아갈 일은 없어",
+   "recorded": 1
+  },
+  {
+   "no": 242,
+   "start": 729.48,
+   "end": 732.69,
+   "en": "no matter how much I miss hiding in boxes and scaring people.",
+   "ko": "상자에 숨어서 사람들 놀래는 게 그립긴 하지만",
+   "recorded": 1
+  },
+  {
+   "no": 243,
+   "start": 733.78,
+   "end": 736.9,
+   "en": "Well, let's brainstorm on your next career move.",
+   "ko": "어쨌든 데니즈의 이직에 대해 머리를 맞대 볼까요?",
+   "recorded": 1
+  },
+  {
+   "no": 244,
+   "start": 738.49,
+   "end": 740.03,
+   "en": "I've always wanted to be a model.",
+   "ko": "난 항상 모델이 되고 싶었어",
+   "recorded": 1
+  },
+  {
+   "no": 245,
+   "start": 741.95,
+   "end": 744.16,
+   "en": "I've been told I look great with my pants down.",
+   "ko": "바지 내렸을 때 예쁘다는 소릴 듣곤 했거든",
+   "recorded": 1
+  },
+  {
+   "no": 246,
+   "start": 747.58,
+   "end": 749.17,
+   "en": "You are more than just a body.",
+   "ko": "데니즈의 가치는 몸 그 이상이에요",
+   "recorded": 1
+  },
+  {
+   "no": 247,
+   "start": 750.08,
+   "end": 751.75,
+   "en": "Sometimes, I'm not so sure.",
+   "ko": "정말 그런지 가끔 확신이 안 서",
+   "recorded": 1
+  },
+  {
+   "no": 248,
+   "start": 752.92,
+   "end": 754.38,
+   "en": "Hey, what about working here?",
+   "ko": "여기서 일하는 건 어때?",
+   "recorded": 1
+  },
+  {
+   "no": 249,
+   "start": 754.71,
+   "end": 756.3,
+   "en": "How hard can it be? You do it.",
+   "ko": "너도 하는데 어렵기나 하겠어?",
+   "recorded": 1
+  },
+  {
+   "no": 250,
+   "start": 757.47,
+   "end": 759.97,
+   "en": "- Actually, this job requires a lot-- - You don't have to talk me into it.",
+   "ko": "손이 많이 가는 일인데... 설득하려 하지 마 나도 일할게",
+   "recorded": 1
+  },
+  {
+   "no": 251,
+   "start": 760.05,
+   "end": 760.89,
+   "en": "I'll do it.",
+   "ko": "설득하려 하지 마 나도 일할게",
+   "recorded": 1
+  },
+  {
+   "no": 252,
+   "start": 761.84,
+   "end": 763.35,
+   "en": "Give me the Frisbee with the drinks on it.",
+   "ko": "음료수 올린 원반 줘 봐",
+   "recorded": 1
+  },
+  {
+   "no": 253,
+   "start": 764.68,
+   "end": 767.48,
+   "en": "Okay, I guess you could help out until Max gets back.",
+   "ko": "그래요, 맥스 오기 전까지는 도와주셔도 괜찮겠네요",
+   "recorded": 1
+  },
+  {
+   "no": 254,
+   "start": 767.98,
+   "end": 769.73,
+   "en": "Or until someone gets hurt, probably me.",
+   "ko": "아니면 누가 다칠 때까지요 아마 그게 저겠지만요",
+   "recorded": 1
+  },
+  {
+   "no": 255,
+   "start": 772.36,
+   "end": 774.94,
+   "en": "As magic hour descends over the city,",
+   "ko": "맨해튼 위로 황혼이 내려앉으면",
+   "recorded": 1
+  },
+  {
+   "no": 256,
+   "start": 775.32,
+   "end": 777.86,
+   "en": "Max and I will retire to the honeymoon suite,",
+   "ko": "맥스와 저는 허니문 스위트룸에 다다르고",
+   "recorded": 1
+  },
+  {
+   "no": 257,
+   "start": 777.94,
+   "end": 779.7,
+   "en": "where she carries me over the threshold.",
+   "ko": "거기서 맥스는 저를 안고 문턱을 넘겠죠",
+   "recorded": 1
+  },
+  {
+   "no": 258,
+   "start": 782.03,
+   "end": 783.41,
+   "en": "Excited for what's to come.",
+   "ko": "앞날이 정말 기대되네요",
+   "recorded": 1
+  },
+  {
+   "no": 259,
+   "start": 785.37,
+   "end": 787.25,
+   "en": "Well, it's not going to be either of us.",
+   "ko": "뭐, 기대와 착각은 자유니까",
+   "recorded": 1
+  },
+  {
+   "no": 260,
+   "start": 791.12,
+   "end": 792.71,
+   "en": "So, back to you, Jess.",
+   "ko": "이제 제시카 얘기를 듣고 싶네요 하객 선물로 조그만 나침반을 줘서",
+   "recorded": 1
+  },
+  {
+   "no": 261,
+   "start": 793,
+   "end": 796.8,
+   "en": "The party favors could be little compasses that lead you to your table.",
+   "ko": "하객 선물로 조그만 나침반을 줘서 지정 테이블을 찾아가게 하면 어때요?",
+   "recorded": 1
+  },
+  {
+   "no": 262,
+   "start": 798.17,
+   "end": 799.97,
+   "en": "Or to a waiting escape boat.",
+   "ko": "탈출용 보트로 갈 수도 있지",
+   "recorded": 1
+  },
+  {
+   "no": 263,
+   "start": 801.72,
+   "end": 804.22,
+   "en": "Are you sure you two are right for each other?",
+   "ko": "정말로 두 분이 잘 맞는 것 같으세요?",
+   "recorded": 1
+  },
+  {
+   "no": 264,
+   "start": 804.72,
+   "end": 808.18,
+   "en": "Are you kidding? I am obsessed with him.",
+   "ko": "무슨 소리세요? 전 이 사람한테 홀딱 빠졌어요",
+   "recorded": 1
+  },
+  {
+   "no": 265,
+   "start": 809.85,
+   "end": 813.19,
+   "en": "We're two people madly in love. Right, Max?",
+   "ko": "서로 미칠 듯이 사랑하죠 그렇지, 맥스?",
+   "recorded": 1
+  },
+  {
+   "no": 266,
+   "start": 814.27,
+   "end": 816.23,
+   "en": "Bring those lips over here and...",
+   "ko": "나한테 입술 내밀어 봐",
+   "recorded": 1
+  },
+  {
+   "no": 267,
+   "start": 820.15,
+   "end": 822.49,
+   "en": "Don't forget to invite your tongue to the party.",
+   "ko": "잊지 말고 혀도 파티에 초대해",
+   "recorded": 1
+  },
+  {
+   "no": 268,
+   "start": 825.41,
+   "end": 828.08,
+   "en": "Oh, I'm sure she can see we're in love",
+   "ko": "굳이 입 맞추지 않아도 우리가 사랑하는 게 보일 거야",
+   "recorded": 1
+  },
+  {
+   "no": 269,
+   "start": 828.16,
+   "end": 830.91,
+   "en": "without having to put our mouths on each other.",
+   "ko": "굳이 입 맞추지 않아도 우리가 사랑하는 게 보일 거야",
+   "recorded": 1
+  },
+  {
+   "no": 270,
+   "start": 831.96,
+   "end": 832.92,
+   "en": "Please.",
+   "ko": "적당히 하자",
+   "recorded": 1
+  },
+  {
+   "no": 271,
+   "start": 833.96,
+   "end": 834.83,
+   "en": "She's shy.",
+   "ko": "부끄럽나 봐요 그래도 불붙기만 하면",
+   "recorded": 1
+  },
+  {
+   "no": 272,
+   "start": 834.92,
+   "end": 835.79,
+   "en": "Once she starts,",
+   "ko": "부끄럽나 봐요 그래도 불붙기만 하면",
+   "recorded": 1
+  },
+  {
+   "no": 273,
+   "start": 835.88,
+   "end": 838.34,
+   "en": "it's hard to put the snake back in the can.",
+   "ko": "부끄럽나 봐요 그래도 불붙기만 하면 제 물건을 놔주질 않는다니까요",
+   "recorded": 1
+  },
+  {
+   "no": 274,
+   "start": 869.66,
+   "end": 871.58,
+   "en": "Could you feel the heat from where you are?",
+   "ko": "사랑의 열기가 물씬 느껴지시죠?",
+   "recorded": 1
+  },
+  {
+   "no": 275,
+   "start": 874.08,
+   "end": 875.79,
+   "en": "Are you wearing lip gloss?",
+   "ko": "당신 립글로스 발랐어?",
+   "recorded": 1
+  },
+  {
+   "no": 276,
+   "start": 876.33,
+   "end": 878.8,
+   "en": "Listen, I've been down this road before.",
+   "ko": "이런 경우는 많이 봤어요",
+   "recorded": 1
+  },
+  {
+   "no": 277,
+   "start": 878.88,
+   "end": 879.8,
+   "en": "With a stroller?",
+   "ko": "유아차 끌고요?",
+   "recorded": 1
+  },
+  {
+   "no": 278,
+   "start": 880.71,
+   "end": 883.8,
+   "en": "I'm just asking because that's how I push him around.",
+   "ko": "저도 이 사람을 밀고 다녀서 그냥 물어봤어요",
+   "recorded": 1
+  },
+  {
+   "no": 279,
+   "start": 884.59,
+   "end": 886.89,
+   "en": "This wedding isn't making it to the banquet hall.",
+   "ko": "이 상태로 결혼식 올리면 피로연도 못 열어요",
+   "recorded": 1
+  },
+  {
+   "no": 280,
+   "start": 887.1,
+   "end": 888.89,
+   "en": "I don't even think it's making it to the car.",
+   "ko": "웨딩 카에도 절대 못 탈 거고요",
+   "recorded": 1
+  },
+  {
+   "no": 281,
+   "start": 889.31,
+   "end": 890.35,
+   "en": "You two should go.",
+   "ko": "그만 가 보세요",
+   "recorded": 1
+  },
+  {
+   "no": 282,
+   "start": 891.64,
+   "end": 893.14,
+   "en": "You're moody.",
+   "ko": "감정 기복이 심하시네요",
+   "recorded": 1
+  },
+  {
+   "no": 283,
+   "start": 896.4,
+   "end": 898.15,
+   "en": "Are you pregnant?",
+   "ko": "임신하셨나요?",
+   "recorded": 1
+  },
+  {
+   "no": 284,
+   "start": 899.07,
+   "end": 900.02,
+   "en": "Meh?",
+   "ko": null,
+   "recorded": 1
+  },
+  {
+   "no": 285,
+   "start": 900.11,
+   "end": 900.94,
+   "en": "No.",
+   "ko": "아닌가요?",
+   "recorded": 1
+  },
+  {
+   "no": 286,
+   "start": 904.74,
+   "end": 906.78,
+   "en": "Are you sure you want the flantinis?",
+   "ko": "정말로 플랑티니를 주문하시게요?",
+   "recorded": 1
+  },
+  {
+   "no": 287,
+   "start": 906.99,
+   "end": 909.37,
+   "en": "Little tip, go buy yourself a tub of Breyers",
+   "ko": "이건 팁인데요 브라이어스 아이스크림 한 통에 보드카 한 병이면",
+   "recorded": 1
+  },
+  {
+   "no": 288,
+   "start": 909.45,
+   "end": 911.91,
+   "en": "and a bottle of vodka and save yourself 30 bucks.",
+   "ko": "브라이어스 아이스크림 한 통에 보드카 한 병이면 30달러는 아낄 수 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 289,
+   "start": 914.25,
+   "end": 916.12,
+   "en": "Okay, let's go back over this.",
+   "ko": "이건 짚고 넘어가야겠네요",
+   "recorded": 1
+  },
+  {
+   "no": 290,
+   "start": 916.21,
+   "end": 919.75,
+   "en": "The job of a waitress is to get people to buy things here.",
+   "ko": "종업원이 할 일은 손님들이 여기서 돈 쓰게 하는 거예요",
+   "recorded": 1
+  },
+  {
+   "no": 291,
+   "start": 920.38,
+   "end": 922.26,
+   "en": "Also, you're standing on my feet right now.",
+   "ko": "그리고 제 발을 밟고 계세요",
+   "recorded": 1
+  },
+  {
+   "no": 292,
+   "start": 922.76,
+   "end": 924.84,
+   "en": "Are you sure? Because I don't feel anything.",
+   "ko": "정말이야? 난 아무 느낌도 없어",
+   "recorded": 1
+  },
+  {
+   "no": 293,
+   "start": 926.22,
+   "end": 928.93,
+   "en": "Gosh, you know what? Denise is my favorite character.",
+   "ko": "데니즈는 내 최애 캐릭터야",
+   "recorded": 1
+  },
+  {
+   "no": 294,
+   "start": 929.39,
+   "end": 932.64,
+   "en": "I bet you she looks like a million bucks with her pants down.",
+   "ko": "바지 내리면 분명 몸매 죽여줄걸",
+   "recorded": 1
+  },
+  {
+   "no": 295,
+   "start": 933.52,
+   "end": 937.27,
+   "en": "You know who looks like two million bucks with her skirt around her ankles?",
+   "ko": "치마를 발목까지 내렸을 때 2배로 죽여주는 여자는 누구게?",
+   "recorded": 1
+  },
+  {
+   "no": 296,
+   "start": 938.4,
+   "end": 939.81,
+   "en": "How...",
+   "ko": "내가 어쩌다가",
+   "recorded": 1
+  },
+  {
+   "no": 297,
+   "start": 940.27,
+   "end": 942.61,
+   "en": "How did I get so lucky?",
+   "ko": "남편 복 하나는 타고났을까?",
+   "recorded": 1
+  },
+  {
+   "no": 298,
+   "start": 946.65,
+   "end": 947.7,
+   "en": "There she is,",
+   "ko": "저기 있네",
+   "recorded": 1
+  },
+  {
+   "no": 299,
+   "start": 947.78,
+   "end": 950.45,
+   "en": "my big-shot daughter who doesn't need me anymore.",
+   "ko": "이제 엄마 따위는 필요 없다는 잘난 내 딸이네",
+   "recorded": 1
+  },
+  {
+   "no": 300,
+   "start": 950.58,
+   "end": 952.62,
+   "en": "And the woman who keeps taking my babies from me.",
+   "ko": "내 자식들을 자꾸 빼앗아 가는 여자도 있고",
+   "recorded": 1
+  },
+  {
+   "no": 301,
+   "start": 954,
+   "end": 954.91,
+   "en": "I'm getting a drink.",
+   "ko": "한잔해야겠어",
+   "recorded": 1
+  },
+  {
+   "no": 302,
+   "start": 956.12,
+   "end": 958.25,
+   "en": "Oh, great, now they're all working here.",
+   "ko": "좋네요, 이제 온 가족이 여기서 일하겠어요",
+   "recorded": 1
+  },
+  {
+   "no": 303,
+   "start": 959.71,
+   "end": 961.75,
+   "en": "Denise called my ma to brag about her new job",
+   "ko": "누나가 디저트 바에 취직했다고 엄마한테 전화해 자랑했어",
+   "recorded": 1
+  },
+  {
+   "no": 304,
+   "start": 961.84,
+   "end": 962.96,
+   "en": "at your dessert bar.",
+   "ko": "누나가 디저트 바에 취직했다고 엄마한테 전화해 자랑했어",
+   "recorded": 1
+  },
+  {
+   "no": 305,
+   "start": 963.25,
+   "end": 965.63,
+   "en": "Bobby, I know you said not to get involved,",
+   "ko": "보비, 나한테 참견하지 말라고 했지만",
+   "recorded": 1
+  },
+  {
+   "no": 306,
+   "start": 965.72,
+   "end": 967.34,
+   "en": "but I wanted to end our fight.",
+   "ko": "난 우리 싸움을 끝내고 싶었어",
+   "recorded": 1
+  },
+  {
+   "no": 307,
+   "start": 967.68,
+   "end": 970.47,
+   "en": "Also, I think your sister may have broken my pinky toe.",
+   "ko": "게다가 당신 누나가 내 새끼발가락을 부러뜨렸나 봐",
+   "recorded": 1
+  },
+  {
+   "no": 308,
+   "start": 971.05,
+   "end": 971.89,
+   "en": "Oh, that's my fault.",
+   "ko": "미안, 누나가 너무 들이댈 때 막는 방법을 안 알려 줬네",
+   "recorded": 1
+  },
+  {
+   "no": 309,
+   "start": 971.97,
+   "end": 974.31,
+   "en": "I didn't teach you the stop sign when she gets too close.",
+   "ko": "미안, 누나가 너무 들이댈 때 막는 방법을 안 알려 줬네",
+   "recorded": 1
+  },
+  {
+   "no": 310,
+   "start": 974.52,
+   "end": 975.64,
+   "en": "Am I too close?",
+   "ko": "내가 너무 들이댔나?",
+   "recorded": 1
+  },
+  {
+   "no": 311,
+   "start": 977.89,
+   "end": 980.77,
+   "en": "FYI, Ma, it's going great here.",
+   "ko": "알아 두세요, 엄마 나 여기서 잘나가요",
+   "recorded": 1
+  },
+  {
+   "no": 312,
+   "start": 981.02,
+   "end": 982.82,
+   "en": "Well, if things are going so great,",
+   "ko": "그렇게나 잘나간다면",
+   "recorded": 1
+  },
+  {
+   "no": 313,
+   "start": 982.9,
+   "end": 984.44,
+   "en": "why don't you get your own place",
+   "ko": "네 집 따로 마련해서",
+   "recorded": 1
+  },
+  {
+   "no": 314,
+   "start": 984.53,
+   "end": 986.49,
+   "en": "and start toasting your own waffles in the morning?",
+   "ko": "아침에 와플도 직접 구워 먹지 그래?",
+   "recorded": 1
+  },
+  {
+   "no": 315,
+   "start": 987.2,
+   "end": 988.61,
+   "en": "Maybe I will.",
+   "ko": "그래요",
+   "recorded": 1
+  },
+  {
+   "no": 316,
+   "start": 988.99,
+   "end": 990.91,
+   "en": "Maybe I'll move in with Caroline,",
+   "ko": "이참에 캐럴라인이랑 살면서",
+   "recorded": 1
+  },
+  {
+   "no": 317,
+   "start": 990.99,
+   "end": 993.24,
+   "en": "and she can teach me how to use her toaster oven.",
+   "ko": "토스터 오븐 쓰는 법이나 배우죠, 뭐",
+   "recorded": 1
+  },
+  {
+   "no": 318,
+   "start": 993.83,
+   "end": 996.45,
+   "en": "We actually have a pretty small place,",
+   "ko": "제가 사는 곳은 꽤 좁아요",
+   "recorded": 1
+  },
+  {
+   "no": 319,
+   "start": 996.7,
+   "end": 999.83,
+   "en": "and our toaster oven is being used as a tanning bed for mice.",
+   "ko": "토스터 오븐은 쥐 전용 태닝 침대가 됐고요",
+   "recorded": 1
+  },
+  {
+   "no": 320,
+   "start": 1001.83,
+   "end": 1003.84,
+   "en": "Oleg texted me this show was good.",
+   "ko": "재밌는 드라마 한다고 올렉이 문자했어",
+   "recorded": 1
+  },
+  {
+   "no": 321,
+   "start": 1004.3,
+   "end": 1006.05,
+   "en": "I just finished The Walking Dead.",
+   "ko": "'워킹 데드'를 다 본 참인데",
+   "recorded": 1
+  },
+  {
+   "no": 322,
+   "start": 1006.13,
+   "end": 1008.22,
+   "en": "It hit a little too close to home.",
+   "ko": "남 일 같지 않더군",
+   "recorded": 1
+  },
+  {
+   "no": 323,
+   "start": 1009.76,
+   "end": 1011.01,
+   "en": "Yeah, have a seat.",
+   "ko": "어서 앉으세요",
+   "recorded": 1
+  },
+  {
+   "no": 324,
+   "start": 1011.47,
+   "end": 1013.43,
+   "en": "The crazy mom just showed up.",
+   "ko": "미친 엄마가 막 나타났어요",
+   "recorded": 1
+  },
+  {
+   "no": 325,
+   "start": 1013.93,
+   "end": 1016.22,
+   "en": "And the hot sister is yelling at her.",
+   "ko": "섹시한 누나가 엄마한테 소리 지르고 있고요",
+   "recorded": 1
+  },
+  {
+   "no": 326,
+   "start": 1017.52,
+   "end": 1018.39,
+   "en": "Caroline!",
+   "ko": "캐럴라인",
+   "recorded": 1
+  },
+  {
+   "no": 327,
+   "start": 1019.19,
+   "end": 1021.52,
+   "en": "I'm not being negative, but Bobby's a dirtbag.",
+   "ko": "냉소적이고 싶지 않지만 보비는 쓰레기야",
+   "recorded": 1
+  },
+  {
+   "no": 328,
+   "start": 1022.56,
+   "end": 1025.27,
+   "en": "I'm 100 percent sure he has, had,",
+   "ko": "100% 확신하는데 저 인간은 애가 있거나 있었거나 앞으로 생길 거야",
+   "recorded": 1
+  },
+  {
+   "no": 329,
+   "start": 1025.36,
+   "end": 1028.78,
+   "en": "or is going to have a baby with Jessica.",
+   "ko": "저 인간은 애가 있거나 있었거나 앞으로 생길 거야 그것도 제시카랑",
+   "recorded": 1
+  },
+  {
+   "no": 330,
+   "start": 1032.07,
+   "end": 1035.62,
+   "en": "And I'm 100 percent sure I'm going to have a cold sore in the morning.",
+   "ko": "나도 100% 확신하는데 아침이 되면 내 입술에 포진이 생길 거야",
+   "recorded": 1
+  },
+  {
+   "no": 331,
+   "start": 1036.99,
+   "end": 1038.75,
+   "en": "Baby? What's going on?",
+   "ko": "아기라고? 이게 뭔 일이래?",
+   "recorded": 1
+  },
+  {
+   "no": 332,
+   "start": 1038.96,
+   "end": 1040.33,
+   "en": "Bobby, what is going on?",
+   "ko": "보비, 대체 뭐야?",
+   "recorded": 1
+  },
+  {
+   "no": 333,
+   "start": 1040.58,
+   "end": 1043.25,
+   "en": "This really is the golden age of TV.",
+   "ko": "지금이 TV 프로그램의 황금기라니까",
+   "recorded": 1
+  },
+  {
+   "no": 334,
+   "start": 1045.21,
+   "end": 1046.63,
+   "en": "Max, what are you talking about?",
+   "ko": "맥스, 무슨 소리야?",
+   "recorded": 1
+  },
+  {
+   "no": 335,
+   "start": 1046.71,
+   "end": 1049.59,
+   "en": "I'm talking about the text I saw on your phone",
+   "ko": "네 휴대폰에서 본 문자 말하는 거야",
+   "recorded": 1
+  },
+  {
+   "no": 336,
+   "start": 1049.67,
+   "end": 1051.68,
+   "en": "from Jessica about your baby.",
+   "ko": "제시카가 네 아기 얘길 하던데?",
+   "recorded": 1
+  },
+  {
+   "no": 337,
+   "start": 1053.68,
+   "end": 1054.8,
+   "en": "What are you doing with my phone?",
+   "ko": "내 휴대폰으로 뭐 했어?",
+   "recorded": 1
+  },
+  {
+   "no": 338,
+   "start": 1054.89,
+   "end": 1056.68,
+   "en": "Bobby, do you have a baby with Jessica?",
+   "ko": "보비, 제시카 사이에 아기가 있었어?",
+   "recorded": 1
+  },
+  {
+   "no": 339,
+   "start": 1056.89,
+   "end": 1058.97,
+   "en": "Bobby, you have a baby with Jessica?",
+   "ko": "보비, 제시카 사이에 아기가 있다고?",
+   "recorded": 1
+  },
+  {
+   "no": 340,
+   "start": 1059.06,
+   "end": 1061.14,
+   "en": "That takes the sting out of losing Denise.",
+   "ko": "데니즈의 빈자리가 좀 채워지겠구나",
+   "recorded": 1
+  },
+  {
+   "no": 341,
+   "start": 1061.98,
+   "end": 1063.6,
+   "en": "A baby? I don't have a...",
+   "ko": "아기라니 말도 안...",
+   "recorded": 1
+  },
+  {
+   "no": 342,
+   "start": 1064.61,
+   "end": 1066.86,
+   "en": "Oh, wait. I have a cat.",
+   "ko": "잠깐만 나 고양이 키워",
+   "recorded": 1
+  },
+  {
+   "no": 343,
+   "start": 1066.94,
+   "end": 1069.48,
+   "en": "A cat named Baby with Jessica.",
+   "ko": "'아기'라는 고양이를 제시카랑 같이 키우거든",
+   "recorded": 1
+  },
+  {
+   "no": 344,
+   "start": 1075.58,
+   "end": 1077.16,
+   "en": "So, what's happening around here?",
+   "ko": "이게 다 무슨 소란이야?",
+   "recorded": 1
+  },
+  {
+   "no": 345,
+   "start": 1078.79,
+   "end": 1080.29,
+   "en": "Why didn't you just ask me?",
+   "ko": "나한테 물어보면 됐잖아?",
+   "recorded": 1
+  },
+  {
+   "no": 346,
+   "start": 1080.37,
+   "end": 1083.25,
+   "en": "Because I was respecting your boundaries,",
+   "ko": "선 넘기 싫어서 안 물어봤어",
+   "recorded": 1
+  },
+  {
+   "no": 347,
+   "start": 1083.5,
+   "end": 1085.84,
+   "en": "which is why I stole your phone.",
+   "ko": "그래서 휴대폰을 슬쩍했지",
+   "recorded": 1
+  },
+  {
+   "no": 348,
+   "start": 1087.84,
+   "end": 1088.84,
+   "en": "Makes sense.",
+   "ko": "말 되네",
+   "recorded": 1
+  },
+  {
+   "no": 349,
+   "start": 1088.92,
+   "end": 1091.92,
+   "en": "Her friend here forced my daughter to abandon the family's business.",
+   "ko": "쟤 친구가 내 딸더러 가업을 버리라고 강요한 거야",
+   "recorded": 1
+  },
+  {
+   "no": 350,
+   "start": 1092.01,
+   "end": 1093.72,
+   "en": "Neither one of them knows about boundaries.",
+   "ko": "저 둘은 선이라는 걸 모르니까",
+   "recorded": 1
+  },
+  {
+   "no": 351,
+   "start": 1093.97,
+   "end": 1096.43,
+   "en": "I'm throwing these small glasses away. They're stupid.",
+   "ko": "이딴 조그만 잔 내다 버린다 쓸데없어",
+   "recorded": 1
+  },
+  {
+   "no": 352,
+   "start": 1098.06,
+   "end": 1099.89,
+   "en": "Well, I'm pretty upset myself.",
+   "ko": "나도 화가 엄청 치솟네",
+   "recorded": 1
+  },
+  {
+   "no": 353,
+   "start": 1100.14,
+   "end": 1104.44,
+   "en": "I wasted 20 dollars on the domain name MaxAndHansWedding.com.",
+   "ko": "20달러나 들여서 도메인 주소를 샀거든 '맥스와 한의 웨딩 닷컴'이라고",
+   "recorded": 1
+  },
+  {
+   "no": 354,
+   "start": 1105.44,
+   "end": 1107.61,
+   "en": "We're not really getting married!",
+   "ko": "우리가 진짜로 결혼하는 게 아니잖아요",
+   "recorded": 1
+  },
+  {
+   "no": 355,
+   "start": 1108.11,
+   "end": 1112.32,
+   "en": "We only went to see Jessica to find out if she had a baby with Bobby, you boobie.",
+   "ko": "제시카가 보비 애를 가졌는지 알아보러 간 것뿐이에요 바보짓하기는",
+   "recorded": 1
+  },
+  {
+   "no": 356,
+   "start": 1113.53,
+   "end": 1114.99,
+   "en": "You went to see Jessica?",
+   "ko": "제시카를 보러 갔어?",
+   "recorded": 1
+  },
+  {
+   "no": 357,
+   "start": 1115.45,
+   "end": 1117.66,
+   "en": "Seems like everyone's in a fight, except for me and Bobby.",
+   "ko": "나랑 보비만 빼고 다 싸우고 있구나",
+   "recorded": 1
+  },
+  {
+   "no": 358,
+   "start": 1117.74,
+   "end": 1119.04,
+   "en": "Oh, no, we're fighting now.",
+   "ko": "이제 우리도 싸울 거야",
+   "recorded": 1
+  },
+  {
+   "no": 359,
+   "start": 1120.16,
+   "end": 1122.96,
+   "en": "I saw that text on Bobby's phone, and I didn't want you getting hurt.",
+   "ko": "보비 휴대폰에서 본 문자로 네가 상처받는 게 싫었어",
+   "recorded": 1
+  },
+  {
+   "no": 360,
+   "start": 1123.21,
+   "end": 1125,
+   "en": "The only person who got hurt was me.",
+   "ko": "상처받은 건 오히려 나야",
+   "recorded": 1
+  },
+  {
+   "no": 361,
+   "start": 1125.08,
+   "end": 1127.21,
+   "en": "I kissed Han on the lips.",
+   "ko": "한이랑 입을 맞췄거든",
+   "recorded": 1
+  },
+  {
+   "no": 362,
+   "start": 1130,
+   "end": 1133.05,
+   "en": "Max, you stalked his ex-girlfriend without me?",
+   "ko": "맥스, 나 몰래 보비 전 여친을 스토킹했어?",
+   "recorded": 1
+  },
+  {
+   "no": 363,
+   "start": 1133.63,
+   "end": 1135.8,
+   "en": "Pretty shady move by your friend, Caroline.",
+   "ko": "네 친구가 꽤 엉큼하네 캐럴라인",
+   "recorded": 1
+  },
+  {
+   "no": 364,
+   "start": 1135.89,
+   "end": 1138.26,
+   "en": "We may want to think about finding another roommate.",
+   "ko": "룸메이트를 바꿔야 할지도 모르겠어",
+   "recorded": 1
+  },
+  {
+   "no": 365,
+   "start": 1139.1,
+   "end": 1140.43,
+   "en": "Okay, that's enough.",
+   "ko": "다들 그만해",
+   "recorded": 1
+  },
+  {
+   "no": 366,
+   "start": 1140.51,
+   "end": 1143.1,
+   "en": "Denise, you need to go back and work for Ma,",
+   "ko": "누나는 다시 엄마 밑에서 일해",
+   "recorded": 1
+  },
+  {
+   "no": 367,
+   "start": 1143.18,
+   "end": 1146.15,
+   "en": "and not only because that's the only job you're capable of doing,",
+   "ko": "누나가 그 일밖에 못 해서만은 아니고",
+   "recorded": 1
+  },
+  {
+   "no": 368,
+   "start": 1146.23,
+   "end": 1148.4,
+   "en": "but also 'cause Ma's lost without you.",
+   "ko": "엄마도 누나 없으면 힘들어",
+   "recorded": 1
+  },
+  {
+   "no": 369,
+   "start": 1148.65,
+   "end": 1152.32,
+   "en": "And, Max, you need to trust that I'm not like every other dirtbag.",
+   "ko": "맥스, 난 그런 쓰레기가 아니라고 믿어 주면 좋겠어",
+   "recorded": 1
+  },
+  {
+   "no": 370,
+   "start": 1152.86,
+   "end": 1155.11,
+   "en": "And, Caroline, when two people love each other,",
+   "ko": "캐럴라인 사랑하는 사람끼리 싸우는 건 당연해",
+   "recorded": 1
+  },
+  {
+   "no": 371,
+   "start": 1155.2,
+   "end": 1156.03,
+   "en": "they're going to fight.",
+   "ko": "사랑하는 사람끼리 싸우는 건 당연해",
+   "recorded": 1
+  },
+  {
+   "no": 372,
+   "start": 1157.87,
+   "end": 1160.41,
+   "en": "Are the two people that love each other us?",
+   "ko": "그 사랑하는 사람이 우리 둘이라는 거야?",
+   "recorded": 1
+  },
+  {
+   "no": 373,
+   "start": 1160.66,
+   "end": 1162.49,
+   "en": "Don't get bullied into anything, Bobby.",
+   "ko": "괜히 분위기에 휩쓸리지 마, 보비",
+   "recorded": 1
+  },
+  {
+   "no": 374,
+   "start": 1163.91,
+   "end": 1165.54,
+   "en": "Of course, I'm talking about us.",
+   "ko": "물론 우리를 말하는 거야",
+   "recorded": 1
+  },
+  {
+   "no": 375,
+   "start": 1166.96,
+   "end": 1168.46,
+   "en": "I love you, Caroline.",
+   "ko": "사랑해, 캐럴라인",
+   "recorded": 1
+  },
+  {
+   "no": 376,
+   "start": 1173.01,
+   "end": 1174.26,
+   "en": "I love you too.",
+   "ko": "나도 사랑해",
+   "recorded": 1
+  },
+  {
+   "no": 377,
+   "start": 1175.17,
+   "end": 1176.01,
+   "en": "Great.",
+   "ko": "잘됐네",
+   "recorded": 1
+  },
+  {
+   "no": 378,
+   "start": 1176.34,
+   "end": 1178.22,
+   "en": "Two White people falling in love.",
+   "ko": "백인 둘이 사랑에 빠졌어",
+   "recorded": 1
+  },
+  {
+   "no": 379,
+   "start": 1178.3,
+   "end": 1180.18,
+   "en": "You don't ever see that on TV.",
+   "ko": "TV에 안 나오면 섭섭하지",
+   "recorded": 1
+  },
+  {
+   "no": 380,
+   "start": 1182.85,
+   "end": 1185.31,
+   "en": "You know what, Ma? This place is dumb.",
+   "ko": "있잖아요, 엄마 여긴 별로예요",
+   "recorded": 1
+  },
+  {
+   "no": 381,
+   "start": 1186.14,
+   "end": 1188.85,
+   "en": "I'll come back and work at Mail Boxes and Other Things.",
+   "ko": "메일 박스와 이것저것에 다시 일하러 갈게요",
+   "recorded": 1
+  },
+  {
+   "no": 382,
+   "start": 1189.23,
+   "end": 1190.15,
+   "en": "You know what?",
+   "ko": "있잖아",
+   "recorded": 1
+  },
+  {
+   "no": 383,
+   "start": 1191.36,
+   "end": 1192.61,
+   "en": "You're the other thing.",
+   "ko": "넌 '이것저것' 그 자체야",
+   "recorded": 1
+  },
+  {
+   "no": 384,
+   "start": 1193.03,
+   "end": 1193.86,
+   "en": "Come here.",
+   "ko": "이리 와",
+   "recorded": 1
+  },
+  {
+   "no": 385,
+   "start": 1198.53,
+   "end": 1201.91,
+   "en": "Oleg, get the butt wipes out of my bag.",
+   "ko": "올렉 가방에서 엉덩이용 물티슈 꺼내 줘",
+   "recorded": 1
+  },
+  {
+   "no": 386,
+   "start": 1202.16,
+   "end": 1203.58,
+   "en": "This is a real tear-jerker.",
+   "ko": "눈물을 쥐어짜는구나",
+   "recorded": 1
+  },
+  {
+   "no": 387,
+   "start": 1204.29,
+   "end": 1206.08,
+   "en": "My second favorite kind of jerker.",
+   "ko": "내 거시기를 쥐어짜는 것만큼 좋네",
+   "recorded": 1
+  },
+  {
+   "no": 388,
+   "start": 1207.71,
+   "end": 1208.96,
+   "en": "I should get going too.",
+   "ko": "나도 가야겠다",
+   "recorded": 1
+  },
+  {
+   "no": 389,
+   "start": 1209.71,
+   "end": 1211.13,
+   "en": "I got to check some text messages.",
+   "ko": "문자도 확인해 봐야지",
+   "recorded": 1
+  },
+  {
+   "no": 390,
+   "start": 1211.21,
+   "end": 1213.8,
+   "en": "And why is my screensaver a shirtless Vin Diesel?",
+   "ko": "왜 배경 화면이 상의 탈의한 빈 디젤이야?",
+   "recorded": 1
+  },
+  {
+   "no": 391,
+   "start": 1215.13,
+   "end": 1216.09,
+   "en": "You're welcome.",
+   "ko": "감사 인사는 됐어",
+   "recorded": 1
+  },
+  {
+   "no": 392,
+   "start": 1220.51,
+   "end": 1221.93,
+   "en": "You know trust is hard for me.",
+   "ko": "난 사람을 잘 못 믿잖아",
+   "recorded": 1
+  },
+  {
+   "no": 393,
+   "start": 1222.01,
+   "end": 1224.1,
+   "en": "That's why I got kicked out of Cirque du Soleil.",
+   "ko": "그래서 태양의 서커스에서도 쫓겨났고",
+   "recorded": 1
+  },
+  {
+   "no": 394,
+   "start": 1225.6,
+   "end": 1228.27,
+   "en": "You're the first person in my life I can actually count on.",
+   "ko": "내가 살면서 처음으로 믿게 된 사람은 너야",
+   "recorded": 1
+  },
+  {
+   "no": 395,
+   "start": 1229.98,
+   "end": 1232.31,
+   "en": "Be so great if they made out right now.",
+   "ko": "여기서 서로 물고 빨면 대박이겠다",
+   "recorded": 1
+  },
+  {
+   "no": 396,
+   "start": 1234.4,
+   "end": 1236.94,
+   "en": "You were the first person I could count on too.",
+   "ko": "내가 처음으로 믿게 된 사람도 너야",
+   "recorded": 1
+  },
+  {
+   "no": 397,
+   "start": 1237.61,
+   "end": 1238.99,
+   "en": "I love you, Max.",
+   "ko": "사랑해, 맥스",
+   "recorded": 1
+  },
+  {
+   "no": 398,
+   "start": 1242.95,
+   "end": 1244.12,
+   "en": "Okay, we're not there yet.",
+   "ko": "너무 앞서가긴 했네",
+   "recorded": 1
+  },
+  {
+   "no": 399,
+   "start": 1271.77,
+   "end": 1273.77,
+   "en": "Subtitle by Juneden Grande",
+   "ko": "자막: 이종원",
+   "recorded": 1
+  }
+ ]
+}
