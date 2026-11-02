@@ -251,50 +251,80 @@ watch_langstudy.py (감시)                            │
 |---|---|
 | 열쇠 | PBKDF2-SHA256(암호, salt, 600,000회) → 256비트. salt·횟수는 `scripts/audiobook_crypto.json` (비밀 아님). 같은 암호면 같은 열쇠 |
 | 본문 | 데이터 JSON 전체를 AES-256-GCM 으로 잠가 `#audiobook-data` 의 `sealed`(`v, iter, salt, iv, ct`)에 싣는다. 평문은 `outline`(책 제목·저자·챕터 수)뿐 |
-| 음원 | `<챕터>-<HMAC-SHA256(열쇠, mp3 sha256) 앞 12자>.bin` = iv(12바이트) + AES-GCM 암호문. 암호를 바꾸면 이름이 바뀐다 |
+| 음원 | `<엔진>-<챕터>-<HMAC-SHA256(열쇠, mp3 sha256) 앞 12자>.bin` = iv(12바이트) + AES-GCM 암호문. 암호나 mp3 가 바뀌면 이름이 바뀐다 |
 | 암호 | 사용자가 `scripts/audiobook_password.py` 로 정해 `~/.config/macsalogs/audiobook_password` 에 둔다 (12자 이상) |
 | 브라우저 | 입력한 암호는 탭(sessionStorage)에, "이 기기에 기억"이면 localStorage 에도 둔다. 🔒 잠그기로 지운다 |
+| 누출 검사 | 생성기가 쓴 뒤 챕터마다 가장 긴 문장이 평문으로 보이면 실패한다 |
 
 음원은 `fetch` → 복호화 → `Blob` → `URL.createObjectURL` 로 재생한다(blob 은 seek 가능). 그래서 음원을 두는 곳은 CORS 를 허용해야 한다:
 GitHub Pages 는 `access-control-allow-origin: *`, GitHub Release 는 302 응답에 CORS 헤더가 없어 쓸 수 없다 (2026-11-01 curl 확인).
 챕터를 바꾸면 이전 blob 주소를 해제하고, 늦게 도착한 음원은 버린다(`audioSeq`).
 
+### 음원 저장소
+
+잠근 음원은 **별도 공개 저장소 `magpie1st/audiobook-audio`** 의 Pages(`https://magpie1st.github.io/audiobook-audio/`)에 둔다
+(2026-11-01 분리, 로컬 `../audiobook-audio`). 블로그와 Pages 용량(각 1GB)을 나눠 쓰지 않고, 같은 github.io 라 CORS 문제가 없다.
+
+- `docs/audio/audiobook/<책>/config.json`: `audioBaseUrl`(그 Pages 주소), `audioRepoDir`(로컬 폴더), `defaultEngine`
+- 생성기가 `.bin` 을 `audioRepoDir` 로 복사하고 같은 엔진·챕터의 예전 `.bin` 은 지운다 → 엔진·챕터마다 파일 하나
+- 음원 저장소에 `.git` 이 없으면 생성기가 멈춘다. 이 블로그 저장소에는 음원을 두지 않는다
+- 올리는 순서: 음원 저장소 먼저, 페이지 나중 (페이지가 아직 없는 음원을 가리키지 않게)
+- 크기 (2026-11-02): mp3 는 24kHz 모노, **Kokoro 24k · Gemini 40k**(tts-maker 기본값). Kokoro 두 벌 약 220MB, Gemini 완성 시 약 200MB 추가
+
 ### 파이프라인
 
 ```
-book-maker  scripts/build_audiobook_text.py  → output/audiobook/<책>/book.json      (문단·문장 구간)
+book-maker  scripts/build_audiobook_text.py  → output/audiobook/<책>/book.json            (문단·문장 구간)
 tts-maker   gemini/audiobook_gemini.py       → output/gemini/audiobook/<책>/<챕터>.{mp3,json}
+            tts-maker-audiobook (Kokoro)     → output/kokoro/<음성>/audiobook/<책>/<챕터>.{mp3,json}
 MacsALogs   scripts/build_audiobook.py       → docs/audiobook.html  (템플릿 scripts/templates/audiobook.html)
             docs/js/audiobook.js             ← 플레이어
+            ../audiobook-audio/<책>/*.bin    ← 잠근 음원
 ```
 
+- 낭독 엔진(`ENGINES`): `gemini`(Sulafat), `kokoro-bf_emma`(Emma, 영국 여성), `kokoro-af_heart`(Heart, 미국 여성). 챕터마다 있는 엔진을 모두 싣는다
 - 타임라인의 `textSha256` 을 본문에서 다시 계산해 비교한다(book-maker SPEC 4.5 와 같은 식). 다르거나 문장 수가 다르면
-  **그 챕터는 음원 없이** 싣는다 — 강조가 밀린 페이지보다 낫다
-- 음원 주소: `docs/audio/audiobook/<책>/config.json` 의 `audioBaseUrl` 이 있으면 `<base>/<책>-<챕터>.mp3`(Release 자산),
-  `--local-audio` 면 mp3 를 `docs/audio/audiobook/<책>/` 로 복사하고 상대경로(`preview: true`), 둘 다 없으면 본문만
+  **그 엔진의 그 챕터는 음원 없이** 싣는다 — 강조가 밀린 페이지보다 낫다
+- `partial: true` 타임라인(Gemini 가 한도에 걸려 앞부분만 있음)은 앞 N문장까지만 싣는다
+- `--local-audio` 면 mp3 를 `docs/audio/audiobook/<책>/` 로 복사하고 상대경로(`preview: true`) — 미리보기 전용(gitignore)
+- 자동 갱신: tts-maker launchd `ai.audiobook-gemini`(6시간마다)가 빌드 → 음원 저장소 푸시 → `docs/audiobook.html`·`docs/audio/audiobook` 만 커밋·푸시
 
 ### 데이터 (`#audiobook-data`, `audiobook-data/1`)
 
 ```jsonc
 {"schema": "audiobook-data/1", "generated": "…",
- "books": [{"id", "title", "author", "front": {"epigraph": [...]},
+ "books": [{"id", "title", "author", "front": {"epigraph": [...]}, "defaultEngine": "gemini",
    "chapters": [{"id": "ch01", "number", "title", "chars", "words", "sentenceCount",
      "paragraphs": [[kind, text, emSpans, sentenceSpans], ...],      // 키 반복을 줄인 배열
-     "audio": {"file", "durationSec", "voice", "rows": [[startMs, endMs], ...], "preview"?}}]}]}
+     "audios": {"<엔진>": {"file", "durationSec", "voice", "engine", "enc": true,
+                           "rows": [[startMs, endMs], ...], "partial"?, "preview"?}}}]}]}
 ```
 
-`rows` 의 n번째 = 챕터의 n번째 문장 (문단 순서대로 이어 센 번호).
+`rows` 의 n번째 = 챕터의 n번째 문장 (문단 순서대로 이어 센 번호). 브라우저는 고른 엔진의 것을 `chapter.audio` 로 쓰고,
+그 엔진이 없는 챕터는 있는 엔진으로 재생하며 안내 문구를 보인다.
 
 ### 화면과 조작
 
-- 주소: `#<책>` = 목차, `#<책>/<챕터>` = 챕터. 책이 하나면 책 선택 칸이 숨는다
-- **목차**: 첫 화면. 낭독하지 않는다. Epigraph, 챕터별 단어 수·재생 길이·`준비 중`·이어듣기 위치
+- 주소: `#<책>` = 목차, `#<책>/<챕터>` = 챕터, `#<책>/<챕터>/p<문단>` = 그 문단으로. 책이 하나면 책 선택 칸이 숨는다
+- **위 도구 모음**: 책·챕터 선택, 이전/다음 챕터, 낭독 엔진(`Gemini · Sulafat` / `Kokoro · Emma (영국 여성)` / `Kokoro · Heart (미국 여성)`,
+  엔진이 둘 이상일 때만), 다음 챕터 자동, 책갈피 목록, 글자 크기, 🔒 잠그기
+- **목차**: 첫 화면. 낭독하지 않는다. 📖 읽던 곳, 🔖 책갈피, Epigraph, 챕터별 단어 수·재생 길이·`준비 중`·이어듣기 위치
 - **챕터**: 문단 종류별 모양(verse 들여 기울임, attribution 작게, title 굵게), 문장 클릭 = 그 문장부터 재생
-- **플레이어**: ◀◀/▶▶ 문장(←/→), ±10초, ↻ 다시(R), 문장 반복(L), 문장마다 멈춤(P), 속도, 따라가기, 다음 챕터 자동, [ ] 챕터
+- **플레이어**(얇은 두 줄, 약 68px): 진행 막대 / 아이콘 — ⏪ 이전 문장(←) · ▶/❚❚(Space) · ⏩ 다음 문장(→) · ↻ 다시 한 번(A) ·
+  R 문장 반복 · S 문장마다 멈춤 · F 따라가기 · 책갈피(B) · 속도. `[` `]` 챕터. 예전 단축키 L(=R)·P(=S)도 받는다. ±10초 버튼은 없다
 - 문장 반복·문장마다 멈춤은 `timeupdate`(초당 약 4회)로는 문장 끝을 최대 0.25초 넘기므로 재생 중 `requestAnimationFrame` 으로 판정한다
-- 이어듣기: 챕터별 마지막 위치를 `localStorage`(`audiobook-pos`)에 3초마다 저장, 끝까지 들으면 지운다.
-  이어듣기 버튼은 그 위치가 든 **문장의 처음**으로 돌아간다
-- Release 음원의 30분 서명 만료로 재생이 거부되면 한 번만 음원을 다시 열고 그 자리로 돌아간다 (tvshow 와 같은 처리)
+
+### 기억 (이 브라우저 localStorage 에만 — 기기 사이에 맞춰지지 않는다)
+
+| 키 | 내용 | 언제 저장 |
+|---|---|---|
+| `audiobook-pos` | 이어듣기: `책/챕터/엔진` → 초. 엔진마다 낭독 속도가 달라 따로 둔다 | 재생 중 3초마다, 멈춤·챕터 전환·페이지 떠날 때. 끝 5초 안이면 지움 |
+| `audiobook-marks` | 책마다 `{last: 📖 읽던 곳 {ch, para, at}, list: 🔖 책갈피}` | 읽던 곳: 스크롤 멈춘 뒤 0.9초·멈춤·전환·떠날 때. 책갈피: B 키 |
+| `audiobook-prefs` | 엔진, 속도, 다음 챕터 자동, 따라가기 등 | 바꿀 때 |
+| `audiobook-pw` | 암호 ("이 기기에 기억"일 때만. 아니면 sessionStorage) | 잠금 풀 때 |
+
+- 이어듣기: 챕터를 열 때 저장 위치가 15초 이상이면 "↩ m:ss부터 이어듣기" 버튼. 그 위치가 든 **문장의 처음**으로 돌아간다
+- 읽던 곳: 재생 중이면 낭독 중인 문장의 문단, 아니면 화면 맨 위(10px)에 걸친 첫 문단. 자동으로 옮겨 가지 않고 버튼·링크로 간다
 
 ## 스타일 시스템
 
