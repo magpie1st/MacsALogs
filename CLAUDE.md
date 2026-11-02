@@ -253,8 +253,8 @@ manifest가 원본 대본과 어긋나면 **배포가 중단된다** — 문장 
   블로그와 Pages 용량(각 1GB)을 나눠 쓰지 않는다. 음원 저장소가 없으면 생성기가 멈춘다. **이 저장소에는 음원을 두지 않는다
 - 본문: `book-maker/output/audiobook/<책>/book.json`, 음원: `tts-maker/output/gemini/audiobook/<책>/<챕터>.{json,mp3}`.
   타임라인의 `textSha256` 이 본문과 다르면 그 챕터는 음원 없이 실린다
-- 첫 화면은 목차(낭독 없음). 플레이어: ←/→ 문장, R 다시, L 문장 반복, P 문장마다 멈춤, [ ] 챕터. 🔒 잠그기 = 기억한 암호 지우기
-- 낭독 엔진 세 가지를 챕터마다 모두 싣는다: `gemini`, `kokoro-bf_emma`(영국 여성), `kokoro-af_heart`(미국 여성). **기본 엔진은
+- 첫 화면은 목차(낭독 없음). 플레이어(얇은 아이콘 한 줄): ←/→ 문장, Space 재생, A 다시, R 문장 반복, S 문장마다 멈춤, F 따라가기, B 책갈피, [ ] 챕터 (L·P 도 받음). 🔒 잠그기 = 기억한 암호 지우기
+- 낭독 엔진 세 가지를 챕터마다 모두 싣는다: `gemini`, `kokoro-bf_emma`(Emma, 영국 여성), `kokoro-af_heart`(Heart, 미국 여성). 음원 비트레이트는 Kokoro 24k · Gemini 40k(2026-11-02 사용자 결정, tts-maker 기본값). **기본 엔진은
   `docs/audio/audiobook/<책>/config.json` 의 `defaultEngine`** 이고 보는 사람이 플레이어에서 바꿀 수 있다(기기에 기억). 고른 엔진이 없는 챕터는 있는 것으로 재생
 - 📖 읽던 곳(자동)·🔖 책갈피(B 키) — 브라우저 localStorage 에만 있다. 주소 `#책/챕터/p문단` 으로 그 문단에 간다
 - **자동 갱신**: tts-maker 의 launchd `ai.audiobook-gemini`(6시간마다)가 이 저장소에서 `build_audiobook.py` 를 돌리고
