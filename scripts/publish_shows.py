@@ -29,6 +29,7 @@ from __future__ import annotations
 import argparse
 import datetime as _dt
 import json
+import re
 import subprocess
 import sys
 import urllib.error
@@ -47,6 +48,38 @@ RELEASE_BASE = f"https://github.com/{REPO}/releases/download"
 
 def run(cmd: list[str], **kw) -> subprocess.CompletedProcess:
     return subprocess.run(cmd, capture_output=True, text=True, **kw)
+
+
+def pages_remote() -> str:
+    """REPO(GitHub Pages 를 서빙하는 저장소)를 가리키는 원격의 이름.
+
+    원격 이름은 컴퓨터마다 다르다 — Mac mini 는 `origin` 이 GitHub 이고, 리눅스는
+    `origin` 이 사내 GitHub Enterprise, `github` 가 GitHub 다. 이름으로 푸시하면 한쪽에서는
+    엉뚱한 곳으로 가거나 실패하므로(2026-11-03 리눅스에서 14커밋이 로컬에만 남았다) 주소로 찾는다.
+    """
+    out = run(["git", "-C", str(REPO_ROOT), "remote", "-v"]).stdout
+    pattern = re.compile(r"github\.com[:/]" + re.escape(REPO) + r"(\.git)?/?$")
+    names = [p[0] for p in (line.split() for line in out.splitlines())
+             if len(p) >= 3 and p[2] == "(push)" and pattern.search(p[1])]
+    if not names:
+        sys.exit(f"{REPO} 를 가리키는 git 원격이 없습니다. 추가하세요:\n"
+                 f"  git remote add github git@github.com:{REPO}.git")
+    return "origin" if "origin" in names else names[0]
+
+
+def push_main() -> str:
+    """main 을 GitHub 에 올린다. 그사이 원격에 다른 커밋이 생겼으면(오디오북 자동 갱신 등)
+    먼저 그 위로 옮긴다. 충돌하면 되돌리고 멈춘다. 돌려주는 값: 원격 이름."""
+    remote = pages_remote()
+    pull = run(["git", "-C", str(REPO_ROOT), "pull", "--rebase", remote, "main"])
+    if pull.returncode != 0:
+        run(["git", "-C", str(REPO_ROOT), "rebase", "--abort"])
+        sys.exit(f"git pull --rebase {remote} main 실패 (커밋은 로컬에 있습니다):\n"
+                 f"{(pull.stderr or pull.stdout).strip()}")
+    push = run(["git", "-C", str(REPO_ROOT), "push", remote, "main"])
+    if push.returncode != 0:
+        sys.exit(f"git push {remote} main 실패 (커밋은 로컬에 있습니다): {push.stderr.strip()}")
+    return remote
 
 
 def require_gh() -> None:
@@ -324,16 +357,14 @@ def main() -> None:
         commit = run(["git", "-C", str(REPO_ROOT), "commit", "-m", message])
         if commit.returncode != 0 and "nothing to commit" not in commit.stdout:
             sys.exit(f"git commit 실패: {commit.stdout.strip()}\n{commit.stderr.strip()}")
-        push = run(["git", "-C", str(REPO_ROOT), "push", "origin", "main"])
-        if push.returncode != 0:
-            sys.exit(f"git push 실패: {push.stderr.strip()}")
-        print(f"→ 커밋·푸시 완료: {message}")
+        remote = push_main()
+        print(f"→ 커밋·푸시 완료 ({remote}): {message}")
         print("   Pages 빌드에 1~2분 걸립니다:")
         print(f"   gh api repos/{REPO}/pages/builds/latest --jq .status")
     else:
         print("\n페이지에 반영하려면 커밋·푸시하세요 (--push 로 한 번에 할 수 있습니다):")
         print(f"  git add -A && git commit -m '[{_dt.date.today().isoformat()}] {args.show_id} 음원 공개'")
-        print("  git push origin main")
+        print(f"  git push {pages_remote()} main   # {REPO} 를 가리키는 원격")
 
 
 if __name__ == "__main__":
