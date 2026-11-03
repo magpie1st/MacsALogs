@@ -478,6 +478,32 @@ with tempfile.TemporaryDirectory() as tmp:
         if saved_home:
             os.environ["HOME"] = saved_home
 
+print("\n[푸시 원격] 이름이 아니라 주소로 GitHub 를 찾는다 (Mac mini·리눅스 원격 구성이 다르다)")
+import subprocess
+import publish_shows
+
+with tempfile.TemporaryDirectory() as tmp:
+    saved_root = publish_shows.REPO_ROOT
+
+    def remotes(**urls):
+        repo = Path(tempfile.mkdtemp(dir=tmp))
+        subprocess.run(["git", "init", "-q", str(repo)], check=True)
+        for name, url in urls.items():
+            subprocess.run(["git", "-C", str(repo), "remote", "add", name, url], check=True)
+        publish_shows.REPO_ROOT = repo
+        return publish_shows.pages_remote()
+
+    try:
+        # Mac mini: origin 이 GitHub
+        check("Mac mini: origin", remotes(origin="https://github.com/magpie1st/MacsALogs.git"), "origin")
+        # 리눅스: origin 은 사내 GitHub Enterprise, github 가 GitHub
+        check("리눅스: github", remotes(origin="https://github.sec.samsung.net/youngseok7-lee/MacsALogs.git",
+                                         github="git@github.com:magpie1st/MacsALogs.git"), "github")
+        raises("GitHub 원격이 없으면 멈춘다",
+               lambda: remotes(origin="https://github.sec.samsung.net/youngseok7-lee/MacsALogs.git"))
+    finally:
+        publish_shows.REPO_ROOT = saved_root
+
 print()
 if failures:
     print(f"실패 {len(failures)}건: " + ", ".join(failures))

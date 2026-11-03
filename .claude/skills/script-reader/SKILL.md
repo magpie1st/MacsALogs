@@ -299,13 +299,13 @@ python3 scripts/build_langstudy.py --show-id friends --remove-episode s10e04    
 
 ## 배포
 
-`publish_shows.py --push` 가 음원 업로드와 함께 해 준다. 대본만 올릴 때는 직접 한다.
+`publish_shows.py --push` 가 음원 업로드와 함께 해 준다. 원격은 이름이 아니라 주소로 찾는다 (`pages_remote()`), 원격에 새 커밋이 있으면 rebase 후 푸시한다. 대본만 올릴 때는 직접 한다.
 
 ```bash
 cd /Users/mac/Documents/mac-codes/MacsALogs
 git add -A && git commit -m "[YYYY-MM-DD] <작품> 시즌 N M화 스크립트 리더 추가"
-git remote -v               # Pages 를 서빙하는 원격을 먼저 확인한다
-git push origin main        # 이 맥은 origin. 리눅스 쪽은 github 였다 (.gitignore 의 .git_linux 참고)
+git remote -v               # Pages 를 서빙하는 원격(github.com/magpie1st/MacsALogs)을 먼저 확인한다
+git push origin main        # Mac mini 는 origin. 리눅스는 origin 이 사내 GitHub Enterprise 라 github 로 푸시한다
 ```
 
 **푸시는 사용자가 요청했을 때만 한다.** 이 저장소는 공개이고 커밋은 자동 푸시된다
