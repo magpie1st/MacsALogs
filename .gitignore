@@ -22,3 +22,6 @@ docs/audio/shows/**/*.wav
 docs/audiobook-local.html
 docs/audio/audiobook/**/*.mp3
 .audiobook-audio/
+
+# 전화영어 생성기 캐시 (평문 해시 — 이 머신에만 해당)
+scripts/.lesson_cache.json
