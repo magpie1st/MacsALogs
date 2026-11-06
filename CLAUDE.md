@@ -316,6 +316,29 @@ python3 scripts/build_mom.py --encrypt   # 암호로 잠가 생성
 대본을 고쳤으면 voice-in-scribe 에서 `dialogue.py build` 를 먼저 돌린다. html 이 json 보다 오래되면 경고가 뜬다.
 새 대본이 생기면 자동으로 목록에 들어가니, 싣지 않을 회의가 있으면 생성 전에 확인한다.
 
+## 전화영어 페이지 (암호화 공개)
+
+`docs/lesson.html`(목록 + 회차별 지표 표)과 `docs/lesson/<id>.html`(수업별 피드백 · 대본 · OPIc)은 내비게이션에 없는 독립형 페이지다.
+원본은 `voice-in-scribe` 의 `output/*_전화영어*_수업.html` · `_수업.json` 과 누적 색인 `output/_lesson/index.json` 이고 읽기 전용이다.
+**셋 다 자동 생성물이다. 손으로 고치지 말 것.**
+
+- **언제나 암호화한다**(2026-11-06 사용자 결정). 튜터 이름 · 목소리가 들어가므로 녹음까지 잠근다. 방식은 MOM 과 같다
+  (PBKDF2-SHA256 60만 회 → AES-256-GCM, 복호화는 `docs/js/lesson.js`). 입력 창 스타일은 `.mom-lock*` 을 같이 쓴다
+- 암호: `LESSON_PASSWORD` → `~/.config/macsalogs/lesson_password` → `mom_password`(회의록과 같은 암호) 순. 저장소에 두지 않는다
+- `<id>` 는 암호를 키로 한 HMAC 이라 주소에 날짜 · 주제가 드러나지 않는다. **암호를 바꾸면 id 가 바뀐다**
+- 녹음은 잠근 `.bin`(iv 12바이트 + 암호문)으로 `docs/audio/lesson/` 에 둔다. 브라우저가 fetch 해서 풀어야 하므로
+  CORS 가 되는 Pages 여야 한다(Release 는 안 된다). 수업당 2MB 안팎이라 저장소에 둔다. 열쇠의 salt 는 `scripts/lesson_crypto.json`(커밋)
+- 평문 해시를 `scripts/.lesson_cache.json`(gitignore)에 적어, 내용이 그대로면 다시 잠그지 않는다 — 암호문이 매번 바뀌어 커밋이 생기므로
+- 쓰고 나서 대본 문장 · 요약이 평문으로 보이면 그 파일을 지우고 멈춘다
+- `--push` 는 `docs/lesson*`, `docs/audio/lesson`, `docs/js/lesson.js`, `scripts/lesson_crypto.json` 만 커밋한다
+- **voice-in-scribe 의 워처가 피드백을 만든 뒤 `--push` 로 자동 게시한다.** 사람이 따로 돌릴 일은 없다
+
+```bash
+uv run --with cryptography python scripts/build_lesson.py -n       # 실을 수업 확인
+uv run --with cryptography python scripts/build_lesson.py          # docs/ 생성만
+uv run --with cryptography python scripts/build_lesson.py --push   # + 커밋 · 푸시
+```
+
 ## 영어 복습 페이지
 
 `docs/english.html`은 내비게이션 **"영어"** 메뉴로 연결되는 페이지다(`noindex`). 한 페이지 10카드, 한글만 보기·★ 헷갈림·섞기·🔊를 쓴다.
