@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>전화영어 — MacsALogs</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .lesson-summary { font-size: .88rem; color: var(--text-muted); margin: .5rem 0 0; line-height: 1.6; }
+    .lesson-h2 { font-size: 1.05rem; margin: 2rem 0 .75rem; }
+    .lesson-table-wrap { overflow-x: auto; padding-bottom: 3rem; }
+    .lesson-table { border-collapse: collapse; width: 100%; font-size: .85rem; }
+    .lesson-table th, .lesson-table td { border-bottom: 1px solid var(--border); padding: .45rem .5rem; text-align: right; white-space: nowrap; }
+    .lesson-table th:nth-child(-n+2), .lesson-table td:nth-child(-n+2) { text-align: left; }
+    .lesson-table small { font-weight: 400; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="index.html">홈</a>
+        <a href="english.html">영어</a>
+        <a href="about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="mom-hero">
+      <p class="tv-eyebrow">Phone English · OPIc AL</p>
+      <h1>전화영어</h1>
+      <p class="mom-hero-sub">전화영어 수업 복습 노트 — 내가 한 말의 교정, 튜터가 고쳐 말해 준 것, 말버릇, 그날 주제를 OPIc 문제로 넓힌 모범 답안을 대본 · 녹음과 함께 봅니다.</p>
+    </section>
+    <div id="lesson-lock"></div>
+    <section id="lesson-body"></section>
+    <p><button type="button" class="mom-logout" id="lesson-logout" hidden>잠그기</button></p>
+  </main>
+  <script type="application/json" id="lesson-data">{"v": 1, "iter": 600000, "salt": "M9vL0hZ7rmBZVyHZ6wiahA==", "iv": "6DikZsEDqIitcFi1", "ct": "sPrAWcBsfoNxYf1I+RbWPAOZFI8ufEhohJsXd5pewhU9fCGOk0/5pAK6dLfzBOOT91SYMuN/w/GY9G0yvudbvaaOoiQcj09B0qgaWvn09X+KSkq80Va0q9zBzTJI1lcumi51YXTgKTL24XVLScaIudFZdNb78ozHrQk4HjQR9JL2/4hWlwdEdF5jyx+f46zwWfhZPA8dEEMRRDha64LhHBKmP8d+4c2ShhRDSFWzJUCDkInt/pOFWr3QW29vWqxREVwbF44s8Ob92+0HF5uJb+czT8BJv/NJrWlQWVCxOZW6LSw+C+4yE6G5KCQI+yfXgD4JVUaR0oo/RJSqpFo7DeTRYeHI2LvkNy51upikFSNasmgLyGA8VVFp4Q6cFwtHlPVTtdl46umbyJexGIXLo0fHwlkiI/Dg8BoMtoBMXoHLxMKlj4IL0ivAqQsOZ7/Lo2YNbCumuPf7Myqbzj8JUCCSC1sTfVyRyHvTWyuKxw/Frw29N0P066ohUU7zRuKO85CqTs+24qGiUAIdhlUy2ncjKliM5+8MFgzvrvVxO8uGXBvY2BqQkkUG828T+sYjV8A/EHWFZ5CDZ5KCsZva+MKF5G4BDEUfG7DW9V6SWhQj/2xDxMBAl/PiZtHXr5h7Bvz2WhXuKIPmQwSY3uvZyddQldo50g1wKE7OhwxSNooLzLbneoS/cMxSe9/z/rTYNyg9G8v3gmHzlHy8yTxI5aBtZipGctnMEq/TL1GlhuhBMhwJynl+woNBrCKVjTzuXIrDomRGmi7HcUKrMx6+8GagPT3RsXdz5N4mPXrRBkMjgp25iXBP9VjgGRKWQNLhGlD4YkL+pLtYbRXMd201nW4cM4Fcw2z5NCCsEdUy1F3dGBZI9je5qzXeBIVGSjLApiTlofieOsyhNu2RV1w1knv3efYkj1KKDWetXKg9Cpd+BKNHgXH4IpV/qCEzKXoU1FJ0zEHy+BmPQ/KIPp8gzuDtBeK9PquAbAylx8v5ejBMcHncG2WneyI/E59MYoAldFdmhdSEfaDapRVMJsXwER5mfNDmyk2Pi1H6dES5RlEKWhLpzVZVBb0pDiV0anxaUxkJh/jYr8uc2jm/1P9KZaNroAe7O6vF5f+jPjI8SxfQ2tI8yGUlPuJJ37xjEAaPl6bSjFKt0+u1Mmu+az43wvXR9WbY+tYkhHut6Cg343whI0eMw7qgLl+WSvTHNqNnnFxMEbcbdocPCiI1+uCs1nzFxbAHOxSLy9pzofvKmt7x+Jx13K+O1mG6S5Q4oWIRf3GsLUBoGmJFY6U2/nviqRBzKrOUkgKM3kDc2yzc+CkuM9y+9/w/rTvuX84qvx1CuRAZbvxfGihGujSJhbyDhrJtCReSbqEhJJCg2C58bZAFQvPtGeVn2esXaQtfFbXzUgi48m/BJ0of5kxkyAESw6yzb1lll5YXpaOodxID0eU29CioUu9qHzFC+ThrBUeS+4jUzg274ZcZnZ4g+wl38x1nKokrlucXWgXY8KlETiIQflnV127M1TtsLnTxpcHkO6ALiLIkNB9dQg715sFKHa344K3TqCIeO/IRojtyKajthOmcDUY81MacOPbCSCTJKfOK6iHAaPjuO+72ykrDz101MY+gqTryGKh4jSvhc+fGnE2rkTwK5E63rZVjWh7hZhvvTQoGCnfUg6fHwPRe57Nv9Gvg/CUmHoQqVUmuKLOtuyoSywxZn5zg+8dcUASN/8/1vLqwbnnG7+ibN6PJ8H+hXgq/QMI65IgVIg7SX809YpdcCCO4J/AwuCxbeUsge9JMpwNO+2XJK/LhUu3ePgF1kQk5EOG0VgWIu+j7phtMKrkzX+dVMP0kFqhvMyGsT0UYEPN2XBp12MApujrwwz3Wa9+FORnS2nplbamXCYs+lI7grqDzXzZh4g4UuqIYwT3BV10JeKf7a4OENLOAYulAyETziOcnElx/BREmbnz7zycQZFnbq9Ru1Du2Rt1AFgdWCtouicc9Y4YQfz6VfMgGICNQmT/oa2Hk3ihXPloGmHqFRNbpsZbDavGL2+G7tEoz3sUNJgH4+lig08kQd9R23Ty1VfTwblUkIF4gNNQTxvx620/ZgR7zmBKqbA2ma3Q+HOH23uJqDjgQm7zZvS/My1cfmES8nZxJkEGX386rrnDmX1kHhKGNCmvVsszAhc3tIjQpoNgGeXj0+NbFZ6oIumCc/dNATavvGLvZMN6fxF+yxplfDv4QU9yg6jRjEwfG5Mfgx3NbqxCrJiq9fLWneWHphZ3wFal9LD85iUK3ITYGLdhGzofsq+h7DZa2we1VJAr3N1BwZUIeWra23AdCXhW7kZ8AWZ6KZYflMjU8o+MxoeFEKDzWdg6hbC9o08pfcmewDzXetgEpKBzXNBUZmgLMEevuO7f8qbyk1ITC9MQ8lG0Tf2xBYbbegGydQDXAHFtS+v18xxYaenSJzcP6+EUVKh5tfA2BHhDBGZAdadg3gXK1CXQBSAew4K81ArfmnoepVGw+o3yMKNTOn+kEBUaSjhuIwG3qU3dCF82dOhrAY9UW04O4BvZv/tEPpK6WmFRehbmP3p4Fa4bD6Hnfugr46ateZG8ftF8PvNSA3theoBTJSqBM8r8c6eetD7oyQ1sFjPfsA7i9NZeKnu2f78GdfDYQv29IeRO4oQWUJ+bSwej3+YN7lNobCA3yLv7MMMc4h+SU2rfSZwGQbLo2+A+zLLglnVt9WiQlfbowwEVe7WrnsMDI4Fi0v2aaGyN8DaPVRmbXtYp8E7cktUeKAza+skwNdU504bX6O+rtBusPY8S1TaK2yIC5ukTkgbxTsS1YU9GVjU0+oGKqQ+aFmub2T5rWiafkK2pLJxxYeBsc3XYszQzC+Gt/uo17NA+0QZU6WZpEv5IOlhBdOMn9NxMVqfdLrjWC+SrIxChEy7hdEcNskPBgCjWKHrBxSODElgyw1TRG0+EqM0BJhn+Pt4qQ7qWUfxkxAjNC4+ijwCV1m5adUMh7QzuAqygMqBt0gNmsADqJvvWlrPWl73b4MdgWiNYdG3kWnzpj5/IMDMiGM2i/0PbnG2EmnnQqzUyj3+BnYRd7PsdSgt52dgQfdlIU8jVR1tok0nYIbTZ0J6VAXFnqVZ/0B/FHNXvq/gL2DVNgrH7GhI61+VzeXx8+ILZDwZ0/480uDGwH5bEMrcDy5ndUNsIs+11tnYrlBY9q6wqOI8LjR1AmAkF7rAa8y9xbol8IqQ+3yrBCqaODgjtjjDrzgiGGGSCxNCFXXou3H0bBsLETXevdn2B68EdUVmY9lfTM+4+B8MflWR0UIDukrK5SzQQrQHEC+/a8Rzt7VTvV5+ZxVs6vUR2Kuv7BCpKGeUcaF0+BVo6RT02ex5FzihVJYuc9q6hg3KQ2IBTkigAmNOytnjwhraPiSXfEhvUe802BLN7BZqUAJ8SsefyL5oA3sPJG2ilRaZ1wSTJF6nLSYbYfcc4iYIDf2nOf3kv4UlVj3SQTS/40Il5by9EFhhUjt7RTXRkIR9SmC6DxW1x0svPOUThLiC3PJXkQ5VH5PStbPHfBFo940BA4yA8+EnnVYNQGyOKR8A5effV1G3Kjl7CfgUltnVID3p/AXuOqRXZSoxlqvQGf9Uuep6qjTdlDqPOofg97hOX4Y1+p3Czd1z+a6rcFVascXvAEBk4+23ayTrHxdUIJlMwZ0SyxaeCbVZyB8dwL0Piyi+s1rx7aSHfvRXSn4aEnqAhHWWnvOL4FGShl/BeZp2Stq4gh0YWLRS3WTQb0+BfHoyUMOc27Fn/uRCYJWKRP5BdnbpiIAJUXH8TZoSFipCd3w4pt2iGheJRL+g=="}</script>
+  <script src="js/lesson.js"></script>
+  <script>LESSON.openList();</script>
+</body>
+</html>
