@@ -37,8 +37,8 @@
   var autoNext = true;
   var loopOn = false;
   var stepMode = false;
-  var engine = null;           // 고른 낭독 엔진 (gemini / kokoro-af_heart / drama3-ann). null 이면 책의 defaultEngine
-  var ENGINE_NAMES = { gemini: 'Gemini · Sulafat', 'kokoro-af_heart': 'Kokoro · Heart (미국 여성)', 'drama3-ann': 'Drama3-Ann' };
+  var engine = null;           // 고른 낭독 엔진 (kokoro-af_heart / drama3-ann). null 이면 책의 defaultEngine
+  var ENGINE_NAMES = { 'kokoro-af_heart': 'Kokoro · Heart (미국 여성)', 'drama3-ann': 'Drama3-Ann' };
   var positions = {};          // "책/챕터" -> 초
 
   var audioEl = null;
@@ -81,8 +81,8 @@
     writeStore(PREFS_KEY, { font: fontIndex, rate: rate, follow: follow, autoNext: autoNext, stepMode: stepMode, engine: engine });
   }
 
-  /* 챕터마다 audios = { gemini: …, kokoro: … }. 고른 엔진이 없으면 있는 엔진으로 */
-  function wantedEngine(b) { return engine || b.defaultEngine || 'gemini'; }
+  /* 챕터마다 audios = { 'drama3-ann': …, 'kokoro-af_heart': … }. 고른 엔진이 없으면 있는 엔진으로 */
+  function wantedEngine(b) { return engine || b.defaultEngine || 'drama3-ann'; }
   function applyEngine() {
     books.forEach(function (b) {
       var want = wantedEngine(b);

@@ -1,6 +1,12 @@
 {
  "audioBaseUrl": "https://magpie1st.github.io/audiobook-audio/my-oxford-year",
- "note": "잠근 음원(.bin)은 음원 전용 저장소 magpie1st/audiobook-audio 의 Pages 에 둔다 (audioRepoDir = 그 로컬 폴더). defaultEngine = 페이지 기본 낭독 엔진(gemini|kokoro-af_heart|drama3-ann)",
- "defaultEngine": "gemini",
- "audioRepoDir": "../audiobook-audio/my-oxford-year"
+ "note": "잠근 음원(.bin)은 음원 전용 저장소 magpie1st/audiobook-audio 의 Pages 에 둔다. engineAudio 에 적은 엔진은 그 저장소를 따로 쓴다(drama3-ann → magpie1st/audiobook-audio-drama3) (audioRepoDir = 그 로컬 폴더). defaultEngine = 페이지 기본 낭독 엔진(drama3-ann|kokoro-af_heart)",
+ "defaultEngine": "drama3-ann",
+ "audioRepoDir": "../audiobook-audio/my-oxford-year",
+ "engineAudio": {
+  "drama3-ann": {
+   "audioBaseUrl": "https://magpie1st.github.io/audiobook-audio-drama3/my-oxford-year",
+   "audioRepoDir": "../audiobook-audio-drama3/my-oxford-year"
+  }
+ }
 }

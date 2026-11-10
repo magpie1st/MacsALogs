@@ -16,6 +16,7 @@
   - 쓰고 나서 페이지에 본문 문장이 평문으로 남지 않았는지 검사한다. 남았으면 파일을 지우고 실패한다
 
 음원 주소 (잠근 .bin)
+  - 엔진마다 저장소를 따로 쓰려면 config.json 의 engineAudio = {엔진: {audioBaseUrl, audioRepoDir}} (없으면 아래 책 기본)
   - docs/audio/audiobook/<책>/config.json 의 audioBaseUrl 이 https 이고 audioRepoDir 가 있으면, 잠근 .bin 을 그 로컬 폴더로 복사한다.
     지금 방식: 음원 전용 저장소 magpie1st/audiobook-audio 의 Pages (블로그와 같은 도메인 → CORS 문제 없음, Pages 용량도 따로)
   - audioBaseUrl 이 상대경로면 이 블로그 Pages 안 (docs/<경로>)
@@ -60,7 +61,6 @@ DEFAULT_BOOKS = CODE_ROOT / "book-maker" / "output" / "audiobook"
 # 엔진별 음원 폴더. 페이지에는 챕터마다 있는 엔진을 모두 싣고, 기본 엔진은 config.json 의 defaultEngine 으로 정한다
 # id 는 config.json 의 defaultEngine 값이자 잠근 음원 파일 이름 앞머리다. 바꾸면 이미 올린 .bin 이름이 바뀐다
 ENGINES = {
-    "gemini": CODE_ROOT / "tts-maker" / "output" / "gemini" / "audiobook",
     "kokoro-af_heart": CODE_ROOT / "tts-maker" / "output" / "kokoro" / "af_heart" / "audiobook",
     "drama3-ann": CODE_ROOT / "tts-maker" / "output" / "drama3" / "ann" / "audiobook",   # Drama3-Ann (Drama 3 + 참조 음성, 2026-11-06)
 }
@@ -225,25 +225,30 @@ def main(argv=None) -> int:
             continue
         cfg_path = DOCS / "audio" / "audiobook" / src["id"] / "config.json"
         cfg = json.loads(cfg_path.read_text()) if cfg_path.exists() else {}
-        base_url = cfg.get("audioBaseUrl")
-        # audioRepoDir: base_url 이 다른 저장소의 Pages 일 때 그 저장소의 로컬 폴더 (이 저장소 기준 상대경로 가능)
-        repo_dir = (REPO / cfg["audioRepoDir"]).resolve() if cfg.get("audioRepoDir") else None
-        if repo_dir and sealer and not args.local_audio:
-            root = next((d for d in [repo_dir, *repo_dir.parents] if (d / ".git").exists()), None)
-            if root is None:
-                # 음원 저장소 없이 새 주소를 가리키는 페이지를 올리면 재생이 깨진다
-                print(f"중단: 음원 저장소가 준비되지 않았습니다 ({repo_dir} 위에 .git 없음). "
-                      f"config.json 의 audioRepoDir 를 확인하세요", file=sys.stderr)
-                return 1
+        # 엔진마다 음원 저장소를 따로 쓸 수 있다: config.json 의 engineAudio = { 엔진: { audioBaseUrl, audioRepoDir } }.
+        # 없는 엔진은 책 기본(audioBaseUrl / audioRepoDir)을 쓴다
+        def target(eng):
+            e = cfg.get("engineAudio", {}).get(eng, {})
+            rd = e.get("audioRepoDir", cfg.get("audioRepoDir"))
+            # audioRepoDir: base_url 이 다른 저장소의 Pages 일 때 그 저장소의 로컬 폴더 (이 저장소 기준 상대경로 가능)
+            return e.get("audioBaseUrl", cfg.get("audioBaseUrl")), ((REPO / rd).resolve() if rd else None)
         engines = [e.strip() for e in args.engines.split(",") if e.strip() in ENGINES]
-        default_engine = cfg.get("defaultEngine", engines[0] if engines else "gemini")
+        if sealer and not args.local_audio:
+            for eng in engines:
+                rd = target(eng)[1]
+                if rd and next((d for d in [rd, *rd.parents] if (d / ".git").exists()), None) is None:
+                    # 음원 저장소 없이 새 주소를 가리키는 페이지를 올리면 재생이 깨진다
+                    print(f"중단: {eng} 의 음원 저장소가 준비되지 않았습니다 ({rd} 위에 .git 없음). "
+                          f"config.json 의 audioRepoDir / engineAudio 를 확인하세요", file=sys.stderr)
+                    return 1
+        default_engine = cfg.get("defaultEngine", engines[0] if engines else "drama3-ann")
         chapters, voiced = [], 0
         print(f"{src['title']} ({src['id']})")
         for ch in src["chapters"]:
             c = compact_chapter(ch)
             notes = []
             for eng in engines:
-                audio, note = load_audio(src["id"], ch, args, base_url, sealer, eng, ENGINES[eng], repo_dir)
+                audio, note = load_audio(src["id"], ch, args, *target(eng)[:1], sealer, eng, ENGINES[eng], target(eng)[1])
                 if audio:
                     c.setdefault("audios", {})[eng] = audio
                     part = f" 부분 {len(audio['rows'])}/{ch['sentenceCount']}" if audio.get("partial") else ""
