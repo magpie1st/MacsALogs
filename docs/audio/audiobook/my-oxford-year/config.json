@@ -1,6 +1,6 @@
 {
  "audioBaseUrl": "https://magpie1st.github.io/audiobook-audio/my-oxford-year",
- "note": "잠근 음원(.bin)은 음원 전용 저장소 magpie1st/audiobook-audio 의 Pages 에 둔다 (audioRepoDir = 그 로컬 폴더). defaultEngine = 페이지 기본 낭독 엔진(gemini|kokoro-bf_emma|kokoro-af_heart)",
+ "note": "잠근 음원(.bin)은 음원 전용 저장소 magpie1st/audiobook-audio 의 Pages 에 둔다 (audioRepoDir = 그 로컬 폴더). defaultEngine = 페이지 기본 낭독 엔진(gemini|kokoro-af_heart|drama3-ann)",
  "defaultEngine": "gemini",
  "audioRepoDir": "../audiobook-audio/my-oxford-year"
 }

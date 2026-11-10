@@ -37,8 +37,8 @@
   var autoNext = true;
   var loopOn = false;
   var stepMode = false;
-  var engine = null;           // 고른 낭독 엔진 (gemini / kokoro-bf_emma / kokoro-af_heart / drama3-ann). null 이면 책의 defaultEngine
-  var ENGINE_NAMES = { gemini: 'Gemini · Sulafat', 'kokoro-bf_emma': 'Kokoro · Emma (영국 여성)', 'kokoro-af_heart': 'Kokoro · Heart (미국 여성)', 'drama3-ann': 'Drama3-Ann' };
+  var engine = null;           // 고른 낭독 엔진 (gemini / kokoro-af_heart / drama3-ann). null 이면 책의 defaultEngine
+  var ENGINE_NAMES = { gemini: 'Gemini · Sulafat', 'kokoro-af_heart': 'Kokoro · Heart (미국 여성)', 'drama3-ann': 'Drama3-Ann' };
   var positions = {};          // "책/챕터" -> 초
 
   var audioEl = null;
