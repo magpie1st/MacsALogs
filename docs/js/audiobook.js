@@ -2,7 +2,8 @@
 
    데이터는 docs/audiobook.html 안의 #audiobook-data (scripts/build_audiobook.py 가 생성).
      books[].chapters[].paragraphs[] = [kind, text, emSpans, sentenceSpans]
-     books[].chapters[].audio = { file, durationSec, rows: [[startMs, endMs], ...] }  (문장 번호 = 배열 순서)
+     books[].audioBase, books[].engines[] = {id, name}   → 암호를 푼 뒤 <audioBase>/<엔진>/<책>/manifest.bin 을 받아 챕터에 붙인다
+     chapters[].audios[엔진] = { file, durationSec, rows: [[startMs, endMs], ...] }  (문장 번호 = 배열 순서)
 
    주소 해시: #<책 id>            → 목차
               #<책 id>/<챕터 id>  → 챕터
@@ -133,6 +134,36 @@
     });
   }
 
+  /* 엔진별 음원 목록: <음원 저장소>/<엔진>/<책>/manifest.bin (같은 열쇠로 잠금). 받아서 챕터마다 audios[엔진] 으로 붙인다.
+     한 엔진이 실패(없음·네트워크)해도 나머지는 그대로 쓴다. 본문 해시(sha)가 다르면 그 챕터 음원은 쓰지 않는다 */
+  function openBox(buf) {
+    return crypto.subtle.decrypt({ name: 'AES-GCM', iv: new Uint8Array(buf, 0, 12) }, cryptoKey, new Uint8Array(buf, 12));
+  }
+  function loadEngines(data) {
+    var jobs = [];
+    (data.books || []).forEach(function (b) {
+      if (!b.audioBase || !b.engines) return;
+      b.engines.forEach(function (e) {
+        if (e.name) ENGINE_NAMES[e.id] = e.name;
+        var dir = b.audioBase.replace(/\/$/, '') + '/' + e.id + '/' + b.id + '/';
+        jobs.push(fetch(dir + 'manifest.bin', { cache: 'no-cache' }).then(function (r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.arrayBuffer();
+        }).then(openBox).then(function (plain) {
+          var m = JSON.parse(new TextDecoder().decode(plain));
+          b.chapters.forEach(function (c) {
+            var a = m.chapters && m.chapters[c.id];
+            if (!a || (c.sha && a.sha && c.sha !== a.sha)) return;
+            var o = { engine: e.id, enc: true, file: dir + a.file, durationSec: a.durationSec, voice: a.voice, rows: a.rows };
+            if (a.partial) o.partial = true;
+            (c.audios = c.audios || {})[e.id] = o;
+          });
+        }).catch(function (err) { if (window.console) console.warn('음원 목록을 못 받음: ' + e.id, err); }));
+      });
+    });
+    return Promise.all(jobs).then(function () { return data; });
+  }
+
   function storedPw() {
     try { return sessionStorage.getItem(PW_KEY) || localStorage.getItem(PW_KEY); } catch (e) { return null; }
   }
@@ -156,7 +187,7 @@
       cryptoKey = res.key;
       el.toolbar.hidden = false;
       el.lock.hidden = false;
-      onOpen(res.data);
+      loadEngines(res.data).then(onOpen);
     }
     function ask() {
       el.script.innerHTML =

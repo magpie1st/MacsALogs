@@ -266,30 +266,36 @@ manifest가 원본 대본과 어긋나면 **배포가 중단된다** — 문장 
 
 - 암호는 사용자가 정한다: `python3 scripts/audiobook_password.py` → `~/.config/macsalogs/audiobook_password` (저장소 밖, 600)
 - 암호화: PBKDF2-SHA256(60만 회, salt 는 `scripts/audiobook_crypto.json`, 커밋) → AES-256-GCM. 복호화는 `docs/js/audiobook.js`(WebCrypto)
-- **평문 빌드(`--plain`)와 미리보기 빌드(`--local-audio`)는 `docs/audiobook-local.html` 로만 간다 (gitignore).** `docs/audiobook.html` 에
+- **평문 빌드(`--plain`)는 `docs/audiobook-local.html` 로만 간다 (gitignore, 음원 없음).** `docs/audiobook.html` 에
   평문을 쓰는 경로는 없고, 생성기가 쓰고 나서 본문 문장이 평문으로 보이면 실패한다. 이 안전장치를 풀지 말 것
-- 음원도 같은 열쇠로 잠근 `.bin`(iv 12바이트 + 암호문)이다. `.audiobook-audio/<책>/` 에 모인다 (gitignore).
-  브라우저가 fetch 해서 풀어야 하므로 **CORS 를 허용하는 곳**에 둔다 — GitHub Pages 는 되고 GitHub Release 는 안 된다(2026-11-01 확인).
-  **음원은 별도 저장소 `magpie1st/audiobook-audio` 의 Pages 에 있다** (2026-11-01 분리, 로컬 `../audiobook-audio`). `config.json` 의
-  `audioBaseUrl` = `https://magpie1st.github.io/audiobook-audio/my-oxford-year`, `audioRepoDir` = `../audiobook-audio/my-oxford-year`.
-  **엔진별로 저장소를 따로 쓸 수 있다**: `config.json` 의 `engineAudio` = `{엔진: {audioBaseUrl, audioRepoDir}}`. 지금 `drama3-ann`(31챕터 전부, 208MB)은 `magpie1st/audiobook-audio-drama3`(로컬 `../audiobook-audio-drama3`, 2026-11-10 분리)에 있고, 나머지(`kokoro-af_heart`)는 `audiobook-audio` 에 있다. Gemini·Kokoro Emma 는 2026-11-10 에 삭제했다.
-  생성기가 잠근 `.bin` 을 그 폴더로 복사하고 같은 엔진·챕터의 예전 파일은 지운다. 같은 github.io 도메인이라 CORS 문제가 없고,
-  블로그와 Pages 용량(각 1GB)을 나눠 쓰지 않는다. 음원 저장소가 없으면 생성기가 멈춘다. **이 저장소에는 음원을 두지 않는다
-- 본문: `book-maker/output/audiobook/<책>/book.json`, 음원: `tts-maker/output/gemini/audiobook/<책>/<챕터>.{json,mp3}`.
-  타임라인의 `textSha256` 이 본문과 다르면 그 챕터는 음원 없이 실린다
+- **페이지와 음원은 따로 만든다 (2026-11-10 분리).** 페이지(`build_audiobook.py`)에는 본문과 엔진 목록만 들어가고 음원 폴더를 읽지 않는다.
+  음원 게시는 엔진마다 `publish_audiobook_audio.py --engine <엔진>` 이 한다. 그래서 어느 PC 에서든 그 PC 에 있는 엔진만 올릴 수 있고,
+  다른 엔진·페이지는 건드리지 않는다 (예전처럼 기존 페이지를 풀어 합치는 우회가 필요 없다)
+- **음원은 별도 저장소 `magpie1st/audiobook-audio` 의 Pages 에 있다** (로컬 `../audiobook-audio`, `config.json` 의 `audioRepoDir`).
+  CORS 를 허용하는 곳이어야 브라우저가 받아 풀 수 있다 — GitHub Pages 는 되고 GitHub Release 는 안 된다(2026-11-01 확인). 구조:
+  `<엔진>/<책 id>/<챕터>-<태그>.bin` = 잠근 mp3(iv 12바이트 + AES-256-GCM)와 `<엔진>/<책 id>/manifest.bin` = 잠근 목록
+  `{chapters: {id: {file, sha, durationSec, voice, rows}}}`. 같은 열쇠로 잠근다. 플레이어는 암호를 푼 뒤 엔진마다 manifest 를 받아
+  챕터에 붙이고, 본문 해시(`sha`)가 페이지의 챕터와 다르면 그 음원을 쓰지 않는다. **이 저장소에는 음원을 두지 않는다**
+- `config.json`(`docs/audio/audiobook/<책>/`): `audioBaseUrl`(음원 저장소 Pages 주소), `engines`(플레이어에 보일 엔진 id·이름, 순서대로),
+  `defaultEngine`, `audioRepoDir`. 엔진을 추가하면 `engines` 에 넣고 페이지를 다시 만든다 (publish 스크립트의 `ENGINES` 에 음원 폴더도 등록)
+- 본문: `book-maker/output/audiobook/<책>/book.json`. 음원(엔진 폴더): `tts-maker/output/<엔진>/.../audiobook/<책>/<챕터>.{json,mp3}`.
+  타임라인의 `textSha256` 이 본문과 다르면 `publish_audiobook_audio.py` 가 그 챕터를 올리지 않고 기존 것도 뺀다
+- **GitHub Pages 배포가 `syncing_files` 에서 10분 타임아웃으로 실패하는 일이 잦다 (2026-11-10).** 코드 문제가 아니라 큰 파일을 한 번에 올릴 때 걸린다.
+  100~200MB 씩 나눠 푸시하고, 배포 성공을 확인한 뒤 다음을 올리고, 실패하면 새 커밋으로 다시 건다. 실패한 배포는 반영되지 않아 사이트는 마지막 성공 상태로 남는다
 - 첫 화면은 목차(낭독 없음). 플레이어(얇은 아이콘 한 줄): ←/→ 문장, Space 재생, A 다시, R 문장 반복, S 문장마다 멈춤, F 따라가기, B 책갈피, [ ] 챕터 (L·P 도 받음). 🔒 잠그기 = 기억한 암호 지우기
-- 낭독 엔진을 챕터마다 있는 만큼 싣는다: `kokoro-af_heart`(Heart, 미국 여성), `drama3-ann`(**Drama3-Ann**, Drama 3 + 참조 음성 복제, 2026-11-06 추가 · ch01~05 만 · 음원은 `tts-maker/output/drama3/ann/audiobook`). 음원 비트레이트는 Kokoro 24k · Gemini 40k(2026-11-02 사용자 결정, tts-maker 기본값). **기본 엔진은
-  `docs/audio/audiobook/<책>/config.json` 의 `defaultEngine`** 이고 보는 사람이 플레이어에서 바꿀 수 있다(기기에 기억). 고른 엔진이 없는 챕터는 있는 것으로 재생
+- 낭독 엔진은 `config.json` 의 `engines` 에 있는 것: `drama3-ann`(**Drama3-Ann**, Drama 3 + 참조 음성 B 복제, 31챕터, 40k) · `kokoro-af_heart`(Heart, 미국 여성, 24k).
+  Gemini·Kokoro Emma 는 2026-11-10 에 삭제했다. 처음 고르는 엔진은 **`defaultEngine`** 이고 보는 사람이 플레이어에서 바꿀 수 있다(기기에 기억). 고른 엔진이 없는 챕터는 있는 것으로 재생
 - 📖 읽던 곳(자동)·🔖 책갈피(B 키) — 브라우저 localStorage 에만 있다. 주소 `#책/챕터/p문단` 으로 그 문단에 간다
-- **자동 갱신**: tts-maker 의 launchd `ai.audiobook-gemini`(6시간마다)가 이 저장소에서 `build_audiobook.py` 를 돌리고
-  `docs/audiobook.html`·`docs/audio/audiobook` 만 커밋·푸시한다(커밋 메시지 "오디오북 음원 갱신 (자동)"). 그 밖의 오디오북 코드는 손으로 커밋한다
+- **자동 갱신(Mac mini launchd `ai.audiobook-gemini`)은 지금 사용자가 정지해 두었다.** 이 작업은 옛 방식(페이지에 음원을 함께 굽는 `build_audiobook.py`)을 전제로 하므로,
+  다시 켜기 전에 새 구조(페이지 빌드 + `publish_audiobook_audio.py` 엔진별 게시)에 맞게 `tts-maker/gemini/audiobook_auto.sh` 를 고쳐야 한다
 - 다른 세션이 MacsALogs 를 커밋할 때 작업 중인 파일까지 쓸려 들어간 적이 있다(2026-11-01 `309485d`). 생성물을 docs 에 남겨 두지 않는다
 
 ```bash
-python3 scripts/audiobook_password.py                                   # 암호 정하기 (사용자가 직접)
-uv run --with cryptography python scripts/build_audiobook.py            # → docs/audiobook.html (암호화, 올리는 파일)
-uv run --with cryptography python scripts/build_audiobook.py --local-audio   # → docs/audiobook-local.html (로컬 미리보기)
-python3 scripts/serve_docs.py                                           # http://localhost:8788/audiobook.html
+python3 scripts/audiobook_password.py                                                       # 암호 정하기 (사용자가 직접)
+uv run --with cryptography python scripts/publish_audiobook_audio.py --engine drama3-ann -n  # 음원 게시 시험 (-n 없이 하면 ../audiobook-audio 에 복사)
+uv run --with cryptography python scripts/build_audiobook.py                                # → docs/audiobook.html (암호화, 올리는 파일)
+python3 scripts/serve_docs.py                                                               # http://localhost:8788/audiobook.html
+# 순서: 음원 저장소에 먼저 푸시·배포 확인 → 그다음 이 저장소(페이지) 푸시
 ```
 
 ## MOM(회의록) 페이지
