@@ -280,6 +280,9 @@ manifest가 원본 대본과 어긋나면 **배포가 중단된다** — 문장 
   `defaultEngine`, `audioRepoDir`. 엔진을 추가하면 `engines` 에 넣고 페이지를 다시 만든다 (publish 스크립트의 `ENGINES` 에 음원 폴더도 등록)
 - 본문: `book-maker/output/audiobook/<책>/book.json`. 음원(엔진 폴더): `tts-maker/output/<엔진>/.../audiobook/<책>/<챕터>.{json,mp3}`.
   타임라인의 `textSha256` 이 본문과 다르면 `publish_audiobook_audio.py` 가 그 챕터를 올리지 않고 기존 것도 뺀다
+- **암호를 바꿀 때 (2026-11-10 실행):** 새 암호를 `~/.config/macsalogs/audiobook_password` 에 넣고 ① `publish_audiobook_audio.py --engine <엔진> --rekey -n` 으로 시험(모든 챕터 음원이 이 PC 에 있어야 한다)
+  → ② `--rekey` 로 실제 실행(음원 파일 이름이 전부 새로 나온다) → ③ `build_audiobook.py` → ④ 음원 저장소에 새 열쇠 음원을 **먼저 추가만** 하고(예전 것은 남겨 옛 페이지가 계속 동작), 다 올라가면 manifest 교체 + 예전 음원 삭제를 한 커밋으로 푸시하면서 곧바로 페이지를 푸시한다.
+  주의: 예전 열쇠로 잠근 파일은 git 이력에 남는다 — 두 저장소가 공개라 이전 암호를 아는 사람은 옛 버전을 열 수 있다 (이력을 새로 만들어야 막힌다)
 - **GitHub Pages 배포가 `syncing_files` 에서 10분 타임아웃으로 실패하는 일이 잦다 (2026-11-10).** 코드 문제가 아니라 큰 파일을 한 번에 올릴 때 걸린다.
   100~200MB 씩 나눠 푸시하고, 배포 성공을 확인한 뒤 다음을 올리고, 실패하면 새 커밋으로 다시 건다. 실패한 배포는 반영되지 않아 사이트는 마지막 성공 상태로 남는다
 - 첫 화면은 목차(낭독 없음). 플레이어(얇은 아이콘 한 줄): ←/→ 문장, Space 재생, A 다시, R 문장 반복, S 문장마다 멈춤, F 따라가기, B 책갈피, [ ] 챕터 (L·P 도 받음). 🔒 잠그기 = 기억한 암호 지우기
