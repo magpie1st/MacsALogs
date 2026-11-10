@@ -38,8 +38,8 @@
   var autoNext = true;
   var loopOn = false;
   var stepMode = false;
-  var engine = null;           // 고른 낭독 엔진 (kokoro-af_heart / drama3-ann). null 이면 책의 defaultEngine
-  var ENGINE_NAMES = { 'kokoro-af_heart': 'Kokoro · Heart (미국 여성)', 'drama3-ann': 'Drama3-Ann' };
+  var engine = null;           // 고른 낭독 엔진 (drama3-ann …). null 이면 책의 defaultEngine
+  var ENGINE_NAMES = { 'drama3-ann': 'Drama3-Ann' };
   var positions = {};          // "책/챕터" -> 초
 
   var audioEl = null;
@@ -82,7 +82,7 @@
     writeStore(PREFS_KEY, { font: fontIndex, rate: rate, follow: follow, autoNext: autoNext, stepMode: stepMode, engine: engine });
   }
 
-  /* 챕터마다 audios = { 'drama3-ann': …, 'kokoro-af_heart': … }. 고른 엔진이 없으면 있는 엔진으로 */
+  /* 챕터마다 audios = { '엔진 id': … }. 고른 엔진이 없으면 있는 엔진으로 */
   function wantedEngine(b) { return engine || b.defaultEngine || 'drama3-ann'; }
   function applyEngine() {
     books.forEach(function (b) {
@@ -99,6 +99,7 @@
     var have = {};
     book.chapters.forEach(function (c) { Object.keys(c.audios || {}).forEach(function (k) { have[k] = (have[k] || 0) + 1; }); });
     var keys = Object.keys(have).filter(function (k) { return ENGINE_NAMES[k]; });
+    if (engine && !have[engine]) { engine = null; savePrefs(); }   // 지운 엔진을 기억해 둔 경우
     el.engineWrap.hidden = keys.length < 2;
     el.engine.innerHTML = keys.map(function (k) {
       return '<option value="' + k + '">' + ENGINE_NAMES[k] + ' (' + have[k] + '챕터)</option>';

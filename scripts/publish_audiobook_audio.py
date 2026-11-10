@@ -29,7 +29,6 @@ from audiobook_common import CODE_ROOT, DEFAULT_BOOKS, REPO, Sealer, book_config
 SCHEMA = "audiobook-manifest/1"
 # 엔진별 음원 폴더. id 는 음원 저장소의 폴더 이름이자 config.json engines[].id
 ENGINES = {
-    "kokoro-af_heart": CODE_ROOT / "tts-maker" / "output" / "kokoro" / "af_heart" / "audiobook",
     "drama3-ann": CODE_ROOT / "tts-maker" / "output" / "drama3" / "ann" / "audiobook",   # Drama3-Ann (Drama 3 + 참조 음성 B)
 }
 

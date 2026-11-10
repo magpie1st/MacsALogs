@@ -283,8 +283,8 @@ manifest가 원본 대본과 어긋나면 **배포가 중단된다** — 문장 
 - **GitHub Pages 배포가 `syncing_files` 에서 10분 타임아웃으로 실패하는 일이 잦다 (2026-11-10).** 코드 문제가 아니라 큰 파일을 한 번에 올릴 때 걸린다.
   100~200MB 씩 나눠 푸시하고, 배포 성공을 확인한 뒤 다음을 올리고, 실패하면 새 커밋으로 다시 건다. 실패한 배포는 반영되지 않아 사이트는 마지막 성공 상태로 남는다
 - 첫 화면은 목차(낭독 없음). 플레이어(얇은 아이콘 한 줄): ←/→ 문장, Space 재생, A 다시, R 문장 반복, S 문장마다 멈춤, F 따라가기, B 책갈피, [ ] 챕터 (L·P 도 받음). 🔒 잠그기 = 기억한 암호 지우기
-- 낭독 엔진은 `config.json` 의 `engines` 에 있는 것: `drama3-ann`(**Drama3-Ann**, Drama 3 + 참조 음성 B 복제, 31챕터, 40k) · `kokoro-af_heart`(Heart, 미국 여성, 24k).
-  Gemini·Kokoro Emma 는 2026-11-10 에 삭제했다. 처음 고르는 엔진은 **`defaultEngine`** 이고 보는 사람이 플레이어에서 바꿀 수 있다(기기에 기억). 고른 엔진이 없는 챕터는 있는 것으로 재생
+- 낭독 엔진은 `config.json` 의 `engines` 에 있는 것: 지금은 `drama3-ann`(**Drama3-Ann**, Drama 3 + 참조 음성 B 복제, 31챕터, 40k) 하나다.
+  Gemini·Kokoro Emma·Kokoro Heart 는 2026-11-10 에 삭제했다. 엔진이 둘 이상이면 플레이어에 선택 상자가 뜨고(기기에 기억), 고른 엔진이 없는 챕터는 있는 것으로 재생한다. 처음 고르는 엔진은 **`defaultEngine`**
 - 📖 읽던 곳(자동)·🔖 책갈피(B 키) — 브라우저 localStorage 에만 있다. 주소 `#책/챕터/p문단` 으로 그 문단에 간다
 - **자동 갱신(Mac mini launchd `ai.audiobook-gemini`)은 지금 사용자가 정지해 두었다.** 이 작업은 옛 방식(페이지에 음원을 함께 굽는 `build_audiobook.py`)을 전제로 하므로,
   다시 켜기 전에 새 구조(페이지 빌드 + `publish_audiobook_audio.py` 엔진별 게시)에 맞게 `tts-maker/gemini/audiobook_auto.sh` 를 고쳐야 한다
