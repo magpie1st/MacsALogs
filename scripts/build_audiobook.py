@@ -63,6 +63,7 @@ ENGINES = {
     "gemini": CODE_ROOT / "tts-maker" / "output" / "gemini" / "audiobook",
     "kokoro-bf_emma": CODE_ROOT / "tts-maker" / "output" / "kokoro" / "bf_emma" / "audiobook",
     "kokoro-af_heart": CODE_ROOT / "tts-maker" / "output" / "kokoro" / "af_heart" / "audiobook",
+    "drama3-ann": CODE_ROOT / "tts-maker" / "output" / "drama3" / "ann" / "audiobook",   # Drama3-Ann (Drama 3 + 참조 음성, 2026-11-06)
 }
 START, END = "<!-- AUDIOBOOK-DATA:START -->", "<!-- AUDIOBOOK-DATA:END -->"
 
