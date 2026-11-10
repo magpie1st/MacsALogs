@@ -272,6 +272,7 @@ manifest가 원본 대본과 어긋나면 **배포가 중단된다** — 문장 
   브라우저가 fetch 해서 풀어야 하므로 **CORS 를 허용하는 곳**에 둔다 — GitHub Pages 는 되고 GitHub Release 는 안 된다(2026-11-01 확인).
   **음원은 별도 저장소 `magpie1st/audiobook-audio` 의 Pages 에 있다** (2026-11-01 분리, 로컬 `../audiobook-audio`). `config.json` 의
   `audioBaseUrl` = `https://magpie1st.github.io/audiobook-audio/my-oxford-year`, `audioRepoDir` = `../audiobook-audio/my-oxford-year`.
+  **엔진별로 저장소를 따로 쓸 수 있다**: `config.json` 의 `engineAudio` = `{엔진: {audioBaseUrl, audioRepoDir}}`. 지금 `drama3-ann`(31챕터 전부, 208MB)은 `magpie1st/audiobook-audio-drama3`(로컬 `../audiobook-audio-drama3`, 2026-11-10 분리)에 있고, 나머지(`kokoro-af_heart`)는 `audiobook-audio` 에 있다. Gemini·Kokoro Emma 는 2026-11-10 에 삭제했다.
   생성기가 잠근 `.bin` 을 그 폴더로 복사하고 같은 엔진·챕터의 예전 파일은 지운다. 같은 github.io 도메인이라 CORS 문제가 없고,
   블로그와 Pages 용량(각 1GB)을 나눠 쓰지 않는다. 음원 저장소가 없으면 생성기가 멈춘다. **이 저장소에는 음원을 두지 않는다
 - 본문: `book-maker/output/audiobook/<책>/book.json`, 음원: `tts-maker/output/gemini/audiobook/<책>/<챕터>.{json,mp3}`.
