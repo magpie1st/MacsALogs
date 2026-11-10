@@ -15,6 +15,7 @@
 
     uv run --with cryptography python scripts/publish_audiobook_audio.py --engine drama3-ann -n
     uv run --with cryptography python scripts/publish_audiobook_audio.py --engine drama3-ann [--book my-oxford-year] [--chapters ch01 ch02]
+    ... --rekey      # 암호를 바꾼 뒤: 전부 새 열쇠로 다시 잠근다 (예전 manifest 는 읽지 못하므로 무시)
 """
 from __future__ import annotations
 
@@ -69,6 +70,8 @@ def main(argv=None) -> int:
     ap.add_argument("--chapters", nargs="*", help="이 챕터만 (기본: 전부)")
     ap.add_argument("--books-dir", type=Path, default=DEFAULT_BOOKS)
     ap.add_argument("--repo", type=Path, default=None, help="음원 저장소 폴더 (기본: config.json audioRepoDir)")
+    ap.add_argument("--rekey", action="store_true",
+                    help="암호를 바꾼 뒤 전부 새 열쇠로 다시 잠근다. 예전 manifest 는 읽지 않고(못 읽는다), 이 PC 에 모든 챕터 음원이 있어야 한다")
     ap.add_argument("-n", "--dry-run", action="store_true")
     a = ap.parse_args(argv)
 
@@ -91,7 +94,7 @@ def main(argv=None) -> int:
         dest = repo / a.engine / bid
         mpath = dest / "manifest.bin"
         chapters = {}
-        if mpath.exists():
+        if mpath.exists() and not a.rekey:
             chapters = json.loads(sealer.open_bytes(mpath.read_bytes()))["chapters"]   # 암호가 다르면 여기서 실패한다
         ids = {c["id"] for c in src["chapters"]}
         for gone in [k for k in chapters if k not in ids]:
@@ -120,6 +123,9 @@ def main(argv=None) -> int:
             chapters[ch["id"]] = entry
             part = " 일부" if entry.get("partial") else ""
             print(f"  {ch['id']:9} ♪{entry['durationSec'] / 60:5.1f}분 문장 {len(entry['rows']):3}{part}  {name}")
+        if a.rekey and len(chapters) != len(src["chapters"]):
+            print(f"중단: --rekey 는 모든 챕터 음원이 이 PC 에 있어야 한다 ({len(chapters)}/{len(src['chapters'])}). 먼저 -n 으로 확인할 것", file=sys.stderr)
+            return 1
         manifest = {"schema": SCHEMA, "engine": a.engine, "book": bid, "chapters": chapters}
         if not a.dry_run:
             dest.mkdir(parents=True, exist_ok=True)
