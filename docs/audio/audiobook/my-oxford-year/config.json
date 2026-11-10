@@ -4,7 +4,9 @@
  "defaultEngine": "drama3-ann",
  "audioRepoDir": "../audiobook-audio",
  "engines": [
-  {"id": "drama3-ann", "name": "Drama3-Ann"},
-  {"id": "kokoro-af_heart", "name": "Kokoro · Heart (미국 여성)"}
+  {
+   "id": "drama3-ann",
+   "name": "Drama3-Ann"
+  }
  ]
 }
