@@ -61,7 +61,6 @@ DEFAULT_BOOKS = CODE_ROOT / "book-maker" / "output" / "audiobook"
 # id 는 config.json 의 defaultEngine 값이자 잠근 음원 파일 이름 앞머리다. 바꾸면 이미 올린 .bin 이름이 바뀐다
 ENGINES = {
     "gemini": CODE_ROOT / "tts-maker" / "output" / "gemini" / "audiobook",
-    "kokoro-bf_emma": CODE_ROOT / "tts-maker" / "output" / "kokoro" / "bf_emma" / "audiobook",
     "kokoro-af_heart": CODE_ROOT / "tts-maker" / "output" / "kokoro" / "af_heart" / "audiobook",
     "drama3-ann": CODE_ROOT / "tts-maker" / "output" / "drama3" / "ann" / "audiobook",   # Drama3-Ann (Drama 3 + 참조 음성, 2026-11-06)
 }
