@@ -104,10 +104,23 @@ def lessons(pw: str) -> list[dict]:
     return sorted(out, key=lambda x: x["stem"], reverse=True)
 
 
+def opic_audio_urls() -> dict[str, str]:
+    """opic.html 에 실린 이야기 제목 → 음원 주소(docs/ 기준). 수업 페이지 OPIc 탭의 낭독이 같은 파일을 쓴다."""
+    page = DOCS / "opic.html"
+    m = re.search(r'<script type="application/json" id="opic-data">(.*?)</script>', page.read_text(encoding="utf-8"), re.S) if page.exists() else None
+    if not m:
+        return {}
+    return {s["title"]: s["audio"] for t in json.loads(m.group(1))["topics"] for s in t["stories"]}
+
+
 def detail_plain(x: dict, bin_name: str | None, salt: str) -> str:
     """수업 HTML 의 녹음을 잠근 .bin 으로 바꾸고 목록으로 가는 링크를 넣는다."""
     h = x["page"].read_text(encoding="utf-8")
     h = re.sub(r'(<audio id="audio"[^>]*?) src="[^"]*"', r"\1", h, count=1)  # src 를 비워 두면 error 가 뜬다
+    # OPIc 낭독: 로컬 mp3 경로를 블로그 음원 주소로. 음원이 opic.html 에 없으면 비워 두어 재생기가 그 답변을 건너뛴다
+    urls = opic_audio_urls()
+    h = re.sub(r'data-title="([^"]*)" data-src="[^"]*"',
+               lambda m: f'data-title="{m.group(1)}" data-src="' + (f"../{urls[html.unescape(m.group(1))]}" if html.unescape(m.group(1)) in urls else "") + '"', h)
     back = ('<a href="../lesson.html" style="display:inline-block;margin-bottom:6px;font-size:.9em;'
             'color:inherit;opacity:.7;text-decoration:none">← 전화영어 목록</a>')
     h = h.replace('<header class="top"><div class="wrap">', f'<header class="top"><div class="wrap">\n  {back}', 1)
