@@ -104,7 +104,7 @@
     document.getElementById('opic-stats').innerHTML =
       ['스토리 ' + count + '개',
        '총 ' + Math.round(seconds / 60) + '분',
-       'Kokoro ' + data.voice,
+       (data.engine || 'Kokoro-82M') + ' · ' + data.voice,
        '갱신 ' + data.generated]
       .map(function (s) { return '<span class="opic-stat">' + escapeHtml(s) + '</span>'; }).join('');
   }
