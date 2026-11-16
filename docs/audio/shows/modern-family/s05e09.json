@@ -1,0 +1,4513 @@
+{
+ "schema": "tvshow-audio/2",
+ "generated": "2026-11-16",
+ "show": "modern-family",
+ "folder": "modern-family",
+ "season": 5,
+ "episode": 9,
+ "episodeId": "s05e09",
+ "title": "9화 The Big Game",
+ "source": {
+  "name": "Modern Family S05E09 스크립트.json",
+  "sha256": "8c6024018682ab4746bb30ce9c238998e6209dd0ed6604192df309588004ddf4",
+  "sentences": 561
+ },
+ "audio": {
+  "asset": "modern-family-s05e09.mp3",
+  "sourceName": "Modern Family S05E09 전체.mp3",
+  "durationSec": 1327.62,
+  "recordedSec": 1327.6,
+  "rate": 24000,
+  "channels": 1
+ },
+ "segments": [
+  {
+   "no": 1,
+   "start": 1.25,
+   "end": 2.79,
+   "en": "I have to show a house today,",
+   "ko": "난 고객 만나고 갈 테니 이따 경기장에서 보자",
+   "recorded": 1
+  },
+  {
+   "no": 2,
+   "start": 2.88,
+   "end": 3.96,
+   "en": "so I'll see you guys at Luke's football game.",
+   "ko": "난 고객 만나고 갈 테니 이따 경기장에서 보자",
+   "recorded": 1
+  },
+  {
+   "no": 3,
+   "start": 4.05,
+   "end": 5.71,
+   "en": "I'm too tired to go.",
+   "ko": "피곤해서 못 가겠어요 내일 중간고사인데",
+   "recorded": 1
+  },
+  {
+   "no": 4,
+   "start": 5.8,
+   "end": 7.3,
+   "en": "I have a midterm tomorrow, which I'll probably fail,",
+   "ko": "피곤해서 못 가겠어요 내일 중간고사인데 낙제할 것 같아서 어제 밤새워 공부했어요",
+   "recorded": 1
+  },
+  {
+   "no": 5,
+   "start": 7.38,
+   "end": 9.13,
+   "en": "and I was up really late studying.",
+   "ko": "낙제할 것 같아서 어제 밤새워 공부했어요",
+   "recorded": 1
+  },
+  {
+   "no": 6,
+   "start": 9.22,
+   "end": 10.39,
+   "en": "She was.",
+   "ko": "맞아요 그래서 전 밤새 이러고 있었죠",
+   "recorded": 1
+  },
+  {
+   "no": 7,
+   "start": 10.47,
+   "end": 12.76,
+   "en": "I was up really late doing this.",
+   "ko": "그래서 전 밤새 이러고 있었죠",
+   "recorded": 1
+  },
+  {
+   "no": 8,
+   "start": 12.85,
+   "end": 15.35,
+   "en": "Don't even bother coming. I'm quitting today.",
+   "ko": "다들 안 와도 돼 어차피 그만둘 거야",
+   "recorded": 1
+  },
+  {
+   "no": 9,
+   "start": 15.43,
+   "end": 17.93,
+   "en": "I'm sick of this guy on the team always making fun of me.",
+   "ko": "팀의 어떤 녀석이 자꾸 놀려서 짜증 나요 네가 점수를 적으니까 질투해서 그러는 거야",
+   "recorded": 1
+  },
+  {
+   "no": 10,
+   "start": 18.02,
+   "end": 19.06,
+   "en": "He's just jealous because you're the one",
+   "ko": "네가 점수를 적으니까 질투해서 그러는 거야",
+   "recorded": 1
+  },
+  {
+   "no": 11,
+   "start": 19.14,
+   "end": 20.6,
+   "en": "who puts points on the board.",
+   "ko": "네가 점수를 적으니까 질투해서 그러는 거야 왜냐고?",
+   "recorded": 1
+  },
+  {
+   "no": 12,
+   "start": 20.69,
+   "end": 21.94,
+   "en": "Why? Because you run the scoreboard.",
+   "ko": "왜냐고? - 넌 득점판 관리... - 득점판 관리자니까",
+   "recorded": 1
+  },
+  {
+   "no": 13,
+   "start": 22.02,
+   "end": 24.32,
+   "en": "KIDS: ...run the scoreboard.",
+   "ko": "- 넌 득점판 관리... - 득점판 관리자니까",
+   "recorded": 1
+  },
+  {
+   "no": 14,
+   "start": 24.4,
+   "end": 25.69,
+   "en": "I'm out, too.",
+   "ko": "저도 안 가요 반 친구들은 전부 올 텐데",
+   "recorded": 1
+  },
+  {
+   "no": 15,
+   "start": 25.78,
+   "end": 26.94,
+   "en": "But all your classmates will be there.",
+   "ko": "반 친구들은 전부 올 텐데",
+   "recorded": 1
+  },
+  {
+   "no": 16,
+   "start": 27.03,
+   "end": 28.49,
+   "en": "We ignore each other all week.",
+   "ko": "일주일 내내 서로 무시하고 살았는데",
+   "recorded": 1
+  },
+  {
+   "no": 17,
+   "start": 28.57,
+   "end": 30.24,
+   "en": "It's nice to have a little break on the weekends.",
+   "ko": "주말에는 좀 쉬어도 되잖아요 너희 언제부터 그렇게 부정적으로 된 거야?",
+   "recorded": 1
+  },
+  {
+   "no": 18,
+   "start": 30.32,
+   "end": 32.53,
+   "en": "Geez, I've never seen such a bunch of no-getters.",
+   "ko": "너희 언제부터 그렇게 부정적으로 된 거야?",
+   "recorded": 1
+  },
+  {
+   "no": 19,
+   "start": 32.62,
+   "end": 33.95,
+   "en": "Coined it!",
+   "ko": "그러게요 긍정적으로 행동하면 좋은 일이 생긴다니까",
+   "recorded": 1
+  },
+  {
+   "no": 20,
+   "start": 34.03,
+   "end": 35.41,
+   "en": "Remember, keep a positive attitude,",
+   "ko": "긍정적으로 행동하면 좋은 일이 생긴다니까",
+   "recorded": 1
+  },
+  {
+   "no": 21,
+   "start": 35.49,
+   "end": 37.58,
+   "en": "and good things will happen.",
+   "ko": "긍정적으로 행동하면 좋은 일이 생긴다니까",
+   "recorded": 1
+  },
+  {
+   "no": 22,
+   "start": 37.66,
+   "end": 39.46,
+   "en": "Two things I bring to every open house,",
+   "ko": "아빠는 고객을 만날 때 딱 두 가지를 준비해",
+   "recorded": 1
+  },
+  {
+   "no": 23,
+   "start": 39.54,
+   "end": 42.29,
+   "en": "my lucky pen and a smile.",
+   "ko": "행운의 펜하고 미소지",
+   "recorded": 1
+  },
+  {
+   "no": 24,
+   "start": 42.38,
+   "end": 43.79,
+   "en": "I haven't sold a house all month.",
+   "ko": "한 달을 집 한 채 못 팔아도 난 절대로 포기 안 하잖아",
+   "recorded": 1
+  },
+  {
+   "no": 25,
+   "start": 43.88,
+   "end": 45.88,
+   "en": "Do you see me saying \"I'm done\"? Never.",
+   "ko": "한 달을 집 한 채 못 팔아도 난 절대로 포기 안 하잖아",
+   "recorded": 1
+  },
+  {
+   "no": 26,
+   "start": 45.96,
+   "end": 47.97,
+   "en": "Because there is no \"done\" in Dunphy.",
+   "ko": "왜냐하면 내 사전에 포기란 없으니까",
+   "recorded": 1
+  },
+  {
+   "no": 27,
+   "start": 49.63,
+   "end": 50.93,
+   "en": "I'll see you guys at the game.",
+   "ko": "이따 경기장에서 보자",
+   "recorded": 1
+  },
+  {
+   "no": 28,
+   "start": 51.01,
+   "end": 52.39,
+   "en": "-Umph! -Hey, there is no \"umph\"",
+   "ko": "아빠 사전에는 짜증도 없다는 걸...",
+   "recorded": 1
+  },
+  {
+   "no": 29,
+   "start": 52.47,
+   "end": 55.26,
+   "en": "In dunph... Different spelling!",
+   "ko": "아빠 사전에는 짜증도 없다는 걸...",
+   "recorded": 1
+  },
+  {
+   "no": 30,
+   "start": 55.35,
+   "end": 57.47,
+   "en": "Cam!",
+   "ko": "캠! 네, 알려 주신 갈매기 전략은 기억하는데",
+   "recorded": 1
+  },
+  {
+   "no": 31,
+   "start": 57.56,
+   "end": 59.23,
+   "en": "Yes, Phil, I remember your special play,",
+   "ko": "네, 알려 주신 갈매기 전략은 기억하는데",
+   "recorded": 1
+  },
+  {
+   "no": 32,
+   "start": 59.31,
+   "end": 61.4,
+   "en": "but I think the triple gull-wing is a little tricky",
+   "ko": "네, 알려 주신 갈매기 전략은 기억하는데 오늘은 중요한 자리라서 좀 그러네요",
+   "recorded": 1
+  },
+  {
+   "no": 33,
+   "start": 61.48,
+   "end": 64.48,
+   "en": "to run at such an important sporting match.",
+   "ko": "오늘은 중요한 자리라서 좀 그러네요",
+   "recorded": 1
+  },
+  {
+   "no": 34,
+   "start": 64.57,
+   "end": 67.4,
+   "en": "Cam has a number of delightful superstitions",
+   "ko": "미식축구 시즌이 되면 캠은 다양한 미신을 믿죠",
+   "recorded": 1
+  },
+  {
+   "no": 35,
+   "start": 67.48,
+   "end": 68.94,
+   "en": "during the football season.",
+   "ko": "미식축구 시즌이 되면 캠은 다양한 미신을 믿죠 효과가 있으니까 미신이 아니죠",
+   "recorded": 1
+  },
+  {
+   "no": 36,
+   "start": 69.03,
+   "end": 70.9,
+   "en": "Well, they're not superstitions when they work.",
+   "ko": "효과가 있으니까 미신이 아니죠",
+   "recorded": 1
+  },
+  {
+   "no": 37,
+   "start": 70.99,
+   "end": 72.7,
+   "en": "That seems science-y.",
+   "ko": "그래, 참 과학적이다",
+   "recorded": 1
+  },
+  {
+   "no": 38,
+   "start": 72.78,
+   "end": 77.08,
+   "en": "Not sorry that today is the last G-A-M-E.",
+   "ko": "그나마 다행인 건 오늘이 마지막 G-A-M-E예요",
+   "recorded": 1
+  },
+  {
+   "no": 39,
+   "start": 77.16,
+   "end": 80.41,
+   "en": "Well, thank you, but good coaches don't need luck.",
+   "ko": "말씀은 감사하지만 좋은 코치는 운이 필요 없죠",
+   "recorded": 1
+  },
+  {
+   "no": 40,
+   "start": 80.5,
+   "end": 81.87,
+   "en": "We make luck.",
+   "ko": "운은 만드는 거니까요 운동장에서 뵙죠",
+   "recorded": 1
+  },
+  {
+   "no": 41,
+   "start": 81.96,
+   "end": 83,
+   "en": "See you at the athletic endeavor.",
+   "ko": "운동장에서 뵙죠",
+   "recorded": 1
+  },
+  {
+   "no": 42,
+   "start": 84.96,
+   "end": 86.21,
+   "en": "I'm going to call Gloria and see if she can pick up Lily, too,",
+   "ko": "글로리아한테 전화해서 릴리 데려와 달라고 할게",
+   "recorded": 1
+  },
+  {
+   "no": 43,
+   "start": 86.3,
+   "end": 87.34,
+   "en": "you know, just in case...",
+   "ko": "혹시라도 내가...",
+   "recorded": 1
+  },
+  {
+   "no": 44,
+   "start": 87.42,
+   "end": 88.71,
+   "en": "What, you procrastinate again",
+   "ko": "왜 사표 내는 거 또 미루려고?",
+   "recorded": 1
+  },
+  {
+   "no": 45,
+   "start": 88.8,
+   "end": 89.8,
+   "en": "and not tell Charlie you're quitting?",
+   "ko": "왜 사표 내는 거 또 미루려고?",
+   "recorded": 1
+  },
+  {
+   "no": 46,
+   "start": 89.88,
+   "end": 91.38,
+   "en": "No, no! I'm gonna do it.",
+   "ko": "왜 사표 내는 거 또 미루려고? 아니야, 오늘 낼 건데 말했을 때를 상상하니까",
+   "recorded": 1
+  },
+  {
+   "no": 47,
+   "start": 91.47,
+   "end": 93.59,
+   "en": "I just... I'm picturing his face when I tell him,",
+   "ko": "아니야, 오늘 낼 건데 말했을 때를 상상하니까",
+   "recorded": 1
+  },
+  {
+   "no": 48,
+   "start": 93.68,
+   "end": 95.39,
+   "en": "shaking his head in disappointment.",
+   "ko": "사장님이 슬퍼하실 것 같아서",
+   "recorded": 1
+  },
+  {
+   "no": 49,
+   "start": 95.47,
+   "end": 96.64,
+   "en": "It's... it's hard.",
+   "ko": "사장님이 슬퍼하실 것 같아서",
+   "recorded": 1
+  },
+  {
+   "no": 50,
+   "start": 96.72,
+   "end": 98.68,
+   "en": "-Hey, just do it! -No.",
+   "ko": "- 그냥 내 버려 - 안 돼 뭐가 그렇게 어려운지 난 이해 못 하겠어",
+   "recorded": 1
+  },
+  {
+   "no": 51,
+   "start": 98.77,
+   "end": 100.68,
+   "en": "I don't know why you're making yourself so crazy over this.",
+   "ko": "뭐가 그렇게 어려운지 난 이해 못 하겠어",
+   "recorded": 1
+  },
+  {
+   "no": 52,
+   "start": 100.77,
+   "end": 101.89,
+   "en": "You're right. You're right.",
+   "ko": "뭐가 그렇게 어려운지 난 이해 못 하겠어 그래, 맞아 어려워할 거 없어",
+   "recorded": 1
+  },
+  {
+   "no": 53,
+   "start": 101.98,
+   "end": 103.81,
+   "en": "I... I do not want to be crazy.",
+   "ko": "그래, 맞아 어려워할 거 없어",
+   "recorded": 1
+  },
+  {
+   "no": 54,
+   "start": 103.9,
+   "end": 105.48,
+   "en": "I'll see you at the game.",
+   "ko": "경기장에서 봐",
+   "recorded": 1
+  },
+  {
+   "no": 55,
+   "start": 107.15,
+   "end": 108.32,
+   "en": "Hey, Gloria.",
+   "ko": "글로리아? 알았어요, 내가 데려갈게요",
+   "recorded": 1
+  },
+  {
+   "no": 56,
+   "start": 108.4,
+   "end": 110.24,
+   "en": "Yes, Mitch, I will pick her up.",
+   "ko": "알았어요, 내가 데려갈게요 고마워요 릴리, 안녕",
+   "recorded": 1
+  },
+  {
+   "no": 57,
+   "start": 110.32,
+   "end": 112.57,
+   "en": "Thank you so much! All right. Bye, Lily.",
+   "ko": "고마워요 릴리, 안녕",
+   "recorded": 1
+  },
+  {
+   "no": 58,
+   "start": 112.65,
+   "end": 114.45,
+   "en": "Good luck with the whole Patrick situation.",
+   "ko": "패트릭이랑 잘해 봐 아빠, 창피하게 왜 그래요?",
+   "recorded": 1
+  },
+  {
+   "no": 59,
+   "start": 114.53,
+   "end": 117.08,
+   "en": "Dad, you're embarrassing me.",
+   "ko": "아빠, 창피하게 왜 그래요?",
+   "recorded": 1
+  },
+  {
+   "no": 60,
+   "start": 117.16,
+   "end": 119.41,
+   "en": "Welcome to the rest of your life, sweetheart.",
+   "ko": "딸, 이제부터 시작이야 릴리, 패트릭 얘기 좀 해 봐",
+   "recorded": 1
+  },
+  {
+   "no": 61,
+   "start": 119.49,
+   "end": 122.33,
+   "en": "So, Lily, tell me more about this Patrick.",
+   "ko": "릴리, 패트릭 얘기 좀 해 봐",
+   "recorded": 1
+  },
+  {
+   "no": 62,
+   "start": 122.41,
+   "end": 124.92,
+   "en": "He likes the swings, he sits by the flag,",
+   "ko": "걔는 그네를 좋아하고 깃발 옆에 앉고 숫자도 100까지 셀 수 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 63,
+   "start": 125,
+   "end": 126.5,
+   "en": "and he can count to 100.",
+   "ko": "숫자도 100까지 셀 수 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 64,
+   "start": 126.59,
+   "end": 128.38,
+   "en": "He sounds like the whole package.",
+   "ko": "숫자도 100까지 셀 수 있어요 완벽한 남자 같은데 뭐가 문제야?",
+   "recorded": 1
+  },
+  {
+   "no": 65,
+   "start": 128.46,
+   "end": 130.92,
+   "en": "-Then what is the problem? -He doesn't notice me.",
+   "ko": "완벽한 남자 같은데 뭐가 문제야? 걔가 저한테 관심이 없어요",
+   "recorded": 1
+  },
+  {
+   "no": 66,
+   "start": 131.01,
+   "end": 132.97,
+   "en": "So then make him notice you.",
+   "ko": "그럼 관심을 갖게 해야지 아침에 일어나서 혼자 쓸쓸히",
+   "recorded": 1
+  },
+  {
+   "no": 67,
+   "start": 133.05,
+   "end": 134.55,
+   "en": "You don't want to wake up one morning",
+   "ko": "아침에 일어나서 혼자 쓸쓸히",
+   "recorded": 1
+  },
+  {
+   "no": 68,
+   "start": 134.64,
+   "end": 136.26,
+   "en": "as a lonely 9-year-old,",
+   "ko": "좋은 시절 다 갔다며 한숨 쉬는 사람이 되고 싶어?",
+   "recorded": 1
+  },
+  {
+   "no": 69,
+   "start": 136.35,
+   "end": 138.31,
+   "en": "wondering where all the time went.",
+   "ko": "좋은 시절 다 갔다며 한숨 쉬는 사람이 되고 싶어?",
+   "recorded": 1
+  },
+  {
+   "no": 70,
+   "start": 140.1,
+   "end": 141.56,
+   "en": "Hey, Mom. If you're at the store later,",
+   "ko": "엄마, 이따 얼음 사 오세요 경기 끝나면 필요해요",
+   "recorded": 1
+  },
+  {
+   "no": 71,
+   "start": 141.64,
+   "end": 143.06,
+   "en": "could you pick up some ice?",
+   "ko": "엄마, 이따 얼음 사 오세요 경기 끝나면 필요해요",
+   "recorded": 1
+  },
+  {
+   "no": 72,
+   "start": 143.14,
+   "end": 144.14,
+   "en": "I'm gonna need it for after the game.",
+   "ko": "엄마, 이따 얼음 사 오세요 경기 끝나면 필요해요",
+   "recorded": 1
+  },
+  {
+   "no": 73,
+   "start": 144.23,
+   "end": 145.9,
+   "en": "My little athlete.",
+   "ko": "운동선수 다 됐어 자전거랑 바꾼 아이스크림 기계 써 보려고요",
+   "recorded": 1
+  },
+  {
+   "no": 74,
+   "start": 145.98,
+   "end": 148.11,
+   "en": "I want to try out the gelato maker I traded my bike for.",
+   "ko": "자전거랑 바꾼 아이스크림 기계 써 보려고요",
+   "recorded": 1
+  },
+  {
+   "no": 75,
+   "start": 148.19,
+   "end": 149.78,
+   "en": "Lures me in every time.",
+   "ko": "나 혼자 착각했군",
+   "recorded": 1
+  },
+  {
+   "no": 76,
+   "start": 149.86,
+   "end": 151.61,
+   "en": "Oh, okay. Bye.",
+   "ko": "네, 끊어요",
+   "recorded": 1
+  },
+  {
+   "no": 77,
+   "start": 151.69,
+   "end": 153.32,
+   "en": "Dad, you can just drop me at the next light.",
+   "ko": "다음 신호등에서 내려 주세요",
+   "recorded": 1
+  },
+  {
+   "no": 78,
+   "start": 153.4,
+   "end": 155.24,
+   "en": "I can walk from there, and I got to call Phil anyway.",
+   "ko": "필한테 전화 오기로 해서 저기서부터는 걸어갈게요",
+   "recorded": 1
+  },
+  {
+   "no": 79,
+   "start": 155.32,
+   "end": 156.53,
+   "en": "You did the same thing yesterday.",
+   "ko": "필한테 전화 오기로 해서 저기서부터는 걸어갈게요 어제도 그러더니 왜 그러는 거냐?",
+   "recorded": 1
+  },
+  {
+   "no": 80,
+   "start": 156.62,
+   "end": 157.87,
+   "en": "Why? What's going on with you?",
+   "ko": "어제도 그러더니 왜 그러는 거냐?",
+   "recorded": 1
+  },
+  {
+   "no": 81,
+   "start": 157.95,
+   "end": 160.54,
+   "en": "-You smoking again? -No! No.",
+   "ko": "- 담배 다시 피우니? - 그런 거 아녜요",
+   "recorded": 1
+  },
+  {
+   "no": 82,
+   "start": 160.62,
+   "end": 162.58,
+   "en": "I just... I don't want to put a spotlight",
+   "ko": "그냥... 사장 딸이라는 거 티 내기 싫어요",
+   "recorded": 1
+  },
+  {
+   "no": 83,
+   "start": 162.66,
+   "end": 164.04,
+   "en": "on the fact that I'm the boss's daughter.",
+   "ko": "사장 딸이라는 거 티 내기 싫어요",
+   "recorded": 1
+  },
+  {
+   "no": 84,
+   "start": 164.12,
+   "end": 165.33,
+   "en": "It makes people resent me.",
+   "ko": "사람들이 거리를 둔다고요 - 고마워요, 아빠 - 그래",
+   "recorded": 1
+  },
+  {
+   "no": 85,
+   "start": 165.42,
+   "end": 166.71,
+   "en": "-This is good. Thanks, Dad. -Yeah.",
+   "ko": "- 고마워요, 아빠 - 그래 - 이따 봐요 - 그래",
+   "recorded": 1
+  },
+  {
+   "no": 86,
+   "start": 166.79,
+   "end": 168.38,
+   "en": "-Bye. -Bye.",
+   "ko": "- 이따 봐요 - 그래",
+   "recorded": 1
+  },
+  {
+   "no": 87,
+   "start": 173.01,
+   "end": 174.09,
+   "en": "I can see that bothers you.",
+   "ko": "기분 상하신 거죠?",
+   "recorded": 1
+  },
+  {
+   "no": 88,
+   "start": 174.17,
+   "end": 175.55,
+   "en": "Well, yeah, your own kid,",
+   "ko": "그럼, 자식이 부모하고 있는 걸 보이기 싫다고 하잖아",
+   "recorded": 1
+  },
+  {
+   "no": 89,
+   "start": 175.63,
+   "end": 177.76,
+   "en": "embarrassed to be seen with you, you know?",
+   "ko": "그럼, 자식이 부모하고 있는 걸 보이기 싫다고 하잖아 - 평생을 키워... - 여기서 내릴게요",
+   "recorded": 1
+  },
+  {
+   "no": 90,
+   "start": 177.85,
+   "end": 179.81,
+   "en": "-You spend your whole life... -Here's fine.",
+   "ko": "- 평생을 키워... - 여기서 내릴게요",
+   "recorded": 1
+  },
+  {
+   "no": 91,
+   "start": 196.15,
+   "end": 198.78,
+   "en": "Last month, a law-school classmate offered me a job",
+   "ko": "지난달에 동창이 법률 구조 협회 자리를 제안했는데",
+   "recorded": 1
+  },
+  {
+   "no": 92,
+   "start": 198.87,
+   "end": 200.12,
+   "en": "at his legal aid society,",
+   "ko": "지난달에 동창이 법률 구조 협회 자리를 제안했는데",
+   "recorded": 1
+  },
+  {
+   "no": 93,
+   "start": 200.2,
+   "end": 201.99,
+   "en": "and I just knew I had to take it.",
+   "ko": "그쪽으로 옮기고 싶어요 그래서 사표를 써서 사장님 책상에 두려고 했죠",
+   "recorded": 1
+  },
+  {
+   "no": 94,
+   "start": 202.08,
+   "end": 204,
+   "en": "And I explained that in a letter",
+   "ko": "그래서 사표를 써서 사장님 책상에 두려고 했죠",
+   "recorded": 1
+  },
+  {
+   "no": 95,
+   "start": 204.08,
+   "end": 206.58,
+   "en": "that I was going to sneak onto Charlie's desk.",
+   "ko": "그래서 사표를 써서 사장님 책상에 두려고 했죠",
+   "recorded": 1
+  },
+  {
+   "no": 96,
+   "start": 206.67,
+   "end": 208.21,
+   "en": "Oh, good. It's you.",
+   "ko": "자네군 사장님, 여기서 주무셨어요?",
+   "recorded": 1
+  },
+  {
+   "no": 97,
+   "start": 208.29,
+   "end": 210.29,
+   "en": "Hey! Did you sleep here?",
+   "ko": "사장님, 여기서 주무셨어요?",
+   "recorded": 1
+  },
+  {
+   "no": 98,
+   "start": 210.38,
+   "end": 212.84,
+   "en": "(SNIFFLES, CLEARS THROAT)",
+   "ko": "여자 친구한테 차였어",
+   "recorded": 1
+  },
+  {
+   "no": 99,
+   "start": 212.92,
+   "end": 216.47,
+   "en": "My girlfriend dumped me, uh, in an e-mail.",
+   "ko": "여자 친구한테 차였어 이메일로",
+   "recorded": 1
+  },
+  {
+   "no": 100,
+   "start": 216.55,
+   "end": 218.64,
+   "en": "Couldn't even do it face-to-face.",
+   "ko": "직접 말할 수가 없었나 봐",
+   "recorded": 1
+  },
+  {
+   "no": 101,
+   "start": 218.72,
+   "end": 219.93,
+   "en": "Pretty gutless, huh?",
+   "ko": "참 용기도 없지?",
+   "recorded": 1
+  },
+  {
+   "no": 102,
+   "start": 220.01,
+   "end": 222.81,
+   "en": "Oh, you should go home, get some rest.",
+   "ko": "댁에 가서 좀 쉬세요",
+   "recorded": 1
+  },
+  {
+   "no": 103,
+   "start": 222.89,
+   "end": 224.31,
+   "en": "I can't go back there. It would be too hard.",
+   "ko": "갈 수가 없어",
+   "recorded": 1
+  },
+  {
+   "no": 104,
+   "start": 224.39,
+   "end": 226.1,
+   "en": "Mm, too many memories?",
+   "ko": "추억이 너무 많아서요? 아니, 보트에서 살았는데 전 여친이 가져갔어",
+   "recorded": 1
+  },
+  {
+   "no": 105,
+   "start": 226.19,
+   "end": 228.35,
+   "en": "No, we were living on my boat. I don't know where she took it.",
+   "ko": "아니, 보트에서 살았는데 전 여친이 가져갔어",
+   "recorded": 1
+  },
+  {
+   "no": 106,
+   "start": 228.44,
+   "end": 229.69,
+   "en": "Enough of my whining. What do you need?",
+   "ko": "그만 징징대야지 여긴 왜 왔나?",
+   "recorded": 1
+  },
+  {
+   "no": 107,
+   "start": 229.77,
+   "end": 231.06,
+   "en": "Oh, well,",
+   "ko": "그게, 그냥 인사드리려고...",
+   "recorded": 1
+  },
+  {
+   "no": 108,
+   "start": 231.15,
+   "end": 234.65,
+   "en": "I just... I just came by to say hi. Hi.",
+   "ko": "그게, 그냥 인사드리려고... 안녕하세요 그리고...",
+   "recorded": 1
+  },
+  {
+   "no": 109,
+   "start": 234.74,
+   "end": 239.32,
+   "en": "And also, mm, to tell you in a very gut-ful fashion,",
+   "ko": "안녕하세요 그리고... 용기 내서 직접 드릴 말씀도 있고",
+   "recorded": 1
+  },
+  {
+   "no": 110,
+   "start": 239.41,
+   "end": 240.74,
+   "en": "face-to-face,",
+   "ko": "용기 내서 직접 드릴 말씀도 있고",
+   "recorded": 1
+  },
+  {
+   "no": 111,
+   "start": 240.82,
+   "end": 242.78,
+   "en": "about something that I have been thinking about.",
+   "ko": "쭉 생각해 봤는데",
+   "recorded": 1
+  },
+  {
+   "no": 112,
+   "start": 242.87,
+   "end": 245.66,
+   "en": "But I do think that, um, I am going to have to leave",
+   "ko": "아무래도 5분 일찍 퇴근해야 할 것 같아요",
+   "recorded": 1
+  },
+  {
+   "no": 113,
+   "start": 245.75,
+   "end": 247.66,
+   "en": "about five minutes early today.",
+   "ko": "아무래도 5분 일찍 퇴근해야 할 것 같아요",
+   "recorded": 1
+  },
+  {
+   "no": 114,
+   "start": 247.75,
+   "end": 251.42,
+   "en": "Uh, Cam is... is coaching a high-school football game.",
+   "ko": "캠이 고등학교 미식축구팀 코치를 맡았는데...",
+   "recorded": 1
+  },
+  {
+   "no": 115,
+   "start": 251.5,
+   "end": 253.21,
+   "en": "-I'm in. -What?",
+   "ko": "- 나도 가지 - 네? 어차피 오늘은 일하기도 글렀으니",
+   "recorded": 1
+  },
+  {
+   "no": 116,
+   "start": 253.3,
+   "end": 255.09,
+   "en": "Certainly not gonna be able to focus on any of this today.",
+   "ko": "어차피 오늘은 일하기도 글렀으니",
+   "recorded": 1
+  },
+  {
+   "no": 117,
+   "start": 255.17,
+   "end": 257.63,
+   "en": "Yeah, I need a shot of marching bands,",
+   "ko": "어차피 오늘은 일하기도 글렀으니 바람 좀 쐬어야겠어",
+   "recorded": 1
+  },
+  {
+   "no": 118,
+   "start": 257.72,
+   "end": 260.97,
+   "en": "fresh-cut grass, rosy-cheeked kids.",
+   "ko": "행군 악대, 잔디 파릇파릇한 애들을 보면서",
+   "recorded": 1
+  },
+  {
+   "no": 119,
+   "start": 261.05,
+   "end": 262.64,
+   "en": "Hey!",
+   "ko": "이봐 요즘도 현수막 찢기 하나?",
+   "recorded": 1
+  },
+  {
+   "no": 120,
+   "start": 262.72,
+   "end": 263.97,
+   "en": "Do they still run through a banner?",
+   "ko": "요즘도 현수막 찢기 하나?",
+   "recorded": 1
+  },
+  {
+   "no": 121,
+   "start": 264.06,
+   "end": 266.98,
+   "en": "-They do! -I love that. I love that.",
+   "ko": "- 그럼요 - 그래, 좋았어! 4시쯤 시작할 테니 우리는...",
+   "recorded": 1
+  },
+  {
+   "no": 122,
+   "start": 267.06,
+   "end": 269.19,
+   "en": "Okay, so the game's at what, like, 4:00?",
+   "ko": "4시쯤 시작할 테니 우리는...",
+   "recorded": 1
+  },
+  {
+   "no": 123,
+   "start": 269.27,
+   "end": 271.27,
+   "en": "We should probably... Hey! Give me that.",
+   "ko": "4시쯤 시작할 테니 우리는... 이봐! 이리 내",
+   "recorded": 1
+  },
+  {
+   "no": 124,
+   "start": 271.36,
+   "end": 272.69,
+   "en": "I'm...",
+   "ko": "저는...",
+   "recorded": 1
+  },
+  {
+   "no": 125,
+   "start": 272.77,
+   "end": 274.9,
+   "en": "This is my private cell.",
+   "ko": "내 번호야",
+   "recorded": 1
+  },
+  {
+   "no": 126,
+   "start": 274.98,
+   "end": 277.61,
+   "en": "Only three people in the whole world use this.",
+   "ko": "세상에서 딱 세 명만 아는 번호인데 알려 주지",
+   "recorded": 1
+  },
+  {
+   "no": 127,
+   "start": 277.69,
+   "end": 279.53,
+   "en": "Ooh.",
+   "ko": "세상에서 딱 세 명만 아는 번호인데 알려 주지 이젠 둘이군",
+   "recorded": 1
+  },
+  {
+   "no": 128,
+   "start": 279.61,
+   "end": 281.91,
+   "en": ": Two people.",
+   "ko": "이젠 둘이군",
+   "recorded": 1
+  },
+  {
+   "no": 129,
+   "start": 281.99,
+   "end": 284.45,
+   "en": "Uh, Claire, is, uh... Is there a reason",
+   "ko": "클레어, 운송 서류를 결제 안 한 이유가 있나요?",
+   "recorded": 1
+  },
+  {
+   "no": 130,
+   "start": 284.53,
+   "end": 285.87,
+   "en": "you didn't sign this shipping form?",
+   "ko": "클레어, 운송 서류를 결제 안 한 이유가 있나요? 아뇨, 미안해요 지금 할게요",
+   "recorded": 1
+  },
+  {
+   "no": 131,
+   "start": 285.95,
+   "end": 287.54,
+   "en": "Oh, no. Sorry. I'll do it now.",
+   "ko": "아뇨, 미안해요 지금 할게요",
+   "recorded": 1
+  },
+  {
+   "no": 132,
+   "start": 287.62,
+   "end": 289.16,
+   "en": "Oh, no. No. Now's a little late.",
+   "ko": "괜찮아요, 이미 늦었어요",
+   "recorded": 1
+  },
+  {
+   "no": 133,
+   "start": 289.25,
+   "end": 291.08,
+   "en": "See, they came in this morning,",
+   "ko": "오늘 아침에 보내야 했는데 결제가 안 돼서 못 보냈어요",
+   "recorded": 1
+  },
+  {
+   "no": 134,
+   "start": 291.17,
+   "end": 292.42,
+   "en": "and they can't do a thing without a manager's signature.",
+   "ko": "오늘 아침에 보내야 했는데 결제가 안 돼서 못 보냈어요",
+   "recorded": 1
+  },
+  {
+   "no": 135,
+   "start": 292.5,
+   "end": 293.84,
+   "en": "So now I've got 100 rosewood panels",
+   "ko": "오늘 아침에 보내야 했는데 결제가 안 돼서 못 보냈어요 덕분에 장미목 패널 100장이 창고를 차지하고 있죠",
+   "recorded": 1
+  },
+  {
+   "no": 136,
+   "start": 293.92,
+   "end": 295.13,
+   "en": "-lined up in the warehouse. -Oh, my God.",
+   "ko": "덕분에 장미목 패널 100장이 창고를 차지하고 있죠",
+   "recorded": 1
+  },
+  {
+   "no": 137,
+   "start": 295.21,
+   "end": 296.21,
+   "en": "In the future, I'd appreciate it...",
+   "ko": "그러니까 앞으로는...",
+   "recorded": 1
+  },
+  {
+   "no": 138,
+   "start": 296.3,
+   "end": 297.3,
+   "en": "Hey, hey, Tim.",
+   "ko": "그러니까 앞으로는... 팀, 그만하면 됐네 일부러 그런 것도 아니잖나",
+   "recorded": 1
+  },
+  {
+   "no": 139,
+   "start": 297.38,
+   "end": 298.63,
+   "en": "I think you made your point.",
+   "ko": "팀, 그만하면 됐네 일부러 그런 것도 아니잖나",
+   "recorded": 1
+  },
+  {
+   "no": 140,
+   "start": 298.72,
+   "end": 299.72,
+   "en": "It was an honest mistake, all right?",
+   "ko": "팀, 그만하면 됐네 일부러 그런 것도 아니잖나",
+   "recorded": 1
+  },
+  {
+   "no": 141,
+   "start": 299.8,
+   "end": 301.51,
+   "en": "Dad...",
+   "ko": "팀, 그만하면 됐네 일부러 그런 것도 아니잖나 - 아빠, 저기... - 원래 물건 쌓아 두라고",
+   "recorded": 1
+  },
+  {
+   "no": 142,
+   "start": 301.59,
+   "end": 302.59,
+   "en": "I'm just saying that it's what a warehouse is for,",
+   "ko": "- 아빠, 저기... - 원래 물건 쌓아 두라고 창고가 있는 건데",
+   "recorded": 1
+  },
+  {
+   "no": 143,
+   "start": 302.68,
+   "end": 304.1,
+   "en": "to hold things.",
+   "ko": "창고가 있는 건데 - 큰일도 아니잖아 - 네",
+   "recorded": 1
+  },
+  {
+   "no": 144,
+   "start": 304.18,
+   "end": 305.47,
+   "en": "Not the end of the world. Right.",
+   "ko": "- 큰일도 아니잖아 - 네",
+   "recorded": 1
+  },
+  {
+   "no": 145,
+   "start": 305.56,
+   "end": 307.1,
+   "en": "Of course.",
+   "ko": "그럼요",
+   "recorded": 1
+  },
+  {
+   "no": 146,
+   "start": 307.18,
+   "end": 308.81,
+   "en": "-Sorry. -No, I'm sorry.",
+   "ko": "- 죄송합니다 - 아뇨, 미안해요",
+   "recorded": 1
+  },
+  {
+   "no": 147,
+   "start": 308.89,
+   "end": 311.27,
+   "en": "It's my fault. Bye, Tim. Bye!",
+   "ko": "제 잘못이에요 팀, 잘 가요",
+   "recorded": 1
+  },
+  {
+   "no": 148,
+   "start": 311.35,
+   "end": 312.52,
+   "en": "Dad!",
+   "ko": "아빠! 이게 바로 아침에 말씀드렸던 거예요",
+   "recorded": 1
+  },
+  {
+   "no": 149,
+   "start": 312.6,
+   "end": 313.9,
+   "en": "This is exactly what I was talking about",
+   "ko": "이게 바로 아침에 말씀드렸던 거예요",
+   "recorded": 1
+  },
+  {
+   "no": 150,
+   "start": 313.98,
+   "end": 315.4,
+   "en": "in the car this morning!",
+   "ko": "이게 바로 아침에 말씀드렸던 거예요 평범한 동료처럼 대해 줬으면 하는데",
+   "recorded": 1
+  },
+  {
+   "no": 151,
+   "start": 315.48,
+   "end": 317.11,
+   "en": "I want them to see me like a co-worker,",
+   "ko": "평범한 동료처럼 대해 줬으면 하는데",
+   "recorded": 1
+  },
+  {
+   "no": 152,
+   "start": 317.19,
+   "end": 318.69,
+   "en": "not somebody who's getting special treatment",
+   "ko": "평범한 동료처럼 대해 줬으면 하는데 이러시면 특별 대접 받는다고 생각하잖아요",
+   "recorded": 1
+  },
+  {
+   "no": 153,
+   "start": 318.78,
+   "end": 320.53,
+   "en": "'cause she's the boss's daughter.",
+   "ko": "이러시면 특별 대접 받는다고 생각하잖아요 너무 예민하게 생각하는 거야",
+   "recorded": 1
+  },
+  {
+   "no": 154,
+   "start": 320.61,
+   "end": 323.12,
+   "en": "Is it possible you're being a little oversensitive here?",
+   "ko": "너무 예민하게 생각하는 거야",
+   "recorded": 1
+  },
+  {
+   "no": 155,
+   "start": 323.2,
+   "end": 326.2,
+   "en": "No, I'm not. I'm being... Wow, here? Really?",
+   "ko": "아뇨, 절대로 그렇지... 왜 그걸 여기서 쓰세요?",
+   "recorded": 1
+  },
+  {
+   "no": 156,
+   "start": 326.29,
+   "end": 327.74,
+   "en": "You know, you gave me this.",
+   "ko": "왜 그걸 여기서 쓰세요? 네가 준 거잖아",
+   "recorded": 1
+  },
+  {
+   "no": 157,
+   "start": 327.83,
+   "end": 330.79,
+   "en": "-Look how adorable you were. -Okay. Okay. Okay.",
+   "ko": "이때 정말 귀여웠다고 알았어요, 그만하세요",
+   "recorded": 1
+  },
+  {
+   "no": 158,
+   "start": 330.87,
+   "end": 333.71,
+   "en": "I want you to try really hard to hear what I'm saying.",
+   "ko": "제 말 똑똑히 들어 주세요",
+   "recorded": 1
+  },
+  {
+   "no": 159,
+   "start": 333.79,
+   "end": 336.3,
+   "en": "When I need your help, I will ask for it.",
+   "ko": "도움이 필요하면 제가 부탁할 테니까",
+   "recorded": 1
+  },
+  {
+   "no": 160,
+   "start": 336.38,
+   "end": 338.55,
+   "en": "And until then, just butt out.",
+   "ko": "그 전엔 가만히 좀 계세요",
+   "recorded": 1
+  },
+  {
+   "no": 161,
+   "start": 342.93,
+   "end": 344.76,
+   "en": "What happened to you?",
+   "ko": "왜 저렇게 변했니?",
+   "recorded": 1
+  },
+  {
+   "no": 162,
+   "start": 348.52,
+   "end": 350.02,
+   "en": "Hey, Miller, your toes are looking a little lonely.",
+   "ko": "밀러, 발가락이 외로워하잖아 제대로 좀 해 봐",
+   "recorded": 1
+  },
+  {
+   "no": 163,
+   "start": 350.1,
+   "end": 351.48,
+   "en": "Why don't you pay them a visit?",
+   "ko": "밀러, 발가락이 외로워하잖아 제대로 좀 해 봐",
+   "recorded": 1
+  },
+  {
+   "no": 164,
+   "start": 351.56,
+   "end": 352.85,
+   "en": "What's with the extra warm-ups, coach?",
+   "ko": "상대는 실력도 없는 팀인데 이렇게까지 해야 해요?",
+   "recorded": 1
+  },
+  {
+   "no": 165,
+   "start": 352.94,
+   "end": 354.52,
+   "en": "These guys haven't won all year.",
+   "ko": "상대는 실력도 없는 팀인데 이렇게까지 해야 해요?",
+   "recorded": 1
+  },
+  {
+   "no": 166,
+   "start": 354.61,
+   "end": 356.06,
+   "en": "Did you hear that, team?",
+   "ko": "다들 들었지?",
+   "recorded": 1
+  },
+  {
+   "no": 167,
+   "start": 356.15,
+   "end": 357.77,
+   "en": "Miller just bought you a little present.",
+   "ko": "밀러가 너희한테 선물을 주는구나",
+   "recorded": 1
+  },
+  {
+   "no": 168,
+   "start": 357.86,
+   "end": 359.03,
+   "en": "I wasn't complaining. I was just wondering why we...",
+   "ko": "불평이 아니라 이해가 안 돼서 한 말...",
+   "recorded": 1
+  },
+  {
+   "no": 169,
+   "start": 359.11,
+   "end": 361.49,
+   "en": "Take a lap!",
+   "ko": "불평이 아니라 이해가 안 돼서 한 말... 운동장 돌아!",
+   "recorded": 1
+  },
+  {
+   "no": 170,
+   "start": 361.57,
+   "end": 366.78,
+   "en": "Burt Levoisier, Red Stagg, Duckie Pond,",
+   "ko": "버트 르부아지에부터 레드 스태그 더키 폰드까지",
+   "recorded": 1
+  },
+  {
+   "no": 171,
+   "start": 366.87,
+   "end": 368.74,
+   "en": "all coaching legends at this high school",
+   "ko": "이 학교 전설의 코치들인데 아무도 첫 시즌에서 2승 이상 거둔 적이 없죠",
+   "recorded": 1
+  },
+  {
+   "no": 172,
+   "start": 368.83,
+   "end": 371.12,
+   "en": "and none have won more than two games their first season.",
+   "ko": "아무도 첫 시즌에서 2승 이상 거둔 적이 없죠",
+   "recorded": 1
+  },
+  {
+   "no": 173,
+   "start": 371.21,
+   "end": 372.96,
+   "en": "I win today, that makes three,",
+   "ko": "오늘 우승하면 3승이니까",
+   "recorded": 1
+  },
+  {
+   "no": 174,
+   "start": 373.04,
+   "end": 376.54,
+   "en": "making me the winningest first-year freshman coach ever.",
+   "ko": "오늘 우승하면 3승이니까 제가 1학년 코치 역사상 최다 우승을 이끌게 돼요",
+   "recorded": 1
+  },
+  {
+   "no": 175,
+   "start": 377.96,
+   "end": 379.63,
+   "en": "Oh, hey, Luke, Reuben's sick,",
+   "ko": "루크, 루번이 아프다니까",
+   "recorded": 1
+  },
+  {
+   "no": 176,
+   "start": 379.71,
+   "end": 381.59,
+   "en": "so I'm gonna need you to be the announcer today.",
+   "ko": "네가 오늘 경기 중계 좀 해 줘",
+   "recorded": 1
+  },
+  {
+   "no": 177,
+   "start": 381.67,
+   "end": 384.43,
+   "en": "How am I supposed to keep score and announce at the same time?",
+   "ko": "어떻게 득점판 관리랑 중계를 동시에 해요?",
+   "recorded": 1
+  },
+  {
+   "no": 178,
+   "start": 384.51,
+   "end": 387.3,
+   "en": "Same way you're a spaz and a dork at the same time, spork.",
+   "ko": "넌 바보랑 얼간이 역할도 동시에 잘하잖아 그런 태도는 버리고 기세는 그대로 유지해라",
+   "recorded": 1
+  },
+  {
+   "no": 179,
+   "start": 387.39,
+   "end": 389.89,
+   "en": "Okay, lose the attitude, but keep that intensity.",
+   "ko": "그런 태도는 버리고 기세는 그대로 유지해라",
+   "recorded": 1
+  },
+  {
+   "no": 180,
+   "start": 392.77,
+   "end": 394.02,
+   "en": "Uh, hey, excuse me, ref.",
+   "ko": "심판관님, 쟤들 팔에 검은 띠는 뭐죠?",
+   "recorded": 1
+  },
+  {
+   "no": 181,
+   "start": 394.1,
+   "end": 395.77,
+   "en": "What's with all the black arm bands?",
+   "ko": "심판관님, 쟤들 팔에 검은 띠는 뭐죠? 저 팀 코치가 어젯밤에 돌아가셨대요",
+   "recorded": 1
+  },
+  {
+   "no": 182,
+   "start": 395.85,
+   "end": 397.61,
+   "en": "Their coach passed away last night.",
+   "ko": "저 팀 코치가 어젯밤에 돌아가셨대요",
+   "recorded": 1
+  },
+  {
+   "no": 183,
+   "start": 397.69,
+   "end": 399.15,
+   "en": "He'd been sick for a while.",
+   "ko": "지병이 있었다는군요 세상에 그런데도 경기를 뛰어요?",
+   "recorded": 1
+  },
+  {
+   "no": 184,
+   "start": 399.23,
+   "end": 401.24,
+   "en": "That's terrible. and we're still playing?",
+   "ko": "세상에 그런데도 경기를 뛰어요?",
+   "recorded": 1
+  },
+  {
+   "no": 185,
+   "start": 401.32,
+   "end": 402.74,
+   "en": "Well, they're tough kids.",
+   "ko": "강한 아이들이니까",
+   "recorded": 1
+  },
+  {
+   "no": 186,
+   "start": 402.82,
+   "end": 404.53,
+   "en": "Roger Knight lived for high-school football,",
+   "ko": "미식축구에 평생을 바친 코치를 기린다는군요",
+   "recorded": 1
+  },
+  {
+   "no": 187,
+   "start": 404.61,
+   "end": 406.41,
+   "en": "so they're playing this one in his honor.",
+   "ko": "미식축구에 평생을 바친 코치를 기린다는군요",
+   "recorded": 1
+  },
+  {
+   "no": 188,
+   "start": 406.49,
+   "end": 407.99,
+   "en": "Okay, hey, guys! Guys! Guys! Guys!",
+   "ko": "자, 모두 잘 들어",
+   "recorded": 1
+  },
+  {
+   "no": 189,
+   "start": 408.08,
+   "end": 410.2,
+   "en": "Tragic news about coach Knight.",
+   "ko": "나이트 코치님이 돌아가셨단다",
+   "recorded": 1
+  },
+  {
+   "no": 190,
+   "start": 410.29,
+   "end": 412.16,
+   "en": "But you know what? We need to focus up.",
+   "ko": "그래도 경기에 집중해라",
+   "recorded": 1
+  },
+  {
+   "no": 191,
+   "start": 412.25,
+   "end": 413.79,
+   "en": "Plenty of time to pay our respects,",
+   "ko": "조의를 표할 시간은 많지만 오늘 오후만큼은 안 돼",
+   "recorded": 1
+  },
+  {
+   "no": 192,
+   "start": 413.87,
+   "end": 417,
+   "en": "but there will be no mourning knight this afternoon.",
+   "ko": "조의를 표할 시간은 많지만 오늘 오후만큼은 안 돼",
+   "recorded": 1
+  },
+  {
+   "no": 193,
+   "start": 417.08,
+   "end": 419.13,
+   "en": "-Lot of character over there. -Yep.",
+   "ko": "- 강한 친구들이에요 - 맞아요",
+   "recorded": 1
+  },
+  {
+   "no": 194,
+   "start": 419.21,
+   "end": 420.21,
+   "en": "Those kids haven't won a game all year.",
+   "ko": "올해 한 번도 우승 못 했답니다",
+   "recorded": 1
+  },
+  {
+   "no": 195,
+   "start": 420.3,
+   "end": 421.59,
+   "en": "Uh-huh.",
+   "ko": "올해 한 번도 우승 못 했답니다 게다가 오늘이 코치님 생신이라던데...",
+   "recorded": 1
+  },
+  {
+   "no": 196,
+   "start": 421.67,
+   "end": 422.88,
+   "en": "And now to have to play on his birthday...",
+   "ko": "게다가 오늘이 코치님 생신이라던데... 네, 순서나 결정하죠",
+   "recorded": 1
+  },
+  {
+   "no": 197,
+   "start": 422.97,
+   "end": 425.72,
+   "en": "Okay, see you at the coin toss.",
+   "ko": "네, 순서나 결정하죠 \"매물\"",
+   "recorded": 1
+  },
+  {
+   "no": 198,
+   "start": 425.8,
+   "end": 426.89,
+   "en": "PHILIP: Top of the morning!",
+   "ko": "안녕하세요",
+   "recorded": 1
+  },
+  {
+   "no": 199,
+   "start": 428.6,
+   "end": 430.1,
+   "en": "Real estate and, to a lesser extent, life",
+   "ko": "부동산 중개든 인생이든 가장 중요한 건 인내심이죠",
+   "recorded": 1
+  },
+  {
+   "no": 200,
+   "start": 430.18,
+   "end": 432.77,
+   "en": "is all about perseverance.",
+   "ko": "부동산 중개든 인생이든 가장 중요한 건 인내심이죠 일이 꼬일 때가 많거든요",
+   "recorded": 1
+  },
+  {
+   "no": 201,
+   "start": 432.85,
+   "end": 434.69,
+   "en": "Things go wrong.",
+   "ko": "일이 꼬일 때가 많거든요 열쇠를 잃어버리거나 계약이 엎어지거나",
+   "recorded": 1
+  },
+  {
+   "no": 202,
+   "start": 434.77,
+   "end": 438.4,
+   "en": "Keys get lost, deals fall through, keys get misplaced.",
+   "ko": "열쇠를 잃어버리거나 계약이 엎어지거나 열쇠를 다른 데 두거나...",
+   "recorded": 1
+  },
+  {
+   "no": 203,
+   "start": 438.48,
+   "end": 440.73,
+   "en": "Uh, a lot of it has to do with keys.",
+   "ko": "대부분 열쇠가 문제네요 하지만 그럴 때면 사람은 두 부류로 나뉘죠",
+   "recorded": 1
+  },
+  {
+   "no": 204,
+   "start": 440.82,
+   "end": 444.19,
+   "en": "But that's when you find out there are two types of people,",
+   "ko": "하지만 그럴 때면 사람은 두 부류로 나뉘죠",
+   "recorded": 1
+  },
+  {
+   "no": 205,
+   "start": 444.28,
+   "end": 447.61,
+   "en": "those who waste time staring at a closed door...",
+   "ko": "닫힌 문을 마냥 쳐다보는 사람과",
+   "recorded": 1
+  },
+  {
+   "no": 206,
+   "start": 447.7,
+   "end": 450.45,
+   "en": "and those who find a window.",
+   "ko": "창문을 찾는 사람이죠",
+   "recorded": 1
+  },
+  {
+   "no": 207,
+   "start": 459.96,
+   "end": 462.46,
+   "en": "I'm looking at my first month ever without a sale.",
+   "ko": "처음으로 한 달 동안 계약 한 건 못 올릴 위기예요",
+   "recorded": 1
+  },
+  {
+   "no": 208,
+   "start": 462.55,
+   "end": 464.09,
+   "en": "Some people might give up.",
+   "ko": "포기하는 사람도 있겠지만",
+   "recorded": 1
+  },
+  {
+   "no": 209,
+   "start": 464.17,
+   "end": 467.34,
+   "en": "But those people aren't Phil Dunphy.",
+   "ko": "저, 필 던피는 그런 사람이 아니죠",
+   "recorded": 1
+  },
+  {
+   "no": 210,
+   "start": 467.43,
+   "end": 469.51,
+   "en": "No!",
+   "ko": "안 돼! 애들한테 말했듯이",
+   "recorded": 1
+  },
+  {
+   "no": 211,
+   "start": 469.6,
+   "end": 472.31,
+   "en": "It's like I tell my kids,",
+   "ko": "애들한테 말했듯이 긍정적으로 행동하면 좋은 일이 생기게 마련이죠",
+   "recorded": 1
+  },
+  {
+   "no": 212,
+   "start": 472.39,
+   "end": 475.56,
+   "en": "keep a positive attitude and things will fall your way.",
+   "ko": "긍정적으로 행동하면 좋은 일이 생기게 마련이죠",
+   "recorded": 1
+  },
+  {
+   "no": 213,
+   "start": 479.31,
+   "end": 481.65,
+   "en": "As my favorite redhead once sang,",
+   "ko": "제가 가장 좋아하는 빨간 머리의 노래처럼",
+   "recorded": 1
+  },
+  {
+   "no": 214,
+   "start": 481.73,
+   "end": 483.82,
+   "en": "the sun will come out tomorrow.",
+   "ko": "태양은 내일도 뜰 거예요",
+   "recorded": 1
+  },
+  {
+   "no": 215,
+   "start": 491.33,
+   "end": 492.99,
+   "en": "That redhead, of course, was Mitchell,",
+   "ko": "빨간 머리 미첼 덕분에",
+   "recorded": 1
+  },
+  {
+   "no": 216,
+   "start": 493.08,
+   "end": 496.08,
+   "en": "introducing me to the plucky orphan Annie...",
+   "ko": "용감한 고아 소녀 애니를 제가 알게 됐죠",
+   "recorded": 1
+  },
+  {
+   "no": 217,
+   "start": 501.79,
+   "end": 504.42,
+   "en": "whose never-say-die attitude pulled this country",
+   "ko": "절대 굴하지 않는 애니의 모습 덕분에",
+   "recorded": 1
+  },
+  {
+   "no": 218,
+   "start": 504.51,
+   "end": 506.97,
+   "en": "out of a little thing called...",
+   "ko": "절대 굴하지 않는 애니의 모습 덕분에",
+   "recorded": 1
+  },
+  {
+   "no": 219,
+   "start": 507.05,
+   "end": 509.89,
+   "en": "the great depression.",
+   "ko": "이 나라도 대공황을 이겨 냈어요 그 작은 소녀도 해냈으니 저도 할 수 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 220,
+   "start": 509.97,
+   "end": 514.56,
+   "en": "And anything a little girl can do, I can try to do, too.",
+   "ko": "그 작은 소녀도 해냈으니 저도 할 수 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 221,
+   "start": 514.64,
+   "end": 516.27,
+   "en": "Hey!",
+   "ko": "야!",
+   "recorded": 1
+  },
+  {
+   "no": 222,
+   "start": 537.45,
+   "end": 539.25,
+   "en": "Hey, guys! Welcome back!",
+   "ko": "안녕하세요 다시 뵈니 더 반갑네요",
+   "recorded": 1
+  },
+  {
+   "no": 223,
+   "start": 539.33,
+   "end": 541.29,
+   "en": "-Drink it in! Wow!",
+   "ko": "어서 들어오세요",
+   "recorded": 1
+  },
+  {
+   "no": 224,
+   "start": 543.21,
+   "end": 544.88,
+   "en": "Pretty great, huh?",
+   "ko": "근사하죠? 낮에 집을 둘러볼 시간이 돼서 다행이에요",
+   "recorded": 1
+  },
+  {
+   "no": 225,
+   "start": 544.96,
+   "end": 548.09,
+   "en": "Oh, am I glad you guys could see this during the daytime.",
+   "ko": "낮에 집을 둘러볼 시간이 돼서 다행이에요",
+   "recorded": 1
+  },
+  {
+   "no": 226,
+   "start": 548.17,
+   "end": 551.01,
+   "en": "I really think it shows better like that.",
+   "ko": "낮에 집을 둘러볼 시간이 돼서 다행이에요 낮에 보니까 더 좋아 보이지 않아요?",
+   "recorded": 1
+  },
+  {
+   "no": 227,
+   "start": 551.09,
+   "end": 552.72,
+   "en": "So?",
+   "ko": "어떠세요? 바로 본론으로 들어가서 수수료 지급하시죠?",
+   "recorded": 1
+  },
+  {
+   "no": 228,
+   "start": 552.8,
+   "end": 554.8,
+   "en": "Should we just cut to the chase and pay me my commission?",
+   "ko": "바로 본론으로 들어가서 수수료 지급하시죠? 농담이에요 직접 안 주셔도 돼요",
+   "recorded": 1
+  },
+  {
+   "no": 229,
+   "start": 554.89,
+   "end": 556.27,
+   "en": "I'm kidding. You don't pay me directly.",
+   "ko": "농담이에요 직접 안 주셔도 돼요",
+   "recorded": 1
+  },
+  {
+   "no": 230,
+   "start": 556.35,
+   "end": 558.31,
+   "en": "There's no fee in dun... Phil.",
+   "ko": "수수료는 바로 안 받아요",
+   "recorded": 1
+  },
+  {
+   "no": 231,
+   "start": 558.39,
+   "end": 559.85,
+   "en": "Listen, Phil, we've got some great news.",
+   "ko": "저기, 좋은 소식이 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 232,
+   "start": 559.93,
+   "end": 562.06,
+   "en": "I love it! Where's my lucky pen?",
+   "ko": "그래요? 행운의 펜이 어디 있지? 직접 말씀드리고 싶어서요",
+   "recorded": 1
+  },
+  {
+   "no": 233,
+   "start": 562.15,
+   "end": 563.65,
+   "en": "We wanted to tell you this in person.",
+   "ko": "직접 말씀드리고 싶어서요",
+   "recorded": 1
+  },
+  {
+   "no": 234,
+   "start": 563.73,
+   "end": 564.73,
+   "en": "We just came from the doctor...",
+   "ko": "- 병원에서 오는 길인데... - 저 임신했어요",
+   "recorded": 1
+  },
+  {
+   "no": 235,
+   "start": 564.82,
+   "end": 565.86,
+   "en": "I'm pregnant!",
+   "ko": "- 병원에서 오는 길인데... - 저 임신했어요 세상에, 잘됐어요",
+   "recorded": 1
+  },
+  {
+   "no": 236,
+   "start": 565.94,
+   "end": 568.36,
+   "en": "Oh, my God! You guys!",
+   "ko": "세상에, 잘됐어요",
+   "recorded": 1
+  },
+  {
+   "no": 237,
+   "start": 568.44,
+   "end": 570.07,
+   "en": "Except we decided to put off buying the house",
+   "ko": "그래서 집을 사는 건 출산 후로 미루려고요",
+   "recorded": 1
+  },
+  {
+   "no": 238,
+   "start": 570.15,
+   "end": 572.32,
+   "en": "-until after the baby's born. -Sure.",
+   "ko": "그래서 집을 사는 건 출산 후로 미루려고요 그래요?",
+   "recorded": 1
+  },
+  {
+   "no": 239,
+   "start": 572.41,
+   "end": 573.45,
+   "en": "We've been trying for, like, six years.",
+   "ko": "아기를 가지려고 6년을 노력했어요",
+   "recorded": 1
+  },
+  {
+   "no": 240,
+   "start": 573.53,
+   "end": 574.99,
+   "en": "Sure.",
+   "ko": "아기를 가지려고 6년을 노력했어요 그래요?",
+   "recorded": 1
+  },
+  {
+   "no": 241,
+   "start": 575.08,
+   "end": 576.12,
+   "en": "For a while there, it seemed like the universe",
+   "ko": "온 우주가 저희를 미워하는 것 같았어요",
+   "recorded": 1
+  },
+  {
+   "no": 242,
+   "start": 576.2,
+   "end": 577.2,
+   "en": "was against us.",
+   "ko": "온 우주가 저희를 미워하는 것 같았어요 그럴 리가요? 우주가 왜 그러겠어요?",
+   "recorded": 1
+  },
+  {
+   "no": 243,
+   "start": 577.29,
+   "end": 578.7,
+   "en": "That's ridiculous.",
+   "ko": "그럴 리가요? 우주가 왜 그러겠어요?",
+   "recorded": 1
+  },
+  {
+   "no": 244,
+   "start": 578.79,
+   "end": 580.66,
+   "en": "Why would the universe be against one person?",
+   "ko": "그럴 리가요? 우주가 왜 그러겠어요?",
+   "recorded": 1
+  },
+  {
+   "no": 245,
+   "start": 580.75,
+   "end": 582.12,
+   "en": "Here, have a spirit sticker!",
+   "ko": "응원 스티커예요 혼자만 안 붙이면 안 되죠",
+   "recorded": 1
+  },
+  {
+   "no": 246,
+   "start": 582.21,
+   "end": 584.04,
+   "en": "Don't be the only student without one.",
+   "ko": "혼자만 안 붙이면 안 되죠",
+   "recorded": 1
+  },
+  {
+   "no": 247,
+   "start": 585.63,
+   "end": 587.59,
+   "en": "I actually go to this school!",
+   "ko": "이 학교는 내가 다니거든",
+   "recorded": 1
+  },
+  {
+   "no": 248,
+   "start": 587.67,
+   "end": 590.01,
+   "en": "Wow, you really are invisible, huh?",
+   "ko": "너 정말로 투명인간 취급 받는 거야? 그래도 난 전혀 아무렇지 않아",
+   "recorded": 1
+  },
+  {
+   "no": 249,
+   "start": 590.09,
+   "end": 591.59,
+   "en": "I could not be more fine with it.",
+   "ko": "그래도 난 전혀 아무렇지 않아",
+   "recorded": 1
+  },
+  {
+   "no": 250,
+   "start": 591.67,
+   "end": 593.14,
+   "en": "You're like that guy from that movie",
+   "ko": "너 꼭 태어난 걸 후회하던 그 영화 주인공 같다",
+   "recorded": 1
+  },
+  {
+   "no": 251,
+   "start": 593.22,
+   "end": 595.1,
+   "en": "who wishes he was never born.",
+   "ko": "너 꼭 태어난 걸 후회하던 그 영화 주인공 같다",
+   "recorded": 1
+  },
+  {
+   "no": 252,
+   "start": 595.18,
+   "end": 596.47,
+   "en": "\"It's a wonderful life.\"",
+   "ko": "'멋진 인생'",
+   "recorded": 1
+  },
+  {
+   "no": 253,
+   "start": 596.55,
+   "end": 598.77,
+   "en": "You say that, but do you mean it?",
+   "ko": "말은 그렇게 해도 아닌 거 알아 화창한 날씨의 이곳은 레드 스태그 경기장입니다",
+   "recorded": 1
+  },
+  {
+   "no": 254,
+   "start": 598.85,
+   "end": 600.98,
+   "en": "Beautiful day here at Red Stagg field.",
+   "ko": "화창한 날씨의 이곳은 레드 스태그 경기장입니다 홈팀에서 킥오프할 선수는 44번 제이슨 밀러 선수로",
+   "recorded": 1
+  },
+  {
+   "no": 255,
+   "start": 601.06,
+   "end": 604.4,
+   "en": "Kicking off for the home team Is number 44, Jason Miller,",
+   "ko": "홈팀에서 킥오프할 선수는 44번 제이슨 밀러 선수로",
+   "recorded": 1
+  },
+  {
+   "no": 256,
+   "start": 604.48,
+   "end": 608.69,
+   "en": "who also plays lacrosse, soccer, and all the girl parts",
+   "ko": "라크로스팀과 축구팀에서도 활동하며 '하이 스쿨 뮤지컬' 놀이 때 여자 역을 죄다 맡아 했죠",
+   "recorded": 1
+  },
+  {
+   "no": 257,
+   "start": 608.78,
+   "end": 611.4,
+   "en": "when he and his friends act out \"high school musical.\"",
+   "ko": "'하이 스쿨 뮤지컬' 놀이 때 여자 역을 죄다 맡아 했죠 여자와의 인연은 그게 전부일 것 같습니다",
+   "recorded": 1
+  },
+  {
+   "no": 258,
+   "start": 611.49,
+   "end": 614.66,
+   "en": "Quite possibly the only girl parts he'll ever see.",
+   "ko": "여자와의 인연은 그게 전부일 것 같습니다",
+   "recorded": 1
+  },
+  {
+   "no": 259,
+   "start": 614.74,
+   "end": 616.03,
+   "en": "Ohh! -",
+   "ko": "헤일리?",
+   "recorded": 1
+  },
+  {
+   "no": 260,
+   "start": 616.12,
+   "end": 618.62,
+   "en": "-Haley! -Hey, Dylan!",
+   "ko": "헤일리? 딜런?",
+   "recorded": 1
+  },
+  {
+   "no": 261,
+   "start": 618.7,
+   "end": 620.16,
+   "en": "I didn't realize you were coming here.",
+   "ko": "- 오늘 올 줄 몰랐는데 - 무슨 소리야?",
+   "recorded": 1
+  },
+  {
+   "no": 262,
+   "start": 620.25,
+   "end": 621.46,
+   "en": "Are you kidding?",
+   "ko": "- 오늘 올 줄 몰랐는데 - 무슨 소리야? 여기는 나한테 고향 같은 곳이야",
+   "recorded": 1
+  },
+  {
+   "no": 263,
+   "start": 621.54,
+   "end": 622.79,
+   "en": "This place was like a home to me.",
+   "ko": "여기는 나한테 고향 같은 곳이야",
+   "recorded": 1
+  },
+  {
+   "no": 264,
+   "start": 622.87,
+   "end": 624.5,
+   "en": "It's like I was homeschooled.",
+   "ko": "홈스쿨링 받은 거처럼 보이지만 실은 학교 다녔어",
+   "recorded": 1
+  },
+  {
+   "no": 265,
+   "start": 624.58,
+   "end": 626.54,
+   "en": "But I wasn't. I was school-schooled.",
+   "ko": "홈스쿨링 받은 거처럼 보이지만 실은 학교 다녔어 정말 다녔어요?",
+   "recorded": 1
+  },
+  {
+   "no": 266,
+   "start": 626.63,
+   "end": 628.25,
+   "en": "Were you?",
+   "ko": "정말 다녔어요?",
+   "recorded": 1
+  },
+  {
+   "no": 267,
+   "start": 628.34,
+   "end": 630.21,
+   "en": "I got six kinds of pills in my pocket,",
+   "ko": "지금 내 주머니에 여섯 가지 약이 있는데",
+   "recorded": 1
+  },
+  {
+   "no": 268,
+   "start": 630.3,
+   "end": 634.18,
+   "en": "but this here, all this, this is the best medicine.",
+   "ko": "지금 내 주머니에 여섯 가지 약이 있는데 여기가 최고의 약이야",
+   "recorded": 1
+  },
+  {
+   "no": 269,
+   "start": 634.26,
+   "end": 635.97,
+   "en": "Aw, I'm glad you're feeling better.",
+   "ko": "기분이 나아져서 다행이네요",
+   "recorded": 1
+  },
+  {
+   "no": 270,
+   "start": 637.64,
+   "end": 640.1,
+   "en": "-So, Charlie, I... -",
+   "ko": "사장님, 드릴...",
+   "recorded": 1
+  },
+  {
+   "no": 271,
+   "start": 642.23,
+   "end": 643.81,
+   "en": "I'm here to get Lily.",
+   "ko": "\"왓슨 초등학교\" 릴리 데리러 왔어요",
+   "recorded": 1
+  },
+  {
+   "no": 272,
+   "start": 643.89,
+   "end": 646.48,
+   "en": "Oh, before I call her, we had a small issue today.",
+   "ko": "그 전에 오늘 문제가 좀 있었어요 릴리가 패트릭을 넘어트리고 뽀뽀하려고 했어요",
+   "recorded": 1
+  },
+  {
+   "no": 273,
+   "start": 646.56,
+   "end": 648.86,
+   "en": "One of the boys, Patrick, said Lily pushed him down",
+   "ko": "릴리가 패트릭을 넘어트리고 뽀뽀하려고 했어요",
+   "recorded": 1
+  },
+  {
+   "no": 274,
+   "start": 648.94,
+   "end": 650.36,
+   "en": "and tried to kiss him.",
+   "ko": "릴리가 패트릭을 넘어트리고 뽀뽀하려고 했어요",
+   "recorded": 1
+  },
+  {
+   "no": 275,
+   "start": 650.44,
+   "end": 652.19,
+   "en": "No, that doesn't sound like Lily.",
+   "ko": "릴리가 그럴 리 없어요",
+   "recorded": 1
+  },
+  {
+   "no": 276,
+   "start": 652.28,
+   "end": 654.28,
+   "en": "She was probably imitating something she saw",
+   "ko": "TV에서 본 걸 따라 했거나 혹시 집에서...",
+   "recorded": 1
+  },
+  {
+   "no": 277,
+   "start": 654.36,
+   "end": 656.11,
+   "en": "on TV or in her family...",
+   "ko": "TV에서 본 걸 따라 했거나 혹시 집에서...",
+   "recorded": 1
+  },
+  {
+   "no": 278,
+   "start": 656.2,
+   "end": 658.08,
+   "en": "Ay, it was the TV, yes.",
+   "ko": "TV에서 봤을 거예요 저기 오네요 릴리는 착한 애예요",
+   "recorded": 1
+  },
+  {
+   "no": 279,
+   "start": 658.16,
+   "end": 660.95,
+   "en": "Oh, but here she is. She's always so sweet.",
+   "ko": "저기 오네요 릴리는 착한 애예요",
+   "recorded": 1
+  },
+  {
+   "no": 280,
+   "start": 661.04,
+   "end": 662.91,
+   "en": "Bye, Patrick.",
+   "ko": "패트릭, 잘 가 보셨죠? 사이도 좋잖아요",
+   "recorded": 1
+  },
+  {
+   "no": 281,
+   "start": 663,
+   "end": 665.25,
+   "en": "You see? They're just friends.",
+   "ko": "보셨죠? 사이도 좋잖아요 에번, 뭐가 웃겨? 다음은 너야",
+   "recorded": 1
+  },
+  {
+   "no": 282,
+   "start": 665.33,
+   "end": 666.79,
+   "en": "What are you laughing at, Evan?",
+   "ko": "에번, 뭐가 웃겨? 다음은 너야",
+   "recorded": 1
+  },
+  {
+   "no": 283,
+   "start": 666.88,
+   "end": 669.55,
+   "en": "You're next.",
+   "ko": "에번, 뭐가 웃겨? 다음은 너야 제가 잘 얘기해 볼게요",
+   "recorded": 1
+  },
+  {
+   "no": 284,
+   "start": 669.63,
+   "end": 671.88,
+   "en": "Okay, I'm going to talk to her for a little bit.",
+   "ko": "제가 잘 얘기해 볼게요",
+   "recorded": 1
+  },
+  {
+   "no": 285,
+   "start": 673.97,
+   "end": 677.26,
+   "en": "Oh, did I ever tell you that I put your name up here?",
+   "ko": "여기에 네 이름 썼던 거 말했나?",
+   "recorded": 1
+  },
+  {
+   "no": 286,
+   "start": 677.34,
+   "end": 678.35,
+   "en": "Huh?",
+   "ko": "'헤일리 던피 돔'",
+   "recorded": 1
+  },
+  {
+   "no": 287,
+   "start": 678.43,
+   "end": 680.1,
+   "en": "\"Haley Dunphy dome.\"",
+   "ko": "'헤일리 던피 돔'",
+   "recorded": 1
+  },
+  {
+   "no": 288,
+   "start": 680.18,
+   "end": 682.31,
+   "en": "Aww, you named our special spot?",
+   "ko": "여기에 이름을 붙인 거야? '헤일리, 사랑해'를 잘못 적었어",
+   "recorded": 1
+  },
+  {
+   "no": 289,
+   "start": 682.39,
+   "end": 685.52,
+   "en": "Actually it was supposed to be \"Haley Dunphy, do me.\"",
+   "ko": "'헤일리, 사랑해'를 잘못 적었어 내가 좀 멍청하잖아",
+   "recorded": 1
+  },
+  {
+   "no": 290,
+   "start": 685.6,
+   "end": 687.44,
+   "en": "I'm bad with spacing.",
+   "ko": "내가 좀 멍청하잖아",
+   "recorded": 1
+  },
+  {
+   "no": 291,
+   "start": 687.52,
+   "end": 690.32,
+   "en": "Oh, you're not so bad.",
+   "ko": "그렇지 않아",
+   "recorded": 1
+  },
+  {
+   "no": 292,
+   "start": 690.4,
+   "end": 691.78,
+   "en": "LUKE: And that's halftime,",
+   "ko": "하프 타임입니다 현재 팬서스 6점, 돌핀스 0점",
+   "recorded": 1
+  },
+  {
+   "no": 293,
+   "start": 691.86,
+   "end": 694.03,
+   "en": "Panthers 6, Dolphins 0.",
+   "ko": "하프 타임입니다 현재 팬서스 6점, 돌핀스 0점 1점도 못 올린 밀러 선수가 경기장을 나가고 있네요",
+   "recorded": 1
+  },
+  {
+   "no": 294,
+   "start": 694.11,
+   "end": 695.61,
+   "en": "That zero score By Jason Miller,",
+   "ko": "1점도 못 올린 밀러 선수가 경기장을 나가고 있네요",
+   "recorded": 1
+  },
+  {
+   "no": 295,
+   "start": 695.7,
+   "end": 698.03,
+   "en": "who proudly prances off the field.",
+   "ko": "1점도 못 올린 밀러 선수가 경기장을 나가고 있네요",
+   "recorded": 1
+  },
+  {
+   "no": 296,
+   "start": 698.12,
+   "end": 699.83,
+   "en": "Just let me go up there and kick that kid's butt.",
+   "ko": "올라가서 저 자식 한 대만 때리고 올게요 됐어, 말이나 들어 다들 무릎 꿇어",
+   "recorded": 1
+  },
+  {
+   "no": 297,
+   "start": 699.91,
+   "end": 702.87,
+   "en": "Knock it off, Miller. I need your leg. Take a knee.",
+   "ko": "됐어, 말이나 들어 다들 무릎 꿇어 어떻게 우리 경기장에서 이렇게 힘을 못 쓰니?",
+   "recorded": 1
+  },
+  {
+   "no": 298,
+   "start": 702.95,
+   "end": 705.04,
+   "en": "Now, I don't know what tuna net you dolphins swam into,",
+   "ko": "어떻게 우리 경기장에서 이렇게 힘을 못 쓰니?",
+   "recorded": 1
+  },
+  {
+   "no": 299,
+   "start": 705.12,
+   "end": 706.96,
+   "en": "but you are drowning out there!",
+   "ko": "어떻게 우리 경기장에서 이렇게 힘을 못 쓰니?",
+   "recorded": 1
+  },
+  {
+   "no": 300,
+   "start": 707.04,
+   "end": 709.63,
+   "en": "Coach, would it really be such a bad thing if we lost?",
+   "ko": "코치님, 저희가 지는 게 정말 나쁜 일일까요?",
+   "recorded": 1
+  },
+  {
+   "no": 301,
+   "start": 709.71,
+   "end": 711.8,
+   "en": "-Beg your pardon? -Look at them, coach.",
+   "ko": "뭐라고? 쟤들을 보세요 소중한 걸 잃은 애들이에요",
+   "recorded": 1
+  },
+  {
+   "no": 302,
+   "start": 711.88,
+   "end": 713.38,
+   "en": "Haven't they lost enough already?",
+   "ko": "쟤들을 보세요 소중한 걸 잃은 애들이에요",
+   "recorded": 1
+  },
+  {
+   "no": 303,
+   "start": 713.46,
+   "end": 714.72,
+   "en": "Maybe giving them a win would,",
+   "ko": "쟤들에게 우승을 내 주는 게 어쩌면 진짜 승리일 거예요",
+   "recorded": 1
+  },
+  {
+   "no": 304,
+   "start": 714.8,
+   "end": 716.59,
+   "en": "and a way, be a victory for us, too.",
+   "ko": "쟤들에게 우승을 내 주는 게 어쩌면 진짜 승리일 거예요 나이트 코치님이 뭘 중요하게 생각했을까?",
+   "recorded": 1
+  },
+  {
+   "no": 305,
+   "start": 716.68,
+   "end": 718.09,
+   "en": "Okay, you know what mattered the most to coach Knight?",
+   "ko": "나이트 코치님이 뭘 중요하게 생각했을까? 장애 아동들과 함께한 시간요",
+   "recorded": 1
+  },
+  {
+   "no": 306,
+   "start": 718.18,
+   "end": 719.64,
+   "en": "His work with special-needs kids?",
+   "ko": "장애 아동들과 함께한 시간요 한 애를 바닷가 한 번 데려간 게 전부야",
+   "recorded": 1
+  },
+  {
+   "no": 307,
+   "start": 719.72,
+   "end": 721.6,
+   "en": "Okay, he took one kid to one beach one time.",
+   "ko": "한 애를 바닷가 한 번 데려간 게 전부야",
+   "recorded": 1
+  },
+  {
+   "no": 308,
+   "start": 721.68,
+   "end": 722.93,
+   "en": "Football!",
+   "ko": "미식축구! 미식축구를 위해 평생을 바치셨어",
+   "recorded": 1
+  },
+  {
+   "no": 309,
+   "start": 723.02,
+   "end": 724.14,
+   "en": "Football is what mattered the most!",
+   "ko": "미식축구를 위해 평생을 바치셨어",
+   "recorded": 1
+  },
+  {
+   "no": 310,
+   "start": 724.22,
+   "end": 726.02,
+   "en": "He lived for competition!",
+   "ko": "미식축구를 위해 평생을 바치셨어 스포츠 정신을 믿고 그걸 추구하셨지",
+   "recorded": 1
+  },
+  {
+   "no": 311,
+   "start": 726.1,
+   "end": 729.56,
+   "en": "He believed in sportsmanship, integrity!",
+   "ko": "스포츠 정신을 믿고 그걸 추구하셨지",
+   "recorded": 1
+  },
+  {
+   "no": 312,
+   "start": 729.65,
+   "end": 731.11,
+   "en": "Okay?",
+   "ko": "알겠어? 내가 보기엔",
+   "recorded": 1
+  },
+  {
+   "no": 313,
+   "start": 731.19,
+   "end": 732.86,
+   "en": "Now, the way I see it, we can roll over",
+   "ko": "알겠어? 내가 보기엔 우리가 일부러 져 주면 싫어하실 거야",
+   "recorded": 1
+  },
+  {
+   "no": 314,
+   "start": 732.94,
+   "end": 735.19,
+   "en": "and give them an empty, meaningless victory",
+   "ko": "우리가 일부러 져 주면 싫어하실 거야",
+   "recorded": 1
+  },
+  {
+   "no": 315,
+   "start": 735.28,
+   "end": 737.2,
+   "en": "that he... would hate.",
+   "ko": "우리가 일부러 져 주면 싫어하실 거야 우리가 해야 할 건 경기에 최선을 다해서",
+   "recorded": 1
+  },
+  {
+   "no": 316,
+   "start": 737.28,
+   "end": 740.7,
+   "en": "Or we can go out there, leave it all on the field,",
+   "ko": "우리가 해야 할 건 경기에 최선을 다해서",
+   "recorded": 1
+  },
+  {
+   "no": 317,
+   "start": 740.78,
+   "end": 744.75,
+   "en": "and be a team he would be proud to lose to.",
+   "ko": "쟤들이 영광스럽게 패배할 수 있게 돕는 거야 이 경기가 날 위한 거야? 너희를 위한 거야?",
+   "recorded": 1
+  },
+  {
+   "no": 318,
+   "start": 744.83,
+   "end": 747.04,
+   "en": "Now, is this an \"I\" activity or a \"we\" activity?",
+   "ko": "이 경기가 날 위한 거야? 너희를 위한 거야?",
+   "recorded": 1
+  },
+  {
+   "no": 319,
+   "start": 747.12,
+   "end": 748.12,
+   "en": "We! -What?",
+   "ko": "- 우리요! - 뭐라고?",
+   "recorded": 1
+  },
+  {
+   "no": 320,
+   "start": 748.21,
+   "end": 749.54,
+   "en": "-We! -What?",
+   "ko": "- 우리요! - 안 들려 우리요! 우리!",
+   "recorded": 1
+  },
+  {
+   "no": 321,
+   "start": 749.63,
+   "end": 751.54,
+   "en": "-We! We! We! We! We! We! -That's right!",
+   "ko": "우리요! 우리! 그렇지, 이제야 우리 팀 같구나!",
+   "recorded": 1
+  },
+  {
+   "no": 322,
+   "start": 751.63,
+   "end": 753.67,
+   "en": "Now you sound like dolphins!",
+   "ko": "그렇지, 이제야 우리 팀 같구나!",
+   "recorded": 1
+  },
+  {
+   "no": 323,
+   "start": 755.21,
+   "end": 756.63,
+   "en": "Hey, Tim!",
+   "ko": "팀!",
+   "recorded": 1
+  },
+  {
+   "no": 324,
+   "start": 756.72,
+   "end": 758.51,
+   "en": "I got the next three days of delivery slips",
+   "ko": "앞으로 3일간 있을 배송 미리 결제해 놨어요",
+   "recorded": 1
+  },
+  {
+   "no": 325,
+   "start": 758.59,
+   "end": 760.22,
+   "en": "for you here, signed, huh?",
+   "ko": "앞으로 3일간 있을 배송 미리 결제해 놨어요",
+   "recorded": 1
+  },
+  {
+   "no": 326,
+   "start": 760.3,
+   "end": 761.89,
+   "en": "-Thanks, Claire. -Yeah.",
+   "ko": "- 고마워요 - 뭘요",
+   "recorded": 1
+  },
+  {
+   "no": 327,
+   "start": 761.97,
+   "end": 763.06,
+   "en": "Signed those up good, huh?",
+   "ko": "결제 제대로 됐죠?",
+   "recorded": 1
+  },
+  {
+   "no": 328,
+   "start": 763.14,
+   "end": 764.14,
+   "en": "-Yep. Mm-hmm. -Yeah.",
+   "ko": "- 네 - 맞죠?",
+   "recorded": 1
+  },
+  {
+   "no": 329,
+   "start": 764.22,
+   "end": 765.77,
+   "en": "-Yeah. -Thanks.",
+   "ko": "고마워요 저기, 이게 그러니까",
+   "recorded": 1
+  },
+  {
+   "no": 330,
+   "start": 765.85,
+   "end": 768.31,
+   "en": "So, this is... this is the, uh, the regency birch?",
+   "ko": "저기, 이게 그러니까 리젠시 자작나무 라인이에요?",
+   "recorded": 1
+  },
+  {
+   "no": 331,
+   "start": 768.39,
+   "end": 770.19,
+   "en": "Beautiful model. Gorgeous.",
+   "ko": "근사하네요, 일을 정말 잘하시는 것 같아요",
+   "recorded": 1
+  },
+  {
+   "no": 332,
+   "start": 770.27,
+   "end": 771.27,
+   "en": "You guys do such good work down here.",
+   "ko": "근사하네요, 일을 정말 잘하시는 것 같아요",
+   "recorded": 1
+  },
+  {
+   "no": 333,
+   "start": 771.36,
+   "end": 772.56,
+   "en": "Mm-hmm.",
+   "ko": "근사하네요, 일을 정말 잘하시는 것 같아요 전시장에 보내기 전에 잠깐 구경해도 될까요?",
+   "recorded": 1
+  },
+  {
+   "no": 334,
+   "start": 772.65,
+   "end": 774.36,
+   "en": "Really, you mind if I take her for a spin",
+   "ko": "전시장에 보내기 전에 잠깐 구경해도 될까요?",
+   "recorded": 1
+  },
+  {
+   "no": 335,
+   "start": 774.44,
+   "end": 775.86,
+   "en": "before she goes up to the showroom?",
+   "ko": "전시장에 보내기 전에 잠깐 구경해도 될까요? 그럼요, 사장님",
+   "recorded": 1
+  },
+  {
+   "no": 336,
+   "start": 775.94,
+   "end": 778.32,
+   "en": "-You're the boss... -...His daughter.",
+   "ko": "그럼요, 사장님 사장님 딸...",
+   "recorded": 1
+  },
+  {
+   "no": 337,
+   "start": 778.4,
+   "end": 779.99,
+   "en": "Mm-hmm. That's what you want to say.",
+   "ko": "그 말이 하고 싶은 거죠?",
+   "recorded": 1
+  },
+  {
+   "no": 338,
+   "start": 780.07,
+   "end": 781.78,
+   "en": "Oh, okay.",
+   "ko": "그러니까... 배송할 때는 거울이 없는 건가요?",
+   "recorded": 1
+  },
+  {
+   "no": 339,
+   "start": 781.87,
+   "end": 783.95,
+   "en": "So, no mirror when they're shipping, which makes sense.",
+   "ko": "배송할 때는 거울이 없는 건가요?",
+   "recorded": 1
+  },
+  {
+   "no": 340,
+   "start": 786.08,
+   "end": 790.5,
+   "en": "Also have, uh... no handles.",
+   "ko": "그리고... 손잡이도 없네요?",
+   "recorded": 1
+  },
+  {
+   "no": 341,
+   "start": 790.58,
+   "end": 792.29,
+   "en": "Hey... hey, Tim?",
+   "ko": "저기요, 팀?",
+   "recorded": 1
+  },
+  {
+   "no": 342,
+   "start": 794.09,
+   "end": 795.71,
+   "en": "Hey, Tim!",
+   "ko": "거기 있죠?",
+   "recorded": 1
+  },
+  {
+   "no": 343,
+   "start": 795.8,
+   "end": 798.97,
+   "en": "- -Tim!",
+   "ko": "팀! 이런",
+   "recorded": 1
+  },
+  {
+   "no": 344,
+   "start": 799.05,
+   "end": 801.01,
+   "en": "Oh, God. Yeah, hi, Dad.",
+   "ko": "이런 - 네, 아빠 - 동료님",
+   "recorded": 1
+  },
+  {
+   "no": 345,
+   "start": 801.09,
+   "end": 802.64,
+   "en": "JAY: Hey, co-worker.",
+   "ko": "- 네, 아빠 - 동료님 몇 시에 출발할 거니? 이미 늦었다",
+   "recorded": 1
+  },
+  {
+   "no": 346,
+   "start": 802.72,
+   "end": 804.14,
+   "en": "Just seeing when you want to leave for the game.",
+   "ko": "몇 시에 출발할 거니? 이미 늦었다",
+   "recorded": 1
+  },
+  {
+   "no": 347,
+   "start": 804.22,
+   "end": 807.02,
+   "en": "-We're late already. -Soon, soon.",
+   "ko": "몇 시에 출발할 거니? 이미 늦었다 곧, 금방 나가요",
+   "recorded": 1
+  },
+  {
+   "no": 348,
+   "start": 808.93,
+   "end": 810.14,
+   "en": "I'm... I'm just... I'm finishing up",
+   "ko": "서류 작업 마무리 중이에요",
+   "recorded": 1
+  },
+  {
+   "no": 349,
+   "start": 810.23,
+   "end": 811.81,
+   "en": "a little paperwork in my office.",
+   "ko": "서류 작업 마무리 중이에요 알았다 내가 도울 거 있으면 말해",
+   "recorded": 1
+  },
+  {
+   "no": 350,
+   "start": 811.9,
+   "end": 814.27,
+   "en": "Okay. Let me know if you need any help.",
+   "ko": "알았다 내가 도울 거 있으면 말해",
+   "recorded": 1
+  },
+  {
+   "no": 351,
+   "start": 814.36,
+   "end": 815.98,
+   "en": "No, I do not need your help.",
+   "ko": "아뇨, 저 혼자도 괜찮아요",
+   "recorded": 1
+  },
+  {
+   "no": 352,
+   "start": 816.07,
+   "end": 819.65,
+   "en": "And as I believe I mentioned, I would appreciate it",
+   "ko": "아뇨, 저 혼자도 괜찮아요 제 일거수일투족 감시 안 해 주셨으면 좋겠어요",
+   "recorded": 1
+  },
+  {
+   "no": 353,
+   "start": 819.74,
+   "end": 823.24,
+   "en": "if you were not constantly looking over my shoulder.",
+   "ko": "제 일거수일투족 감시 안 해 주셨으면 좋겠어요",
+   "recorded": 1
+  },
+  {
+   "no": 354,
+   "start": 823.32,
+   "end": 824.66,
+   "en": "Come on. Give me some credit.",
+   "ko": "제 일거수일투족 감시 안 해 주셨으면 좋겠어요 아비를 못 믿는 거냐? 내가 왜 그런 짓을 해?",
+   "recorded": 1
+  },
+  {
+   "no": 355,
+   "start": 824.74,
+   "end": 826.49,
+   "en": "That's the last thing I would do.",
+   "ko": "아비를 못 믿는 거냐? 내가 왜 그런 짓을 해? 아빠, 잊으셨나 본데 전 애도 셋이나 키웠고",
+   "recorded": 1
+  },
+  {
+   "no": 356,
+   "start": 826.58,
+   "end": 829.96,
+   "en": "Dad, you seem to forget that I raised three children,",
+   "ko": "아빠, 잊으셨나 본데 전 애도 셋이나 키웠고",
+   "recorded": 1
+  },
+  {
+   "no": 357,
+   "start": 830.04,
+   "end": 833.5,
+   "en": "and I had a career before this.",
+   "ko": "전에도 직장 다녔었어요",
+   "recorded": 1
+  },
+  {
+   "no": 358,
+   "start": 833.58,
+   "end": 837.17,
+   "en": "I have done plenty of stuff that does not... Oh!",
+   "ko": "지금까지도 혼자서 잘... 어머!",
+   "recorded": 1
+  },
+  {
+   "no": 359,
+   "start": 838.38,
+   "end": 839.84,
+   "en": "Do you hear that?",
+   "ko": "들리니? 창고에서 나는 소리 같은데",
+   "recorded": 1
+  },
+  {
+   "no": 360,
+   "start": 839.92,
+   "end": 841.8,
+   "en": "Sounds like it's coming from the warehouse.",
+   "ko": "창고에서 나는 소리 같은데",
+   "recorded": 1
+  },
+  {
+   "no": 361,
+   "start": 841.88,
+   "end": 843.51,
+   "en": "Yeah, what even is that?",
+   "ko": "네, 무슨 소리죠?",
+   "recorded": 1
+  },
+  {
+   "no": 362,
+   "start": 845.26,
+   "end": 847.26,
+   "en": "Oh, I'm sure it's nothing.",
+   "ko": "별일 아닐 거다",
+   "recorded": 1
+  },
+  {
+   "no": 363,
+   "start": 847.35,
+   "end": 851.23,
+   "en": "Uh, one piece of advice, take it or leave it.",
+   "ko": "안 들어도 괜찮지만 조언 하나 하마",
+   "recorded": 1
+  },
+  {
+   "no": 364,
+   "start": 851.31,
+   "end": 852.73,
+   "en": "What?",
+   "ko": "뭔데요? 걸쇠는 오른쪽 선반 아래 있다",
+   "recorded": 1
+  },
+  {
+   "no": 365,
+   "start": 852.81,
+   "end": 855.65,
+   "en": "The latch is under the panel on the right.",
+   "ko": "걸쇠는 오른쪽 선반 아래 있다",
+   "recorded": 1
+  },
+  {
+   "no": 366,
+   "start": 865.28,
+   "end": 868.04,
+   "en": "I got you mustard and sauerkraut, just what you like.",
+   "ko": "네가 좋아하는 머스터드 사우어크라우트 핫도그다 오늘 왜 이렇게 잘해 주세요?",
+   "recorded": 1
+  },
+  {
+   "no": 367,
+   "start": 868.12,
+   "end": 869.66,
+   "en": "You're being awfully nice,",
+   "ko": "오늘 왜 이렇게 잘해 주세요?",
+   "recorded": 1
+  },
+  {
+   "no": 368,
+   "start": 869.75,
+   "end": 872.37,
+   "en": "considering I started that whole closet-nado.",
+   "ko": "오늘 창고를 그 꼴로 만들어 놨잖아요",
+   "recorded": 1
+  },
+  {
+   "no": 369,
+   "start": 872.46,
+   "end": 873.92,
+   "en": "Well, you're still my daughter.",
+   "ko": "오늘 창고를 그 꼴로 만들어 놨잖아요 넌 여전히 내 딸이니까 여기선 그렇게 불러도 되지?",
+   "recorded": 1
+  },
+  {
+   "no": 370,
+   "start": 874,
+   "end": 875.25,
+   "en": "It's okay I call you that here, right?",
+   "ko": "넌 여전히 내 딸이니까 여기선 그렇게 불러도 되지?",
+   "recorded": 1
+  },
+  {
+   "no": 371,
+   "start": 875.33,
+   "end": 877.17,
+   "en": "Yeah.",
+   "ko": "넌 여전히 내 딸이니까 여기선 그렇게 불러도 되지? 그럼요 널 다른 사람들하고 똑같이 대할 수는 없어",
+   "recorded": 1
+  },
+  {
+   "no": 372,
+   "start": 877.25,
+   "end": 879.71,
+   "en": "Listen, it's hard for me to treat you like everybody else.",
+   "ko": "널 다른 사람들하고 똑같이 대할 수는 없어 너는 유일하게 내가 품에 안고 다닌 사람이야",
+   "recorded": 1
+  },
+  {
+   "no": 373,
+   "start": 879.8,
+   "end": 881.97,
+   "en": "You're the only one I carried home in my arms...",
+   "ko": "너는 유일하게 내가 품에 안고 다닌 사람이야",
+   "recorded": 1
+  },
+  {
+   "no": 374,
+   "start": 882.05,
+   "end": 884.84,
+   "en": "except Dontrell, last year's Christmas party.",
+   "ko": "작년 크리스마스 때 돈트렐도 안고 다녔지만",
+   "recorded": 1
+  },
+  {
+   "no": 375,
+   "start": 884.93,
+   "end": 887.14,
+   "en": "I pretty much poured him through his sunroof.",
+   "ko": "바로 녀석 차에 던져 넣어 버렸어",
+   "recorded": 1
+  },
+  {
+   "no": 376,
+   "start": 887.22,
+   "end": 889.64,
+   "en": "But I'll try.",
+   "ko": "바로 녀석 차에 던져 넣어 버렸어 - 노력해 보마 - 고마워요, 아빠",
+   "recorded": 1
+  },
+  {
+   "no": 377,
+   "start": 889.72,
+   "end": 891.56,
+   "en": "-Thanks, Dad. -You got plans this weekend?",
+   "ko": "- 노력해 보마 - 고마워요, 아빠 주말에 계획 있니?",
+   "recorded": 1
+  },
+  {
+   "no": 378,
+   "start": 891.64,
+   "end": 893.23,
+   "en": "-No. Not really. Why? -Good.",
+   "ko": "- 아뇨, 왜요? - 잘됐다",
+   "recorded": 1
+  },
+  {
+   "no": 379,
+   "start": 893.31,
+   "end": 894.94,
+   "en": "Be at the warehouse, 8:00 tomorrow.",
+   "ko": "내일 아침 8시 창고에서 보자 옷은 편하게 입고 와",
+   "recorded": 1
+  },
+  {
+   "no": 380,
+   "start": 895.02,
+   "end": 896.77,
+   "en": "wear something you don't care about.",
+   "ko": "내일 아침 8시 창고에서 보자 옷은 편하게 입고 와",
+   "recorded": 1
+  },
+  {
+   "no": 381,
+   "start": 896.86,
+   "end": 897.98,
+   "en": "Hey, guys.",
+   "ko": "- 저 왔어요 - 여보, 왔어?",
+   "recorded": 1
+  },
+  {
+   "no": 382,
+   "start": 898.07,
+   "end": 899.94,
+   "en": "-Hi, honey. -What'd I miss?",
+   "ko": "- 저 왔어요 - 여보, 왔어? 경기는 어때요?",
+   "recorded": 1
+  },
+  {
+   "no": 383,
+   "start": 900.03,
+   "end": 901.32,
+   "en": "Nothing good.",
+   "ko": "6점 뒤지고 있는데 3분밖에 안 남았어",
+   "recorded": 1
+  },
+  {
+   "no": 384,
+   "start": 901.4,
+   "end": 902.95,
+   "en": "We're down by 6 with 3 minutes to play.",
+   "ko": "6점 뒤지고 있는데 3분밖에 안 남았어 역전할 수도 있잖아요",
+   "recorded": 1
+  },
+  {
+   "no": 385,
+   "start": 903.03,
+   "end": 904.7,
+   "en": "Well, they could still turn it around.",
+   "ko": "역전할 수도 있잖아요",
+   "recorded": 1
+  },
+  {
+   "no": 386,
+   "start": 904.78,
+   "end": 906.41,
+   "en": "Show's not over till the fat... Mama!",
+   "ko": "쇼는 마지막까지...",
+   "recorded": 1
+  },
+  {
+   "no": 387,
+   "start": 906.49,
+   "end": 908.41,
+   "en": "LUKE: Ooh!",
+   "ko": "밀러 선수의 굉장한 펀트네요",
+   "recorded": 1
+  },
+  {
+   "no": 388,
+   "start": 908.49,
+   "end": 910.41,
+   "en": "Sensational punt by Miller, who hasn't kicked that high",
+   "ko": "밀러 선수의 굉장한 펀트네요 여자 댄스팀에 들어가려고 했던 발차기 이후에",
+   "recorded": 1
+  },
+  {
+   "no": 389,
+   "start": 910.49,
+   "end": 911.95,
+   "en": "since he broke the gender barrier",
+   "ko": "여자 댄스팀에 들어가려고 했던 발차기 이후에",
+   "recorded": 1
+  },
+  {
+   "no": 390,
+   "start": 912.04,
+   "end": 913.96,
+   "en": "and joined our own modern dance troupe.",
+   "ko": "여자 댄스팀에 들어가려고 했던 발차기 이후에 처음 보는 킥입니다",
+   "recorded": 1
+  },
+  {
+   "no": 391,
+   "start": 914.04,
+   "end": 915.58,
+   "en": "Are you okay, honey? -Yeah!",
+   "ko": "- 괜찮아? - 그럼",
+   "recorded": 1
+  },
+  {
+   "no": 392,
+   "start": 915.67,
+   "end": 918.04,
+   "en": "It's all about keeping an attitive positude.",
+   "ko": "난 '태도적인 긍정'을 갖는 사람이니까",
+   "recorded": 1
+  },
+  {
+   "no": 393,
+   "start": 918.13,
+   "end": 921.42,
+   "en": "Positude attitive.",
+   "ko": "아니, '긍정적인 태도'",
+   "recorded": 1
+  },
+  {
+   "no": 394,
+   "start": 921.51,
+   "end": 924.42,
+   "en": "Hey, we should see a midnight movie tonight, like old times.",
+   "ko": "간만에 옛날처럼 심야 영화 보러 갈까?",
+   "recorded": 1
+  },
+  {
+   "no": 395,
+   "start": 924.51,
+   "end": 926.13,
+   "en": "Oh, my God. I am so in!",
+   "ko": "어머, 그거 좋겠다",
+   "recorded": 1
+  },
+  {
+   "no": 396,
+   "start": 926.22,
+   "end": 927.89,
+   "en": "Cool. Cool.",
+   "ko": "좋아 11시 반쯤에 사다리 타고 올라갈게",
+   "recorded": 1
+  },
+  {
+   "no": 397,
+   "start": 927.97,
+   "end": 929.85,
+   "en": "I'll come by your house around 11:30 with the ladder?",
+   "ko": "11시 반쯤에 사다리 타고 올라갈게 이제는 창문으로 몰래 안 다녀도 돼",
+   "recorded": 1
+  },
+  {
+   "no": 398,
+   "start": 929.93,
+   "end": 932.47,
+   "en": "I don't need to climb out of my window anymore, Dylan.",
+   "ko": "이제는 창문으로 몰래 안 다녀도 돼",
+   "recorded": 1
+  },
+  {
+   "no": 399,
+   "start": 932.56,
+   "end": 934.06,
+   "en": "Oh, ooh.",
+   "ko": "좀 일찍 만날까? 나 내일 중간고사야",
+   "recorded": 1
+  },
+  {
+   "no": 400,
+   "start": 934.14,
+   "end": 935.85,
+   "en": "Can we do it earlier? I have a midterm tomorrow.",
+   "ko": "좀 일찍 만날까? 나 내일 중간고사야",
+   "recorded": 1
+  },
+  {
+   "no": 401,
+   "start": 935.94,
+   "end": 937.77,
+   "en": "Oh, I can't do earlier.",
+   "ko": "좀 일찍 만날까? 나 내일 중간고사야 그건 안 돼 저녁에 간호 학교 친구들 만나기로 했어",
+   "recorded": 1
+  },
+  {
+   "no": 402,
+   "start": 937.86,
+   "end": 940.32,
+   "en": "I've got to meet up with some classmates from nursing school.",
+   "ko": "저녁에 간호 학교 친구들 만나기로 했어 간호사 되려고?",
+   "recorded": 1
+  },
+  {
+   "no": 403,
+   "start": 940.4,
+   "end": 942.19,
+   "en": "-You're gonna be a nurse? -Yeah.",
+   "ko": "간호사 되려고? 응, 나한테는 그게 맞는 것 같아",
+   "recorded": 1
+  },
+  {
+   "no": 404,
+   "start": 942.28,
+   "end": 944.36,
+   "en": "Yeah, I figured it was a natural next step.",
+   "ko": "응, 나한테는 그게 맞는 것 같아",
+   "recorded": 1
+  },
+  {
+   "no": 405,
+   "start": 944.44,
+   "end": 946.07,
+   "en": "I've always healed people with my music,",
+   "ko": "항상 음악으로 사람들을 치유했는데",
+   "recorded": 1
+  },
+  {
+   "no": 406,
+   "start": 946.15,
+   "end": 949.7,
+   "en": "and now I'm just doing the same thing with drugs.",
+   "ko": "항상 음악으로 사람들을 치유했는데 지금은 음악 대신 약으로 치유해",
+   "recorded": 1
+  },
+  {
+   "no": 407,
+   "start": 949.78,
+   "end": 951.7,
+   "en": "Wow. Well, ye... Another time, then.",
+   "ko": "그럼 다음에 볼까?",
+   "recorded": 1
+  },
+  {
+   "no": 408,
+   "start": 951.79,
+   "end": 953.33,
+   "en": "-Yeah. -Yeah.",
+   "ko": "- 그래 - 그러자",
+   "recorded": 1
+  },
+  {
+   "no": 409,
+   "start": 955.25,
+   "end": 956.71,
+   "en": "Hey, if everything goes well,",
+   "ko": "어쩌면 우리 나중에 병원에서 만날 수도 있겠다",
+   "recorded": 1
+  },
+  {
+   "no": 410,
+   "start": 956.79,
+   "end": 959.29,
+   "en": "maybe one day I'll see you in the hospital.",
+   "ko": "어쩌면 우리 나중에 병원에서 만날 수도 있겠다",
+   "recorded": 1
+  },
+  {
+   "no": 411,
+   "start": 959.38,
+   "end": 961.34,
+   "en": "I'd like that.",
+   "ko": "그것도 좋겠네",
+   "recorded": 1
+  },
+  {
+   "no": 412,
+   "start": 961.42,
+   "end": 962.71,
+   "en": "So, I finally get out of the closet,",
+   "ko": "겨우 빠져나왔는데 그걸 다 보고 계셨더라고",
+   "recorded": 1
+  },
+  {
+   "no": 413,
+   "start": 962.8,
+   "end": 964.72,
+   "en": "and there's Dad looking down at me.",
+   "ko": "겨우 빠져나왔는데 그걸 다 보고 계셨더라고",
+   "recorded": 1
+  },
+  {
+   "no": 414,
+   "start": 964.8,
+   "end": 965.88,
+   "en": "Been there.",
+   "ko": "뭔지 알겠다",
+   "recorded": 1
+  },
+  {
+   "no": 415,
+   "start": 965.97,
+   "end": 967.26,
+   "en": "The whole daddy thing, though,",
+   "ko": "누나는 아빠 그늘에서 못 벗어나는 게 문제야",
+   "recorded": 1
+  },
+  {
+   "no": 416,
+   "start": 967.34,
+   "end": 968.8,
+   "en": "it's really one of your bigger issues.",
+   "ko": "누나는 아빠 그늘에서 못 벗어나는 게 문제야",
+   "recorded": 1
+  },
+  {
+   "no": 417,
+   "start": 968.89,
+   "end": 971.31,
+   "en": "At least my daddy issues are with my actual daddy.",
+   "ko": "그래도 내 문제는 진짜 아빠잖아 누구처럼 윗사람들을 다 어려워하지는 않아",
+   "recorded": 1
+  },
+  {
+   "no": 418,
+   "start": 971.39,
+   "end": 973.56,
+   "en": "I don't run around making every authority figure I meet",
+   "ko": "누구처럼 윗사람들을 다 어려워하지는 않아",
+   "recorded": 1
+  },
+  {
+   "no": 419,
+   "start": 973.64,
+   "end": 974.64,
+   "en": "into a father.",
+   "ko": "누구처럼 윗사람들을 다 어려워하지는 않아",
+   "recorded": 1
+  },
+  {
+   "no": 420,
+   "start": 974.73,
+   "end": 975.89,
+   "en": "Wait. Whoa, whoa, whoa.",
+   "ko": "잠깐만, 그거 무슨 뜻이야?",
+   "recorded": 1
+  },
+  {
+   "no": 421,
+   "start": 975.98,
+   "end": 977.19,
+   "en": "W-what's that supposed to mean?",
+   "ko": "잠깐만, 그거 무슨 뜻이야? 미첼, 몰라서 물어?",
+   "recorded": 1
+  },
+  {
+   "no": 422,
+   "start": 977.27,
+   "end": 978.52,
+   "en": "Mitchell, come on.",
+   "ko": "미첼, 몰라서 물어? 너 왜 아직도 사표 제출 안 했어?",
+   "recorded": 1
+  },
+  {
+   "no": 423,
+   "start": 978.6,
+   "end": 980.06,
+   "en": "Why have you not quit your job yet?",
+   "ko": "너 왜 아직도 사표 제출 안 했어?",
+   "recorded": 1
+  },
+  {
+   "no": 424,
+   "start": 980.15,
+   "end": 981.48,
+   "en": "His girlfriend just broke up with him.",
+   "ko": "사장님이 애인한테 차여서 힘들어하잖아 지난주에는 왜 안 냈어?",
+   "recorded": 1
+  },
+  {
+   "no": 425,
+   "start": 981.57,
+   "end": 982.65,
+   "en": "Yeah, and what was your excuse last week?",
+   "ko": "지난주에는 왜 안 냈어?",
+   "recorded": 1
+  },
+  {
+   "no": 426,
+   "start": 982.73,
+   "end": 984.23,
+   "en": "I had a cold.",
+   "ko": "지난주에는 왜 안 냈어? - 감기 걸려서 - 그 전 주는?",
+   "recorded": 1
+  },
+  {
+   "no": 427,
+   "start": 984.32,
+   "end": 985.49,
+   "en": "-And the week before? -I felt a cold coming on.",
+   "ko": "감기에 걸릴 것 같아서",
+   "recorded": 1
+  },
+  {
+   "no": 428,
+   "start": 985.57,
+   "end": 990.45,
+   "en": "Mitchell, this fell out of your jacket.",
+   "ko": "미첼 자네 옷에서 떨어졌는데 설명 좀 해 주겠나?",
+   "recorded": 1
+  },
+  {
+   "no": 429,
+   "start": 990.53,
+   "end": 991.83,
+   "en": "Care to explain?",
+   "ko": "자네 옷에서 떨어졌는데 설명 좀 해 주겠나? 친구가 맡아 달라고 했어요",
+   "recorded": 1
+  },
+  {
+   "no": 430,
+   "start": 991.91,
+   "end": 993.58,
+   "en": "-I was holding it for a friend. -Wow!",
+   "ko": "친구가 맡아 달라고 했어요",
+   "recorded": 1
+  },
+  {
+   "no": 431,
+   "start": 996.62,
+   "end": 998.29,
+   "en": "You want to quit?",
+   "ko": "회사 그만두려고?",
+   "recorded": 1
+  },
+  {
+   "no": 432,
+   "start": 998.37,
+   "end": 999.96,
+   "en": "Charlie, you're... you're a great boss,",
+   "ko": "사장님은 참 좋은 분이긴 한데",
+   "recorded": 1
+  },
+  {
+   "no": 433,
+   "start": 1000.04,
+   "end": 1001.46,
+   "en": "but I ju... I got this other offer,",
+   "ko": "사장님은 참 좋은 분이긴 한데 마침 자리가 났고 법정이 그리워서요",
+   "recorded": 1
+  },
+  {
+   "no": 434,
+   "start": 1001.54,
+   "end": 1003.75,
+   "en": "and I just really miss the courtroom.",
+   "ko": "마침 자리가 났고 법정이 그리워서요",
+   "recorded": 1
+  },
+  {
+   "no": 435,
+   "start": 1003.84,
+   "end": 1005.88,
+   "en": "Well, I'm not gonna lie to you,",
+   "ko": "거짓말은 안 하겠네 많이 섭섭하군",
+   "recorded": 1
+  },
+  {
+   "no": 436,
+   "start": 1005.96,
+   "end": 1008.26,
+   "en": "you're... really letting me down.",
+   "ko": "거짓말은 안 하겠네 많이 섭섭하군",
+   "recorded": 1
+  },
+  {
+   "no": 437,
+   "start": 1008.34,
+   "end": 1009.55,
+   "en": "Ohh.",
+   "ko": "자네한테 기대가 컸는데",
+   "recorded": 1
+  },
+  {
+   "no": 438,
+   "start": 1009.64,
+   "end": 1011.01,
+   "en": "I just expected so much more out of you.",
+   "ko": "자네한테 기대가 컸는데",
+   "recorded": 1
+  },
+  {
+   "no": 439,
+   "start": 1011.09,
+   "end": 1013.01,
+   "en": "-Ohh. -You were my favorite.",
+   "ko": "가장 아끼는 직원이니까",
+   "recorded": 1
+  },
+  {
+   "no": 440,
+   "start": 1013.1,
+   "end": 1014.72,
+   "en": "Ohh, God.",
+   "ko": "이런...",
+   "recorded": 1
+  },
+  {
+   "no": 441,
+   "start": 1014.81,
+   "end": 1018.19,
+   "en": "Um, well, maybe I-I could still do things on the weekends.",
+   "ko": "이런... 주말에만 일하는 방법도 있어요",
+   "recorded": 1
+  },
+  {
+   "no": 442,
+   "start": 1018.27,
+   "end": 1019.52,
+   "en": "Wow!",
+   "ko": "아녜요, 죄송해요",
+   "recorded": 1
+  },
+  {
+   "no": 443,
+   "start": 1019.6,
+   "end": 1021.06,
+   "en": "No, no! Charlie, I'm... I'm sorry.",
+   "ko": "아녜요, 죄송해요",
+   "recorded": 1
+  },
+  {
+   "no": 444,
+   "start": 1021.15,
+   "end": 1023.77,
+   "en": "I... I'm done.",
+   "ko": "아녜요, 죄송해요 그만둘래요 있잖나",
+   "recorded": 1
+  },
+  {
+   "no": 445,
+   "start": 1023.86,
+   "end": 1025.57,
+   "en": "You know what?",
+   "ko": "있잖나 자네 탓 안 해",
+   "recorded": 1
+  },
+  {
+   "no": 446,
+   "start": 1025.65,
+   "end": 1027.07,
+   "en": "I don't blame you.",
+   "ko": "자네 탓 안 해",
+   "recorded": 1
+  },
+  {
+   "no": 447,
+   "start": 1027.15,
+   "end": 1029.49,
+   "en": "I have to get back on solid ground.",
+   "ko": "나도 자리를 잡아야지 저희 둘 다 그렇죠",
+   "recorded": 1
+  },
+  {
+   "no": 448,
+   "start": 1029.57,
+   "end": 1031.62,
+   "en": "-We both do. -Well, I do more.",
+   "ko": "저희 둘 다 그렇죠 내가 더 문제야 난 보트에서 살잖아",
+   "recorded": 1
+  },
+  {
+   "no": 449,
+   "start": 1031.7,
+   "end": 1033.66,
+   "en": "My house is a boat.",
+   "ko": "내가 더 문제야 난 보트에서 살잖아",
+   "recorded": 1
+  },
+  {
+   "no": 450,
+   "start": 1033.74,
+   "end": 1035.45,
+   "en": "You made me In trouble.",
+   "ko": "할머니 때문이에요 널 좋아하기도 전에 덮치라곤 안 했어",
+   "recorded": 1
+  },
+  {
+   "no": 451,
+   "start": 1035.54,
+   "end": 1037.83,
+   "en": "I didn't tell you to sit on a boy until he liked you.",
+   "ko": "널 좋아하기도 전에 덮치라곤 안 했어",
+   "recorded": 1
+  },
+  {
+   "no": 452,
+   "start": 1037.91,
+   "end": 1039.29,
+   "en": "-Yes-huh. -Nuh-huh.",
+   "ko": "- 했거든요? - 아니거든 우리 또 이러지 마요",
+   "recorded": 1
+  },
+  {
+   "no": 453,
+   "start": 1039.37,
+   "end": 1041.29,
+   "en": "We're not doing this again.",
+   "ko": "우리 또 이러지 마요",
+   "recorded": 1
+  },
+  {
+   "no": 454,
+   "start": 1043.21,
+   "end": 1044.71,
+   "en": "Home team calls time-out.",
+   "ko": "홈팀이 타임아웃을 요청합니다 12초를 남겨두고 6점 뒤지고 있는 상황",
+   "recorded": 1
+  },
+  {
+   "no": 455,
+   "start": 1044.8,
+   "end": 1046.63,
+   "en": "12 seconds left, they're down by 6,",
+   "ko": "12초를 남겨두고 6점 뒤지고 있는 상황",
+   "recorded": 1
+  },
+  {
+   "no": 456,
+   "start": 1046.71,
+   "end": 1048.92,
+   "en": "and unable to shake the Miller curse.",
+   "ko": "12초를 남겨두고 6점 뒤지고 있는 상황 밀러의 저주를 이기지 못하나 봅니다 더는 못 참아!",
+   "recorded": 1
+  },
+  {
+   "no": 457,
+   "start": 1049.01,
+   "end": 1051.51,
+   "en": "That's it!",
+   "ko": "더는 못 참아!",
+   "recorded": 1
+  },
+  {
+   "no": 458,
+   "start": 1051.59,
+   "end": 1053.01,
+   "en": "Okay, boys, final play.",
+   "ko": "좋아, 마지막이야 전략을 말해 줄게",
+   "recorded": 1
+  },
+  {
+   "no": 459,
+   "start": 1053.1,
+   "end": 1054.72,
+   "en": "Time for a little trickery.",
+   "ko": "전략을 말해 줄게",
+   "recorded": 1
+  },
+  {
+   "no": 460,
+   "start": 1054.81,
+   "end": 1056.52,
+   "en": "Oh, honey. What happened to you today?",
+   "ko": "오늘 무슨 일 있었어?",
+   "recorded": 1
+  },
+  {
+   "no": 461,
+   "start": 1056.6,
+   "end": 1058.77,
+   "en": "A cosmic pummeling.",
+   "ko": "우주가 날 미워하나 봐 계약이 날아갔어",
+   "recorded": 1
+  },
+  {
+   "no": 462,
+   "start": 1058.85,
+   "end": 1060.14,
+   "en": "I lost the deal.",
+   "ko": "계약이 날아갔어",
+   "recorded": 1
+  },
+  {
+   "no": 463,
+   "start": 1060.23,
+   "end": 1061.81,
+   "en": "If I don't close on one tomorrow,",
+   "ko": "내일도 계약 못 하면 처음으로 무실적 달이라고",
+   "recorded": 1
+  },
+  {
+   "no": 464,
+   "start": 1061.9,
+   "end": 1063.52,
+   "en": "it's gonna be my first month ever with no sale.",
+   "ko": "내일도 계약 못 하면 처음으로 무실적 달이라고 이번 달은 30일까지야",
+   "recorded": 1
+  },
+  {
+   "no": 465,
+   "start": 1063.61,
+   "end": 1065.98,
+   "en": "Actually, there is no 31st this month.",
+   "ko": "이번 달은 30일까지야",
+   "recorded": 1
+  },
+  {
+   "no": 466,
+   "start": 1066.07,
+   "end": 1067.57,
+   "en": "What are you talking about?",
+   "ko": "무슨 소리야? 내일이 1일이야",
+   "recorded": 1
+  },
+  {
+   "no": 467,
+   "start": 1067.65,
+   "end": 1069.65,
+   "en": "Tomorrow's the first. Honey, I'm sorry.",
+   "ko": "내일이 1일이야 여보, 미안, 괜찮아?",
+   "recorded": 1
+  },
+  {
+   "no": 468,
+   "start": 1069.74,
+   "end": 1071.15,
+   "en": "-Are you okay? -No, I'm not okay!",
+   "ko": "여보, 미안, 괜찮아? 아니, 안 괜찮아 나한테 내일이 없는 거잖아",
+   "recorded": 1
+  },
+  {
+   "no": 469,
+   "start": 1071.24,
+   "end": 1074.7,
+   "en": "I just found out there is literally no tomorrow!",
+   "ko": "아니, 안 괜찮아 나한테 내일이 없는 거잖아",
+   "recorded": 1
+  },
+  {
+   "no": 470,
+   "start": 1074.78,
+   "end": 1075.83,
+   "en": "You know, I always say if you wait long enough,",
+   "ko": "내가 기다리다 보면 복이 올 거라고 했었지?",
+   "recorded": 1
+  },
+  {
+   "no": 471,
+   "start": 1075.91,
+   "end": 1077.37,
+   "en": "your luck will change?",
+   "ko": "내가 기다리다 보면 복이 올 거라고 했었지? 생각해 보니 전부 거짓...",
+   "recorded": 1
+  },
+  {
+   "no": 472,
+   "start": 1077.45,
+   "end": 1078.91,
+   "en": "Turns out that's just a big pile of c...",
+   "ko": "생각해 보니 전부 거짓...",
+   "recorded": 1
+  },
+  {
+   "no": 473,
+   "start": 1079,
+   "end": 1080.83,
+   "en": "LUKE: Hold on to your hats, folks.",
+   "ko": "여러분, 놀라지 마세요 설마...",
+   "recorded": 1
+  },
+  {
+   "no": 474,
+   "start": 1080.91,
+   "end": 1084.25,
+   "en": "Are they? They are! It's the triple gull-wing!",
+   "ko": "설마... 맞는군요! - 갈매기 전략입니다! - 내가 알려 준 건데",
+   "recorded": 1
+  },
+  {
+   "no": 475,
+   "start": 1084.33,
+   "end": 1086.09,
+   "en": "That's my play!",
+   "ko": "- 갈매기 전략입니다! - 내가 알려 준 건데 우측에서 우드슨이 상대편을 속입니다",
+   "recorded": 1
+  },
+  {
+   "no": 476,
+   "start": 1086.17,
+   "end": 1088.46,
+   "en": "Woodson fakes right, he fakes right again,",
+   "ko": "우측에서 우드슨이 상대편을 속입니다 계속 달리는 우드슨! 선을 넘습니다!",
+   "recorded": 1
+  },
+  {
+   "no": 477,
+   "start": 1088.55,
+   "end": 1091.18,
+   "en": "he fakes faking right, and he scores!",
+   "ko": "계속 달리는 우드슨! 선을 넘습니다! - 내 전략으로 득점했어 - 터치다운!",
+   "recorded": 1
+  },
+  {
+   "no": 478,
+   "start": 1091.26,
+   "end": 1093.3,
+   "en": "- -They scored on my play!",
+   "ko": "- 내 전략으로 득점했어 - 터치다운!",
+   "recorded": 1
+  },
+  {
+   "no": 479,
+   "start": 1093.39,
+   "end": 1094.76,
+   "en": "Mitchell says you can sell me a house.",
+   "ko": "미첼이 그러던데 집을 파신다고요?",
+   "recorded": 1
+  },
+  {
+   "no": 480,
+   "start": 1094.85,
+   "end": 1096.05,
+   "en": "Yes, I can!",
+   "ko": "네, 맞습니다 필, 대단했어 자네가 알려 준 거야?",
+   "recorded": 1
+  },
+  {
+   "no": 481,
+   "start": 1096.14,
+   "end": 1097.18,
+   "en": "Good call, Phil. Was that your play?",
+   "ko": "필, 대단했어 자네가 알려 준 거야? 네, 맞아요!",
+   "recorded": 1
+  },
+  {
+   "no": 482,
+   "start": 1097.26,
+   "end": 1098.35,
+   "en": "Yes, it was!",
+   "ko": "네, 맞아요! 릴리, 너무 급했어 갑자기 남자한테 가서...",
+   "recorded": 1
+  },
+  {
+   "no": 483,
+   "start": 1098.43,
+   "end": 1099.77,
+   "en": "You're being too rough, Lily.",
+   "ko": "릴리, 너무 급했어 갑자기 남자한테 가서...",
+   "recorded": 1
+  },
+  {
+   "no": 484,
+   "start": 1099.85,
+   "end": 1102.02,
+   "en": "You cannot just see a guy and, mwah!,",
+   "ko": "릴리, 너무 급했어 갑자기 남자한테 가서... - 이러면 안 되는 거야 - 아니야, 괜찮아",
+   "recorded": 1
+  },
+  {
+   "no": 485,
+   "start": 1102.1,
+   "end": 1103.19,
+   "en": "kiss him like that, okay?",
+   "ko": "- 이러면 안 되는 거야 - 아니야, 괜찮아",
+   "recorded": 1
+  },
+  {
+   "no": 486,
+   "start": 1103.27,
+   "end": 1105.11,
+   "en": "Yes, you can! Yes, you can!",
+   "ko": "- 이러면 안 되는 거야 - 아니야, 괜찮아 해도 돼",
+   "recorded": 1
+  },
+  {
+   "no": 487,
+   "start": 1105.19,
+   "end": 1107.44,
+   "en": "Okay! Okay! Miller's out. Manny, you're my backup kicker.",
+   "ko": "좋았어, 밀러는 나갔으니 매니, 네가 대타로 가",
+   "recorded": 1
+  },
+  {
+   "no": 488,
+   "start": 1107.52,
+   "end": 1108.57,
+   "en": "I need you to go out there and nail this.",
+   "ko": "좋았어, 밀러는 나갔으니 매니, 네가 대타로 가",
+   "recorded": 1
+  },
+  {
+   "no": 489,
+   "start": 1108.65,
+   "end": 1110.03,
+   "en": "Although if I miss it,",
+   "ko": "제가 실수하더라도 동점으로 끝날 테니...",
+   "recorded": 1
+  },
+  {
+   "no": 490,
+   "start": 1110.11,
+   "end": 1111.2,
+   "en": "wouldn't a tie be a perfect way to...",
+   "ko": "제가 실수하더라도 동점으로 끝날 테니... 매니, 그만해!",
+   "recorded": 1
+  },
+  {
+   "no": 491,
+   "start": 1111.28,
+   "end": 1112.65,
+   "en": "Manny, enough!",
+   "ko": "매니, 그만해! 내 우승을 뺏길 순 없어!",
+   "recorded": 1
+  },
+  {
+   "no": 492,
+   "start": 1112.74,
+   "end": 1115.16,
+   "en": "You are not gonna take away my victory!",
+   "ko": "내 우승을 뺏길 순 없어! 내 말은...",
+   "recorded": 1
+  },
+  {
+   "no": 493,
+   "start": 1115.24,
+   "end": 1117.87,
+   "en": "I mean... I mean, your victory.",
+   "ko": "내 말은... 너희 우승 말이야 알았지?",
+   "recorded": 1
+  },
+  {
+   "no": 494,
+   "start": 1117.95,
+   "end": 1119.49,
+   "en": "Okay?",
+   "ko": "알았지? 매니, 소리 질러서 미안하다 나가서 하고 싶은 대로 해",
+   "recorded": 1
+  },
+  {
+   "no": 495,
+   "start": 1119.58,
+   "end": 1121.08,
+   "en": "Manny, I'm sorry. I should not have yelled at you.",
+   "ko": "매니, 소리 질러서 미안하다 나가서 하고 싶은 대로 해",
+   "recorded": 1
+  },
+  {
+   "no": 496,
+   "start": 1121.16,
+   "end": 1123.37,
+   "en": "You can go out there and do whatever feels right.",
+   "ko": "매니, 소리 질러서 미안하다 나가서 하고 싶은 대로 해",
+   "recorded": 1
+  },
+  {
+   "no": 497,
+   "start": 1123.46,
+   "end": 1125.58,
+   "en": "Okay? I support you no matter what.",
+   "ko": "네가 뭘 하든 응원할게",
+   "recorded": 1
+  },
+  {
+   "no": 498,
+   "start": 1129.09,
+   "end": 1132.67,
+   "en": "Set. 32! Hut! Hut! Hike!",
+   "ko": "준비! 달려!",
+   "recorded": 1
+  },
+  {
+   "no": 499,
+   "start": 1142.02,
+   "end": 1144.65,
+   "en": "I won! I won! I mean, we won!",
+   "ko": "내가 이겼다! 내가... 아니, 우리가 이겼어",
+   "recorded": 1
+  },
+  {
+   "no": 500,
+   "start": 1144.73,
+   "end": 1146.31,
+   "en": "We won! We won!",
+   "ko": "아니, 우리가 이겼어",
+   "recorded": 1
+  },
+  {
+   "no": 501,
+   "start": 1146.4,
+   "end": 1148.57,
+   "en": "Ooph! Sorry, ma'am.",
+   "ko": "선생님, 죄송해요",
+   "recorded": 1
+  },
+  {
+   "no": 502,
+   "start": 1148.65,
+   "end": 1150.23,
+   "en": "Ma'am? I sit next to you In English .",
+   "ko": "선생님? 나 영어 시간에 네 옆자리야",
+   "recorded": 1
+  },
+  {
+   "no": 503,
+   "start": 1150.32,
+   "end": 1152.03,
+   "en": "Hey, I think I dropped my phone under the bleachers.",
+   "ko": "저쪽에 휴대폰을 떨어뜨렸나 봐, 같이 가자",
+   "recorded": 1
+  },
+  {
+   "no": 504,
+   "start": 1152.11,
+   "end": 1154.32,
+   "en": "Come get it with me?",
+   "ko": "저쪽에 휴대폰을 떨어뜨렸나 봐, 같이 가자",
+   "recorded": 1
+  },
+  {
+   "no": 505,
+   "start": 1154.4,
+   "end": 1155.7,
+   "en": "Found it.",
+   "ko": "저기 있다 잘됐네, 이제 세상이 제대로 돌아가겠네",
+   "recorded": 1
+  },
+  {
+   "no": 506,
+   "start": 1155.78,
+   "end": 1158.16,
+   "en": "Great, and world order is restored.",
+   "ko": "잘됐네, 이제 세상이 제대로 돌아가겠네",
+   "recorded": 1
+  },
+  {
+   "no": 507,
+   "start": 1158.24,
+   "end": 1160.2,
+   "en": "-Can we go home now? -Yeah. Okay.",
+   "ko": "- 그럼 집에 갈까? - 그래, 가자",
+   "recorded": 1
+  },
+  {
+   "no": 508,
+   "start": 1160.29,
+   "end": 1163.21,
+   "en": "Oh, hey, what's that?",
+   "ko": "어머, 이게 뭐야? '앨릭스 던피 돔'?",
+   "recorded": 1
+  },
+  {
+   "no": 509,
+   "start": 1163.29,
+   "end": 1165.54,
+   "en": "\"Alex Dunphy dome?\"",
+   "ko": "'앨릭스 던피 돔'?",
+   "recorded": 1
+  },
+  {
+   "no": 510,
+   "start": 1165.62,
+   "end": 1168.38,
+   "en": "Uh, I think it says \"Alex Dunphy, do me.\"",
+   "ko": "내가 보기엔 '앨릭스, 사랑해' 같은데",
+   "recorded": 1
+  },
+  {
+   "no": 511,
+   "start": 1168.46,
+   "end": 1170.55,
+   "en": "Ugh, who would write something like that?",
+   "ko": "누가 저런 걸 써 놨지? 그러게",
+   "recorded": 1
+  },
+  {
+   "no": 512,
+   "start": 1170.63,
+   "end": 1172.59,
+   "en": "No idea.",
+   "ko": "그러게",
+   "recorded": 1
+  },
+  {
+   "no": 513,
+   "start": 1172.67,
+   "end": 1174.01,
+   "en": "Hey, you want me to scratch it out?",
+   "ko": "- 내가 지워 줄까? - 괜찮아!",
+   "recorded": 1
+  },
+  {
+   "no": 514,
+   "start": 1174.09,
+   "end": 1175.18,
+   "en": "No!",
+   "ko": "- 내가 지워 줄까? - 괜찮아! 내 말은...",
+   "recorded": 1
+  },
+  {
+   "no": 515,
+   "start": 1175.26,
+   "end": 1177.34,
+   "en": "I mean, pfft, too late now.",
+   "ko": "내 말은... 어차피 써 놓은 걸 뭐 하러 지우냐고",
+   "recorded": 1
+  },
+  {
+   "no": 516,
+   "start": 1177.43,
+   "end": 1178.85,
+   "en": "If it's out there, it's out there.",
+   "ko": "어차피 써 놓은 걸 뭐 하러 지우냐고",
+   "recorded": 1
+  },
+  {
+   "no": 517,
+   "start": 1180.35,
+   "end": 1181.89,
+   "en": "Hey, champ.",
+   "ko": "챔피언, 뭐 해? 애들하고 축하하러 안 가니?",
+   "recorded": 1
+  },
+  {
+   "no": 518,
+   "start": 1181.97,
+   "end": 1184.35,
+   "en": "Aren't you gonna go celebrate with your team?",
+   "ko": "애들하고 축하하러 안 가니?",
+   "recorded": 1
+  },
+  {
+   "no": 519,
+   "start": 1184.43,
+   "end": 1186.35,
+   "en": "Yeah, in a minute.",
+   "ko": "곧 갈 거예요",
+   "recorded": 1
+  },
+  {
+   "no": 520,
+   "start": 1192.15,
+   "end": 1193.53,
+   "en": "You meant to miss the kick, didn't you?",
+   "ko": "원래 헛발질하려고 했지?",
+   "recorded": 1
+  },
+  {
+   "no": 521,
+   "start": 1193.61,
+   "end": 1195.15,
+   "en": "I blew it.",
+   "ko": "그런데 망쳤어요 열에 아홉 번은 못 차는데",
+   "recorded": 1
+  },
+  {
+   "no": 522,
+   "start": 1195.24,
+   "end": 1197.78,
+   "en": "I could miss that kick nine out of ten times.",
+   "ko": "열에 아홉 번은 못 차는데",
+   "recorded": 1
+  },
+  {
+   "no": 523,
+   "start": 1197.87,
+   "end": 1199.58,
+   "en": "Why couldn't I miss it when it counted?",
+   "ko": "어떻게 그걸 찰 수가 있죠?",
+   "recorded": 1
+  },
+  {
+   "no": 524,
+   "start": 1199.66,
+   "end": 1203.33,
+   "en": "Let me ask you something.",
+   "ko": "뭐 좀 물어보자 네가 찬 공이 하늘로 뻗어 날아가고",
+   "recorded": 1
+  },
+  {
+   "no": 525,
+   "start": 1203.41,
+   "end": 1205.46,
+   "en": "That ball sails through the uprights,",
+   "ko": "네가 찬 공이 하늘로 뻗어 날아가고 다른 친구들이 헹가래를 쳐 줬을 때",
+   "recorded": 1
+  },
+  {
+   "no": 526,
+   "start": 1205.54,
+   "end": 1208.21,
+   "en": "your team carries you off the field.",
+   "ko": "다른 친구들이 헹가래를 쳐 줬을 때",
+   "recorded": 1
+  },
+  {
+   "no": 527,
+   "start": 1208.29,
+   "end": 1211.04,
+   "en": "How does that feel?",
+   "ko": "기분이 어땠니? - 말해 봐 - 좋았어요",
+   "recorded": 1
+  },
+  {
+   "no": 528,
+   "start": 1211.13,
+   "end": 1213.09,
+   "en": "-Come on. -Good.",
+   "ko": "- 말해 봐 - 좋았어요 팀에 속하는 건 즐거운 거야",
+   "recorded": 1
+  },
+  {
+   "no": 529,
+   "start": 1213.17,
+   "end": 1215.42,
+   "en": "It's fun being part of a team.",
+   "ko": "팀에 속하는 건 즐거운 거야 영웅이 되는 것도 즐거운 거고",
+   "recorded": 1
+  },
+  {
+   "no": 530,
+   "start": 1215.51,
+   "end": 1217.43,
+   "en": "And it's really fun being the hero.",
+   "ko": "영웅이 되는 것도 즐거운 거고 내 생각엔 네가 제대로 찬 것 같구나",
+   "recorded": 1
+  },
+  {
+   "no": 531,
+   "start": 1217.51,
+   "end": 1221.1,
+   "en": "So I think you made that kick on purpose.",
+   "ko": "내 생각엔 네가 제대로 찬 것 같구나",
+   "recorded": 1
+  },
+  {
+   "no": 532,
+   "start": 1221.18,
+   "end": 1222.72,
+   "en": "And listen.",
+   "ko": "내 말 잘 들어 너는 인정하기 싫겠지만",
+   "recorded": 1
+  },
+  {
+   "no": 533,
+   "start": 1222.81,
+   "end": 1224.22,
+   "en": "I don't think you're willing to admit it yet,",
+   "ko": "너는 인정하기 싫겠지만",
+   "recorded": 1
+  },
+  {
+   "no": 534,
+   "start": 1224.31,
+   "end": 1225.81,
+   "en": "but somewhere underneath all that humanity,",
+   "ko": "네 마음 한구석에 경쟁심이 있는 거야",
+   "recorded": 1
+  },
+  {
+   "no": 535,
+   "start": 1225.89,
+   "end": 1227.52,
+   "en": "there's a competitor... Sorry.",
+   "ko": "네 마음 한구석에 경쟁심이 있는 거야 미안, 이기고 싶었던 거야",
+   "recorded": 1
+  },
+  {
+   "no": 536,
+   "start": 1227.6,
+   "end": 1229.4,
+   "en": "There's a competitor, and, Manny,",
+   "ko": "미안, 이기고 싶었던 거야 매니, 그건 나쁜 게 아니란다",
+   "recorded": 1
+  },
+  {
+   "no": 537,
+   "start": 1229.48,
+   "end": 1231.69,
+   "en": "there's nothing wrong with that.",
+   "ko": "매니, 그건 나쁜 게 아니란다 전혀",
+   "recorded": 1
+  },
+  {
+   "no": 538,
+   "start": 1231.77,
+   "end": 1234.69,
+   "en": "Nothing.",
+   "ko": "전혀",
+   "recorded": 1
+  },
+  {
+   "no": 539,
+   "start": 1234.78,
+   "end": 1236.24,
+   "en": "Thanks, coach.",
+   "ko": "고맙습니다, 코치님 피자 먹으러 갈까?",
+   "recorded": 1
+  },
+  {
+   "no": 540,
+   "start": 1236.32,
+   "end": 1237.49,
+   "en": "You want to go eat some pizza?",
+   "ko": "피자 먹으러 갈까?",
+   "recorded": 1
+  },
+  {
+   "no": 541,
+   "start": 1237.57,
+   "end": 1239.62,
+   "en": "-Sure. -Me, too.",
+   "ko": "- 좋죠 - 나도",
+   "recorded": 1
+  },
+  {
+   "no": 542,
+   "start": 1241.49,
+   "end": 1243.54,
+   "en": "Hey, you think someday they might name this field after you?",
+   "ko": "코치님 이름을 따서 여길 부르는 날이 오겠죠?",
+   "recorded": 1
+  },
+  {
+   "no": 543,
+   "start": 1243.62,
+   "end": 1244.66,
+   "en": "Well, you're not the first person",
+   "ko": "코치님 이름을 따서 여길 부르는 날이 오겠죠? 그런 생각을 하는 건 너뿐만이 아니란다",
+   "recorded": 1
+  },
+  {
+   "no": 544,
+   "start": 1244.74,
+   "end": 1246.12,
+   "en": "to think along those lines.",
+   "ko": "그런 생각을 하는 건 너뿐만이 아니란다 오늘 교사 화장실에 누가",
+   "recorded": 1
+  },
+  {
+   "no": 545,
+   "start": 1246.21,
+   "end": 1247.96,
+   "en": "Earlier today, someone in the faculty bathroom",
+   "ko": "오늘 교사 화장실에 누가",
+   "recorded": 1
+  },
+  {
+   "no": 546,
+   "start": 1248.04,
+   "end": 1250.58,
+   "en": "Was messing around with the phrase \"Cameron Tucker dome.\"",
+   "ko": "오늘 교사 화장실에 누가 '캠 터커 돔'이라고 써 놨더라",
+   "recorded": 1
+  },
+  {
+   "no": 547,
+   "start": 1253.71,
+   "end": 1255.55,
+   "en": "Just sold the most expensive house in town,",
+   "ko": "내가 동네에서 가장 비싼 집을 팔았는데",
+   "recorded": 1
+  },
+  {
+   "no": 548,
+   "start": 1255.63,
+   "end": 1257.47,
+   "en": "sight unseen, all cash.",
+   "ko": "내가 동네에서 가장 비싼 집을 팔았는데 내 설명만 듣고 현금을 주더구나, 멋지지?",
+   "recorded": 1
+  },
+  {
+   "no": 549,
+   "start": 1257.55,
+   "end": 1259.97,
+   "en": "-How 'bout that? -I'm proud of you, Dad.",
+   "ko": "내 설명만 듣고 현금을 주더구나, 멋지지? 아빠, 멋져요!",
+   "recorded": 1
+  },
+  {
+   "no": 550,
+   "start": 1260.05,
+   "end": 1262.1,
+   "en": "Pretty great day for all the Dunphys.",
+   "ko": "우리 가족 모두 좋은 일이 있었네 그래서 말했지",
+   "recorded": 1
+  },
+  {
+   "no": 551,
+   "start": 1262.18,
+   "end": 1264.93,
+   "en": "And then I said, \"Michelle, do you honestly believe",
+   "ko": "그래서 말했지 '미셸, 바보 같은 소문을 전부 믿는 거야?'",
+   "recorded": 1
+  },
+  {
+   "no": 552,
+   "start": 1265.02,
+   "end": 1267.18,
+   "en": "\"every stupid rumor you hear?\"",
+   "ko": "'미셸, 바보 같은 소문을 전부 믿는 거야?'",
+   "recorded": 1
+  },
+  {
+   "no": 553,
+   "start": 1267.27,
+   "end": 1268.6,
+   "en": "Oh, you haven't heard?",
+   "ko": "그 소문 몰라? 내 전 남친 중 한 명이...",
+   "recorded": 1
+  },
+  {
+   "no": 554,
+   "start": 1268.69,
+   "end": 1271.06,
+   "en": "Well, apparently, one of my exes is just, like...",
+   "ko": "내 전 남친 중 한 명이... 팀, 정말 유감이에요 누구 짓인지 꼭 알아낼게요",
+   "recorded": 1
+  },
+  {
+   "no": 555,
+   "start": 1271.15,
+   "end": 1272.81,
+   "en": "Tim, I... I am so sorry that you got hurt,",
+   "ko": "팀, 정말 유감이에요 누구 짓인지 꼭 알아낼게요",
+   "recorded": 1
+  },
+  {
+   "no": 556,
+   "start": 1272.9,
+   "end": 1274.48,
+   "en": "and I will get to the bottom of it,",
+   "ko": "팀, 정말 유감이에요 누구 짓인지 꼭 알아낼게요 제 생각엔 경쟁 업체가 그런 것 같아요",
+   "recorded": 1
+  },
+  {
+   "no": 557,
+   "start": 1274.57,
+   "end": 1277.32,
+   "en": "but I suspect it was sabotage by the competition,",
+   "ko": "제 생각엔 경쟁 업체가 그런 것 같아요",
+   "recorded": 1
+  },
+  {
+   "no": 558,
+   "start": 1277.4,
+   "end": 1279.82,
+   "en": "maybe closets, closets, closets, closets.",
+   "ko": "'옷장, 옷장, 옷장, 옷장' 회사 짓일 거예요",
+   "recorded": 1
+  },
+  {
+   "no": 559,
+   "start": 1279.91,
+   "end": 1282.49,
+   "en": "Not too bad, a little puffy, kind of like your eyes were",
+   "ko": "좀 붓긴 했는데 괜찮아 네가 '니모를 찾아서' 보고 울어서 눈 부었을 때랑 비슷해",
+   "recorded": 1
+  },
+  {
+   "no": 560,
+   "start": 1282.57,
+   "end": 1285.33,
+   "en": "when you saw \"Finding Nemo,\" Miller.",
+   "ko": "네가 '니모를 찾아서' 보고 울어서 눈 부었을 때랑 비슷해",
+   "recorded": 1
+  },
+  {
+   "no": 561,
+   "start": 1285.41,
+   "end": 1288.29,
+   "en": "Like I said, positive attitude.",
+   "ko": "내가 뭐랬어? 긍정적 태도가 최고야",
+   "recorded": 1
+  }
+ ]
+}
