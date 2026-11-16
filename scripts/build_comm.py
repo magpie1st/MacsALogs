@@ -14,6 +14,7 @@ docs/ 에 쓰면 hermes 가 한 시간 안에 푸시하므로, 쓰기 전에 금
     python3 scripts/build_comm.py -n 20261107_1700_일상대화     # 무엇을 실을지
     python3 scripts/build_comm.py 20261107_1700_일상대화
     python3 scripts/build_comm.py 20261107_1700_일상대화 --voice Mac_Narra_M
+    python3 scripts/build_comm.py 20261107_1700_일상대화 --voice cast   # 화자별 목소리판(tts-maker output/drama3/cast/comm)
     python3 scripts/build_comm.py --remove 2026-11-07-dinner-table
 """
 
@@ -50,15 +51,21 @@ def write_block(data: dict) -> None:
     PAGE.write_text(RE_BLOCK.sub(lambda m: m.group(1) + "\n" + body + "\n" + m.group(3), text), encoding="utf-8")
 
 
-def tts_dir(voice: str) -> Path:
-    """그 음성의 일상대화 음원 폴더. 기본 음성은 기존 위치, 나머지는 프로필이 게시 가능할 때만."""
-    if voice == DEFAULT_VOICE:
-        return TTS_MAKER / "output" / "drama3" / "ann" / "comm"
+def check_publishable(voice: str) -> None:
     profile = TTS_MAKER / "voices" / voice / "profile.json"
     if not profile.exists():
         sys.exit(f"없는 음성 프로필: {voice}")
     if not json.loads(profile.read_text(encoding="utf-8")).get("publishable"):
         sys.exit(f"{voice} 는 공개 게시가 허용되지 않은 프로필이다 (profile.json 의 publishable)")
+
+
+def tts_dir(voice: str) -> Path:
+    """그 음성의 일상대화 음원 폴더. 기본 음성은 기존 위치, cast 는 화자별 목소리판, 나머지는 프로필이 게시 가능할 때만."""
+    if voice == DEFAULT_VOICE:
+        return TTS_MAKER / "output" / "drama3" / "ann" / "comm"
+    if voice == "cast":
+        return TTS_MAKER / "output" / "drama3" / "cast" / "comm"   # 프로필 검사는 시각표의 profiles 로 한다
+    check_publishable(voice)
     return TTS_MAKER / "output" / "drama3" / "voices" / voice / "comm"
 
 
@@ -71,6 +78,11 @@ def episode(name: str, voice: str = DEFAULT_VOICE) -> tuple[dict, Path | None]:
     tl_path, mp3 = TTS / f"{d['id']}.timeline.json", TTS / f"{d['id']}.mp3"
     tl = json.loads(tl_path.read_text(encoding="utf-8")) if tl_path.exists() and mp3.exists() else None
     times = {(x["scene"], x["i"]): x for x in tl["turns"]} if tl else {}
+    if tl and voice == "cast":
+        if not tl.get("profiles"):
+            sys.exit(f"{tl_path} 에 화자별 프로필(profiles)이 없다")
+        for prof in set(tl["profiles"].values()):
+            check_publishable(prof)
 
     scenes = []
     for s in d["scenes"]:
@@ -94,6 +106,8 @@ def episode(name: str, voice: str = DEFAULT_VOICE) -> tuple[dict, Path | None]:
     out["cautions"] = d.get("cautions", [])
     if tl:
         out.update({"audio": f"audio/comm/{d['id']}.mp3", "duration": tl["duration"], "engine": tl["engine"], "voice": tl["voice"]})
+        if tl.get("voices"):
+            out["voices"] = tl["voices"]   # 화자별 목소리 이름
     return out, (mp3 if tl else None)
 
 

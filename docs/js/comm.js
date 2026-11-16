@@ -39,7 +39,8 @@
     else meta.push('음원 준비 중');
     h.push('<div class="cm-meta">' + meta.join(' · ') + '</div>');
     h.push('<div class="cm-cast">' + (e.speakers || []).map(function (s, i) {
-      return '<span class="cm-chip s' + (i % 3) + '">' + esc(s.en) + ' · ' + esc(s.ko) + '</span>';
+      var v = e.voices && e.voices[s.id] ? ' · 🔊 ' + esc(e.voices[s.id]) : '';
+      return '<span class="cm-chip s' + (i % 3) + '">' + esc(s.en) + ' · ' + esc(s.ko) + v + '</span>';
     }).join('') + '</div>');
     if (e.summary) h.push('<p class="cm-summary">' + esc(e.summary) + '</p>');
     if (e.note) h.push('<div class="cm-note">' + esc(e.note) + '</div>');
