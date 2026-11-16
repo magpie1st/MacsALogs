@@ -41,13 +41,19 @@ uv run python scripts/publish_blog.py             # 음원 복사 + opic.html �
 
 ## 일상대화 영어 대본 페이지
 
-`docs/comm.html` — 집에서 한국어로 나눈 대화를 영어 대본으로 다시 쓰고 Drama3-Ann 으로 낭독한 학습 페이지(포스트 아님, URL로만 접근, **공개**).
+`docs/comm.html` — 집에서 한국어로 나눈 대화를 영어 대본으로 다시 쓰고 화자별 목소리(Drama 3)로 낭독한 학습 페이지(포스트 아님, URL로만 접근, **공개**).
 `<!-- COMM-DATA:START -->` ~ `END` 는 자동 생성 영역이다. 손으로 고치지 말 것.
-원본은 voice-in-scribe `output/<이름>_일상.json`, 음원은 tts-maker `output/drama3/ann/comm/` (절차: voice-in-scribe `daily-talk` 스킬).
+원본은 voice-in-scribe `output/<이름>_일상.json`, 음원은 tts-maker `output/drama3/cast/comm/`(화자별) 또는 `ann/comm/`(Ann 한 목소리) (절차: voice-in-scribe `daily-talk` 스킬).
+
+- 화면(`docs/js/comm.js`, 해시 라우팅): `#` 회차 목록(lesson.html 처럼 카드) · `#<id>[/<장면|tN>]` 회차 · `#review[/<id>]` **표현 복습**
+- 표현 복습: 모든 회차의 장면 표현 + 직역 주의를 카드로. 라이트너 상자(0 · 1 · 3 · 7 · 14 · 30일), ★ 헷갈림, 🔊 는 표현이 나온 턴을 재생.
+  진척은 브라우저 `localStorage`(`comm-review`)에만 있다. 표현 → 턴 연결(`expressions[].turn`)은 `build_comm.py` 의 `source_turn()` 이 만든다
+- 공개 표기는 실명이 아니라 역할이다(목소리 이름도 `display` = `Wife-like` · `Son-like`)
 
 ```bash
-python3 scripts/build_comm.py -n <이름>   # 실을 것 확인
-python3 scripts/build_comm.py <이름>      # 그 회차만 갈아 끼우고 mp3 를 docs/audio/comm/ 에 복사
+python3 scripts/build_comm.py -n <이름>                # 실을 것 확인
+python3 scripts/build_comm.py <이름> --voice cast      # 화자별 목소리판. 시각표의 프로필이 모두 publishable 이어야 한다
+python3 scripts/build_comm.py <이름>                   # Ann 한 목소리판
 ```
 
 쓰기 전에 `~/.config/macsalogs/comm_blocklist.txt`(실명 · 학교 · 계정 — 저장소 밖)로 검사하고 걸리면 멈춘다.

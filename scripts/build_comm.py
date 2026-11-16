@@ -69,6 +69,30 @@ def tts_dir(voice: str) -> Path:
     return TTS_MAKER / "output" / "drama3" / "voices" / voice / "comm"
 
 
+def _words(t: str) -> list[str]:
+    return re.sub(r"[^a-z0-9 ]", " ", t.lower().replace("’", "").replace("'", "")).split()
+
+
+STOP = set("a an the to of and or i you he she it we they is are was be on in at for my your his her me him that this".split())
+
+
+def source_turn(expr_en: str, turns: list[dict]) -> int | None:
+    """표현이 나온 턴(장면 안 번호). 복습 카드의 🔊 가 그 턴을 재생한다.
+    표현이 턴 영어에 그대로 들어 있으면 그 턴, 아니면 내용어가 가장 많이 겹치는 턴(절반 이상 겹칠 때만)."""
+    parts = [" ".join(_words(p)) for p in re.split(r"/|…|\.\.\.", expr_en) if _words(p)]
+    for i, t in enumerate(turns):
+        line = " " + " ".join(_words(t["en"])) + " "
+        if any(" " + p + " " in line for p in parts):
+            return i
+    want = {w for w in _words(expr_en) if w not in STOP}
+    if not want:
+        return None
+    best = max(range(len(turns)), key=lambda i: len(want & set(_words(turns[i]["en"]))), default=None)
+    if best is None or len(want & set(_words(turns[best]["en"]))) * 2 < len(want):
+        return None
+    return best
+
+
 def episode(name: str, voice: str = DEFAULT_VOICE) -> tuple[dict, Path | None]:
     TTS = tts_dir(voice)
     src = VIS / f"{name}_일상.json"
@@ -96,8 +120,9 @@ def episode(name: str, voice: str = DEFAULT_VOICE) -> tuple[dict, Path | None]:
             elif tl:
                 sys.exit(f"시각표에 없는 턴: {s['id']} #{i} — 대본을 고친 뒤 음원을 다시 만들어야 한다")
             turns.append(row)
+        exprs = [dict(x, turn=source_turn(x["en"], s["turns"])) for x in s.get("expressions", [])]
         scenes.append({"id": s["id"], "title_ko": s["title_ko"], "title_en": s["title_en"], "turns": turns,
-                       "expressions": s.get("expressions", [])})
+                       "expressions": [{k: v for k, v in x.items() if v is not None} for x in exprs]})
     if tl and len(times) != sum(len(s["turns"]) for s in scenes):
         sys.exit("시각표의 턴 수가 대본과 다르다 — 음원을 다시 만들어야 한다")
 
