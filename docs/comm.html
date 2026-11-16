@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="한국어로 나눈 일상대화를 영어 대본으로 다시 쓰고 낭독한 학습 페이지." />
+  <title>일상대화 영어 대본 — MacsALogs</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .cm { --s0: #2563eb; --s1: #c2410c; --s2: #15803d; --s0-bg: #eff6ff; --s1-bg: #fff7ed; --s2-bg: #f0fdf4;
+      --playing: #fef9c3; --mask: #e5e7eb; }
+    @media (prefers-color-scheme: dark) {
+      .cm { --s0: #60a5fa; --s1: #fb923c; --s2: #4ade80; --s0-bg: #172338; --s1-bg: #2b1d12; --s2-bg: #11261a;
+        --playing: #3a3410; --mask: #2a2a2a; }
+    }
+    .cm-hero { margin: 1.6rem 0 0.8rem; }
+    .cm-hero h1 { font-size: 1.5rem; margin: 0 0 0.4rem; }
+    .cm-hero p { color: var(--text-muted); font-size: 0.9rem; margin: 0; line-height: 1.7; }
+    .cm-pick { margin: 0.8rem 0; }
+    .cm-pick select { font: inherit; font-size: 0.9rem; padding: 0.4rem 0.6rem; border-radius: var(--radius);
+      border: 1px solid var(--border); background: var(--surface); color: var(--text); max-width: 100%; }
+
+    .cm-ep-head h2 { font-size: 1.25rem; margin: 0.4rem 0 0.2rem; }
+    .cm-ep-head .en { color: var(--text-muted); font-size: 0.95rem; }
+    .cm-meta { font-size: 0.8rem; color: var(--text-muted); margin: 0.3rem 0 0.8rem; }
+    .cm-summary { font-size: 0.92rem; line-height: 1.75; margin: 0 0 0.6rem; }
+    .cm-note { font-size: 0.8rem; line-height: 1.65; color: var(--text-muted); background: var(--surface);
+      border: 1px solid var(--border); border-radius: var(--radius); padding: 0.6rem 0.8rem; margin: 0 0 1rem; }
+    .cm-cast { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 0.6rem; }
+
+    .cm-bar { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--border);
+      padding: 0.55rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+    .cm-seg { display: inline-flex; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .cm-seg button { font: inherit; font-size: 0.8rem; padding: 0.4rem 0.7rem; border: 0; background: transparent;
+      color: var(--text); cursor: pointer; }
+    .cm-seg button + button { border-left: 1px solid var(--border); }
+    .cm-seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+    .cm-toc { display: flex; gap: 0.3rem; overflow-x: auto; scrollbar-width: none; flex: 1 1 100%; }
+    .cm-toc::-webkit-scrollbar { display: none; }
+    .cm-toc a { flex: none; font-size: 0.75rem; padding: 0.2rem 0.55rem; border: 1px solid var(--border);
+      border-radius: 999px; color: var(--text-muted); white-space: nowrap; }
+    .cm-toc a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+    .cm-scene { margin: 1.6rem 0 0.4rem; scroll-margin-top: 6.5rem; }
+    .cm-scene-head { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+    .cm-scene-head h3 { font-size: 1.05rem; margin: 0; }
+    .cm-scene-head .en { font-size: 0.85rem; color: var(--text-muted); }
+    .cm-scene-play { margin-left: auto; font: inherit; font-size: 0.75rem; padding: 0.2rem 0.6rem; cursor: pointer;
+      border: 1px solid var(--border); border-radius: 999px; background: none; color: var(--text-muted); }
+    .cm-scene-play:hover { border-color: var(--accent); color: var(--accent); }
+
+    .cm-turn { display: grid; grid-template-columns: auto 1fr; gap: 0.15rem 0.6rem; padding: 0.55rem 0.5rem;
+      border-radius: var(--radius); margin: 0 -0.5rem; scroll-margin: 7rem 0 9rem; }
+    .cm-turn.playing { background: var(--playing); }
+    .cm-who { grid-row: 1 / span 2; display: flex; flex-direction: column; align-items: center; gap: 0.3rem; padding-top: 0.1rem; }
+    .cm-chip { font-size: 0.68rem; font-weight: 600; padding: 0.1rem 0.45rem; border-radius: 999px; white-space: nowrap;
+      border: 1px solid transparent; }
+    .cm-chip.s0 { color: var(--s0); background: var(--s0-bg); }
+    .cm-chip.s1 { color: var(--s1); background: var(--s1-bg); }
+    .cm-chip.s2 { color: var(--s2); background: var(--s2-bg); }
+    .cm-chip.low { border-style: dashed; border-color: currentColor; background: transparent; }
+    .cm-play { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--border); background: none;
+      color: var(--text-muted); cursor: pointer; font-size: 0.7rem; display: grid; place-items: center; padding: 0; }
+    .cm-play:hover, .cm-turn.playing .cm-play { border-color: var(--accent); color: var(--accent); }
+    .cm-en { font-size: 1rem; line-height: 1.6; }
+    .cm-ko { font-size: 0.86rem; line-height: 1.6; color: var(--text-muted); }
+
+    .cm[data-view="en"] .cm-ko { display: none; }
+    .cm[data-view="ko"] .cm-en { display: none; }
+    .cm[data-view="ko"] .cm-ko { color: var(--text); font-size: 0.95rem; }
+    /* 말해 보기: 한국어를 먼저 보고 영어를 말한 뒤 눌러서 확인한다 */
+    .cm[data-view="quiz"] .cm-ko { grid-column: 2; grid-row: 1; color: var(--text); font-size: 0.95rem; }
+    .cm[data-view="quiz"] .cm-en { grid-column: 2; grid-row: 2; cursor: pointer; border-radius: 4px; color: transparent; background: var(--mask);
+      user-select: none; }
+    .cm[data-view="quiz"] .cm-en.shown { color: inherit; background: transparent; user-select: auto; }
+
+    .cm-box { margin: 0.7rem 0 0; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+    .cm-box > summary { cursor: pointer; padding: 0.5rem 0.8rem; font-size: 0.85rem; font-weight: 600; }
+    .cm-box table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+    .cm-box td { padding: 0.5rem 0.8rem; border-top: 1px solid var(--border); vertical-align: top; line-height: 1.55; }
+    .cm-box td:first-child { width: 38%; }
+    .cm-box .x-en { font-weight: 600; }
+    .cm-box .x-note { color: var(--text-muted); font-size: 0.78rem; margin-top: 0.15rem; }
+
+    .cm-cautions { margin: 2rem 0 1rem; }
+    .cm-cautions h3 { font-size: 1.05rem; margin: 0 0 0.3rem; }
+    .cm-cautions > p { font-size: 0.82rem; color: var(--text-muted); margin: 0 0 0.6rem; }
+    .cm-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 0.7rem 0.85rem; margin: 0 0 0.6rem; }
+    .cm-card .k { font-weight: 700; font-size: 0.95rem; }
+    .cm-card .lit { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem; }
+    .cm-card .lit s { text-decoration-color: var(--s1); }
+    .cm-card .use { font-size: 0.9rem; margin-top: 0.15rem; font-weight: 600; color: var(--accent); }
+    .cm-card .why { font-size: 0.82rem; line-height: 1.6; margin-top: 0.3rem; }
+
+    /* 하단 플레이어 */
+    .cm-player { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: var(--bg);
+      border-top: 1px solid var(--border); padding: 0.5rem 0 calc(0.5rem + env(safe-area-inset-bottom));
+      box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08); }
+    .cm-player[hidden] { display: none; }
+    .cm-now { font-size: 0.78rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .cm-seek-row { display: flex; align-items: center; gap: 0.5rem; margin: 0.3rem 0; }
+    .cm-time { font-size: 0.7rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+    .cm-seek { flex: 1; min-width: 0; accent-color: var(--accent); }
+    .cm-ctrl { display: flex; align-items: center; justify-content: center; gap: 0.35rem; flex-wrap: wrap; }
+    .cm-btn { background: none; border: 1px solid var(--border); border-radius: var(--radius); color: var(--text);
+      font: inherit; font-size: 0.78rem; min-width: 40px; height: 34px; padding: 0 0.5rem; cursor: pointer; }
+    .cm-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .cm-btn--play { background: var(--accent); border-color: var(--accent); color: #fff; min-width: 50px; }
+    .cm-btn--play:hover { color: #fff; background: var(--accent-hover); }
+    .cm-btn[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); background: var(--tag-bg); }
+    body.has-player .site-footer { margin-bottom: 8rem; }
+    @media (max-width: 600px) {
+      .cm-hero h1 { font-size: 1.3rem; }
+      .cm-btn { min-width: 34px; padding: 0 0.35rem; font-size: 0.72rem; }
+      .cm-box td { display: block; width: auto !important; }
+      .cm-box td + td { border-top: 0; padding-top: 0; }
+    }
+  </style>
+</head>
+<body class="cm">
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="index.html">MacsALogs</a></h1>
+        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
+      </div>
+      <nav class="site-nav">
+        <a href="index.html">홈</a>
+        <a href="english.html">영어</a>
+        <a href="about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="cm-hero">
+      <h1>일상대화 영어 대본</h1>
+      <p>집에서 한국어로 나눈 대화를 영어로는 어떻게 말할지 대본으로 다시 쓰고, TTS 로 읽었습니다.
+        <strong>말해 보기</strong>를 누르면 한국어만 보이니, 먼저 영어로 말해 보고 가려진 문장을 눌러 확인하세요.
+        턴마다 ▶ 로 그 대사만 듣고, <strong>한 턴씩</strong>을 켜면 대사마다 멈춰 따라 말할 수 있습니다.</p>
+    </section>
+    <div class="cm-pick" id="cm-pick" hidden></div>
+    <div id="cm-episode"><div class="empty-state"><p>대본을 불러오는 중…</p></div></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mac · <a href="https://github.com/magpie1st/MacsALogs" target="_blank" rel="noopener">GitHub</a></p>
+    </div>
+  </footer>
+
+  <div class="cm-player" id="cm-player" hidden>
+    <div class="container">
+      <div class="cm-now" id="cm-now"></div>
+      <div class="cm-seek-row">
+        <span class="cm-time" id="cm-elapsed">0:00</span>
+        <input type="range" class="cm-seek" id="cm-seek" min="0" max="1000" value="0" step="1" aria-label="재생 위치" />
+        <span class="cm-time" id="cm-total">0:00</span>
+      </div>
+      <div class="cm-ctrl">
+        <button type="button" class="cm-btn" id="cm-step" aria-pressed="false" title="대사마다 멈춤">한 턴씩</button>
+        <button type="button" class="cm-btn" id="cm-prev" title="이전 대사">◀︎</button>
+        <button type="button" class="cm-btn cm-btn--play" id="cm-toggle" aria-label="재생">▶︎</button>
+        <button type="button" class="cm-btn" id="cm-next" title="다음 대사">▶︎▶︎</button>
+        <button type="button" class="cm-btn" id="cm-again" title="이 대사 다시">↺</button>
+        <button type="button" class="cm-btn" id="cm-speed" title="재생 속도">1×</button>
+        <button type="button" class="cm-btn" id="cm-follow" aria-pressed="true" title="재생 중인 대사로 자동 스크롤">따라가기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 아래 블록은 scripts/build_comm.py 가 자동 생성합니다. 직접 수정하지 마세요. -->
+  <!-- COMM-DATA:START -->
+  <script type="application/json" id="comm-data">
+{
+ "episodes": [
+  {
+   "id": "2026-11-07-dinner-table",
+   "date": "2026-11-07",
+   "title_ko": "저녁 식탁에서 — '일단', 어깨, 그리고 아들의 전화",
+   "title_en": "At the Dinner Table",
+   "summary": "토요일 저녁, 식탁에서 나눈 36분짜리 대화를 장면 여덟 개로 정리했다. 일본어 맥주 놀이에서 시작해 '일단'을 영어로 어떻게 말하나로 번지고, 산책길 강아지 친구들과 슬개골, Mac 의 어깨 수술 뒤 재활과 자유형 자세, 다정함과 능력과 외모 논쟁, 아들과의 스피커폰 통화, 품절된 과자 이야기로 끝난다.",
+   "note": "원 녹음은 싣지 않는다. 영어는 같은 대화를 영어권 가족이 했다면 어떻게 말했을지 다시 쓴 구어이고, 한국어는 군말을 걷어 낸 '하려던 말'이다. 화자 구분 모델이 두 목소리를 가르지 못해 화자는 내용으로 추정했다(점선 표시는 확신이 낮은 턴). 공개 페이지라 사람 이름 · 학교 · 계정 이야기와 친척 이야기 일부는 뺐다.",
+   "speakers": [
+    {
+     "id": "Mac",
+     "ko": "Mac",
+     "en": "Mac"
+    },
+    {
+     "id": "W",
+     "ko": "아내",
+     "en": "Wife"
+    },
+    {
+     "id": "S",
+     "ko": "아들 (전화)",
+     "en": "Son (on the phone)"
+    }
+   ],
+   "scenes": [
+    {
+     "id": "s1",
+     "title_ko": "일본어 맥주 놀이와 '일단'",
+     "title_en": "Beer in Japanese, and the Word '일단'",
+     "turns": [
+      {
+       "sp": "W",
+       "en": "Wait, what does transcription mean?",
+       "ko": "전사가 뭐야?",
+       "low": true,
+       "start": 0.6,
+       "end": 3.57
+      },
+      {
+       "sp": "Mac",
+       "en": "It's basically dictation. You play an audio file, and it turns everything people say into text. That's transcription.",
+       "ko": "받아쓰기 같은 거야. 오디오를 틀면 그 말을 텍스트로 바꿔 주는 거, 그걸 전사라고 해.",
+       "start": 4.32,
+       "end": 13.04
+      },
+      {
+       "sp": "Mac",
+       "en": "These days you just ask AI, and it does the whole thing for you.",
+       "ko": "요즘엔 AI한테 해 달라고 하면 다 해 줘.",
+       "start": 13.59,
+       "end": 17.68
+      },
+      {
+       "sp": "W",
+       "en": "How do you say 'eat' in Japanese again? Taberu?",
+       "ko": "'먹다'가 일본어로 뭐였지? 다베루?",
+       "low": true,
+       "start": 18.43,
+       "end": 22.39
+      },
+      {
+       "sp": "Mac",
+       "en": "Well, you don't eat beer, you drink it. So you'd say 'Biru o nomimashou ka?' It means, 'Shall we have a beer?'",
+       "ko": "맥주는 먹는 게 아니라 마시는 거니까 '비루오 노미마쇼카'라고 하면 돼. '맥주 한잔할까요?'",
+       "start": 23.14,
+       "end": 31.77
+      },
+      {
+       "sp": "Mac",
+       "en": "Hey, I asked you a question. You have to answer. Either 'hai' or 'iie.'",
+       "ko": "내가 물어봤잖아. 대답을 해야지. '하이'든 '이이에'든.",
+       "start": 32.32,
+       "end": 38.86
+      },
+      {
+       "sp": "W",
+       "en": "Real beer? Oh, you mean the non-alcoholic kind? Non-alcohol biru, then.",
+       "ko": "진짜 맥주? 아, 무알코올 말하는 거지? 논알코올 비루.",
+       "low": true,
+       "start": 39.61,
+       "end": 46.1
+      },
+      {
+       "sp": "Mac",
+       "en": "This is fun. But usually when you say, 'Let's only speak a foreign language,' everyone just goes quiet. Same thing happens with the kids.",
+       "ko": "재밌네. 그런데 외국어로만 하자고 하면 보통 말이 없어져. 애들하고 해 봐도 그래.",
+       "start": 46.85,
+       "end": 56.78
+      },
+      {
+       "sp": "W",
+       "en": "So just mix in some Korean.",
+       "ko": "그러니까 한국말을 섞어서 해.",
+       "low": true,
+       "start": 57.53,
+       "end": 59.76
+      },
+      {
+       "sp": "Mac",
+       "en": "Okay, but how do you say '일단' in English? That's a tough one.",
+       "ko": "근데 '일단'은 영어로 뭐지? 어렵네.",
+       "start": 60.51,
+       "end": 65.86
+      },
+      {
+       "sp": "W",
+       "en": "Isn't it just 'first'?",
+       "ko": "'첫 번째로' 아니야?",
+       "low": true,
+       "start": 66.61,
+       "end": 68.1
+      },
+      {
+       "sp": "Mac",
+       "en": "That's not the one I mean. I mean like, 'Let's eat this much for now, and then decide if we want more.'",
+       "ko": "내가 말한 '일단'은 그게 아니야. '일단 여기까지 먹어 보고, 더 먹을지 말지 정하자' 할 때의 일단.",
+       "start": 68.85,
+       "end": 75.74
+      },
+      {
+       "sp": "W",
+       "en": "What's the Chinese character in it? The first part means 'one,' right?",
+       "ko": "'일단'의 한자가 뭐야? 한 일(一) 자잖아.",
+       "low": true,
+       "start": 76.49,
+       "end": 81.76
+      },
+      {
+       "sp": "Mac",
+       "en": "The way I use it, it's like opening a bracket. This much is one chunk. We try this part first, and then we go again.",
+       "ko": "내가 쓰는 '일단'은 괄호를 열고 '여기까지가 한 덩어리' 하는 느낌이야. 여기까지 해 보고, 그다음에 또.",
+       "start": 82.51,
+       "end": 92.11
+      },
+      {
+       "sp": "W",
+       "en": "So to be good at English, you have to be good at Korean first.",
+       "ko": "영어를 잘하려면 한국말부터 잘해야 되네.",
+       "low": true,
+       "start": 92.86,
+       "end": 97.41
+      },
+      {
+       "sp": "Mac",
+       "en": "Ha, you're right.",
+       "ko": "그러네.",
+       "start": 98.16,
+       "end": 99.92
+      }
+     ],
+     "expressions": [
+      {
+       "ko": "일단 여기까지 먹어 보고",
+       "en": "Let's eat this much for now",
+       "note": "'일단'은 대부분 for now 나 let's just 로 풀린다. 순서를 말할 때만 first."
+      },
+      {
+       "ko": "맥주 한잔할까?",
+       "en": "Shall we have a beer?",
+       "note": "Shall we ~? 는 같이 하자고 권하는 말. 가볍게는 Want to grab a beer?"
+      },
+      {
+       "ko": "말이 없어져",
+       "en": "everyone just goes quiet",
+       "note": "go quiet — 대화가 뚝 끊기는 것. 사람이 조용해지는 모습을 그대로 옮긴다."
+      },
+      {
+       "ko": "한국말을 섞어서 해",
+       "en": "just mix in some Korean",
+       "note": "mix in — 조금씩 섞어 넣다."
+      },
+      {
+       "ko": "어렵네",
+       "en": "That's a tough one.",
+       "note": "질문이 어려울 때 It's difficult 보다 훨씬 자연스럽다."
+      }
+     ]
+    },
+    {
+     "id": "s2",
+     "title_ko": "쌉쌀한 샐러드와 산책길 강아지 친구들",
+     "title_en": "Bitter Lettuce and the Dogs on Our Walk",
+     "turns": [
+      {
+       "sp": "Mac",
+       "en": "Whoa, this is way more bitter than I expected. What is this, red leaf lettuce?",
+       "ko": "생각보다 너무 쓰다. 이거 뭐야, 적색 양상추?",
+       "low": true,
+       "start": 101.52,
+       "end": 107.95
+      },
+      {
+       "sp": "W",
+       "en": "I think it's really good, though. A little more bitter than I thought.",
+       "ko": "되게 맛있는데? 생각보다 좀 쓰긴 하다.",
+       "low": true,
+       "start": 108.7,
+       "end": 112.62
+      },
+      {
+       "sp": "W",
+       "en": "Cream, wait. You said hi to Bamtori earlier, didn't you?",
+       "ko": "크림아, 기다려. 아까 밤토리 만나서 인사했지?",
+       "start": 113.17,
+       "end": 118.25
+      },
+      {
+       "sp": "Mac",
+       "en": "Who's Bamtori?",
+       "ko": "밤토리가 누구야?",
+       "start": 119.0,
+       "end": 120.63
+      },
+      {
+       "sp": "W",
+       "en": "Just some dog from the neighborhood. I'm usually terrible with dog names, but he looks exactly like a Bamtori, a little chestnut. The name suits him perfectly, so I remember him.",
+       "ko": "모르는 집 강아지야. 원래 강아지 이름을 잘 못 외우는데, 걔는 생긴 게 이름이랑 너무 찰떡이라 기억해.",
+       "start": 121.38,
+       "end": 135.02
+      },
+      {
+       "sp": "W",
+       "en": "We run into them now and then. Ongsimi and Bamtori.",
+       "ko": "가끔 만나. 옹심이랑 밤토리.",
+       "start": 135.57,
+       "end": 140.74
+      },
+      {
+       "sp": "W",
+       "en": "You know the one with the short legs? The boy who's obsessed with Cream. When we first met him, the tips of his legs were dyed brown.",
+       "ko": "다리 짧은 애 있잖아, 크림이한테 집착하는 남자애. 처음 만났을 때 다리 끝이 갈색으로 염색돼 있었어.",
+       "start": 141.29,
+       "end": 150.71
+      },
+      {
+       "sp": "Mac",
+       "en": "That's so cute. With legs that short, he must be a dachshund.",
+       "ko": "귀엽네. 다리가 그렇게 짧으면 닥스훈트겠네.",
+       "start": 151.46,
+       "end": 157.0
+      },
+      {
+       "sp": "W",
+       "en": "No, he's a bichon. He just has really short legs. It's so funny.",
+       "ko": "비숑은 비숑인데 다리만 짧아. 너무 신기해.",
+       "start": 157.75,
+       "end": 163.64
+      },
+      {
+       "sp": "W",
+       "en": "But apparently dogs with short legs get disc problems a lot.",
+       "ko": "근데 그렇게 다리 짧은 애들이 디스크가 많대.",
+       "low": true,
+       "start": 164.19,
+       "end": 169.11
+      },
+      {
+       "sp": "Mac",
+       "en": "I bet it's not the short legs. It's the long back.",
+       "ko": "다리가 짧아서가 아니라 허리가 길어서겠지.",
+       "low": true,
+       "start": 169.86,
+       "end": 173.78
+      },
+      {
+       "sp": "W",
+       "en": "Right, their backs are way too long for their legs. Every breed has its weak spot, and for dachshunds, it's their discs.",
+       "ko": "맞아, 다리에 비해 허리가 너무 긴 거지. 강아지마다 고질병이 있는데 닥스훈트는 디스크야.",
+       "low": true,
+       "start": 174.53,
+       "end": 182.81
+      },
+      {
+       "sp": "Mac",
+       "en": "Does Cream have that kneecap thing?",
+       "ko": "크림이는 탈구 있어?",
+       "start": 183.56,
+       "end": 186.58
+      },
+      {
+       "sp": "W",
+       "en": "She's at stage three, remember? I told you what the vet said. We build up her thigh muscles and hold off. Her muscles are strong, so she doesn't need surgery yet.",
+       "ko": "3기잖아. 병원에서 그랬다고 했잖아. 허벅지 근육을 키워서 버텨 보자고. 근육이 탄탄해서 아직 수술할 정도는 아니래.",
+       "start": 187.33,
+       "end": 198.9
+      },
+      {
+       "sp": "W",
+       "en": "If it gets worse and starts rubbing the cartilage, or she's in pain, we can do surgery then. But she's not in pain and she runs around fine, so for now it's okay.",
+       "ko": "더 심해져서 연골을 찌르거나 아파하면 그때 수술해도 된대. 지금은 안 아파하고 잘 뛰니까 괜찮대.",
+       "start": 199.45,
+       "end": 210.48
+      },
+      {
+       "sp": "Mac",
+       "en": "But can you really manage that? People can barely manage their own joints.",
+       "ko": "근데 그게 관리가 되나? 사람도 관리가 잘 안되는데.",
+       "start": 211.23,
+       "end": 216.63
+      },
+      {
+       "sp": "W",
+       "en": "You know I used to go to two vet clinics. The other one felt like it was overtreating, so I stopped going. A puppy who went there had kneecap surgery just six months after they brought him home.",
+       "ko": "나 동물병원 두 군데 다녔잖아. 다른 데는 좀 과잉진료 같아서 끊었어. 거기 다니던 뽀삐는 데려온 지 6개월 만에 슬개골 수술을 했대.",
+       "start": 217.38,
+       "end": 229.31
+      },
+      {
+       "sp": "W",
+       "en": "They told Mongsil's family to do it too, so they spent ages looking into it.",
+       "ko": "몽실이도 거기서 하라고 해서 한참 알아봤거든.",
+       "start": 229.86,
+       "end": 234.64
+      },
+      {
+       "sp": "Mac",
+       "en": "Good thing they didn't. You really have to do your homework.",
+       "ko": "안 하길 잘했네. 잘 알아봐야 돼.",
+       "start": 235.39,
+       "end": 239.31
+      }
+     ],
+     "expressions": [
+      {
+       "ko": "생각보다 너무 쓰다",
+       "en": "way more bitter than I expected",
+       "note": "way more — 생각보다 훨씬. than I expected 를 붙이면 놀람이 산다."
+      },
+      {
+       "ko": "이름이랑 너무 찰떡이야",
+       "en": "The name suits him perfectly.",
+       "note": "찰떡 = suits ~ perfectly / is a perfect fit."
+      },
+      {
+       "ko": "가끔 만나",
+       "en": "We run into them now and then.",
+       "note": "run into — 약속 없이 우연히 마주치다."
+      },
+      {
+       "ko": "강아지마다 고질병이 있어",
+       "en": "Every breed has its weak spot.",
+       "note": "weak spot — 타고난 약한 곳. 병명을 몰라도 쓸 수 있다."
+      },
+      {
+       "ko": "과잉진료 같아서",
+       "en": "it felt like it was overtreating",
+       "note": "overtreat · push unnecessary procedures. 병원 이야기에서 자주 쓴다."
+      },
+      {
+       "ko": "잘 알아봐야 돼",
+       "en": "You really have to do your homework.",
+       "note": "do your homework — 결정 전에 충분히 알아보다. 숙제가 아니다."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "title_ko": "어깨 수술, 그 뒤 일 년",
+     "title_en": "The Shoulder, One Year Later",
+     "turns": [
+      {
+       "sp": "W",
+       "en": "Honestly, looking at your shoulder now, I kind of wonder if you should've skipped the surgery.",
+       "ko": "어깨도 지금 보면 수술 안 할 걸 그랬나 싶기도 해.",
+       "start": 240.91,
+       "end": 246.06
+      },
+      {
+       "sp": "Mac",
+       "en": "Really?",
+       "ko": "진짜?",
+       "start": 246.81,
+       "end": 247.7
+      },
+      {
+       "sp": "W",
+       "en": "It didn't hurt when you weren't moving it, right?",
+       "ko": "가만있으면 안 아팠잖아.",
+       "start": 248.45,
+       "end": 251.6
+      },
+      {
+       "sp": "Mac",
+       "en": "Back then it only hurt when I did this motion. The whole point of the surgery was so I could swim, and now I can't swim at all.",
+       "ko": "그땐 오히려 이 동작을 할 때 아팠지. 수영하려고 한 수술인데 지금 수영을 못 하잖아.",
+       "start": 252.35,
+       "end": 262.12
+      },
+      {
+       "sp": "Mac",
+       "en": "They say you have to really take care of it for a year. According to the doctor, it healed well. Medically, it's all attached. But it still hurts. I'm still in pain.",
+       "ko": "1년은 관리를 잘해야 된대. 의사 말로는 잘 붙어 있대. 의학적으로는 잘 붙었는데, 내가 아프잖아. 통증이 있잖아.",
+       "start": 262.67,
+       "end": 275.7
+      },
+      {
+       "sp": "Mac",
+       "en": "He just said to keep exercising and come back every two months. If you ask me, there's nothing more they can really do.",
+       "ko": "운동 계속하면서 2개월마다 와서 보자고 하더라. 내가 보기엔 더 해 줄 수 있는 게 없는 거지.",
+       "start": 276.25,
+       "end": 284.03
+      },
+      {
+       "sp": "Mac",
+       "en": "He said I could try a PRP shot to strengthen the ligament. They draw your blood, spin it in a centrifuge, and inject it back in.",
+       "ko": "PRP 시술로 인대를 강화할 수는 있대. 내 피를 뽑아서 원심분리한 다음 그걸 주입하는 거야.",
+       "start": 284.58,
+       "end": 293.0
+      },
+      {
+       "sp": "Mac",
+       "en": "Ligaments and tendons don't get much blood flow. So even during surgery, they scrape the bone a little so the stuff that seeps out helps it attach. Then they inject something taken from your blood to help it heal. That's the basic idea.",
+       "ko": "인대나 힘줄은 피가 잘 안 통하는 조직이라, 붙일 때도 뼈를 살짝 갈아서 거기서 나오는 성분으로 붙이고, 혈청에서 뽑은 걸 넣어서 회복을 돕는 거래.",
+       "start": 293.55,
+       "end": 309.58
+      },
+      {
+       "sp": "W",
+       "en": "A friend of mine had surgery on her right shoulder too, and the hospital told her swimming isn't good for it. She used to love swimming, but they said if she kept going, her left shoulder would go too.",
+       "ko": "아는 언니도 오른쪽 어깨 수술했는데 병원에서 수영이 안 좋다고 했대. 원래 수영을 좋아했는데, 하면 왼쪽도 나빠지니까 하지 말라고.",
+       "start": 310.33,
+       "end": 322.7
+      },
+      {
+       "sp": "W",
+       "en": "Because you end up using only your left arm. Even if you're careful, you just naturally rely on it more, and then you might need surgery on that side too. At her age, they told her to be really careful.",
+       "ko": "왼팔만 쓰게 되잖아. 조심해도 저절로 왼팔을 많이 쓰게 되니까, 결국 거기도 수술할 수 있다고. 나이도 있으니까 웬만하면 조심하라고.",
+       "start": 323.25,
+       "end": 337.08
+      },
+      {
+       "sp": "Mac",
+       "en": "I bet she kept swimming anyway.",
+       "ko": "그래도 결국 계속 수영했을걸.",
+       "start": 337.83,
+       "end": 339.73
+      },
+      {
+       "sp": "Mac",
+       "en": "I say I regret it, but honestly, both hospitals said the tendon looked bad. And the surgeon said you can judge from the scans, but you never really know until you open it up. He said he'd take care of whatever he found.",
+       "ko": "후회한다고는 말해도, 사실 힘줄 쪽은 두 병원에서 다 안 좋다고 했어. 수술하신 분도 사진으로 판단은 할 수 있지만 열어 봐야 안다고, 열어서 할 건 다 정리하고 나온다고 했고.",
+       "start": 340.28,
+       "end": 355.5
+      },
+      {
+       "sp": "Mac",
+       "en": "The downside of that place is the follow-up care. It's almost nonexistent. They never said do this, don't do that. They just said, 'Go ahead, use it all you want.'",
+       "ko": "여기 단점은 사후관리가 너무 부족하다는 거야. 하지 마라, 해라가 없고 그냥 다 쓰라고 했거든.",
+       "start": 356.05,
+       "end": 367.99
+      },
+      {
+       "sp": "Mac",
+       "en": "And then my shoulder started hurting from swimming, so I went back. Push-up positions, BodyFlow classes, all of it.",
+       "ko": "그런데 수영을 하다 보니 어깨가 아파서 간 거지. 푸시업 자세도 그렇고, 바디플로우 할 때도 그렇고.",
+       "start": 368.54,
+       "end": 376.04
+      },
+      {
+       "sp": "Mac",
+       "en": "That's when I finally asked the nurse at the front desk. I said, 'Should I not be swimming or doing push-ups?' And she said, 'No, you need to keep working that shoulder.'",
+       "ko": "그제야 접수하시는 간호사분한테 물어봤어. 수영이나 푸시업 같은 운동 하면 안 되냐고. 그랬더니 어깨는 운동을 하셔야 된대.",
+       "start": 376.59,
+       "end": 388.33
+      },
+      {
+       "sp": "W",
+       "en": "But she probably meant pulling exercises.",
+       "ko": "그 사람이 생각하는 운동은 당기는 운동이었겠지.",
+       "low": true,
+       "start": 389.08,
+       "end": 392.42
+      },
+      {
+       "sp": "Mac",
+       "en": "Exactly. She meant pulling. But she said to hold off on push-ups and swimming for a while. Push-ups are the worst thing for your shoulder.",
+       "ko": "그치, 당기는 운동을 말한 거야. 근데 푸시업이랑 수영은 당분간 하지 말래. 푸시업이 어깨에 제일 안 좋대.",
+       "start": 393.17,
+       "end": 403.63
+      },
+      {
+       "sp": "Mac",
+       "en": "I asked again today. I said, 'The pain's better since I started the meds, but how long do I have to avoid this?' And they said, 'Until it stops hurting.'",
+       "ko": "오늘 또 가서 물어봤지. 약 먹으니까 지난번보다 통증은 덜하다, 근데 이걸 언제까지 안 해야 되냐. 안 아플 때까지 하지 말래.",
+       "start": 404.18,
+       "end": 414.75
+      },
+      {
+       "sp": "W",
+       "en": "If you think about it, the last time it got worse was when you were swimming like crazy.",
+       "ko": "생각해 보면 지난번에 마지막에 악화된 것도 수영을 정말 열심히 해서잖아.",
+       "start": 415.5,
+       "end": 421.36
+      },
+      {
+       "sp": "Mac",
+       "en": "True. I was doing up to a mile at a time. The thing is, it never hurt while I was swimming. It was always afterwards.",
+       "ko": "맞아, 1.5킬로까지 했으니까. 사실 수영할 때는 안 아팠어. 하고 나면 안 좋았지.",
+       "start": 422.11,
+       "end": 431.59
+      },
+      {
+       "sp": "Mac",
+       "en": "The weird thing is, back workouts don't bother my shoulder at all. Swimming was fine at first too, but later my arm would just give out on the pull.",
+       "ko": "신기한 게, 등 운동을 하면 어깨가 안 아파. 수영도 처음엔 괜찮다가 나중에 당기는 동작에서 힘이 빠지더라고.",
+       "start": 432.14,
+       "end": 443.16
+      },
+      {
+       "sp": "W",
+       "en": "So right now, the only things you can really do are walking and running?",
+       "ko": "지금 그래도 할 만한 건 걷기랑 뛰기인가?",
+       "start": 443.91,
+       "end": 448.32
+      },
+      {
+       "sp": "Mac",
+       "en": "That's why I just do the StairMaster, like thirty minutes at a time.",
+       "ko": "그래서 천국의 계단만 하잖아, 한 30분씩.",
+       "start": 449.07,
+       "end": 452.79
+      },
+      {
+       "sp": "W",
+       "en": "Try doing it mostly on the balls of your feet.",
+       "ko": "천국의 계단은 앞꿈치로 주로 해 봐.",
+       "low": true,
+       "start": 453.54,
+       "end": 456.51
+      },
+      {
+       "sp": "Mac",
+       "en": "What I really need to watch out for now is my knees. If my knees go too, that's it.",
+       "ko": "지금 내가 제일 조심해야 되는 건 무릎이야. 무릎까지 나가면 끝이지.",
+       "start": 457.26,
+       "end": 463.55
+      }
+     ],
+     "expressions": [
+      {
+       "ko": "수술 안 할 걸 그랬나 싶어",
+       "en": "I wonder if you should've skipped the surgery.",
+       "note": "should've + 과거분사 — 지난 일에 대한 아쉬움. wonder if 로 감싸면 부드러워진다."
+      },
+      {
+       "ko": "수영하려고 한 수술인데",
+       "en": "The whole point of the surgery was so I could swim",
+       "note": "The whole point of ~ was … — '애초에 ~하려고 한 건데' 의 틀."
+      },
+      {
+       "ko": "내가 보기엔",
+       "en": "If you ask me,",
+       "note": "In my opinion 보다 대화체. 말머리에 붙인다."
+      },
+      {
+       "ko": "당분간 하지 마세요",
+       "en": "hold off on it for a while",
+       "note": "hold off on ~ — 잠시 미루다 · 쉬다. stop 보다 '나중엔 해도 된다' 는 느낌."
+      },
+      {
+       "ko": "힘이 빠지더라고",
+       "en": "my arm would just give out",
+       "note": "give out — 힘이 다해 버티지 못하다. would 는 '그러곤 했다'."
+      },
+      {
+       "ko": "무릎까지 나가면 끝이지",
+       "en": "If my knees go too, that's it.",
+       "note": "go — (몸이) 고장 나다. that's it 은 '그걸로 끝'."
+      }
+     ]
+    },
+    {
+     "id": "s4",
+     "title_ko": "자유형 강의 — 하이 엘보와 땅콩",
+     "title_en": "A Freestyle Lesson at the Table",
+     "turns": [
+      {
+       "sp": "Mac",
+       "en": "Usually, when someone hurts their shoulder, they say if swimming's okay at all, stick to freestyle. Never do butterfly.",
+       "ko": "보통 어깨 다친 사람한테도, 수영이 괜찮으면 자유형은 하래. 접영은 절대 하지 말고.",
+       "start": 465.15,
+       "end": 473.62
+      },
+      {
+       "sp": "Mac",
+       "en": "With butterfly, you swing your arms around like this, and that rotation is the problem. In freestyle, your body rolls, so it's just pull, glide, pull, glide, over and over.",
+       "ko": "접영은 팔을 이렇게 돌리잖아. 돌리는 게 안 좋은 거야. 자유형은 몸을 롤링하니까, 당기고 앞으로 가고가 반복이지.",
+       "start": 474.17,
+       "end": 488.02
+      },
+      {
+       "sp": "Mac",
+       "en": "If you use your shoulder blades properly, it shouldn't put much strain on your shoulder. Especially when you catch the water, you keep your elbow high. They call it a high elbow catch.",
+       "ko": "견갑을 잘 쓰면서 제대로 하면 어깨에 부담이 없어야 돼. 특히 물 잡을 때 팔꿈치를 높게, 하이 엘보라고 하지.",
+       "start": 488.57,
+       "end": 501.2
+      },
+      {
+       "sp": "Mac",
+       "en": "To really get it right, you know that stretch Ohtani does? Your shoulder blade has to open all the way so you can rotate. But if you force it, that's bad for the shoulder too.",
+       "ko": "이게 제대로 되려면, 오타니가 하는 이 스트레칭 있잖아. 견갑이 쭉 늘어나야 회전이 잘 돼. 그걸 무리해서 하면 또 어깨가 안 좋겠지.",
+       "start": 501.75,
+       "end": 514.27
+      },
+      {
+       "sp": "W",
+       "en": "So what did you do today?",
+       "ko": "오늘은 어떻게 했어?",
+       "start": 515.02,
+       "end": 516.51
+      },
+      {
+       "sp": "Mac",
+       "en": "I only used this arm, with the float between my legs. When you swim with one arm, you lose your balance, so you end up holding your breath like a total beginner.",
+       "ko": "이쪽 팔로만 했어. 이거 끼고. 한쪽 팔로만 하면 밸런스가 안 맞아서, 처음 수영하는 사람처럼 숨을 참게 돼.",
+       "start": 517.26,
+       "end": 527.91
+      },
+      {
+       "sp": "Mac",
+       "en": "I'm doing one-arm drills on purpose to fix that, but it's so hard. My body keeps sinking.",
+       "ko": "그걸 고치려고 일부러 이쪽 팔로 훈련을 하는데 너무 어려워. 몸이 자꾸 가라앉아.",
+       "start": 528.46,
+       "end": 537.49
+      },
+      {
+       "sp": "Mac",
+       "en": "I wore that peanut-shaped thing to practice breathing on my left side, but it made things worse. My body wouldn't rotate.",
+       "ko": "왼쪽 호흡을 하려고 땅콩 모양 생긴 거, 그걸 차고 했는데 그걸 차니까 더 안 되더라고. 몸이 안 돌아가.",
+       "start": 538.04,
+       "end": 546.97
+      },
+      {
+       "sp": "W",
+       "en": "Oh, right. If you do it wrong, your breathing gets all messed up, because you're off balance.",
+       "ko": "아 맞아, 그거 잘못하면 호흡이 꼬이잖아. 밸런스가 안 맞으니까.",
+       "low": true,
+       "start": 547.72,
+       "end": 554.15
+      },
+      {
+       "sp": "Mac",
+       "en": "The really good swimmers put the float around their ankles. When a beginner tries that, it's a total mess. Your legs tense up and it's exhausting.",
+       "ko": "고수들은 땅콩을 발목에 차. 하수가 발목에 차면 난리가 나. 발에 힘이 들어가니까 너무 힘들어.",
+       "start": 554.9,
+       "end": 565.66
+      },
+      {
+       "sp": "Mac",
+       "en": "Anyway, these days I'm focusing on my back. My shoulder blades.",
+       "ko": "어쨌든 요즘엔 등에 초점을 맞추고 있어. 견갑.",
+       "start": 566.21,
+       "end": 571.25
+      },
+      {
+       "sp": "W",
+       "en": "Shoulder blade exercises are supposed to be good for your neck, too. Even for a sagging face. It's all connected.",
+       "ko": "견갑 운동 하면 목에도 좋대. 얼굴 처지는 데도 좋고. 다 쭉 이어져 있으니까.",
+       "start": 572.0,
+       "end": 580.86
+      }
+     ],
+     "expressions": [
+      {
+       "ko": "자유형만 해",
+       "en": "stick to freestyle",
+       "note": "stick to ~ — 다른 건 말고 그것만 하다."
+      },
+      {
+       "ko": "어깨에 부담이 없어야 돼",
+       "en": "it shouldn't put much strain on your shoulder",
+       "note": "put strain on ~ — ~에 무리를 주다."
+      },
+      {
+       "ko": "숨을 참게 돼",
+       "en": "you end up holding your breath",
+       "note": "end up ~ing — 의도와 달리 결국 ~하게 되다."
+      },
+      {
+       "ko": "몸이 자꾸 가라앉아",
+       "en": "My body keeps sinking.",
+       "note": "keep ~ing — 자꾸 ~하다. 짜증 섞인 반복에 잘 맞는다."
+      },
+      {
+       "ko": "난리가 나",
+       "en": "it's a total mess",
+       "note": "a total mess · a disaster. 웃으며 과장할 때."
+      }
+     ]
+    },
+    {
+     "id": "s5",
+     "title_ko": "벌써 쉰, 그리고 음력 생일",
+     "title_en": "Fifty Already, and Lunar Birthdays",
+     "turns": [
+      {
+       "sp": "Mac",
+       "en": "I used to think forty didn't suit me, and now that's long gone. I'm already fifty.",
+       "ko": "마흔은 안 어울린다 했는데, 벌써 그때가 지나 버렸네. 쉰이 돼 버렸어.",
+       "low": true,
+       "start": 582.46,
+       "end": 588.46
+      },
+      {
+       "sp": "W",
+       "en": "And your brother's five years older than you, right?",
+       "ko": "아주버님하고는 다섯 살 차이지?",
+       "start": 589.21,
+       "end": 592.14
+      },
+      {
+       "sp": "Mac",
+       "en": "Five years. And my sister's three years younger. Or two. Her birthday makes it tricky.",
+       "ko": "다섯 살 차이. 여동생하고는 세 살, 아니 두 살. 생일이 애매해서.",
+       "start": 592.89,
+       "end": 599.49
+      },
+      {
+       "sp": "Mac",
+       "en": "By the lunar calendar, it's three years. By the regular calendar, it's two. And her ID card has a different year altogether.",
+       "ko": "음력으로 하면 세 살이고 양력으로 하면 두 살이야. 주민등록증에는 다른 해로 올라가 있어.",
+       "start": 600.04,
+       "end": 609.97
+      },
+      {
+       "sp": "W",
+       "en": "When's her birthday again? November on the lunar calendar? So January on the regular one.",
+       "ko": "생일이 언제야? 음력 11월이지? 양력으로는 1월이고.",
+       "low": true,
+       "start": 610.72,
+       "end": 617.3
+      },
+      {
+       "sp": "Mac",
+       "en": "When it falls around the new year, some years she doesn't even have a birthday. Is that the leap month thing?",
+       "ko": "해가 넘어갈 때는 어떤 해엔 생일이 없기도 하던데. 윤달인가?",
+       "low": true,
+       "start": 618.05,
+       "end": 625.59
+      },
+      {
+       "sp": "W",
+       "en": "That's weird. On her official records, it's just a normal solar date.",
+       "ko": "이상하다. 주민등록상으로는 깔끔하게 양력으로 돼 있는데.",
+       "low": true,
+       "start": 626.34,
+       "end": 631.75
+      }
+     ],
+     "expressions": [
+      {
+       "ko": "벌써 쉰이 돼 버렸어",
+       "en": "I'm already fifty.",
+       "note": "already 하나로 '벌써' 의 서운함이 산다. Where did the time go? 를 덧붙여도 좋다."
+      },
+      {
+       "ko": "다섯 살 차이",
+       "en": "He's five years older than me.",
+       "note": "'~살 차이' 는 older / younger 로 방향을 넣어 말한다. 5 years difference 는 어색하다."
+      },
+      {
+       "ko": "음력으로 하면",
+       "en": "by the lunar calendar",
+       "note": "양력은 the solar calendar 이지만 대화에서는 the regular calendar 가 더 잘 통한다."
+      },
+      {
+       "ko": "생일이 애매해서",
+       "en": "her birthday makes it tricky",
+       "note": "tricky — 딱 잘라 말하기 어려운. 애매하다의 좋은 대응어."
+      }
+     ]
+    },
+    {
+     "id": "s6",
+     "title_ko": "다정함, 능력, 그리고 외모",
+     "title_en": "Kindness, Money, or Looks?",
+     "turns": [
+      {
+       "sp": "W",
+       "en": "I really think kindness fixes a lot of things.",
+       "ko": "다정한 건 진짜 많은 걸 해결해 주는 것 같아.",
+       "start": 633.35,
+       "end": 636.74
+      },
+      {
+       "sp": "Mac",
+       "en": "Sure, it fixes a lot. But it doesn't put food on the table.",
+       "ko": "많은 걸 해결해 주지. 근데 배고픔은 해결 못 해.",
+       "start": 637.49,
+       "end": 642.06
+      },
+      {
+       "sp": "Mac",
+       "en": "Okay, say option one is someone who isn't kind, but has money and is really capable. Which one would you pick?",
+       "ko": "다정하진 않은데 돈 많고 능력 좋은 사람이 1번이라면, 어느 쪽을 택하겠어?",
+       "start": 642.61,
+       "end": 650.06
+      },
+      {
+       "sp": "W",
+       "en": "I don't know. If I had money of my own, I'd go for kind. Looking around, couples stay together for years on affection alone. Everyone has something that keeps them going.",
+       "ko": "모르겠어. 내가 능력이 있으면 다정한 사람을 고르겠지. 주변을 보면 정으로도 오래 살더라고. 다 나름의 뭔가가 있어.",
+       "start": 650.81,
+       "end": 663.82
+      },
+      {
+       "sp": "Mac",
+       "en": "If you ask me, humans evolved to go for whoever can provide. And men going for pretty women? That's instinct too.",
+       "ko": "내가 보기엔 인간은 본능적으로 능력 있는 쪽을 찾게 진화했어. 남자가 예쁜 여자를 찾는 것도 결국 본능이고.",
+       "start": 664.57,
+       "end": 674.12
+      },
+      {
+       "sp": "W",
+       "en": "Not anymore. Just look at that dating show, 'I Am Solo.' The good-looking guys get way more attention than the rich ones.",
+       "ko": "요즘은 아니야. '나는 솔로'만 봐도 잘생긴 사람이 돈 많은 사람보다 훨씬 인기 많아.",
+       "start": 674.87,
+       "end": 683.13
+      },
+      {
+       "sp": "Mac",
+       "en": "That's a little different, though. That's inside the show. The people on it are already screened. They all have decent jobs and some money. Once that's a given, looks become the tiebreaker.",
+       "ko": "그건 그 프로그램 안이니까 좀 다른 얘기지. 거기 나오는 사람들은 기본적인 능력이나 재력은 검증된 사람들이야. 그 상태에서 외모로 갈리는 거지.",
+       "start": 683.88,
+       "end": 697.09
+      },
+      {
+       "sp": "W",
+       "en": "Still, I feel like women care a lot more about looks than they used to.",
+       "ko": "그래도 예전에 비해 여자들도 외모를 많이 보는 시대가 된 것 같아.",
+       "start": 697.84,
+       "end": 703.04
+      },
+      {
+       "sp": "Mac",
+       "en": "I think they always did.",
+       "ko": "나는 예전부터 봤다고 생각해.",
+       "start": 703.79,
+       "end": 705.42
+      },
+      {
+       "sp": "W",
+       "en": "Back in the day, plenty of guys you'd think had no shot looks-wise still got married. Not these days.",
+       "ko": "예전엔 외모를 정말 안 보나 싶은 남자들도 결혼을 많이 했는데, 요즘은 아닌 것 같아.",
+       "start": 706.17,
+       "end": 713.66
+      },
+      {
+       "sp": "Mac",
+       "en": "They probably had money.",
+       "ko": "돈이 많았나 보지.",
+       "start": 714.41,
+       "end": 716.27
+      },
+      {
+       "sp": "W",
+       "en": "These days, even with money, if your looks are really bad, nobody picks you. Looks are a real competitive edge now. Our son needs to step up his game too.",
+       "ko": "요즘엔 돈이 많아도 외모가 너무 별로면 선택을 못 받아. 외모도 진짜 경쟁력인 시대야. 우리 아들도 꾸며야 돼.",
+       "start": 717.02,
+       "end": 729.22
+      },
+      {
+       "sp": "W",
+       "en": "Actually, I think he's trying, in his own style. I buy him stuff, and he actually uses it. Lip balm and everything, his lips are all shiny. It's a bit much, if you ask me.",
+       "ko": "아들도 자기 스타일대로 꾸미려고 애쓰는 것 같아. 내가 사 주니까 열심히 바르고 다녀. 입술도 반짝반짝하게. 좀 과하다 싶은데.",
+       "start": 729.77,
+       "end": 743.11
+      },
+      {
+       "sp": "Mac",
+       "en": "I thought he'd be too embarrassed. Guess not.",
+       "ko": "창피해할 줄 알았는데 아니네.",
+       "low": true,
+       "start": 743.86,
+       "end": 747.59
+      },
+      {
+       "sp": "W",
+       "en": "Because all the guys do it now. In high school, nobody did, so he never thought about it.",
+       "ko": "다들 그러고 다니니까. 고등학교 때는 다들 안 그러니까 몰랐던 거지.",
+       "start": 748.34,
+       "end": 754.26
+      }
+     ],
+     "expressions": [
+      {
+       "ko": "다정한 게 많은 걸 해결해 줘",
+       "en": "Kindness fixes a lot of things.",
+       "note": "solve 보다 fix 가 일상적이다."
+      },
+      {
+       "ko": "배고픔은 해결 못 해",
+       "en": "it doesn't put food on the table",
+       "note": "put food on the table — 먹고살게 해 주다. 생계를 말하는 관용구."
+      },
+      {
+       "ko": "1번이라면 어느 쪽을 택하겠어?",
+       "en": "Say option one is … Which one would you pick?",
+       "note": "Say ~ 로 가정을 깔고 묻는다. If 보다 가볍다."
+      },
+      {
+       "ko": "외모로 갈리는 거지",
+       "en": "looks become the tiebreaker",
+       "note": "tiebreaker — 동점일 때 승부를 가르는 것. 조건이 같을 때 마지막 기준."
+      },
+      {
+       "ko": "외모도 경쟁력이야",
+       "en": "Looks are a real competitive edge.",
+       "note": "competitive edge — 남보다 앞서게 하는 강점."
+      },
+      {
+       "ko": "아들도 꾸며야 돼",
+       "en": "He needs to step up his game.",
+       "note": "step up one's game — 수준을 끌어올리다. '꾸미다' 를 decorate 로 옮기면 안 된다."
+      }
+     ]
+    },
+    {
+     "id": "s7",
+     "title_ko": "아들과의 통화 — 젤다, 카메라, 장학금",
+     "title_en": "A Call with Our Son",
+     "turns": [
+      {
+       "sp": "W",
+       "en": "Now that exams are over, I bet he's just lying around. Is he done?",
+       "ko": "이제 시험 끝나서 늘어져 있겠군. 끝났대?",
+       "low": true,
+       "start": 755.86,
+       "end": 761.91
+      },
+      {
+       "sp": "Mac",
+       "en": "They end on December fourth.",
+       "ko": "12월 4일에 끝난대.",
+       "low": true,
+       "start": 762.66,
+       "end": 765.17
+      },
+      {
+       "sp": "W",
+       "en": "Zelda? That's a real classic. I think it was around even when my brother was a kid.",
+       "ko": "젤다의 전설은 진짜 클래식이네. 우리 오빠 때도 있었던 것 같은데.",
+       "low": true,
+       "start": 765.92,
+       "end": 772.32
+      },
+      {
+       "sp": "Mac",
+       "en": "I think he bought the new Zelda game. One of his reels popped up on Instagram, so I left a comment, and he replied, 'It's a masterpiece.'",
+       "ko": "내 생각에 이번에 젤다의 전설을 산 것 같아. 인스타에 릴스가 잠깐 떠서 댓글을 남겼더니 '대작입니다' 하고 답장이 왔어.",
+       "start": 773.07,
+       "end": 781.45
+      },
+      {
+       "sp": "Mac",
+       "en": "Guess he's not short on pocket money.",
+       "ko": "용돈이 궁하지 않은가 봐.",
+       "start": 782.0,
+       "end": 784.6
+      },
+      {
+       "sp": "W",
+       "en": "When he comes back up in January, do we still need to give him an allowance?",
+       "ko": "1월에 올라오면 이제 용돈 안 줘도 되나?",
+       "start": 785.35,
+       "end": 789.9
+      },
+      {
+       "sp": "Mac",
+       "en": "Of course we do. Why wouldn't we? Not counting rent, maybe five hundred thousand won? Or should we just have him ask when he needs it?",
+       "ko": "줘야지, 왜 안 줘. 월세 말고 50은 줘야 되지 않을까? 아니면 그때그때 타 쓰라고 할까?",
+       "start": 790.65,
+       "end": 801.24
+      },
+      {
+       "sp": "Mac",
+       "en": "Hey, buddy. Playing Zelda?",
+       "ko": "아들, 젤다 하고 있냐?",
+       "start": 801.79,
+       "end": 803.99
+      },
+      {
+       "sp": "S",
+       "en": "Nah, I'm watching Netflix.",
+       "ko": "넷플릭스 보고 있어.",
+       "start": 804.74,
+       "end": 806.74
+      },
+      {
+       "sp": "Mac",
+       "en": "Because exams are over? And that Zelda post, you bought it yourself, right? The new one?",
+       "ko": "시험 끝나서 그거 보고 있는 거야? 젤다 올린 거, 네가 사서 올린 거지? 새로 나온 거 산 거야?",
+       "start": 807.49,
+       "end": 814.17
+      },
+      {
+       "sp": "S",
+       "en": "Yeah, I pre-ordered it.",
+       "ko": "응, 예약 구매로 샀어.",
+       "start": 814.92,
+       "end": 816.31
+      },
+      {
+       "sp": "Mac",
+       "en": "Oh, you pre-ordered it? Look at you. On that tiny paycheck, and you still manage to do it all.",
+       "ko": "예약 구매까지 하셨어요? 그 박봉에도 할 건 다 하네.",
+       "start": 817.06,
+       "end": 824.29
+      },
+      {
+       "sp": "S",
+       "en": "Gaming's like the cheapest hobby there is.",
+       "ko": "제일 돈 안 드는 취미가 게임 같은 거지.",
+       "start": 825.04,
+       "end": 828.02
+      },
+      {
+       "sp": "Mac",
+       "en": "Gaming's a cheap hobby? Is it, though? Hey, what about your camera? Aren't you getting it fixed?",
+       "ko": "게임이 돈 안 드는 취미라고? 그런가? 너 카메라는 안 고치냐?",
+       "start": 828.77,
+       "end": 836.9
+      },
+      {
+       "sp": "Mac",
+       "en": "Find some time and get it fixed. I'd do it, but I just don't have the time. It's the lens, right? The zoom's stuck.",
+       "ko": "시간 내서 좀 고쳐 봐. 아빠는 고치러 갈 시간이 없어서 그래. 렌즈 줌이 안 되는 거잖아.",
+       "start": 837.45,
+       "end": 847.07
+      },
+      {
+       "sp": "Mac",
+       "en": "Go check it out at the nearest Canon service center. Sounds like they'll need to replace a part. You've got Mom's card, so just use that.",
+       "ko": "가까운 캐논 서비스센터 가서 알아봐. 부품을 교체해야 되는 것 같더라고. 엄마 카드 있으니까 그걸로 쓰면 돼.",
+       "start": 847.62,
+       "end": 856.15
+      },
+      {
+       "sp": "Mac",
+       "en": "Aren't you going to the dermatologist?",
+       "ko": "피부과는 안 가?",
+       "start": 856.7,
+       "end": 858.84
+      },
+      {
+       "sp": "S",
+       "en": "I'm going Wednesday, after class.",
+       "ko": "수요일에 가기로 했어. 수업 끝나고.",
+       "start": 859.59,
+       "end": 861.96
+      },
+      {
+       "sp": "Mac",
+       "en": "Then check on the camera after class too. Have you been out taking pictures lately?",
+       "ko": "그럼 수업 끝나고 카메라도 좀 알아봐. 요즘 사진 찍으러 다녀?",
+       "start": 862.71,
+       "end": 867.74
+      },
+      {
+       "sp": "S",
+       "en": "Not during exams. But when it's not exam season, I go out and shoot when I need to clear my head.",
+       "ko": "시험 기간이라 못 찍었는데, 아닐 때는 답답할 때 나가서 찍기도 해.",
+       "start": 868.49,
+       "end": 875.57
+      },
+      {
+       "sp": "Mac",
+       "en": "Really? Wow. Look at you, our little artist. Mr. Photographer.",
+       "ko": "정말? 이야, 우리 예술가. 우리 작가님.",
+       "start": 876.32,
+       "end": 883.43
+      },
+      {
+       "sp": "Mac",
+       "en": "What are you having for dinner, kiddo?",
+       "ko": "저녁은 뭐 먹어, 아들?",
+       "start": 883.98,
+       "end": 885.7
+      },
+      {
+       "sp": "S",
+       "en": "Fried rice.",
+       "ko": "볶음밥.",
+       "start": 886.45,
+       "end": 887.8
+      },
+      {
+       "sp": "Mac",
+       "en": "Eat something good. Quit buying games and spend it on good food, you goof.",
+       "ko": "맛있는 거 먹어라. 게임 사지 말고 밥을 맛있는 걸 먹어, 인마.",
+       "start": 888.55,
+       "end": 893.81
+      },
+      {
+       "sp": "S",
+       "en": "I do treat myself once a week. Fried chicken, jokbal, stuff like that.",
+       "ko": "일주일에 한 번은 맛있는 거 먹어. 치킨도 먹고 족발도 먹고.",
+       "start": 894.56,
+       "end": 900.29
+      },
+      {
+       "sp": "Mac",
+       "en": "Alright. You're not going hungry, are you? How'd your exams go?",
+       "ko": "그래, 알았다. 배고프게 살진 않지? 시험은 잘 봤어?",
+       "start": 901.04,
+       "end": 905.54
+      },
+      {
+       "sp": "S",
+       "en": "Well, I've still got finals.",
+       "ko": "아직 기말이 남아서.",
+       "start": 906.29,
+       "end": 908.47
+      },
+      {
+       "sp": "Mac",
+       "en": "But can we expect good things from your midterms?",
+       "ko": "중간고사는 기대해도 되는 거야?",
+       "start": 909.22,
+       "end": 912.38
+      },
+      {
+       "sp": "S",
+       "en": "I think you can, yeah.",
+       "ko": "기대해도 좋지 않을까?",
+       "start": 913.13,
+       "end": 914.98
+      },
+      {
+       "sp": "Mac",
+       "en": "Alright. If you get that scholarship, you can go on your Japan trip. Give it your best.",
+       "ko": "알았다. 장학금 타면 일본 여행 갈 수 있는데. 열심히 해 봐.",
+       "start": 915.73,
+       "end": 921.85
+      },
+      {
+       "sp": "S",
+       "en": "Okay. Gotta go.",
+       "ko": "알겠어. 끊어.",
+       "start": 922.6,
+       "end": 924.48
+      },
+      {
+       "sp": "Mac",
+       "en": "Okay, take care.",
+       "ko": "응, 들어가.",
+       "start": 925.23,
+       "end": 926.67
+      },
+      {
+       "sp": "W",
+       "en": "He's going to Japan with his friends this winter.",
+       "ko": "겨울에 친구들하고 일본 간대.",
+       "start": 927.42,
+       "end": 930.67
+      },
+      {
+       "sp": "Mac",
+       "en": "Yeah, I heard. He's supposed to pay for it with the scholarship money. How much does it cost?",
+       "ko": "그건 들었어. 일본 여행 갈 돈은 장학금으로 가야 되는데. 얼마나 들어?",
+       "start": 931.42,
+       "end": 938.33
+      },
+      {
+       "sp": "W",
+       "en": "No idea. Maybe one and a half million won?",
+       "ko": "몰라, 한 150?",
+       "start": 939.08,
+       "end": 942.67
+      },
+      {
+       "sp": "Mac",
+       "en": "So if he doesn't get it, he doesn't go.",
+       "ko": "그러니까 못 타면 못 가는 거야.",
+       "start": 943.42,
+       "end": 946.49
+      },
+      {
+       "sp": "W",
+       "en": "Then he'll have to pick up some warehouse shifts.",
+       "ko": "쿠팡 알바 뛰어야지.",
+       "start": 947.24,
+       "end": 949.65
+      }
+     ],
+     "expressions": [
+      {
+       "ko": "용돈이 궁하지 않은가 봐",
+       "en": "Guess he's not short on pocket money.",
+       "note": "be short on ~ — ~이 모자라다. Guess 로 시작하면 '~인가 봐'."
+      },
+      {
+       "ko": "그때그때 타 쓰라고 할까?",
+       "en": "Should we just have him ask when he needs it?",
+       "note": "have + 사람 + 동사원형 — ~하게 하다."
+      },
+      {
+       "ko": "예약 구매로 샀어",
+       "en": "I pre-ordered it.",
+       "note": "pre-order — 출시 전 예약 구매. 동사로 그대로 쓴다."
+      },
+      {
+       "ko": "그 박봉에도 할 건 다 하네",
+       "en": "On that tiny paycheck, you still manage to do it all.",
+       "note": "manage to ~ — 어떻게든 해내다. 칭찬 반 놀림 반."
+      },
+      {
+       "ko": "답답할 때 나가서 찍어",
+       "en": "I go out and shoot when I need to clear my head.",
+       "note": "clear one's head — 머리를 식히다. 답답하다를 frustrated 로 옮기면 뜻이 달라진다."
+      },
+      {
+       "ko": "기대해도 되는 거야?",
+       "en": "Can we expect good things?",
+       "note": "expect 에 good things 를 붙여야 '기대' 가 된다. expect 만 쓰면 '예상' 에 가깝다."
+      },
+      {
+       "ko": "알바 뛰어야지",
+       "en": "He'll have to pick up some shifts.",
+       "note": "pick up shifts — 근무를 더 잡다. 알바는 a part-time job · side gig."
+      }
+     ]
+    },
+    {
+     "id": "s8",
+     "title_ko": "품절된 너구리맛 양파링",
+     "title_en": "The Sold-Out Snack",
+     "turns": [
+      {
+       "sp": "W",
+       "en": "Oh, so you wiped them all out?",
+       "ko": "아, 다 먹어 치우셨어요?",
+       "low": true,
+       "start": 951.25,
+       "end": 953.9
+      },
+      {
+       "sp": "W",
+       "en": "Those ramen-flavored onion rings are really hard to find, you know. I said I'd pick some up, but they were already gone. Sold out at every department store.",
+       "ko": "그 너구리맛 양파링, 구하기 힘든 거거든. 사다 주겠다고 했는데 이미 없어. 백화점은 다 품절이야.",
+       "start": 954.45,
+       "end": 965.21
+      },
+      {
+       "sp": "Mac",
+       "en": "Just order them online.",
+       "ko": "쿠팡에서 사 줘.",
+       "low": true,
+       "start": 965.96,
+       "end": 968.28
+      },
+      {
+       "sp": "W",
+       "en": "I was going to. But online, they only sell them in packs of three. And nobody's going to eat that many.",
+       "ko": "쿠팡에서 사 주려고 했지. 근데 쿠팡은 세 개 묶음으로 팔아. 먹을 사람도 없는데.",
+       "start": 969.03,
+       "end": 976.96
+      },
+      {
+       "sp": "W",
+       "en": "Honestly, they're not really big on snacks anyway. They don't even like them that much. It's just trendy right now, so they wanted to try them.",
+       "ko": "내가 보기엔 과자를 많이 먹는 스타일도 아니야. 좋아하는 것도 아니고, 그냥 요즘 유행하니까 먹어 보고 싶은 거지.",
+       "start": 977.51,
+       "end": 986.09
+      },
+      {
+       "sp": "Mac",
+       "en": "I should really stop eating snacks.",
+       "ko": "나 이제 과자 안 먹어야겠다.",
+       "start": 986.84,
+       "end": 989.12
+      },
+      {
+       "sp": "W",
+       "en": "Here, have some. Hey, at least you saved the corn chips.",
+       "ko": "먹어 봐. 그래도 콘칩은 남겨 놨네.",
+       "start": 989.87,
+       "end": 993.51
+      },
+      {
+       "sp": "Mac",
+       "en": "These days, even with corn chips, I have like five or six and I'm done.",
+       "ko": "요즘은 콘칩도 대여섯 개 딱 먹고 안 먹거든.",
+       "start": 994.26,
+       "end": 999.23
+      }
+     ],
+     "expressions": [
+      {
+       "ko": "다 먹어 치웠어?",
+       "en": "You wiped them all out?",
+       "note": "wipe out — 싹 쓸어 없애다. 초토화를 그대로 옮기지 않는다."
+      },
+      {
+       "ko": "백화점은 다 품절이야",
+       "en": "Sold out at every department store.",
+       "note": "주어 없이 Sold out 으로 시작해도 대화에서는 자연스럽다."
+      },
+      {
+       "ko": "세 개 묶음으로 팔아",
+       "en": "they only sell them in packs of three",
+       "note": "in packs of ~ — ~개 묶음으로."
+      },
+      {
+       "ko": "과자를 많이 먹는 스타일이 아니야",
+       "en": "They're not really big on snacks.",
+       "note": "be big on ~ — ~을 좋아하다 · 즐기다. '스타일' 을 style 로 옮기지 않는다."
+      },
+      {
+       "ko": "대여섯 개 딱 먹고 안 먹어",
+       "en": "I have like five or six and I'm done.",
+       "note": "I'm done — 그만 먹는다 · 끝. 간결하게 끊는 말."
+      }
+     ]
+    }
+   ],
+   "cautions": [
+    {
+     "ko": "일단",
+     "literal": "once",
+     "use": "for now · let's just · first",
+     "why": "once 는 '한 번' 이거나 '~하자마자' 다. '일단 먹어 보자' 는 Let's just try it, '일단 여기까지' 는 That's it for now."
+    },
+    {
+     "ko": "찰떡이야",
+     "literal": "It's sticky rice cake.",
+     "use": "It suits him perfectly. · It's a perfect fit.",
+     "why": "비유가 영어에 없다. 잘 어울린다는 뜻만 옮긴다."
+    },
+    {
+     "ko": "꾸며야 돼",
+     "literal": "He needs to decorate.",
+     "use": "He needs to step up his game. · take care of his appearance",
+     "why": "decorate 는 방이나 케이크를 꾸밀 때 쓴다. 사람에게 쓰면 이상하게 들린다."
+    },
+    {
+     "ko": "답답할 때",
+     "literal": "when I'm frustrated",
+     "use": "when I need to clear my head",
+     "why": "frustrated 는 일이 안 풀려 짜증 난 상태다. 갑갑해서 바람 쐬고 싶은 마음은 clear my head · get some air."
+    },
+    {
+     "ko": "들어가 (전화 끊을 때)",
+     "literal": "Go in.",
+     "use": "Take care. · Talk to you later.",
+     "why": "한국어 작별 인사를 그대로 옮기면 영어에서는 뜻이 없다."
+    },
+    {
+     "ko": "과자를 많이 먹는 스타일이 아니야",
+     "literal": "It's not his style to eat snacks.",
+     "use": "He's not really big on snacks.",
+     "why": "not one's style 은 '그런 짓은 안 한다' 처럼 성격 · 원칙 이야기로 들린다. 취향은 be big on · be into."
+    },
+    {
+     "ko": "기대해도 돼?",
+     "literal": "Can I expect?",
+     "use": "Can we expect good things? · Should I get my hopes up?",
+     "why": "expect 는 목적어가 꼭 있어야 하고, 혼자 쓰면 '예상하다' 라 기대의 설렘이 없다."
+    },
+    {
+     "ko": "고질병",
+     "literal": "stubborn disease",
+     "use": "a chronic problem · its weak spot",
+     "why": "stubborn disease 는 쓰지 않는 말이다. 품종의 약점은 weak spot, 오래 앓는 병은 chronic."
+    }
+   ],
+   "audio": "audio/comm/2026-11-07-dinner-table.mp3",
+   "duration": 1000.03,
+   "engine": "Fish Audio Drama 3",
+   "voice": "Ann"
+  }
+ ]
+}
+</script>
+  <!-- COMM-DATA:END -->
+
+  <script src="js/comm.js"></script>
+</body>
+</html>

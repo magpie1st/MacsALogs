@@ -39,6 +39,19 @@ uv run python scripts/publish_blog.py             # 음원 복사 + opic.html �
 
 그 뒤 이 저장소에서 커밋·푸시하면 반영된다.
 
+## 일상대화 영어 대본 페이지
+
+`docs/comm.html` — 집에서 한국어로 나눈 대화를 영어 대본으로 다시 쓰고 Drama3-Ann 으로 낭독한 학습 페이지(포스트 아님, URL로만 접근, **공개**).
+`<!-- COMM-DATA:START -->` ~ `END` 는 자동 생성 영역이다. 손으로 고치지 말 것.
+원본은 voice-in-scribe `output/<이름>_일상.json`, 음원은 tts-maker `output/drama3/ann/comm/` (절차: voice-in-scribe `daily-talk` 스킬).
+
+```bash
+python3 scripts/build_comm.py -n <이름>   # 실을 것 확인
+python3 scripts/build_comm.py <이름>      # 그 회차만 갈아 끼우고 mp3 를 docs/audio/comm/ 에 복사
+```
+
+쓰기 전에 `~/.config/macsalogs/comm_blocklist.txt`(실명 · 학교 · 계정 — 저장소 밖)로 검사하고 걸리면 멈춘다.
+
 ## TVShow 스크립트 페이지
 
 `docs/tvshow.html`도 포스트가 아닌 독립형 페이지다(내비게이션에 없고 URL로만 접근).
