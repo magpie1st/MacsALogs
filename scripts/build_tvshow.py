@@ -45,7 +45,7 @@ from shows import (  # noqa: F401  (재내보내기)
     escape_inline_json,
     normalize_base_url,
     read_payload,
-    read_release_base_url,
+    read_release_base_url as _read_release_base_url,
     serialize,
     slugify,
     upsert_show,
@@ -54,6 +54,39 @@ from shows import (  # noqa: F401  (재내보내기)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 AUDIO_DIR = REPO_ROOT / "docs" / "audio" / "tvshow"
+
+TVSHOW_RELEASE_SCHEMA = "tvshow-audio-release/1"
+
+
+def read_release_base_url(audio_dir: Path) -> str | None:
+    """TVShow 의 config.json 을 읽는다. shows.read_release_base_url(공용, 느슨함)에 TVShow 전용 검증을 더한 것이다.
+
+    TVShow 의 config 는 `episodes` 목록과 manifest(episode-NN.json)가 한 쌍이다. 어긋나면 일부 회차의 음원이
+    새 태그를 가리켜 404 가 되므로 **중단한다.** (shows 의 공용 함수는 langstudy 의 `shows-audio-release/1` 도
+    읽기 때문에 이 검증을 넣을 수 없다. tts-maker 의 교차 테스트가 이 이름으로 찾는다.)
+    """
+    path = audio_dir / RELEASE_CONFIG_NAME
+    if not path.exists():
+        return None
+    try:
+        config = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        sys.exit(f"{path} 를 읽을 수 없습니다: {exc}")
+    if not isinstance(config, dict):
+        sys.exit(f"{path} 는 JSON 객체여야 합니다.")
+    if config.get("schema") != TVSHOW_RELEASE_SCHEMA:
+        sys.exit(f"{path} 의 schema 가 {TVSHOW_RELEASE_SCHEMA!r} 이 아닙니다: {config.get('schema')!r}")
+    episodes = config.get("episodes")
+    if (
+        not isinstance(episodes, list) or not episodes
+        or any(type(n) is not int or n < 1 for n in episodes) or len(set(episodes)) != len(episodes)
+    ):
+        sys.exit(f"{path} 의 episodes 는 중복 없는 양의 정수 목록이어야 합니다: {episodes!r}")
+    manifests = {int(m.group(1)) for f in audio_dir.glob("episode-*.json") if (m := re.fullmatch(r"episode-(\d+)\.json", f.name))}
+    missing, extra = sorted(set(episodes) - manifests), sorted(manifests - set(episodes))
+    if missing or extra:
+        sys.exit(f"{path} 의 episodes 와 manifest 가 어긋납니다 (manifest 없음: {missing}, config 에 없음: {extra}).")
+    return _read_release_base_url(audio_dir)
 DEFAULT_SOURCE = Path("/home/magpie/Workspace/dev/macGitHub/book-maker/output")
 
 SERIES_TITLE = "A Gentleman's Dignity"

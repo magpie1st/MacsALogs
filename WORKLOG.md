@@ -4,6 +4,14 @@
 
 ---
 
+## 2026-11-16 — tts-maker 정리에 맞춘 변경: 이야기별 엔진 표기, 일상대화 음성 선택, TVShow 검증
+
+- **opic.html 엔진 표기**: 풀(`tts-maker/output/<제목>.mp3`)은 이야기마다 엔진이 달라서(Gemini 26편 + Drama3-Ann 5편) 머리말의 단일 `engine/voice` 는 어느 쪽이든 틀렸다. 다른 게시 작업이 기본값으로 다시 돌려 `Kokoro-82M · af_heart` 로 되돌려 놓은 것도 확인했다. 이제 `publish_blog.py`(tts-maker)가 파일 해시로 이야기마다 `engine`/`voice` 를 적고, `opic.js` 가 머리말에 실제로 쓰인 엔진·음성 목록을, 각 이야기 줄에 음성 이름을 보여 준다. 음원 mp3 는 바뀌지 않았다(표기 데이터만)
+- **build_comm.py**: `--voice <프로필>` 추가. 기본은 기존 `output/drama3/ann/comm/`, 다른 프로필은 `output/drama3/voices/<프로필>/comm/`. **`publishable=true` 인 프로필만** 받는다(공개 페이지라서). 없는 프로필·게시 불가 프로필은 거부
+- **build_tvshow.py**: TVShow 전용 `read_release_base_url` 추가 — schema `tvshow-audio-release/1`, episodes 목록, manifest 와의 일치를 확인하고 어긋나면 중단. 공용 `shows.read_release_base_url` 은 langstudy 의 `shows-audio-release/1`(episodes 없음)도 읽으므로 그대로 둔다. tts-maker 의 교차 테스트가 이 이름으로 찾는데 이 검증이 없어 20개가 실패하고 있었다. 실제 TVShow·shows 설정이 새 검증을 통과하는 것은 확인
+- **폴더는 옮기지 않았다**: `scripts/` 의 경로는 tts-maker 교차 테스트(`BUILD_SCRIPT`), hermes, watcher 가 부른다. docs/ 는 GitHub Pages 구조라 정해져 있다
+- 푸시하지 않았다(hermes 가 한 시간 안에 푸시하거나 사용자가 한다). 오디오북 엔진 id(`drama3-ann`)는 오디오북이 아직 프로필을 모르므로 그대로
+
 ## 2026-11-02 — 오디오북 음원 비트레이트 축소 · 엔진 이름 표시 (`8cd2928`, `ad1dc8f`)
 
 - 64k 세 벌이면 음원 저장소가 약 940MB 로 Pages 1GB 에 닿는다. 사용자가 24k~64k 샘플을 들어보고 Kokoro 24k · Gemini 40k 로 정했다

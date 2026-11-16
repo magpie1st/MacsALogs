@@ -72,7 +72,7 @@
         html += '<span class="opic-track-icon" aria-hidden="true">▶</span>';
         html += '<span class="opic-track-text">';
         html += '<span class="opic-track-title">' + escapeHtml(story.title) + '</span>';
-        html += '<span class="opic-track-meta">' + formatTime(story.duration) + ' · ' + size + '</span>';
+        html += '<span class="opic-track-meta">' + formatTime(story.duration) + ' · ' + size + (story.voice ? ' · ' + story.voice : '') + '</span>';
         html += '</span></button>';
 
         html += '<div class="opic-track-foot">';
@@ -97,15 +97,21 @@
   }
 
   function renderStats(data) {
-    var count = 0, seconds = 0;
+    var count = 0, seconds = 0, engines = {}, order = [];
     data.topics.forEach(function (topic) {
-      topic.stories.forEach(function (story) { count++; seconds += story.duration; });
+      topic.stories.forEach(function (story) {
+        count++; seconds += story.duration;
+        // 음원은 이야기마다 엔진이 다를 수 있다 — 실제로 쓰인 엔진과 음성만 보여 준다
+        var engine = story.engine || data.engine || 'Kokoro-82M', voice = story.voice || data.voice;
+        if (!engines[engine]) { engines[engine] = []; order.push(engine); }
+        if (voice && engines[engine].indexOf(voice) < 0) engines[engine].push(voice);
+      });
     });
     document.getElementById('opic-stats').innerHTML =
-      ['스토리 ' + count + '개',
-       '총 ' + Math.round(seconds / 60) + '분',
-       (data.engine || 'Kokoro-82M') + ' · ' + data.voice,
-       '갱신 ' + data.generated]
+      (['스토리 ' + count + '개',
+        '총 ' + Math.round(seconds / 60) + '분']
+        .concat(order.map(function (e) { return e + (engines[e].length ? ' · ' + engines[e].join(', ') : ''); }))
+        .concat(['갱신 ' + data.generated]))
       .map(function (s) { return '<span class="opic-stat">' + escapeHtml(s) + '</span>'; }).join('');
   }
 

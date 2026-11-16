@@ -2,7 +2,8 @@
 """일상대화 영어 대본 페이지 생성기 — voice-in-scribe 의 ``output/<이름>_일상.json`` 을 ``docs/comm.html`` 에 싣는다.
 
 - 대본 원본: voice-in-scribe ``output/<이름>_일상.json`` (읽기 전용)
-- 음원: tts-maker ``output/drama3/ann/comm/<id>.mp3`` + ``<id>.timeline.json`` (있으면). ``docs/audio/comm/<id>.mp3`` 로 복사한다
+- 음원: tts-maker ``output/drama3/ann/comm/<id>.mp3`` + ``<id>.timeline.json`` (있으면). ``docs/audio/comm/<id>.mp3`` 로 복사한다.
+  다른 음성 프로필은 ``--voice <프로필>`` — tts-maker ``output/drama3/voices/<프로필>/comm/``. **게시 가능한(publishable) 프로필만** 받는다
 - ``docs/comm.html`` 의 ``COMM-DATA`` 블록에서 **그 회차만** 갈아 끼운다. 다른 회차는 그대로 둔다
 
 **공개 페이지다**(2026-11-16 사용자 결정 "일단은 공개"). 원 녹음은 싣지 않고 TTS 음원만 싣는다.
@@ -12,6 +13,7 @@ docs/ 에 쓰면 hermes 가 한 시간 안에 푸시하므로, 쓰기 전에 금
 
     python3 scripts/build_comm.py -n 20261107_1700_일상대화     # 무엇을 실을지
     python3 scripts/build_comm.py 20261107_1700_일상대화
+    python3 scripts/build_comm.py 20261107_1700_일상대화 --voice Mac_Narra_M
     python3 scripts/build_comm.py --remove 2026-11-07-dinner-table
 """
 
@@ -29,7 +31,8 @@ DOCS = REPO / "docs"
 PAGE = DOCS / "comm.html"
 AUDIO = DOCS / "audio" / "comm"
 VIS = Path("/home/magpie/Workspace/dev/macGitHub/voice-in-scribe/output")
-TTS = Path("/home/magpie/Workspace/dev/macGitHub/tts-maker/output/drama3/ann/comm")
+TTS_MAKER = Path("/home/magpie/Workspace/dev/macGitHub/tts-maker")
+DEFAULT_VOICE = "Ann_Narra_F"
 BLOCK = Path.home() / ".config" / "macsalogs" / "comm_blocklist.txt"
 RE_BLOCK = re.compile(r'(<!-- COMM-DATA:START -->\s*<script type="application/json" id="comm-data">)(.*?)(</script>\s*<!-- COMM-DATA:END -->)', re.S)
 
@@ -47,7 +50,20 @@ def write_block(data: dict) -> None:
     PAGE.write_text(RE_BLOCK.sub(lambda m: m.group(1) + "\n" + body + "\n" + m.group(3), text), encoding="utf-8")
 
 
-def episode(name: str) -> tuple[dict, Path | None]:
+def tts_dir(voice: str) -> Path:
+    """그 음성의 일상대화 음원 폴더. 기본 음성은 기존 위치, 나머지는 프로필이 게시 가능할 때만."""
+    if voice == DEFAULT_VOICE:
+        return TTS_MAKER / "output" / "drama3" / "ann" / "comm"
+    profile = TTS_MAKER / "voices" / voice / "profile.json"
+    if not profile.exists():
+        sys.exit(f"없는 음성 프로필: {voice}")
+    if not json.loads(profile.read_text(encoding="utf-8")).get("publishable"):
+        sys.exit(f"{voice} 는 공개 게시가 허용되지 않은 프로필이다 (profile.json 의 publishable)")
+    return TTS_MAKER / "output" / "drama3" / "voices" / voice / "comm"
+
+
+def episode(name: str, voice: str = DEFAULT_VOICE) -> tuple[dict, Path | None]:
+    TTS = tts_dir(voice)
     src = VIS / f"{name}_일상.json"
     if not src.exists():
         sys.exit(f"대본이 없다: {src}")
@@ -92,6 +108,7 @@ def blocked(obj: dict) -> list[str]:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("names", nargs="*", help="voice-in-scribe 산출물 이름")
+    ap.add_argument("--voice", default=DEFAULT_VOICE, help="음성 프로필 (기본 Ann_Narra_F). 게시 가능한 프로필만")
     ap.add_argument("--remove", metavar="ID", help="이 회차를 페이지에서 뺀다 (음원도 지운다)")
     ap.add_argument("-n", "--dry-run", action="store_true")
     a = ap.parse_args()
@@ -108,7 +125,7 @@ def main() -> int:
     if not BLOCK.exists():
         print(f"경고: 금지어 목록이 없다 ({BLOCK}) — 실명 검사를 하지 않는다")
     for name in a.names:
-        e, mp3 = episode(name)
+        e, mp3 = episode(name, a.voice)
         hits = blocked(e)
         if hits:
             sys.exit(f"{name}: 공개하면 안 되는 낱말이 들어 있다 — {hits}. 대본을 고친 뒤 다시 돌린다")
