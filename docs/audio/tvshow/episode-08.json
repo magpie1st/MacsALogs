@@ -8,8 +8,8 @@
  "fullTitle": "A Gentleman's Dignity - Episode 8",
  "source": {
   "name": "08/episode_08.md",
-  "sha256": "e4e79009a1272f0d3d9c625b0083583ac463427ac76b24ac9cbe1ab0f87a34ba",
-  "bytes": 36037,
+  "sha256": "e4e229df537da36cb961e019e7e1691bcfbe05587feb239f998c49ee1dfc495a",
+  "bytes": 36032,
   "scenes": 79,
   "lines": 977,
   "words": 6677
@@ -54,10 +54,10 @@
    "scene": 1,
    "line": 2,
    "sentence": 0,
-   "kind": "dialogue",
-   "text": "{\\a6}[Kim Young Sam Government, Daejeon Expo '93]",
+   "kind": "note",
+   "text": "Kim Young Sam Government, Daejeon Expo '93",
    "charStart": 0,
-   "charEnd": 49,
+   "charEnd": 42,
    "start": 4.42,
    "end": 8.368
   },

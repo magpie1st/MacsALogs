@@ -8,11 +8,11 @@
  "fullTitle": "A Gentleman's Dignity - Episode 10",
  "source": {
   "name": "10/episode_10.md",
-  "sha256": "5567f9eace64be65b6d87cf4c85534703e717ae50d33a5f45c4fcfc8828853de",
-  "bytes": 33210,
+  "sha256": "6475a55f6af1cf07284172f1b51bcffc69550a14e65ac636aaf410ef50dad527",
+  "bytes": 33196,
   "scenes": 79,
   "lines": 877,
-  "words": 5851
+  "words": 5849
  },
  "engine": {
   "name": "drama3",
@@ -595,9 +595,9 @@
    "line": 40,
    "sentence": 0,
    "kind": "narration",
-   "text": "{\\a6} *A professional gamer",
+   "text": "A professional gamer",
    "charStart": 0,
-   "charEnd": 27,
+   "charEnd": 20,
    "start": 115.321,
    "end": 117.271
   },
@@ -3847,9 +3847,9 @@
    "line": 10,
    "sentence": 0,
    "kind": "narration",
-   "text": "{\\a6} *Unemployed",
+   "text": "Unemployed",
    "charStart": 0,
-   "charEnd": 17,
+   "charEnd": 10,
    "start": 876.229,
    "end": 877.529
   },
