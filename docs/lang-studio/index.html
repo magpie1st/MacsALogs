@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lang-Studio — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="assets/ls.css" />
+  <script src="assets/ls.js"></script>
+</head>
+<body>
+  <header id="ls-header" data-page=""></header>
+
+  <main class="container hub">
+    <h2>Lang-Studio</h2>
+    <p class="lead">듣고 · 읽고 · 복습하는 영어 학습 페이지를 한곳에 모았다. 카드 아래 파란 줄은 <b>이 브라우저</b>에 남은 진척이다(어디에도 보내지 않는다).</p>
+    <div id="hub-lock"></div>
+    <p class="hub-status" id="hub-status" hidden><span id="hub-status-text"></span><button class="ls-forget" id="hub-forget" type="button" hidden>이 기기에서 잊기</button></p>
+    <h3 class="hub-group">복습</h3>
+    <div class="hub-grid">
+      <article class="hub-card" data-key="review">
+        <h3><a href="../english.html">표현 복습</a></h3>
+        <p>내 노트의 표현 · 단어, 그리고 대화에서 나온 표현을 카드로 떠올려 본다</p>
+        <span class="count">표현 387 · 단어 193 · 대화 271</span>
+        <span class="mine" data-mine="review"></span>
+      </article>
+    </div>
+    <h3 class="hub-group">듣고 따라 하기</h3>
+    <div class="hub-grid">
+      <article class="hub-card" data-key="talk">
+        <h3><a href="../comm.html">일상대화 영어 대본</a></h3>
+        <p>집에서 나눈 대화를 자연스러운 영어로 — 턴마다 듣기 · 따라가기 · 표현 복습</p>
+        <span class="count">회차 10</span>
+        <span class="mine" data-mine="talk"></span>
+      </article>
+      <article class="hub-card" data-key="opic">
+        <h3><a href="../opic.html">OPIc 내 이야기</a></h3>
+        <p>내 경험으로 쓴 OPIc 답안을 원어민 목소리로</p>
+        <span class="count">이야기 31</span>
+        <span class="mine" data-mine="opic"></span>
+      </article>
+      <article class="hub-card" data-key="drama">
+        <h3><a href="../tvshow.html">드라마 스크립트 리더</a></h3>
+        <p>드라마 · 영화 대본을 문장 단위로 듣고 읽는다</p>
+        <span class="count">작품 6 · 회차 206</span>
+        <span class="mine" data-mine="drama"></span>
+      </article>
+      <article class="hub-card" data-key="audiobook">
+        <h3><a href="../audiobook.html">오디오북</a><span class="lock">암호</span></h3>
+        <p>책 한 권을 문장 단위 낭독으로</p>
+        <span class="count"></span>
+        <span class="mine" data-mine="audiobook"></span>
+      </article>
+    </div>
+    <h3 class="hub-group">수업 · 회의</h3>
+    <div class="hub-grid">
+      <article class="hub-card" data-key="lesson">
+        <h3><a href="../lesson.html">전화영어 수업</a><span class="lock">암호</span></h3>
+        <p>전화영어 수업 녹음 · 교정 · 익힐 표현 · OPIc 확장</p>
+        <span class="count">4회</span>
+        <span class="mine" data-mine="lesson"></span>
+      </article>
+      <article class="hub-card" data-key="minutes">
+        <h3><a href="../mom.html">회의록</a><span class="lock">암호</span></h3>
+        <p>회의 녹음의 대본형 회의록</p>
+        <span class="count">2회</span>
+        <span class="mine" data-mine="minutes"></span>
+      </article>
+    </div>
+  </main>
+
+  <script id="ls-key" type="application/json">{"v": 1, "iter": 600000, "salt": "F1PVPak+qgRbO4Y5Bn6/6w==", "iv": "A8xmnt8kC+K9D7BW", "ct": "Pmd+KP4BWFzcZK86sszdv+vZTaEWUWUpGfHg"}</script>
+  <script>
+  (function () {
+    function get(k) { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch (e) { return null; } }
+    function n(o) { return o && typeof o === 'object' ? Object.keys(o).length : 0; }
+    var en = get('enReview.v1'), st = en && en.stars ? en.stars : {};
+    var stars = (st.x || []).length + (st.v || []).length + (st.c || []).length;
+    var mine = {
+      review: stars ? '★ ' + stars + '개 표시' : '',
+      talk: n(get('comm-review')) ? '복습 카드 ' + n(get('comm-review')) + '개' : '',
+      drama: n(get('tvshow-pos')) ? '이어듣기 ' + n(get('tvshow-pos')) + '회차' : '',
+      audiobook: n(get('audiobook-pos')) ? '이어듣기 ' + n(get('audiobook-pos')) + '곳' : ''
+    };
+    Object.keys(mine).forEach(function (k) {
+      var el = document.querySelector('[data-mine="' + k + '"]');
+      if (el) el.textContent = mine[k];
+    });
+
+    // 암호 — 입구에서 한 번. 맞는지는 봉인된 확인용 글을 풀어 본다
+    var box = document.getElementById('ls-key').textContent.trim();
+    if (!box) return;
+    function check(pw) {
+      return LS.decrypt(box, pw).then(function (t) { if (t !== 'lang-studio') throw new Error('mismatch'); return t; });
+    }
+    function opened() {
+      document.querySelectorAll('.hub-card .lock').forEach(function (el) { el.textContent = '열림'; el.classList.add('open'); });
+      document.getElementById('hub-status').hidden = false;
+      document.getElementById('hub-status-text').textContent = '이 기기에서는 암호 페이지(전화영어 · 회의록 · 오디오북)가 바로 열린다.';
+      LS.forgetButton(document.getElementById('hub-forget'));
+    }
+    LS.unlock(document.getElementById('hub-lock'), check,
+              { lead: '암호 페이지(전화영어 · 회의록 · 오디오북)를 쓰려면 Lang-Studio 암호를 한 번 넣는다. 이 기기에 기억해 두면 다시 묻지 않는다.' })
+      .then(opened);
+  })();
+  </script>
+</body>
+</html>
