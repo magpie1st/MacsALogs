@@ -1,49 +1,7 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
-  <meta name="robots" content="noindex, nofollow" />
-  <title>전화영어 — MacsALogs</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <style>
-    .lesson-summary { font-size: .88rem; color: var(--text-muted); margin: .5rem 0 0; line-height: 1.6; }
-    .lesson-h2 { font-size: 1.05rem; margin: 2rem 0 .75rem; }
-    .lesson-table-wrap { overflow-x: auto; padding-bottom: 3rem; }
-    .lesson-table { border-collapse: collapse; width: 100%; font-size: .85rem; }
-    .lesson-table th, .lesson-table td { border-bottom: 1px solid var(--border); padding: .45rem .5rem; text-align: right; white-space: nowrap; }
-    .lesson-table th:nth-child(-n+2), .lesson-table td:nth-child(-n+2) { text-align: left; }
-    .lesson-table small { font-weight: 400; color: var(--text-muted); }
-  </style>
-</head>
-<body>
-  <header class="site-header">
-    <div class="container">
-      <div class="site-brand">
-        <h1 class="site-title"><a href="index.html">MacsALogs</a></h1>
-        <p class="site-tagline">AI 개발 · 생산성 · 취미 기록</p>
-      </div>
-      <nav class="site-nav">
-        <a href="index.html">홈</a>
-        <a href="lang-studio/">Lang-Studio</a>
-        <a href="about.html">소개</a>
-      </nav>
-    </div>
-  </header>
-  <main class="container">
-    <section class="mom-hero">
-      <p class="tv-eyebrow">Phone English · OPIc AL</p>
-      <h1>전화영어</h1>
-      <p class="mom-hero-sub">전화영어 수업 복습 노트 — 내가 한 말의 교정, 튜터가 고쳐 말해 준 것, 말버릇, 그날 주제를 OPIc 문제로 넓힌 모범 답안을 대본 · 녹음과 함께 봅니다.</p>
-    </section>
-    <div id="lesson-lock"></div>
-    <section id="lesson-body"></section>
-    <p><button type="button" class="mom-logout" id="lesson-logout" hidden>잠그기</button></p>
-  </main>
-  <script type="application/json" id="lesson-data">{"v": 1, "iter": 600000, "salt": "uWXtRpTX+mqJg/PLzgPV/A==", "iv": "Ixd87gZZNOTg6KT7", "ct": "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"}</script>
-  <script src="js/lesson.js"></script>
-  <script>LESSON.openList();</script>
-</body>
-</html>
+<html lang="ko"><head><meta charset="UTF-8" />
+<title>전화영어 — 옮겼습니다</title>
+<meta name="robots" content="noindex" />
+<meta http-equiv="refresh" content="0; url=lang-studio/lesson/" />
+<script>location.replace("lang-studio/lesson/" + location.search + location.hash);</script>
+</head><body><p><a href="lang-studio/lesson/">전화영어</a> 로 옮겼습니다.</p></body></html>
