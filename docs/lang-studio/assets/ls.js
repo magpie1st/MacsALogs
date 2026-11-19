@@ -19,7 +19,7 @@
     ['minutes', 'minutes', '회의록', 'mom.html'], ['audiobook', 'audiobook', '오디오북', 'audiobook.html']
   ];
   /* 새 폴더로 옮긴 페이지 — 입구 빌더(hub.py)가 복사할 때 채운다. 아직 안 옮긴 페이지는 옛 주소로 잇는다 */
-  var MOVED = ["review", "talk", "opic", "drama"];
+  var MOVED = ["review", "talk", "opic", "drama", "minutes"];
   function pageHref(p) {
     return MOVED.indexOf(p[0]) >= 0 ? new URL(p[1] + '/', HOME).href : new URL(p[3], ROOT).href;
   }
@@ -135,8 +135,41 @@
     el.addEventListener('click', function () { pw.forget(); location.reload(); });
   }
 
+  /* ── 봉인 페이지(전화영어 · 회의록) ──
+     목록: <div id="ls-lock"></div><section id="ls-body"></section><script id="ls-data" type="application/json">{봉인}</script>
+     상세: 같은 자리 + LS.sealedDetail() — 풀린 문서로 통째로 바꾼다(그 문서가 녹음을 LS.sealedAudio 로 푼다) */
+  function box(id) { var el = document.getElementById(id || 'ls-data'); return el ? el.textContent.trim() : ''; }
+  function sealedList(onPlain) {
+    var b = box();
+    return unlock(document.getElementById('ls-lock'), function (p) { return decrypt(b, p); }).then(function (plain) {
+      if (onPlain) onPlain(plain); else document.getElementById('ls-body').innerHTML = plain;
+      forgetButton(document.getElementById('ls-forget'));
+    });
+  }
+  function sealedDetail() {
+    var b = box();
+    return unlock(document.getElementById('ls-lock'), function (p) { return decrypt(b, p); }).then(function (plain) {
+      document.open(); document.write(plain); document.close();
+    });
+  }
+  /* 잠근 녹음(.bin = iv 12바이트 + 암호문)을 받아 풀고 <audio id="audio"> 에 붙인다 */
+  function sealedAudio(src, saltB64, iter, mime) {
+    var audio = document.getElementById('audio'), now = document.getElementById('now'), p = pw.get();
+    if (!audio || !p) return Promise.resolve();
+    var was = now ? now.textContent : '';
+    if (now) now.textContent = '녹음을 푸는 중…';
+    return fetch(src).then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.arrayBuffer();
+    }).then(function (buf) { return decryptBytes(buf, p, saltB64, iter); }).then(function (plain) {
+      audio.src = URL.createObjectURL(new Blob([plain], { type: mime || 'audio/mpeg' }));
+      if (now) now.textContent = was;
+    }).catch(function (e) { if (now) now.textContent = '녹음을 풀지 못했습니다 (' + e.message + ')'; });
+  }
+
   window.LS = { root: ROOT.href, home: HOME.href, pages: PAGES, pageHref: pageHref, url: url, esc: esc, nav: nav, pw: pw,
-                decrypt: decrypt, decryptBytes: decryptBytes, unlock: unlock, forgetButton: forgetButton };
+                decrypt: decrypt, decryptBytes: decryptBytes, unlock: unlock, forgetButton: forgetButton,
+                sealedList: sealedList, sealedDetail: sealedDetail, sealedAudio: sealedAudio };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', nav); else nav();
 })();
