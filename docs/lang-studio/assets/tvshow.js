@@ -914,7 +914,7 @@
       updateEpisodeNav();
       return;
     }
-    selectEpisode(findEpisode(episodeId) ? episodeId : episodes[0].id, updateHash);
+    return selectEpisode(findEpisode(episodeId) ? episodeId : episodes[0].id, updateHash);
   }
 
   /* 한국어 버튼은 **두 곳**에 있다 — 위 도구 모음과 플레이어 바.
@@ -943,9 +943,34 @@
     renderEpisode();
   }
 
+  /* 회차 대본 · 문장 위치는 따로 받는다(2026-11-19 Lang-Studio — 페이지에는 목록만). ep.data = drama/ 기준 주소 */
+  var loading = {};
+  function ensureData(ep) {
+    if (!ep || !ep.data || ep.scenes) return Promise.resolve(ep);
+    if (!loading[ep.data]) {
+      loading[ep.data] = fetch(new URL(ep.data, location.href).href).then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      }).then(function (d) {
+        ep.scenes = d.scenes;
+        if (d.segments) { ep.audio = ep.audio || {}; ep.audio.segments = d.segments; }
+        return ep;
+      }, function (e) { delete loading[ep.data]; throw e; });
+    }
+    return loading[ep.data];
+  }
+
   function selectEpisode(id, updateHash) {
     var ep = findEpisode(id) || episodes[0];
-    if (!ep) return;
+    if (!ep) return Promise.resolve();
+    if (ep.data && !ep.scenes) {
+      el.script.innerHTML = '<div class="empty-state"><p>대본을 불러오는 중…</p></div>';
+      return ensureData(ep).then(function () {
+        if (findEpisode(ep.id) === ep) return selectEpisode(ep.id, updateHash);   // 그사이 다른 작품으로 가지 않았으면
+      }, function (e) {
+        el.script.innerHTML = '<div class="empty-state"><p>대본을 불러오지 못했습니다 (' + escapeHtml(e.message) + ')</p></div>';
+      });
+    }
     // **current 를 바꾸기 전에** 떠나는 회차의 자리를 적는다. 바꾼 뒤에 적으면 이전 회차의
     // 시간이 새 회차 키에 들어간다 (posKey 가 current 를 쓴다).
     if (current && current.id !== ep.id) savePosition();
@@ -969,21 +994,25 @@
     if (updateHash && window.history && window.history.replaceState) {
       window.history.replaceState(null, '', hashFor(ep));
     }
+    return Promise.resolve(ep);
   }
 
   /* 해시가 가리키는 곳으로 간다. 문장까지 있으면(/sNN) 그 문장을 비춘다. */
   function goTo(target) {
     if (!target) return;
-    if (!show || target.show.id !== show.id) selectShow(target.show.id, target.episodeId, false);
+    var done;
+    if (!show || target.show.id !== show.id) done = selectShow(target.show.id, target.episodeId, false);
     else if (target.episodeId && (!current || current.id !== target.episodeId)) {
-      selectEpisode(target.episodeId, false);
+      done = selectEpisode(target.episodeId, false);
     }
     if (target.seg == null) return;
-    // 본문을 그린 뒤라야 문장 DOM 이 있다
-    setTimeout(function () {
-      setActive(target.seg, false);
-      flashSeg(target.seg);
-    }, 60);
+    // 본문을 그린 뒤라야 문장 DOM 이 있다 — 회차 데이터를 받는 중이면 기다린다
+    Promise.resolve(done).then(function () {
+      setTimeout(function () {
+        setActive(target.seg, false);
+        flashSeg(target.seg);
+      }, 60);
+    });
   }
 
   function scrollToTop() {
