@@ -19,7 +19,7 @@
     ['minutes', 'minutes', '회의록', 'mom.html'], ['audiobook', 'audiobook', '오디오북', 'audiobook.html']
   ];
   /* 새 폴더로 옮긴 페이지 — 입구 빌더(hub.py)가 복사할 때 채운다. 아직 안 옮긴 페이지는 옛 주소로 잇는다 */
-  var MOVED = ["talk", "opic"];
+  var MOVED = ["review", "talk", "opic"];
   function pageHref(p) {
     return MOVED.indexOf(p[0]) >= 0 ? new URL(p[1] + '/', HOME).href : new URL(p[3], ROOT).href;
   }
