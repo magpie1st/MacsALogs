@@ -45,6 +45,13 @@
 .hub-card .mine { font-size: .8rem; color: var(--accent); min-height: 1em; }
 .hub-group { font-size: .8rem; color: var(--text-muted); letter-spacing: .02em; margin: 1.5rem 0 .6rem; }
 
+/* ── 분류 탭(영어 복습의 .seg 와 같은 모양 — 회의록 목록 · 상세) ── */
+.ls-seg { display: inline-flex; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin: 0 0 1rem; }
+.ls-seg button { font: inherit; font-size: .9rem; padding: 8px 14px; border: 0; background: transparent; color: var(--text); cursor: pointer; }
+.ls-seg button + button { border-left: 1px solid var(--border); }
+.ls-seg button[aria-pressed=true] { background: var(--accent); color: #fff; }
+.ls-seg .n { font-size: .78rem; opacity: .75; margin-left: .3rem; }
+
 @media (max-width: 600px) {
   .ls-header .container { flex-direction: column; align-items: flex-start; }
 }
