@@ -9,12 +9,31 @@
   var VIEWS = [['both', '한·영'], ['en', 'English'], ['ko', '한국어'], ['quiz', '말해 보기']];
   var STORE = 'comm-prefs', REVIEW = 'comm-review';
   var DAY = 86400000, INTERVALS = [0, 1, 3, 7, 14, 30];   // 상자 단계별 다음 복습까지 날짜
+  var KNOWN_BOX = 3;       // 상자 3 이상 = 익힘. 「다시」는 상자를 0 으로 돌리므로 「다시」 없이 「알았어요」를 세 번 이어서 누른 것
 
-  var episodes = [];
+  /* 카드 상태 {b: 상자 0~5, d: 다음 복습 시각(ms), s: ★} 의 규칙 — 저장 형식은 옛 것 그대로(localStorage 'comm-review') */
+  function nextState(s, ok, now) {
+    var n = {};
+    for (var k in (s || {})) n[k] = s[k];   // ★(s) 는 그대로 둔다
+    if (ok) { n.b = Math.min((n.b || 0) + 1, INTERVALS.length - 1); n.d = now + INTERVALS[n.b] * DAY; }
+    else { n.b = 0; n.d = now; }
+    return n;
+  }
+  function knownState(s) { return !!s && (s.b || 0) >= KNOWN_BOX; }
+  /* 회차 번호: 빌더가 넣은 no 를 그대로 쓴다. 번호는 한 번 매기면 바뀌지 않는다 — 중간 회차를 빼도 뒤 회차가 당겨지지 않고
+     빈 번호로 남는다(빌더 comm.numbered). no 가 없는 옛 데이터만 첫 빌드와 같은 규칙으로 채운다 — 목록은 최근 것이 위이므로 맨 아래가 1회.
+     주소 · 복습 기록은 id 를 쓰므로 번호와 무관하다. (span 클래스는 cm-epno — 「다시」 버튼의 id cm-no 와 다른 이름) */
+  function numberOf(list) {
+    var m = {};
+    list.forEach(function (e, i) { m[e.id] = e.no != null ? e.no : list.length - i; });
+    return m;
+  }
+
+  var episodes = [], epNo = {};
   var mode = '';           // list | episode | review
   var ep = null;           // 회차 화면의 회차
   var turns = [];          // 회차 화면의 평탄화된 턴 (재생 순서)
-  var audio = new Audio();
+  var audio = typeof Audio === 'function' ? new Audio() : null;   // 브라우저 밖(테스트)에는 없다
   var cur = -1, stopAt = null;
   var prefs = { view: 'both', speed: 2, step: false, follow: true, rvFilter: 'due', rvEp: '' };
   var rv = {};             // 카드 키 → {b: 상자, d: 다음 복습 시각(ms), s: ★}
@@ -60,7 +79,8 @@
   function scopeCards() { return prefs.rvEp ? cardsOf(byId(prefs.rvEp)) : allCards(); }
   function state(c) { return rv[c.key] || null; }
   function isDue(c, now) { var s = state(c); return !s || s.d <= now; }
-  function isKnown(c) { var s = state(c); return !!s && s.b >= 3; }
+  function isKnown(c) { return knownState(state(c)); }
+  function noLabel(e) { return epNo[e.id] != null ? epNo[e.id] + '회' : ''; }
   function stats(cards) {
     var now = Date.now();
     return { total: cards.length, due: cards.filter(function (c) { return isDue(c, now); }).length,
@@ -102,11 +122,11 @@
       var nt = e.scenes.reduce(function (a, s) { return a + s.turns.length; }, 0), st = stats(cardsOf(e));
       var pct = st.total ? Math.round(st.known / st.total * 100) : 0;
       h.push('<a class="cm-item" href="#' + esc(e.id) + '"><div class="cm-item-date">' + esc(e.date) + '</div>' +
-        '<div class="cm-item-title">' + esc(e.title_ko) + '</div><div class="cm-item-en">' + esc(e.title_en) + '</div>' +
+        '<div class="cm-item-title"><span class="cm-epno">' + noLabel(e) + '</span>' + esc(e.title_ko) + '</div><div class="cm-item-en">' + esc(e.title_en) + '</div>' +
         (e.summary ? '<p class="cm-item-sum">' + esc(e.summary) + '</p>' : '') +
         '<div class="cm-item-meta">장면 ' + e.scenes.length + ' · 턴 ' + nt +
         (e.audio ? ' · 낭독 ' + fmt(e.duration) + ' · ' + esc(e.voice) : ' · 음원 준비 중') + '</div>' +
-        '<div class="cm-progress" title="익힌 표현 (복습에서 세 번 넘게 알았다고 한 것)"><span style="width:' + pct + '%"></span></div>' +
+        '<div class="cm-progress" title="익힌 표현 (복습에서 「다시」 없이 「알았어요」를 세 번 이어서 누른 것 — 상자 3 이상)"><span style="width:' + pct + '%"></span></div>' +
         '<div class="cm-item-meta">표현 ' + st.total + ' · 익힘 ' + st.known + (st.due ? ' · 오늘 복습 ' + st.due : '') + '</div></a>');
     });
     h.push('</div>');
@@ -119,7 +139,7 @@
     ep = e; turns = []; cur = -1; stopAt = null;
     var sp = speakerMap(e), hasAudio = !!e.audio, h = [];
     h.push('<a class="cm-back" href="#">← 회차 목록</a>');
-    h.push('<div class="cm-ep-head"><h2>' + esc(e.title_ko) + '</h2><div class="en">' + esc(e.title_en) + '</div></div>');
+    h.push('<div class="cm-ep-head"><h2><span class="cm-epno">' + noLabel(e) + '</span>' + esc(e.title_ko) + '</h2><div class="en">' + esc(e.title_en) + '</div></div>');
     var meta = [esc(e.date)];
     if (hasAudio) meta.push('낭독 ' + fmt(e.duration) + ' · ' + esc(e.voice) + ' (' + esc(e.engine) + ')');
     else meta.push('음원 준비 중');
@@ -195,12 +215,13 @@
       return '<button type="button" data-f="' + f[0] + '" aria-pressed="' + (prefs.rvFilter === f[0]) + '">' + f[1] + '</button>';
     }).join('') + '</div>' +
       '<select id="cm-rvep" aria-label="회차"><option value="">모든 회차</option>' + episodes.map(function (e) {
-        return '<option value="' + esc(e.id) + '"' + (prefs.rvEp === e.id ? ' selected' : '') + '>' + esc(e.date) + ' · ' + esc(e.title_ko) + '</option>';
+        return '<option value="' + esc(e.id) + '"' + (prefs.rvEp === e.id ? ' selected' : '') + '>' + noLabel(e) + ' · ' + esc(e.date) + ' · ' + esc(e.title_ko) + '</option>';
       }).join('') + '</select>' +
       '<button type="button" class="cm-btn" id="cm-shuffle">섞기</button></div>');
     h.push('<div id="cm-card"></div>');
     h.push('<p class="cm-rv-help">한국어를 보고 영어로 먼저 말해 본 뒤 <b>정답 보기</b>. 맞혔으면 <b>알았어요</b>(1 → 3 → 7 → 14 → 30일 뒤 다시), ' +
-      '틀렸으면 <b>다시</b>(이번 복습 끝에 한 번 더). 🔊 는 대화 속 그 대사를 들려줍니다. 기록은 이 브라우저에만 남습니다. ' +
+      '틀렸으면 <b>다시</b>(상자 0 으로 돌아가고 이번 복습 끝에 한 번 더). <b>다시</b> 없이 <b>알았어요</b>를 세 번 이어서 누르면(상자 3) ' +
+      '<b>익힘</b>으로 셉니다. 🔊 는 대화 속 그 대사를 들려줍니다. 기록은 이 브라우저에만 남습니다. ' +
       '키보드: Space 정답 보기 · 알았어요, X 다시, P 듣기.</p>');
     el.app.innerHTML = h.join('');
     paintCard();
@@ -221,7 +242,7 @@
       return;
     }
     var s = state(c) || { b: 0 }, sc = c.scene >= 0 ? c.ep.scenes[c.scene] : null;
-    var where = esc(c.ep.date) + ' · ' + (sc ? esc(sc.title_ko) : '직역 주의') + ' · ' + (pos + 1) + ' / ' + deck.length;
+    var where = noLabel(c.ep) + ' · ' + esc(c.ep.date) + ' · ' + (sc ? esc(sc.title_ko) : '직역 주의') + ' · ' + (pos + 1) + ' / ' + deck.length;
     var t = sc && c.ti != null ? sc.turns[c.ti] : null, canPlay = !!(c.ep.audio && t && t.start != null);
     var h = '<div class="cm-flash' + (shown ? ' shown' : '') + '"><div class="cm-flash-where"><span>' + where + '</span>' +
       '<button type="button" class="cm-star" id="cm-star" aria-pressed="' + !!s.s + '" title="헷갈림 표시">' + (s.s ? '★' : '☆') + '</button></div>' +
@@ -244,10 +265,9 @@
   }
   function grade(ok) {
     var c = deck[pos]; if (!c) return;
-    var s = rv[c.key] || { b: 0, d: 0 };
-    if (ok) { s.b = Math.min((s.b || 0) + 1, INTERVALS.length - 1); s.d = Date.now() + INTERVALS[s.b] * DAY; }
-    else { s.b = 0; s.d = Date.now(); deck.push(c); }   // 이번 복습 끝에 한 번 더
-    rv[c.key] = s; saveRv();
+    rv[c.key] = nextState(rv[c.key], ok, Date.now());
+    if (!ok) deck.push(c);   // 이번 복습 끝에 한 번 더
+    saveRv();
     pos++; shown = false;
     paintCard();
     var st = document.getElementById('cm-rvstats');
@@ -426,9 +446,16 @@
       .forEach(function (k) { el[k] = document.getElementById('cm-' + k); });
     load(); paintBtns();
     try { episodes = JSON.parse(document.getElementById('comm-data').textContent).episodes || []; } catch (e) { episodes = []; }
+    epNo = numberOf(episodes);
     bind();
     route();
   }
 
+  // 브라우저가 아니면(테스트 — tests/test_comm_page.py) 규칙만 내보낸다
+  if (typeof document === 'undefined') {
+    if (typeof module !== 'undefined') module.exports = { nextState: nextState, knownState: knownState, numberOf: numberOf,
+      INTERVALS: INTERVALS, KNOWN_BOX: KNOWN_BOX, DAY: DAY, STORE: STORE, REVIEW: REVIEW };
+    return;
+  }
   init();
 })();
