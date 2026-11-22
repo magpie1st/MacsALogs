@@ -1,14 +1,19 @@
 // Lang-Studio 일상대화 — 원본은 VoiceLang web/lang-studio/assets/comm.js(옛 MacsALogs docs/js/comm.js). 음원 주소는 LS.url 로 사이트 뿌리 기준.
 /* 일상대화 영어 대본 — 목록(#) · 회차(#<id>[/<scene|tN>]) · 표현 복습(#review[/<id>])
- * 회차: 자막 언어(한 / 영 / 한·영) + 말해 보기, 재생 범위(이 회차 / 전체 회차), 이전 · 다음 회차, 지금 턴 반복 (2026-11-22)
+ * 회차: 자막 언어 + 말해 보기, 재생 범위(1 이번 회차 ↔ all 전체 회차), 이전 · 다음 회차, R 현재 턴 반복, F 따라가기 (2026-11-22)
+ * 플레이어 겉모양은 드라마 플레이어와 같다(tv-ctl · tv-ico · tv-sep · tv-rate-select — 블로그 css/style.css)
+ * 자막 언어는 버튼 하나 — 누를 때마다 한 → 영 → A(한·영) → 한 (nextLang). 위 막대(#cm-lang)와 플레이어(#cm-plang) 두 곳이
+ * 같은 prefs.lang 을 쓰고 같이 바뀐다(음원 없는 회차는 플레이어가 없다)
  * 복습: 모든 회차의 장면 표현 + 직역 주의 표현을 카드로. 상자 단계(라이트너)로 간격을 늘린다. 상태는 이 브라우저에만 둔다
- * 회차 삭제: 사이트 파일은 그대로 두고 이 브라우저(localStorage 'comm-hidden')에서만 숨긴다 — 목록 · 복습 · 전체 재생에서 빠지고 언제든 복원 */
+ * 회차 삭제: 사이트 파일은 그대로 두고 이 브라우저(localStorage 'comm-hidden')에서만 숨긴다 — 누르면 확인 대화상자(취소 = 그대로)를 거쳐 목록 · 복습 · 전체 재생에서 빠지고 언제든 복원 */
 (function () {
   'use strict';
 
   var SPEEDS = [0.75, 0.9, 1.0, 1.15, 1.3];
-  var LANGS = [['ko', '한', '한국어만'], ['en', '영', '영어만'], ['both', '한·영', '한국어와 영어']];
-  var SCOPES = [['ep', '이 회차', '이 회차 끝에서 멈춤'], ['all', '전체 회차', '회차가 끝나면 다음 회차로 이어서']];
+  // 자막 언어 순환 순서: [값, 플레이어 글자, 이름, 위 막대 글자]
+  var LANGS = [['ko', '한', '한국어만', '한'], ['en', '영', '영어만', '영'], ['both', 'A', '한·영 동시', '한·영']];
+  // 재생 범위: [값, 버튼 글자, 이름, 설명]
+  var SCOPES = [['ep', '1', '이번 회차', '이 회차 끝에서 멈춤'], ['all', 'all', '전체 회차', '회차가 끝나면 다음 회차로 이어서 (삭제한 회차는 건너뜀)']];
   var STORE = 'comm-prefs', REVIEW = 'comm-review', HIDE = 'comm-hidden';
   var DAY = 86400000, INTERVALS = [0, 1, 3, 7, 14, 30];   // 상자 단계별 다음 복습까지 날짜
   var KNOWN_BOX = 3;       // 상자 3 이상 = 익힘. 「다시」는 상자를 0 으로 돌리므로 「다시」 없이 「알았어요」를 세 번 이어서 누른 것
@@ -75,6 +80,30 @@
     if (!SCOPES.some(function (s) { return s[0] === out.scope; })) out.scope = 'ep';
     out.quiz = !!out.quiz;
     return out;
+  }
+  /* 자막 언어 순환 — 한 → 영 → A(한·영) → 한. 모르는 값은 A 로 본다 */
+  function langOf(id) { return LANGS.find(function (l) { return l[0] === id; }) || LANGS[2]; }
+  function nextLang(id) {
+    var i = LANGS.indexOf(langOf(id));
+    return LANGS[(i + 1) % LANGS.length][0];
+  }
+  function langName(id) {   // 버튼 aria-label · title — 지금 언어와 누르면 바뀔 언어
+    var c = langOf(id), n = langOf(nextLang(id));
+    return '자막 언어: ' + c[2] + ' (' + c[1] + ') — 누르면 ' + n[2];
+  }
+  function scopeOf(id) { return SCOPES.find(function (s) { return s[0] === id; }) || SCOPES[0]; }
+  function nextScope(id) { return scopeOf(id)[0] === 'ep' ? 'all' : 'ep'; }
+  function scopeName(id) {
+    var c = scopeOf(id), n = scopeOf(nextScope(id));
+    return '재생 범위: ' + c[2] + ' — ' + c[3] + ' (누르면 ' + n[2] + ')';
+  }
+
+  /* 삭제 확인 문구 — name 은 「3회 「제목」」 꼴(epName). 실제로 무엇이 일어나는지(이 브라우저에서 숨김)와 무엇이 남는지를 함께 묻는다 */
+  function hideConfirmText(name) {
+    return name + ' 회차를 삭제할까요?\n\n' +
+      '이 브라우저의 회차 목록 · 표현 복습 · 전체 회차 재생에서 숨깁니다.\n' +
+      '사이트의 대본과 음원 파일은 지워지지 않으며, 목록 아래 「삭제한 회차」에서 언제든 복원할 수 있습니다.\n\n' +
+      '[확인] 삭제(숨김)   [취소] 그대로 두기';
   }
 
   var episodes = [], epNo = {}, hidden = {};
@@ -234,9 +263,7 @@
     if (e.summary) h.push('<p class="cm-summary">' + esc(e.summary) + '</p>');
     if (e.note) h.push('<div class="cm-note">' + esc(e.note) + '</div>');
 
-    h.push('<div class="cm-bar"><div class="cm-seg" id="cm-lang" role="group" aria-label="자막 언어">' + LANGS.map(function (v) {
-      return '<button type="button" data-lang="' + v[0] + '" aria-label="' + v[2] + '" title="' + v[2] + '" aria-pressed="' + (!prefs.quiz && prefs.lang === v[0]) + '">' + v[1] + '</button>';
-    }).join('') + '</div><button type="button" class="cm-btn cm-quiz" id="cm-quiz" aria-pressed="' + prefs.quiz +
+    h.push('<div class="cm-bar">' + langButtonTop() + '<button type="button" class="cm-btn cm-quiz" id="cm-quiz" aria-pressed="' + prefs.quiz +
       '" title="한국어만 보고 영어로 말해 본 뒤, 가린 영어를 눌러 확인">말해 보기</button><nav class="cm-toc" aria-label="장면">' + e.scenes.map(function (s, i) {
       return '<a href="#' + esc(e.id) + '/' + esc(s.id) + '">' + (i + 1) + '. ' + esc(s.title_ko) + '</a>';
     }).join('') + '</nav></div>');
@@ -284,9 +311,23 @@
     paintNav();
     updateNow();
   }
+  function langButtonTop() {
+    var c = langOf(prefs.lang), name = esc(langName(prefs.lang));
+    return '<button type="button" class="cm-btn cm-langbtn" id="cm-lang" data-lang="' + c[0] + '" aria-label="' + name + '" title="' + name + '">자막: ' + c[3] + '</button>';
+  }
+  function paintLang(b, top) {   // 위 막대 · 플레이어의 자막 언어 버튼 — 글자 · aria-label · title 에 지금 언어
+    if (!b) return;
+    var c = langOf(prefs.lang), name = langName(prefs.lang);
+    b.textContent = top ? '자막: ' + c[3] : c[1];
+    b.setAttribute('data-lang', c[0]);
+    if (b.dataset) b.dataset.lang = c[0];
+    b.setAttribute('aria-label', name); b.title = name;
+  }
+  function cycleLang() { prefs.lang = nextLang(prefs.lang); prefs.quiz = false; save(); applyView(); }   // 언어를 바꾸면 말해 보기는 끈다
   function applyView() {
     document.body.setAttribute('data-view', prefs.quiz ? 'quiz' : prefs.lang);
-    document.querySelectorAll('#cm-lang button').forEach(function (x) { x.setAttribute('aria-pressed', !prefs.quiz && x.dataset.lang === prefs.lang); });
+    paintLang(document.getElementById('cm-lang'), true);
+    paintLang(el.plang, false);
     var q = document.getElementById('cm-quiz');
     if (q) q.setAttribute('aria-pressed', prefs.quiz);
     document.querySelectorAll('.cm-en.shown').forEach(function (x) { x.classList.remove('shown'); });
@@ -492,6 +533,14 @@
     else if (mode === 'episode' && ep) renderEpisode(ep);
     else if (mode === 'review') { buildDeck(); renderReview(); }
   }
+  /* 삭제 버튼 → 반드시 확인을 받는다. 취소(또는 대화상자를 못 띄움)면 아무것도 바꾸지 않는다 */
+  function askHide(id) {
+    var e = byId(id); if (!e || isHidden(e)) return false;
+    var ok = false;
+    try { ok = typeof window.confirm === 'function' && window.confirm(hideConfirmText(epName(e))) === true; } catch (x) { ok = false; }
+    if (ok) hideEp(id);
+    return ok;
+  }
   function hideEp(id) {
     var e = byId(id); if (!e) return;
     hidden[id] = Date.now(); saveHidden();
@@ -521,13 +570,13 @@
 
   function bind() {
     audio.addEventListener('play', function () { el.toggle.textContent = '❚❚'; el.toggle.setAttribute('aria-label', '일시정지'); cancelAnimationFrame(raf); loop(); });
-    audio.addEventListener('pause', function () { el.toggle.textContent = '▶︎'; el.toggle.setAttribute('aria-label', '재생'); tick(); });
+    audio.addEventListener('pause', function () { el.toggle.textContent = '▶'; el.toggle.setAttribute('aria-label', '재생'); tick(); });
     audio.addEventListener('timeupdate', tick);   // 탭이 뒤에 있어 화면 갱신(rAF)이 멈춰도 반복 · 멈춤이 동작하게
     audio.addEventListener('ended', onEnded);
 
     el.app.addEventListener('click', function (ev) {
       var hb = ev.target.closest('[data-hide]');
-      if (hb) { ev.preventDefault(); hideEp(hb.dataset.hide); return; }
+      if (hb) { ev.preventDefault(); askHide(hb.dataset.hide); return; }
       var rb = ev.target.closest('[data-restore]');
       if (rb) { ev.preventDefault(); restoreEp(rb.dataset.restore); return; }
       if (mode === 'review') {
@@ -549,8 +598,7 @@
       if (mode !== 'episode') return;
       var sc = ev.target.closest('.cm-scene-play');
       if (sc) { playScene(+sc.dataset.scene); return; }
-      var v = ev.target.closest('#cm-lang button');
-      if (v) { prefs.lang = v.dataset.lang; prefs.quiz = false; save(); applyView(); return; }   // 언어를 고르면 말해 보기는 끈다
+      if (ev.target.closest('#cm-lang')) { cycleLang(); return; }
       if (ev.target.closest('#cm-quiz')) { prefs.quiz = !prefs.quiz; save(); applyView(); return; }
       var en = ev.target.closest('.cm-en');
       if (en && prefs.quiz) {
@@ -593,14 +641,14 @@
     el.prevep.addEventListener('click', function () { goEpisode(-1); });
     el.nextep.addEventListener('click', function () { goEpisode(+1); });
     el.repeat.addEventListener('click', function () { setRepeat(!repeat); });
-    el.scope.addEventListener('click', function (ev) {
-      var b = ev.target.closest('button[data-scope]');
-      if (b) { prefs.scope = b.dataset.scope; save(); paintBtns(); }
-    });
-    el.speed.addEventListener('click', function () {
-      prefs.speed = (prefs.speed + 1) % SPEEDS.length; audio.playbackRate = SPEEDS[prefs.speed]; save(); paintBtns();
+    el.scope.addEventListener('click', function () { prefs.scope = nextScope(prefs.scope); save(); paintBtns(); });   // 1 ↔ all
+    el.speed.addEventListener('change', function () {
+      var i = +el.speed.value;
+      if (SPEEDS[i]) { prefs.speed = i; audio.playbackRate = SPEEDS[i]; save(); }
+      paintBtns();
     });
     el.follow.addEventListener('click', function () { prefs.follow = !prefs.follow; save(); paintBtns(); });
+    el.plang.addEventListener('click', cycleLang);   // 플레이어의 자막 언어 — 위 막대와 같은 설정, 같은 순환
     el.seek.addEventListener('input', function () { seeking = true; el.elapsed.textContent = fmt(el.seek.value / 1000 * ep.duration); });
     el.seek.addEventListener('change', function () {
       seeking = false; stopAt = null;
@@ -612,10 +660,15 @@
     window.addEventListener('hashchange', route);
   }
   function paintBtns() {
-    el.speed.textContent = SPEEDS[prefs.speed] + '×';
+    el.speed.value = String(prefs.speed);
     el.follow.setAttribute('aria-pressed', prefs.follow);
     el.repeat.setAttribute('aria-pressed', repeat);
-    el.scope.querySelectorAll('button[data-scope]').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.scope === prefs.scope); });
+    var sc = scopeOf(prefs.scope), sn = scopeName(prefs.scope);   // 켜짐(채운 모양) = 전체 회차 이어 재생
+    el.scope.textContent = sc[1];
+    el.scope.setAttribute('data-scope', sc[0]);
+    el.scope.setAttribute('aria-pressed', sc[0] === 'all');
+    el.scope.setAttribute('aria-label', sn); el.scope.title = sn;
+    paintLang(el.plang, false);
   }
 
   function closeToast() {
@@ -658,7 +711,7 @@
   }
 
   function init() {
-    ['app', 'hero', 'player', 'now', 'seek', 'elapsed', 'total', 'scope', 'prevep', 'toggle', 'nextep', 'repeat', 'speed', 'follow', 'toast']
+    ['app', 'hero', 'player', 'now', 'seek', 'elapsed', 'total', 'scope', 'prevep', 'toggle', 'nextep', 'repeat', 'speed', 'follow', 'plang', 'toast']
       .forEach(function (k) { el[k] = document.getElementById('cm-' + k); });
     var missing = Object.keys(el).filter(function (k) { return !el[k] && k !== 'toast'; });
     var data = document.getElementById('comm-data');
@@ -676,7 +729,8 @@
   // 브라우저가 아니면(테스트 — tests/test_comm_page.py) 규칙만 내보낸다
   if (typeof document === 'undefined') {
     if (typeof module !== 'undefined') module.exports = { nextState: nextState, knownState: knownState, numberOf: numberOf,
-      visibleOf: visibleOf, playOrder: playOrder, neighbor: neighbor, turnEndOf: turnEndOf, repeatStep: repeatStep, migratePrefs: migratePrefs,
+      visibleOf: visibleOf, playOrder: playOrder, neighbor: neighbor, turnEndOf: turnEndOf, repeatStep: repeatStep, migratePrefs: migratePrefs, hideConfirmText: hideConfirmText,
+      nextLang: nextLang, langName: langName, nextScope: nextScope, scopeName: scopeName, LANGS: LANGS, SCOPES: SCOPES,
       DEFAULTS: DEFAULTS, LOOP_SLACK: LOOP_SLACK, INTERVALS: INTERVALS, KNOWN_BOX: KNOWN_BOX, DAY: DAY, STORE: STORE, REVIEW: REVIEW, HIDE: HIDE };
     return;
   }
