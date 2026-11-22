@@ -192,6 +192,12 @@
     .cm-ctrl { display: flex; align-items: center; justify-content: center; gap: 0.35rem 0.5rem; flex-wrap: wrap; }
     .cm-transport { display: inline-flex; align-items: center; gap: 0.35rem; }
     .cm-ctrl .cm-seg button { height: 32px; padding: 0 0.6rem; font-size: 0.75rem; }
+    /* 둥근 버튼 — 1 >> · all >> · 한 / 영 / A · R · F (2026-11-22). 이름은 aria-label · title 에 */
+    .cm-rounds { display: inline-flex; align-items: center; gap: 0.3rem; }
+    .cm-btn.cm-round { border-radius: 999px; display: inline-flex; align-items: center; justify-content: center;
+      min-width: 36px; height: 36px; padding: 0 0.7rem; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.02em;
+      white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .cm-btn.cm-round--one { width: 36px; padding: 0; }
     .cm-epnav { display: inline-flex; align-items: center; gap: 0.3rem; }
     .cm-epnav svg { width: 14px; height: 14px; flex: none; }
     .cm-btn { background: none; border: 1px solid var(--border); border-radius: var(--radius); color: var(--text);
@@ -209,7 +215,9 @@
       .cm-btn-lbl, .cm-hide span { display: none; }   /* 좁은 화면: 아이콘만(이름은 aria-label · title 에) */
       .cm-item-wrap .cm-item { padding-right: 2.9rem; }
       .cm-hide { padding: 0.3rem; }
-      .cm-ctrl .cm-scope { order: -1; }
+      .cm-ctrl .cm-scope, .cm-ctrl .cm-plang { order: -1; }
+      .cm-btn.cm-round { min-width: 36px; height: 36px; padding: 0 0.6rem; font-size: 0.74rem; }   /* 손가락 크기는 그대로 */
+      .cm-btn.cm-round--one { padding: 0; }
       .cm-box td { display: block; width: auto !important; }
       .cm-box td + td { border-top: 0; padding-top: 0; }
     }
@@ -223,8 +231,8 @@
       <h1>일상대화 영어 대본</h1>
       <p>집에서 한국어로 나눈 대화를 영어로는 어떻게 말할지 대본으로 다시 쓰고, 화자마다 다른 목소리로 읽었습니다.
         회차에 들어가 <strong>말해 보기</strong>로 한국어만 보고 영어로 말해 보고, <strong>표현 복습</strong>에서
-        회차마다 골라 둔 표현을 카드로 되풀이합니다. 아래 플레이어로 <strong>이 회차</strong>만 또는 <strong>전체 회차</strong>를 이어 듣고,
-        <strong>턴 반복</strong>으로 지금 대사만 되풀이할 수 있습니다. 회차 <strong>삭제</strong>는 이 브라우저 목록에서만 숨기며 언제든 복원됩니다.</p>
+        회차마다 골라 둔 표현을 카드로 되풀이합니다. 아래 플레이어의 <strong>1 &gt;&gt;</strong>(이번 회차) · <strong>all &gt;&gt;</strong>(전체 회차)로 이어 듣고,
+        <strong>R</strong>로 지금 대사만 되풀이하며, <strong>한 · 영 · A</strong>(한·영 함께)로 자막 언어를 고릅니다. 회차 <strong>삭제</strong>는 확인을 한 번 더 받은 뒤 이 브라우저 목록에서만 숨기며 언제든 복원됩니다.</p>
     </section>
     <div id="cm-app"><div class="empty-state"><p>대본을 불러오는 중…</p></div></div>
   </main>
@@ -244,9 +252,16 @@
         <span class="cm-time" id="cm-total">0:00</span>
       </div>
       <div class="cm-ctrl">
-        <div class="cm-seg cm-scope" id="cm-scope" role="group" aria-label="재생 범위">
-          <button type="button" data-scope="ep" aria-pressed="true" title="이 회차 끝에서 멈춤">이 회차</button>
-          <button type="button" data-scope="all" aria-pressed="false" title="회차가 끝나면 다음 회차로 이어서 (삭제한 회차는 건너뜀)">전체 회차</button>
+        <div class="cm-rounds cm-scope" id="cm-scope" role="group" aria-label="재생 범위">
+          <button type="button" class="cm-btn cm-round" data-scope="ep" aria-pressed="true" aria-label="이번 회차 재생"
+            title="이번 회차 재생 — 이 회차 끝에서 멈춤">1 &gt;&gt;</button>
+          <button type="button" class="cm-btn cm-round" data-scope="all" aria-pressed="false" aria-label="전체 회차 재생"
+            title="전체 회차 재생 — 회차가 끝나면 다음 회차로 이어서 (삭제한 회차는 건너뜀)">all &gt;&gt;</button>
+        </div>
+        <div class="cm-rounds cm-plang" id="cm-plang" role="group" aria-label="자막 언어">
+          <button type="button" class="cm-btn cm-round cm-round--one" data-lang="ko" aria-pressed="false" aria-label="한국어 자막만 보기" title="한국어 자막만 보기">한</button>
+          <button type="button" class="cm-btn cm-round cm-round--one" data-lang="en" aria-pressed="false" aria-label="영어 자막만 보기" title="영어 자막만 보기">영</button>
+          <button type="button" class="cm-btn cm-round cm-round--one" data-lang="both" aria-pressed="true" aria-label="한·영 동시 보기 — 한국어와 영어 자막을 함께 표시" title="한·영 동시 보기 — 한국어와 영어 자막을 함께 표시">A</button>
         </div>
         <div class="cm-transport">
           <button type="button" class="cm-btn cm-epnav" id="cm-prevep" aria-label="이전 회차" title="이전 회차">
@@ -257,9 +272,9 @@
             <span class="cm-btn-lbl">다음 회차</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 3v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.8 8 3 3.8v8.4zM12.4 8 7.8 3.8v8.4z" fill="currentColor"/></svg>
           </button>
         </div>
-        <button type="button" class="cm-btn" id="cm-repeat" aria-pressed="false" aria-keyshortcuts="R" title="지금 턴만 반복 (R)">↻ 턴 반복</button>
+        <button type="button" class="cm-btn cm-round cm-round--one" id="cm-repeat" aria-pressed="false" aria-keyshortcuts="R" aria-label="현재 턴 반복" title="현재 턴 반복 (R 키)">R</button>
         <button type="button" class="cm-btn" id="cm-speed" title="재생 속도">1×</button>
-        <button type="button" class="cm-btn" id="cm-follow" aria-pressed="true" title="재생 중인 대사로 자동 스크롤">따라가기</button>
+        <button type="button" class="cm-btn cm-round cm-round--one" id="cm-follow" aria-pressed="true" aria-label="재생 중인 턴 따라가기" title="재생 중인 턴 따라가기 — 재생 중인 대사로 자동 스크롤">F</button>
       </div>
     </div>
   </div>
@@ -271,6 +286,646 @@
   <script type="application/json" id="comm-data">
 {
  "episodes": [
+  {
+   "id": "2026-11-22-old-book-sets",
+   "date": "2026-11-22",
+   "title_ko": "어릴 적 책 전집과 이웃집",
+   "title_en": "Book Sets and Next-Door Neighbors",
+   "summary": "Mac 과 Maggie 가 어릴 적 집에 있던 소설 전집과 방문판매, 열쇠를 놓고 나간 엄마와 이웃집, 일요일 집안일 실랑이를 두서없이 나눈 7분 대화.",
+   "note": "원 녹음은 싣지 않는다. 영어는 영어권 부부가 했다면 어떻게 말했을지 다시 쓴 구어이고, 한국어는 군말을 걷어 낸 '하려던 말'이다. 이웃과 지인 이름, 지인의 체형 이야기는 뺐다. 마지막 30초 남짓은 전사가 뭉개져 버렸다. 전사에 화자 구분이 없어 내용으로 추정했고 불확실한 턴은 점선으로 표시했다.",
+   "speakers": [
+    {
+     "id": "Mac",
+     "ko": "Mac",
+     "en": "Mac"
+    },
+    {
+     "id": "Maggie",
+     "ko": "Maggie",
+     "en": "Maggie"
+    }
+   ],
+   "scenes": [
+    {
+     "id": "s1",
+     "title_ko": "무협 소설 세트",
+     "title_en": "The Martial Arts Novels",
+     "turns": [
+      {
+       "sp": "Maggie",
+       "en": "Everyone said it was good, so I was thinking about reading it, and then I found the novels at home.",
+       "ko": "그게 재밌었다고 해서 볼까 하고 있었는데, 집에 『영웅문』 소설책이 있더라고.",
+       "start": 0.6,
+       "end": 6.38
+      },
+      {
+       "sp": "Maggie",
+       "en": "It was a whole set. I just happened to spot it. The third part has Zhang Wuji in it.",
+       "ko": "세트로 있었는데 우연히 봤어. 3부에 장무기가 나오고 그랬어.",
+       "start": 6.88,
+       "end": 14.92
+      },
+      {
+       "sp": "Maggie",
+       "en": "So that's what I read.",
+       "ko": "그래서 그걸로 읽었어.",
+       "start": 15.42,
+       "end": 17.17
+      },
+      {
+       "sp": "Maggie",
+       "en": "Later I read another one, the one with the Great Wall. I think that was part one or two.",
+       "ko": "나중에 만리장성이 나오는 책도 한 번 봤어. 그것도 1부인가 2부였던 것 같아.",
+       "start": 17.67,
+       "end": 24.63
+      },
+      {
+       "sp": "Maggie",
+       "en": "I bought them one at a time and read every one. That's the same series too.",
+       "ko": "그걸 한 권씩 다 사서 봤어. 그것도 『영웅문』이야.",
+       "start": 25.13,
+       "end": 31.61
+      },
+      {
+       "sp": "Mac",
+       "en": "Funny thing is, I never even read the Three Kingdoms or anything like that.",
+       "ko": "나는 오히려 삼국지 같은 것도 안 읽었어.",
+       "low": true,
+       "start": 32.11,
+       "end": 37.13
+      },
+      {
+       "sp": "Maggie",
+       "en": "You know those foreign novel sets that come as a package, right?",
+       "ko": "집에 보면 외국 소설을 세트로 파는 게 있잖아.",
+       "start": 37.63,
+       "end": 41.84
+      },
+      {
+       "sp": "Maggie",
+       "en": "The publisher's salesman would come to the door, and my dad probably bought them and stacked them up.",
+       "ko": "그 출판사가 집으로 찾아와서 팔았는데, 아빠가 그런 걸 사서 쟁여 놨을 거야.",
+       "start": 42.34,
+       "end": 48.43
+      }
+     ],
+     "expressions": [
+      {
+       "ko": "우연히 봤어",
+       "en": "I just happened to spot it",
+       "note": "뜻밖에 발견했을 때. happen to + 동사.",
+       "turn": 1
+      },
+      {
+       "ko": "세트로 있었어",
+       "en": "It was a whole set",
+       "note": "전집을 가리킬 때. a whole set / the full set.",
+       "turn": 1
+      },
+      {
+       "ko": "그것도 ~이야",
+       "en": "That's the same series too",
+       "note": "같은 시리즈라고 덧붙일 때.",
+       "turn": 4
+      },
+      {
+       "ko": "오히려",
+       "en": "Funny thing is",
+       "note": "예상과 반대되는 사실을 꺼낼 때의 담화 표지.",
+       "turn": 5
+      },
+      {
+       "ko": "쟁여 놨을 거야",
+       "en": "probably bought them and stacked them up",
+       "note": "많이 사서 쌓아 둔 모습. stock up · stack up.",
+       "turn": 7
+      }
+     ]
+    },
+    {
+     "id": "s2",
+     "title_ko": "빨간 전집과 방문판매",
+     "title_en": "Door-to-Door Book Sets",
+     "turns": [
+      {
+       "sp": "Maggie",
+       "en": "My dad still has them at his place, those tall red books.",
+       "ko": "우리 아빠 집에 아직도 있잖아, 세로로 된 빨간 책.",
+       "start": 49.43,
+       "end": 54.22
+      },
+      {
+       "sp": "Mac",
+       "en": "The old classics with the red covers, the tall ones?",
+       "ko": "빨간 표지에 세로로 된 옛날 명작 말이지?",
+       "low": true,
+       "start": 54.72,
+       "end": 58.43
+      },
+      {
+       "sp": "Mac",
+       "en": "Oh, really? He has those?",
+       "ko": "아, 그래? 그런 게 있어?",
+       "start": 58.93,
+       "end": 62.43
+      },
+      {
+       "sp": "Maggie",
+       "en": "There's a yellow set too. Yellow and tall.",
+       "ko": "노란 표지도 있어. 노랗고 세로로 된 거.",
+       "start": 62.93,
+       "end": 67.06
+      },
+      {
+       "sp": "Mac",
+       "en": "I bet we have some at home too. Though Mom probably threw them out.",
+       "ko": "우리 집에도 좀 있을걸? 엄마가 버리긴 했을 것 같은데.",
+       "low": true,
+       "start": 67.56,
+       "end": 72.52
+      },
+      {
+       "sp": "Maggie",
+       "en": "Somebody must have been selling them.",
+       "ko": "누군가 영업을 했겠지.",
+       "low": true,
+       "start": 73.02,
+       "end": 75.73
+      },
+      {
+       "sp": "Mac",
+       "en": "One of my dad's friends was a guy who sold those children's book sets.",
+       "ko": "아빠 친구 중에 계몽사 아저씨가 있었거든.",
+       "low": true,
+       "start": 76.23,
+       "end": 80.96
+      },
+      {
+       "sp": "Maggie",
+       "en": "Right, there's always one of those guys among your dad's friends.",
+       "ko": "맞아, 친구 중에 꼭 한 명씩 그런 분이 있어.",
+       "low": true,
+       "start": 81.46,
+       "end": 85.83
+      },
+      {
+       "sp": "Mac",
+       "en": "Your dad likes buying things and collecting them, that's just who he is.",
+       "ko": "아버님은 성격상 사서 모으는 걸 좋아하시잖아.",
+       "start": 86.33,
+       "end": 91.01
+      },
+      {
+       "sp": "Maggie",
+       "en": "Mine probably did the same. He'd have lined up the hardcovers in the living room.",
+       "ko": "우리 아빠도 그랬을 것 같아. 양장본을 거실에 쭉 진열해 놨겠지.",
+       "low": true,
+       "start": 91.51,
+       "end": 97.27
+      },
+      {
+       "sp": "Maggie",
+       "en": "The neighbors had the full set, so I'd go over and read it there. Ours was way too babyish.",
+       "ko": "옆집에 가면 그 전집이 있어서 거기서 읽었어. 우리 집 전집은 너무 애기 책이라서.",
+       "low": true,
+       "start": 97.77,
+       "end": 105.04
+      },
+      {
+       "sp": "Maggie",
+       "en": "Once you hit middle school, there's nothing left to read.",
+       "ko": "중학교 가면 읽을 책이 없잖아.",
+       "start": 105.54,
+       "end": 109.6
+      }
+     ],
+     "expressions": [
+      {
+       "ko": "우리 집에도 좀 있을걸?",
+       "en": "I bet we have some at home too",
+       "note": "짐작을 가볍게 말할 때. I bet + 문장.",
+       "turn": 4
+      },
+      {
+       "ko": "성격상 ~하시잖아",
+       "en": "that's just who he is",
+       "note": "그 사람 성격이라 그렇다고 할 때.",
+       "turn": 8
+      },
+      {
+       "ko": "누군가 영업을 했겠지",
+       "en": "Somebody must have been selling them",
+       "note": "과거에 대한 추측은 must have + 과거분사.",
+       "turn": 5
+      },
+      {
+       "ko": "꼭 한 명씩 있어",
+       "en": "there's always one",
+       "note": "어디에나 있는 유형을 말할 때.",
+       "turn": 7
+      },
+      {
+       "ko": "너무 애기 책이라서",
+       "en": "way too babyish",
+       "note": "way too 는 too 를 강조하는 구어.",
+       "turn": 10
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "title_ko": "열쇠를 놓고 나간 엄마",
+     "title_en": "Locked Out as a Kid",
+     "turns": [
+      {
+       "sp": "Maggie",
+       "en": "My mom had this bad habit. When she went out, she was supposed to leave the key for me.",
+       "ko": "우리 엄마가 나쁜 버릇이 있었는데, 외출할 때 열쇠를 두고 가야 하잖아.",
+       "start": 110.6,
+       "end": 117.03
+      },
+      {
+       "sp": "Maggie",
+       "en": "She'd leave it under the doormat, but she kept forgetting.",
+       "ko": "현관 매트 밑에다 두는데 그걸 자꾸 잊어버리는 거야.",
+       "low": true,
+       "start": 117.53,
+       "end": 121.27
+      },
+      {
+       "sp": "Maggie",
+       "en": "Then I'd have nowhere to go.",
+       "ko": "그러면 나는 갈 데가 없잖아.",
+       "start": 121.77,
+       "end": 123.95
+      },
+      {
+       "sp": "Mac",
+       "en": "That's not really a bad habit, she just forgot.",
+       "ko": "그건 나쁜 버릇이라기보다는 그냥 깜빡한 거지.",
+       "low": true,
+       "start": 124.45,
+       "end": 128.11
+      },
+      {
+       "sp": "Maggie",
+       "en": "But I had nowhere to go! I wandered around the neighborhood.",
+       "ko": "나는 갈 데가 없는데! 동네를 떠돌았다니까.",
+       "low": true,
+       "start": 128.61,
+       "end": 133.8
+      },
+      {
+       "sp": "Maggie",
+       "en": "And it's not like she left me any pocket money.",
+       "ko": "용돈을 주고 가는 것도 아니었어.",
+       "start": 134.3,
+       "end": 137.58
+      },
+      {
+       "sp": "Maggie",
+       "en": "So I'd go to the neighbors', and sometimes nobody was home there either.",
+       "ko": "그러면 이웃집에 갔는데, 그 집에 아무도 없을 때도 있었어.",
+       "start": 138.08,
+       "end": 142.92
+      },
+      {
+       "sp": "Maggie",
+       "en": "I wasn't even close with their kids. They were in different grades, so we weren't the same age.",
+       "ko": "나는 그 집 애들이랑 친하지도 않았어. 학년이 달라서 또래도 안 맞았거든.",
+       "start": 143.42,
+       "end": 150.53
+      },
+      {
+       "sp": "Mac",
+       "en": "Why weren't you close?",
+       "ko": "왜 안 친했지?",
+       "low": true,
+       "start": 151.03,
+       "end": 152.8
+      },
+      {
+       "sp": "Maggie",
+       "en": "I think we were only close when we were little.",
+       "ko": "아기 때만 좀 친했던 것 같아.",
+       "start": 153.3,
+       "end": 156.37
+      },
+      {
+       "sp": "Maggie",
+       "en": "Back then, going next door when nobody was home was just how life worked.",
+       "ko": "그땐 집에 아무도 없으면 옆집에 가 있는 게 그냥 삶이었지.",
+       "start": 156.87,
+       "end": 162.07
+      },
+      {
+       "sp": "Mac",
+       "en": "You knew how many spoons the neighbors had. They called it being neighbor-cousins.",
+       "ko": "옆집 숟가락 개수까지 서로 알았잖아. 이웃사촌이라고.",
+       "low": true,
+       "start": 162.57,
+       "end": 168.26
+      },
+      {
+       "sp": "Maggie",
+       "en": "It was the culture back then.",
+       "ko": "옛날 문화였지.",
+       "start": 168.76,
+       "end": 171.26
+      }
+     ],
+     "expressions": [
+      {
+       "ko": "갈 데가 없잖아",
+       "en": "I'd have nowhere to go",
+       "note": "갈 곳이 없는 처지. have nowhere to go.",
+       "turn": 2
+      },
+      {
+       "ko": "그냥 깜빡한 거지",
+       "en": "she just forgot",
+       "note": "변명처럼 가볍게 감쌀 때. just forgot.",
+       "turn": 3
+      },
+      {
+       "ko": "동네를 떠돌았다니까",
+       "en": "I wandered around the neighborhood",
+       "note": "갈 곳 없이 돌아다닐 때. wander around.",
+       "turn": 4
+      },
+      {
+       "ko": "또래도 안 맞았거든",
+       "en": "we weren't the same age",
+       "note": "나이대가 달라 어울리지 못한 경우.",
+       "turn": 7
+      },
+      {
+       "ko": "그냥 삶이었지",
+       "en": "was just how life worked",
+       "note": "그 시절엔 당연했던 일.",
+       "turn": 10
+      }
+     ]
+    },
+    {
+     "id": "s4",
+     "title_ko": "엘리베이터에서 만난 옆집 아이",
+     "title_en": "The Kid From Next Door",
+     "turns": [
+      {
+       "sp": "Maggie",
+       "en": "Even though we lived in an apartment, we knew the neighbors and were friendly with them.",
+       "ko": "우리는 아파트여도 옆집 아줌마, 아저씨랑 다 알고 친하게 지냈어.",
+       "low": true,
+       "start": 172.26,
+       "end": 177.3
+      },
+      {
+       "sp": "Mac",
+       "en": "Our next-door neighbors, though, we're not close.",
+       "ko": "우리 옆집은 친하진 않지.",
+       "low": true,
+       "start": 177.8,
+       "end": 181.56
+      },
+      {
+       "sp": "Maggie",
+       "en": "But we know the kids, right?",
+       "ko": "그래도 애들은 다 알잖아.",
+       "low": true,
+       "start": 182.06,
+       "end": 184.24
+      },
+      {
+       "sp": "Mac",
+       "en": "I saw the girl from that house a while ago and didn't recognize her.",
+       "ko": "얼마 전에 그 집 여자애를 봤는데 못 알아보겠더라.",
+       "start": 184.74,
+       "end": 189.51
+      },
+      {
+       "sp": "Mac",
+       "en": "The boy just got taller, but he looks the same.",
+       "ko": "남자애는 키만 컸지 똑같은데.",
+       "start": 190.01,
+       "end": 193.82
+      },
+      {
+       "sp": "Mac",
+       "en": "Then one day we got in the elevator together, got off on the same floor, and he went into the apartment next door.",
+       "ko": "그러다 어느 날 엘리베이터를 같이 탔는데, 같은 층에서 내리더니 옆집으로 가는 거야.",
+       "start": 194.32,
+       "end": 201.8
+      },
+      {
+       "sp": "Mac",
+       "en": "Wait, is that what their second kid looks like?",
+       "ko": "어? 저 집 둘째가 저렇게 생겼었나?",
+       "start": 202.3,
+       "end": 205.58
+      }
+     ],
+     "expressions": [
+      {
+       "ko": "못 알아보겠더라",
+       "en": "didn't recognize her",
+       "note": "오랜만에 본 사람이 낯설 때. recognize.",
+       "turn": 3
+      },
+      {
+       "ko": "키만 컸지 똑같은데",
+       "en": "just got taller, but looks the same",
+       "note": "변한 건 하나뿐이라는 뜻.",
+       "turn": 4
+      },
+      {
+       "ko": "그러다 어느 날",
+       "en": "Then one day",
+       "note": "이야기 흐름을 넘길 때.",
+       "turn": 5
+      },
+      {
+       "ko": "같은 층에서 내리더니",
+       "en": "got off on the same floor",
+       "note": "엘리베이터에서 내릴 때는 get off.",
+       "turn": 5
+      },
+      {
+       "ko": "저렇게 생겼었나?",
+       "en": "is that what they look like?",
+       "note": "기억과 다른 모습에 놀랐을 때.",
+       "turn": 6
+      }
+     ]
+    },
+    {
+     "id": "s5",
+     "title_ko": "일요일엔 왜 나만 시켜?",
+     "title_en": "Why Do You Boss Me Around on Sundays?",
+     "turns": [
+      {
+       "sp": "Mac",
+       "en": "You know, I feel like you order me around a lot on Sundays.",
+       "ko": "당신은 일요일에 나한테 말을 많이 시키는 것 같아.",
+       "low": true,
+       "start": 206.58,
+       "end": 211.12
+      },
+      {
+       "sp": "Maggie",
+       "en": "You're just hanging around the house.",
+       "ko": "집에서 놀고 있잖아.",
+       "low": true,
+       "start": 211.62,
+       "end": 214.0
+      },
+      {
+       "sp": "Mac",
+       "en": "When we're both home, all you do is give me orders.",
+       "ko": "집에 같이 있으면 시키기만 하잖아.",
+       "low": true,
+       "start": 214.5,
+       "end": 218.26
+      },
+      {
+       "sp": "Maggie",
+       "en": "This is the first thing I've asked you today.",
+       "ko": "오늘 처음 시켰거든.",
+       "low": true,
+       "start": 218.76,
+       "end": 221.62
+      },
+      {
+       "sp": "Mac",
+       "en": "Be honest. You only just got up today.",
+       "ko": "솔직히 말해 봐. 오늘 처음 일어났잖아.",
+       "low": true,
+       "start": 222.12,
+       "end": 225.77
+      },
+      {
+       "sp": "Maggie",
+       "en": "I asked you to run the vacuum once.",
+       "ko": "청소기 한 번만 밀어 달라고 했잖아.",
+       "low": true,
+       "start": 226.27,
+       "end": 229.17
+      },
+      {
+       "sp": "Mac",
+       "en": "When did you ever ask me that?",
+       "ko": "언제 시켰다고 그래?",
+       "low": true,
+       "start": 229.67,
+       "end": 232.32
+      },
+      {
+       "sp": "Maggie",
+       "en": "I asked last week too. I told you to shake out the blanket.",
+       "ko": "지난주에도 시켰어. 이불 털라고 했잖아.",
+       "low": true,
+       "start": 232.82,
+       "end": 238.48
+      },
+      {
+       "sp": "Mac",
+       "en": "You heard that wrong.",
+       "ko": "그건 잘못 들은 거야.",
+       "low": true,
+       "start": 238.98,
+       "end": 240.56
+      },
+      {
+       "sp": "Maggie",
+       "en": "Well, when you get up, you shake out the blanket and tidy up. That's how it goes.",
+       "ko": "원래 일어나면 이불 털고 정리하는 거지.",
+       "low": true,
+       "start": 241.06,
+       "end": 247.07
+      }
+     ],
+     "expressions": [
+      {
+       "ko": "나한테 말을 많이 시키는 것 같아",
+       "en": "you order me around a lot",
+       "note": "잔심부름을 시킬 때. order someone around.",
+       "turn": 0
+      },
+      {
+       "ko": "집에서 놀고 있잖아",
+       "en": "you're just hanging around the house",
+       "note": "빈둥거린다는 말. hang around.",
+       "turn": 1
+      },
+      {
+       "ko": "솔직히 말해 봐",
+       "en": "Be honest",
+       "note": "상대를 떠볼 때 가볍게.",
+       "turn": 4
+      },
+      {
+       "ko": "언제 시켰다고 그래?",
+       "en": "When did you ever ask me that?",
+       "note": "기억에 없다고 반박할 때. ever 로 강조.",
+       "turn": 6
+      },
+      {
+       "ko": "원래 ~하는 거지",
+       "en": "that's how it goes",
+       "note": "당연한 도리라고 할 때.",
+       "turn": 9
+      }
+     ]
+    }
+   ],
+   "cautions": [
+    {
+     "ko": "쟁여 놓다",
+     "literal": "store up",
+     "use": "stock up on · stash away",
+     "why": "store up 은 저장고 느낌이다. 사 모아 쌓아 둘 때는 stock up on 이나 stash away 가 구어다."
+    },
+    {
+     "ko": "나쁜 버릇",
+     "literal": "bad habit",
+     "use": "annoying habit · thing she did",
+     "why": "bad habit 은 흡연처럼 해로운 습관이다. 가볍게 흉볼 때는 annoying habit 을 쓴다."
+    },
+    {
+     "ko": "시키다",
+     "literal": "make",
+     "use": "order around · ask someone to do",
+     "why": "make 는 억지로 시킨다는 뜻이다. 집안일을 시킬 때는 order around 나 ask to do 가 자연스럽다."
+    },
+    {
+     "ko": "집에서 놀고 있어",
+     "literal": "play at home",
+     "use": "hang around the house · do nothing",
+     "why": "play 는 아이들이 노는 것이다. 어른이 빈둥댈 때는 hang around 를 쓴다."
+    },
+    {
+     "ko": "이웃사촌",
+     "literal": "neighbor cousin",
+     "use": "neighbors like family · close neighbors",
+     "why": "neighbor cousin 은 영어에 없는 말이다. 뜻을 풀어서 neighbors like family 라고 한다."
+    },
+    {
+     "ko": "이불 털다",
+     "literal": "break the blanket",
+     "use": "shake out the blanket · make the bed",
+     "why": "한국어 표현을 직역하면 뜻이 통하지 않는다. 이불을 털거나 정리하는 것은 shake out 이나 make the bed 다."
+    }
+   ],
+   "audio": "audio/comm/2026-11-22-old-book-sets.mp3",
+   "duration": 247.87,
+   "engine": "Fish Audio Drama 3",
+   "voice": "Mac · Maggie",
+   "voices": {
+    "Mac": "Mac",
+    "Maggie": "Maggie"
+   },
+   "no": 21
+  },
   {
    "id": "2026-11-21-come-down",
    "date": "2026-11-21",
@@ -10328,11 +10983,11 @@
    "no": 1
   }
  ],
- "last_no": 20
+ "last_no": 21
 }
 </script>
   <!-- COMM-DATA:END -->
 
-  <script src="../assets/comm.js?v=9c02b861a5"></script>
+  <script src="../assets/comm.js?v=70234f4f77"></script>
 </body>
 </html>
