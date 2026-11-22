@@ -13,10 +13,10 @@
   <script src="../assets/ls.js"></script>
   <style>
     .cm { --s0: #2563eb; --s1: #c2410c; --s2: #15803d; --s0-bg: #eff6ff; --s1-bg: #fff7ed; --s2-bg: #f0fdf4;
-      --playing: #fef9c3; --mask: #e5e7eb; }
+      --playing: #fef9c3; --mask: #e5e7eb; --danger: #b91c1c; }
     @media (prefers-color-scheme: dark) {
       .cm { --s0: #60a5fa; --s1: #fb923c; --s2: #4ade80; --s0-bg: #172338; --s1-bg: #2b1d12; --s2-bg: #11261a;
-        --playing: #3a3410; --mask: #2a2a2a; }
+        --playing: #3a3410; --mask: #2a2a2a; --danger: #f87171; }
     }
     .cm-hero { margin: 1.6rem 0 0.8rem; }
     .cm-hero h1 { font-size: 1.5rem; margin: 0 0 0.4rem; }
@@ -43,6 +43,38 @@
     .cm-item-meta { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; }
     .cm-progress { height: 5px; border-radius: 3px; background: var(--border); margin-top: 0.5rem; overflow: hidden; }
     .cm-progress span { display: block; height: 100%; background: var(--accent); }
+    /* 회차 삭제 — 이 브라우저(localStorage comm-hidden)에서만 숨긴다. 사이트 파일은 그대로 */
+    .cm-item-wrap { position: relative; }
+    .cm-item-wrap .cm-item { padding-right: 5.2rem; }
+    .cm-hide { position: absolute; top: 0.7rem; right: 0.75rem; display: inline-flex; align-items: center; gap: 0.25rem;
+      font: inherit; font-size: 0.72rem; padding: 0.2rem 0.55rem; cursor: pointer; border: 1px solid var(--border);
+      border-radius: 999px; background: var(--bg); color: var(--text-muted); }
+    .cm-hide svg { width: 13px; height: 13px; }
+    .cm-hide:hover, .cm-hide:focus-visible { border-color: var(--danger); color: var(--danger); }
+    .cm-linkbtn { font: inherit; background: none; border: 0; padding: 0; color: var(--text-muted); cursor: pointer;
+      text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 2px; }
+    .cm-linkbtn:hover, .cm-linkbtn:focus-visible { color: var(--danger); }
+    .cm-hidden { margin: 0 0 2rem; border: 1px dashed var(--border); border-radius: var(--radius); background: var(--surface); }
+    .cm-hidden > summary { cursor: pointer; padding: 0.6rem 0.9rem; font-size: 0.85rem; font-weight: 600; }
+    .cm-hidden > summary span { font-size: 0.75rem; font-weight: 400; color: var(--text-muted); margin-left: 0.5rem; }
+    .cm-hidden p { font-size: 0.8rem; line-height: 1.65; color: var(--text-muted); margin: 0 0.9rem 0.6rem; }
+    .cm-hidden ul { list-style: none; margin: 0; padding: 0; }
+    .cm-hidden li { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0.9rem; border-top: 1px solid var(--border); font-size: 0.88rem; }
+    .cm-hidden li a { flex: 1; min-width: 0; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .cm-hidden-date { font-size: 0.72rem; color: var(--text-muted); }
+    .cm-hidden li .cm-btn { height: 28px; }
+    .cm-hidden > .cm-btn { margin: 0.5rem 0.9rem 0.8rem; }
+    .cm-hidden-banner { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; border: 1px dashed var(--accent);
+      border-radius: var(--radius); background: var(--surface); padding: 0.65rem 0.9rem; margin: 0.6rem 0 0.8rem; }
+    .cm-hidden-banner p { flex: 1 1 18rem; font-size: 0.82rem; line-height: 1.6; margin: 0; }
+    .cm-toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: 1rem; z-index: 30; width: min(36rem, calc(100% - 1.5rem));
+      display: flex; align-items: center; gap: 0.6rem; background: var(--bg); color: var(--text); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent); border-radius: var(--radius); padding: 0.6rem 0.7rem 0.6rem 0.9rem;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.14); font-size: 0.82rem; line-height: 1.55; }
+    .cm-toast[hidden] { display: none; }
+    .cm-toast > span { flex: 1; }
+    .cm-toast-x { background: none; border: 0; color: var(--text-muted); font-size: 1.1rem; cursor: pointer; padding: 0 0.2rem; }
+    body.has-player .cm-toast { bottom: calc(8.5rem + env(safe-area-inset-bottom)); }
     .cm-back { display: inline-block; font-size: 0.82rem; margin: 1rem 0 0.2rem; }
     .cm-turn.flash { background: var(--playing); transition: background 0.4s; }
     .x-go { font-size: 0.8rem; margin-left: 0.2rem; }
@@ -87,6 +119,8 @@
       color: var(--text); cursor: pointer; }
     .cm-seg button + button { border-left: 1px solid var(--border); }
     .cm-seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+    .cm-seg button:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
+    .cm-bar .cm-quiz { height: auto; padding: 0.4rem 0.7rem; font-size: 0.8rem; }
     .cm-toc { display: flex; gap: 0.3rem; overflow-x: auto; scrollbar-width: none; flex: 1 1 100%; }
     .cm-toc::-webkit-scrollbar { display: none; }
     .cm-toc a { flex: none; font-size: 0.75rem; padding: 0.2rem 0.55rem; border: 1px solid var(--border);
@@ -111,9 +145,8 @@
     .cm-chip.s1 { color: var(--s1); background: var(--s1-bg); }
     .cm-chip.s2 { color: var(--s2); background: var(--s2-bg); }
     .cm-chip.low { border-style: dashed; border-color: currentColor; background: transparent; }
-    .cm-play { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--border); background: none;
-      color: var(--text-muted); cursor: pointer; font-size: 0.7rem; display: grid; place-items: center; padding: 0; }
-    .cm-play:hover, .cm-turn.playing .cm-play { border-color: var(--accent); color: var(--accent); }
+    /* 지금 턴 반복 중 — 재생 중인 턴 왼쪽에 accent 줄 */
+    .cm-repeat .cm-turn.playing { box-shadow: inset 3px 0 0 var(--accent); }
     .cm-en { font-size: 1rem; line-height: 1.6; }
     .cm-ko { font-size: 0.86rem; line-height: 1.6; color: var(--text-muted); }
 
@@ -150,20 +183,33 @@
       box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08); }
     .cm-player[hidden] { display: none; }
     .cm-now { font-size: 0.78rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .cm-now-pos, .cm-now-tag { display: inline-block; font-size: 0.68rem; font-weight: 600; border-radius: 999px; padding: 0 0.45rem;
+      margin-right: 0.4rem; border: 1px solid var(--border); font-variant-numeric: tabular-nums; }
+    .cm-now-tag { color: var(--accent); border-color: var(--accent); background: var(--tag-bg); }
     .cm-seek-row { display: flex; align-items: center; gap: 0.5rem; margin: 0.3rem 0; }
     .cm-time { font-size: 0.7rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }
     .cm-seek { flex: 1; min-width: 0; accent-color: var(--accent); }
-    .cm-ctrl { display: flex; align-items: center; justify-content: center; gap: 0.35rem; flex-wrap: wrap; }
+    .cm-ctrl { display: flex; align-items: center; justify-content: center; gap: 0.35rem 0.5rem; flex-wrap: wrap; }
+    .cm-transport { display: inline-flex; align-items: center; gap: 0.35rem; }
+    .cm-ctrl .cm-seg button { height: 32px; padding: 0 0.6rem; font-size: 0.75rem; }
+    .cm-epnav { display: inline-flex; align-items: center; gap: 0.3rem; }
+    .cm-epnav svg { width: 14px; height: 14px; flex: none; }
     .cm-btn { background: none; border: 1px solid var(--border); border-radius: var(--radius); color: var(--text);
       font: inherit; font-size: 0.78rem; min-width: 40px; height: 34px; padding: 0 0.5rem; cursor: pointer; }
     .cm-btn:hover { border-color: var(--accent); color: var(--accent); }
     .cm-btn--play { background: var(--accent); border-color: var(--accent); color: #fff; min-width: 50px; }
     .cm-btn--play:hover { color: #fff; background: var(--accent-hover); }
     .cm-btn[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); background: var(--tag-bg); }
+    .cm-btn:disabled, .cm-btn:disabled:hover { opacity: 0.4; cursor: default; border-color: var(--border); color: var(--text-muted); }
+    .cm-btn:focus-visible, .cm-hide:focus-visible, .cm-linkbtn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
     body.has-player .site-footer { margin-bottom: 8rem; }
     @media (max-width: 600px) {
       .cm-hero h1 { font-size: 1.3rem; }
       .cm-btn { min-width: 34px; padding: 0 0.35rem; font-size: 0.72rem; }
+      .cm-btn-lbl, .cm-hide span { display: none; }   /* 좁은 화면: 아이콘만(이름은 aria-label · title 에) */
+      .cm-item-wrap .cm-item { padding-right: 2.9rem; }
+      .cm-hide { padding: 0.3rem; }
+      .cm-ctrl .cm-scope { order: -1; }
       .cm-box td { display: block; width: auto !important; }
       .cm-box td + td { border-top: 0; padding-top: 0; }
     }
@@ -177,7 +223,8 @@
       <h1>일상대화 영어 대본</h1>
       <p>집에서 한국어로 나눈 대화를 영어로는 어떻게 말할지 대본으로 다시 쓰고, 화자마다 다른 목소리로 읽었습니다.
         회차에 들어가 <strong>말해 보기</strong>로 한국어만 보고 영어로 말해 보고, <strong>표현 복습</strong>에서
-        회차마다 골라 둔 표현을 카드로 되풀이합니다.</p>
+        회차마다 골라 둔 표현을 카드로 되풀이합니다. 아래 플레이어로 <strong>이 회차</strong>만 또는 <strong>전체 회차</strong>를 이어 듣고,
+        <strong>턴 반복</strong>으로 지금 대사만 되풀이할 수 있습니다. 회차 <strong>삭제</strong>는 이 브라우저 목록에서만 숨기며 언제든 복원됩니다.</p>
     </section>
     <div id="cm-app"><div class="empty-state"><p>대본을 불러오는 중…</p></div></div>
   </main>
@@ -197,16 +244,27 @@
         <span class="cm-time" id="cm-total">0:00</span>
       </div>
       <div class="cm-ctrl">
-        <button type="button" class="cm-btn" id="cm-step" aria-pressed="false" title="대사마다 멈춤">한 턴씩</button>
-        <button type="button" class="cm-btn" id="cm-prev" title="이전 대사">◀︎</button>
-        <button type="button" class="cm-btn cm-btn--play" id="cm-toggle" aria-label="재생">▶︎</button>
-        <button type="button" class="cm-btn" id="cm-next" title="다음 대사">▶︎▶︎</button>
-        <button type="button" class="cm-btn" id="cm-again" title="이 대사 다시">↺</button>
+        <div class="cm-seg cm-scope" id="cm-scope" role="group" aria-label="재생 범위">
+          <button type="button" data-scope="ep" aria-pressed="true" title="이 회차 끝에서 멈춤">이 회차</button>
+          <button type="button" data-scope="all" aria-pressed="false" title="회차가 끝나면 다음 회차로 이어서 (삭제한 회차는 건너뜀)">전체 회차</button>
+        </div>
+        <div class="cm-transport">
+          <button type="button" class="cm-btn cm-epnav" id="cm-prevep" aria-label="이전 회차" title="이전 회차">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M8.2 8 13 3.8v8.4zM3.6 8l4.6-4.2v8.4z" fill="currentColor"/></svg><span class="cm-btn-lbl">이전 회차</span>
+          </button>
+          <button type="button" class="cm-btn cm-btn--play" id="cm-toggle" aria-label="재생" aria-keyshortcuts="Space">▶︎</button>
+          <button type="button" class="cm-btn cm-epnav" id="cm-nextep" aria-label="다음 회차" title="다음 회차">
+            <span class="cm-btn-lbl">다음 회차</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 3v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.8 8 3 3.8v8.4zM12.4 8 7.8 3.8v8.4z" fill="currentColor"/></svg>
+          </button>
+        </div>
+        <button type="button" class="cm-btn" id="cm-repeat" aria-pressed="false" aria-keyshortcuts="R" title="지금 턴만 반복 (R)">↻ 턴 반복</button>
         <button type="button" class="cm-btn" id="cm-speed" title="재생 속도">1×</button>
         <button type="button" class="cm-btn" id="cm-follow" aria-pressed="true" title="재생 중인 대사로 자동 스크롤">따라가기</button>
       </div>
     </div>
   </div>
+
+  <div class="cm-toast" id="cm-toast" role="status" aria-live="polite" hidden></div>
 
   <!-- 아래 블록은 scripts/build_comm.py 가 자동 생성합니다. 직접 수정하지 마세요. -->
   <!-- COMM-DATA:START -->
