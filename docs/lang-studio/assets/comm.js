@@ -645,14 +645,32 @@
     }
   }
 
+  // HTML 과 이 JS 가 서로 다른 판일 때(캐시가 섞임) — 「불러오는 중…」에 멈추지 않게 한 번 다시 받고, 그래도 안 되면 알린다
+  var RELOAD_KEY = 'cm-reloaded';
+  function stale(why) {
+    if (window.console) console.error('[comm] 초기화 실패 — ' + why);
+    var tried = false;
+    try { tried = sessionStorage.getItem(RELOAD_KEY) === '1'; if (!tried) sessionStorage.setItem(RELOAD_KEY, '1'); } catch (e) { tried = true; }
+    if (!tried) { location.reload(); return; }
+    var app = document.getElementById('cm-app');
+    if (app) app.innerHTML = '<div class="empty-state"><p>페이지를 불러오지 못했습니다. 새 판으로 바뀌는 중일 수 있어요 — ' +
+      '잠시 뒤 <a href="" onclick="location.reload();return false">새로고침</a>(안 되면 Ctrl+Shift+R) 해 주세요.</p></div>';
+  }
+
   function init() {
     ['app', 'hero', 'player', 'now', 'seek', 'elapsed', 'total', 'scope', 'prevep', 'toggle', 'nextep', 'repeat', 'speed', 'follow', 'toast']
       .forEach(function (k) { el[k] = document.getElementById('cm-' + k); });
-    load(); paintBtns();
-    try { episodes = JSON.parse(document.getElementById('comm-data').textContent).episodes || []; } catch (e) { episodes = []; }
-    epNo = numberOf(episodes);
-    bind();
-    route();
+    var missing = Object.keys(el).filter(function (k) { return !el[k] && k !== 'toast'; });
+    var data = document.getElementById('comm-data');
+    if (missing.length || !data) return stale('페이지에 없는 요소: ' + missing.concat(data ? [] : ['comm-data']).join(', '));
+    try {
+      load(); paintBtns();
+      try { episodes = JSON.parse(data.textContent).episodes || []; } catch (e) { episodes = []; }
+      epNo = numberOf(episodes);
+      bind();
+      route();
+    } catch (e) { return stale(e && e.message || String(e)); }
+    try { sessionStorage.removeItem(RELOAD_KEY); } catch (e) { /* 저장소를 못 쓰면 그만 */ }
   }
 
   // 브라우저가 아니면(테스트 — tests/test_comm_page.py) 규칙만 내보낸다
