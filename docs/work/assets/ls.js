@@ -4,7 +4,9 @@
    - 이 스크립트가 놓인 폴더(docs/<섹션>/assets/)로 섹션을 안다 — 메뉴 · 암호 열쇠가 섹션마다 다르다(2026-11-24)
    - 페이지 데이터의 상대 주소(audio/comm/…)는 docs/ 기준이다 → LS.url() 로 푼다
    - 암호는 섹션마다 localStorage 하나: Lang-Studio 'ls-pw'(전화영어 · 오디오북 · 회의대본) · Work 'work-pw'(회의록 · Harman-Plus)
-   - 암호문 형식은 빌더(publish/builders/secret.py)와 같다: {v, iter, salt, iv, ct} · PBKDF2-SHA256 → AES-256-GCM */
+   - 암호문 형식은 빌더(publish/builders/secret.py)와 같다: {v, iter, salt, iv, ct} · PBKDF2-SHA256 → AES-256-GCM
+   - 내용을 잠그지 않은 페이지(일상대화 · 미디어 · 표현카드 · OPIc)도 섹션 암호를 넣어야 보인다(2026-11-24 사용자 — 「문」).
+     내용은 평문 그대로고, 화면만 가린다. 암호는 hub 빌더가 쓰는 assets/key.json(맞는 암호로만 풀리는 상자)으로 확인한다 */
 (function () {
   'use strict';
   var me = document.currentScript;
@@ -30,6 +32,13 @@
   var PW_KEY = SEC.pwKey;
   var PAGES = SEC.pages;
   function pageHref(p) { return new URL(p[1] + '/', HOME).href; }
+
+  /* 문을 다는 페이지 — 폴더 이름. 봉인 페이지(전화영어 · 오디오북 · 회의대본 · 회의록)는 저마다 암호 창이 있어 뺀다 */
+  var GATED = { 'lang-studio': ['talk', 'drama', 'review', 'opic'], 'work': [] };
+  var KEY_TEXT = SECTION;   // secret.KEY_CHECK — 상자를 풀면 나오는 글(비밀 아님)
+  var FOLDER = (location.pathname.indexOf(HOME.pathname) === 0 ? location.pathname.slice(HOME.pathname.length) : '').split('/')[0];
+  var GATE = (GATED[SECTION] || []).indexOf(FOLDER) >= 0;
+  if (GATE) document.documentElement.classList.add('ls-gated');   // 이 스크립트는 <head> 에 있다 — 본문이 그려지기 전에 가린다
 
   function url(p) {
     if (!p) return p;
@@ -174,9 +183,44 @@
     }).catch(function (e) { if (now) now.textContent = '녹음을 풀지 못했습니다 (' + e.message + ')'; });
   }
 
+  /* ── 문 ── 맞는 암호면 가림을 걷는다. 페이지 스크립트는 그 사이에도 돌아 있다(가려져 있을 뿐) */
+  function gate() {
+    var host = document.createElement('div');
+    host.id = 'ls-gate';
+    host.className = 'container';
+    var head = document.getElementById('ls-header');
+    if (head && head.parentNode) head.parentNode.insertBefore(host, head.nextSibling); else document.body.insertBefore(host, document.body.firstChild);
+    var keyBox = fetch(new URL('assets/key.json', HOME).href, { cache: 'no-cache' }).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.text();
+    });
+    function open(p) {
+      return keyBox.then(function (b) { return decrypt(b, p); }).then(function (t) {
+        if (t !== KEY_TEXT) throw new Error('암호가 맞지 않습니다');
+        return t;
+      });
+    }
+    // 확인 파일을 못 받으면 암호를 묻지 않는다 — 저장된 암호를 틀린 것으로 보고 지우지 않게
+    return keyBox.then(function () {
+      return unlock(host, open, { lead: SEC.title + ' 암호를 넣어야 이 페이지를 볼 수 있습니다. 이 기기에서는 다시 묻지 않습니다.' });
+    }, function (e) {
+      host.innerHTML = '<p class="ls-lock-msg">암호 확인 파일을 받지 못했습니다 (' + esc(e.message) + ') — 새로 고침 해 주세요.</p>';
+      return new Promise(function () {});
+    }).then(function () {
+      host.remove();
+      document.documentElement.classList.remove('ls-gated');
+      window.dispatchEvent(new Event('resize'));   // 가려져 있는 동안 잰 크기를 다시 재게
+      if (location.hash) {
+        var t = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if (t) t.scrollIntoView();
+      }
+    });
+  }
+
   window.LS = { root: ROOT.href, home: HOME.href, section: SECTION, title: SEC.title, pages: PAGES, pageHref: pageHref, url: url, esc: esc, nav: nav, pw: pw,
                 decrypt: decrypt, decryptBytes: decryptBytes, unlock: unlock, forgetButton: forgetButton,
                 sealedList: sealedList, sealedDetail: sealedDetail, sealedAudio: sealedAudio };
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', nav); else nav();
+  function start() { nav(); if (GATE) gate(); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();

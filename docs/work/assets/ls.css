@@ -57,3 +57,7 @@
 @media (max-width: 600px) {
   .ls-header .container { flex-direction: column; align-items: flex-start; }
 }
+
+/* 문(2026-11-24) — 암호를 넣기 전에는 머리 메뉴와 암호 창만 보인다(ls.js gate) */
+html.ls-gated body > *:not(#ls-header):not(#ls-gate):not(script) { display: none !important; }
+#ls-gate { padding-top: 1.5rem; }

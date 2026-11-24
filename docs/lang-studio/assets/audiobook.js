@@ -173,10 +173,9 @@
 
   /* 저장된 암호로 먼저 풀어 보고, 없거나 틀리면 입력 창을 띄운다 */
   function unlock(data, onOpen) {
-    var outline = data.outline || [];
-    var first = outline[0] || {};
-    el.title.textContent = first.title || 'Audiobook';
-    el.sub.textContent = (first.author ? first.author + ' · ' : '') + '암호가 걸린 페이지입니다';
+    // 잠금 화면에는 책 정보를 보이지 않는다(2026-11-24 사용자) — 제목 · 저자는 풀린 뒤에
+    el.title.textContent = '오디오북';
+    el.sub.textContent = '암호가 걸린 페이지입니다';
     el.stats.innerHTML = '';
     el.toolbar.hidden = true;
     var saved = storedPw();
@@ -190,7 +189,6 @@
       el.script.innerHTML =
         '<form class="ab-lock" autocomplete="on">' +
         '<h2 class="tv-episode-title">🔒 Lang-Studio 암호를 입력하세요</h2>' +
-        '<p class="tv-episode-meta">' + esc(outline.map(function (b) { return b.title + ' (' + b.chapterCount + '챕터)'; }).join(' · ')) + '</p>' +
         '<input type="text" name="username" value="audiobook" autocomplete="username" hidden />' +
         '<div class="ab-lock-row"><input class="tv-search" id="ab-pw" type="password" autocomplete="current-password" required aria-label="암호" />' +
         '<button class="tv-btn tv-btn--play" type="submit">열기</button></div>' +
