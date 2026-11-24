@@ -1,0 +1,59 @@
+/* Lang-Studio · Work 공통 — 블로그 css/style.css(색 · 글꼴 변수) 위에 얹는다. 원본은 VoiceLang web/lang-studio/assets/ls.css */
+
+/* ── 머리 메뉴: 일곱 페이지가 한 줄에 안 들어가면 줄을 바꾼다 ── */
+.ls-header { padding: 0.9rem 0; }
+.ls-header .container { flex-wrap: wrap; row-gap: 0.5rem; }
+.ls-header .site-tagline a { color: var(--text-muted); }
+.ls-nav { flex-wrap: wrap; gap: 0.35rem 1rem; }
+.ls-nav a[aria-current="page"], .ls-header .site-title a[aria-current="page"] { color: var(--accent); }
+.ls-nav a[aria-current="page"] { font-weight: 600; }
+
+/* ── 암호(입구 · 암호 페이지 공통) ── */
+.ls-lock {
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); padding: 1.1rem 1.4rem; margin: 1rem 0 1.5rem;
+}
+.ls-lock-lead { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.6rem; }
+.ls-lock-row { display: flex; gap: 0.5rem; }
+.ls-lock-input {
+  flex: 1; min-width: 0; font: inherit; padding: 0.45rem 0.7rem;
+  border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg); color: var(--text);
+}
+.ls-lock-btn, .ls-forget {
+  font: inherit; font-size: 0.9rem; padding: 0.45rem 1rem; cursor: pointer;
+  border: 1px solid var(--accent); border-radius: var(--radius); background: var(--accent); color: #fff;
+}
+.ls-lock-btn:hover { background: var(--accent-hover); }
+.ls-forget { background: transparent; color: var(--text-muted); border-color: var(--border); font-size: 0.8rem; padding: 0.25rem 0.7rem; }
+.ls-lock-remember { display: inline-flex; gap: 0.4rem; align-items: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 0.6rem; }
+.ls-lock-msg { font-size: 0.85rem; color: var(--text-muted); min-height: 1.3em; margin-top: 0.3rem; }
+
+/* ── 입구 카드 ── */
+.hub { padding-top: 2.2rem; padding-bottom: 3rem; }   /* 좌우는 .container(1.25rem) 그대로 — padding 한 줄로 쓰면 좌우가 0 이 된다 */
+.hub h2 { font-size: 1.35rem; margin-bottom: .35rem; }
+.hub .lead { color: var(--text-muted); font-size: .92rem; margin-bottom: 1rem; }
+.hub-status { display: flex; align-items: center; gap: .6rem; font-size: .85rem; color: var(--text-muted); min-height: 1.6em; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+.hub-card { border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.25rem; background: var(--bg); display: flex; flex-direction: column; gap: .35rem; }
+.hub-card:hover { border-color: var(--accent); }
+.hub-card h3 { font-size: 1.05rem; }
+.hub-card h3 a { color: var(--text); }
+.hub-card p { color: var(--text-muted); font-size: .88rem; }
+.hub-card .count { font-size: .8rem; color: var(--text-muted); }
+.hub-card .lock { font-size: .75rem; color: var(--text-muted); border: 1px solid var(--border); border-radius: 4px; padding: 0 .35rem; margin-left: .35rem; }
+.hub-card .lock.open { color: var(--accent); border-color: var(--accent); }
+.hub-card .mine { font-size: .8rem; color: var(--accent); min-height: 1em; }
+.hub-intro { list-style: none; padding: 0; margin: 0 0 1.2rem; display: grid; gap: .3rem; font-size: .88rem; color: var(--text-muted); }
+.hub-intro b { color: var(--text); font-weight: 600; }
+.hub-group { font-size: .8rem; color: var(--text-muted); letter-spacing: .02em; margin: 1.5rem 0 .6rem; }
+
+/* ── 분류 탭(영어 복습의 .seg 와 같은 모양 — 회의록 목록 · 상세) ── */
+.ls-seg { display: inline-flex; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin: 0 0 1rem; }
+.ls-seg button { font: inherit; font-size: .9rem; padding: 8px 14px; border: 0; background: transparent; color: var(--text); cursor: pointer; }
+.ls-seg button + button { border-left: 1px solid var(--border); }
+.ls-seg button[aria-pressed=true] { background: var(--accent); color: #fff; }
+.ls-seg .n { font-size: .78rem; opacity: .75; margin-left: .3rem; }
+
+@media (max-width: 600px) {
+  .ls-header .container { flex-direction: column; align-items: flex-start; }
+}

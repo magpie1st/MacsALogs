@@ -5,103 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lang-Studio — MacsALogs</title>
   <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="assets/ls.css?v=109fda870c" />
-  <script src="assets/ls.js?v=79fefcb068"></script>
+  <link rel="stylesheet" href="assets/ls.css?v=bf2b391fd7" />
+  <script src="assets/ls.js?v=ec60c68e50"></script>
 </head>
+<!-- 섹션 입구(Lang-Studio · Work 공통 틀) — VoiceLang publish/builders/hub.py 가 채운다. 손으로 고치지 않는다 -->
 <body>
   <header id="ls-header" data-page=""></header>
 
   <main class="container hub">
     <h2>Lang-Studio</h2>
-    <p class="lead">듣고 · 읽고 · 복습하는 영어 학습 페이지를 한곳에 모았다. 카드 아래 파란 줄은 <b>이 브라우저</b>에 남은 진척이다(어디에도 보내지 않는다).</p>
+    <p class="lead">전화영어 수업 · 오디오북 · 드라마와 영화 · 일상대화 · 표현카드 · OPIc · 영어 회의 대본을 통해 듣고 · 읽고 · 따라 하며 익히는 영어 학습 페이지입니다.</p>
+    <ul class="hub-intro"><li><b>전화영어</b> — 전화영어 수업 녹음 · 교정 · 익힐 표현 · OPIc 확장</li><li><b>오디오북</b> — 책 한 권을 문장 단위 낭독으로</li><li><b>미디어</b> — 드라마 · 영화 대본을 문장 단위로 듣고 읽는다</li><li><b>일상대화</b> — 집에서 나눈 대화를 자연스러운 영어로 — 회차 이어 듣기 · 지금 턴 반복 · 표현 복습</li><li><b>표현카드</b> — 내 노트의 표현 · 단어, 그리고 대화에서 나온 표현을 카드로 떠올려 본다</li><li><b>OPIc</b> — 내 경험으로 쓴 OPIc 답안을 원어민 목소리로</li><li><b>회의대본</b> — 영어 회의를 대본형으로 — 화자별 대사 · 한국어 번역 · 대사 단위 녹음</li></ul>
     <div id="hub-lock"></div>
     <p class="hub-status" id="hub-status" hidden><span id="hub-status-text"></span><button class="ls-forget" id="hub-forget" type="button" hidden>이 기기에서 잊기</button></p>
-    <h3 class="hub-group">복습</h3>
-    <div class="hub-grid">
-      <article class="hub-card" data-key="review">
-        <h3><a href="review/">표현 복습</a></h3>
-        <p>내 노트의 표현 · 단어, 그리고 대화에서 나온 표현을 카드로 떠올려 본다</p>
-        <span class="count">표현 387 · 단어 193 · 대화 271</span>
-        <span class="mine" data-mine="review"></span>
-      </article>
-    </div>
-    <h3 class="hub-group">듣고 따라 하기</h3>
-    <div class="hub-grid">
-      <article class="hub-card" data-key="talk">
-        <h3><a href="talk/">일상대화 영어 대본</a></h3>
-        <p>집에서 나눈 대화를 자연스러운 영어로 — 회차 이어 듣기 · 지금 턴 반복 · 표현 복습</p>
-        <span class="count">회차 25</span>
-        <span class="mine" data-mine="talk"></span>
-      </article>
-      <article class="hub-card" data-key="opic">
-        <h3><a href="opic/">OPIc 내 이야기</a></h3>
-        <p>내 경험으로 쓴 OPIc 답안을 원어민 목소리로</p>
-        <span class="count">이야기 36</span>
-        <span class="mine" data-mine="opic"></span>
-      </article>
-      <article class="hub-card" data-key="drama">
-        <h3><a href="drama/">드라마 스크립트 리더</a></h3>
-        <p>드라마 · 영화 대본을 문장 단위로 듣고 읽는다</p>
-        <span class="count">작품 6 · 회차 207</span>
-        <span class="mine" data-mine="drama"></span>
-      </article>
-      <article class="hub-card" data-key="audiobook">
-        <h3><a href="audiobook/">오디오북</a><span class="lock">암호</span></h3>
-        <p>책 한 권을 문장 단위 낭독으로</p>
-        <span class="count"></span>
-        <span class="mine" data-mine="audiobook"></span>
-      </article>
-    </div>
-    <h3 class="hub-group">수업 · 회의</h3>
-    <div class="hub-grid">
-      <article class="hub-card" data-key="lesson">
-        <h3><a href="lesson/">전화영어 수업</a><span class="lock">암호</span></h3>
-        <p>전화영어 수업 녹음 · 교정 · 익힐 표현 · OPIc 확장</p>
-        <span class="count">6회</span>
-        <span class="mine" data-mine="lesson"></span>
-      </article>
-      <article class="hub-card" data-key="minutes">
-        <h3><a href="minutes/">회의록</a><span class="lock">암호</span></h3>
-        <p>회의 녹음의 대본형 회의록</p>
-        <span class="count">41회</span>
-        <span class="mine" data-mine="minutes"></span>
-      </article>
-    </div>
+    <div class="hub-grid" id="hub-cards"></div>
   </main>
 
-  <script id="ls-key" type="application/json">{"v": 1, "iter": 600000, "salt": "F1PVPak+qgRbO4Y5Bn6/6w==", "iv": "A8xmnt8kC+K9D7BW", "ct": "Pmd+KP4BWFzcZK86sszdv+vZTaEWUWUpGfHg"}</script>
+  <!-- 카드 목록은 섹션 암호로 봉인 — 맞는 암호를 넣어야 보인다(2026-11-24) -->
+  <script id="ls-key" type="application/json">{"v": 1, "iter": 600000, "salt": "h9JTUEFhlZ0xbxorNZeN6w==", "iv": "7gYEhd5Q7xT0ncrF", "ct": "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"}</script>
   <script>
   (function () {
     function get(k) { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch (e) { return null; } }
     function n(o) { return o && typeof o === 'object' ? Object.keys(o).length : 0; }
-    var en = get('enReview.v1'), st = en && en.stars ? en.stars : {};
-    var stars = (st.x || []).length + (st.v || []).length + (st.c || []).length;
-    var mine = {
-      review: stars ? '★ ' + stars + '개 표시' : '',
-      talk: n(get('comm-review')) ? '복습 카드 ' + n(get('comm-review')) + '개' : '',
-      drama: n(get('tvshow-pos')) ? '이어듣기 ' + n(get('tvshow-pos')) + '회차' : '',
-      audiobook: n(get('audiobook-pos')) ? '이어듣기 ' + n(get('audiobook-pos')) + '곳' : ''
-    };
-    Object.keys(mine).forEach(function (k) {
-      var el = document.querySelector('[data-mine="' + k + '"]');
-      if (el) el.textContent = mine[k];
-    });
-
-    // 암호 — 입구에서 한 번. 맞는지는 봉인된 확인용 글을 풀어 본다
+    function mine() {   // 이 브라우저의 진척(어디에도 보내지 않는다)
+      var en = get('enReview.v1'), st = en && en.stars ? en.stars : {};
+      var stars = (st.x || []).length + (st.v || []).length + (st.c || []).length;
+      var m = {
+        review: stars ? '★ ' + stars + '개 표시' : '',
+        talk: n(get('comm-review')) ? '복습 카드 ' + n(get('comm-review')) + '개' : '',
+        drama: n(get('tvshow-pos')) ? '이어듣기 ' + n(get('tvshow-pos')) + '회차' : '',
+        audiobook: n(get('audiobook-pos')) ? '이어듣기 ' + n(get('audiobook-pos')) + '곳' : ''
+      };
+      Object.keys(m).forEach(function (k) {
+        var el = document.querySelector('[data-mine="' + k + '"]');
+        if (el) el.textContent = m[k];
+      });
+    }
     var box = document.getElementById('ls-key').textContent.trim();
     if (!box) return;
-    function check(pw) {
-      return LS.decrypt(box, pw).then(function (t) { if (t !== 'lang-studio') throw new Error('mismatch'); return t; });
-    }
-    function opened() {
-      document.querySelectorAll('.hub-card .lock').forEach(function (el) { el.textContent = '열림'; el.classList.add('open'); });
-      document.getElementById('hub-status').hidden = false;
-      document.getElementById('hub-status-text').textContent = '이 기기에서는 암호 페이지(전화영어 · 회의록 · 오디오북)가 바로 열린다.';
-      LS.forgetButton(document.getElementById('hub-forget'));
-    }
-    LS.unlock(document.getElementById('hub-lock'), check,
-              { lead: '암호 페이지(전화영어 · 회의록 · 오디오북)를 쓰려면 Lang-Studio 암호를 한 번 넣는다. 이 기기에 기억해 두면 다시 묻지 않는다.' })
-      .then(opened);
+    LS.unlock(document.getElementById('hub-lock'), function (pw) { return LS.decrypt(box, pw); },
+              { lead: 'Lang-Studio 암호를 넣으면 아래에 페이지 카드가 열린다. 이 기기에 기억해 두면 다시 묻지 않는다.' })
+      .then(function (cards) {
+        document.getElementById('hub-cards').innerHTML = cards;
+        mine();
+        document.getElementById('hub-status').hidden = false;
+        document.getElementById('hub-status-text').textContent = '이 기기에서는 ' + LS.title + ' 페이지가 바로 열린다.';
+        LS.forgetButton(document.getElementById('hub-forget'));
+      });
   })();
   </script>
 </body>

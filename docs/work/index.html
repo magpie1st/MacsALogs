@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work — MacsALogs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="assets/ls.css?v=bf2b391fd7" />
+  <script src="assets/ls.js?v=ec60c68e50"></script>
+</head>
+<!-- 섹션 입구(Lang-Studio · Work 공통 틀) — VoiceLang publish/builders/hub.py 가 채운다. 손으로 고치지 않는다 -->
+<body>
+  <header id="ls-header" data-page=""></header>
+
+  <main class="container hub">
+    <h2>Work</h2>
+    <p class="lead">Harman-Plus 과제 자료와 회의 · 강연 녹음의 정리본(회의록)을 모아 둔 업무 기록 페이지입니다.</p>
+    <ul class="hub-intro"><li><b>Harman-Plus</b> — Harman-Plus 과제 자료</li><li><b>회의록</b> — 회의 · 강연 녹음의 정리본 — 한국어 · 영어</li></ul>
+    <div id="hub-lock"></div>
+    <p class="hub-status" id="hub-status" hidden><span id="hub-status-text"></span><button class="ls-forget" id="hub-forget" type="button" hidden>이 기기에서 잊기</button></p>
+    <div class="hub-grid" id="hub-cards"></div>
+  </main>
+
+  <!-- 카드 목록은 섹션 암호로 봉인 — 맞는 암호를 넣어야 보인다(2026-11-24) -->
+  <script id="ls-key" type="application/json">{"v": 1, "iter": 600000, "salt": "15eHDeuWFa4iIX+IUu6MBQ==", "iv": "pUS1XK1WLhO0omz3", "ct": "82xmnE6n8YDcrAZHvjgT+MCGcoPg6nOCw7/1GkRyplvZZ1P6sQ1DOo6f9hwrWvRQ6jroSMBOpRXWNxgWxfxE975s989Q4uuI6h6FIQ9Ebvc7/LqQqNdZAHphQYaD8kjydI86l3800q7Ra523m3/vmilEtTAp35yvAIfnR+T74EMlfL/1YTX2Yl8iCce56J5x/0eyrbIdDfhJ/kkIhNEH6x6RyrU5bLS2M8xl6bYJIe/c+Mk76fKRN04kOKbb1utyE2if/G5hDOzMmN73yZBBKeXAQ/rFL8K7PyZ4upIfZJtq3ACxXPvIXkeZCsZ3Iu/QvBVINKq7loMoi80IpwS05yJfmGLTq7DGvZS66v1sI+MDZILp6Xa39t4X6cM3zUdBlNoLQiW+ok31SqS3Rabyffkl9H+BSO6KMonBO9/DZx366WsVHop6OsO6craodrtL1HxBSYcTzNm9pxJwvLCfohwQHNy/64V76Z6v9errR72ViQFSp7YQyqef0OkkgCd3OA4zcxV6TWwb1mLfIjR7MUbrsB0q5fv8C7AG+F/xZ+WayNEqXLzFz9SSV9l/8BvAF4ByF+NO4OZBaGyV4+izsLz2VXHD5Ex1YncMFAzsLI9QzsEkBkOiDxlxO/FENDPfd1R1AfHb6AlE"}</script>
+  <script>
+  (function () {
+    function get(k) { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch (e) { return null; } }
+    function n(o) { return o && typeof o === 'object' ? Object.keys(o).length : 0; }
+    function mine() {   // 이 브라우저의 진척(어디에도 보내지 않는다)
+      var en = get('enReview.v1'), st = en && en.stars ? en.stars : {};
+      var stars = (st.x || []).length + (st.v || []).length + (st.c || []).length;
+      var m = {
+        review: stars ? '★ ' + stars + '개 표시' : '',
+        talk: n(get('comm-review')) ? '복습 카드 ' + n(get('comm-review')) + '개' : '',
+        drama: n(get('tvshow-pos')) ? '이어듣기 ' + n(get('tvshow-pos')) + '회차' : '',
+        audiobook: n(get('audiobook-pos')) ? '이어듣기 ' + n(get('audiobook-pos')) + '곳' : ''
+      };
+      Object.keys(m).forEach(function (k) {
+        var el = document.querySelector('[data-mine="' + k + '"]');
+        if (el) el.textContent = m[k];
+      });
+    }
+    var box = document.getElementById('ls-key').textContent.trim();
+    if (!box) return;
+    LS.unlock(document.getElementById('hub-lock'), function (pw) { return LS.decrypt(box, pw); },
+              { lead: 'Work 암호를 넣으면 아래에 페이지 카드가 열린다. 이 기기에 기억해 두면 다시 묻지 않는다.' })
+      .then(function (cards) {
+        document.getElementById('hub-cards').innerHTML = cards;
+        mine();
+        document.getElementById('hub-status').hidden = false;
+        document.getElementById('hub-status-text').textContent = '이 기기에서는 ' + LS.title + ' 페이지가 바로 열린다.';
+        LS.forgetButton(document.getElementById('hub-forget'));
+      });
+  })();
+  </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-/* Lang-Studio 공통 — 블로그 css/style.css(색 · 글꼴 변수) 위에 얹는다. 원본은 VoiceLang web/lang-studio/assets/ls.css */
+/* Lang-Studio · Work 공통 — 블로그 css/style.css(색 · 글꼴 변수) 위에 얹는다. 원본은 VoiceLang web/lang-studio/assets/ls.css */
 
 /* ── 머리 메뉴: 일곱 페이지가 한 줄에 안 들어가면 줄을 바꾼다 ── */
 .ls-header { padding: 0.9rem 0; }
@@ -43,6 +43,8 @@
 .hub-card .lock { font-size: .75rem; color: var(--text-muted); border: 1px solid var(--border); border-radius: 4px; padding: 0 .35rem; margin-left: .35rem; }
 .hub-card .lock.open { color: var(--accent); border-color: var(--accent); }
 .hub-card .mine { font-size: .8rem; color: var(--accent); min-height: 1em; }
+.hub-intro { list-style: none; padding: 0; margin: 0 0 1.2rem; display: grid; gap: .3rem; font-size: .88rem; color: var(--text-muted); }
+.hub-intro b { color: var(--text); font-weight: 600; }
 .hub-group { font-size: .8rem; color: var(--text-muted); letter-spacing: .02em; margin: 1.5rem 0 .6rem; }
 
 /* ── 분류 탭(영어 복습의 .seg 와 같은 모양 — 회의록 목록 · 상세) ── */

@@ -1,28 +1,35 @@
-/* Lang-Studio 공통 — 머리 메뉴 · 암호 하나(입구에서 한 번, 기기에 기억) · 사이트 뿌리 기준 주소.
-   VoiceLang web/lang-studio/assets/ls.js 가 원본이다(빌더가 docs/lang-studio/assets/ 로 복사). 손으로 고치지 않는다.
+/* MacsALogs 섹션 공통(Lang-Studio · Work) — 머리 메뉴 · 섹션 암호(입구에서 한 번, 기기에 기억) · 사이트 뿌리 기준 주소.
+   VoiceLang web/lang-studio/assets/ls.js 가 원본이다(빌더가 docs/lang-studio/assets/ · docs/work/assets/ 로 복사). 손으로 고치지 않는다.
 
+   - 이 스크립트가 놓인 폴더(docs/<섹션>/assets/)로 섹션을 안다 — 메뉴 · 암호 열쇠가 섹션마다 다르다(2026-11-24)
    - 페이지 데이터의 상대 주소(audio/comm/…)는 docs/ 기준이다 → LS.url() 로 푼다
-   - 암호는 localStorage 'ls-pw' 하나. 회의록 · 전화영어 · 오디오북이 같이 쓴다
+   - 암호는 섹션마다 localStorage 하나: Lang-Studio 'ls-pw'(전화영어 · 오디오북 · 회의대본) · Work 'work-pw'(회의록 · Harman-Plus)
    - 암호문 형식은 빌더(publish/builders/secret.py)와 같다: {v, iter, salt, iv, ct} · PBKDF2-SHA256 → AES-256-GCM */
 (function () {
   'use strict';
   var me = document.currentScript;
   var ROOT = new URL('../../', me.src);           // docs/
-  var HOME = new URL('../', me.src);              // docs/lang-studio/
-  var PW_KEY = 'ls-pw';
-  var OLD_KEYS = ['mom-pw', 'lesson-pw', 'audiobook-pw'];   // 옛 페이지별 열쇠(옛 암호) — 지운다
+  var HOME = new URL('../', me.src);              // docs/<섹션>/
 
-  /* 키, 폴더, 이름, 옛 주소 — publish/sites/macsalogs.py STUDIO_PAGES 와 같은 순서 */
-  var PAGES = [
-    ['talk', 'talk', '일상대화', 'comm.html'], ['drama', 'drama', '드라마', 'tvshow.html'], ['opic', 'opic', 'OPIc', 'opic.html'],
-    ['review', 'review', '표현 복습', 'english.html'], ['lesson', 'lesson', '전화영어', 'lesson.html'],
-    ['minutes', 'minutes', '회의록', 'mom.html'], ['audiobook', 'audiobook', '오디오북', 'audiobook.html']
-  ];
-  /* 새 폴더로 옮긴 페이지 — 입구 빌더(hub.py)가 복사할 때 채운다. 아직 안 옮긴 페이지는 옛 주소로 잇는다 */
-  var MOVED = ["review", "talk", "opic", "drama", "audiobook", "lesson", "minutes"];
-  function pageHref(p) {
-    return MOVED.indexOf(p[0]) >= 0 ? new URL(p[1] + '/', HOME).href : new URL(p[3], ROOT).href;
-  }
+  /* 섹션 → 이름 · 꼬리말 · 암호 열쇠 · 메뉴(키, 폴더, 이름) — publish/sites/macsalogs.py SECTIONS 와 같은 순서 */
+  var SECTIONS = {
+    'lang-studio': {
+      title: 'Lang-Studio', tagline: '의 영어 학습', pwKey: 'ls-pw',
+      oldKeys: ['mom-pw', 'lesson-pw', 'audiobook-pw'],   // 옛 페이지별 열쇠(옛 암호) — 지운다
+      pages: [['lesson', 'lesson', '전화영어'], ['audiobook', 'audiobook', '오디오북'], ['drama', 'drama', '미디어'],
+              ['talk', 'talk', '일상대화'], ['review', 'review', '표현카드'], ['opic', 'opic', 'OPIc'],
+              ['meeting', 'meeting', '회의대본']]
+    },
+    'work': {
+      title: 'Work', tagline: '의 업무 기록', pwKey: 'work-pw', oldKeys: [],
+      pages: [['harman', 'harman-plus', 'Harman-Plus'], ['minutes', 'minutes', '회의록']]
+    }
+  };
+  var SECTION = HOME.pathname.replace(/\/$/, '').split('/').pop();
+  var SEC = SECTIONS[SECTION] || SECTIONS['lang-studio'];
+  var PW_KEY = SEC.pwKey;
+  var PAGES = SEC.pages;
+  function pageHref(p) { return new URL(p[1] + '/', HOME).href; }
 
   function url(p) {
     if (!p) return p;
@@ -46,8 +53,8 @@
     h.className = 'site-header ls-header';
     h.innerHTML =
       '<div class="container">' +
-      '<div class="site-brand"><h1 class="site-title"><a href="' + HOME.href + '"' + (cur ? '' : ' aria-current="page"') + '>Lang-Studio</a></h1>' +
-      '<p class="site-tagline"><a href="' + new URL('index.html', ROOT).href + '">MacsALogs</a> 의 영어 학습</p></div>' +
+      '<div class="site-brand"><h1 class="site-title"><a href="' + HOME.href + '"' + (cur ? '' : ' aria-current="page"') + '>' + esc(SEC.title) + '</a></h1>' +
+      '<p class="site-tagline"><a href="' + new URL('index.html', ROOT).href + '">MacsALogs</a> ' + esc(SEC.tagline) + '</p></div>' +
       '<nav class="site-nav ls-nav">' + links + '</nav></div>';
   }
 
@@ -58,7 +65,7 @@
       try {
         sessionStorage.setItem(PW_KEY, v);
         if (persist) localStorage.setItem(PW_KEY, v); else localStorage.removeItem(PW_KEY);
-        OLD_KEYS.forEach(function (k) { localStorage.removeItem(k); sessionStorage.removeItem(k); });
+        SEC.oldKeys.forEach(function (k) { localStorage.removeItem(k); sessionStorage.removeItem(k); });
       } catch (e) {}
     },
     forget: function () { try { localStorage.removeItem(PW_KEY); sessionStorage.removeItem(PW_KEY); } catch (e) {} }
@@ -106,7 +113,7 @@
       return new Promise(function (resolve) {
         host.innerHTML =
           '<form class="ls-lock">' +
-          '<p class="ls-lock-lead">' + esc(opts.lead || 'Lang-Studio 암호를 넣으면 이 기기에서는 다시 묻지 않습니다.') + '</p>' +
+          '<p class="ls-lock-lead">' + esc(opts.lead || SEC.title + ' 암호를 넣으면 이 기기에서는 다시 묻지 않습니다.') + '</p>' +
           '<div class="ls-lock-row"><input class="ls-lock-input" type="password" autocomplete="current-password" aria-label="암호" required />' +
           '<button class="ls-lock-btn" type="submit">열기</button></div>' +
           '<label class="ls-lock-remember"><input type="checkbox" checked /> 이 기기에 기억</label>' +
@@ -135,7 +142,7 @@
     el.addEventListener('click', function () { pw.forget(); location.reload(); });
   }
 
-  /* ── 봉인 페이지(전화영어 · 회의록) ──
+  /* ── 봉인 페이지(전화영어 · 회의록 · Harman-Plus) ──
      목록: <div id="ls-lock"></div><section id="ls-body"></section><script id="ls-data" type="application/json">{봉인}</script>
      상세: 같은 자리 + LS.sealedDetail() — 풀린 문서로 통째로 바꾼다(그 문서가 녹음을 LS.sealedAudio 로 푼다) */
   function box(id) { var el = document.getElementById(id || 'ls-data'); return el ? el.textContent.trim() : ''; }
@@ -167,7 +174,7 @@
     }).catch(function (e) { if (now) now.textContent = '녹음을 풀지 못했습니다 (' + e.message + ')'; });
   }
 
-  window.LS = { root: ROOT.href, home: HOME.href, pages: PAGES, pageHref: pageHref, url: url, esc: esc, nav: nav, pw: pw,
+  window.LS = { root: ROOT.href, home: HOME.href, section: SECTION, title: SEC.title, pages: PAGES, pageHref: pageHref, url: url, esc: esc, nav: nav, pw: pw,
                 decrypt: decrypt, decryptBytes: decryptBytes, unlock: unlock, forgetButton: forgetButton,
                 sealedList: sealedList, sealedDetail: sealedDetail, sealedAudio: sealedAudio };
 
