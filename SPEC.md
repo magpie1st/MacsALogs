@@ -25,8 +25,11 @@ MacsALogs의 기술 구조와 기능 명세입니다. 변경 시 해당 섹션�
 | `docs/posts/posts.json` | 포스트 메타데이터 목록 (수동 관리, 최신순) |
 | `docs/posts/*.html` | 개별 포스트 HTML |
 | `docs/lang-studio/` | 학습 페이지(Lang-Studio) — 원본 · 빌더는 VoiceLang Studio(아래 절) |
+| `docs/work/` | 업무 기록(Work — 회의록 · Harman-Plus), 2026-11-24 분리 |
+| `docs/{lang-studio,work}/assets/key.json` | 섹션 암호 확인 상자(섹션 이름을 봉인 — 비밀 아님) |
 | `docs/audio/` | 학습 음원(opic · comm · tvshow/shows 타임라인 · lesson/minutes 잠근 녹음) · 뉴스 요약 m4a |
-| `docs/*.html`(comm · tvshow · …), `docs/mom/`, `docs/lesson/` | 옛 주소 → `lang-studio/` 넘겨주기 |
+| `docs/*.html`(comm · tvshow · …), `docs/mom/`, `docs/lesson/`, `docs/lang-studio/minutes/` | 옛 주소 → `lang-studio/` · `work/` 넘겨주기 |
+| `.gitattributes` | 줄바꿈 LF 하나(`* text=auto eol=lf`) |
 | `scripts/audiobook_crypto.json` · `scripts/langstudio_crypto.json` | 암호 열쇠의 salt(비밀 아님) — VoiceLang 빌더가 읽는다 |
 | `scripts/show_ids.json` | 작품 제목 → 주소 id·자산 슬러그·영문 제목 (한 번 적으면 바꾸지 않는다) |
 
@@ -51,6 +54,15 @@ OPIc · TVShow(드라마) · 오디오북 · 일상대화 · 전화영어 · 회
 (`../voicelang-studio/SPEC.md` 3.6 「Lang-Studio」, 페이지 원본 `web/lang-studio/`). 이 저장소에는 결과물(`docs/lang-studio/`)과
 옛 주소의 넘겨주기 페이지만 있다. 옛 명세(스키마 · 화면 · 기억 키)는 이 파일의 git 이력(2026-11-19 이전)에 있다.
 
+## Work 분리 · 암호 화면 · 메뉴 숨김 (2026-11-24)
+
+명세는 VoiceLang `SPEC.md` 3.6.2(무엇을 왜 바꿨나 표). 이 저장소에서 보이는 결과:
+- 블로그 메뉴는 「홈 · 소개」 — Work · Lang-Studio 는 주소로만
+- `docs/work/`: 회의록 41건(work 암호). 영어 대본이 있는 회의 2건은 `docs/lang-studio/meeting/` 에도
+- Lang-Studio 의 모든 페이지가 암호를 넣어야 보인다 — 봉인(전화영어 · 오디오북 · 회의대본: 내용이 암호문) / 문(미디어 · 일상대화 · 표현카드 · OPIc: 내용은 평문, 화면만 가림)
+- 오디오북 잠금 화면에 책 제목 · 저자가 나오지 않는다
+- 줄바꿈 LF 하나 — `.gitattributes`
+
 ## 스타일 시스템
 
 - CSS 변수(`--bg`, `--text`, `--accent` 등)로 라이트/다크 테마 관리
@@ -60,7 +72,7 @@ OPIc · TVShow(드라마) · 오디오북 · 일상대화 · 전화영어 · 회
 ## GitHub Pages 설정
 
 - Source: `main` 브랜치 / `docs/` 폴더
-- 커스텀 도메인: 미설정 (기본 `magpie777.github.io/MacsALogs`)
+- 커스텀 도메인: 미설정 (기본 `magpie1st.github.io/MacsALogs`)
 - 빌드 프로세스: 없음 (파일 그대로 서빙)
 
 ## 포스트 작성 규칙

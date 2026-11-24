@@ -27,3 +27,6 @@ docs/audio/audiobook/**/*.mp3
 scripts/.lesson_cache.json
 scripts/.langstudio_cache.json
 docs/lang-studio/audiobook/local.html
+
+# 로컬 메모 — 사내 원격 · PC별 git 설정(공개하지 않는다, 2026-11-24). CLAUDE.md 가 이 파일을 먼저 읽으라고 가리킨다
+CLAUDE.local.md

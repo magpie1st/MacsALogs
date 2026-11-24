@@ -9,10 +9,13 @@ GitHub Pages를 통해 정적 HTML 블로그로 서비스됩니다.
 
 GitHub Pages가 `main` 브랜치의 `docs/` 폴더를 그대로 서빙합니다 (빌드 없음).
 
-### Lang-Studio (학습 페이지)
+### Work · Lang-Studio (암호 페이지)
 
-블로그 메뉴 「Lang-Studio」 → [`/lang-studio/`](https://magpie1st.github.io/MacsALogs/lang-studio/) — 일상대화 · 드라마 · OPIc · 표현 복습 · 전화영어 · 회의록 · 오디오북.
-페이지와 빌더의 원본은 [VoiceLang Studio](../voicelang-studio) 저장소에 있다(이 저장소에는 결과물만). 자세한 것은 `CLAUDE.md` 「Lang-Studio」.
+블로그 메뉴에는 없다 — 주소로만 들어간다(2026-11-24).
+- [`/lang-studio/`](https://magpie1st.github.io/MacsALogs/lang-studio/) — 전화영어 · 오디오북 · 미디어 · 일상대화 · 표현카드 · OPIc · 회의대본. 모든 페이지가 Lang-Studio 암호를 넣어야 보인다
+- [`/work/`](https://magpie1st.github.io/MacsALogs/work/) — 회의록 · Harman-Plus. Work 암호
+
+페이지와 빌더의 원본은 [VoiceLang Studio](../voicelang-studio) 저장소에 있다(이 저장소에는 결과물만). 자세한 것은 `CLAUDE.md` 「Work · Lang-Studio」, 바뀐 까닭은 `WORKLOG.md`.
 
 ## 구조
 
@@ -23,15 +26,17 @@ MacsALogs/
 │   ├── css/style.css · js/app.js
 │   ├── posts/             # 블로그 글 (posts.json + *.html)
 │   ├── lang-studio/       # 학습 페이지 — VoiceLang Studio 가 만든다
+│   ├── work/              # 업무 기록(회의록) — VoiceLang Studio 가 만든다
 │   ├── audio/             # 학습 음원(작은 것) · 뉴스 요약
-│   └── *.html, mom/, lesson/   # 옛 주소 → lang-studio 로 넘겨주기
+│   └── *.html, mom/, lesson/   # 옛 주소 → lang-studio · work 로 넘겨주기
 ├── scripts/               # VoiceLang 빌더의 상태 파일만(salt · 작품 id)
+├── .gitattributes         # 줄바꿈 LF 하나(2026-11-24)
 ├── WORKLOG.md · SPEC.md · CLAUDE.md
 ```
 
 ## 새 포스트 추가하기
 
-1. `docs/posts/YYYY-MM-DD-slug.html` 파일 생성 (기존 포스트 HTML을 복사해서 내용 교체)
+1. `docs/posts/YYYY-MM-DD-slug.html` 파일 생성 (기존 포스트 HTML을 복사해서 내용 교체 — 메뉴는 「홈 · 소개」만)
 2. `docs/posts/posts.json` 상단에 항목 추가:
 
 ```json

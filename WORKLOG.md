@@ -4,6 +4,22 @@
 
 ---
 
+## 2026-11-24 — Work 분리 · Lang-Studio 모든 페이지 암호 화면 · 블로그 메뉴 숨김 · 줄바꿈 LF
+
+모두 사용자 요청. 페이지 · 빌더는 VoiceLang Studio 에서 고쳤다(이 저장소에는 결과물만) — 설계 VoiceLang `SPEC.md` 3.6.2, 코드 커밋 `edd687c`(Work 분리) · `d34d961`(암호 화면 · 메뉴 · 줄바꿈).
+
+| 커밋 | 무엇 | 왜 |
+|---|---|---|
+| `fe0edc0` minutes | 회의록 41건 → `docs/work/minutes/`(work 암호), 대본 있는 회의 2건 → `docs/lang-studio/meeting/`(회의대본). 옛 `lang-studio/minutes/*` 는 넘겨주기. Work 입구 · Harman-Plus 빈 자리. 메뉴 「Work · Lang-Studio」 | 업무 기록을 영어 학습과 나누고 암호를 따로(`work_pw`) |
+| `7b238fc` audiobook | 미디어 · 일상대화 · 표현카드 · OPIc 에 암호 화면(「문」) — `assets/ls.js` · `ls.css`, 암호 확인 `assets/key.json`. 오디오북 잠금 화면에서 책 제목 · 저자 뺌 | 이 네 페이지가 암호 없이 보였다. 내용은 잠그지 않고 「암호를 넣어야 보이게」만(전화영어 · 오디오북 수준). 오디오북은 암호 창 위에 책 목록이 보였다 |
+| `75fe5b7` hub | `index.html` · `about.html` 메뉴에서 Work · Lang-Studio 뺌 | 두 섹션은 주소로만 들어간다 |
+| `aa3d0e0` hub | 글 36개 메뉴에서 Lang-Studio 뺌. CRLF 였던 글 9개가 LF 로 바뀜(내용 차이는 글마다 메뉴 한 줄) | 위와 같음. 줄바꿈은 그대로 올려 저장소를 LF 로 통일 |
+| `dabf39d` | `.gitattributes`(`* text=auto eol=lf`) | Windows 에서 CRLF 로 커밋된 글 때문에 한 줄 고칠 때 수천 줄 diff 가 났다 — 앞으로 어느 OS 에서든 LF |
+
+- 확인: 시험용 암호로 만든 게시 대기를 브라우저로 열어 봤다(암호 전에는 메뉴 · 암호 창만, 틀린 암호 거부, 맞는 암호 · 기억된 암호로 열림). 실제 암호로 `key.json` 이 풀리는 것도 확인
+- 「문」 페이지의 소스 · 음원 파일은 주소를 알면 받을 수 있다 — 내용 암호화는 하지 않기로 했다
+- 문서: CLAUDE.md 「Work · Lang-Studio」(잠금 열 · 메뉴 · 게시 방법 · 줄바꿈), README · SPEC 의 구조와 파일 표. SPEC 의 Pages 기본 주소를 `magpie1st.github.io` 로 바로잡았다
+
 ## 2026-11-16 — tts-maker 정리에 맞춘 변경: 이야기별 엔진 표기, 일상대화 음성 선택, TVShow 검증
 
 - **opic.html 엔진 표기**: 풀(`tts-maker/output/<제목>.mp3`)은 이야기마다 엔진이 달라서(Gemini 26편 + Drama3-Ann 5편) 머리말의 단일 `engine/voice` 는 어느 쪽이든 틀렸다. 다른 게시 작업이 기본값으로 다시 돌려 `Kokoro-82M · af_heart` 로 되돌려 놓은 것도 확인했다. 이제 `publish_blog.py`(tts-maker)가 파일 해시로 이야기마다 `engine`/`voice` 를 적고, `opic.js` 가 머리말에 실제로 쓰인 엔진·음성 목록을, 각 이야기 줄에 음성 이름을 보여 준다. 음원 mp3 는 바뀌지 않았다(표기 데이터만)
