@@ -4,6 +4,17 @@
 
 ---
 
+## 2026-11-25 — github · GHE 하나로 통일, GHE 에서는 Lang-Studio 닫기, Harman-Plus 봉인
+
+사용자 요청. GHE(`origin`)는 11-20 부터 따로 갈라진 갈래였다(`ed30f9a` 학습 페이지 제거 · `724d07b` 평문 회의록 동기화 · `3e1e436` Harman Plus 글 2건). 공개 이력 쪽으로 하나로 맞췄다.
+
+- **GHE 에서는 Lang-Studio 를 열지 않는다** — git 은 원격마다 다른 파일을 올릴 수 없으므로 화면에서 막는다. `ls.js` 가 hostname 에 `samsung` 이 있으면 Lang-Studio 페이지를 모두 가리고 「이 사이트에서 제공하지 않습니다」만 보인다(암호 창 · 머리 메뉴 없음, 저장된 암호도 읽지 않는다). Work 는 그대로. 원본 VoiceLang `web/lang-studio/assets/ls.js` · Windows 사본도 같이 고쳤다
+- **회의록은 봉인본만** — GHE 의 평문 동기화(`scripts/sync_minutes.py`)는 쓰지 않는다. `work/minutes/` 는 이미 work 암호 봉인
+- **Harman-Plus 글 2건 봉인** — 새 빌더 `harman`(VoiceLang · Windows 사본). 원본은 `common-data/voicelang-studio-data/harman-plus/`(GHE 의 글 그대로). 주소는 work 암호 HMAC id, 잠금 화면에는 「Harman-Plus 과제 자료」만(처음엔 `IC SBU Weekly Pulse` 가 보여 뺐다)
+- Windows `voicelang-studio-win` 은 이미 `~/.config/macsalogs/`(= `C:\Users\<사용자>\.config\macsalogs`)에서 암호를 읽고, 푸시는 `branch.main.remote`(이 PC = origin) 를 따른다 — 고칠 것 없었다
+- GHE 의 옛 갈래는 태그 `ghe-backup-20261124`(`3e1e436`)로 남기고 `main` 을 강제 푸시
+- 확인: 헤드리스 Chrome 으로 `samsung.localhost`(사내 주소 흉내) → Lang-Studio 입구 · 미디어는 안내문만(암호 창 0 · 머리 메뉴 없음), Work Harman-Plus 는 머리 메뉴 · 암호 창 정상. `localhost` → 미디어 예전과 같음. 오디오북 · 일상대화는 헤드리스가 음원 로딩에서 끝나지 않아 보지 못했다(같은 `ls-gated` 가림을 쓴다). Harman 봉인 3개를 work 암호로 풀어 제목 · 글끼리 링크 확인
+
 ## 2026-11-24 — Work 분리 · Lang-Studio 모든 페이지 암호 화면 · 블로그 메뉴 숨김 · 줄바꿈 LF
 
 모두 사용자 요청. 페이지 · 빌더는 VoiceLang Studio 에서 고쳤다(이 저장소에는 결과물만) — 설계 VoiceLang `SPEC.md` 3.6.2, 코드 커밋 `edd687c`(Work 분리) · `d34d961`(암호 화면 · 메뉴 · 줄바꿈).

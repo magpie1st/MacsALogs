@@ -38,7 +38,7 @@ MacsALogs는 AI 개발·생산성·취미를 기록하는 개인 블로그입니
 | 주소 | 페이지 | 잠금 | 만드는 명령(VoiceLang) |
 |---|---|---|---|
 | `work/` · `lang-studio/` | 입구 두 개(카드는 섹션 암호) | 설명만 공개, 카드 봉인 | `vls publish build hub` |
-| `work/harman-plus/` | Harman-Plus (지금은 빈 자리) | 봉인(work) | hub 가 빈 자리만 만든다 |
+| `work/harman-plus/` | Harman-Plus(IC SBU Weekly Pulse 정리 글) | 봉인(work) | `vls publish build harman` (원본 `common-data/voicelang-studio-data/harman-plus/`) |
 | `work/minutes/` | 회의록(정리본 · 영어 정리본) | 봉인(work) | `vls publish build minutes` |
 | `lang-studio/lesson/` | 전화영어 수업 | 봉인(ls) | `vls publish build lesson` |
 | `lang-studio/audiobook/` | 오디오북(잠금 화면에 책 제목도 없음) | 봉인(ls) | `vls publish build audiobook` (음원은 `audiobook-audio` 저장소) |
@@ -49,7 +49,8 @@ MacsALogs는 AI 개발·생산성·취미를 기록하는 개인 블로그입니
 | `lang-studio/meeting/` | 회의대본(영어 대본이 있는 회의 + 녹음) | 봉인(ls) | `vls publish build minutes` |
 
 - 봉인 = 내용이 암호문(암호 없이는 읽을 수 없다). 문 = 내용은 평문이고, `ls.js` 가 암호를 넣기 전에는 머리 메뉴 · 암호 창 밖을 가린다. 암호 확인은 `<섹션>/assets/key.json`(섹션 이름을 봉인한 상자). 「문」 페이지의 소스 · 음원은 주소를 알면 받을 수 있다 — 내용 암호화는 하지 않기로 했다(2026-11-24 사용자)
-- 게시는 VoiceLang 의 `vls publish auto <빌더>`(게시 대기 → 관문 → 승인 → 푸시)로 한다. `docs/` 에 쓰고 푸시하면 공개다
+- 게시는 VoiceLang 의 `vls publish auto <빌더>`(게시 대기 → 관문 → 승인 → 푸시)로 한다. `docs/` 에 쓰고 푸시하면 공개다. Windows 에서는 `voicelang-studio-win`(`vis publish …`)이 같은 일을 한다 — 암호는 같은 `~/.config/macsalogs/`
+- **github · GHE 두 원격은 같은 이력 · 같은 `docs/` 다**(2026-11-25 통일). GHE(사내) Pages 에서는 `ls.js` 가 주소(hostname 에 `samsung`)를 보고 **Lang-Studio 를 열지 않는다** — 안내 한 줄만, 암호도 묻지 않는다. Work 는 두 곳 모두 동작한다. 파일은 GHE 저장소에도 들어 있다(봉인 페이지는 암호문, 「문」 페이지는 평문)
 - 블로그 메뉴(`index.html` · `about.html` · `posts/*.html`)의 Work · Lang-Studio 링크는 `vls publish build hub` 가 지운다. 새 글을 만들 때도 메뉴에 넣지 않는다
 - 암호 파일은 두 개뿐이다(저장소 밖 `~/.config/macsalogs/`). `langstudio_pw` → Lang-Studio(브라우저 localStorage `ls-pw`), `work_pw` → Work(`work-pw`). 내용은 PBKDF2-SHA256 → AES-256-GCM 암호문으로 저장된다
 - 옛 주소는 새 주소로 넘겨주는 작은 페이지다. `lang-studio/minutes/*` · `mom.html` · `mom/*` → `work/minutes/`(대본만 있는 회의는 `lang-studio/meeting/`), 그 밖의 `comm.html` · `tvshow.html` · `opic.html` · `english.html` · `lesson.html` · `audiobook.html` · `study.html` · `lesson/<id>.html` 도 같다

@@ -38,7 +38,10 @@
   var KEY_TEXT = SECTION;   // secret.KEY_CHECK — 상자를 풀면 나오는 글(비밀 아님)
   var FOLDER = (location.pathname.indexOf(HOME.pathname) === 0 ? location.pathname.slice(HOME.pathname.length) : '').split('/')[0];
   var GATE = (GATED[SECTION] || []).indexOf(FOLDER) >= 0;
-  if (GATE) document.documentElement.classList.add('ls-gated');   // 이 스크립트는 <head> 에 있다 — 본문이 그려지기 전에 가린다
+  /* 사내 GHE Pages 에서는 Lang-Studio 를 열지 않는다(2026-11-25 사용자) — github · GHE 두 원격이 같은 docs/ 를 싣고,
+     GHE 에서는 Work 만 동작한다. 주소(hostname)에 samsung 이 들어가면 사내 사이트로 본다. 암호도 묻지 않는다 */
+  var OFF = SECTION === 'lang-studio' && /samsung/i.test(location.hostname);
+  if (GATE || OFF) document.documentElement.classList.add('ls-gated');   // 이 스크립트는 <head> 에 있다 — 본문이 그려지기 전에 가린다
 
   function url(p) {
     if (!p) return p;
@@ -69,7 +72,7 @@
 
   /* ── 암호 ── */
   var pw = {
-    get: function () { try { return localStorage.getItem(PW_KEY) || sessionStorage.getItem(PW_KEY); } catch (e) { return null; } },
+    get: function () { if (OFF) return null; try { return localStorage.getItem(PW_KEY) || sessionStorage.getItem(PW_KEY); } catch (e) { return null; } },
     set: function (v, persist) {
       try {
         sessionStorage.setItem(PW_KEY, v);
@@ -114,6 +117,7 @@
   /* 저장된 암호로 먼저 열어 보고(open(pw) 가 Promise), 없거나 틀리면 host 에 입력 창을 띄운다.
      「기기에 기억」은 기본으로 켜 둔다(2026-11-19 사용자 결정) */
   function unlock(host, open, opts) {
+    if (OFF) return new Promise(function () {});   // 사내 사이트 — 열지 않는다
     opts = opts || {};
     var saved = pw.get();
     var tried = saved ? open(saved).then(function (r) { return r; }, function () { pw.forget(); return Promise.reject(); })
@@ -221,6 +225,16 @@
                 decrypt: decrypt, decryptBytes: decryptBytes, unlock: unlock, forgetButton: forgetButton,
                 sealedList: sealedList, sealedDetail: sealedDetail, sealedAudio: sealedAudio };
 
-  function start() { nav(); if (GATE) gate(); }
+  /* 사내 사이트 — 머리 메뉴 · 암호 창 없이 안내 한 줄만 */
+  function off() {
+    var host = document.createElement('div');
+    host.id = 'ls-gate';
+    host.className = 'container';
+    host.innerHTML = '<p class="ls-lock-msg">' + esc(SEC.title) + ' 는 이 사이트에서 제공하지 않습니다. <a href="' +
+      new URL('index.html', ROOT).href + '">MacsALogs 홈</a></p>';
+    document.body.insertBefore(host, document.body.firstChild);
+  }
+
+  function start() { if (OFF) { off(); return; } nav(); if (GATE) gate(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();
